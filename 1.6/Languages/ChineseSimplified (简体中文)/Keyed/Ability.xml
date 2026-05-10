@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <MinchoCandyWars.Ability.MinchoCandyValueDontEnough>糖果值不足,至少需要{0}</MinchoCandyWars.Ability.MinchoCandyValueDontEnough>
+    <MinchoCandyWars.Ability.CandyValueConsume>糖果值消耗:{0}</MinchoCandyWars.Ability.CandyValueConsume>
+    <MinchoCandyWars.Ability.WorkbenchAcceleration.Inspect>制作速度加速：{0}\n剩余时间：{1}</MinchoCandyWars.Ability.WorkbenchAcceleration.Inspect>
+    <MinchoCandyWars.Ability.WorkbenchAcceleration.StatExplanation>千机糖工作台加速</MinchoCandyWars.Ability.WorkbenchAcceleration.StatExplanation>
+
+</LanguageData>

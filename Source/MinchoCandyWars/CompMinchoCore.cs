@@ -1,4 +1,6 @@
-﻿using Verse;
+using MinchoCandyWars.Data;
+using RimWorld;
+using Verse;
 
 namespace MinchoCandyWars
 {
@@ -15,6 +17,12 @@ namespace MinchoCandyWars
         private CandyType currentCandyType = CandyType.None;
 
         private float minchoCandyValue = 0;
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            EnsureMinchoAbilitiesGranted();
+        }
 
         //数据存档
         public override void PostExposeData()
@@ -103,6 +111,24 @@ namespace MinchoCandyWars
                     recoveryAmount *= GetTempGainFactor();
                     MinchoCandyValue += recoveryAmount;
                 }
+            }
+        }
+
+        private void EnsureMinchoAbilitiesGranted()
+        {
+            if (pawn.abilities == null)
+            {
+                return;
+            }
+
+            foreach (AbilityDef abilityDef in DefDataPreloading.MinchoCandyAbilityDefs)
+            {
+                if (pawn.abilities.GetAbility(abilityDef) != null)
+                {
+                    continue;
+                }
+
+                pawn.abilities.GainAbility(abilityDef);
             }
         }
 

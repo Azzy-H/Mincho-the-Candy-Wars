@@ -17,6 +17,26 @@ namespace MinchoCandyWars.Ability
         private List<HediffDef> requiredHediffDefs => minchoAbilityDef.requiredHediffDefs;
         private CompMinchoCore compMinchoCore = null!;
 
+        public MinchoCandyAbility()
+        {
+        }
+
+        public MinchoCandyAbility(Pawn pawn) : base(pawn)
+        {
+        }
+
+        public MinchoCandyAbility(Pawn pawn, AbilityDef def) : base(pawn, def)
+        {
+        }
+
+        public MinchoCandyAbility(Pawn pawn, Precept sourcePrecept) : base(pawn, sourcePrecept)
+        {
+        }
+
+        public MinchoCandyAbility(Pawn pawn, Precept sourcePrecept, AbilityDef def) : base(pawn, sourcePrecept, def)
+        {
+        }
+
         //初始化数据
         void IInitalizable.Initialize()
         {

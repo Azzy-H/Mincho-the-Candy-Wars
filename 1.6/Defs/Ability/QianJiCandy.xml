@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- 工作台加速 -->
+    <AbilityDef ParentName="AbilityTouchBase">
+        <defName>MCW_QianJiCandyAbility_WorkbenchAcceleration</defName>
+        <abilityClass>MinchoCandyWars.Ability.MinchoCandyAbility</abilityClass>
+        <label>workbench acceleration</label>
+        <description>TODO</description>
+        <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath><!-- TODO -->
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <!--<category></category> TODO-->
+        <displayOrder>400</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>1</warmupTime>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetHumans>false</canTargetHumans>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetSelf>false</canTargetSelf>
+                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="MinchoCandyWars.Ability.QianJiCandy.WorkbenchAcceleration.CompProperties_AbilityEffect_WorkbenchAcceleration">
+                <baseDurationTicks>5000</baseDurationTicks><!-- 基础持续时间 -->
+                <durationTicksPerBodyGrade>5000</durationTicksPerBodyGrade><!-- 每个身体等级增加的持续时间 -->
+                <baseAccelerationFactor>1.0</baseAccelerationFactor><!-- 基础加速倍率 -->
+                <accelerationFactorPerCoreGrade>0.2</accelerationFactorPerCoreGrade><!-- 每个核心等级增加的加速倍率 -->
+            </li>
+            <li Class="CompProperties_AbilityRequiresCapacity"><!-- 需要操作能力 -->
+                <capacity>Manipulation</capacity>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Ability.MinchoAbilityDefModExtension">
+                <candyType>QianJiCandy</candyType>
+                <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>1</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>0</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+</Defs>

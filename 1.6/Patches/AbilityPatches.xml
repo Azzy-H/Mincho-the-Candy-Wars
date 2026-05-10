@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- 给工作台添加千机糖加速组件 -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[thingClass="Building_WorkTable" or thingClass="Building_WorkTable_HeatPush"]/comps</xpath>
+        <value>
+            <li Class="MinchoCandyWars.Ability.QianJiCandy.WorkbenchAcceleration.CompProperties_WorkbenchAcceleration" />
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[(thingClass="Building_WorkTable" or thingClass="Building_WorkTable_HeatPush") and not(comps)]</xpath>
+        <value>
+            <comps>
+                <li Class="MinchoCandyWars.Ability.QianJiCandy.WorkbenchAcceleration.CompProperties_WorkbenchAcceleration" />
+            </comps>
+        </value>
+    </Operation>
+
+</Patch>
