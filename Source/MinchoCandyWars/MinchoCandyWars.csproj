@@ -11,6 +11,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Buff\MinchoCandyBuffDef.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4633" />
 	  <PackageReference Include="Lib.Harmony.Ref" Version="2.4.2" />
 	</ItemGroup>

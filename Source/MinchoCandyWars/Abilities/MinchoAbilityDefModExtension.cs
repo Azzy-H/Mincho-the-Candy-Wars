@@ -1,11 +1,11 @@
 ﻿using Verse;
 
-namespace MinchoCandyWars.Ability
+namespace MinchoCandyWars.Abilities
 {
     //minchoAbility数据拓展
     public class MinchoAbilityDefModExtension : DefModExtension
     {
-        public CandyType candyType = CandyType.None;
+        public CandyTypeDef? candyType = null;
 
         public int requiredMinchoCoreGrade = 0;
 

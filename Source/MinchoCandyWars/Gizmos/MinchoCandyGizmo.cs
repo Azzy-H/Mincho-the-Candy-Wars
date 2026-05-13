@@ -17,7 +17,7 @@ namespace MinchoCandyWars.Gizmos
         
         public int minchoCoreGrade => compMinchoCore.MinchoCoreGrade;
         public int minchoBodyGrade => compMinchoCore.MinchoBodyGrade;
-        public CandyType candyType => compMinchoCore.CurrentCandyType;
+        public CandyTypeDef? candyType => compMinchoCore.CurrentCandyType;
         public float minchoCandyValue => compMinchoCore.MinchoCandyValue;
         public float currentMaxCandyValue => compMinchoCore.CurrentMaxCandyValue;
 
@@ -36,8 +36,11 @@ namespace MinchoCandyWars.Gizmos
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
             Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
-            GUI.DrawTexture(rect, BGText);
-            Widgets.DrawBox(rect, 1);
+            //GUI.DrawTexture(rect, BGText);
+            Widgets.DrawBox(rect, 1, BGText);
+            Rect rectCore = new Rect(topLeft.x + 0.2f * GetWidth(maxWidth), topLeft.y + 5, GetWidth(maxWidth) / 2.5f, 30f);
+            Widgets.DrawBox(rectCore, 1);
+            Widgets.Label(rectCore, "MinchoCandyWars.Gizmos.CoreLabel".Translate());
             return new GizmoResult(GizmoState.Clear);
 
         }

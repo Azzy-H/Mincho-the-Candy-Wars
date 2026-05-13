@@ -3,7 +3,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 
-namespace MinchoCandyWars.Ability.QianJiCandy.WorkbenchAcceleration;
+namespace MinchoCandyWars.Abilities.QianJiCandy.WorkbenchAcceleration;
 
 //工作台加速的自comp，提供加速状态的维护和加速效果的计算
 public class CompWorkbenchAcceleration : ThingComp
@@ -74,7 +74,7 @@ public class CompWorkbenchAcceleration : ThingComp
             return string.Empty;
         }
 
-        return "MinchoCandyWars.Ability.WorkbenchAcceleration.Inspect".Translate(
+        return "MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect".Translate(
             accelerationFactor.ToStringPercent(),
             RemainingTicks.ToStringTicksToPeriod());
     }
@@ -86,7 +86,7 @@ public class CompWorkbenchAcceleration : ThingComp
             return;
         }
 
-        sb.AppendLine($"{whitespace}{"MinchoCandyWars.Ability.WorkbenchAcceleration.StatExplanation".Translate()}");
+        sb.AppendLine($"{whitespace}{"MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation".Translate()}");
     }
 
     private void CleanupExpiredState()

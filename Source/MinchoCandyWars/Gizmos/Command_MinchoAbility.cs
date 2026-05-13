@@ -1,4 +1,4 @@
-﻿using MinchoCandyWars.Ability;
+﻿using MinchoCandyWars.Abilities;
 using RimWorld;
 using System;
 using System.Collections.Generic;

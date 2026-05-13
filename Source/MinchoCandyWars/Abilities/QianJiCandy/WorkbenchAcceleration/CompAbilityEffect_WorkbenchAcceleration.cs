@@ -1,12 +1,12 @@
 using RimWorld;
 using Verse;
 
-namespace MinchoCandyWars.Ability.QianJiCandy.WorkbenchAcceleration;
+namespace MinchoCandyWars.Abilities.QianJiCandy.WorkbenchAcceleration;
 
 //技能触发效果，应用于工作台加速的技能效果组件，并且越高的等级提供越高的加成
 public class CompAbilityEffect_WorkbenchAcceleration : CompAbilityEffect
 {
-    public CompProperties_AbilityEffect_WorkbenchAcceleration Props => (CompProperties_AbilityEffect_WorkbenchAcceleration)props;
+    public new CompProperties_AbilityEffect_WorkbenchAcceleration Props => (CompProperties_AbilityEffect_WorkbenchAcceleration)props;
 
     private CompMinchoCore? CompMinchoCore => parent.pawn.GetComp<CompMinchoCore>();
 

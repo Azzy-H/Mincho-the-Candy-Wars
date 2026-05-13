@@ -7,14 +7,14 @@ namespace MinchoCandyWars
     //核心数据组件
     public class CompMinchoCore : ThingComp
     {
-        public CompProperties_MinchoCore Props => (CompProperties_MinchoCore)this.props;
-        public Pawn pawn => (Pawn)this.parent;
+        public CompProperties_MinchoCore Props => (CompProperties_MinchoCore)props;
+        public Pawn pawn => (Pawn)parent;
 
         private int minchoCoreGrade = 0;
 
         private int minchoBodyGrade = 0;
 
-        private CandyType currentCandyType = CandyType.None;
+        private CandyTypeDef? currentCandyType = null;
 
         private float minchoCandyValue = 0;
 
@@ -30,7 +30,7 @@ namespace MinchoCandyWars
             base.PostExposeData();
             Scribe_Values.Look(ref minchoCoreGrade, "minchoCoreGrade", 0);
             Scribe_Values.Look(ref minchoBodyGrade, "minchoBodyGrade", 0);
-            Scribe_Values.Look(ref currentCandyType, "currentCandyType", CandyType.None);
+            Scribe_Defs.Look(ref currentCandyType, "currentCandyType");
             Scribe_Values.Look(ref minchoCandyValue, "minchoCandyValue", 0);
         }
 
@@ -63,7 +63,7 @@ namespace MinchoCandyWars
 
 
         //当前糖饰种类
-        public CandyType CurrentCandyType
+        public CandyTypeDef? CurrentCandyType
         {
             get => currentCandyType;
             set
@@ -123,18 +123,16 @@ namespace MinchoCandyWars
 
             foreach (AbilityDef abilityDef in DefDataPreloading.MinchoCandyAbilityDefs)
             {
-                if (pawn.abilities.GetAbility(abilityDef) != null)
-                {
-                    continue;
-                }
-
                 pawn.abilities.GainAbility(abilityDef);
             }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            yield return new Gizmos.MinchoCandyGizmo(pawn, this);
+            if(MinchoTotalGrade > 0)
+            {
+                yield return new Gizmos.MinchoCandyGizmo(pawn, this);
+            }
 
             if (SettingUtility.IsDebugMode())
             {
@@ -145,11 +143,11 @@ namespace MinchoCandyWars
                     {
                         List<FloatMenuOption> options = new List<FloatMenuOption>();
 
-                        foreach (CandyType candyType in Enum.GetValues(typeof(CandyType)))
+                        foreach (CandyTypeDef candyTypeDef in DefDatabase<CandyTypeDef>.AllDefs)
                         {
-                            CandyType localCandyType = candyType;
-                            string label = candyType.ToString();
-                            if (candyType == CurrentCandyType)
+                            CandyTypeDef localCandyTypeDef = candyTypeDef;
+                            string label = candyTypeDef.defName;
+                            if (candyTypeDef == CurrentCandyType)
                             {
                                 label += "(当前)";
                             }
@@ -157,10 +155,10 @@ namespace MinchoCandyWars
                                 label,
                                 delegate
                                 {
-                                    CurrentCandyType = localCandyType;
+                                    CurrentCandyType = localCandyTypeDef;
                                 }
                             );
-                            if (candyType == CurrentCandyType)
+                            if (candyTypeDef == CurrentCandyType)
                             {
                                 option.Disabled = true;
                             }

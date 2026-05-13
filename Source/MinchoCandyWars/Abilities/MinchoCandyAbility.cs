@@ -5,14 +5,14 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Verse;
 
-namespace MinchoCandyWars.Ability
+namespace MinchoCandyWars.Abilities
 {
-    public class MinchoCandyAbility : RimWorld.Ability, IInitalizable
+    public class MinchoCandyAbility : Ability, IInitalizable
     {
         public MinchoAbilityDefModExtension minchoAbilityDef = null!;
         private int requiredMinchoCoreGrade => minchoAbilityDef.requiredMinchoCoreGrade;
         private int requiredMinchoBodyGrade => minchoAbilityDef.requiredMinchoBodyGrade;
-        private CandyType candyType => minchoAbilityDef.candyType;
+        private CandyTypeDef? candyType => minchoAbilityDef.candyType;
         private float requiredMinchoCandyValue => minchoAbilityDef.requiredMinchoCandyValue;
         private List<HediffDef> requiredHediffDefs => minchoAbilityDef.requiredHediffDefs;
         private CompMinchoCore compMinchoCore = null!;
@@ -54,7 +54,7 @@ namespace MinchoCandyWars.Ability
         {
             if (compMinchoCore.MinchoCandyValue < requiredMinchoCandyValue)
             {
-                reason = "MinchoCandyWars.Ability.MinchoCandyValueDontEnough".Translate(requiredMinchoCandyValue);
+                reason = "MinchoCandyWars.Abilities.MinchoCandyValueDontEnough".Translate(requiredMinchoCandyValue);
                 return true;
             }
             return base.GizmoDisabled(out reason);
@@ -142,7 +142,7 @@ namespace MinchoCandyWars.Ability
 
         public string MinchoCandyValueConsumeText()
         {
-            return "MinchoCandyWars.Ability.CandyValueConsume".Translate(requiredMinchoCandyValue);
+            return "MinchoCandyWars.Abilities.CandyValueConsume".Translate(requiredMinchoCandyValue);
         }
 
         //在Tooltip中显示消耗的糖果值
@@ -151,7 +151,7 @@ namespace MinchoCandyWars.Ability
             get
             {
                 string text = base.Tooltip;
-                text = text + "\n\n" + "MinchoCandyWars.Ability.CandyValueConsume".Translate(requiredMinchoCandyValue);
+                text = text + "\n\n" + "MinchoCandyWars.Abilities.CandyValueConsume".Translate(requiredMinchoCandyValue);
                 return text;
             }
         }

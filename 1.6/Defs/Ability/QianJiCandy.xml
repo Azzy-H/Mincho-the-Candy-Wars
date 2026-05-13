@@ -4,7 +4,7 @@
     <!-- 工作台加速 -->
     <AbilityDef ParentName="AbilityTouchBase">
         <defName>MCW_QianJiCandyAbility_WorkbenchAcceleration</defName>
-        <abilityClass>MinchoCandyWars.Ability.MinchoCandyAbility</abilityClass>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>workbench acceleration</label>
         <description>TODO</description>
         <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath><!-- TODO -->
@@ -32,7 +32,7 @@
             </targetParams>
         </verbProperties>
         <comps>
-            <li Class="MinchoCandyWars.Ability.QianJiCandy.WorkbenchAcceleration.CompProperties_AbilityEffect_WorkbenchAcceleration">
+            <li Class="MinchoCandyWars.Abilities.QianJiCandy.WorkbenchAcceleration.CompProperties_AbilityEffect_WorkbenchAcceleration">
                 <baseDurationTicks>5000</baseDurationTicks><!-- 基础持续时间 -->
                 <durationTicksPerBodyGrade>5000</durationTicksPerBodyGrade><!-- 每个身体等级增加的持续时间 -->
                 <baseAccelerationFactor>1.0</baseAccelerationFactor><!-- 基础加速倍率 -->
@@ -43,7 +43,7 @@
             </li>
         </comps>
         <modExtensions>
-            <li Class="MinchoCandyWars.Ability.MinchoAbilityDefModExtension">
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
                 <candyType>QianJiCandy</candyType>
                 <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
                 <requiredMinchoBodyGrade>1</requiredMinchoBodyGrade>
