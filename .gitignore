@@ -6,6 +6,7 @@ Source/MinchoCandyWars/*.suo
 Source/MinchoCandyWars/*.tmp
 Source/MinchoCandyWars/*.log
 Source/MinchoCandyWars/*.pdb
+!!AgentWorkZone!!
 
 *.pdb
 # VSCode
