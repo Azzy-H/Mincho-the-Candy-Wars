@@ -29,6 +29,7 @@
     <isRootSpecial>true</isRootSpecial>
     <defaultCharity>false</defaultCharity>
     <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
     <!-- 仁善想法 -->
     <!-- <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_IntroWimp</successHistoryEvent>
     <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_IntroWimp</failedOrExpiredHistoryEvent> -->
@@ -91,8 +92,8 @@
           <adulthoodBackstory>WULA_Adult_Backstory_Legion</adulthoodBackstory> -->
 
           <forcedTraits>
-			      <Tough>0</Tough>
-            <Joyous MayRequire="Ludeon.RimWorld.Anomaly">0</Joyous>
+            <li>Tough</li>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Joyous</li>
           </forcedTraits>
 
           <mustBeCapableOfViolence>true</mustBeCapableOfViolence>
@@ -132,13 +133,15 @@
           <!-- <delayTicks>60000</delayTicks> -->
           <delayTicks>60</delayTicks>
           <node Class="QuestNode_Sequence">
-            <li Class="QuestNode_SendSignals">
-              <outSignals>MCW_QS1_Alliance_Faction_Incoming</outSignals>
-            </li>
-            <li Class="MinchoCandyWars.StellarisEvent.QuestNode_StellarisEvent">
-              <inSignal>MCW_QS1_Alliance_Faction_Incoming</inSignal>
-              <eventDef>MCW_Event_QS1_HuntedMincho</eventDef>
-            </li>
+            <nodes>
+              <li Class="QuestNode_SendSignals">
+                <outSignals>MCW_QS1_Alliance_Faction_Incoming</outSignals>
+              </li>
+              <li Class="MinchoCandyWars.StellarisEvent.QuestNode_StellarisEvent">
+                <inSignal>MCW_QS1_Alliance_Faction_Incoming</inSignal>
+                <eventDef>MCW_Event_QS1_HuntedMincho</eventDef>
+              </li>
+            </nodes>
           </node>
         </li>
       </nodes>
@@ -194,10 +197,8 @@
           <flagName>eventDone</flagName>
           <valueType>Bool</valueType>
           <boolValue>true</boolValue>
-          <ticks>60000</ticks>  <!-- 60000 tick 后自动过期 -->
-        </li>
-        <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
-          <defName>ARA_Event_testContact</defName>
+          <ticks>60000</ticks>
+          <local>false</local>
         </li>
       </effects>
     </after>

@@ -298,14 +298,28 @@ namespace MinchoCandyWars.StellarisEvent
 
         private void OnOptionSelected(StellarisEventOption option)
         {
-            // 执行 option 的 action
-            option.action?.Execute();
+            // 执行 option 的 action（异常不阻断窗口关闭和 after 执行）
+            try
+            {
+                option.action?.Execute();
+            }
+            catch (System.Exception ex)
+            {
+                Verse.Log.Error($"[StellarisEvent] 选项 '{option.label}' 的 action 执行异常: {ex}");
+            }
 
             // 关闭窗口
             Close();
 
-            // 执行 after
-            eventDef.after?.Execute();
+            // 执行 after（异常不阻断清理）
+            try
+            {
+                eventDef.after?.Execute();
+            }
+            catch (System.Exception ex)
+            {
+                Verse.Log.Error($"[StellarisEvent] 事件 '{eventDef.defName}' 的 after 执行异常: {ex}");
+            }
 
             // 清理本事件内创建的所有 local flag
             StellarisEventFlagManager.ClearLocalFlags();

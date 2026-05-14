@@ -115,6 +115,17 @@ namespace MinchoCandyWars.StellarisEvent
             
             Pawn pawn = PawnGenerator.GeneratePawn(request);
 
+            // 清除所有自然生成的trait，只保留forcedTraits中指定的trait
+            if (pawn.story?.traits != null && value4 != null && value4.Any())
+            {
+                pawn.story.traits.allTraits.Clear();
+                foreach (TraitDef traitDef in value4)
+                {
+                    if (traitDef != null)
+                        pawn.story.traits.allTraits.Add(new Trait(traitDef, 0));
+                }
+            }
+
             // 确保名字不是数字（如果设置了）
             if (ensureNonNumericName.GetValue(slate) && (pawn.Name == null || pawn.Name.Numerical))
             {
