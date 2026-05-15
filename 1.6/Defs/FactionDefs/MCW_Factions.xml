@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <FactionDef ParentName="MinchoFactionBase">
+    <defName>MCW_Alliance_Faction</defName>
+    <label>Mincho Alliance</label>
+    <description>由沁心糖组建的珉巧同盟，她们掌握了制作智慧珉巧的能力，以及收留和保护其他珉巧。</description>
+    <leaderTitle>（领袖称谓）</leaderTitle>
+    <leaderForceGenerateNewPawn>true</leaderForceGenerateNewPawn>
+    <fixedName>珉巧同盟</fixedName>
+    <!-- <fixedLeaderKinds>
+      <li>WULA_Legion_PawnKind</li>
+    </fixedLeaderKinds> -->
+    <factionIconPath>Mincho_Item/Mincho_FactionIcon_2</factionIconPath> <!-- 派系图标？ -->
+    <canGenerateQuestSites>false</canGenerateQuestSites>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <earliestRaidDays>999999</earliestRaidDays> <!-- 通过事件发动袭击，不走常规袭击 -->
+    <permanentEnemy>false</permanentEnemy>
+    <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>900</configurationListOrderPriority>
+    <disallowedRaidAgeRestrictions>
+      <li MayRequire="Ludeon.RimWorld.Biotech">Children</li>
+    </disallowedRaidAgeRestrictions>
+  </FactionDef>
+</Defs>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="MinchoBasePawnKind_Space">
+		<defName>MCW_HuntedMincho_QS1</defName>
+		<label>遭到追捕的珉巧</label>
+		<combatPower>80</combatPower>
+		<requiredWorkTags>
+			<li>Violent</li>
+      <li>Cooking</li>
+      <li>Social</li>
+		</requiredWorkTags>
+	</PawnKindDef>
+  <!-- 初始任务 -->
+  <IncidentDef>
+    <defName>MCW_GiveQuest_QS1_MinchoMincho</defName>
+    <category>GiveQuest</category>
+    <label>遭到追捕的珉巧</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <questScriptDef>MCW_QS1_HuntedMincho</questScriptDef>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <baseChance>0</baseChance>
+  </IncidentDef>
+  <QuestScriptDef>
+    <defName>MCW_QS1_HuntedMincho</defName>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <!-- <expireDaysRange>2</expireDaysRange> -->
+    <isRootSpecial>true</isRootSpecial>
+    <defaultCharity>false</defaultCharity>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <!-- 仁善想法 -->
+    <!-- <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_IntroWimp</successHistoryEvent>
+    <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_IntroWimp</failedOrExpiredHistoryEvent> -->
+    <!-- 命名规则 -->
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->MCW_QS1_HuntedMincho_questName</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <include>
+        <li>QuestHospitalityCommon</li>
+      </include>
+      <rulesStrings>
+        <li>questDescription->MCW_QS1_HuntedMincho_questDescription</li>
+      </rulesStrings>
+    </questDescriptionRules>
+
+    <!-- 运行规则 -->
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+        <!-- 获取地图 -->
+        <li Class="QuestNode_GetMap" />
+        <!-- 获取边缘进入点 -->
+        <li Class="QuestNode_GetWalkInSpot" />
+        <!-- 选取敌对派系 -->
+        <!-- <li Class="QuestNode_GetFaction">
+          <allowEnemy>true</allowEnemy>
+          <mustBePermanentEnemy>true</mustBePermanentEnemy>
+          <storeAs>enemyFaction</storeAs>
+        </li> -->
+
+        <!-- 产生超链接 -->
+        <li Class="MinchoCandyWars.StellarisEvent.QuestNode_Hyperlinks">
+          <factionDefs>
+            <li>MCW_Alliance_Faction</li>
+          </factionDefs>
+        </li>
+
+        <!-- 生成物品奖励 -->
+        <!-- <li Class="QuestNode_GenerateThingSet">
+          <thingSetMaker>Reward_GravshipUpgrade</thingSetMaker>
+          <storeAs>upgradeItem</storeAs>
+        </li>
+        <li Class="QuestNode_AddItemsReward">
+          <items>$upgradeItem</items>
+        </li> -->
+        <!-- 生成pawn -->
+        <li Class="MinchoCandyWars.StellarisEvent.QuestNode_GeneratePawnWithCustomization">
+          <kindDef>MCW_HuntedMincho_QS1</kindDef>
+          <storeAs>asker</storeAs>          <!--  特殊的字段，供后续调用 -->
+          <faction>MCW_Alliance_Faction</faction>
+          <allowPregnant>false</allowPregnant>
+
+          <!-- <useCustomBackstories>true</useCustomBackstories>
+          <childhoodBackstory>WULA_Child_Backstory01</childhoodBackstory>
+          <adulthoodBackstory>WULA_Adult_Backstory_Legion</adulthoodBackstory> -->
+
+          <forcedTraits>
+            <li>Tough</li>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Joyous</li>
+          </forcedTraits>
+
+          <mustBeCapableOfViolence>true</mustBeCapableOfViolence>
+
+          <skillCustomizations>
+            <li>
+              <skillDef>Melee</skillDef>
+              <passion>Major</passion>
+              <extraXP>450000</extraXP>
+            </li>
+            <li>
+              <skillDef>Cooking</skillDef>
+              <passion>Major</passion>
+              <extraXP>450000</extraXP>
+            </li>
+            <li>
+              <skillDef>Social</skillDef>
+              <passion>Major</passion>
+              <extraXP>450000</extraXP>
+            </li>
+          </skillCustomizations>
+
+          <syncWithPlayerIdeo>true</syncWithPlayerIdeo>
+        </li>
+        <!-- pawn抵达 -->
+        <li Class="QuestNode_PawnsArrive">
+          <pawns>$asker</pawns>
+          <joinPlayer>true</joinPlayer>
+        </li>
+        <li Class="QuestNode_Letter">
+          <label>被追捕的珉巧: [asker_nameDef]</label>
+          <text>你的殖民地来了一位珉巧，[asker_nameDef]，她说正在被回收公司追捕，并且没有去处。她希望你可以收留她，并且她声称可以为你做任何事情，只要不将她交出去。</text>
+        </li>
+        
+        <!-- 延迟生成袭击 -->
+        <li Class="QuestNode_Delay">
+          <!-- <delayTicks>60000</delayTicks> -->
+          <delayTicks>60</delayTicks>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SendSignals">
+                <outSignals>MCW_QS1_Alliance_Faction_Incoming</outSignals>
+              </li>
+              <li Class="MinchoCandyWars.StellarisEvent.QuestNode_StellarisEvent">
+                <inSignal>MCW_QS1_Alliance_Faction_Incoming</inSignal>
+                <eventDef>MCW_Event_QS1_HuntedMincho</eventDef>
+              </li>
+            </nodes>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_QS1_HuntedMincho</defName>
+    <label>沁心糖</label>
+    <title>沁心糖</title>
+    <desc>你好，这个殖民地的主人，我是沁心糖，感谢你接收这条讯息，我们是珉巧同盟，是一个为了保护珉巧免于被回收的组织。而我，是这个组织的领导者。\n\n希望您可以加入我们的珉巧同盟，这也是因为这位智慧珉巧认为您是可信的，同时，我们会给予您的殖民地一些帮助！</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <!-- <portraitOffsetX>-30</portraitOffsetX>
+    <portraitOffsetY>20</portraitOffsetY> -->
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Mannose</path>
+      </li>
+    </pictures>
+
+    <immediate>
+      <!-- <effects>
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+          <flagName>warStarted</flagName>
+          <valueType>Bool</valueType>
+          <boolValue>true</boolValue>
+          <setMode>Create</setMode>
+        </li>
+      </effects> -->
+    </immediate>
+
+    <options>
+      <li>
+        <label>当然我们愿意加入珉巧同盟！</label>
+        <desc>&lt;color=#915A30>&lt;i>——珉巧同盟线&lt;/i>&lt;/color>\n\n与珉巧同盟结盟，珉巧同盟会感谢殖民地的付出，并空投一些物资作为答谢</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupply">
+              <thingDef>Silver</thingDef>
+              <num>500</num>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>算了吧，这听起来很危险</label>
+        <!-- 无 action = 仅关闭窗口 -->
+      </li>
+    </options>
+
+    <after>
+      <effects>
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+          <flagName>eventDone</flagName>
+          <valueType>Bool</valueType>
+          <boolValue>true</boolValue>
+          <ticks>60000</ticks>
+          <local>false</local>
+        </li>
+      </effects>
+    </after>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+</Defs>
