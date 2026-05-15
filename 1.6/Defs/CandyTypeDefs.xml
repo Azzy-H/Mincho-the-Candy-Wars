@@ -6,100 +6,85 @@
     <description>TODO</description>
     <coreStages>
       <li>
-        <gainHediffs></gainHediffs>
         <statOffsets>
           <PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
           <MechBandwidth>6</MechBandwidth>
         </statOffsets>
-        <statFactors></statFactors>
       </li>
       <li>
-        <gainHediffs></gainHediffs>
         <statOffsets>
           <PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
           <MechBandwidth>12</MechBandwidth>
-          <GeneralLaborSpeed>0.2</GeneralLaborSpeed>
+          <MCW_CraftingLearningFactor>0.2</MCW_CraftingLearningFactor>
         </statOffsets>
-        <statFactors></statFactors>
       </li>
       <li>
-        <gainHediffs></gainHediffs>
         <statOffsets>
           <PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
           <MechBandwidth>18</MechBandwidth>
-          <GeneralLaborSpeed>0.2</GeneralLaborSpeed>
-          <ConstructionSpeed>0.2</ConstructionSpeed>
+          <MCW_CraftingLearningFactor>0.2</MCW_CraftingLearningFactor>
+          <MCW_ConstructionLearningFactor>0.2</MCW_ConstructionLearningFactor>
         </statOffsets>
-        <statFactors></statFactors>
       </li>
       <li>
-        <gainHediffs></gainHediffs>
         <statOffsets>
           <PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
           <MechBandwidth>24</MechBandwidth>
-          <GeneralLaborSpeed>0.2</GeneralLaborSpeed>
-          <ConstructionSpeed>0.2</ConstructionSpeed>
+          <MCW_CraftingLearningFactor>0.2</MCW_CraftingLearningFactor>
+          <MCW_ConstructionLearningFactor>0.2</MCW_ConstructionLearningFactor>
         </statOffsets>
-        <statFactors></statFactors>
       </li>
       <li>
-        <gainHediffs></gainHediffs>
+        <gainHediffs>
+          <li>MCW_ProductionQualityBoost</li>
+        </gainHediffs>
         <statOffsets>
           <PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
           <MechBandwidth>30</MechBandwidth>
-          <GeneralLaborSpeed>0.2</GeneralLaborSpeed>
-          <ConstructionSpeed>0.2</ConstructionSpeed>
+          <MCW_CraftingLearningFactor>0.2</MCW_CraftingLearningFactor>
+          <MCW_ConstructionLearningFactor>0.2</MCW_ConstructionLearningFactor>
         </statOffsets>
-        <statFactors></statFactors>
       </li>
     </coreStages>
     <bodyStages>
-        <li>
-        <gainHediffs></gainHediffs>
+      <li>
         <statOffsets>
-          <PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
-          <MechBandwidth>6</MechBandwidth>
+          <WorkSpeedGlobal>0.15</WorkSpeedGlobal>
         </statOffsets>
-        <statFactors></statFactors>
       </li>
       <li>
-        <gainHediffs></gainHediffs>
         <statOffsets>
-          <PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
-          <MechBandwidth>12</MechBandwidth>
+          <WorkSpeedGlobal>0.15</WorkSpeedGlobal>
           <GeneralLaborSpeed>0.2</GeneralLaborSpeed>
+          <MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">1</MechFormingSpeed>
         </statOffsets>
-        <statFactors></statFactors>
       </li>
       <li>
-        <gainHediffs></gainHediffs>
         <statOffsets>
-          <PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
-          <MechBandwidth>18</MechBandwidth>
+          <WorkSpeedGlobal>0.15</WorkSpeedGlobal>
           <GeneralLaborSpeed>0.2</GeneralLaborSpeed>
-          <ConstructionSpeed>0.2</ConstructionSpeed>
+          <MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">1</MechFormingSpeed>
+          <MCW_MoveSpeedGlobalFactorMech MayRequire="Ludeon.RimWorld.Biotech">0.25</MCW_MoveSpeedGlobalFactorMech>
         </statOffsets>
-        <statFactors></statFactors>
       </li>
       <li>
-        <gainHediffs></gainHediffs>
         <statOffsets>
-          <PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
-          <MechBandwidth>24</MechBandwidth>
+          <WorkSpeedGlobal>0.15</WorkSpeedGlobal>
           <GeneralLaborSpeed>0.2</GeneralLaborSpeed>
-          <ConstructionSpeed>0.2</ConstructionSpeed>
+          <MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">1</MechFormingSpeed>
+          <MCW_MoveSpeedGlobalFactorMech MayRequire="Ludeon.RimWorld.Biotech">0.25</MCW_MoveSpeedGlobalFactorMech>
+          <MCW_WorkSpeedGlobalFactorMech MayRequire="Ludeon.RimWorld.Biotech">0.3</MCW_WorkSpeedGlobalFactorMech>
         </statOffsets>
-        <statFactors></statFactors>
       </li>
       <li>
-        <gainHediffs></gainHediffs>
         <statOffsets>
-          <PsychicSensitivityOffset>0.1</PsychicSensitivityOffset>
-          <MechBandwidth>30</MechBandwidth>
+          <WorkSpeedGlobal>0.35</WorkSpeedGlobal>
           <GeneralLaborSpeed>0.2</GeneralLaborSpeed>
-          <ConstructionSpeed>0.2</ConstructionSpeed>
+          <MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">1</MechFormingSpeed>
+          <MCW_MoveSpeedGlobalFactorMech MayRequire="Ludeon.RimWorld.Biotech">0.25</MCW_MoveSpeedGlobalFactorMech>
+          <MCW_WorkSpeedGlobalFactorMech MayRequire="Ludeon.RimWorld.Biotech">0.3</MCW_WorkSpeedGlobalFactorMech>
+          <MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">1</MechRepairSpeed>
         </statOffsets>
-        <statFactors></statFactors>
       </li>
     </bodyStages>
   </MinchoCandyWars.CandyTypeDef>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/StatDef[defName="WorkSpeedGlobal"]/parts</xpath>
+		<value>
+			<li Class="MinchoCandyWars.StatParts.StatPart_OverseerStatFactor" MayRequire="Ludeon.RimWorld.Biotech">
+				<stat>MCW_WorkSpeedGlobalFactorMech</stat>
+				<label>Factor from mechanitor</label>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/StatDef[defName="MoveSpeed"]/parts</xpath>
+		<value>
+			<li Class="MinchoCandyWars.StatParts.StatPart_OverseerStatFactor" MayRequire="Ludeon.RimWorld.Biotech">
+				<stat>MCW_MoveSpeedGlobalFactorMech</stat>
+				<label>Factor from mechanitor</label>
+			</li>
+		</value>
+	</Operation>
+
+</Patch>

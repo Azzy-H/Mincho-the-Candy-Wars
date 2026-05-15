@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- <StatDef>
+		<defName>MCW_AnimalsLearningFactor</defName>
+		<label>animals learning factor</label>
+		<description>A multiplier on the learning rate for animals skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef> -->
+	<StatDef>
+		<defName>MCW_ArtisticLearningFactor</defName>
+		<label>artistic learning factor</label>
+		<description>A multiplier on the learning rate for artistic skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+	<StatDef>
+		<defName>MCW_ConstructionLearningFactor</defName>
+		<label>construction learning factor</label>
+		<description>A multiplier on the learning rate for construction skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+	<StatDef>
+		<defName>MCW_CookingLearningFactor</defName>
+		<label>cooking learning factor</label>
+		<description>A multiplier on the learning rate for cooking skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+	<StatDef>
+		<defName>MCW_CraftingLearningFactor</defName>
+		<label>crafting learning factor</label>
+		<description>A multiplier on the learning rate for crafting skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+	<StatDef>
+		<defName>MCW_IntellectualLearningFactor</defName>
+		<label>intellectual learning factor</label>
+		<description>A multiplier on the learning rate for intellectual skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+	<StatDef>
+		<defName>MCW_MedicalLearningFactor</defName>
+		<label>medical learning factor</label>
+		<description>A multiplier on the learning rate for medical skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+	<StatDef>
+		<defName>MCW_MeleeLearningFactor</defName>
+		<label>melee learning factor</label>
+		<description>A multiplier on the learning rate for melee skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+	<StatDef>
+		<defName>MCW_MiningLearningFactor</defName>
+		<label>mining learning factor</label>
+		<description>A multiplier on the learning rate for mining skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+	<StatDef>
+		<defName>MCW_PlantsLearningFactor</defName>
+		<label>plants learning factor</label>
+		<description>A multiplier on the learning rate for plants skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+	<StatDef>
+		<defName>MCW_ShootingLearningFactor</defName>
+		<label>shooting learning factor</label>
+		<description>A multiplier on the learning rate for shooting skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+	<StatDef>
+		<defName>MCW_SocialLearningFactor</defName>
+		<label>social learning factor</label>
+		<description>A multiplier on the learning rate for social skill.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>3500</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+
+
+</Defs>

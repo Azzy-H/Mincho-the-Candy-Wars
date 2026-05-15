@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 using HarmonyLib;
+using RimWorld;
 
 namespace MinchoCandyWars.Patch
 {
@@ -16,6 +13,8 @@ namespace MinchoCandyWars.Patch
         {
             harmony = new Harmony("MinchoCandyWarsPatch");
             harmony.PatchAll();
+            //顺序问题，需要重新处理一遍交叉引用
+            StatDef.SetImmutability();
         }
     }
 }

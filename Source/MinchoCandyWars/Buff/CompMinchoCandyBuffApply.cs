@@ -9,11 +9,12 @@ namespace MinchoCandyWars.Buff
 {
     public class CompMinchoCandyBuffApply : ThingComp
     {
-        private CompMinchoCore cachedCoreComp = null!;
+        //Pawn_NeedsTracker.SetInitialLevels会读取stat，此时PostSpawnSetup未执行
+        private CompMinchoCore? cachedCoreComp;
         private bool effectsDirty = true;
         public Pawn pawn => (Pawn)parent;
-        public CandyTypeStage? BodyStage => cachedCoreComp.CurrentCandyType?.bodyStages[cachedCoreComp.MinchoBodyGrade - 1];
-        public CandyTypeStage? CoreStage => cachedCoreComp.CurrentCandyType?.coreStages[cachedCoreComp.MinchoCoreGrade - 1];
+        public CandyTypeStage? BodyStage => cachedCoreComp?.BodyStage;
+        public CandyTypeStage? CoreStage => cachedCoreComp?.CoreStage;
         private HashSet<HediffDef> hediffDefsNeedToApply = new HashSet<HediffDef>();
         public HashSet<HediffDef> HediffDefsNeedToApplyForReading => hediffDefsNeedToApply;
 
@@ -64,7 +65,6 @@ namespace MinchoCandyWars.Buff
                     pawn.health.AddHediff(hediff);
                 }
             }
-
             effectsDirty = false;
         }
 
@@ -85,30 +85,31 @@ namespace MinchoCandyWars.Buff
         // 输出 stat 面板中的来源说明。
         public override void GetStatsExplanation(StatDef stat, StringBuilder sb, string whitespace = "")
         {
+            if (cachedCoreComp == null) return;
             StringBuilder stringBuilder = new StringBuilder();
-            float bodyStatOffset = cachedCoreComp.CurrentCandyType?.bodyStages[cachedCoreComp.MinchoBodyGrade - 1].statOffsets.GetStatOffsetFromList(stat) ?? 0f;
+            float bodyStatOffset = cachedCoreComp.BodyStage?.statOffsets.GetStatOffsetFromList(stat) ?? 0f;
             if (!Mathf.Approximately(bodyStatOffset, 0f))
             {
                 stringBuilder.AppendLine(whitespace + "    " + "MinchoCandyWars.Buff.BodyOffset".Translate() + ": " + stat.Worker.ValueToString(bodyStatOffset, finalized: false, ToStringNumberSense.Offset));
             }
-            float coreStatOffset = cachedCoreComp.CurrentCandyType?.coreStages[cachedCoreComp.MinchoCoreGrade - 1].statOffsets.GetStatOffsetFromList(stat) ?? 0f;
+            float coreStatOffset = cachedCoreComp.CoreStage?.statOffsets.GetStatOffsetFromList(stat) ?? 0f;
             if (!Mathf.Approximately(coreStatOffset, 0f))
             {
-                stringBuilder.AppendLine(whitespace + "    " + "MinchoCandyWars.Buff.BodyOffset".Translate() + ": " + stat.Worker.ValueToString(bodyStatOffset, finalized: false, ToStringNumberSense.Offset));
+                stringBuilder.AppendLine(whitespace + "    " + "MinchoCandyWars.Buff.CoreOffset".Translate() + ": " + stat.Worker.ValueToString(coreStatOffset, finalized: false, ToStringNumberSense.Offset));
             }
-            float bodyStatFactor = cachedCoreComp.CurrentCandyType?.bodyStages[cachedCoreComp.MinchoBodyGrade - 1].statFactors.GetStatFactorFromList(stat) ?? 1f;
+            float bodyStatFactor = cachedCoreComp.BodyStage?.statFactors.GetStatFactorFromList(stat) ?? 1f;
             if (!Mathf.Approximately(bodyStatFactor, 1f))
             {
                 stringBuilder.AppendLine(whitespace + "    " + "MinchoCandyWars.Buff.BodyFactor".Translate() + ": " + stat.Worker.ValueToString(bodyStatFactor, finalized: false, ToStringNumberSense.Factor));
             }
-            float coreStatFactor = cachedCoreComp.CurrentCandyType?.coreStages[cachedCoreComp.MinchoCoreGrade - 1].statFactors.GetStatFactorFromList(stat) ?? 1f;
+            float coreStatFactor = cachedCoreComp.CoreStage?.statFactors.GetStatFactorFromList(stat) ?? 1f;
             if (!Mathf.Approximately(coreStatFactor, 1f))
             {
                 stringBuilder.AppendLine(whitespace + "    " + "MinchoCandyWars.Buff.CoreFactor".Translate() + ": " + stat.Worker.ValueToString(coreStatFactor, finalized: false, ToStringNumberSense.Factor));
             }
             if (stringBuilder.Length != 0)
             {
-                sb.AppendLine(whitespace + "StatsReport_WeaponTraits".Translate() + ":");
+                sb.AppendLine(whitespace + "MinchoCandyWars.Buff".Translate() + ":");
                 sb.Append(stringBuilder.ToString());
             }
         }

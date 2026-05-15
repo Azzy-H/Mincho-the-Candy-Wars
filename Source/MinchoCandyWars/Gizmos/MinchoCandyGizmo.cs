@@ -36,8 +36,8 @@ namespace MinchoCandyWars.Gizmos
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
             Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
-            //GUI.DrawTexture(rect, BGText);
-            Widgets.DrawBox(rect, 1, BGText);
+            GUI.DrawTexture(rect, BGText);
+            Widgets.DrawBox(rect, 1);
             Rect rectCore = new Rect(topLeft.x + 0.2f * GetWidth(maxWidth), topLeft.y + 5, GetWidth(maxWidth) / 2.5f, 30f);
             Widgets.DrawBox(rectCore, 1);
             Widgets.Label(rectCore, "MinchoCandyWars.Gizmos.CoreLabel".Translate());

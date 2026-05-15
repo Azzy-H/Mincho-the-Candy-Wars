@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>MCW_ProductionQualityBoost</defName>
+    <label>Production Quality Boost</label>
+    <description>Improves production quality.</description>
+    <isBad>false</isBad>
+  </HediffDef>
+</Defs>

@@ -13,7 +13,6 @@ namespace MinchoCandyWars.Data
 
         static DefDataPreloading()
         {
-
             // 预加载MinchoCandyAbility的AbilityDef
             MinchoCandyAbilityDefs = new List<AbilityDef>();
             foreach (var abilityDef in DefDatabase<AbilityDef>.AllDefs)

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<StatDef>
+		<defName>MCW_WorkSpeedGlobalFactorMech</defName>
+		<label>mech work speed factor</label>
+		<description>A work speed factor applied to a mechanitor's mechs.</description>
+		<category>Mechanitor</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>5000</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnMechanoids>false</showOnMechanoids>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+	<StatDef>
+		<defName>MCW_MoveSpeedGlobalFactorMech</defName>
+		<label>mech move speed factor</label>
+		<description>A move speed factor applied to a mechanitor's mechs.</description>
+		<category>Mechanitor</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<displayPriorityInCategory>5000</displayPriorityInCategory>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnMechanoids>false</showOnMechanoids>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+
+</Defs>

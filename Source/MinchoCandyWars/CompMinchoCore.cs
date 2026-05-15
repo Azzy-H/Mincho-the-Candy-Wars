@@ -18,6 +18,10 @@ namespace MinchoCandyWars
 
         private float minchoCandyValue = 0;
 
+        public CandyTypeStage? BodyStage => MinchoBodyGrade > 0 ? CurrentCandyType?.bodyStages[MinchoBodyGrade - 1] : null;
+
+        public CandyTypeStage? CoreStage => MinchoCoreGrade > 0 ? CurrentCandyType?.coreStages[MinchoCoreGrade - 1] : null;
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
