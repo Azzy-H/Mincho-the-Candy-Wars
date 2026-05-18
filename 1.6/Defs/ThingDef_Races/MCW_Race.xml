@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>MCW_MinchoSlime_Passes</defName>
+    <label>Mincho Slime pass</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>MinchoCandyWars.Incident.IncidentWorker_MinchoSlimePasses</workerClass>
+    <baseChance>0.7</baseChance>
+    <minRefireDays>13</minRefireDays>
+  </IncidentDef>
+
+  <ThingDef ParentName="Mincho_AnimalThingBase">
+    <defName>MCW_MinchoSlime</defName>
+    <label>珉巧史莱姆</label>
+    <description>珉巧史莱姆</description>
+
+    <statBases>
+      <MaxNutrition>1</MaxNutrition>
+      <MoveSpeed>6</MoveSpeed>
+      <MarketValue>0</MarketValue>
+      <LeatherAmount>0</LeatherAmount>
+      <MeatAmount>0</MeatAmount>
+      <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Heat>0</ArmorRating_Heat>
+			<ComfyTemperatureMin>-273</ComfyTemperatureMin>
+			<ComfyTemperatureMax>45</ComfyTemperatureMax>
+      <Wildness>0</Wildness>
+      <Fertility MayRequire="Ludeon.RimWorld.Biotech">0</Fertility>
+			<PsychicSensitivity>0</PsychicSensitivity>
+
+      <WorkToMake>1000</WorkToMake>
+    </statBases>
+
+    <race>
+      <trainability>Intermediate</trainability>
+      <baseHealthScale>2</baseHealthScale>
+      <baseHungerRate>0</baseHungerRate>
+      <baseBodySize>1</baseBodySize>
+			<petness>1</petness>
+      <lifeExpectancy>1000</lifeExpectancy>
+      <hasCorpse>true</hasCorpse> <!-- 不生成尸体的话，deathAction无法启动 -->
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <disableIgniteVerb>true</disableIgniteVerb>
+      <deathAction Class="MinchoCandyWars.DeathActionProperties_RevertDivide" Inherit="False"/>
+      <ageGenerationCurve Inherit="False">
+        <points>
+          <li>(0,0)</li>
+          <li>(0.75,1)</li>
+          <li>(1,0)</li>
+        </points>
+      </ageGenerationCurve>
+      <lifeStageAges>
+        <li>
+          <def>MCW_Slime_LifeStage_I</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>MCW_Slime_LifeStage_II</def>
+          <minAge>0.25</minAge>
+        </li>
+        <li>
+          <def>MCW_Slime_LifeStage_III</def>
+          <minAge>0.75</minAge>
+        </li>
+        <li>
+          <def>MCW_Slime_LifeStage_IV</def>
+          <minAge>1.75</minAge>
+        </li>
+      </lifeStageAges>
+    </race>
+
+    <tools Inherit="False">
+      <li>
+        <label>拳头</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>100</power>
+        <cooldownTime>1.25</cooldownTime>
+        <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+        <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+      </li>
+    </tools>
+
+    <comps>
+    </comps>
+  </ThingDef>
+  <LifeStageDef>
+    <defName>MCW_Slime_LifeStage_I</defName>
+    <label>第一阶体型</label>
+    <bodySizeFactor>0.2</bodySizeFactor>
+    <foodMaxFactor>1</foodMaxFactor>
+    <healthScaleFactor>0.2</healthScaleFactor>
+    <hungerRateFactor>1</hungerRateFactor>
+    <marketValueFactor>0.2</marketValueFactor>
+    <meleeDamageFactor>0.2</meleeDamageFactor>
+    <reproductive>false</reproductive>
+    <!-- <statFactors>
+      <MoveSpeed>0.5</MoveSpeed>
+    </statFactors> -->
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>MCW_Slime_LifeStage_II</defName>
+    <label>第二阶体型</label>
+    <bodySizeFactor>0.4</bodySizeFactor>
+    <foodMaxFactor>1</foodMaxFactor>
+    <healthScaleFactor>0.4</healthScaleFactor>
+    <hungerRateFactor>1</hungerRateFactor>
+    <marketValueFactor>0.4</marketValueFactor>
+    <meleeDamageFactor>0.4</meleeDamageFactor>
+    <reproductive>false</reproductive>
+    <!-- <statFactors>
+      <MoveSpeed>0.5</MoveSpeed>
+    </statFactors> -->
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>MCW_Slime_LifeStage_III</defName>
+    <label>第三阶体型</label>
+    <bodySizeFactor>0.8</bodySizeFactor>
+    <foodMaxFactor>1</foodMaxFactor>
+    <healthScaleFactor>0.8</healthScaleFactor>
+    <hungerRateFactor>1</hungerRateFactor>
+    <marketValueFactor>0.8</marketValueFactor>
+    <meleeDamageFactor>0.8</meleeDamageFactor>
+    <reproductive>false</reproductive>
+    <!-- <statFactors>
+      <MoveSpeed>0.5</MoveSpeed>
+    </statFactors> -->
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>MCW_Slime_LifeStage_IV</defName>
+    <label>第四阶体型</label>
+    <bodySizeFactor>0.8</bodySizeFactor>
+    <foodMaxFactor>1</foodMaxFactor>
+    <healthScaleFactor>0.8</healthScaleFactor>
+    <hungerRateFactor>1</hungerRateFactor>
+    <marketValueFactor>0.8</marketValueFactor>
+    <meleeDamageFactor>0.8</meleeDamageFactor>
+    <reproductive>false</reproductive>
+    <label>adult</label>
+    <milkable>true</milkable>
+    <shearable>true</shearable>
+    <caravanRideable>true</caravanRideable>
+  </LifeStageDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>MCW_MinchoSlime</defName>
+		<label>珉巧史莱姆</label>
+		<race>MCW_MinchoSlime</race>
+		<!-- <defaultFactionType>PlayerColony</defaultFactionType> -->
+		<canArriveManhunter>false</canArriveManhunter>
+		<forceDeathOnDowned>true</forceDeathOnDowned>
+		<combatPower>75</combatPower>
+		<ecoSystemWeight>0</ecoSystemWeight>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Race/MCW_Slime/Bodies/Naked_Thin</texPath>
+					<drawSize>0.25</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.5, 0.37)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Spelopede/Dessicated_Spelopede</texPath>
+					<drawSize>1</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Race/MCW_Slime/Bodies/Naked_Thin</texPath>
+					<drawSize>0.5</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.5, 0.37)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Spelopede/Dessicated_Spelopede</texPath>
+					<drawSize>1</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Race/MCW_Slime/Bodies/Naked_Thin</texPath>
+					<drawSize>0.75</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.5, 0.37)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Spelopede/Dessicated_Spelopede</texPath>
+					<drawSize>1</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Race/MCW_Slime/Bodies/Naked_Thin</texPath>
+					<drawSize>1</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.5, 0.37)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Spelopede/Dessicated_Spelopede</texPath>
+					<drawSize>1</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+</Defs>

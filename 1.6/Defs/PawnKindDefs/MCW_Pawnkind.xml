@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<PawnKindDef Name="PDROD_Plumean">
+		<defName>PDROD_Plumean</defName>
+		<label>普露米羽族</label>
+		<race>PDR_Plumean_Race</race>
+		<fixedGender>Female</fixedGender>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<invNutrition>0</invNutrition>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<trader>false</trader>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+		<forceNormalGearQuality>true</forceNormalGearQuality>
+		<initialWillRange>5~20</initialWillRange>
+		<initialResistanceRange>5~20</initialResistanceRange>
+		<minGenerationAge>13</minGenerationAge>
+		<maxGenerationAge>26</maxGenerationAge>
+		<canBeScattered>false</canBeScattered>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>PDROD_Plumean_Backstory_Categories</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<xenotypeSet>
+			<xenotypeChances>
+				<Baseliner MayRequire="Ludeon.RimWorld.Biotech">0</Baseliner>
+
+				<Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0</Dirtmole>
+				<Genie MayRequire="Ludeon.RimWorld.Biotech">0</Genie>
+				<Hussar MayRequire="Ludeon.RimWorld.Biotech">0</Hussar>
+				<Sanguophage MayRequire="Ludeon.RimWorld.Biotech">0</Sanguophage>
+				<Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0</Neanderthal>
+				<Pigskin MayRequire="Ludeon.RimWorld.Biotech">0</Pigskin>
+				<Impid MayRequire="Ludeon.RimWorld.Biotech">0</Impid>
+				<Waster MayRequire="Ludeon.RimWorld.Biotech">0</Waster>
+				<Yttakin MayRequire="Ludeon.RimWorld.Biotech">0</Yttakin>
+				<Highmate MayRequire="Ludeon.RimWorld.Biotech">0</Highmate>
+				<PDR_Plumean_Xenotype MayRequire="Ludeon.RimWorld.Biotech">100</PDR_Plumean_Xenotype>
+			</xenotypeChances>
+		</xenotypeSet>
+		<useFactionXenotypes>false</useFactionXenotypes>
+    <weaponMoney>180~220</weaponMoney>
+		<apparelMoney>99999~99999</apparelMoney>
+		<humanPregnancyChance>0</humanPregnancyChance>
+    <weaponTags>
+      <li>PDROD_Weapon_Init</li>
+    </weaponTags>
+    <apparelTags>
+      <li>PDROD_Soldier_Apparel_Init</li>
+    </apparelTags>
+	</PawnKindDef>
+	<PawnKindDef ParentName="PDROD_Plumean">
+		<defName>PDROD_Plumean_Hostile</defName>
+    <defaultFactionDef>HoraxCult</defaultFactionDef>
+    <weaponTags>
+      <li>PDROD_Soldier_AntiHorse</li>
+    </weaponTags>
+	</PawnKindDef>
+	<PawnKindDef>
+		<defName>PDROD_Prodrake</defName>
+		<label>普罗德拉克</label>
+		<race>PDR_Prodrake_Race</race>
+		<fixedGender>Female</fixedGender>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<invNutrition>0</invNutrition>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<trader>false</trader>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+		<forceNormalGearQuality>true</forceNormalGearQuality>
+		<initialWillRange>5~20</initialWillRange>
+		<initialResistanceRange>5~20</initialResistanceRange>
+		<minGenerationAge>13</minGenerationAge>
+		<maxGenerationAge>26</maxGenerationAge>
+		<canBeScattered>false</canBeScattered>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>PDROD_Prodrake_Backstory_Categories</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<xenotypeSet>
+			<xenotypeChances>
+				<Baseliner MayRequire="Ludeon.RimWorld.Biotech">0</Baseliner>
+
+				<Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0</Dirtmole>
+				<Genie MayRequire="Ludeon.RimWorld.Biotech">0</Genie>
+				<Hussar MayRequire="Ludeon.RimWorld.Biotech">0</Hussar>
+				<Sanguophage MayRequire="Ludeon.RimWorld.Biotech">0</Sanguophage>
+				<Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0</Neanderthal>
+				<Pigskin MayRequire="Ludeon.RimWorld.Biotech">0</Pigskin>
+				<Impid MayRequire="Ludeon.RimWorld.Biotech">0</Impid>
+				<Waster MayRequire="Ludeon.RimWorld.Biotech">0</Waster>
+				<Yttakin MayRequire="Ludeon.RimWorld.Biotech">0</Yttakin>
+				<Highmate MayRequire="Ludeon.RimWorld.Biotech">0</Highmate>
+				<PDR_Prodrake_Xenotype MayRequire="Ludeon.RimWorld.Biotech">100</PDR_Prodrake_Xenotype>
+			</xenotypeChances>
+		</xenotypeSet>
+		<useFactionXenotypes>false</useFactionXenotypes>
+		<apparelMoney>0</apparelMoney>
+		<humanPregnancyChance>0</humanPregnancyChance>
+    <startingHediffs Inherit="False">
+      <li>
+        <def>PDR_HediffRiding</def>
+      </li>
+    </startingHediffs>
+	</PawnKindDef>
+</Defs>

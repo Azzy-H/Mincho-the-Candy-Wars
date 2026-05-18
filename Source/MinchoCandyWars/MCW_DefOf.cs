@@ -22,5 +22,9 @@ namespace MinchoCandyWars
         public static StatDef MCW_PlantsLearningFactor = null!;
         public static StatDef MCW_ShootingLearningFactor = null!;
         public static StatDef MCW_SocialLearningFactor = null!;
+
+        public static ThingDef Mincho_Filth_BloodDef = null!;
+        public static ThingDef Mincho_Mintchoco = null!;
+        public static PawnKindDef MCW_MinchoSlime = null!;
     }
 }

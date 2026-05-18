@@ -46,6 +46,11 @@
     <soundWorking>Recipe_CookMeal</soundWorking>
     <allowMixingIngredients>true</allowMixingIngredients>
     <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <recipeUsers>
+      <li>Mincho_MinchoBench</li>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
     <ingredients>
       <li>
         <filter>
@@ -53,7 +58,7 @@
             <li>RawRice</li>
           </thingDefs>
         </filter>
-        <count>4</count>
+        <count>2</count>
       </li>
     </ingredients>
     <products>
@@ -81,12 +86,17 @@
             <li>RawRice</li>
           </thingDefs>
         </filter>
-        <count>16</count>
+        <count>8</count>
       </li>
     </ingredients>
     <products>
       <MCW_Delicious_Cookies>16</MCW_Delicious_Cookies>
     </products>
+    <recipeUsers>
+      <li>Mincho_MinchoBench</li>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
     <workSkill>Cooking</workSkill>
     <displayPriority>1440</displayPriority>
   </RecipeDef>
@@ -124,7 +134,7 @@
     <label>α型纳米塑形液</label>
     <description>闪耀世界甜品公司研发的纳米机器人的失败品，其凝聚后的无法正常连接核心，所以导致产生的智能体，并不智能。只是类似自我复制的史莱姆，获取能量，制造出更多的薄荷冰淇淋，仅此而已。</description>
     <graphicData>
-      <texPath>Things/Item/MCW_Beta_NanoShapingFluid</texPath>
+      <texPath>Things/Item/MCW_Alpha_NanoShapingFluid</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <genericMarketSellable>false</genericMarketSellable>
