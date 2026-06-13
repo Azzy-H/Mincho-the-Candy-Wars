@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="Mincho_AnimalThingBase">
+    <defName>MCW_MinchoSlime</defName>
+    <label>珉巧史莱姆</label>
+    <description>珉巧史莱姆</description>
+
+    <statBases>
+      <MaxNutrition>1</MaxNutrition>
+      <MoveSpeed>6</MoveSpeed>
+      <MarketValue>0</MarketValue>
+      <LeatherAmount>0</LeatherAmount>
+      <MeatAmount>0</MeatAmount>
+      <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Heat>0</ArmorRating_Heat>
+			<ComfyTemperatureMin>-273</ComfyTemperatureMin>
+			<ComfyTemperatureMax>45</ComfyTemperatureMax>
+      <Wildness>0</Wildness>
+      <Fertility MayRequire="Ludeon.RimWorld.Biotech">0</Fertility>
+			<PsychicSensitivity>0</PsychicSensitivity>
+
+      <WorkToMake>1000</WorkToMake>
+    </statBases>
+
+    <race>
+      <trainability>Intermediate</trainability>
+      <baseHealthScale>2</baseHealthScale>
+      <baseHungerRate>0</baseHungerRate>
+      <baseBodySize>1</baseBodySize>
+			<petness>1</petness>
+      <lifeExpectancy>1000</lifeExpectancy>
+      <hasCorpse>true</hasCorpse> <!-- 不生成尸体的话，deathAction无法启动 -->
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <disableIgniteVerb>true</disableIgniteVerb>
+      <deathAction Class="MinchoCandyWars.DeathActionProperties_RevertDivide" Inherit="False"/>
+      <ageGenerationCurve Inherit="False">
+        <points>
+          <li>(0,0)</li>
+          <li>(0.75,1)</li>
+          <li>(1,0)</li>
+        </points>
+      </ageGenerationCurve>
+      <lifeStageAges>
+        <li>
+          <def>MCW_Slime_LifeStage_I</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>MCW_Slime_LifeStage_II</def>
+          <minAge>0.25</minAge>
+        </li>
+        <li>
+          <def>MCW_Slime_LifeStage_III</def>
+          <minAge>0.75</minAge>
+        </li>
+        <li>
+          <def>MCW_Slime_LifeStage_IV</def>
+          <minAge>1.75</minAge>
+        </li>
+      </lifeStageAges>
+    </race>
+
+    <tools Inherit="False">
+      <li>
+        <label>拳头</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>100</power>
+        <cooldownTime>1.25</cooldownTime>
+        <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+        <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+      </li>
+    </tools>
+
+    <comps>
+    </comps>
+  </ThingDef>
+  <LifeStageDef>
+    <defName>MCW_Slime_LifeStage_I</defName>
+    <label>第一阶体型</label>
+    <bodySizeFactor>0.2</bodySizeFactor>
+    <foodMaxFactor>1</foodMaxFactor>
+    <healthScaleFactor>0.2</healthScaleFactor>
+    <hungerRateFactor>1</hungerRateFactor>
+    <marketValueFactor>0.2</marketValueFactor>
+    <meleeDamageFactor>0.2</meleeDamageFactor>
+    <reproductive>false</reproductive>
+    <!-- <statFactors>
+      <MoveSpeed>0.5</MoveSpeed>
+    </statFactors> -->
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>MCW_Slime_LifeStage_II</defName>
+    <label>第二阶体型</label>
+    <bodySizeFactor>0.4</bodySizeFactor>
+    <foodMaxFactor>1</foodMaxFactor>
+    <healthScaleFactor>0.4</healthScaleFactor>
+    <hungerRateFactor>1</hungerRateFactor>
+    <marketValueFactor>0.4</marketValueFactor>
+    <meleeDamageFactor>0.4</meleeDamageFactor>
+    <reproductive>false</reproductive>
+    <!-- <statFactors>
+      <MoveSpeed>0.5</MoveSpeed>
+    </statFactors> -->
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>MCW_Slime_LifeStage_III</defName>
+    <label>第三阶体型</label>
+    <bodySizeFactor>0.8</bodySizeFactor>
+    <foodMaxFactor>1</foodMaxFactor>
+    <healthScaleFactor>0.8</healthScaleFactor>
+    <hungerRateFactor>1</hungerRateFactor>
+    <marketValueFactor>0.8</marketValueFactor>
+    <meleeDamageFactor>0.8</meleeDamageFactor>
+    <reproductive>false</reproductive>
+    <!-- <statFactors>
+      <MoveSpeed>0.5</MoveSpeed>
+    </statFactors> -->
+  </LifeStageDef>
+  <LifeStageDef>
+    <defName>MCW_Slime_LifeStage_IV</defName>
+    <label>第四阶体型</label>
+    <bodySizeFactor>0.8</bodySizeFactor>
+    <foodMaxFactor>1</foodMaxFactor>
+    <healthScaleFactor>0.8</healthScaleFactor>
+    <hungerRateFactor>1</hungerRateFactor>
+    <marketValueFactor>0.8</marketValueFactor>
+    <meleeDamageFactor>0.8</meleeDamageFactor>
+    <reproductive>false</reproductive>
+    <label>adult</label>
+    <milkable>true</milkable>
+    <shearable>true</shearable>
+    <caravanRideable>true</caravanRideable>
+  </LifeStageDef>
+  
+  <ThingDef Abstract="True" Name="MCW_Mech_Base" ParentName="LightMechanoid">
+    <statBases>
+      <MoveSpeed>5</MoveSpeed>
+      <!-- <WastepacksPerRecharge MayRequire="Ludeon.RimWorld.Biotech">0</WastepacksPerRecharge> -->
+    </statBases>
+    <race>
+      <mechEnabledWorkTypes>
+        <li>Hauling</li>
+        <!-- <li>Mining</li> -->
+        <!-- <li>Construction</li> -->
+        <!-- <li>Crafting</li> -->
+        <!-- <li>Smithing</li> -->
+        <!-- <li>Tailoring</li> -->
+        <!-- <li>Cooking</li> -->
+        <!-- <li>Research</li> -->
+        <!-- <li>PlantCutting</li> -->
+        <!-- <li>Growing</li> -->
+        <li>Cleaning</li>
+        <!-- <li>Doctor</li> -->
+        <li>Firefighter</li>
+      </mechEnabledWorkTypes>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+        </li>
+      </lifeStageAges>
+      <!-- <thinkTreeConstant>WarUrchinConstant</thinkTreeConstant> -->
+      <!-- <baseHealthScale>4</baseHealthScale> -->
+      <canFlyInVacuum>true</canFlyInVacuum>
+    </race>
+    <comps>
+ 
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="MCW_Mech_Base">
+    <defName>MCW_Mech_I_Maid</defName>
+    <label>次级珉巧子个体-女仆I型</label>
+    <description>小小冰淇淋女仆，在内照顾姐姐们起居。</description>
+    <race>
+      <mechEnabledWorkTypes>
+        <!-- <li>Hauling</li> -->
+        <!-- <li>Mining</li> -->  
+        <!-- <li>Construction</li> -->
+        <!-- <li>Crafting</li> -->
+        <!-- <li>Smithing</li> -->
+        <!-- <li>Tailoring</li> -->
+        <li>Cooking</li>
+        <!-- <li>Research</li> -->
+        <!-- <li>PlantCutting</li> -->
+        <!-- <li>Growing</li> -->
+        <!-- <li>Cleaning</li> -->
+        <li>Doctor</li>
+        <!-- <li>Firefighter</li> -->
+      </mechEnabledWorkTypes>
+    </race>
+  </ThingDef>
+  <ThingDef ParentName="MCW_Mech_Base">
+    <defName>MCW_Mech_II_Maid</defName>
+    <label>次级珉巧子个体-女仆Ⅱ型</label>
+    <description>小小冰淇淋女仆，在外为姐姐们分忧。</description>
+    <race>
+      <mechEnabledWorkTypes>
+        <!-- <li>Hauling</li> -->
+        <li>Mining</li>  
+        <!-- <li>Construction</li> -->
+        <!-- <li>Crafting</li> -->
+        <!-- <li>Smithing</li> -->
+        <!-- <li>Tailoring</li> -->
+        <!-- <li>Cooking</li> -->
+        <!-- <li>Research</li> -->
+        <li>PlantCutting</li>
+        <li>Growing</li>
+        <!-- <li>Cleaning</li> -->
+        <!-- <li>Doctor</li> -->
+        <!-- <li>Firefighter</li> -->
+      </mechEnabledWorkTypes>
+    </race>
+  </ThingDef>
+  <ThingDef ParentName="MCW_Mech_Base">
+    <defName>MCW_Mech_Battle</defName>
+    <label>次级珉巧子个体-战斗型</label>
+    <description>小小冰淇淋骑士，用薄荷钉头锤修理姐姐们的敌人！</description>
+    <statBases>
+      <BandwidthCost>2</BandwidthCost>
+    </statBases>
+    <race>
+      <mechEnabledWorkTypes>
+        <li>Hauling</li>
+        <!-- <li>Mining</li>   -->
+        <!-- <li>Construction</li> -->
+        <!-- <li>Crafting</li> -->
+        <!-- <li>Smithing</li> -->
+        <!-- <li>Tailoring</li> -->
+        <!-- <li>Cooking</li> -->
+        <!-- <li>Research</li> -->
+        <!-- <li>PlantCutting</li> -->
+        <!-- <li>Growing</li> -->
+        <li>Cleaning</li>
+        <!-- <li>Doctor</li> -->
+        <!-- <li>Firefighter</li> -->
+      </mechEnabledWorkTypes>
+    </race>
+  </ThingDef>
+  <ThingDef ParentName="MCW_Mech_Base">
+    <defName>MCW_Mech_Defender</defName>
+    <label>次级珉巧子个体-防卫型</label>
+    <description>小小冰淇淋骑士，手持大盾保护姐姐们</description>
+    <statBases>
+      <BandwidthCost>2</BandwidthCost>
+    </statBases>
+    <race>
+      <mechEnabledWorkTypes>
+        <li>Hauling</li>
+        <!-- <li>Mining</li>   -->
+        <!-- <li>Construction</li> -->
+        <!-- <li>Crafting</li> -->
+        <!-- <li>Smithing</li> -->
+        <!-- <li>Tailoring</li> -->
+        <!-- <li>Cooking</li> -->
+        <!-- <li>Research</li> -->
+        <!-- <li>PlantCutting</li> -->
+        <!-- <li>Growing</li> -->
+        <li>Cleaning</li>
+        <!-- <li>Doctor</li> -->
+        <!-- <li>Firefighter</li> -->
+      </mechEnabledWorkTypes>
+    </race>
+  </ThingDef>
+  <ThingDef ParentName="MCW_Mech_Base">
+    <defName>MCW_Mech_Gunner</defName>
+    <label>次级珉巧子个体-攻击型</label>
+    <description>小小冰淇淋抢手，使用无情的棒棒糖夺走坏人的生命</description>
+    <statBases>
+      <BandwidthCost>2</BandwidthCost>
+    </statBases>
+    <race>
+      <mechEnabledWorkTypes>
+        <li>Hauling</li>
+        <!-- <li>Mining</li>   -->
+        <!-- <li>Construction</li> -->
+        <!-- <li>Crafting</li> -->
+        <!-- <li>Smithing</li> -->
+        <!-- <li>Tailoring</li> -->
+        <!-- <li>Cooking</li> -->
+        <!-- <li>Research</li> -->
+        <!-- <li>PlantCutting</li> -->
+        <!-- <li>Growing</li> -->
+        <li>Cleaning</li>
+        <!-- <li>Doctor</li> -->
+        <!-- <li>Firefighter</li> -->
+      </mechEnabledWorkTypes>
+    </race>
+  </ThingDef>
+</Defs>

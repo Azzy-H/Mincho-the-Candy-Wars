@@ -1,6 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!-- 灭火器 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>MCW_FirefoamPopper</defName>
+    <label>薄荷巧克力复用型号灭火单元</label>
+    <description>薄荷巧克力复用型号灭火单元</description>
+    <thingClass>Building_FirefoamPopper</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Misc/MCW_FirefoamPopper</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shadowData>
+        <volume>(0.25, 0.35, 0.25)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>10</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>5</Beauty>
+    </statBases>
+    <fillPercent>0.30</fillPercent>
+    <costList>
+      <Mincho_ChocoStick>5</Mincho_ChocoStick>
+      <Mincho_BlocksMintchoco>10</Mincho_BlocksMintchoco>
+    </costList>
+    <specialDisplayRadius>9.9</specialDisplayRadius>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <pathCost>30</pathCost>
+    <passability>PassThroughOnly</passability>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2070</uiOrder>
+    <rotatable>true</rotatable>
+    <designationHotKey>Misc7</designationHotKey>
+    <!-- <researchPrerequisites>
+      <li>Firefoam</li>
+    </researchPrerequisites> -->
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>9.9</explosiveRadius>
+        <explosiveDamageType>Extinguish</explosiveDamageType>
+        <startWickHitPointsPercent>-1</startWickHitPointsPercent>
+        <startWickOnDamageTaken>
+          <li>Flame</li>
+        </startWickOnDamageTaken>
+        <postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
+        <postExplosionSpawnChance>1</postExplosionSpawnChance>
+        <postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
+        <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+        <explosionEffect>ExtinguisherExplosion</explosionEffect>
+        <explosionSound>Explosion_FirefoamPopper</explosionSound>
+      </li>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Trigger {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>CompUseEffect_StartWick</compClass>
+      </li>
+      <li Class="CompProperties_ProximityFuse">
+        <target>Fire</target>
+        <radius>5</radius>
+      </li>
+    </comps>
+  </ThingDef>
 
+  <!-- 床头柜 -->
+  <ThingDef ParentName="TableBase">
+    <defName>MCW_EndTable</defName>
+    <label>薄荷冰淇淋床头柜</label>
+    <description>睁眼就能见到美味的薄荷冰淇淋，天下还有比这更幸福的事情吗？</description>
+    <surfaceType>Item</surfaceType>
+    <uiOrder>2060</uiOrder>
+    <graphicData>
+      <texPath>Things/Building/EndTable/MCW_EndTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(0.8,0.85)</drawSize>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Mass>5</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>3</Beauty>
+    </statBases>
+    <pathCost>30</pathCost>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <stuffCategories Inherit="False" />
+    <costStuffCount>0</costStuffCount>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <!-- <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites> -->
+    <costList>
+      <Mincho_BlocksMintchoco>40</Mincho_BlocksMintchoco>
+    </costList>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>false</castEdgeShadows>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.1</Comfort>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <mustBePlacedAdjacentCardinalToBedHead>true</mustBePlacedAdjacentCardinalToBedHead>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="TableBase">
+    <defName>MCW_Cabinet</defName>
+    <label>巧克力矮柜</label>
+    <description>听说有一位珉巧被称为糖果女巫，而她的家，都是巧克力做的！</description>
+    <surfaceType>Item</surfaceType>
+    <uiOrder>2060</uiOrder>
+    <graphicData>
+      <texPath>Things/Building/EndTable/MCW_Cabinet</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,1)</drawSize>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+      </shadowData>
+    </graphicData>
+		<size>(2,1)</size>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Mass>5</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>3</Beauty>
+    </statBases>
+    <pathCost>30</pathCost>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <stuffCategories Inherit="False" />
+    <costStuffCount>0</costStuffCount>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <!-- <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites> -->
+    <costList>
+      <Mincho_ChocoStick>40</Mincho_ChocoStick>
+    </costList>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>false</castEdgeShadows>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.25</Comfort>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <mustBePlacedAdjacentCardinalToBedHead>true</mustBePlacedAdjacentCardinalToBedHead>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 桌子 -->
+  <ThingDef ParentName="TableGatherSpotBase">
+    <defName>MCW_Table2x4c</defName>
+    <label>大块巧克力饼干桌 (2x4)</label>
+    <description>请各位不要在吃饭的时候吃桌子！</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/MCW_Table2x4c</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(3.75,2)</drawSize>
+      <shadowData>
+        <volume>(0.85, 0.5, 0.5)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>750</WorkToBuild>
+      <Mass>5</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>0.5</Beauty>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+    </statBases>
+    <stuffCategories Inherit="False" />
+    <costStuffCount>0</costStuffCount>
+    <costList>
+      <Mincho_ChocoStick>120</Mincho_ChocoStick>
+    </costList>
+    <size>(4,2)</size>
+    <designationCategory>Misc</designationCategory>
+  </ThingDef>
+
+  <!-- 桌椅 -->
 	<ThingDef ParentName="TableGatherSpotBase">
 		<defName>MCW_MinchoTable2x2c</defName>
 		<label>mincho table (2x2)</label>
@@ -36,7 +242,6 @@
 		</graphicData>
 		-->
 	</ThingDef>
-
 	<ThingDef ParentName="FurnitureWithQualityBase">
 		<defName>MCW_MinchoStool</defName>
 		<label>mincho stool</label>
@@ -98,7 +303,6 @@
 		</graphicData>
 		-->
 	</ThingDef>
-
 	<ThingDef ParentName="FurnitureWithQualityBase">
 		<defName>MCW_MinchoCouch</defName>
 		<label>mincho couch</label>
@@ -160,6 +364,7 @@
 		-->
 	</ThingDef>
 
+  <!-- 地板 -->
 	<TerrainDef ParentName="FloorBase">
 		<defName>MCW_MinchoFloorA</defName>
 		<label>mincho floor A</label>
@@ -184,7 +389,6 @@
 		<texturePath>Terrain/Surfaces/TODO_MCW_MinchoFloorA</texturePath>
 		-->
 	</TerrainDef>
-
 	<TerrainDef ParentName="FloorBase">
 		<defName>MCW_MinchoFloorB</defName>
 		<label>mincho floor B</label>
@@ -209,7 +413,6 @@
 		<texturePath>Terrain/Surfaces/TODO_MCW_MinchoFloorB</texturePath>
 		-->
 	</TerrainDef>
-
 	<TerrainDef ParentName="FloorBase">
 		<defName>MCW_MinchoFloorC</defName>
 		<label>mincho floor C</label>
@@ -234,5 +437,4 @@
 		<texturePath>Terrain/Surfaces/TODO_MCW_MinchoFloorC</texturePath>
 		-->
 	</TerrainDef>
-
 </Defs>

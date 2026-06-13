@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-    
+  <!-- Thrumbo passes -->
+  <MCW_LetterLabelMinchoSlimePasses>游荡的珉巧史莱姆</MCW_LetterLabelMinchoSlimePasses>
+  <MCW_LetterMinchoSlimePasses>一群四处游荡的珉巧史莱姆正在路过。\n\n珉巧史莱姆是闪耀世界甜品公司的产品，虽然智商较低，但是经过科学的养殖可以产出大量薄荷冰淇淋。它们在死亡时会自动分裂为较小的个体，这使得它们很难被完全击杀。\n\n珉巧史莱姆将会在几天后离开。</MCW_LetterMinchoSlimePasses>
 </LanguageData>

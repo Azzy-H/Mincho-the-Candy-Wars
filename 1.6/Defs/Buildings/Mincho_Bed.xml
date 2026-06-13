@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
 	<JoyKindDef>
 		<defName>MCW_MinchoBedJoy</defName>
 		<label>mincho relaxation</label>
@@ -17,6 +16,8 @@
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(2,2)</drawSize>
 		</graphicData>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>false</castEdgeShadows>
 		<tickerType>Long</tickerType>
 		<comps>
 			<li Class="MinchoCandyWars.Buildings.CompProperties_CellTemperatureOverride">
@@ -25,12 +26,17 @@
 			<li Class="CompProperties_SelfhealHitpoints">
 				<ticksPerHeal>2000</ticksPerHeal>
 			</li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>MCW_EndTable</li>
+          <li>MCW_Cabinet</li>
+        </linkableFacilities>
+      </li>
 		</comps>
 		<statBases>
 			<BedHungerRateFactor>1.5</BedHungerRateFactor>
 		</statBases>
 	</ThingDef>
-
 	<ThingDef ParentName="DoubleBed">
 		<defName>MCW_MinchoDoubleBed</defName>
 		<label>mincho double bed</label>
@@ -39,8 +45,10 @@
 			<texPath>Things/Building/Furniture/Bed/MCW_MinchoDoubleBed</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(2,2)</drawSize>
+			<drawSize>(2.15,2.45)</drawSize>
 		</graphicData>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>false</castEdgeShadows>
 		<tickerType>Long</tickerType>
 		<comps>
 			<li Class="MinchoCandyWars.Buildings.CompProperties_CellTemperatureOverride">
@@ -49,6 +57,12 @@
 			<li Class="CompProperties_SelfhealHitpoints">
 				<ticksPerHeal>2000</ticksPerHeal>
 			</li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>MCW_EndTable</li>
+          <li>MCW_Cabinet</li>
+        </linkableFacilities>
+      </li>
 		</comps>
 		<statBases>
 			<BedHungerRateFactor>1.5</BedHungerRateFactor>
@@ -65,6 +79,8 @@
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(2,2)</drawSize>
 		</graphicData>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>false</castEdgeShadows>
 		<tickerType>Long</tickerType>
 		<comps>
 			<li Class="MinchoCandyWars.Buildings.CompProperties_CellTemperatureOverride">
@@ -76,13 +92,18 @@
 			<li Class="MinchoCandyWars.Buildings.CompProperties_BedJoyGain">
 				<joyKind>MCW_MinchoBedJoy</joyKind>
 			</li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>MCW_EndTable</li>
+          <li>MCW_Cabinet</li>
+        </linkableFacilities>
+      </li>
 		</comps>
 		<statBases>
 			<BedHungerRateFactor>1.5</BedHungerRateFactor>
 			<JoyGainFactor>0.5</JoyGainFactor>
 		</statBases>
 	</ThingDef>
-
 	<ThingDef ParentName="DoubleBed">
 		<defName>MCW_MinchoLuxuryDoubleBed</defName>
 		<label>luxury mincho double bed</label>
@@ -91,8 +112,10 @@
 			<texPath>Things/Building/Furniture/Bed/MCW_MinchoLuxuryDoubleBed</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(2,2)</drawSize>
+			<drawSize>(2.15,2.45)</drawSize>
 		</graphicData>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>false</castEdgeShadows>
 		<tickerType>Long</tickerType>
 		<comps>
 			<li Class="MinchoCandyWars.Buildings.CompProperties_CellTemperatureOverride">
@@ -104,11 +127,16 @@
 			<li Class="MinchoCandyWars.Buildings.CompProperties_BedJoyGain">
 				<joyKind>MCW_MinchoBedJoy</joyKind>
 			</li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>MCW_EndTable</li>
+          <li>MCW_Cabinet</li>
+        </linkableFacilities>
+      </li>
 		</comps>
 		<statBases>
 			<BedHungerRateFactor>1.5</BedHungerRateFactor>
 			<JoyGainFactor>0.5</JoyGainFactor>
 		</statBases>
 	</ThingDef>
-
 </Defs>
