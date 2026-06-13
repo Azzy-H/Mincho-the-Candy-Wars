@@ -22,5 +22,7 @@ namespace MinchoCandyWars
         public static StatDef MCW_PlantsLearningFactor = null!;
         public static StatDef MCW_ShootingLearningFactor = null!;
         public static StatDef MCW_SocialLearningFactor = null!;
+
+        public static HediffDef MCW_MechBoost = null!;
     }
 }

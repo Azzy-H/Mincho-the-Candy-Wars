@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Text;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -47,7 +48,7 @@ namespace MinchoCandyWars.Patch.Stat
             {
                 return;
             }
-
+            StringBuilder stringBuilder = new StringBuilder($"MCW: Added stats from CandyTypeStage to StatDef.mutableStats.");
             foreach (CandyTypeStage stage in stages)
             {
                 if (stage == null)
@@ -55,24 +56,24 @@ namespace MinchoCandyWars.Patch.Stat
                     continue;
                 }
 
-                AddStats(stage.statOffsets, mutableStats);
-                AddStats(stage.statFactors, mutableStats);
+                AddStats(stage.statOffsets, mutableStats, stringBuilder);
+                AddStats(stage.statFactors, mutableStats, stringBuilder);
             }
+            Log.Message(stringBuilder.ToString());
         }
 
-        private static void AddStats(List<StatModifier>? statModifiers, HashSet<StatDef> mutableStats)
+        private static void AddStats(List<StatModifier>? statModifiers, HashSet<StatDef> mutableStats, StringBuilder stringBuilder)
         {
             if (statModifiers == null)
             {
                 return;
             }
-
             foreach (StatModifier statModifier in statModifiers)
             {
                 if (statModifier?.stat != null)
                 {
                     mutableStats.Add(statModifier.stat);
-                    Log.Message($"MCW: Added stat {statModifier.stat.defName} from CandyTypeStage to StatDef.mutableStats.");
+                    stringBuilder.AppendLine($"- {statModifier.stat.defName}");
                 }
             }
         }

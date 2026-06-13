@@ -1,16 +1,226 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+    <AbilityDef ParentName="AbilityTouchBase">
+        <defName>MCW_QianJiCandyAbility_MechGestatorAcceleration</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>mech gestator acceleration</label>
+        <description>TODO</description>
+        <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>        <!-- TODO -->
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <!--<category></category> TODO-->
+        <displayOrder>400</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>2500</cooldownTicksRange>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>1</warmupTime>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetHumans>false</canTargetHumans>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetSelf>false</canTargetSelf>
+                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li>
+                <compClass>MinchoCandyWars.Abilities.QianJiCandy.CompAbilityEffect_MechGestatorAcceleration</compClass>
+            </li>
+            <li Class="CompProperties_AbilityRequiresCapacity">                <!-- 需要操作能力 -->
+                <capacity>Manipulation</capacity>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>QianJiCandy</candyType>
+                <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>1</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>30</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
 
-    <!-- 工作台加速 -->
+    <AbilityDef>
+        <defName>MCW_QianJiCandyAbility_EMPBolt</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>EMP bolt</label>
+        <description>TODO</description>
+        <verbProperties>
+            <range>30</range>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>MCW_QianJiCandyAbility_EMPBolt</projectileDef>
+            </li>
+        </comps>
+        <iconPath>UI/Abilities/Koelime_FireBall</iconPath>
+        <cooldownTicksRange>5000</cooldownTicksRange>
+        <aiCanUse>true</aiCanUse>
+        <displayOrder>300</displayOrder>
+        <category>Sanguophage</category>
+        <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>12</range>
+            <warmupTime>1</warmupTime>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>QianJiCandy</candyType>
+                <requiredMinchoCoreGrade>2</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>MCW_QianJiCandyAbility_EMPBolt</defName>
+        <label>EMPBolt</label>
+        <graphicData>
+            <texPath>Things/Projectile/FireBall</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+            <drawSize>2</drawSize>
+        </graphicData>
+        <thingClass>MinchoCandyWars.Projectiles.Projectile_Explosive_NoFriendlyFire</thingClass>
+        <projectile>
+            <speed>70</speed>
+            <damageDef>EMP</damageDef>
+            <damageAmountBase>25</damageAmountBase>
+            <armorPenetrationBase>0.4</armorPenetrationBase>
+            <explosionRadius>3</explosionRadius>
+            <ai_IsIncendiary>true</ai_IsIncendiary>
+            <arcHeightFactor>0.2</arcHeightFactor>
+            <shadowSize>0.6</shadowSize>
+        </projectile>
+    </ThingDef>
+
+    <AbilityDef>
+        <defName>MCW_QianJiCandyAbility_MechHack</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>MechHack</label>
+        <description>TODO</description>
+        <verbProperties>
+            <range>30</range>
+        </verbProperties>
+        <comps>
+            <li>
+                <compClass>MinchoCandyWars.Abilities.QianJiCandy.CompAbilityEffect_MechHack</compClass>
+            </li>
+        </comps>
+        <iconPath>UI/Abilities/Koelime_FireBall</iconPath>
+        <cooldownTicksRange>60000</cooldownTicksRange>
+        <aiCanUse>true</aiCanUse>
+        <displayOrder>300</displayOrder>
+        <category>Sanguophage</category>
+        <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>7</range>
+            <warmupTime>5</warmupTime>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetHumans>false</canTargetHumans>
+                <canTargetMechs>true</canTargetMechs>
+                <canTargetSelf>false</canTargetSelf>
+                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+            </targetParams>
+        </verbProperties>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>QianJiCandy</candyType>
+                <requiredMinchoCoreGrade>4</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>2</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>250</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <AbilityDef>
+        <defName>MCW_QianJiCandyAbility_MechBoost</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>MechBoost</label>
+        <description>TODO</description>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <comps>
+            <li>
+                <compClass>MinchoCandyWars.Abilities.QianJiCandy.CompAbilityEffect_MechBoost</compClass>
+            </li>
+        </comps>
+        <iconPath>UI/Abilities/Koelime_FireBall</iconPath>
+        <cooldownTicksRange>2500</cooldownTicksRange>
+        <aiCanUse>true</aiCanUse>
+        <displayOrder>300</displayOrder>
+        <category>Sanguophage</category>
+        <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>1</warmupTime>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetHumans>false</canTargetHumans>
+                <canTargetMechs>true</canTargetMechs>
+                <canTargetSelf>false</canTargetSelf>
+                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+            </targetParams>
+        </verbProperties>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>QianJiCandy</candyType>
+                <requiredMinchoCoreGrade>4</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>5</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>400</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+<HediffDef>
+    <defName>MCW_MechBoost</defName>
+    <label>MechBoost</label>
+    <description>MechBoost</description>
+    <stages>
+      <li>
+        <statFactors>
+          <Flammability>0</Flammability>
+        </statFactors>
+      </li>
+    </stages>
+    <isBad>false</isBad>
+    <hediffClass>MinchoCandyWars.Abilities.QianJiCandy.Hediff_MechBoost</hediffClass>
+  </HediffDef>
+
+    <!--    <!~~ 工作台加速 ~~>
     <AbilityDef ParentName="AbilityTouchBase">
         <defName>MCW_QianJiCandyAbility_WorkbenchAcceleration</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>workbench acceleration</label>
         <description>TODO</description>
-        <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath><!-- TODO -->
+        <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath><!~~ TODO ~~>
         <warmupStartSound>Coagulate_Cast</warmupStartSound>
         <jobDef>CastAbilityOnThingMelee</jobDef>
-        <!--<category></category> TODO-->
+        <!~~<category></category> TODO~~>
         <displayOrder>400</displayOrder>
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -33,12 +243,12 @@
         </verbProperties>
         <comps>
             <li Class="MinchoCandyWars.Abilities.QianJiCandy.WorkbenchAcceleration.CompProperties_AbilityEffect_WorkbenchAcceleration">
-                <baseDurationTicks>5000</baseDurationTicks><!-- 基础持续时间 -->
-                <durationTicksPerBodyGrade>5000</durationTicksPerBodyGrade><!-- 每个身体等级增加的持续时间 -->
-                <baseAccelerationFactor>1.0</baseAccelerationFactor><!-- 基础加速倍率 -->
-                <accelerationFactorPerCoreGrade>0.2</accelerationFactorPerCoreGrade><!-- 每个核心等级增加的加速倍率 -->
+                <baseDurationTicks>5000</baseDurationTicks><!~~ 基础持续时间 ~~>
+                <durationTicksPerBodyGrade>5000</durationTicksPerBodyGrade><!~~ 每个身体等级增加的持续时间 ~~>
+                <baseAccelerationFactor>1.0</baseAccelerationFactor><!~~ 基础加速倍率 ~~>
+                <accelerationFactorPerCoreGrade>0.2</accelerationFactorPerCoreGrade><!~~ 每个核心等级增加的加速倍率 ~~>
             </li>
-            <li Class="CompProperties_AbilityRequiresCapacity"><!-- 需要操作能力 -->
+            <li Class="CompProperties_AbilityRequiresCapacity"><!~~ 需要操作能力 ~~>
                 <capacity>Manipulation</capacity>
             </li>
         </comps>
@@ -50,6 +260,6 @@
                 <requiredMinchoCandyValue>0</requiredMinchoCandyValue>
             </li>
         </modExtensions>
-    </AbilityDef>
+    </AbilityDef>-->
 
 </Defs>

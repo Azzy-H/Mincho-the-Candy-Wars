@@ -11,6 +11,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Abilities\QianJiCandy\WorkbenchAcceleration\**" />
+	  <EmbeddedResource Remove="Abilities\QianJiCandy\WorkbenchAcceleration\**" />
+	  <None Remove="Abilities\QianJiCandy\WorkbenchAcceleration\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Remove="Buff\MinchoCandyBuffDef.cs" />
 	</ItemGroup>
 
