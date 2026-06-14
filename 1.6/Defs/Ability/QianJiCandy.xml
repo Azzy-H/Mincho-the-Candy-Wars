@@ -5,7 +5,7 @@
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>mech gestator acceleration</label>
         <description>TODO</description>
-        <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>        <!-- TODO -->
+        <iconPath>UI/Gizmos/Abilities/QianJi/MCW_MechGestatorAcceleration</iconPath>        <!-- TODO -->
         <warmupStartSound>Coagulate_Cast</warmupStartSound>
         <jobDef>CastAbilityOnThingMelee</jobDef>
         <!--<category></category> TODO-->
@@ -61,7 +61,7 @@
                 <projectileDef>MCW_QianJiCandyAbility_EMPBolt</projectileDef>
             </li>
         </comps>
-        <iconPath>UI/Abilities/Koelime_FireBall</iconPath>
+        <iconPath>UI/Gizmos/Abilities/QianJi/MCW_EMPBolt</iconPath>
         <cooldownTicksRange>5000</cooldownTicksRange>
         <aiCanUse>true</aiCanUse>
         <displayOrder>300</displayOrder>
@@ -120,7 +120,7 @@
                 <compClass>MinchoCandyWars.Abilities.QianJiCandy.CompAbilityEffect_MechHack</compClass>
             </li>
         </comps>
-        <iconPath>UI/Abilities/Koelime_FireBall</iconPath>
+        <iconPath>UI/Gizmos/Abilities/QianJi/MCW_MechHack</iconPath>
         <cooldownTicksRange>60000</cooldownTicksRange>
         <aiCanUse>true</aiCanUse>
         <displayOrder>300</displayOrder>
@@ -163,7 +163,7 @@
                 <compClass>MinchoCandyWars.Abilities.QianJiCandy.CompAbilityEffect_MechBoost</compClass>
             </li>
         </comps>
-        <iconPath>UI/Abilities/Koelime_FireBall</iconPath>
+        <iconPath>UI/Gizmos/Abilities/QianJi/MCW_MechBoost</iconPath>
         <cooldownTicksRange>2500</cooldownTicksRange>
         <aiCanUse>true</aiCanUse>
         <displayOrder>300</displayOrder>
