@@ -9,4 +9,17 @@
         </value>
     </Operation>
 
+    <!-- 为每个 CompProperties_ResourceHarvestable 添加 productAffectedStats -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps/li[@Class="Mincho_HPF.CompProperties_ResourceHarvestable"]</xpath>
+        <value>
+            <productAffectedStats>
+                <li>
+                    <statDef>MCW_IceCreamOutput</statDef>
+                    <multiplier>20</multiplier>
+                </li>
+            </productAffectedStats>
+        </value>
+    </Operation>
+
 </Patch>

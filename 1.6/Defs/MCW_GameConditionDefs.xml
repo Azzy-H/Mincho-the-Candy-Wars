@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <GameConditionDef>
+    <defName>MCW_MannaHeartCondition</defName>
+    <label>Manna's Heart</label>
+    <description>The soothing presence of a Manna Candy brings peace to everyone on the map.</description>
+    <conditionClass>MinchoCandyWars.Abilities.GanLuCandy.GameCondition_MannaHeart</conditionClass>
+    <canBePermanent>true</canBePermanent>
+  </GameConditionDef>
+</Defs>

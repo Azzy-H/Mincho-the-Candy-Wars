@@ -6,6 +6,8 @@ namespace MinchoCandyWars
     [DefOf]
     public static class MCW_DefOf
     {
+        public static ThingDef Mincho_ThingDef = null!;
+
         public static HediffDef MCW_ProductionQualityBoost = null!;
 
         public static StatDef MCW_WorkSpeedGlobalFactorMech = null!;
@@ -26,5 +28,14 @@ namespace MinchoCandyWars
         public static ThingDef Mincho_Filth_BloodDef = null!;
         public static ThingDef Mincho_Mintchoco = null!;
         public static PawnKindDef MCW_MinchoSlime = null!;
+
+        // GanLu Candy
+        public static HediffDef MCW_MannaHeart = null!;
+        public static GameConditionDef MCW_MannaHeartCondition = null!;
+        public static HediffDef MCW_MannaConnection = null!;
+        public static HediffDef MCW_MinchoTentacle = null!;
+        public static HediffDef MCW_MannaFairy = null!;
+        public static HediffDef MCW_MannaFairyBuff = null!;
+        public static StatDef MCW_IceCreamOutput = null!;
     }
 }

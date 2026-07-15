@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- ===== 甘露连接 ===== -->
+    <AbilityDef ParentName="AbilityTouchBase">
+        <defName>MCW_GanLuCandyAbility_MannaConnection</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>Manna Connection</label>
+        <description>TODO</description>
+        <iconPath>UI/Gizmos/Abilities/GanLu/MCW_MannaConnection</iconPath>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <displayOrder>400</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>300000</cooldownTicksRange><!-- 5 days -->
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>30</warmupTime>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetSelf>false</canTargetSelf>
+                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityEffect">
+                <compClass>MinchoCandyWars.Abilities.GanLuCandy.CompAbilityEffect_MannaConnection</compClass>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>GanLuCandy</candyType>
+                <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>0</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <!-- ===== 珉巧敷药 ===== -->
+    <AbilityDef ParentName="AbilityTouchBase">
+        <defName>MCW_GanLuCandyAbility_MinchoBandage</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>Mincho Bandage</label>
+        <description>TODO</description>
+        <iconPath>UI/Gizmos/Abilities/GanLu/MCW_MinchoBandage</iconPath>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <displayOrder>300</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>600</cooldownTicksRange><!-- 10 seconds -->
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>1</warmupTime>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetAnimals>true</canTargetAnimals>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetSelf>true</canTargetSelf>
+                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="MinchoCandyWars.Abilities.GanLuCandy.CompProperties_AbilityMinchoBandage">
+                <tendQualityRange>0.7~1.0</tendQualityRange>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>GanLuCandy</candyType>
+                <requiredMinchoCoreGrade>2</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <!-- ===== 冰淇淋重塑 ===== -->
+    <AbilityDef ParentName="AbilityTouchBase">
+        <defName>MCW_GanLuCandyAbility_IceCreamReshape</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>Ice Cream Reshape</label>
+        <description>TODO</description>
+        <iconPath>UI/Gizmos/Abilities/GanLu/MCW_IceCreamReshape</iconPath>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <displayOrder>200</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>300000</cooldownTicksRange><!-- 5 days -->
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>30</warmupTime>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetAnimals>true</canTargetAnimals>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetSelf>true</canTargetSelf>
+                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityEffect">
+                <compClass>MinchoCandyWars.Abilities.GanLuCandy.CompAbilityEffect_IceCreamReshape</compClass>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>GanLuCandy</candyType>
+                <requiredMinchoCoreGrade>5</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>300</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <!-- ===== 甘露妖精 ===== -->
+    <AbilityDef ParentName="AbilityTouchBase">
+        <defName>MCW_GanLuCandyAbility_MannaFairy</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>Manna Fairy</label>
+        <description>TODO</description>
+        <iconPath>UI/Gizmos/Abilities/GanLu/MCW_MannaFairy</iconPath>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <displayOrder>100</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>6000</cooldownTicksRange><!-- 1 hour -->
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>10</warmupTime>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetSelf>false</canTargetSelf>
+                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityEffect">
+                <compClass>MinchoCandyWars.Abilities.GanLuCandy.CompAbilityEffect_MannaFairy</compClass>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>GanLuCandy</candyType>
+                <requiredMinchoCoreGrade>3</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>5</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>200</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+</Defs>

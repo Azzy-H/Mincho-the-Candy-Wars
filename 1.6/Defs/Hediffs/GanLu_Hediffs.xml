@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- 心之甘露：殖民地心情加成 +5 -->
+  <HediffDef>
+    <defName>MCW_MannaHeart</defName>
+    <label>Heart of Manna</label>
+    <description>Soothing presence of the Manna Candy brings peace to the colony.</description>
+    <isBad>false</isBad>
+    <hediffClass>MinchoCandyWars.Abilities.GanLuCandy.Hediff_MannaHeart</hediffClass>
+  </HediffDef>
+
+  <!-- 甘露连接 (配对hediff, 存储对方引用, stage 0=远离, stage 1=同图激活) -->
+  <HediffDef>
+    <defName>MCW_MannaConnection</defName>
+    <label>Manna Connection</label>
+    <description>A deep bond connecting two Mincho souls.</description>
+    <isBad>false</isBad>
+    <hediffClass>MinchoCandyWars.Abilities.GanLuCandy.Hediff_MannaConnection</hediffClass>
+    <stages>
+      <li><!-- 远离：无效果 --></li>
+      <li>
+        <label>active</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 珉巧触手 (照抄 Tentacle, 去掉绘制) -->
+  <HediffDef ParentName="AddedMutationBase">
+    <defName>MCW_MinchoTentacle</defName>
+    <label>mincho tentacle</label>
+    <description>A twisting tentacle formed from unstable ice cream reshaping. It seems to have a mind of its own.</description>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.2</partEfficiency>
+    </addedPartProps>
+    <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+    <comps>
+      <li Class="HediffCompProperties_FleshbeastEmerge">
+        <letterLabel>Mincho tentacle operation</letterLabel>
+        <letterText>Attempting to remove {PAWN_nameDef}'s tentacle has caused the twisting mass of mincho flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+      </li>
+    </comps>
+    <countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+    <defaultInstallPart>Shoulder</defaultInstallPart>
+    <defaultLabelColor>(0.8, 0.6, 1.0)</defaultLabelColor>
+    <hediffClass>Hediff_AddedPart</hediffClass>
+    <isBad>false</isBad>
+    <labelNoun>a mincho tentacle</labelNoun>
+    <organicAddedBodypart>true</organicAddedBodypart>
+    <priceImpact>true</priceImpact>
+    <stages>
+      <li>
+        <statOffsets>
+          <PawnBeauty>-1</PawnBeauty>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 甘露妖精主hediff (被动, 仅管理 Buff 生命周期) -->
+  <HediffDef>
+    <defName>MCW_MannaFairy</defName>
+    <label>Manna Fairy</label>
+    <description>A tiny Mincho fairy that protects and heals its host.</description>
+    <isBad>false</isBad>
+    <hediffClass>MinchoCandyWars.Abilities.GanLuCandy.Hediff_MannaFairy</hediffClass>
+  </HediffDef>
+
+  <!-- 甘露妖精增益 (再生 + 闪避 + 护盾) -->
+  <HediffDef>
+    <defName>MCW_MannaFairyBuff</defName>
+    <label>Manna Fairy Buff</label>
+    <description>Protected by a manna fairy — regenerating wounds and evading attacks.</description>
+    <isBad>false</isBad>
+    <hediffClass>MinchoCandyWars.Abilities.GanLuCandy.Hediff_MannaFairyBuff</hediffClass>
+    <comps>
+      <li Class="MinchoCandyWars.Abilities.GanLuCandy.HediffCompProperties_MannaFairyShield">
+        <hitpoints>200</hitpoints>
+        <hitpointsOnReset>40</hitpointsOnReset>
+        <startingTicksToReset>7200</startingTicksToReset>
+        <empResetTicks>7200</empResetTicks>
+        <checkIntervalTicks>30</checkIntervalTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <regeneration>100</regeneration>
+        <statOffsets>
+          <MeleeDodgeChance>10</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

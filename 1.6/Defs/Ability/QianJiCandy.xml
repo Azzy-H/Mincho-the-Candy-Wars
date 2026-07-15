@@ -89,7 +89,7 @@
         <defName>MCW_QianJiCandyAbility_EMPBolt</defName>
         <label>EMPBolt</label>
         <graphicData>
-            <texPath>Things/Projectile/FireBall</texPath>
+            <texPath>Things/Projectile/Bullet_Big</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>TransparentPostLight</shaderType>
             <drawSize>2</drawSize>

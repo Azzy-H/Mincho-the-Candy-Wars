@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThoughtDef>
+    <defName>MCW_MannaHeartMood</defName>
+    <label>Manna's Heart</label>
+    <description>Being near a Manna Candy soothes the soul.</description>
+    <workerClass>MinchoCandyWars.Abilities.GanLuCandy.ThoughtWorker_MannaHeart</workerClass>
+    <stages>
+      <li>
+        <label>Manna's Heart</label>
+        <description>The presence of a Manna Candy brings peace to everyone.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

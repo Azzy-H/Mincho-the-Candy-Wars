@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<StatDef>
+		<defName>MCW_IceCreamOutput</defName>
+		<label>ice cream output</label>
+		<description>A multiplier on the amount of ice cream produced when harvested.</description>
+		<category>PawnHealth</category>
+		<defaultBaseValue>0</defaultBaseValue>
+		<displayPriorityInCategory>5000</displayPriorityInCategory>
+		<hideAtValue>0</hideAtValue>
+		<minValue>0</minValue>
+		<scenarioRandomizable>false</scenarioRandomizable>
+		<showOnAnimals>false</showOnAnimals>
+		<showOnDrones>false</showOnDrones>
+		<toStringStyle>PercentZero</toStringStyle>
+	</StatDef>
+</Defs>
