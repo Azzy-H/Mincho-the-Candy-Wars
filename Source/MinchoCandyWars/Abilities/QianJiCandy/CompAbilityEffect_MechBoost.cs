@@ -34,6 +34,7 @@ namespace MinchoCandyWars.Abilities.QianJiCandy
             hediff_MechBoost.GetDirectlyHeldThings().TryAddOrTransfer(parent.pawn);
         }
     }
+    [StaticConstructorOnStartup]
     public class Hediff_MechBoost : Hediff, IThingHolder
     {
         private static readonly Texture2D SplitCommand = ContentFinder<Texture2D>.Get("UI/Commands/SplitCaravan");

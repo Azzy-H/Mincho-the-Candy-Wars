@@ -239,6 +239,7 @@ namespace MinchoCandyWars.Abilities.GanLuCandy
         }
     }
 
+    [StaticConstructorOnStartup]
     public class Gizmo_MannaFairyShieldHitPoints : Gizmo
     {
         public int currentHitPoints;

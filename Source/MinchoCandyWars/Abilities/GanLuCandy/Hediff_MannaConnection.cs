@@ -27,9 +27,9 @@ namespace MinchoCandyWars.Abilities.GanLuCandy
             bool sameMap = pawn.Map == pairedPawn.Map && pawn.Map != null;
             int targetStage = sameMap ? 1 : 0;
 
-            if (curStageIndex != targetStage)
+            if (CurStageIndex != targetStage)
             {
-                curStageIndex = targetStage;
+                Severity = targetStage;
             }
         }
 
@@ -47,15 +47,7 @@ namespace MinchoCandyWars.Abilities.GanLuCandy
             pawn.health.RemoveHediff(this);
         }
 
-        public override bool ShouldRemove
-        {
-            get
-            {
-                if (pairedPawn == null || pairedPawn.Dead || pairedPawn.Destroyed)
-                    return true;
-                return base.ShouldRemove;
-            }
-        }
+        public override bool ShouldRemove => (pairedPawn == null || pairedPawn.Dead || pairedPawn.Destroyed);
 
         public override void ExposeData()
         {

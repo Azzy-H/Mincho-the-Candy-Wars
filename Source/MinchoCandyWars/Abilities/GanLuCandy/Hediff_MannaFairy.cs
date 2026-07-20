@@ -11,6 +11,7 @@ namespace MinchoCandyWars.Abilities.GanLuCandy
     /// 未派遣：自身享受 Buff (再生 + 闪避 + 护盾)
     /// 已派遣：目标爱人享受 Buff，自身失去
     /// </summary>
+    [StaticConstructorOnStartup]
     public class Hediff_MannaFairy : HediffWithComps
     {
         public Pawn? dispatchedTo;

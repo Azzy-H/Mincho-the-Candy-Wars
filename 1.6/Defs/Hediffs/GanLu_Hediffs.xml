@@ -18,9 +18,12 @@
     <isBad>false</isBad>
     <hediffClass>MinchoCandyWars.Abilities.GanLuCandy.Hediff_MannaConnection</hediffClass>
     <stages>
-      <li><!-- 远离：无效果 --></li>
+      <li>
+        <minSeverity>0</minSeverity>
+        <!-- 远离：无效果 --></li>
       <li>
         <label>active</label>
+        <minSeverity>1</minSeverity>
         <capMods>
           <li>
             <capacity>Consciousness</capacity>

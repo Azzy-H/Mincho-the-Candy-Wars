@@ -15,6 +15,7 @@ namespace MinchoCandyWars.Patch.Stat
         [HarmonyPatch("PopulateMutableStats")]
         private static void Postfix_PopulateMutableStats()
         {
+            StringBuilder sb = new StringBuilder();
             Log.Message("MCW: Patching StatDef.PopulateMutableStats to include stats from CandyTypeStages.");
             FieldInfo? mutableStatsField = typeof(StatDef).GetField("mutableStats", BindingFlags.Static | BindingFlags.NonPublic);
             if (mutableStatsField == null)
@@ -37,18 +38,19 @@ namespace MinchoCandyWars.Patch.Stat
                     continue;
                 }
 
-                AddStageStats(candyTypeDef.coreStages, mutableStats);
-                AddStageStats(candyTypeDef.bodyStages, mutableStats);
+                AddStageStats(candyTypeDef.coreStages, mutableStats, sb);
+                AddStageStats(candyTypeDef.bodyStages, mutableStats, sb);
             }
+            Log.Message(sb.ToString());
         }
 
-        private static void AddStageStats(List<CandyTypeStage> stages, HashSet<StatDef> mutableStats)
+        private static void AddStageStats(List<CandyTypeStage> stages, HashSet<StatDef> mutableStats, StringBuilder stringBuilder)
         {
             if (stages == null)
             {
                 return;
             }
-            StringBuilder stringBuilder = new StringBuilder($"MCW: Added stats from CandyTypeStage to StatDef.mutableStats.");
+            stringBuilder.AppendInNewLine($"MCW: Added stats from CandyTypeStage to StatDef.mutableStats.");
             foreach (CandyTypeStage stage in stages)
             {
                 if (stage == null)
@@ -59,7 +61,6 @@ namespace MinchoCandyWars.Patch.Stat
                 AddStats(stage.statOffsets, mutableStats, stringBuilder);
                 AddStats(stage.statFactors, mutableStats, stringBuilder);
             }
-            Log.Message(stringBuilder.ToString());
         }
 
         private static void AddStats(List<StatModifier>? statModifiers, HashSet<StatDef> mutableStats, StringBuilder stringBuilder)
@@ -73,7 +74,7 @@ namespace MinchoCandyWars.Patch.Stat
                 if (statModifier?.stat != null)
                 {
                     mutableStats.Add(statModifier.stat);
-                    stringBuilder.AppendLine($"- {statModifier.stat.defName}");
+                    stringBuilder.AppendInNewLine($"- {statModifier.stat.defName}");
                 }
             }
         }
