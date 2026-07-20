@@ -59,7 +59,7 @@
     </recipeMaker>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanMakeableGun" Name="Gun_Minigun">
+  <ThingDef ParentName="BaseHumanMakeableGun" Name="MCW_RW_VrocanGatling">
     <defName>MCW_RW_VrocanGatling</defName>
     <label>涡轮棒棒糖发射器</label>
     <description>强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。</description>
@@ -140,5 +140,14 @@
       <damageAmountBase>10</damageAmountBase>
       <speed>70</speed>
     </projectile>
+  </ThingDef>
+  <ThingDef ParentName="MCW_RW_VrocanGatling">
+    <defName>MCW_RW_VrocanGatling_Formech</defName>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <generateAllowChance>0.001</generateAllowChance>
+    <weaponTags>
+      <li>MCW_RW_VrocanGatling_Formech</li>
+    </weaponTags>
   </ThingDef>
 </Defs>

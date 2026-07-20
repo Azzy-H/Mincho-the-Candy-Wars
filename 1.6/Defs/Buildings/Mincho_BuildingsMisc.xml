@@ -437,4 +437,90 @@
 		<texturePath>Terrain/Surfaces/TODO_MCW_MinchoFloorC</texturePath>
 		-->
 	</TerrainDef>
+
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>MCW_Chocolate_Console</defName>
+    <label>薄荷冰淇通讯台</label>
+    <description>只有珉巧才能使用的通讯台，拥有通讯台的全部功能，同时，也有交易信标的功能！而且！还很好吃！</description>
+    <thingClass>MinchoCandyWars.Buildings.Building_MintIceCreamCommsConsole</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Misc/MCW_Chocolate_Console</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+      <damageData>
+        <rect>(0,0,3,1.8)</rect>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      <shadowData>
+        <volume>(3,0.5,2)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>2200</WorkToBuild>
+      <Flammability>0.6</Flammability>
+    </statBases>
+    <size>(3,1)</size>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <costList>
+      <Steel>120</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Usable" MayRequire="Ludeon.RimWorld.Biotech">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Summon diabolus threat</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuOptionPriority>SummonThreat</floatMenuOptionPriority>
+        <floatMenuFactionIcon>Mechanoid</floatMenuFactionIcon>
+        <ignoreOtherReservations>true</ignoreOtherReservations>
+      </li>
+      <li Class="CompProperties_Useable_CallBossgroup" MayRequire="Ludeon.RimWorld.Biotech">
+        <bossgroupDef>Diabolus</bossgroupDef>
+        <spawnLetterLabelKey>LetterLabelCommsConsoleSpawned</spawnLetterLabelKey>
+        <spawnLetterTextKey>LetterCommsConsoleSpawned</spawnLetterTextKey>
+        <effecterDef>CommsConsoleBossgroupSummoned</effecterDef>
+        <delayTicks>120</delayTicks>
+      </li>
+    </comps>
+    <designationHotKey>Misc3</designationHotKey>
+    <placeWorkers>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>MicroelectronicsBasics</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <tickerType MayRequire="Ludeon.RimWorld.Biotech">Normal</tickerType><!-- used by call bossgroup -->
+  </ThingDef>
+  <JobDef>
+    <defName>MCW_UseCommsConsole</defName>
+    <driverClass>MinchoCandyWars.Buildings.JobDriver_UseCommsConsoleUniversal</driverClass>
+    <reportString>using comms console.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

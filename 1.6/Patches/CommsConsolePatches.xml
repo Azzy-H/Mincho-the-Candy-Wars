@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- 将原版 UseCommsConsole 的 driverClass 替换为通用版本，
+         使其同时支持 Building_CommsConsole 和 Building_MintIceCreamCommsConsole -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/JobDef[defName="UseCommsConsole"]/driverClass</xpath>
+        <value>
+            <driverClass>MinchoCandyWars.Buildings.JobDriver_UseCommsConsoleUniversal</driverClass>
+        </value>
+    </Operation>
+
+</Patch>

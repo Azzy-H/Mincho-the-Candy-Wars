@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HairDef>
+		<defName>MCW_Hair_Upper_A</defName>
+		<label>MCW_Hair_Upper_A</label>
+		<styleGender>Any</styleGender>
+		<category>Mincho</category>
+		<styleTags>
+			<li>Mincho_Large_HairTag</li>
+		</styleTags>
+		<texPath>Hairs/MCW_Hair_Upper_A</texPath>
+	</HairDef>
+	<HairDef>
+		<defName>MCW_Hair_Upper_B</defName>
+		<label>MCW_Hair_Upper_B</label>
+		<styleGender>Any</styleGender>
+		<category>Mincho</category>
+		<styleTags>
+			<li>Mincho_Large_HairTag</li>
+		</styleTags>
+		<texPath>Hairs/MCW_Hair_Upper_B</texPath>
+	</HairDef>
+	<HairDef>
+		<defName>MCW_Hair_Upper_C</defName>
+		<label>MCW_Hair_Upper_C</label>
+		<styleGender>Any</styleGender>
+		<category>Mincho</category>
+		<styleTags>
+			<li>Mincho_Large_HairTag</li>
+		</styleTags>
+		<texPath>Hairs/MCW_Hair_Upper_C</texPath>
+	</HairDef>
+</Defs>
