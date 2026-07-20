@@ -204,11 +204,11 @@
     </weaponTags> -->
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
-    <defName>MMCW_Mech_Battle_Recipe</defName>
+    <defName>MCW_Mech_Battle _Recipe</defName>
     <label>培育次级珉巧子个体-女仆I型</label>
     <description>培育次级珉巧子个体-女仆I型.</description>
     <products>
-      <MMCW_Mech_Battle>1</MMCW_Mech_Battle>
+      <MCW_Mech_Battle >1</MCW_Mech_Battle >
     </products>
     <descriptionHyperlinks>
       <ThingDef>MMCW_Mech_Battle</ThingDef>
