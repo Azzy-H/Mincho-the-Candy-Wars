@@ -27,4 +27,5 @@ namespace MinchoCandyWars.Patch.Temperature
             return true;
         }
     }
+
 }

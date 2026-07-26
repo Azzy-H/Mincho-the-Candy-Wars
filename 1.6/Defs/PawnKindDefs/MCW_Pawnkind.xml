@@ -68,4 +68,347 @@
 			</li>
 		</lifeStages>
 	</PawnKindDef>
+
+  <RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>MCW_Mech_I_Maid_Recipe</defName>
+    <label>培育次级珉巧子个体-女仆I型</label>
+    <description>培育次级珉巧子个体-女仆I型.</description>
+    <products>
+      <MCW_Mech_I_Maid>1</MCW_Mech_I_Maid>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>MCW_Mech_I_Maid</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+			<li>
+				<filter>
+					<categories>
+						<li>Mincho_IceCream</li>
+					</categories>
+				</filter>
+				<count>100</count>
+			</li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MCW_Beta_NanoShapingFluid</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  <PawnKindDef ParentName="LightMechanoidKind">
+    <defName>MCW_Mech_I_Maid</defName>
+    <label>次级珉巧子个体-女仆I型</label>
+    <race>MCW_Mech_I_Maid</race>
+    <combatPower>45</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Race/MCW_Mech_I_Maid/Bodies/Naked_Thin</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <!-- <weaponTags>
+      <li>MechanoidGunShortRange</li>
+    </weaponTags> -->
+  </PawnKindDef>
+  <RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>MCW_Mech_II_Maid_Recipe</defName>
+    <label>培育次级珉巧子个体-女仆I型</label>
+    <description>培育次级珉巧子个体-女仆I型.</description>
+    <products>
+      <MCW_Mech_II_Maid>1</MCW_Mech_II_Maid>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>MCW_Mech_II_Maid</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+			<li>
+				<filter>
+					<categories>
+						<li>Mincho_IceCream</li>
+					</categories>
+				</filter>
+				<count>100</count>
+			</li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MCW_Beta_NanoShapingFluid</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  <PawnKindDef ParentName="LightMechanoidKind">
+    <defName>MCW_Mech_II_Maid</defName>
+    <label>次级珉巧子个体-女仆Ⅱ型</label>
+    <race>MCW_Mech_II_Maid</race>
+    <combatPower>45</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Race/MCW_Mech_II_Maid/Bodies/Naked_Thin</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <!-- <weaponTags>
+      <li>MechanoidGunShortRange</li>
+    </weaponTags> -->
+  </PawnKindDef>
+  <RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>MCW_Mech_Battle_Recipe</defName>
+    <label>培育次级珉巧子个体-女仆I型</label>
+    <description>培育次级珉巧子个体-女仆I型.</description>
+    <products>
+      <MCW_Mech_Battle>1</MCW_Mech_Battle>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>MCW_Mech_Battle</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+			<li>
+				<filter>
+					<categories>
+						<li>Mincho_IceCream</li>
+					</categories>
+				</filter>
+				<count>100</count>
+			</li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MCW_Beta_NanoShapingFluid</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  <PawnKindDef ParentName="LightMechanoidKind">
+    <defName>MCW_Mech_Battle</defName>
+    <label>次级珉巧子个体-战斗型</label>
+    <race>MCW_Mech_Battle</race>
+    <combatPower>45</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Race/MCW_Mech_Battle/Bodies/Naked_Thin</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <!-- <weaponTags>
+      <li>MechanoidGunShortRange</li>
+    </weaponTags> -->
+  </PawnKindDef>
+  <RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>MCW_Mech_Defender_Recipe</defName>
+    <label>培育次级珉巧子个体-女仆I型</label>
+    <description>培育次级珉巧子个体-女仆I型.</description>
+    <products>
+      <MCW_Mech_Defender>1</MCW_Mech_Defender>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>MCW_Mech_Defender</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+			<li>
+				<filter>
+					<categories>
+						<li>Mincho_IceCream</li>
+					</categories>
+				</filter>
+				<count>100</count>
+			</li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MCW_Beta_NanoShapingFluid</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  <PawnKindDef ParentName="LightMechanoidKind">
+    <defName>MCW_Mech_Defender</defName>
+    <label>次级珉巧子个体-防卫型</label>
+    <race>MCW_Mech_Defender</race>
+    <combatPower>45</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Race/MCW_Mech_Defender/Bodies/Naked_Thin</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <!-- <weaponTags>
+      <li>MechanoidGunShortRange</li>
+    </weaponTags> -->
+  </PawnKindDef>
+  <RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>MCW_Mech_Gunner_Recipe</defName>
+    <label>培育次级珉巧子个体-女仆I型</label>
+    <description>培育次级珉巧子个体-女仆I型.</description>
+    <products>
+      <MCW_Mech_Gunner>1</MCW_Mech_Gunner>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>MCW_Mech_Gunner</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+			<li>
+				<filter>
+					<categories>
+						<li>Mincho_IceCream</li>
+					</categories>
+				</filter>
+				<count>100</count>
+			</li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MCW_Beta_NanoShapingFluid</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+  <PawnKindDef ParentName="LightMechanoidKind">
+    <defName>MCW_Mech_Gunner</defName>
+    <label>次级珉巧子个体-攻击型</label>
+    <race>MCW_Mech_Gunner</race>
+    <combatPower>45</combatPower>
+    <!-- <apparelMoney>300~500</apparelMoney> -->
+    <weaponMoney>99999~99999</weaponMoney>
+    <combatPower>200</combatPower>
+    <forceNormalGearQuality>true</forceNormalGearQuality>
+    <weaponTags>
+      <li>MCW_RW_VrocanGatling_Formech</li>
+    </weaponTags>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Race/MCW_Mech_Gunner/Bodies/Naked_Thin</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <!-- <weaponTags>
+      <li>MechanoidGunShortRange</li>
+    </weaponTags> -->
+  </PawnKindDef>
 </Defs>
