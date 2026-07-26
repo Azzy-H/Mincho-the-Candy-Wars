@@ -6,12 +6,18 @@
     <defName>MCW_AmberonShield</defName>
     <label>Amberon shield</label>
     <description>TODO</description>
-    <hediffClass>MinchoCandyWars.Abilities.AmberonCandy.Hediff_AmberonShield</hediffClass>
+    <hediffClass>MinchoCandyWars.Buff.Hediff_Buff</hediffClass>
     <isBad>false</isBad>
     <defaultLabelColor>(0.9, 0.7, 0.2)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
     <minSeverity>0</minSeverity>
-    <maxSeverity>1</maxSeverity>
+    <maxSeverity>1</maxSeverity>    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode</nodeClass>
+        <workerClass>MinchoCandyWars.Abilities.PawnRenderNodeWorker_EnergyShield</workerClass>
+        <useGraphic>false</useGraphic>
+      </li>
+    </renderNodeProperties>    
     <stages>
       <li>
         <statOffsets>
@@ -22,12 +28,9 @@
     </stages>
     <comps>
       <li Class="MinchoCandyWars.Abilities.AmberonCandy.HediffCompProperties_AmberonShield">
-        <shieldThingDef>MechShield</shieldThingDef>
         <hitpoints>200</hitpoints>
         <hitpointsOnReset>40</hitpointsOnReset>
         <startingTicksToReset>7200</startingTicksToReset>
-        <empResetTicks>7200</empResetTicks>
-        <checkIntervalTicks>30</checkIntervalTicks>
       </li>
     </comps>
   </HediffDef>
@@ -160,7 +163,7 @@
     <defName>MCW_AmberonHeartMood</defName>
     <label>Amberon heart mood</label>
     <description>TODO</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>MinchoCandyWars.Buff.Hediff_Buff</hediffClass>
     <isBad>false</isBad>
     <defaultLabelColor>(0.9, 0.7, 0.2)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>

@@ -83,13 +83,18 @@
     <description>Protected by a manna fairy — regenerating wounds and evading attacks.</description>
     <isBad>false</isBad>
     <hediffClass>MinchoCandyWars.Abilities.NectarCandy.Hediff_MannaFairyBuff</hediffClass>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode</nodeClass>
+        <workerClass>MinchoCandyWars.Abilities.PawnRenderNodeWorker_EnergyShield</workerClass>
+        <useGraphic>false</useGraphic>
+      </li>
+    </renderNodeProperties>
     <comps>
       <li Class="MinchoCandyWars.Abilities.NectarCandy.HediffCompProperties_MannaFairyShield">
         <hitpoints>200</hitpoints>
         <hitpointsOnReset>40</hitpointsOnReset>
         <startingTicksToReset>7200</startingTicksToReset>
-        <empResetTicks>7200</empResetTicks>
-        <checkIntervalTicks>30</checkIntervalTicks>
       </li>
     </comps>
     <stages>

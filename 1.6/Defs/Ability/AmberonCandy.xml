@@ -21,7 +21,7 @@
         <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
         <verbProperties>
             <verbClass>Verb_CastAbilityJump</verbClass>
-            <drawAimPie>false</drawAimPie>
+            <drawAimPie>true</drawAimPie>
             <range>15</range>
             <minRange>3</minRange>
             <warmupTime>2</warmupTime>
@@ -72,7 +72,7 @@
         <cooldownTicksRange>60000</cooldownTicksRange><!-- 1 day -->
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
-            <drawAimPie>false</drawAimPie>
+            <drawAimPie>true</drawAimPie>
             <range>-1</range>
             <warmupTime>1</warmupTime>
             <targetParams>
@@ -109,7 +109,7 @@
         <cooldownTicksRange>12000</cooldownTicksRange><!-- 2 hours -->
         <verbProperties>
             <verbClass>Verb_CastAbilityTouch</verbClass>
-            <drawAimPie>false</drawAimPie>
+            <drawAimPie>true</drawAimPie>
             <range>-1</range>
             <warmupTime>10</warmupTime>
             <targetParams>
@@ -151,7 +151,7 @@
         <cooldownTicksRange>360000</cooldownTicksRange><!-- 6 hours -->
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
-            <drawAimPie>false</drawAimPie>
+            <drawAimPie>true</drawAimPie>
             <range>-1</range>
             <warmupTime>5</warmupTime>
             <targetParams>
