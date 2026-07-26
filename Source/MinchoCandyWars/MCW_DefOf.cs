@@ -29,10 +29,6 @@ namespace MinchoCandyWars
         public static ThingDef Mincho_Mintchoco = null!;
         public static PawnKindDef MCW_MinchoSlime = null!;
 
-        public static CandyTypeDef MechaCandy = null!;
-        public static CandyTypeDef NectarCandy = null!;
-        public static CandyTypeDef AmberonCandy = null!;
-
         // Nectar Candy
         public static HediffDef MCW_MannaHeart = null!;
         public static GameConditionDef MCW_MannaHeartCondition = null!;
@@ -47,12 +43,14 @@ namespace MinchoCandyWars
         public static HediffDef MCW_AmberonHeart = null!;
         public static HediffDef MCW_AmberonSlow = null!;
         public static HediffDef MCW_AmberonHeartMood = null!;
-        public static GameConditionDef MCW_AmberonHeartMoodCondition = null!;
         public static ThingDef MCW_AmberonIceCreamWall = null!;
         public static ThingDef MCW_AmberonPositionShield = null!;
         public static AbilityDef MCW_AmberonCandyAbility_GuardianName = null!;
         public static AbilityDef MCW_AmberonCandyAbility_HardCandy = null!;
         public static AbilityDef MCW_AmberonCandyAbility_StandBehindMe = null!;
         public static AbilityDef MCW_AmberonCandyAbility_AmberonHeart = null!;
+        public static CandyTypeDef NectarCandy = null!;
+        public static CandyTypeDef MechaCandy = null!;
+        public static CandyTypeDef AmberonCandy = null!;
     }
 }

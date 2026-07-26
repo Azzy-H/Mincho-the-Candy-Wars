@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- ===== 守护之名！ ===== -->
+    <AbilityDef>
+        <defName>MCW_AmberonCandyAbility_GuardianName</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>Guardian's Name!</label>
+        <description>TODO</description>
+        <iconPath>UI/Gizmos/Abilities/Amberon/MCW_GuardianName</iconPath>
+        <warmupStartSound>Longjump_Jump</warmupStartSound>
+        <displayOrder>400</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>12000</cooldownTicksRange><!-- 2 hours -->
+        <statBases>
+            <Ability_Duration>120</Ability_Duration><!-- 2 seconds warmup -->
+        </statBases>
+        <jobDef>CastJump</jobDef>
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityJump</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>15</range>
+            <minRange>3</minRange>
+            <warmupTime>2</warmupTime>
+            <requireLineOfSight>false</requireLineOfSight>
+            <soundCast>Longjump_Jump</soundCast>
+            <soundLanding>Longjump_Land</soundLanding>
+            <flyWithCarriedThing>true</flyWithCarriedThing>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetSelf>false</canTargetSelf>
+                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityEffect">
+                <compClass>MinchoCandyWars.Abilities.AmberonCandy.CompAbilityEffect_AmberonGuardianJump</compClass>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>AmberonCandy</candyType>
+                <requiredMinchoCoreGrade>0</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>2</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>20</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <!-- ===== 硬糖 ===== -->
+    <AbilityDef>
+        <defName>MCW_AmberonCandyAbility_HardCandy</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>Hard Candy</label>
+        <description>TODO</description>
+        <iconPath>UI/Gizmos/Abilities/Amberon/MCW_HardCandy</iconPath>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <jobDef>CastAbilityOnThingWithoutWeapon</jobDef>
+        <displayOrder>300</displayOrder>
+        <hostile>false</hostile>
+        <targetRequired>false</targetRequired>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>60000</cooldownTicksRange><!-- 1 day -->
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>1</warmupTime>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityEffect">
+                <compClass>MinchoCandyWars.Abilities.AmberonCandy.CompAbilityEffect_HardCandy</compClass>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>AmberonCandy</candyType>
+                <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>100</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <!-- ===== 站在我身后 ===== -->
+    <AbilityDef ParentName="AbilityTouchBase">
+        <defName>MCW_AmberonCandyAbility_StandBehindMe</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>Stand Behind Me</label>
+        <description>TODO</description>
+        <iconPath>UI/Gizmos/Abilities/Amberon/MCW_StandBehindMe</iconPath>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <displayOrder>200</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>12000</cooldownTicksRange><!-- 2 hours -->
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>10</warmupTime>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetSelf>false</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityEffect">
+                <compClass>MinchoCandyWars.Abilities.AmberonCandy.CompAbilityEffect_StandBehindMe</compClass>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>AmberonCandy</candyType>
+                <requiredMinchoCoreGrade>3</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>5</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>300</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <!-- ===== 琥珀糖心 ===== -->
+    <AbilityDef>
+        <defName>MCW_AmberonCandyAbility_AmberonHeart</defName>
+        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+        <label>Amberon Heart</label>
+        <description>TODO</description>
+        <iconPath>UI/Gizmos/Abilities/Amberon/MCW_AmberonHeart</iconPath>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <jobDef>CastAbilityOnThingWithoutWeapon</jobDef>
+        <displayOrder>100</displayOrder>
+        <hostile>false</hostile>
+        <targetRequired>false</targetRequired>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>360000</cooldownTicksRange><!-- 6 hours -->
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>5</warmupTime>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityEffect">
+                <compClass>MinchoCandyWars.Abilities.AmberonCandy.CompAbilityEffect_AmberonHeart</compClass>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+                <candyType>AmberonCandy</candyType>
+                <requiredMinchoCoreGrade>2</requiredMinchoCoreGrade>
+                <requiredMinchoBodyGrade>5</requiredMinchoBodyGrade>
+                <requiredMinchoCandyValue>200</requiredMinchoCandyValue>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+</Defs>

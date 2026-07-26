@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>MCW_AmberonHeartMoodThought</defName>
+    <thoughtClass>MinchoCandyWars.Abilities.AmberonCandy.Thought_AmberonHeartMood</thoughtClass>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>MCW_AmberonHeartMood</hediff>
+    <stages>
+      <li>
+        <label>Amberon guardian</label>
+        <description>TODO</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

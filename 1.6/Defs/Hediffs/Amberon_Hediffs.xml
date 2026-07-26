@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===== 琥珀糖护盾（核心2被动） ===== -->
+  <HediffDef>
+    <defName>MCW_AmberonShield</defName>
+    <label>Amberon shield</label>
+    <description>TODO</description>
+    <hediffClass>MinchoCandyWars.Abilities.AmberonCandy.Hediff_AmberonShield</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.9, 0.7, 0.2)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <StaggerDurationFactor>0</StaggerDurationFactor>
+        </statOffsets>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="MinchoCandyWars.Abilities.AmberonCandy.HediffCompProperties_AmberonShield">
+        <shieldThingDef>MechShield</shieldThingDef>
+        <hitpoints>200</hitpoints>
+        <hitpointsOnReset>40</hitpointsOnReset>
+        <startingTicksToReset>7200</startingTicksToReset>
+        <empResetTicks>7200</empResetTicks>
+        <checkIntervalTicks>30</checkIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ===== 硬糖 ===== -->
+  <HediffDef>
+    <defName>MCW_HardCandy</defName>
+    <label>hard candy</label>
+    <description>TODO</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.9, 0.7, 0.2)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <IncomingDamageFactor>-0.9</IncomingDamageFactor>
+          <MoveSpeed>-2.0</MoveSpeed>
+          <MeleeHitChance>0.3</MeleeHitChance>
+        </statOffsets>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>21600</disappearsAfterTicks><!-- 6 hours -->
+      </li>
+      <li Class="MinchoCandyWars.Abilities.AmberonCandy.HediffCompProperties_HardCandyMeleeDebuff">
+        <debuffHediffDef>MCW_SplashedIceCream</debuffHediffDef>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ===== 溅射冰淇淋（硬糖近战debuff） ===== -->
+  <HediffDef>
+    <defName>MCW_SplashedIceCream</defName>
+    <label>splashed ice cream</label>
+    <description>TODO</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.9</offset>
+          </li>
+        </capMods>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>3600</disappearsAfterTicks><!-- 1 hour -->
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ===== 琥珀糖心 ===== -->
+  <HediffDef>
+    <defName>MCW_AmberonHeart</defName>
+    <label>Amberon heart</label>
+    <description>TODO</description>
+    <hediffClass>MinchoCandyWars.Abilities.AmberonCandy.Hediff_AmberonHeart</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.9, 0.7, 0.2)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <StaggerDurationFactor>0</StaggerDurationFactor>
+        </statOffsets>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800</disappearsAfterTicks><!-- 30 seconds -->
+      </li>
+      <li Class="MinchoCandyWars.Abilities.AmberonCandy.HediffCompProperties_AmberonHeartGiveHediffsInRange">
+        <range>3.9</range>
+        <hediff>MCW_AmberonSlow</hediff>
+        <targetingParameters>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetSelf>false</canTargetSelf>
+          <canTargetAnimals>true</canTargetAnimals>
+          <canTargetHumans>true</canTargetHumans>
+          <canTargetMechs>true</canTargetMechs>
+        </targetingParameters>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ===== 琥珀糖心减速 ===== -->
+  <HediffDef>
+    <defName>MCW_AmberonSlow</defName>
+    <label>Amberon slow</label>
+    <description>TODO</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.5</MoveSpeed>
+        </statFactors>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ===== 琥珀糖心心情（核心5被动） ===== -->
+  <HediffDef>
+    <defName>MCW_AmberonHeartMood</defName>
+    <label>Amberon heart mood</label>
+    <description>TODO</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.9, 0.7, 0.2)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===== 冰淇淋墙体（守护之名！生成） ===== -->
+  <ThingDef ParentName="RaisedRocks">
+    <defName>MCW_AmberonIceCreamWall</defName>
+    <label>ice cream wall</label>
+    <description>TODO</description>
+    <graphicData>
+      <texPath>Things/Building/Linked/Rock_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Rock</li>
+      </linkFlags>
+      <color>(255, 228, 196)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Lifespan">
+        <lifespanTicks>600</lifespanTicks><!-- 10 seconds -->
+        <expireEffect>RaisedRock_Collapse</expireEffect>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ===== 位置护盾（站在我身后生成） ===== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>MCW_AmberonPositionShield</defName>
+    <label>Amberon position shield</label>
+    <description>TODO</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/Linked/Rock_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(255, 215, 0)</color>
+      <drawSize>8</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <li Class="CompProperties_Lifespan">
+        <lifespanTicks>144000</lifespanTicks><!-- 4 hours -->
+      </li>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>4</radius>
+        <cooldownTicks>0</cooldownTicks>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptAirProjectiles>false</interceptAirProjectiles>
+        <interceptNonHostileProjectiles>false</interceptNonHostileProjectiles>
+        <interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+        <drawWithNoSelection>true</drawWithNoSelection>
+        <chargeIntervalTicks>0</chargeIntervalTicks>
+        <chargeDurationTicks>0</chargeDurationTicks>
+        <hitPoints>200</hitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>false</hitPointsRestoreInstantlyAfterCharge>
+        <startWithMaxHitPoints>true</startWithMaxHitPoints>
+        <alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo>
+        <activated>true</activated>
+        <color>(255, 215, 0, 180)</color>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>
