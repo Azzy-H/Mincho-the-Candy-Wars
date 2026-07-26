@@ -1,7 +1,7 @@
 using RimWorld;
 using Verse;
 
-namespace MinchoCandyWars.Abilities.GanLuCandy
+namespace MinchoCandyWars.Abilities.NectarCandy
 {
     public class CompAbilityEffect_MannaConnection : CompAbilityEffect
     {

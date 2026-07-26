@@ -1,9 +1,16 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
     <MinchoCandyWars.Abilities.MinchoCandyValueDontEnough>糖果值不足,至少需要{0}</MinchoCandyWars.Abilities.MinchoCandyValueDontEnough>
     <MinchoCandyWars.Abilities.CandyValueConsume>糖果值消耗:{0}</MinchoCandyWars.Abilities.CandyValueConsume>
     <MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>制作速度加速：{0}\n剩余时间：{1}</MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>
     <MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation>千机糖工作台加速</MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation>
+
+    <!-- Amberon Candy -->
+    <MinchoCandyWars.Abilities.GuardianNameNotFriendly>只能以友方单位为目标。</MinchoCandyWars.Abilities.GuardianNameNotFriendly>
+    <MinchoCandyWars.Abilities.HardCandySelfOnly>硬糖只能对自己使用。</MinchoCandyWars.Abilities.HardCandySelfOnly>
+    <MinchoCandyWars.Abilities.StandBehindMeInvalidCell>无效目标位置。</MinchoCandyWars.Abilities.StandBehindMeInvalidCell>
+    <MinchoCandyWars.Abilities.StandBehindMeBlocked>该位置无法生成护盾。</MinchoCandyWars.Abilities.StandBehindMeBlocked>
+    <MinchoCandyWars.Abilities.AmberonHeartSelfOnly>琥珀糖心只能对自己使用。</MinchoCandyWars.Abilities.AmberonHeartSelfOnly>
 
 </LanguageData>

@@ -5,7 +5,7 @@
     <!-- <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[thingClass="Building_WorkTable" or thingClass="Building_WorkTable_HeatPush"]/comps</xpath>
         <value>
-            <li Class="MinchoCandyWars.Abilities.QianJiCandy.WorkbenchAcceleration.CompProperties_WorkbenchAcceleration" />
+            <li Class="MinchoCandyWars.Abilities.MechaCandy.WorkbenchAcceleration.CompProperties_WorkbenchAcceleration" />
         </value>
     </Operation>
     
@@ -13,7 +13,7 @@
         <xpath>Defs/ThingDef[(thingClass="Building_WorkTable" or thingClass="Building_WorkTable_HeatPush") and not(comps)]</xpath>
         <value>
             <comps>
-                <li Class="MinchoCandyWars.Abilities.QianJiCandy.WorkbenchAcceleration.CompProperties_WorkbenchAcceleration" />
+                <li Class="MinchoCandyWars.Abilities.MechaCandy.WorkbenchAcceleration.CompProperties_WorkbenchAcceleration" />
             </comps>
         </value>
     </Operation> -->

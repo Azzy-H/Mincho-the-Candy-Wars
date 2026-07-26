@@ -1,7 +1,7 @@
 using Verse;
 using RimWorld;
 
-namespace MinchoCandyWars.Abilities.GanLuCandy
+namespace MinchoCandyWars.Abilities.NectarCandy
 {
     public class CompProperties_AbilityMinchoBandage : CompProperties_AbilityEffect
     {

@@ -1,4 +1,4 @@
-﻿using MinchoCandyWars.Abilities;
+using MinchoCandyWars.Abilities;
 using MinchoCandyWars.Buff;
 using RimWorld;
 using Verse;

@@ -3,7 +3,7 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 
-namespace MinchoCandyWars.Abilities.GanLuCandy
+namespace MinchoCandyWars.Abilities.NectarCandy
 {
     /// <summary>
     /// 珉巧敷药 —— 直接复刻 Coagulate 逻辑，包扎目标所有伤口。

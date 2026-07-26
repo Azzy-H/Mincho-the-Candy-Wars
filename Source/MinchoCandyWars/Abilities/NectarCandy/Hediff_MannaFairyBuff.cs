@@ -1,7 +1,7 @@
 using RimWorld;
 using Verse;
 
-namespace MinchoCandyWars.Abilities.GanLuCandy
+namespace MinchoCandyWars.Abilities.NectarCandy
 {
     /// <summary>
     /// 甘露妖精增益 —— 再生 + 闪避 + 护盾。

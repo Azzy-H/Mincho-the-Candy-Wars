@@ -1,4 +1,4 @@
-﻿using MinchoCandyWars.Data;
+using MinchoCandyWars.Data;
 using RimWorld;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;

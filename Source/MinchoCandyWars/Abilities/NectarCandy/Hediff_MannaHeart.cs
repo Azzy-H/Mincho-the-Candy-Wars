@@ -2,10 +2,10 @@ using MinchoCandyWars.Buff;
 using RimWorld;
 using Verse;
 
-namespace MinchoCandyWars.Abilities.GanLuCandy
+namespace MinchoCandyWars.Abilities.NectarCandy
 {
     /// <summary>
-    /// 心之甘露 —— 挂载在 GanLu 躯体5级的 Mincho 上。
+    /// 心之甘露 —— 挂载在 Nectar 躯体5级的 Mincho 上。
     /// 仅在 PostAdd / Notify_Spawned 时向地图上的 GameCondition_MannaHeart 注册自己。
     /// 不负责注销 —— GameCondition 每 tick 自行清理无效条目。
     /// </summary>

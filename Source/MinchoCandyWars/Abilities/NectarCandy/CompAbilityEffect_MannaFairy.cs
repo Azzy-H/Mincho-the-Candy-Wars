@@ -1,7 +1,7 @@
 using RimWorld;
 using Verse;
 
-namespace MinchoCandyWars.Abilities.GanLuCandy
+namespace MinchoCandyWars.Abilities.NectarCandy
 {
     /// <summary>
     /// 甘露妖精派遣 —— 将妖精派到爱人身边提供护盾/回复/闪避。

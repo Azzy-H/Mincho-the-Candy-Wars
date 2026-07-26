@@ -7,7 +7,7 @@
     <label>Heart of Manna</label>
     <description>Soothing presence of the Manna Candy brings peace to the colony.</description>
     <isBad>false</isBad>
-    <hediffClass>MinchoCandyWars.Abilities.GanLuCandy.Hediff_MannaHeart</hediffClass>
+    <hediffClass>MinchoCandyWars.Abilities.NectarCandy.Hediff_MannaHeart</hediffClass>
   </HediffDef>
 
   <!-- 甘露连接 (配对hediff, 存储对方引用, stage 0=远离, stage 1=同图激活) -->
@@ -16,7 +16,7 @@
     <label>Manna Connection</label>
     <description>A deep bond connecting two Mincho souls.</description>
     <isBad>false</isBad>
-    <hediffClass>MinchoCandyWars.Abilities.GanLuCandy.Hediff_MannaConnection</hediffClass>
+    <hediffClass>MinchoCandyWars.Abilities.NectarCandy.Hediff_MannaConnection</hediffClass>
     <stages>
       <li>
         <minSeverity>0</minSeverity>
@@ -73,7 +73,7 @@
     <label>Manna Fairy</label>
     <description>A tiny Mincho fairy that protects and heals its host.</description>
     <isBad>false</isBad>
-    <hediffClass>MinchoCandyWars.Abilities.GanLuCandy.Hediff_MannaFairy</hediffClass>
+    <hediffClass>MinchoCandyWars.Abilities.NectarCandy.Hediff_MannaFairy</hediffClass>
   </HediffDef>
 
   <!-- 甘露妖精增益 (再生 + 闪避 + 护盾) -->
@@ -82,9 +82,9 @@
     <label>Manna Fairy Buff</label>
     <description>Protected by a manna fairy — regenerating wounds and evading attacks.</description>
     <isBad>false</isBad>
-    <hediffClass>MinchoCandyWars.Abilities.GanLuCandy.Hediff_MannaFairyBuff</hediffClass>
+    <hediffClass>MinchoCandyWars.Abilities.NectarCandy.Hediff_MannaFairyBuff</hediffClass>
     <comps>
-      <li Class="MinchoCandyWars.Abilities.GanLuCandy.HediffCompProperties_MannaFairyShield">
+      <li Class="MinchoCandyWars.Abilities.NectarCandy.HediffCompProperties_MannaFairyShield">
         <hitpoints>200</hitpoints>
         <hitpointsOnReset>40</hitpointsOnReset>
         <startingTicksToReset>7200</startingTicksToReset>

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
-namespace MinchoCandyWars.Abilities.GanLuCandy
+namespace MinchoCandyWars.Abilities.NectarCandy
 {
     /// <summary>
     /// 心之甘露 GameCondition —— 维护持有 MCW_MannaHeart hediff 的 Mincho 列表。

@@ -3,7 +3,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace MinchoCandyWars.Abilities.GanLuCandy
+namespace MinchoCandyWars.Abilities.NectarCandy
 {
     /// <summary>
     /// 甘露妖精 —— CandyTypeDef body5 的被动 hediff。
@@ -40,14 +40,14 @@ namespace MinchoCandyWars.Abilities.GanLuCandy
             get
             {
                 if (Core == null) return false;
-                return Core.MinchoCoreGrade >= RequiredCore && Core.MinchoBodyGrade >= RequiredBody;
+                return Core.CurrentCandyType == MCW_DefOf.NectarCandy && Core.MinchoCoreGrade >= RequiredCore && Core.MinchoBodyGrade >= RequiredBody;
             }
         }
 
         /// <summary>
         /// Buff 查询此属性决定是否 ShouldRemove。
         /// 已派遣时始终有效（无条件通过）；未派遣时需等级达标。
-        /// </summary>
+        /// </summary>1
         internal bool IsValid
         {
             get

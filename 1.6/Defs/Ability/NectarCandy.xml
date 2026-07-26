@@ -3,11 +3,11 @@
 
     <!-- ===== 甘露连接 ===== -->
     <AbilityDef ParentName="AbilityTouchBase">
-        <defName>MCW_GanLuCandyAbility_MannaConnection</defName>
+        <defName>MCW_NectarCandyAbility_MannaConnection</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>Manna Connection</label>
         <description>TODO</description>
-        <iconPath>UI/Gizmos/Abilities/GanLu/MCW_MannaConnection</iconPath>
+        <iconPath>UI/Gizmos/Abilities/Nectar/MCW_MannaConnection</iconPath>
         <warmupStartSound>Coagulate_Cast</warmupStartSound>
         <jobDef>CastAbilityOnThingMelee</jobDef>
         <displayOrder>400</displayOrder>
@@ -33,12 +33,12 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilityEffect">
-                <compClass>MinchoCandyWars.Abilities.GanLuCandy.CompAbilityEffect_MannaConnection</compClass>
+                <compClass>MinchoCandyWars.Abilities.NectarCandy.CompAbilityEffect_MannaConnection</compClass>
             </li>
         </comps>
         <modExtensions>
             <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>GanLuCandy</candyType>
+                <candyType>NectarCandy</candyType>
                 <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
                 <requiredMinchoBodyGrade>0</requiredMinchoBodyGrade>
                 <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
@@ -48,11 +48,11 @@
 
     <!-- ===== 珉巧敷药 ===== -->
     <AbilityDef ParentName="AbilityTouchBase">
-        <defName>MCW_GanLuCandyAbility_MinchoBandage</defName>
+        <defName>MCW_NectarCandyAbility_MinchoBandage</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>Mincho Bandage</label>
         <description>TODO</description>
-        <iconPath>UI/Gizmos/Abilities/GanLu/MCW_MinchoBandage</iconPath>
+        <iconPath>UI/Gizmos/Abilities/Nectar/MCW_MinchoBandage</iconPath>
         <warmupStartSound>Coagulate_Cast</warmupStartSound>
         <jobDef>CastAbilityOnThingMelee</jobDef>
         <displayOrder>300</displayOrder>
@@ -77,13 +77,13 @@
             </targetParams>
         </verbProperties>
         <comps>
-            <li Class="MinchoCandyWars.Abilities.GanLuCandy.CompProperties_AbilityMinchoBandage">
+            <li Class="MinchoCandyWars.Abilities.NectarCandy.CompProperties_AbilityMinchoBandage">
                 <tendQualityRange>0.7~1.0</tendQualityRange>
             </li>
         </comps>
         <modExtensions>
             <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>GanLuCandy</candyType>
+                <candyType>NectarCandy</candyType>
                 <requiredMinchoCoreGrade>2</requiredMinchoCoreGrade>
                 <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
                 <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
@@ -93,11 +93,11 @@
 
     <!-- ===== 冰淇淋重塑 ===== -->
     <AbilityDef ParentName="AbilityTouchBase">
-        <defName>MCW_GanLuCandyAbility_IceCreamReshape</defName>
+        <defName>MCW_NectarCandyAbility_IceCreamReshape</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>Ice Cream Reshape</label>
         <description>TODO</description>
-        <iconPath>UI/Gizmos/Abilities/GanLu/MCW_IceCreamReshape</iconPath>
+        <iconPath>UI/Gizmos/Abilities/Nectar/MCW_IceCreamReshape</iconPath>
         <warmupStartSound>Coagulate_Cast</warmupStartSound>
         <jobDef>CastAbilityOnThingMelee</jobDef>
         <displayOrder>200</displayOrder>
@@ -123,12 +123,12 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilityEffect">
-                <compClass>MinchoCandyWars.Abilities.GanLuCandy.CompAbilityEffect_IceCreamReshape</compClass>
+                <compClass>MinchoCandyWars.Abilities.NectarCandy.CompAbilityEffect_IceCreamReshape</compClass>
             </li>
         </comps>
         <modExtensions>
             <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>GanLuCandy</candyType>
+                <candyType>NectarCandy</candyType>
                 <requiredMinchoCoreGrade>5</requiredMinchoCoreGrade>
                 <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
                 <requiredMinchoCandyValue>300</requiredMinchoCandyValue>
@@ -138,11 +138,11 @@
 
     <!-- ===== 甘露妖精 ===== -->
     <AbilityDef ParentName="AbilityTouchBase">
-        <defName>MCW_GanLuCandyAbility_MannaFairy</defName>
+        <defName>MCW_NectarCandyAbility_MannaFairy</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>Manna Fairy</label>
         <description>TODO</description>
-        <iconPath>UI/Gizmos/Abilities/GanLu/MCW_MannaFairy</iconPath>
+        <iconPath>UI/Gizmos/Abilities/Nectar/MCW_MannaFairy</iconPath>
         <warmupStartSound>Coagulate_Cast</warmupStartSound>
         <jobDef>CastAbilityOnThingMelee</jobDef>
         <displayOrder>100</displayOrder>
@@ -168,12 +168,12 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilityEffect">
-                <compClass>MinchoCandyWars.Abilities.GanLuCandy.CompAbilityEffect_MannaFairy</compClass>
+                <compClass>MinchoCandyWars.Abilities.NectarCandy.CompAbilityEffect_MannaFairy</compClass>
             </li>
         </comps>
         <modExtensions>
             <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>GanLuCandy</candyType>
+                <candyType>NectarCandy</candyType>
                 <requiredMinchoCoreGrade>3</requiredMinchoCoreGrade>
                 <requiredMinchoBodyGrade>5</requiredMinchoBodyGrade>
                 <requiredMinchoCandyValue>200</requiredMinchoCandyValue>

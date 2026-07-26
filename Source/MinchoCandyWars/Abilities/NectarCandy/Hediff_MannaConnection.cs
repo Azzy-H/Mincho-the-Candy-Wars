@@ -1,7 +1,7 @@
 using RimWorld;
 using Verse;
 
-namespace MinchoCandyWars.Abilities.GanLuCandy
+namespace MinchoCandyWars.Abilities.NectarCandy
 {
     /// <summary>
     /// 甘露连接 —— 两个 Mincho 之间的灵魂绑定。

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <GameConditionDef>
+    <defName>MCW_AmberonHeartMoodCondition</defName>
+    <conditionClass>MinchoCandyWars.Abilities.AmberonCandy.GameCondition_AmberonHeartMood</conditionClass>
+    <label>Amberon heart mood</label>
+    <description>TODO</description>
+    <endMessage>TODO</endMessage>
+    <canBePermanent>true</canBePermanent>
+  </GameConditionDef>
+
+  <ThoughtDef>
+    <defName>MCW_AmberonHeartMoodThought</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>MinchoCandyWars.Abilities.AmberonCandy.ThoughtWorker_AmberonHeartMood</workerClass>
+    <stages>
+      <li>
+        <label>Amberon guardian</label>
+        <description>TODO</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

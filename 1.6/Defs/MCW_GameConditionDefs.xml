@@ -4,7 +4,7 @@
     <defName>MCW_MannaHeartCondition</defName>
     <label>Manna's Heart</label>
     <description>The soothing presence of a Manna Candy brings peace to everyone on the map.</description>
-    <conditionClass>MinchoCandyWars.Abilities.GanLuCandy.GameCondition_MannaHeart</conditionClass>
+    <conditionClass>MinchoCandyWars.Abilities.NectarCandy.GameCondition_MannaHeart</conditionClass>
     <canBePermanent>true</canBePermanent>
   </GameConditionDef>
 </Defs>

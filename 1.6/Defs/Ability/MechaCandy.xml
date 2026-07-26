@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <AbilityDef ParentName="AbilityTouchBase">
-        <defName>MCW_QianJiCandyAbility_MechGestatorAcceleration</defName>
+        <defName>MCW_MechaCandyAbility_MechGestatorAcceleration</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>mech gestator acceleration</label>
         <description>TODO</description>
-        <iconPath>UI/Gizmos/Abilities/QianJi/MCW_MechGestatorAcceleration</iconPath>        <!-- TODO -->
+        <iconPath>UI/Gizmos/Abilities/Mecha/MCW_MechGestatorAcceleration</iconPath>        <!-- TODO -->
         <warmupStartSound>Coagulate_Cast</warmupStartSound>
         <jobDef>CastAbilityOnThingMelee</jobDef>
         <!--<category></category> TODO-->
@@ -32,7 +32,7 @@
         </verbProperties>
         <comps>
             <li>
-                <compClass>MinchoCandyWars.Abilities.QianJiCandy.CompAbilityEffect_MechGestatorAcceleration</compClass>
+                <compClass>MinchoCandyWars.Abilities.MechaCandy.CompAbilityEffect_MechGestatorAcceleration</compClass>
             </li>
             <li Class="CompProperties_AbilityRequiresCapacity">                <!-- 需要操作能力 -->
                 <capacity>Manipulation</capacity>
@@ -40,7 +40,7 @@
         </comps>
         <modExtensions>
             <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>QianJiCandy</candyType>
+                <candyType>MechaCandy</candyType>
                 <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
                 <requiredMinchoBodyGrade>1</requiredMinchoBodyGrade>
                 <requiredMinchoCandyValue>30</requiredMinchoCandyValue>
@@ -49,7 +49,7 @@
     </AbilityDef>
 
     <AbilityDef>
-        <defName>MCW_QianJiCandyAbility_EMPBolt</defName>
+        <defName>MCW_MechaCandyAbility_EMPBolt</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>EMP bolt</label>
         <description>TODO</description>
@@ -58,10 +58,10 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
-                <projectileDef>MCW_QianJiCandyAbility_EMPBolt</projectileDef>
+                <projectileDef>MCW_MechaCandyAbility_EMPBolt</projectileDef>
             </li>
         </comps>
-        <iconPath>UI/Gizmos/Abilities/QianJi/MCW_EMPBolt</iconPath>
+        <iconPath>UI/Gizmos/Abilities/Mecha/MCW_EMPBolt</iconPath>
         <cooldownTicksRange>5000</cooldownTicksRange>
         <aiCanUse>true</aiCanUse>
         <displayOrder>300</displayOrder>
@@ -77,7 +77,7 @@
         </verbProperties>
         <modExtensions>
             <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>QianJiCandy</candyType>
+                <candyType>MechaCandy</candyType>
                 <requiredMinchoCoreGrade>2</requiredMinchoCoreGrade>
                 <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
                 <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
@@ -86,7 +86,7 @@
     </AbilityDef>
 
     <ThingDef ParentName="BaseBullet">
-        <defName>MCW_QianJiCandyAbility_EMPBolt</defName>
+        <defName>MCW_MechaCandyAbility_EMPBolt</defName>
         <label>EMPBolt</label>
         <graphicData>
             <texPath>Things/Projectile/Bullet_Big</texPath>
@@ -108,7 +108,7 @@
     </ThingDef>
 
     <AbilityDef>
-        <defName>MCW_QianJiCandyAbility_MechHack</defName>
+        <defName>MCW_MechaCandyAbility_MechHack</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>MechHack</label>
         <description>TODO</description>
@@ -117,10 +117,10 @@
         </verbProperties>
         <comps>
             <li>
-                <compClass>MinchoCandyWars.Abilities.QianJiCandy.CompAbilityEffect_MechHack</compClass>
+                <compClass>MinchoCandyWars.Abilities.MechaCandy.CompAbilityEffect_MechHack</compClass>
             </li>
         </comps>
-        <iconPath>UI/Gizmos/Abilities/QianJi/MCW_MechHack</iconPath>
+        <iconPath>UI/Gizmos/Abilities/Mecha/MCW_MechHack</iconPath>
         <cooldownTicksRange>60000</cooldownTicksRange>
         <aiCanUse>true</aiCanUse>
         <displayOrder>300</displayOrder>
@@ -144,7 +144,7 @@
         </verbProperties>
         <modExtensions>
             <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>QianJiCandy</candyType>
+                <candyType>MechaCandy</candyType>
                 <requiredMinchoCoreGrade>4</requiredMinchoCoreGrade>
                 <requiredMinchoBodyGrade>2</requiredMinchoBodyGrade>
                 <requiredMinchoCandyValue>250</requiredMinchoCandyValue>
@@ -153,17 +153,17 @@
     </AbilityDef>
 
     <AbilityDef>
-        <defName>MCW_QianJiCandyAbility_MechBoost</defName>
+        <defName>MCW_MechaCandyAbility_MechBoost</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>MechBoost</label>
         <description>TODO</description>
         <jobDef>CastAbilityOnThingMelee</jobDef>
         <comps>
             <li>
-                <compClass>MinchoCandyWars.Abilities.QianJiCandy.CompAbilityEffect_MechBoost</compClass>
+                <compClass>MinchoCandyWars.Abilities.MechaCandy.CompAbilityEffect_MechBoost</compClass>
             </li>
         </comps>
-        <iconPath>UI/Gizmos/Abilities/QianJi/MCW_MechBoost</iconPath>
+        <iconPath>UI/Gizmos/Abilities/Mecha/MCW_MechBoost</iconPath>
         <cooldownTicksRange>2500</cooldownTicksRange>
         <aiCanUse>true</aiCanUse>
         <displayOrder>300</displayOrder>
@@ -188,7 +188,7 @@
         </verbProperties>
         <modExtensions>
             <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>QianJiCandy</candyType>
+                <candyType>MechaCandy</candyType>
                 <requiredMinchoCoreGrade>4</requiredMinchoCoreGrade>
                 <requiredMinchoBodyGrade>5</requiredMinchoBodyGrade>
                 <requiredMinchoCandyValue>400</requiredMinchoCandyValue>
@@ -208,12 +208,12 @@
       </li>
     </stages>
     <isBad>false</isBad>
-    <hediffClass>MinchoCandyWars.Abilities.QianJiCandy.Hediff_MechBoost</hediffClass>
+    <hediffClass>MinchoCandyWars.Abilities.MechaCandy.Hediff_MechBoost</hediffClass>
   </HediffDef>
 
     <!--    <!~~ 工作台加速 ~~>
     <AbilityDef ParentName="AbilityTouchBase">
-        <defName>MCW_QianJiCandyAbility_WorkbenchAcceleration</defName>
+        <defName>MCW_MechaCandyAbility_WorkbenchAcceleration</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>workbench acceleration</label>
         <description>TODO</description>
@@ -242,7 +242,7 @@
             </targetParams>
         </verbProperties>
         <comps>
-            <li Class="MinchoCandyWars.Abilities.QianJiCandy.WorkbenchAcceleration.CompProperties_AbilityEffect_WorkbenchAcceleration">
+            <li Class="MinchoCandyWars.Abilities.MechaCandy.WorkbenchAcceleration.CompProperties_AbilityEffect_WorkbenchAcceleration">
                 <baseDurationTicks>5000</baseDurationTicks><!~~ 基础持续时间 ~~>
                 <durationTicksPerBodyGrade>5000</durationTicksPerBodyGrade><!~~ 每个身体等级增加的持续时间 ~~>
                 <baseAccelerationFactor>1.0</baseAccelerationFactor><!~~ 基础加速倍率 ~~>
@@ -254,7 +254,7 @@
         </comps>
         <modExtensions>
             <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>QianJiCandy</candyType>
+                <candyType>MechaCandy</candyType>
                 <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
                 <requiredMinchoBodyGrade>1</requiredMinchoBodyGrade>
                 <requiredMinchoCandyValue>0</requiredMinchoCandyValue>

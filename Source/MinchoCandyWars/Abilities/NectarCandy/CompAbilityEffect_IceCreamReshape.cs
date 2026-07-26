@@ -2,7 +2,7 @@ using System.Text;
 using Verse;
 using RimWorld;
 
-namespace MinchoCandyWars.Abilities.GanLuCandy
+namespace MinchoCandyWars.Abilities.NectarCandy
 {
     /// <summary>
     /// 冰淇淋重塑 —— 复刻 UnnaturalHealing 逻辑，失败时生成 Mincho 触手而非血肉触手。

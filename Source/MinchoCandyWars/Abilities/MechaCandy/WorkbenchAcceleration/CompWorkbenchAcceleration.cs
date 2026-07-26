@@ -3,7 +3,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 
-namespace MinchoCandyWars.Abilities.QianJiCandy.WorkbenchAcceleration;
+namespace MinchoCandyWars.Abilities.MechaCandy.WorkbenchAcceleration;
 
 //工作台加速的自comp，提供加速状态的维护和加速效果的计算
 public class CompWorkbenchAcceleration : ThingComp

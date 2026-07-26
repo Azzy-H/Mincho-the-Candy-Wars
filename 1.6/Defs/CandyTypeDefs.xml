@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <MinchoCandyWars.CandyTypeDef>
-    <defName>QianJiCandy</defName>
-    <label>QianJi Candy</label>
+    <defName>MechaCandy</defName>
+    <label>Mecha Candy</label>
     <description>TODO</description>
     <coreStages>
       <li>
@@ -90,8 +90,8 @@
   </MinchoCandyWars.CandyTypeDef>
 
   <MinchoCandyWars.CandyTypeDef>
-    <defName>GanLuCandy</defName>
-    <label>GanLu Candy</label>
+    <defName>NectarCandy</defName>
+    <label>Nectar Candy</label>
     <description>TODO</description>
     <coreStages>
       <li>
@@ -180,4 +180,98 @@
       </li>
     </bodyStages>
   </MinchoCandyWars.CandyTypeDef>
+
+  <MinchoCandyWars.CandyTypeDef>
+    <defName>AmberonCandy</defName>
+    <label>Amberon Candy</label>
+    <description>TODO</description>
+    <coreStages>
+      <li>
+        <statOffsets>
+          <IncomingDamageFactor>-0.2</IncomingDamageFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <gainHediffs>
+          <li>MCW_AmberonShield</li>
+        </gainHediffs>
+        <statOffsets>
+          <IncomingDamageFactor>-0.2</IncomingDamageFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <gainHediffs>
+          <li>MCW_AmberonShield</li>
+        </gainHediffs>
+        <statOffsets>
+          <IncomingDamageFactor>-0.2</IncomingDamageFactor>
+          <MCW_MeleeLearningFactor>0.2</MCW_MeleeLearningFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <gainHediffs>
+          <li>MCW_AmberonShield</li>
+        </gainHediffs>
+        <statOffsets>
+          <IncomingDamageFactor>-0.2</IncomingDamageFactor>
+          <MCW_MeleeLearningFactor>0.2</MCW_MeleeLearningFactor>
+          <WorkSpeedGlobal>0.2</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+      <li>
+        <gainHediffs>
+          <li>MCW_AmberonShield</li>
+          <li>MCW_AmberonHeartMood</li>
+        </gainHediffs>
+        <statOffsets>
+          <IncomingDamageFactor>-0.2</IncomingDamageFactor>
+          <MCW_MeleeLearningFactor>0.2</MCW_MeleeLearningFactor>
+          <WorkSpeedGlobal>0.2</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </coreStages>
+    <bodyStages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Heat>1.0</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+      <li>
+        <statOffsets>
+          <ArmorRating_Heat>1.0</ArmorRating_Heat>
+          <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <statOffsets>
+          <ArmorRating_Heat>1.0</ArmorRating_Heat>
+          <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <statOffsets>
+          <ArmorRating_Heat>1.0</ArmorRating_Heat>
+          <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+          <MoveSpeed>0.2</MoveSpeed>
+          <MCW_IceCreamOutput>0.5</MCW_IceCreamOutput>
+        </statOffsets>
+      </li>
+      <li>
+        <statOffsets>
+          <ArmorRating_Heat>1.0</ArmorRating_Heat>
+          <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+          <MoveSpeed>0.2</MoveSpeed>
+          <MCW_IceCreamOutput>0.5</MCW_IceCreamOutput>
+          <MeleeDodgeChance>2.0</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </bodyStages>
+  </MinchoCandyWars.CandyTypeDef>
+
 </Defs>

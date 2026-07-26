@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net472</TargetFramework>
@@ -11,9 +11,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Abilities\QianJiCandy\WorkbenchAcceleration\**" />
-	  <EmbeddedResource Remove="Abilities\QianJiCandy\WorkbenchAcceleration\**" />
-	  <None Remove="Abilities\QianJiCandy\WorkbenchAcceleration\**" />
+	  <Compile Remove="Abilities\MechaCandy\WorkbenchAcceleration\**" />
+	  <EmbeddedResource Remove="Abilities\MechaCandy\WorkbenchAcceleration\**" />
+	  <None Remove="Abilities\MechaCandy\WorkbenchAcceleration\**" />
 	</ItemGroup>
 
 	<ItemGroup>

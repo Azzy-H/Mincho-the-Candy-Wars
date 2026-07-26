@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Verse;
 using UnityEngine;
 
-namespace MinchoCandyWars.Abilities.QianJiCandy
+namespace MinchoCandyWars.Abilities.MechaCandy
 {
     internal class CompAbilityEffect_MechBoost : CompAbilityEffect
     {

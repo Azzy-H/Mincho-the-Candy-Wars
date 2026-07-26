@@ -4,7 +4,7 @@
     <defName>MCW_MannaHeartMood</defName>
     <label>Manna's Heart</label>
     <description>Being near a Manna Candy soothes the soul.</description>
-    <workerClass>MinchoCandyWars.Abilities.GanLuCandy.ThoughtWorker_MannaHeart</workerClass>
+    <workerClass>MinchoCandyWars.Abilities.NectarCandy.ThoughtWorker_MannaHeart</workerClass>
     <stages>
       <li>
         <label>Manna's Heart</label>

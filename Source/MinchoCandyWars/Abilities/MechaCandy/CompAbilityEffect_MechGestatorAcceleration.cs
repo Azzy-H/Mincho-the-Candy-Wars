@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using RimWorld;
 using Verse;
 
-namespace MinchoCandyWars.Abilities.QianJiCandy
+namespace MinchoCandyWars.Abilities.MechaCandy
 {
     public class CompAbilityEffect_MechGestatorAcceleration : CompAbilityEffect
     {
