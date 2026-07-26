@@ -2,6 +2,7 @@ using MinchoCandyWars.Data;
 using RimWorld;
 using Verse;
 using static Mono.Math.BigInteger;
+using MinchoCandyWars.Abilities;
 
 namespace MinchoCandyWars
 {
@@ -26,7 +27,16 @@ namespace MinchoCandyWars
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            EnsureMinchoAbilitiesGranted();
+            RefreshMinchoAbilities();
+        }
+
+        public override void ReceiveCompSignal(string signal)
+        {
+            base.ReceiveCompSignal(signal);
+            if (signal == CompSignals.MinchoCoreDataChange)
+            {
+                RefreshMinchoAbilities();
+            }
         }
 
         //数据存档
@@ -119,7 +129,10 @@ namespace MinchoCandyWars
             }
         }
 
-        private void EnsureMinchoAbilitiesGranted()
+        /// <summary>
+        /// 根据当前状态同步 Mincho 技能的赋予/移除：满足条件则添加，不满足则删除。
+        /// </summary>
+        private void RefreshMinchoAbilities()
         {
             if (pawn.abilities == null)
             {
@@ -128,7 +141,20 @@ namespace MinchoCandyWars
 
             foreach (AbilityDef abilityDef in DefDataPreloading.MinchoCandyAbilityDefs)
             {
-                pawn.abilities.GainAbility(abilityDef);
+                MinchoAbilityDefModExtension? extension = abilityDef.GetModExtension<MinchoAbilityDefModExtension>();
+                if (extension == null) continue;
+
+                bool shouldHave = extension.IsAvailableFor(pawn);
+                bool hasIt = pawn.abilities.GetAbility(abilityDef, includeTemporary: false) != null;
+
+                if (shouldHave && !hasIt)
+                {
+                    pawn.abilities.GainAbility(abilityDef);
+                }
+                else if (!shouldHave && hasIt)
+                {
+                    pawn.abilities.RemoveAbility(abilityDef);
+                }
             }
         }
 

@@ -1,4 +1,4 @@
-﻿using MinchoCandyWars.Gizmos;
+using MinchoCandyWars.Gizmos;
 using MinchoCandyWars.Interface;
 using RimWorld;
 using System.Collections.Generic;
@@ -10,11 +10,7 @@ namespace MinchoCandyWars.Abilities
     public class MinchoCandyAbility : Ability, IInitalizable
     {
         public MinchoAbilityDefModExtension minchoAbilityDef = null!;
-        private int requiredMinchoCoreGrade => minchoAbilityDef.requiredMinchoCoreGrade;
-        private int requiredMinchoBodyGrade => minchoAbilityDef.requiredMinchoBodyGrade;
-        private CandyTypeDef? candyType => minchoAbilityDef.candyType;
         private float requiredMinchoCandyValue => minchoAbilityDef.requiredMinchoCandyValue;
-        private List<HediffDef> requiredHediffDefs => minchoAbilityDef.requiredHediffDefs;
         private CompMinchoCore compMinchoCore = null!;
 
         public MinchoCandyAbility()
@@ -45,9 +41,13 @@ namespace MinchoCandyWars.Abilities
             if (minchoAbilityDef == null || compMinchoCore == null)
             {
                 Log.ErrorOnce($"MinchoCandyWars: Ability {def.defName} is missing required MinchoAbilityDefModExtension or CompMinchoCore on pawn {pawn.LabelCap}.", 112421);
-                pawn.abilities.RemoveAbility(this.def);
             }
         }
+
+        /// <summary>
+        /// 当前技能是否满足所有显示/使用条件。
+        /// </summary>
+        public bool IsAvailable => minchoAbilityDef?.IsAvailableFor(pawn) ?? false;
 
         //检查Gizmo是否禁用，如果糖果值不够则禁用
         public override bool GizmoDisabled(out string reason)
@@ -61,30 +61,9 @@ namespace MinchoCandyWars.Abilities
         }
 
         //检查是否显示Gizmo
-        private bool ShouldShowGizmo()
+        protected virtual bool ShouldShowGizmo()
         {
-            //检查核心等级和躯体等级
-            if (compMinchoCore.MinchoCoreGrade < requiredMinchoCoreGrade || compMinchoCore.MinchoBodyGrade < requiredMinchoBodyGrade)
-            {
-                return false;
-            }
-            //检查糖饰种类
-            if (compMinchoCore.CurrentCandyType != candyType)
-            {
-                return false;
-            }
-            //检查所需的Hediff,如果不需要hediff则不检查
-            if (requiredHediffDefs.Count > 0)
-            {
-                foreach (var hediffDef in requiredHediffDefs)
-                {
-                    if (!pawn.health.hediffSet.HasHediff(hediffDef))
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
+            return IsAvailable;
         }
 
         //控制Gizmo显示
