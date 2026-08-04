@@ -150,4 +150,51 @@
       <li>MCW_RW_VrocanGatling_Formech</li>
     </weaponTags>
   </ThingDef>
+
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>Mincho_CandyCane_ForMech</defName>
+		<label>candy cane</label>
+		<description>A very powerful candy cane made by triple enriched of mint candy. It boasts a fresher taste and more refreshing violence.\n\nIt does not look like a cane? You will say otherwise after a beating.</description>
+    <possessionCount>1</possessionCount>
+    <destroyOnDrop>true</destroyOnDrop>
+    <graphicData>
+			<texPath>Mincho_Item/Foods/Mincho_CandyCane</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <weaponTags>
+      <li>Mincho_CandyCane_ForMech</li>
+    </weaponTags>
+    <costStuffCount>100</costStuffCount>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>2</Mass>
+    </statBases>
+    <relicChance>2</relicChance>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>head</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>25</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+    </tools>
+    <recipeMaker Inherit="False" IsNull="True"/>
+  </ThingDef>
 </Defs>

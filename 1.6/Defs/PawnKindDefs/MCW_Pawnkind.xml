@@ -266,9 +266,9 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <!-- <weaponTags>
-      <li>MechanoidGunShortRange</li>
-    </weaponTags> -->
+    <weaponTags>
+      <li>Mincho_CandyCane_ForMech</li>
+    </weaponTags>
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_Defender_Recipe</defName>
