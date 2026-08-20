@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===== 琉璃千刃 ===== -->
+  <AbilityDef>
+    <defName>MCW_PrismCandyAbility_ThousandBlades</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>Thousand Blades</label>
+    <description>Fires shattered prism candy in a large forward cone, dealing sharp damage.</description>
+    <iconPath>UI/Gizmos/Abilities/Prism/MCW_ThousandBlades</iconPath>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>1800</cooldownTicksRange><!-- 30 seconds -->
+    <displayOrder>400</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>true</drawAimPie>
+      <range>7</range>
+      <warmupTime>0.5</warmupTime>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="MinchoCandyWars.Abilities.PrismCandy.CompProperties_AbilityPrismBlade">
+        <halfAngle>20</halfAngle>
+        <damageRatio>0.2</damageRatio>
+        <damageDef>MCW_PrismBladeBurst</damageDef>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>PrismCandy</candyType>
+        <requiredMinchoCoreGrade>0</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>1</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>10</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+  <!-- ===== 冰霜剑影 ===== -->
+  <AbilityDef>
+    <defName>MCW_PrismCandyAbility_FrostSwordShadow</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>Frost Sword Shadow</label>
+    <description>Slashes a crescent-shaped area ahead with a frost sword shadow, dealing high sharp damage.</description>
+    <iconPath>UI/Gizmos/Abilities/Prism/MCW_FrostSwordShadow</iconPath>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>2500</cooldownTicksRange><!-- 1 hour -->
+    <displayOrder>300</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>true</drawAimPie>
+      <range>13</range>
+      <warmupTime>1</warmupTime>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="MinchoCandyWars.Abilities.PrismCandy.CompProperties_AbilityPrismBlade">
+        <halfAngle>90</halfAngle>
+        <damageRatio>0.5</damageRatio>
+        <damageDef>MCW_PrismBladeBurst</damageDef>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>PrismCandy</candyType>
+        <requiredMinchoCoreGrade>2</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>2</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>30</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+  <!-- ===== 琉璃霞 ===== -->
+  <AbilityDef>
+    <defName>MCW_PrismCandyAbility_PrismGlow</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>Prism Glow</label>
+    <description>Leaps at a target and thrusts, dealing high sharp damage to vitals, then briefly increases movement speed.</description>
+    <iconPath>UI/Gizmos/Abilities/Prism/MCW_PrismGlow</iconPath>
+    <warmupStartSound>Longjump_Jump</warmupStartSound>
+    <jobDef>CastJump</jobDef>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>15000</cooldownTicksRange><!-- 6 hours -->
+    <displayOrder>200</displayOrder>
+    <verbProperties>
+      <verbClass>MinchoCandyWars.Abilities.PrismCandy.Verb_CastAbilityPrismGlow</verbClass>
+      <drawAimPie>true</drawAimPie>
+      <range>9</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <soundCast>Longjump_Jump</soundCast>
+      <soundLanding>Longjump_Land</soundLanding>
+      <flyWithCarriedThing>false</flyWithCarriedThing>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetSelf>false</canTargetSelf>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffect">
+        <compClass>MinchoCandyWars.Abilities.PrismCandy.CompAbilityEffect_PrismGlow</compClass>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>PrismCandy</candyType>
+        <requiredMinchoCoreGrade>2</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>4</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>200</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+  <!-- ===== 巧克力冰淇淋巨剑 ===== -->
+  <AbilityDef>
+    <defName>MCW_PrismCandyAbility_ChocoGreatsword</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>Chocolate Ice Cream Greatsword</label>
+    <description>Swings a massive chocolate ice cream greatsword at a target area, dealing high blunt damage and creating slowing terrain.</description>
+    <iconPath>UI/Gizmos/Abilities/Prism/MCW_ChocoGreatsword</iconPath>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>60000</cooldownTicksRange><!-- 1 day -->
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>true</drawAimPie>
+      <range>15</range>
+      <warmupTime>1.5</warmupTime>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="MinchoCandyWars.Abilities.PrismCandy.CompProperties_AbilityPrismChocoGreatsword">
+        <swordWidth>5</swordWidth>
+        <damageRatio>0.6</damageRatio>
+        <damageDef>MCW_PrismBladeBurst</damageDef>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>PrismCandy</candyType>
+        <requiredMinchoCoreGrade>5</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>5</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>500</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+  <!-- ===== 琉璃霞飞行器 ===== -->
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>MCW_PrismGlowFlyer</defName>
+    <label>prism glow flyer</label>
+    <thingClass>MinchoCandyWars.Abilities.PrismCandy.PawnFlyer_PrismGlow</thingClass>
+    <pawnFlyer>
+      <flightDurationMin>0.2</flightDurationMin>
+      <flightSpeed>20</flightSpeed>
+    </pawnFlyer>
+  </ThingDef>
+
+</Defs>

@@ -187,36 +187,40 @@
     <description>TODO</description>
     <coreStages>
       <li>
-        <statOffsets>
-          <IncomingDamageFactor>-0.2</IncomingDamageFactor>
-        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.8</IncomingDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <gainHediffs>
+          <li>MCW_AmberonShield</li>
+        </gainHediffs>
+        <statFactors>
+          <IncomingDamageFactor>0.8</IncomingDamageFactor>
+        </statFactors>
       </li>
       <li>
         <gainHediffs>
           <li>MCW_AmberonShield</li>
         </gainHediffs>
         <statOffsets>
-          <IncomingDamageFactor>-0.2</IncomingDamageFactor>
-        </statOffsets>
-      </li>
-      <li>
-        <gainHediffs>
-          <li>MCW_AmberonShield</li>
-        </gainHediffs>
-        <statOffsets>
-          <IncomingDamageFactor>-0.2</IncomingDamageFactor>
           <MCW_MeleeLearningFactor>0.2</MCW_MeleeLearningFactor>
         </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.8</IncomingDamageFactor>
+        </statFactors>
       </li>
       <li>
         <gainHediffs>
           <li>MCW_AmberonShield</li>
         </gainHediffs>
         <statOffsets>
-          <IncomingDamageFactor>-0.2</IncomingDamageFactor>
           <MCW_MeleeLearningFactor>0.2</MCW_MeleeLearningFactor>
           <WorkSpeedGlobal>0.2</WorkSpeedGlobal>
         </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.8</IncomingDamageFactor>
+        </statFactors>
       </li>
       <li>
         <gainHediffs>
@@ -224,10 +228,12 @@
           <li>MCW_AmberonHeartMood</li>
         </gainHediffs>
         <statOffsets>
-          <IncomingDamageFactor>-0.2</IncomingDamageFactor>
           <MCW_MeleeLearningFactor>0.2</MCW_MeleeLearningFactor>
           <WorkSpeedGlobal>0.2</WorkSpeedGlobal>
         </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.8</IncomingDamageFactor>
+        </statFactors>
       </li>
     </coreStages>
     <bodyStages>
@@ -269,6 +275,99 @@
           <MoveSpeed>0.2</MoveSpeed>
           <MCW_IceCreamOutput>0.5</MCW_IceCreamOutput>
           <MeleeDodgeChance>2.0</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </bodyStages>
+  </MinchoCandyWars.CandyTypeDef>
+
+  <MinchoCandyWars.CandyTypeDef>
+    <defName>PrismCandy</defName>
+    <label>Prism Candy</label>
+    <description>TODO</description>
+    <coreStages>
+      <li>
+        <statFactors>
+          <IncomingDamageFactor>0.9</IncomingDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>0.2</GlobalLearningFactor>
+        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.9</IncomingDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>0.2</GlobalLearningFactor>
+          <MCW_MeleeLearningFactor>0.5</MCW_MeleeLearningFactor>
+        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.9</IncomingDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>0.2</GlobalLearningFactor>
+          <MCW_MeleeLearningFactor>0.5</MCW_MeleeLearningFactor>
+          <MeleeDodgeChance>5.0</MeleeDodgeChance>
+        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.9</IncomingDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <gainHediffs>
+          <li>MCW_PrismTerrainIgnore</li>
+        </gainHediffs>
+        <statOffsets>
+          <GlobalLearningFactor>0.2</GlobalLearningFactor>
+          <MCW_MeleeLearningFactor>0.5</MCW_MeleeLearningFactor>
+          <MeleeDodgeChance>5.0</MeleeDodgeChance>
+        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.9</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </coreStages>
+    <bodyStages>
+      <li>
+        <statOffsets>
+          <MeleeDamageFactor>0.2</MeleeDamageFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <statOffsets>
+          <MeleeDamageFactor>0.2</MeleeDamageFactor>
+          <MeleeDodgeChance>3.0</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+      <li>
+        <statOffsets>
+          <MeleeDamageFactor>0.2</MeleeDamageFactor>
+          <MeleeDodgeChance>3.0</MeleeDodgeChance>
+          <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+        </statOffsets>
+      </li>
+      <li>
+        <statOffsets>
+          <MeleeDamageFactor>0.2</MeleeDamageFactor>
+          <MeleeDodgeChance>3.0</MeleeDodgeChance>
+          <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+          <MoveSpeed>1.0</MoveSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <statOffsets>
+          <MeleeDamageFactor>0.2</MeleeDamageFactor>
+          <MeleeDodgeChance>3.0</MeleeDodgeChance>
+          <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+          <MoveSpeed>1.0</MoveSpeed>
+          <MeleeCooldownFactor>-0.5</MeleeCooldownFactor>
         </statOffsets>
       </li>
     </bodyStages>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===== 琉璃剑气（爆炸型利器伤害，青蓝色爆炸） =====
+       模仿 Bomb：isExplosive + DamageWorker_AddInjury，爆炸颜色改为青蓝色。 -->
+  <DamageDef ParentName="Bomb">
+    <defName>MCW_PrismBladeBurst</defName>
+    <label>Prism Blade Burst</label>
+    <hediff>Cut</hediff>
+    <hediffSkin>Cut</hediffSkin>
+    <hediffSolid>Crack</hediffSolid>
+    <impactSoundType>Slice</impactSoundType>
+    <explosionColorCenter>(0.2, 0.8, 1.0)</explosionColorCenter>
+    <explosionColorEdge>(0.1, 0.5, 0.9)</explosionColorEdge>
+    <deathMessage>{0} has been torn apart by a prism blade burst.</deathMessage>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+  </DamageDef>
+
+</Defs>

@@ -52,5 +52,16 @@ namespace MinchoCandyWars
         public static CandyTypeDef NectarCandy = null!;
         public static CandyTypeDef MechaCandy = null!;
         public static CandyTypeDef AmberonCandy = null!;
+        // Prism Candy
+        public static CandyTypeDef PrismCandy = null!;
+        public static AbilityDef MCW_PrismCandyAbility_ThousandBlades = null!;
+        public static AbilityDef MCW_PrismCandyAbility_FrostSwordShadow = null!;
+        public static AbilityDef MCW_PrismCandyAbility_PrismGlow = null!;
+        public static AbilityDef MCW_PrismCandyAbility_ChocoGreatsword = null!;
+        public static HediffDef MCW_PrismGlowMoveSpeed = null!;
+        public static HediffDef MCW_PrismTerrainIgnore = null!;
+        public static HediffDef MCW_PrismSwordSlowHediff = null!;
+        public static ThingDef MCW_PrismSwordSlowZone = null!;
+        public static ThingDef MCW_PrismGlowFlyer = null!;
     }
 }

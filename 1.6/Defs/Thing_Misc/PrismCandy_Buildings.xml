@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===== 巧克力冰淇淋巨剑·减速区域 =====
+       透明物体，每 tick 遍历 pawn 并判定是否在巨剑范围内，是则施加减速 Hediff。 -->
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>MCW_PrismSwordSlowZone</defName>
+    <label>Chocolate Greatsword Slow Zone</label>
+    <description>A sticky area smashed out by the chocolate ice cream greatsword, greatly slowing those who pass through.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <tickerType>Normal</tickerType>
+    <passability>Standable</passability>
+    <selectable>false</selectable>
+    <comps>
+      <li Class="MinchoCandyWars.Abilities.PrismCandy.CompProperties_PrismSwordSlowZone">
+        <durationTicks>900</durationTicks><!-- 15 秒 -->
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

@@ -111,7 +111,7 @@
             <verbClass>Verb_CastAbilityTouch</verbClass>
             <drawAimPie>true</drawAimPie>
             <range>-1</range>
-            <warmupTime>10</warmupTime>
+            <warmupTime>4</warmupTime>
             <targetParams>
                 <canTargetLocations>true</canTargetLocations>
                 <canTargetPawns>false</canTargetPawns>
@@ -153,7 +153,7 @@
             <verbClass>Verb_CastAbility</verbClass>
             <drawAimPie>true</drawAimPie>
             <range>-1</range>
-            <warmupTime>5</warmupTime>
+            <warmupTime>2</warmupTime>
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>

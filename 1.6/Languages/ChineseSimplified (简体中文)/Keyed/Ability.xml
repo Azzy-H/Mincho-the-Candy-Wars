@@ -13,4 +13,7 @@
     <MinchoCandyWars.Abilities.StandBehindMeBlocked>该位置无法生成护盾。</MinchoCandyWars.Abilities.StandBehindMeBlocked>
     <MinchoCandyWars.Abilities.AmberonHeartSelfOnly>琥珀糖心只能对自己使用。</MinchoCandyWars.Abilities.AmberonHeartSelfOnly>
 
+    <!-- Prism Candy -->
+    <MinchoCandyWars.Abilities.PrismGlowInvalidTarget>琉璃霞只能以敌对单位为目标。</MinchoCandyWars.Abilities.PrismGlowInvalidTarget>
+
 </LanguageData>

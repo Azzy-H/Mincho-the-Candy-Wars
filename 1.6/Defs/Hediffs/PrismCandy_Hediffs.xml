@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===== 琉璃霞·迅捷（琉璃霞技能移速加成） ===== -->
+  <HediffDef>
+    <defName>MCW_PrismGlowMoveSpeed</defName>
+    <label>Prism Glow Swiftness</label>
+    <description>A brief state of swiftness after a Prism Glow thrust.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.8, 0.9, 1.0)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>1.0</MoveSpeed>
+        </statOffsets>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>600</disappearsAfterTicks><!-- 10 seconds -->
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ===== 无视地形（核心5被动，仅作标记） ===== -->
+  <HediffDef>
+    <defName>MCW_PrismTerrainIgnore</defName>
+    <label>Ignore Terrain</label>
+    <description>Immune to movement slowdown caused by terrain.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.8, 0.9, 1.0)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ===== 巧克力冰淇淋巨剑·减速（由减速区域每 tick 施加） ===== -->
+  <HediffDef>
+    <defName>MCW_PrismSwordSlowHediff</defName>
+    <label>Greatsword Sticky</label>
+    <description>Stuck by the chocolate ice cream greatsword, movement speed is reduced.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.5</MoveSpeed>
+        </statFactors>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>120</disappearsAfterTicks><!-- 2 秒，离开范围后自然消失 -->
+      </li>
+    </comps>
+  </HediffDef>
+
+</Defs>
