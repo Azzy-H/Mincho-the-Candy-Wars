@@ -28,7 +28,7 @@ namespace MinchoCandyWars
     {
         public MinchoBoosterRecipeModExtension Ext => recipe.GetModExtension<MinchoBoosterRecipeModExtension>();
 
-        public override bool AvailableOnNow(Thing thing, BodyPartRecord part = null)
+        public override bool AvailableOnNow(Thing thing, BodyPartRecord? part = null)
         {
             if (!base.AvailableOnNow(thing, part))
             {

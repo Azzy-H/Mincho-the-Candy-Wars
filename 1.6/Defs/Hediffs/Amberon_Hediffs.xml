@@ -23,6 +23,9 @@
         <statOffsets>
           <StaggerDurationFactor>0</StaggerDurationFactor>
         </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0</IncomingDamageFactor>
+        </statFactors>
         <becomeVisible>true</becomeVisible>
       </li>
     </stages>
