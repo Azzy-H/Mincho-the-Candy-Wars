@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===== 珉巧感染 ===== -->
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>MCW_LinglonCandyAbility_MinchoInfection</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>Mincho Infection</label>
+    <description>Infects a living creature with Mincho infection.</description>
+    <iconPath>UI/Gizmos/Abilities/Linglon/MCW_MinchoInfection</iconPath>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>180000</cooldownTicksRange><!-- 3 days -->
+    <displayOrder>300</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>5</warmupTime>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetSelf>false</canTargetSelf>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>Mincho_Infection</hediffDef>
+				<psychic>True</psychic>
+				<applicableToMechs>False</applicableToMechs>
+				<goodwillImpact>-15</goodwillImpact>
+			</li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>LinglonCandy</candyType>
+        <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>0</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+</Defs>

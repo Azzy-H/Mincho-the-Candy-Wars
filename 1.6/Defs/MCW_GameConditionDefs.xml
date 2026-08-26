@@ -7,4 +7,11 @@
     <conditionClass>MinchoCandyWars.Abilities.NectarCandy.GameCondition_MannaHeart</conditionClass>
     <canBePermanent>true</canBePermanent>
   </GameConditionDef>
+  <GameConditionDef>
+    <defName>MCW_LinglonAuraCondition</defName>
+    <label>Linglon Aura</label>
+    <description>A Linglon Candy suppresses the minds of nearby enemies.</description>
+    <conditionClass>MinchoCandyWars.Abilities.LinglonCandy.GameCondition_LinglonAura</conditionClass>
+    <canBePermanent>true</canBePermanent>
+  </GameConditionDef>
 </Defs>

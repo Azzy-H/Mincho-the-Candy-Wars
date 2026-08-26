@@ -3,8 +3,12 @@
 
     <MinchoCandyWars.Abilities.MinchoCandyValueDontEnough>糖果值不足,至少需要{0}</MinchoCandyWars.Abilities.MinchoCandyValueDontEnough>
     <MinchoCandyWars.Abilities.CandyValueConsume>糖果值消耗:{0}</MinchoCandyWars.Abilities.CandyValueConsume>
-    <MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>制作速度加速：{0}\n剩余时间：{1}</MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>
-    <MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation>千机糖工作台加速</MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation>
+    <MinchoCandyWars.Abilities.CurrentCandyType>当前糖果类型：{0}</MinchoCandyWars.Abilities.CurrentCandyType>
+    <MinchoCandyWars.Abilities.MinchoCoreGradeTips>核心等级：{0}</MinchoCandyWars.Abilities.MinchoCoreGradeTips>
+    <MinchoCandyWars.Abilities.MinchoBodyGradeTips>身体等级：{0}</MinchoCandyWars.Abilities.MinchoBodyGradeTips>
+    <MinchoCandyWars.Abilities.MinchoCandyValueTips>当前清凉度:{VALUE}/{MAXVALUE}</MinchoCandyWars.Abilities.MinchoCandyValueTips>
+    <!-- <MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>制作速度加速：{0}\n剩余时间：{1}</MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>
+    <MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation>千机糖工作台加速</MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation> -->
 
     <!-- Amberon Candy -->
     <MinchoCandyWars.Abilities.GuardianNameNotFriendly>只能以友方单位为目标。</MinchoCandyWars.Abilities.GuardianNameNotFriendly>
@@ -15,5 +19,8 @@
 
     <!-- Prism Candy -->
     <MinchoCandyWars.Abilities.PrismGlowInvalidTarget>琉璃霞只能以敌对单位为目标。</MinchoCandyWars.Abilities.PrismGlowInvalidTarget>
+
+    <!-- Linglon Candy -->
+    <MinchoCandyWars.Abilities.AmoebaMutationNoAvailable>当前没有可学习的心灵能力。</MinchoCandyWars.Abilities.AmoebaMutationNoAvailable>
 
 </LanguageData>

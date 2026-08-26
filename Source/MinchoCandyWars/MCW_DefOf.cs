@@ -45,23 +45,23 @@ namespace MinchoCandyWars
         public static HediffDef MCW_AmberonHeartMood = null!;
         public static ThingDef MCW_AmberonIceCreamWall = null!;
         public static ThingDef MCW_AmberonPositionShield = null!;
-        public static AbilityDef MCW_AmberonCandyAbility_GuardianName = null!;
-        public static AbilityDef MCW_AmberonCandyAbility_HardCandy = null!;
-        public static AbilityDef MCW_AmberonCandyAbility_StandBehindMe = null!;
-        public static AbilityDef MCW_AmberonCandyAbility_AmberonHeart = null!;
         public static CandyTypeDef NectarCandy = null!;
         public static CandyTypeDef MechaCandy = null!;
         public static CandyTypeDef AmberonCandy = null!;
         // Prism Candy
         public static CandyTypeDef PrismCandy = null!;
-        public static AbilityDef MCW_PrismCandyAbility_ThousandBlades = null!;
-        public static AbilityDef MCW_PrismCandyAbility_FrostSwordShadow = null!;
-        public static AbilityDef MCW_PrismCandyAbility_PrismGlow = null!;
-        public static AbilityDef MCW_PrismCandyAbility_ChocoGreatsword = null!;
         public static HediffDef MCW_PrismGlowMoveSpeed = null!;
         public static HediffDef MCW_PrismTerrainIgnore = null!;
         public static HediffDef MCW_PrismSwordSlowHediff = null!;
         public static ThingDef MCW_PrismSwordSlowZone = null!;
         public static ThingDef MCW_PrismGlowFlyer = null!;
+        // Linglon Candy
+        public static CandyTypeDef LinglonCandy = null!;
+        public static HediffDef MCW_LinglonAllFocus = null!;
+        public static HediffDef MCW_LinglonAura = null!;
+        public static HediffDef MCW_LinglonAuraDebuff = null!;
+        public static HediffDef MCW_LinglonAmoebaBoon = null!;
+        public static HediffDef MCW_LinglonAmoebaBoonBuff = null!;
+        public static GameConditionDef MCW_LinglonAuraCondition = null!;
     }
 }

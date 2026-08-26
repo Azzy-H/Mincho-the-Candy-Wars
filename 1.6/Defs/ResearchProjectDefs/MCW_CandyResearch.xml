@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 糖饰研究项目：解锁对应糖饰解锁物品的制作配方                -->
+  <!-- 图纸（Techprint）由 techprintCount=1 自动生成。              -->
+  <!-- ============================================================ -->
+
+  <ResearchProjectDef>
+    <defName>MCW_Research_MechaCandy</defName>
+    <label>Mecha Candy</label>
+    <description>研究千机糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
+    <techLevel>Industrial</techLevel>
+    <baseCost>3000</baseCost>
+    <techprintCount>1</techprintCount>
+    <techprintCommonality>1</techprintCommonality>
+    <techprintMarketValue>1000</techprintMarketValue>
+    <heldByFactionCategoryTags>
+      <li>MinchoCandyWars</li>
+    </heldByFactionCategoryTags>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <researchViewX>10.0</researchViewX>
+    <researchViewY>3.0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MCW_Research_NectarCandy</defName>
+    <label>Nectar Candy</label>
+    <description>研究甘露糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
+    <techLevel>Industrial</techLevel>
+    <baseCost>3000</baseCost>
+    <techprintCount>1</techprintCount>
+    <techprintCommonality>1</techprintCommonality>
+    <techprintMarketValue>1000</techprintMarketValue>
+    <heldByFactionCategoryTags>
+      <li>MinchoCandyWars</li>
+    </heldByFactionCategoryTags>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <researchViewX>11.0</researchViewX>
+    <researchViewY>3.0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MCW_Research_AmberonCandy</defName>
+    <label>Amberon Candy</label>
+    <description>研究琥珀糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
+    <techLevel>Industrial</techLevel>
+    <baseCost>3000</baseCost>
+    <techprintCount>1</techprintCount>
+    <techprintCommonality>1</techprintCommonality>
+    <techprintMarketValue>1000</techprintMarketValue>
+    <heldByFactionCategoryTags>
+      <li>MinchoCandyWars</li>
+    </heldByFactionCategoryTags>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <researchViewX>12.0</researchViewX>
+    <researchViewY>3.0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MCW_Research_PrismCandy</defName>
+    <label>Prism Candy</label>
+    <description>研究琉璃糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
+    <techLevel>Industrial</techLevel>
+    <baseCost>3000</baseCost>
+    <techprintCount>1</techprintCount>
+    <techprintCommonality>1</techprintCommonality>
+    <techprintMarketValue>1000</techprintMarketValue>
+    <heldByFactionCategoryTags>
+      <li>MinchoCandyWars</li>
+    </heldByFactionCategoryTags>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <researchViewX>13.0</researchViewX>
+    <researchViewY>3.0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MCW_Research_LinglonCandy</defName>
+    <label>Linglon Candy</label>
+    <description>研究玲珑糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
+    <techLevel>Industrial</techLevel>
+    <baseCost>3000</baseCost>
+    <techprintCount>1</techprintCount>
+    <techprintCommonality>1</techprintCommonality>
+    <techprintMarketValue>1000</techprintMarketValue>
+    <heldByFactionCategoryTags>
+      <li>MinchoCandyWars</li>
+    </heldByFactionCategoryTags>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <researchViewX>14.0</researchViewX>
+    <researchViewY>3.0</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

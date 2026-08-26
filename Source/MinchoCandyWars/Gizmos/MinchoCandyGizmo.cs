@@ -15,12 +15,16 @@ namespace MinchoCandyWars.Gizmos
         public Pawn pawn;
 
         public CompMinchoCore compMinchoCore;
-        
+
         public int minchoCoreGrade => compMinchoCore.MinchoCoreGrade;
         public int minchoBodyGrade => compMinchoCore.MinchoBodyGrade;
         public CandyTypeDef? candyType => compMinchoCore.CurrentCandyType;
         public float minchoCandyValue => compMinchoCore.MinchoCandyValue;
         public float currentMaxCandyValue => compMinchoCore.CurrentMaxCandyValue;
+
+        private const int toolTipHash1 = 19458323;
+        private const int toolTipHash2 = 19458324;
+        private const int toolTipHash3 = 19458325;
 
         public float FillPercent()
         {
@@ -52,23 +56,62 @@ namespace MinchoCandyWars.Gizmos
 
             Rect pinkRect = new Rect(root.x + 18f, root.y + 7f, 58f, 22f);
             Widgets.DrawTextureFitted(pinkRect, pinkCandyTexture, 1f);
+            //Text.Anchor = TextAnchor.MiddleCenter;
+            //Widgets.Label(pinkRect, compMinchoCore.MinchoCoreGrade.ToString());
+            //Text.Anchor = TextAnchor.UpperLeft;
+            TooltipHandler.TipRegion(pinkRect, new TipSignal(() => "MinchoCandyWars.Abilities.MinchoCoreGradeTips".Translate(compMinchoCore.MinchoCoreGrade), toolTipHash1));
 
             Rect blueRect = new Rect(root.x + 97f, root.y + 7f, 58f, 22f);
             Widgets.DrawTextureFitted(blueRect, blueCandyTexture, 1f);
+            //Text.Anchor = TextAnchor.MiddleCenter;
+            //Widgets.Label(blueRect, compMinchoCore.MinchoBodyGrade.ToString());
+            //Text.Anchor = TextAnchor.UpperLeft;
+            TooltipHandler.TipRegion(blueRect, new TipSignal(() => "MinchoCandyWars.Abilities.MinchoBodyGradeTips".Translate(compMinchoCore.MinchoBodyGrade), toolTipHash2));
 
             Rect cookieRect = new Rect(root.x + 8f, root.y + 35f, 32f, 32f);
             if (Widgets.ButtonImage(cookieRect, cookieTexture))
             {
-                Log.Message("[MinchoCandy] 点击了饼干！");
+                List<FloatMenuOption> options = new List<FloatMenuOption>();
+
+                foreach (CandyTypeDef candyTypeDef in compMinchoCore.candyTypeDefsAccessible)
+                {
+                    CandyTypeDef localCandyTypeDef = candyTypeDef;
+                    string label;
+                    if (candyTypeDef == compMinchoCore.CurrentCandyType)
+                    {
+                        label = "MinchoCandyWars.Abilities.CurrentCandyType".Translate(candyTypeDef.label);
+                    }
+                    else
+                    {
+                        label = candyTypeDef.label;
+                    }
+                    FloatMenuOption option = new FloatMenuOption(
+                        label,
+                        delegate
+                        {
+                            compMinchoCore.CurrentCandyType = localCandyTypeDef;
+                        }
+                    );
+                    if (candyTypeDef == compMinchoCore.CurrentCandyType)
+                    {
+                        option.Disabled = true;
+                    }
+                    options.Add(option);
+                }
+
+                Find.WindowStack.Add(new FloatMenu(options));
             }
 
             float pct = Mathf.Clamp01(FillPercent());
             Rect barRect = new Rect(root.x + 48f, root.y + 39f, 118f, 25f);
             FillableBarWithUVCut(barRect, pct, progressBarFillTexture, progressBarBGTexture, true);
+            TooltipHandler.TipRegion(barRect, new TipSignal(() => "MinchoCandyWars.Abilities.MinchoCandyValueTips".Translate(currentMaxCandyValue.Named("VALUE"), currentMaxCandyValue.Named("MAXVALUE")), toolTipHash3));
+            //Rect textRect = new Rect(barRect.x + (barRect.width - 45f) / 2f, barRect.y, 45f, barRect.height);
 
-            Text.Anchor = TextAnchor.MiddleCenter;
-            Widgets.Label(barRect, $"{pct:P0}");
-            Text.Anchor = TextAnchor.UpperLeft;
+            //Text.Anchor = TextAnchor.MiddleCenter;
+            //Widgets.DrawBoxSolid(textRect, Color.gray);
+            //Widgets.Label(textRect, $"{pct:P0}");
+            //Text.Anchor = TextAnchor.UpperLeft;
 
             return new GizmoResult(GizmoState.Clear);
         }

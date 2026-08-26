@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===== 玲珑糖·全灵媒（核心1被动） ===== -->
+  <HediffDef>
+    <defName>MCW_LinglonAllFocus</defName>
+    <label>all meditation focuses</label>
+    <description>Unlocks all meditation focus types.</description>
+    <hediffClass>MinchoCandyWars.Buff.Hediff_Buff</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.7, 0.6, 1.0)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <allowedMeditationFocusTypes>
+      <li>Dignified</li>
+      <li>Natural</li>
+      <li>Artistic</li>
+      <li>Morbid</li>
+      <li>Minimal</li>
+      <li>Flame</li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Void</li>
+    </allowedMeditationFocusTypes>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ===== 玲珑糖·心灵光环（躯体5被动，注册 GameCondition） ===== -->
+  <HediffDef>
+    <defName>MCW_LinglonAura</defName>
+    <label>Linglon aura</label>
+    <description>Suppresses the minds of enemies on the map.</description>
+    <hediffClass>MinchoCandyWars.Abilities.LinglonCandy.Hediff_LinglonAura</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.7, 0.6, 1.0)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ===== 玲珑糖·光环减益（施加给敌人） ===== -->
+  <HediffDef>
+    <defName>MCW_LinglonAuraDebuff</defName>
+    <label>Linglon suppression</label>
+    <description>Your consciousness is being suppressed.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.9</postFactor>
+          </li>
+        </capMods>
+        <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>120</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ===== 纳米变形虫增益（开关本体） ===== -->
+  <HediffDef>
+    <defName>MCW_LinglonAmoebaBoon</defName>
+    <label>amoeba booster</label>
+    <description>Grants +20% consciousness to all Mincho on the map, draining candy value every hour.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.7, 0.6, 1.0)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="MinchoCandyWars.Abilities.LinglonCandy.HediffCompProperties_LinglonAmoebaBoon">
+        <buffHediffDef>MCW_LinglonAmoebaBoonBuff</buffHediffDef>
+        <costPerHour>10</costPerHour>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ===== 纳米变形虫增益（全图珉巧 buff） ===== -->
+  <HediffDef>
+    <defName>MCW_LinglonAmoebaBoonBuff</defName>
+    <label>amoeba booster</label>
+    <description>Consciousness boosted by the amoeba booster.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.7, 0.6, 1.0)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>120</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+  <!-- ===== 纳米变形虫增益（开关） ===== -->
+  <AbilityDef>
+    <defName>MCW_LinglonCandyAbility_AmoebaBoon</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>Amoeba Boon</label>
+    <description>Toggles an aura that grants +20% consciousness to all Mincho on the map, draining candy value every hour.</description>
+    <iconPath>UI/Gizmos/Abilities/Linglon/MCW_AmoebaBoon</iconPath>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <targetRequired>false</targetRequired>
+    <cooldownTicksRange>60</cooldownTicksRange><!-- toggle, minimal cooldown -->
+    <displayOrder>200</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>1</warmupTime>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffect">
+        <compClass>MinchoCandyWars.Abilities.LinglonCandy.CompAbilityEffect_LinglonAmoebaBoon</compClass>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>LinglonCandy</candyType>
+        <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>2</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>0</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+  <!-- ===== 纳米变形虫变异 ===== -->
+  <AbilityDef>
+    <defName>MCW_LinglonCandyAbility_AmoebaMutation</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>Amoeba Mutation</label>
+    <description>Learns a random available psycast.</description>
+    <iconPath>UI/Gizmos/Abilities/Linglon/MCW_AmoebaMutation</iconPath>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <targetRequired>false</targetRequired>
+    <cooldownTicksRange>420000</cooldownTicksRange><!-- 7 days -->
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>30</warmupTime>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffect">
+        <compClass>MinchoCandyWars.Abilities.LinglonCandy.CompAbilityEffect_LinglonAmoebaMutation</compClass>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>LinglonCandy</candyType>
+        <requiredMinchoCoreGrade>3</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>200</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+</Defs>

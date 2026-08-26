@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 智慧珉巧改造包系列：物品 + 制作配方 + 手术配方               -->
+  <!-- 所有改造包在珉巧工作台制作，使用时为 100% 成功率手术。       -->
+  <!-- ============================================================ -->
+
+  <!-- ===== 智慧珉巧改造包 ===== -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>MCW_MinchoIntelBooster</defName>
+    <label>Mincho intelligence booster</label>
+    <description>沁心糖研发的智慧珉巧改造包，接收改造的珉巧可以拥有更加高级的智能。</description>
+    <!-- TODO(画师): 补充 graphicData 贴图 -->
+    <stackLimit>10</stackLimit>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.5</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+
+  <!-- ===== 智慧珉巧初级核心改造包 ===== -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>MCW_MinchoCoreBoosterBasic</defName>
+    <label>Mincho basic core booster</label>
+    <description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 1 级到 3 级的提升）</description>
+    <!-- TODO(画师): 补充 graphicData 贴图 -->
+    <stackLimit>10</stackLimit>
+    <statBases>
+      <MarketValue>800</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.5</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+
+  <!-- ===== 智慧珉巧高级核心改造包 ===== -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>MCW_MinchoCoreBoosterAdvanced</defName>
+    <label>Mincho advanced core booster</label>
+    <description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 3 级到 5 级的提升）</description>
+    <!-- TODO(画师): 补充 graphicData 贴图 -->
+    <stackLimit>10</stackLimit>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.5</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+
+  <!-- ===== 智慧珉巧躯体改造包 ===== -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>MCW_MinchoBodyBooster</defName>
+    <label>Mincho body booster</label>
+    <description>沁心糖研发的用于增加智慧珉巧躯体等级的改造包。（用于 1 级到 5 级的提升）</description>
+    <!-- TODO(画师): 补充 graphicData 贴图 -->
+    <stackLimit>10</stackLimit>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.5</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+
+  <!-- ===================== 制作配方 ===================== -->
+
+  <RecipeDef>
+    <defName>MCW_Make_MinchoIntelBooster</defName>
+    <label>make Mincho intelligence booster</label>
+    <description>制作智慧珉巧改造包。</description>
+    <jobString>Making Mincho intelligence booster.</jobString>
+    <workAmount>12000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <recipeUsers>
+      <li>Mincho_MinchoBench</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">
+        <filter><thingDefs><li>ArchiteCapsule</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <MCW_MinchoIntelBooster>1</MCW_MinchoIntelBooster>
+    </products>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MCW_Make_MinchoCoreBoosterBasic</defName>
+    <label>make Mincho basic core booster</label>
+    <description>制作智慧珉巧初级核心改造包。</description>
+    <jobString>Making Mincho basic core booster.</jobString>
+    <workAmount>8000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <recipeUsers>
+      <li>Mincho_MinchoBench</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <count>50</count>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">
+        <filter><thingDefs><li>SubcoreBasic</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <MCW_MinchoCoreBoosterBasic>1</MCW_MinchoCoreBoosterBasic>
+    </products>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MCW_Make_MinchoCoreBoosterAdvanced</defName>
+    <label>make Mincho advanced core booster</label>
+    <description>制作智慧珉巧高级核心改造包。</description>
+    <jobString>Making Mincho advanced core booster.</jobString>
+    <workAmount>8000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <recipeUsers>
+      <li>Mincho_MinchoBench</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <count>50</count>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">
+        <filter><thingDefs><li>SubcoreRegular</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <MCW_MinchoCoreBoosterAdvanced>1</MCW_MinchoCoreBoosterAdvanced>
+    </products>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MCW_Make_MinchoBodyBooster</defName>
+    <label>make Mincho body booster</label>
+    <description>制作智慧珉巧躯体改造包。</description>
+    <jobString>Making Mincho body booster.</jobString>
+    <workAmount>8000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <recipeUsers>
+      <li>Mincho_MinchoBench</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <products>
+      <MCW_MinchoBodyBooster>1</MCW_MinchoBodyBooster>
+    </products>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+
+  <!-- ===================== 手术配方 ===================== -->
+
+  <RecipeDef>
+    <defName>MCW_Implant_MinchoIntelBooster</defName>
+    <label>implant Mincho intelligence booster</label>
+    <description>对普通珉巧使用智慧珉巧改造包，使其成为智慧珉巧。100% 成功率。</description>
+    <jobString>Implanting Mincho intelligence booster.</jobString>
+    <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
+    <effectWorking>Surgery</effectWorking>
+    <soundWorking>Recipe_Surgery</soundWorking>
+    <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+    <workSkill>Medicine</workSkill>
+    <workAmount>2500</workAmount>
+    <targetsBodyPart>false</targetsBodyPart>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+    <recipeUsers>
+      <li>Mincho_ThingDef</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>MCW_MinchoIntelBooster</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>MCW_MinchoIntelBooster</li></thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="MinchoCandyWars.MinchoBoosterRecipeModExtension">
+        <boosterType>Intel</boosterType>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MCW_Implant_MinchoCoreBoosterBasic</defName>
+    <label>implant Mincho basic core booster</label>
+    <description>对核心等级 1-2 级的智慧珉巧使用初级核心改造包，提升核心等级。100% 成功率。</description>
+    <jobString>Implanting Mincho basic core booster.</jobString>
+    <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
+    <effectWorking>Surgery</effectWorking>
+    <soundWorking>Recipe_Surgery</soundWorking>
+    <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+    <workSkill>Medicine</workSkill>
+    <workAmount>2500</workAmount>
+    <targetsBodyPart>false</targetsBodyPart>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+    <recipeUsers>
+      <li>Mincho_ThingDef</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>MCW_MinchoCoreBoosterBasic</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>MCW_MinchoCoreBoosterBasic</li></thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="MinchoCandyWars.MinchoBoosterRecipeModExtension">
+        <boosterType>CoreBasic</boosterType>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MCW_Implant_MinchoCoreBoosterAdvanced</defName>
+    <label>implant Mincho advanced core booster</label>
+    <description>对核心等级 3-4 级的智慧珉巧使用高级核心改造包，提升核心等级。100% 成功率。</description>
+    <jobString>Implanting Mincho advanced core booster.</jobString>
+    <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
+    <effectWorking>Surgery</effectWorking>
+    <soundWorking>Recipe_Surgery</soundWorking>
+    <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+    <workSkill>Medicine</workSkill>
+    <workAmount>2500</workAmount>
+    <targetsBodyPart>false</targetsBodyPart>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+    <recipeUsers>
+      <li>Mincho_ThingDef</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>MCW_MinchoCoreBoosterAdvanced</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>MCW_MinchoCoreBoosterAdvanced</li></thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="MinchoCandyWars.MinchoBoosterRecipeModExtension">
+        <boosterType>CoreAdvanced</boosterType>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MCW_Implant_MinchoBodyBooster</defName>
+    <label>implant Mincho body booster</label>
+    <description>对躯体等级 1-4 级的智慧珉巧使用躯体改造包，提升躯体等级。100% 成功率。</description>
+    <jobString>Implanting Mincho body booster.</jobString>
+    <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
+    <effectWorking>Surgery</effectWorking>
+    <soundWorking>Recipe_Surgery</soundWorking>
+    <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+    <workSkill>Medicine</workSkill>
+    <workAmount>2500</workAmount>
+    <targetsBodyPart>false</targetsBodyPart>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+    <recipeUsers>
+      <li>Mincho_ThingDef</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>MCW_MinchoBodyBooster</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>MCW_MinchoBodyBooster</li></thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="MinchoCandyWars.MinchoBoosterRecipeModExtension">
+        <boosterType>Body</boosterType>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+
+</Defs>

@@ -15,21 +15,21 @@ namespace MinchoCandyWars.Patch.Stat
         [HarmonyPatch("PopulateMutableStats")]
         private static void Postfix_PopulateMutableStats()
         {
-            StringBuilder sb = new StringBuilder();
-            Log.Message("MCW: Patching StatDef.PopulateMutableStats to include stats from CandyTypeStages.");
-            FieldInfo? mutableStatsField = typeof(StatDef).GetField("mutableStats", BindingFlags.Static | BindingFlags.NonPublic);
-            if (mutableStatsField == null)
-            {
-                Log.Error("MCW: Unable to find StatDef.mutableStats.");
-                return;
-            }
+            //StringBuilder sb = new StringBuilder();
+            //Log.Message("MCW: Patching StatDef.PopulateMutableStats to include stats from CandyTypeStages.");
+            FieldInfo mutableStatsField = typeof(StatDef).GetField("mutableStats", BindingFlags.Static | BindingFlags.NonPublic);
+            //if (mutableStatsField == null)
+            //{
+            //    Log.Error("MCW: Unable to find StatDef.mutableStats.");
+            //    return;
+            //}
 
-            HashSet<StatDef>? mutableStats = mutableStatsField.GetValue(null) as HashSet<StatDef>;
-            if (mutableStats == null)
-            {
-                Log.Error("MCW: StatDef.mutableStats is null.");
-                return;
-            }
+            HashSet<StatDef> mutableStats = (HashSet<StatDef>)mutableStatsField.GetValue(null);
+            //if (mutableStats == null)
+            //{
+            //    Log.Error("MCW: StatDef.mutableStats is null.");
+            //    return;
+            //}
 
             foreach (CandyTypeDef candyTypeDef in DefDatabase<CandyTypeDef>.AllDefsListForReading)
             {
@@ -38,19 +38,19 @@ namespace MinchoCandyWars.Patch.Stat
                     continue;
                 }
 
-                AddStageStats(candyTypeDef.coreStages, mutableStats, sb);
-                AddStageStats(candyTypeDef.bodyStages, mutableStats, sb);
+                AddStageStats(candyTypeDef.coreStages, mutableStats);
+                AddStageStats(candyTypeDef.bodyStages, mutableStats);
             }
-            Log.Message(sb.ToString());
+            //Log.Message(sb.ToString());
         }
 
-        private static void AddStageStats(List<CandyTypeStage> stages, HashSet<StatDef> mutableStats, StringBuilder stringBuilder)
+        private static void AddStageStats(List<CandyTypeStage> stages, HashSet<StatDef> mutableStats)
         {
             if (stages == null)
             {
                 return;
             }
-            stringBuilder.AppendInNewLine($"MCW: Added stats from CandyTypeStage to StatDef.mutableStats.");
+            //stringBuilder.AppendInNewLine($"MCW: Added stats from CandyTypeStage to StatDef.mutableStats.");
             foreach (CandyTypeStage stage in stages)
             {
                 if (stage == null)
@@ -58,12 +58,12 @@ namespace MinchoCandyWars.Patch.Stat
                     continue;
                 }
 
-                AddStats(stage.statOffsets, mutableStats, stringBuilder);
-                AddStats(stage.statFactors, mutableStats, stringBuilder);
+                AddStats(stage.statOffsets, mutableStats);
+                AddStats(stage.statFactors, mutableStats);
             }
         }
 
-        private static void AddStats(List<StatModifier>? statModifiers, HashSet<StatDef> mutableStats, StringBuilder stringBuilder)
+        private static void AddStats(List<StatModifier>? statModifiers, HashSet<StatDef> mutableStats)
         {
             if (statModifiers == null)
             {
@@ -74,7 +74,7 @@ namespace MinchoCandyWars.Patch.Stat
                 if (statModifier?.stat != null)
                 {
                     mutableStats.Add(statModifier.stat);
-                    stringBuilder.AppendInNewLine($"- {statModifier.stat.defName}");
+                    //stringBuilder.AppendInNewLine($"- {statModifier.stat.defName}");
                 }
             }
         }

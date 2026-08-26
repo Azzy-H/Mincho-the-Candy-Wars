@@ -373,4 +373,116 @@
     </bodyStages>
   </MinchoCandyWars.CandyTypeDef>
 
+  <MinchoCandyWars.CandyTypeDef>
+    <defName>LinglonCandy</defName>
+    <label>Linglon Candy</label>
+    <description>TODO</description>
+    <coreStages>
+      <li>
+        <gainHediffs>
+          <li>MCW_LinglonAllFocus</li>
+        </gainHediffs>
+        <statOffsets>
+          <PsychicSensitivityOffset>1.5</PsychicSensitivityOffset>
+        </statOffsets>
+      </li>
+      <li>
+        <gainHediffs>
+          <li>MCW_LinglonAllFocus</li>
+        </gainHediffs>
+        <statOffsets>
+          <PsychicSensitivityOffset>1.5</PsychicSensitivityOffset>
+        </statOffsets>
+        <statFactors>
+          <MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">1.5</MeditationFocusGain>
+        </statFactors>
+      </li>
+      <li>
+        <gainHediffs>
+          <li>MCW_LinglonAllFocus</li>
+        </gainHediffs>
+        <statOffsets>
+          <PsychicSensitivityOffset>1.5</PsychicSensitivityOffset>
+        </statOffsets>
+        <statFactors>
+          <MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">1.5</MeditationFocusGain>
+          <PsychicEntropyMax MayRequire="Ludeon.RimWorld.Royalty">1.5</PsychicEntropyMax>
+        </statFactors>
+      </li>
+      <li>
+        <gainHediffs>
+          <li>MCW_LinglonAllFocus</li>
+        </gainHediffs>
+        <statOffsets>
+          <PsychicSensitivityOffset>1.5</PsychicSensitivityOffset>
+        </statOffsets>
+        <statFactors>
+          <MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">1.5</MeditationFocusGain>
+          <PsychicEntropyMax MayRequire="Ludeon.RimWorld.Royalty">1.5</PsychicEntropyMax>
+          <PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Royalty">1.5</PsychicEntropyRecoveryRate>
+        </statFactors>
+      </li>
+      <li>
+        <gainHediffs>
+          <li>MCW_LinglonAllFocus</li>
+        </gainHediffs>
+        <statOffsets>
+          <PsychicSensitivityOffset>3.0</PsychicSensitivityOffset>
+        </statOffsets>
+        <statFactors>
+          <MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">1.5</MeditationFocusGain>
+          <PsychicEntropyMax MayRequire="Ludeon.RimWorld.Royalty">1.5</PsychicEntropyMax>
+          <PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Royalty">1.5</PsychicEntropyRecoveryRate>
+        </statFactors>
+      </li>
+    </coreStages>
+    <bodyStages>
+      <li>
+        <statOffsets>
+          <PsychicEntropyMax MayRequire="Ludeon.RimWorld.Royalty">100</PsychicEntropyMax>
+        </statOffsets>
+      </li>
+      <li>
+        <statOffsets>
+          <PsychicEntropyMax MayRequire="Ludeon.RimWorld.Royalty">100</PsychicEntropyMax>
+        </statOffsets>
+        <statFactors>
+          <AimingDelayFactor>0.6</AimingDelayFactor>
+        </statFactors>
+      </li>
+      <li>
+        <statOffsets>
+          <PsychicEntropyMax MayRequire="Ludeon.RimWorld.Royalty">100</PsychicEntropyMax>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+        <statFactors>
+          <AimingDelayFactor>0.6</AimingDelayFactor>
+        </statFactors>
+      </li>
+      <li>
+        <statOffsets>
+          <PsychicEntropyMax MayRequire="Ludeon.RimWorld.Royalty">100</PsychicEntropyMax>
+          <MoveSpeed>0.2</MoveSpeed>
+          <MCW_IceCreamOutput>1.0</MCW_IceCreamOutput>
+        </statOffsets>
+        <statFactors>
+          <AimingDelayFactor>0.6</AimingDelayFactor>
+        </statFactors>
+      </li>
+      <li>
+        <gainHediffs>
+          <li>MCW_LinglonAura</li>
+        </gainHediffs>
+        <statOffsets>
+          <PsychicEntropyMax MayRequire="Ludeon.RimWorld.Royalty">100</PsychicEntropyMax>
+          <MoveSpeed>0.2</MoveSpeed>
+          <MCW_IceCreamOutput>1.0</MCW_IceCreamOutput>
+        </statOffsets>
+        <statFactors>
+          <AimingDelayFactor>0.6</AimingDelayFactor>
+        </statFactors>
+      </li>
+    </bodyStages>
+  </MinchoCandyWars.CandyTypeDef>
+
 </Defs>

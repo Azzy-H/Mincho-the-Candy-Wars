@@ -1,8 +1,9 @@
+using MinchoCandyWars.Abilities;
 using MinchoCandyWars.Data;
 using RimWorld;
+using System;
 using Verse;
 using static Mono.Math.BigInteger;
-using MinchoCandyWars.Abilities;
 
 namespace MinchoCandyWars
 {
@@ -39,10 +40,37 @@ namespace MinchoCandyWars
             }
         }
 
+        private bool active = false;
+        public bool Active
+        {
+            get => active;
+            set
+            {
+                active = value;
+                if (!active)
+                {
+                    minchoCoreGrade = 0;
+                    minchoBodyGrade = 0;
+                    MinchoCandyValue = 0f;
+                    RefreshMinchoAbilities();
+                }
+                else
+                {
+                    minchoCoreGrade = 1;
+                    minchoBodyGrade = 1;
+                    RefreshMinchoAbilities();
+                }
+            }
+        }
+
+        public HashSet<CandyTypeDef> candyTypeDefsAccessible = new HashSet<CandyTypeDef>();
+
         //数据存档
         public override void PostExposeData()
         {
             base.PostExposeData();
+            Scribe_Values.Look(ref active, "active", false);
+            Scribe_Collections.Look(ref candyTypeDefsAccessible, "candyTypeDefsAccessible", LookMode.Def);
             Scribe_Values.Look(ref minchoCoreGrade, "minchoCoreGrade", 0);
             Scribe_Values.Look(ref minchoBodyGrade, "minchoBodyGrade", 0);
             Scribe_Defs.Look(ref currentCandyType, "currentCandyType");
@@ -76,7 +104,23 @@ namespace MinchoCandyWars
         //总等级
         public int MinchoTotalGrade => minchoCoreGrade + minchoBodyGrade;
 
-
+        public void AddCandyTypeDefAccessible(CandyTypeDef candyTypeDef)
+        {
+            if (!candyTypeDefsAccessible.Contains(candyTypeDef))
+            {
+                candyTypeDefsAccessible.Add(candyTypeDef);
+            }
+        }
+        public void MinchoCoreGradeSet(int value)
+        {
+            MinchoCoreGrade = value;
+            RefreshMinchoAbilities();
+        }
+        public void MinchoCoreBodySet(int value)
+        {
+            MinchoBodyGrade = value;
+            RefreshMinchoAbilities();
+        }
         //当前糖饰种类
         public CandyTypeDef? CurrentCandyType
         {
@@ -115,7 +159,7 @@ namespace MinchoCandyWars
 
         public override void CompTick()
         {
-            base.CompTick();
+            if(!active) return;
 
             //每10tick回复糖果值，总数值为每天回复当前糖果值上限的50%
             if (pawn.IsHashIntervalTick(10))
@@ -160,13 +204,54 @@ namespace MinchoCandyWars
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if(MinchoTotalGrade > 0)
+            if(active)
             {
                 yield return new Gizmos.MinchoCandyGizmo(pawn, this);
             }
 
             if (SettingUtility.IsDebugMode())
             {
+                yield return new Command_Action
+                {
+                    defaultLabel = "Dev:切换激活状态",
+                    action = delegate
+                    {
+                        Active = !Active;
+                    }
+                };
+                yield return new Command_Action
+                {
+                    defaultLabel = "Dev:切换糖饰可用性",
+                    action = delegate
+                    {
+                        List<FloatMenuOption> options = new List<FloatMenuOption>();
+                        foreach (CandyTypeDef candyTypeDef in DefDatabase<CandyTypeDef>.AllDefs)
+                        {
+                            CandyTypeDef localCandyTypeDef = candyTypeDef;
+                            string label = candyTypeDef.defName;
+                            if (candyTypeDefsAccessible.Contains(candyTypeDef))
+                            {
+                                label += "(可用)";
+                            }
+                            FloatMenuOption option = new FloatMenuOption(
+                                label,
+                                delegate
+                                {
+                                    if (candyTypeDefsAccessible.Contains(localCandyTypeDef))
+                                    {
+                                        candyTypeDefsAccessible.Remove(localCandyTypeDef);
+                                    }
+                                    else
+                                    {
+                                        candyTypeDefsAccessible.Add(localCandyTypeDef);
+                                    }
+                                }
+                            );
+                            options.Add(option);
+                        }
+                        Find.WindowStack.Add(new FloatMenu(options));
+                    }
+                };
                 yield return new Command_Action
                 {
                     defaultLabel = "Dev:切换糖饰",
@@ -229,9 +314,11 @@ namespace MinchoCandyWars
                     defaultLabel = "Dev:全满",
                     action = delegate
                     {
+                        Active = true;
                         MinchoCoreGrade = 5;
                         MinchoBodyGrade = 5;
                         MinchoCandyValue = CurrentMaxCandyValue;
+                        candyTypeDefsAccessible.AddRange(DefDatabase<CandyTypeDef>.AllDefs);
                     }
                 };
                 yield return new Command_Action
@@ -239,9 +326,11 @@ namespace MinchoCandyWars
                     defaultLabel = "Dev:清空",
                     action = delegate
                     {
+                        Active = false;
                         MinchoCoreGrade = 0;
                         MinchoBodyGrade = 0;
                         MinchoCandyValue = 0f;
+                        candyTypeDefsAccessible.Clear();
                     }
                 };
             }
