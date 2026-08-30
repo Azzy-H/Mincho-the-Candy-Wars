@@ -32,6 +32,7 @@
       <lifeExpectancy>1000</lifeExpectancy>
       <hasCorpse>true</hasCorpse> <!-- 不生成尸体的话，deathAction无法启动 -->
       <needsRest>false</needsRest>
+      <hasMeat>false</hasMeat>
       <hasGenders>false</hasGenders>
       <disableIgniteVerb>true</disableIgniteVerb>
       <deathAction Class="MinchoCandyWars.DeathActionProperties_RevertDivide" Inherit="False"/>
