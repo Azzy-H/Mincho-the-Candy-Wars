@@ -71,35 +71,35 @@ namespace MinchoCandyWars.Gizmos
             Rect cookieRect = new Rect(root.x + 8f, root.y + 35f, 32f, 32f);
             if (Widgets.ButtonImage(cookieRect, cookieTexture))
             {
-                List<FloatMenuOption> options = new List<FloatMenuOption>();
+                //List<FloatMenuOption> options = new List<FloatMenuOption>();
 
-                foreach (CandyTypeDef candyTypeDef in compMinchoCore.candyTypeDefsAccessible)
-                {
-                    CandyTypeDef localCandyTypeDef = candyTypeDef;
-                    string label;
-                    if (candyTypeDef == compMinchoCore.CurrentCandyType)
-                    {
-                        label = "MinchoCandyWars.Abilities.CurrentCandyType".Translate(candyTypeDef.label);
-                    }
-                    else
-                    {
-                        label = candyTypeDef.label;
-                    }
-                    FloatMenuOption option = new FloatMenuOption(
-                        label,
-                        delegate
-                        {
-                            compMinchoCore.CurrentCandyType = localCandyTypeDef;
-                        }
-                    );
-                    if (candyTypeDef == compMinchoCore.CurrentCandyType)
-                    {
-                        option.Disabled = true;
-                    }
-                    options.Add(option);
-                }
+                //foreach (CandyTypeDef candyTypeDef in compMinchoCore.candyTypeDefsAccessible)
+                //{
+                //    CandyTypeDef localCandyTypeDef = candyTypeDef;
+                //    string label;
+                //    if (candyTypeDef == compMinchoCore.CurrentCandyType)
+                //    {
+                //        label = "MinchoCandyWars.Abilities.CurrentCandyType".Translate(candyTypeDef.label);
+                //    }
+                //    else
+                //    {
+                //        label = candyTypeDef.label;
+                //    }
+                //    FloatMenuOption option = new FloatMenuOption(
+                //        label,
+                //        delegate
+                //        {
+                //            compMinchoCore.CurrentCandyType = localCandyTypeDef;
+                //        }
+                //    );
+                //    if (candyTypeDef == compMinchoCore.CurrentCandyType)
+                //    {
+                //        option.Disabled = true;
+                //    }
+                //    options.Add(option);
+                //}
 
-                Find.WindowStack.Add(new FloatMenu(options));
+                //Find.WindowStack.Add(new FloatMenu(options));
             }
 
             float pct = Mathf.Clamp01(FillPercent());

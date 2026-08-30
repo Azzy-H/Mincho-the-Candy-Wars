@@ -10,23 +10,28 @@ namespace MinchoCandyWars.Buff
     public class CompMinchoCandyBuffApply : ThingComp
     {
         //Pawn_NeedsTracker.SetInitialLevels会读取stat，此时PostSpawnSetup未执行
-        private CompMinchoCore? cachedCoreComp;
+        private CompMinchoCore? cachedCoreComp = null;
+        public CompMinchoCore? CompMinchoCore
+        {             
+            get
+            {
+                if (cachedCoreComp == null)
+                {
+                    cachedCoreComp = pawn.GetComp<CompMinchoCore>();
+                }
+                return cachedCoreComp;
+            }
+        }
         private bool effectsDirty = true;
         public Pawn pawn => (Pawn)parent;
-        public CandyTypeStage? BodyStage => cachedCoreComp?.BodyStage;
-        public CandyTypeStage? CoreStage => cachedCoreComp?.CoreStage;
+        public CandyTypeStage? BodyStage => CompMinchoCore?.BodyStage;
+        public CandyTypeStage? CoreStage => CompMinchoCore?.CoreStage;
         private HashSet<HediffDef> hediffDefsNeedToApply = new HashSet<HediffDef>();
         public HashSet<HediffDef> HediffDefsNeedToApplyForReading => hediffDefsNeedToApply;
-
-        public override void PostSpawnSetup(bool respawningAfterLoad)
+        public override void PostPostMake()
         {
-            base.PostSpawnSetup(respawningAfterLoad);
-
-            cachedCoreComp = pawn.GetComp<CompMinchoCore>();
-            
             effectsDirty = true;
         }
-
         
         public override void ReceiveCompSignal(string signal)
         {
@@ -37,11 +42,9 @@ namespace MinchoCandyWars.Buff
         }
         public override void CompTick()
         {
-            base.CompTick();
             if (effectsDirty)
             {
                 RefreshEffectsCache();
-                effectsDirty = false;
             }
         }
 
@@ -49,6 +52,8 @@ namespace MinchoCandyWars.Buff
         private void RefreshEffectsCache()
         {
             hediffDefsNeedToApply.Clear();
+            if (CompMinchoCore == null || !CompMinchoCore.Active) return;
+            hediffDefsNeedToApply.Add(MCW_DefOf.MCW_Intel);
             if (BodyStage?.gainHediffs != null)
             {
                 hediffDefsNeedToApply.AddRange(BodyStage.gainHediffs);
@@ -113,7 +118,10 @@ namespace MinchoCandyWars.Buff
                 sb.Append(stringBuilder.ToString());
             }
         }
-
+        public override void PostExposeData()
+        {
+            if (Scribe.mode == LoadSaveMode.PostLoadInit) RefreshEffectsCache();
+        }
     }
 
     public class CompProperties_MinchoCandyBuffApply : CompProperties

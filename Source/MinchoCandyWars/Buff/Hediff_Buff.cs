@@ -18,5 +18,13 @@ namespace MinchoCandyWars.Buff
             base.PostAdd(dinfo);
             cachedBuffComp = pawn.GetComp<CompMinchoCandyBuffApply>();
         }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            if(Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                cachedBuffComp = pawn.GetComp<CompMinchoCandyBuffApply>();
+            }
+        }
     }
 }

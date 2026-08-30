@@ -63,5 +63,9 @@ namespace MinchoCandyWars
         public static HediffDef MCW_LinglonAmoebaBoon = null!;
         public static HediffDef MCW_LinglonAmoebaBoonBuff = null!;
         public static GameConditionDef MCW_LinglonAuraCondition = null!;
+
+        public static HediffDef MCW_CandyChangeExhaustion = null!;
+        public static HediffDef MCW_Intel = null!;
+        //public static HediffDef MCW_SnowBoost = null!;
     }
 }

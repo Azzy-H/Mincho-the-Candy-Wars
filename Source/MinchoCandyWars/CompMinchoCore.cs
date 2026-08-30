@@ -2,6 +2,7 @@ using MinchoCandyWars.Abilities;
 using MinchoCandyWars.Data;
 using RimWorld;
 using System;
+using System.Reflection;
 using Verse;
 using static Mono.Math.BigInteger;
 
@@ -24,7 +25,13 @@ namespace MinchoCandyWars
         public CandyTypeStage? BodyStage => MinchoBodyGrade > 0 ? CurrentCandyType?.bodyStages[MinchoBodyGrade - 1] : null;
 
         public CandyTypeStage? CoreStage => MinchoCoreGrade > 0 ? CurrentCandyType?.coreStages[MinchoCoreGrade - 1] : null;
+        public int intellectualPassion = 1;
 
+        public override void Initialize(CompProperties props)
+        {
+            base.Initialize(props);
+            if (Rand.Chance(0.25f)) intellectualPassion = 2;
+        }
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
@@ -53,28 +60,31 @@ namespace MinchoCandyWars
                     minchoBodyGrade = 0;
                     MinchoCandyValue = 0f;
                     RefreshMinchoAbilities();
+                    pawn.Notify_DisabledWorkTypesChanged();
+                    pawn.skills.GetSkill(SkillDefOf.Intellectual).passion = Passion.None;
                 }
                 else
                 {
                     minchoCoreGrade = 1;
                     minchoBodyGrade = 1;
                     RefreshMinchoAbilities();
+                    pawn.Notify_DisabledWorkTypesChanged();
+                    pawn.skills.GetSkill(SkillDefOf.Intellectual).passion = (Passion)intellectualPassion;
                 }
+                parent.BroadcastCompSignal(CompSignals.MinchoCoreDataChange);
             }
         }
-
-        public HashSet<CandyTypeDef> candyTypeDefsAccessible = new HashSet<CandyTypeDef>();
 
         //数据存档
         public override void PostExposeData()
         {
             base.PostExposeData();
             Scribe_Values.Look(ref active, "active", false);
-            Scribe_Collections.Look(ref candyTypeDefsAccessible, "candyTypeDefsAccessible", LookMode.Def);
             Scribe_Values.Look(ref minchoCoreGrade, "minchoCoreGrade", 0);
             Scribe_Values.Look(ref minchoBodyGrade, "minchoBodyGrade", 0);
             Scribe_Defs.Look(ref currentCandyType, "currentCandyType");
             Scribe_Values.Look(ref minchoCandyValue, "minchoCandyValue", 0);
+            Scribe_Values.Look(ref intellectualPassion, "intellectualPassion", 1);
         }
 
         //核心等级
@@ -104,13 +114,6 @@ namespace MinchoCandyWars
         //总等级
         public int MinchoTotalGrade => minchoCoreGrade + minchoBodyGrade;
 
-        public void AddCandyTypeDefAccessible(CandyTypeDef candyTypeDef)
-        {
-            if (!candyTypeDefsAccessible.Contains(candyTypeDef))
-            {
-                candyTypeDefsAccessible.Add(candyTypeDef);
-            }
-        }
         public void MinchoCoreGradeSet(int value)
         {
             MinchoCoreGrade = value;
@@ -221,39 +224,6 @@ namespace MinchoCandyWars
                 };
                 yield return new Command_Action
                 {
-                    defaultLabel = "Dev:切换糖饰可用性",
-                    action = delegate
-                    {
-                        List<FloatMenuOption> options = new List<FloatMenuOption>();
-                        foreach (CandyTypeDef candyTypeDef in DefDatabase<CandyTypeDef>.AllDefs)
-                        {
-                            CandyTypeDef localCandyTypeDef = candyTypeDef;
-                            string label = candyTypeDef.defName;
-                            if (candyTypeDefsAccessible.Contains(candyTypeDef))
-                            {
-                                label += "(可用)";
-                            }
-                            FloatMenuOption option = new FloatMenuOption(
-                                label,
-                                delegate
-                                {
-                                    if (candyTypeDefsAccessible.Contains(localCandyTypeDef))
-                                    {
-                                        candyTypeDefsAccessible.Remove(localCandyTypeDef);
-                                    }
-                                    else
-                                    {
-                                        candyTypeDefsAccessible.Add(localCandyTypeDef);
-                                    }
-                                }
-                            );
-                            options.Add(option);
-                        }
-                        Find.WindowStack.Add(new FloatMenu(options));
-                    }
-                };
-                yield return new Command_Action
-                {
                     defaultLabel = "Dev:切换糖饰",
                     action = delegate
                     {
@@ -318,7 +288,6 @@ namespace MinchoCandyWars
                         MinchoCoreGrade = 5;
                         MinchoBodyGrade = 5;
                         MinchoCandyValue = CurrentMaxCandyValue;
-                        candyTypeDefsAccessible.AddRange(DefDatabase<CandyTypeDef>.AllDefs);
                     }
                 };
                 yield return new Command_Action
@@ -330,11 +299,24 @@ namespace MinchoCandyWars
                         MinchoCoreGrade = 0;
                         MinchoBodyGrade = 0;
                         MinchoCandyValue = 0f;
-                        candyTypeDefsAccessible.Clear();
                     }
                 };
             }
         }
+
+        private static FieldInfo fi_Pawn_cachedDisabledWorkTypesPermanent = typeof(Pawn).GetField("cachedDisabledWorkTypesPermanent", BindingFlags.NonPublic | BindingFlags.Instance);
+        private static FieldInfo fi_Pawn_cachedDisabledWorkTypes = typeof(Pawn).GetField("cachedDisabledWorkTypes", BindingFlags.NonPublic | BindingFlags.Instance);
+        public void TryRemoveDisabledWorkTypes()
+        {
+            if (!active) return;
+            ((List<WorkTypeDef>)fi_Pawn_cachedDisabledWorkTypesPermanent.GetValue(pawn))?.RemoveAll(x=>(x.workTags & WorkTags.Intellectual) != 0);
+            ((List<WorkTypeDef>)fi_Pawn_cachedDisabledWorkTypes.GetValue(pawn))?.RemoveAll(x => (x.workTags & WorkTags.Intellectual) != 0);
+        }
+        //public void RefreshDisabledWorkTypes()
+        //{
+        //    fi_Pawn_cachedDisabledWorkTypesPermanent.SetValue(pawn, null);
+        //    fi_Pawn_cachedDisabledWorkTypes.SetValue(pawn, null);
+        //}
     }
 
     public class CompProperties_MinchoCore : CompProperties

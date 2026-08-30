@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>MCW_Intel</defName>
+    <label>inteled</label>
+    <description>inteled.</description>
+    <isBad>false</isBad>
+    <hediffClass>MinchoCandyWars.Buff.Hediff_Buff</hediffClass>
+    <aptitudes>
+      <Intellectual>12</Intellectual>
+    </aptitudes>
+  </HediffDef>
+  <HediffDef>
+    <defName>MCW_CandyChangeExhaustion</defName>
+    <label>Candy Change Exhaustion</label>
+    <description>Causes exhaustion when changing candy types.</description>
+    <isBad>true</isBad>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>300000</disappearsAfterTicks> <!-- overriden when added -->
+      </li>
+    </comps>
+  </HediffDef>
+  <HediffDef>
+    <defName>MCW_SnowBoost</defName>
+    <label>Snow Boost</label>
+    <description>Provides a boost to snow-related activities.</description>
+    <isBad>false</isBad>
+    <hediffClass>Hediff</hediffClass>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.5</MoveSpeed>
+        </statOffsets>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

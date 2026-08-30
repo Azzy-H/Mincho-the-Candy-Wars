@@ -200,6 +200,7 @@
     <description>对普通珉巧使用智慧珉巧改造包，使其成为智慧珉巧。100% 成功率。</description>
     <jobString>Implanting Mincho intelligence booster.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
+    <anesthetize>false</anesthetize>
     <effectWorking>Surgery</effectWorking>
     <soundWorking>Recipe_Surgery</soundWorking>
     <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
@@ -233,6 +234,7 @@
     <description>对核心等级 1-2 级的智慧珉巧使用初级核心改造包，提升核心等级。100% 成功率。</description>
     <jobString>Implanting Mincho basic core booster.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
+    <anesthetize>false</anesthetize>
     <effectWorking>Surgery</effectWorking>
     <soundWorking>Recipe_Surgery</soundWorking>
     <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
@@ -266,6 +268,7 @@
     <description>对核心等级 3-4 级的智慧珉巧使用高级核心改造包，提升核心等级。100% 成功率。</description>
     <jobString>Implanting Mincho advanced core booster.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
+    <anesthetize>false</anesthetize>
     <effectWorking>Surgery</effectWorking>
     <soundWorking>Recipe_Surgery</soundWorking>
     <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
@@ -299,6 +302,7 @@
     <description>对躯体等级 1-4 级的智慧珉巧使用躯体改造包，提升躯体等级。100% 成功率。</description>
     <jobString>Implanting Mincho body booster.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
+    <anesthetize>false</anesthetize>
     <effectWorking>Surgery</effectWorking>
     <soundWorking>Recipe_Surgery</soundWorking>
     <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
