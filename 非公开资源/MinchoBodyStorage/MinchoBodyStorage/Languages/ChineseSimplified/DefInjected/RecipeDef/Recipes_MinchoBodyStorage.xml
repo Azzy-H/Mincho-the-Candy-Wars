@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <InstallMinchoBodyStorage.label>珉巧身体囤放增设手术</InstallMinchoBodyStorage.label>
+  <InstallMinchoBodyStorage.description>消耗 5 个零部件（工业组件），将一枚囤放装置植入珉巧躯干，直接获得 +20 携带容量（CE 环境同时 +20 携带重量与携带体积）。</InstallMinchoBodyStorage.description>
+  <InstallMinchoBodyStorage.jobString>正在植入囤放装置。</InstallMinchoBodyStorage.jobString>
+</LanguageData>

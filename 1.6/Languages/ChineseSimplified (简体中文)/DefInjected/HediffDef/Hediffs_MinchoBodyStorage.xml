@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MCW_MinchoBodyStorageImplant.label>囤放装置</MCW_MinchoBodyStorageImplant.label>
+  <MCW_MinchoBodyStorageImplant.description>植入珉巧体内的机械囤放器官，大幅提升携带能力（携带容量 +20）。</MCW_MinchoBodyStorageImplant.description>
+  <MCW_MinchoBodyStorageImplant.stages.installed.label>已安装</MCW_MinchoBodyStorageImplant.stages.installed.label>
+</LanguageData>

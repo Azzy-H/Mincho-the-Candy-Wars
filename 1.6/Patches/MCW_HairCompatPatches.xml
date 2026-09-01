@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- 1. Mincho_CheckHair 白名单追加本 mod 发型 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="Mincho_CheckHair"]/comps/li[@Class="Mincho_The_Mint_Choco_Slime.HediffCompProperties_CheckHair"]/hediffAndHairs/li[hediffDef="Mincho_Mintchoco_Hediff"]/hairDefs</xpath>
+    <value>
+      <li>MCW_Hair_Upper_A</li>
+      <li>MCW_Hair_Upper_B</li>
+      <li>MCW_Hair_Upper_C</li>
+    </value>
+  </Operation>
+
+  <!-- 2a. 后发（Lower）映射：本 mod 发型对应 severity 14/15/16 → 不渲染后发 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Dummy/Large_Hair_Lower"]/extendedGraphics/Age[@For="HumanlikeAdult"]/extendedGraphics/Hediff[@For="Mincho_Mintchoco_Hediff"]/extendedGraphics/Hediff[@For="Mincho_CheckHair"]/extendedGraphics</xpath>
+    <value>
+      <Severity For="14.0">Mincho_Null</Severity>
+      <Severity For="15.0">Mincho_Null</Severity>
+      <Severity For="16.0">Mincho_Null</Severity>
+    </value>
+  </Operation>
+
+  <!-- 2b. 前上层（UpperMore）映射：同上 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Dummy/Large_Hair_UpperMore"]/extendedGraphics/Age[@For="HumanlikeAdult"]/extendedGraphics/Hediff[@For="Mincho_Mintchoco_Hediff"]/extendedGraphics/Hediff[@For="Mincho_CheckHair"]/extendedGraphics</xpath>
+    <value>
+      <Severity For="14.0">Mincho_Null</Severity>
+      <Severity For="15.0">Mincho_Null</Severity>
+      <Severity For="16.0">Mincho_Null</Severity>
+    </value>
+  </Operation>
+
+</Patch>

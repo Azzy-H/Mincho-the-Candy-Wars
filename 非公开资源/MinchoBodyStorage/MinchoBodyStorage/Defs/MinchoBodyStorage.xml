@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       珉巧·身体囤放增设（Body Storage Expansion）
+       参考珉巧本体「辅助核心增设手术」格式：
+         - HediffDef ParentName="ImplantHediffBase"
+         - RecipeDef ParentName="SurgeryInstallImplantBase"
+         - 挂在原版已有部位 Mincho_Torso 上（旧存档也存在）
+       一个手术植入「囤放装置」，直接 +20 携带容量（原版
+       CarryingCapacity）；CE 环境额外 +20 携带重量/体积。
+       ============================================================ -->
+
+  <!-- ================= 囤放装置（植入 hediff） ================= -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MinchoBodyStorageImplant</defName>
+    <label>body storage device</label>
+    <description>An implanted mechanical storage organ that greatly increases the mincho's carrying capacity.</description>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1</maxSeverity>
+    <initialSeverity>1</initialSeverity>
+    <stages>
+      <li>
+        <label>installed</label>
+        <statOffsets>
+          <CarryingCapacity>20</CarryingCapacity>
+          <CarryWeight MayRequire="CETeam.CombatExtended">20</CarryWeight>
+          <CarryBulk MayRequire="CETeam.CombatExtended">20</CarryBulk>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ================= 身体囤放增设手术 ================= -->
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallMinchoBodyStorage</defName>
+    <label>Mincho body storage add surgery</label>
+    <description>Install a body storage device into the mincho, consuming 5 components and granting +20 carrying capacity.</description>
+    <descriptionHyperlinks>
+      <ThingDef>ComponentIndustrial</ThingDef>
+      <HediffDef>MinchoBodyStorageImplant</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing body storage device.</jobString>
+    <surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>MinchoBodyStorageImplant</addsHediff>
+    <appliedOnFixedBodyParts>
+      <li>Mincho_Torso</li>
+    </appliedOnFixedBodyParts>
+  </RecipeDef>
+
+</Defs>
