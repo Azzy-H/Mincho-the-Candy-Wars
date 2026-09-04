@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-  <!-- ============================================================
-       珉巧·身体囤放增设手术
-       来源：非公开资源/MinchoBodyStorage（作者 Ciao），已嵌入主模组。
-       HediffDef 见 Hediffs/MinchoBodyStorage_Hediffs.xml
-       ============================================================ -->
-
   <!-- ================= 身体囤放增设手术 ================= -->
   <RecipeDef ParentName="SurgeryInstallImplantBase">
     <defName>MCW_InstallMinchoBodyStorage</defName>
@@ -38,5 +31,4 @@
       <li>Mincho_Torso</li>
     </appliedOnFixedBodyParts>
   </RecipeDef>
-
 </Defs>

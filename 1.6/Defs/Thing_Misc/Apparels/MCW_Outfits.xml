@@ -5,7 +5,7 @@
     <label>珉巧护士服</label>
     <description>甘露糖模仿人类护士制成的衣物，听说只要换上就可以获得医术加成！同时，还能让爱人为之倾倒。</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_NurseOutfit/Naked_Mincho_Body_Large_PinkFallInLove_Humanlike_south</texPath>
+      <texPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseOutfit</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
     </graphicData>
     <costStuffCount>40</costStuffCount>
@@ -13,9 +13,6 @@
       <li>Fabric</li>
       <li>Leathery</li>
     </stuffCategories>
-    <costList>
-      <Metal>5</Metal>
-    </costList>
     <statBases>
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToMake>2500</WorkToMake>
@@ -32,30 +29,21 @@
       <Beauty>1</Beauty>
     </statBases>
     <apparel>
-      <wornGraphicPath>Things/Apparel/MCW_NurseOutfit/Naked_Mincho_Body_Large_PinkFallInLove_Humanlike</wornGraphicPath>
-      <layers>
-        <li>Middle</li>
-      </layers>
+      <wornGraphicPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseOutfit</wornGraphicPath>
     </apparel>
-    <colorGenerator Class="ColorGenerator_Options">
-      <options>
-        <li>
-          <weight>10</weight>
-          <only>RGBA(1,1,1,1)</only>
-        </li>
-      </options>
-    </colorGenerator>
   </ThingDef>
   <ThingDef ParentName="Mincho_ApparelBase_Hat">
     <defName>MCW_NurseCap</defName>
     <label>珉巧护士帽</label>
     <description>珉巧护士帽。</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_NurseCap/Texture</texPath>
+      <texPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseCap</texPath>
     </graphicData>
-    <costList>
-      <Metal>20</Metal>
-    </costList>
+    <costStuffCount>10</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <WorkToMake>500</WorkToMake>
@@ -67,16 +55,8 @@
       <Beauty>1</Beauty>
     </statBases>
     <apparel>
-      <wornGraphicPath>Things/Apparel/MCW_NurseCap/Texture</wornGraphicPath>
+      <wornGraphicPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseCap</wornGraphicPath>
     </apparel>
-    <colorGenerator Class="ColorGenerator_Options">
-      <options>
-        <li>
-          <weight>10</weight>
-          <only>RGBA(1,1,1,1)</only>
-        </li>
-      </options>
-    </colorGenerator>
   </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
@@ -84,13 +64,14 @@
     <label>珉巧比基尼</label>
     <description>你知道吗，其实穿的越少，防御越高！</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_Bikini/Naked_Mincho_Body_Large_PinkFallInLove_Humanlike</texPath>
+      <texPath>Things/Apparel/MCW_Bikini/MCW_Bikini</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
     </graphicData>
-    <costList>
-      <Metal>100</Metal>
-      <DevilstrandCloth>20</DevilstrandCloth>
-    </costList>
+    <costStuffCount>10</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>
       <WorkToMake>1000</WorkToMake>
@@ -104,19 +85,8 @@
       <Beauty>2</Beauty>
     </statBases>
     <apparel>
-      <wornGraphicPath>Things/Apparel/MCW_Bikini/Naked_Mincho_Body_Large_PinkFallInLove_Humanlike</wornGraphicPath>
-      <layers>
-        <li>Middle</li>
-      </layers>
+      <wornGraphicPath>Things/Apparel/MCW_Bikini/MCW_Bikini</wornGraphicPath>
     </apparel>
-    <colorGenerator Class="ColorGenerator_Options">
-      <options>
-        <li>
-          <weight>10</weight>
-          <only>RGBA(1,1,1,1)</only>
-        </li>
-      </options>
-    </colorGenerator>
   </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
@@ -124,13 +94,9 @@
     <label>珉巧比基尼（黑白）</label>
     <description>你知道吗，其实穿的越少，防御越高！\n\n黑白配色限定款。</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_Bikini_BW/Naked_Mincho_Body_Large_PinkFallInLove_Humanlike</texPath>
+      <texPath>Things/Apparel/MCW_Bikini_BW/MCW_Bikini_BW</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
     </graphicData>
-    <costList>
-      <Metal>100</Metal>
-      <DevilstrandCloth>20</DevilstrandCloth>
-    </costList>
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>
       <WorkToMake>1000</WorkToMake>
@@ -143,20 +109,14 @@
       <EquipDelay>1</EquipDelay>
       <Beauty>2</Beauty>
     </statBases>
+    <costStuffCount>10</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
     <apparel>
-      <wornGraphicPath>Things/Apparel/MCW_Bikini_BW/Naked_Mincho_Body_Large_PinkFallInLove_Humanlike</wornGraphicPath>
-      <layers>
-        <li>Middle</li>
-      </layers>
+      <wornGraphicPath>Things/Apparel/MCW_Bikini_BW/MCW_Bikini_BW</wornGraphicPath>
     </apparel>
-    <colorGenerator Class="ColorGenerator_Options">
-      <options>
-        <li>
-          <weight>10</weight>
-          <only>RGBA(1,1,1,1)</only>
-        </li>
-      </options>
-    </colorGenerator>
   </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
@@ -164,14 +124,14 @@
     <label>珉巧华装礼服</label>
     <description>华丽的巧克力礼服，可以强化玲珑糖们的心灵能力，听说有的智慧珉巧会仰仗这种独特的心灵能力来充当祭祀。</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_GorgeousDress/Naked_Mincho_Body_Large_PinkFallInLove_Humanlike</texPath>
+      <texPath>Things/Apparel/MCW_GorgeousDress/MCW_GorgeousDress</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
     </graphicData>
-    <costList>
-      <Mincho_ChocoStick>200</Mincho_ChocoStick>
-      <Metal>40</Metal>
-      <Gold>100</Gold>
-    </costList>
+    <costStuffCount>40</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
     <statBases>
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToMake>4000</WorkToMake>
@@ -189,18 +149,7 @@
       <PsychicEntropyRecoveryRate>0.5</PsychicEntropyRecoveryRate>
     </equippedStatOffsets>
     <apparel>
-      <wornGraphicPath>Things/Apparel/MCW_GorgeousDress/Naked_Mincho_Body_Large_PinkFallInLove_Humanlike</wornGraphicPath>
-      <layers>
-        <li>Middle</li>
-      </layers>
+      <wornGraphicPath>Things/Apparel/MCW_GorgeousDress/MCW_GorgeousDress</wornGraphicPath>
     </apparel>
-    <colorGenerator Class="ColorGenerator_Options">
-      <options>
-        <li>
-          <weight>10</weight>
-          <only>RGBA(1,1,1,1)</only>
-        </li>
-      </options>
-    </colorGenerator>
   </ThingDef>
 </Defs>
