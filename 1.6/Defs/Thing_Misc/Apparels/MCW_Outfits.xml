@@ -30,6 +30,16 @@
     </statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseOutfit</wornGraphicPath>
+			<layers>
+				<li>OnSkin</li>
+				<!--
+			<li>OnSkin</li>
+			<li>Middle</li>
+			<li>Shell</li>
+			<li>Belt</li>
+			<li>Overhead</li>
+			-->
+			</layers>
     </apparel>
   </ThingDef>
   <ThingDef ParentName="Mincho_ApparelBase_Hat">
@@ -56,6 +66,9 @@
     </statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseCap</wornGraphicPath>
+			<layers>
+  			<li>Overhead</li>
+			</layers>
     </apparel>
   </ThingDef>
 
@@ -86,6 +99,9 @@
     </statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_Bikini/MCW_Bikini</wornGraphicPath>
+			<layers>
+				<li>OnSkin</li>
+			</layers>
     </apparel>
   </ThingDef>
 
@@ -116,6 +132,9 @@
     </stuffCategories>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_Bikini_BW/MCW_Bikini_BW</wornGraphicPath>
+			<layers>
+				<li>OnSkin</li>
+			</layers>
     </apparel>
   </ThingDef>
 
@@ -150,6 +169,9 @@
     </equippedStatOffsets>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_GorgeousDress/MCW_GorgeousDress</wornGraphicPath>
+			<layers>
+				<li>OnSkin</li>
+			</layers>
     </apparel>
   </ThingDef>
 </Defs>

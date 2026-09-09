@@ -157,6 +157,7 @@
 		<description>A very powerful candy cane made by triple enriched of mint candy. It boasts a fresher taste and more refreshing violence.\n\nIt does not look like a cane? You will say otherwise after a beating.</description>
     <possessionCount>1</possessionCount>
     <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
     <graphicData>
 			<texPath>Mincho_Item/Foods/Mincho_CandyCane</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
