@@ -58,7 +58,7 @@
         </li>
         <li>
           <def>MCW_Slime_LifeStage_IV</def>
-          <minAge>1.75</minAge>
+          <minAge>1</minAge>
         </li>
       </lifeStageAges>
     </race>

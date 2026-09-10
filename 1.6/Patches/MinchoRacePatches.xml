@@ -1,47 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps</xpath>
+    <value>
+      <li Class="MinchoCandyWars.CompProperties_MinchoCore" />
+      <li Class="MinchoCandyWars.Buff.CompProperties_MinchoCandyBuffApply" />
+    </value>
+  </Operation>
 
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps</xpath>
-        <value>
-            <li Class="MinchoCandyWars.CompProperties_MinchoCore" />
-            <li Class="MinchoCandyWars.Buff.CompProperties_MinchoCandyBuffApply" />
-        </value>
-    </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/alienRace/raceRestriction/apparelList</xpath>
+    <value>
+      <li>MCW_NurseOutfit</li>
+      <li>MCW_NurseCap</li>
+      <li>MCW_Bikini</li>
+      <li>MCW_BikiniBW</li>
+      <li>MCW_GorgeousDress</li>
+    </value>
+  </Operation>
 
-    <!-- 为每个 CompProperties_ResourceHarvestable 添加 productAffectedStats -->
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps/li[@Class="Mincho_HPF.CompProperties_ResourceHarvestable"]</xpath>
-        <value>
-            <productAffectedStats>
-                <li>
-                    <statDef>MCW_IceCreamOutput</statDef>
-                    <multiplier>20</multiplier>
-                </li>
-            </productAffectedStats>
-        </value>
-    </Operation>
+  <!-- 为每个 CompProperties_ResourceHarvestable 添加 productAffectedStats -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps/li[@Class="Mincho_HPF.CompProperties_ResourceHarvestable"]</xpath>
+    <value>
+      <productAffectedStats>
+        <li>
+          <statDef>MCW_IceCreamOutput</statDef>
+          <multiplier>20</multiplier>
+        </li>
+      </productAffectedStats>
+    </value>
+  </Operation>
 
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]</xpath>
-        <value>
-            <killedLeavingsRanges />
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/killedLeavingsRanges</xpath>
-        <value>
-            <MCW_Beta_NanoShapingFluid>-8~1</MCW_Beta_NanoShapingFluid>
-        </value>
-    </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]</xpath>
+    <value>
+      <killedLeavingsRanges />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/killedLeavingsRanges</xpath>
+    <value>
+      <MCW_Beta_NanoShapingFluid>-8~1</MCW_Beta_NanoShapingFluid>
+    </value>
+  </Operation>
 
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/HediffGiverSetDef[defName="Mincho_HediffGiver"]/hediffGivers</xpath>
-        <value>
-            <li Class="MinchoCandyWars.HediffGiver_Mincho">
-                <hediff>MCW_SnowBoost</hediff>
-            </li>
-        </value>
-    </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffGiverSetDef[defName="Mincho_HediffGiver"]/hediffGivers</xpath>
+    <value>
+      <li Class="MinchoCandyWars.HediffGiver_Mincho">
+        <hediff>MCW_SnowBoost</hediff>
+      </li>
+    </value>
+  </Operation>
 
 </Patch>
