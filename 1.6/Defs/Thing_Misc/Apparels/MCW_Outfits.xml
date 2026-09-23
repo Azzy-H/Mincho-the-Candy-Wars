@@ -174,4 +174,181 @@
 			</layers>
     </apparel>
   </ThingDef>
+
+  <ThingDef ParentName="Mincho_ApparelBase_Body">
+    <defName>MCW_Qipao</defName>
+    <label>珉巧旗袍</label>
+    <description>非常便捷的服饰，让琉璃糖的战斗能加优美，并且可以吸引爱人！对了！还能防火！</description>
+    <graphicData>
+      <texPath>Things/Apparel/MCW_Qipao/MCW_Qipao</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <costList>
+      <DevilstrandCloth>100</DevilstrandCloth>
+      <Steel>20</Steel>
+      <Jade>20</Jade>
+    </costList>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>0.6</Mass>
+      <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.05</ArmorRating_Heat>
+      <Insulation_Cold>0.0</Insulation_Cold>
+      <Insulation_Heat>2.0</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+      <Beauty>2</Beauty>
+    </statBases>
+    <equippedStatOffsets>
+      <Flammability>-2</Flammability>
+      <MoveSpeed>0.2</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <wornGraphicPath>Things/Apparel/MCW_Qipao/MCW_Qipao</wornGraphicPath>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="Mincho_ApparelBase_Body">
+    <defName>MCW_MechaArmor</defName>
+    <label>珉巧机械师装甲</label>
+    <description>千机糖在深入研究人类的机械师套装后改良出的适合珉巧们使用的机械师套装，虽然看起来材料很少，但是实际上！更加坚固！</description>
+    <graphicData>
+      <texPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <costList>
+      <DevilstrandCloth>40</DevilstrandCloth>
+      <Steel>50</Steel>
+      <Plasteel>100</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>5</Mass>
+      <Flammability>0.4</Flammability>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.3</ArmorRating_Heat>
+      <EquipDelay>3</EquipDelay>
+    </statBases>
+    <apparel>
+      <wornGraphicPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor</wornGraphicPath>
+      <layers>
+        <li>Shell</li>
+      </layers>
+    </apparel>
+    <comps>
+      <li Class="Mincho_The_Mint_Choco_Slime.CompProperties_CauseRemoveHediff_Apparel">
+        <hediff>MCW_MechaArmor_AddonHediff</hediff>
+        <part>Mincho_Torso</part>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef>
+    <defName>MCW_MechaArmor_AddonHediff</defName>
+    <label>机械师装甲附加件</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>机械师装甲的头部附加物与翅膀部件。</description>
+    <isBad>false</isBad>
+    <priceImpact>false</priceImpact>
+    <renderNodeProperties>
+      <!-- 头部附加物 -->
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor_HeadAddon</texPath>
+        <parentTagDef>Head</parentTagDef>
+        <useSkinShader>false</useSkinShader>
+        <useRottenColor>false</useRottenColor>
+        <drawData>
+          <dataNorth>
+            <offset>(0, 0, 0)</offset>
+            <layer>65</layer>
+          </dataNorth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+            <layer>65</layer>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+            <layer>65</layer>
+          </dataSouth>
+          <dataWest>
+            <offset>(0, 0, 0)</offset>
+            <layer>65</layer>
+          </dataWest>
+        </drawData>
+      </li>
+      <!-- 翅膀 -->
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor_Wing</texPath>
+        <parentTagDef>Body</parentTagDef>
+        <useSkinShader>false</useSkinShader>
+        <useRottenColor>false</useRottenColor>
+        <drawData>
+          <dataNorth>
+            <offset>(0, 0, 0)</offset>
+            <layer>500</layer>
+          </dataNorth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+            <layer>-40</layer>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+            <layer>-40</layer>
+          </dataSouth>
+          <dataWest>
+            <offset>(0, 0, 0)</offset>
+            <layer>-40</layer>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <stages>
+      <li>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <ThingDef ParentName="Mincho_ApparelBase_Hat">
+    <defName>MCW_HoloVisor</defName>
+    <label>珉巧机械师全息眼罩</label>
+    <description>千机糖在深入研究人类的机械师时，发人类的机械师头盔总是不方便看清前方的东西，她认为绝对不是她用法出错，而是人类太笨了！</description>
+    <graphicData>
+      <texPath>Things/Apparel/MCW_HoloVisor/MCW_HoloVisor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <costList>
+      <Steel>50</Steel>
+      <Plasteel>50</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToMake>3000</WorkToMake>
+      <Mass>0.3</Mass>
+      <Flammability>0.2</Flammability>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <apparel>
+      <wornGraphicPath>Things/Apparel/MCW_HoloVisor/MCW_HoloVisor</wornGraphicPath>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <layers>
+        <li>EyeCover</li>
+      </layers>
+    </apparel>
+  </ThingDef>
 </Defs>
