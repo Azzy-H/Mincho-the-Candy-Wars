@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       珉巧机械师全息眼罩
+       设定来源：!!AgentWorkZone!!/糖果大作战贴图需求和物品简易设定（鲨雕）.docx
+         描述：千机糖在深入研究人类的机械师时，发人类的机械师头盔总是不方便看清前方的东西，
+               她认为绝对不是她用法出错，而是人类太笨了！
+         制作：金属x50  玻璃钢x50  高级零部件x1
+       ============================================================ -->
+  <ThingDef ParentName="Mincho_ApparelBase_Hat">
+    <defName>MCW_HoloVisor</defName>
+    <label>珉巧机械师全息眼罩</label>
+    <description>千机糖在深入研究人类的机械师时，发人类的机械师头盔总是不方便看清前方的东西，她认为绝对不是她用法出错，而是人类太笨了！</description>
+    <!--========== Graphic Data ==========-->
+    <graphicData>
+      <texPath>Things/Apparel/MCW_HoloVisor/MCW_HoloVisor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <!--========== Crafting ==========
+        甲方原文「金属x50  玻璃钢x50  高级零部件x1」；
+        金属取 Steel（vanilla 的 Metal 是 StuffAppearanceDef，不能用于 costList）。 -->
+    <costList>
+      <Steel>50</Steel>
+      <Plasteel>50</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <!--========== Stat Base（占位数值） ==========-->
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToMake>3000</WorkToMake>
+      <Mass>0.3</Mass>
+      <Flammability>0.2</Flammability>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <!--========== Apparel（眼罩位于 EyeCover 层，可与帽子同时佩戴） ==========-->
+    <apparel>
+      <wornGraphicPath>Things/Apparel/MCW_HoloVisor/MCW_HoloVisor</wornGraphicPath>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <layers>
+        <li>EyeCover</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+
+</Defs>

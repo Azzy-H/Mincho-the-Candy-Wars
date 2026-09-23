@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       曲奇盾牌
+       设定来源：!!AgentWorkZone!!/糖果大作战贴图需求和物品简易设定（鲨雕）.docx
+         描述：当你看到一个巨大的且咬不动的美味曲奇饼时，很不幸，其实它是一个盾牌。
+         制作：20美味曲奇饼  50金属  10铀
+
+       运作方式：装备后征召时自动举盾（挂 *_DraftedHediff，提供防御加成），
+                 非征召自动背盾（挂 *_UndraftedHediff，仅背面贴图）。
+       盾牌本体不在 worn 层绘制，贴图由 Hediff 的 renderNodeProperties 绘制。
+       ============================================================ -->
+  <ThingDef ParentName="Mincho_ApparelBase_Body">
+    <defName>MCW_CookiesShield</defName>
+    <label>曲奇盾牌</label>
+    <description>当你看到一个巨大的且咬不动的美味曲奇饼时，很不幸，其实它是一个盾牌。\n\n装备后会在征召时自动举起盾牌以获得防护加成，平时则背在身后。</description>
+    <!--========== Graphic Data（物品图标 / 落地贴图） ==========-->
+    <graphicData>
+      <texPath>Things/Apparel/MCW_Shield/MCW_Cookies_shield</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <!--========== Crafting ==========
+        甲方原文「20美味曲奇饼  50金属  10铀」；
+        金属取 Steel（vanilla 的 Metal 是 StuffAppearanceDef，不能用于 costList）。 -->
+    <costList>
+      <MCW_Delicious_Cookies>20</MCW_Delicious_Cookies>
+      <Steel>50</Steel>
+      <Uranium>10</Uranium>
+    </costList>
+    <!--========== Stat Base（占位数值） ==========-->
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToMake>4500</WorkToMake>
+      <Mass>4</Mass>
+      <Flammability>0</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <!--========== Apparel ==========-->
+    <apparel>
+      <!-- 全透明 worn 贴图：盾牌本体不在此层绘制 -->
+      <wornGraphicPath>Things/MCW_Empty</wornGraphicPath>
+      <layers>
+        <li>MCW_Shield</li>
+      </layers>
+    </apparel>
+    <!--========== Comps（征召举盾系统） ==========-->
+    <comps>
+      <li Class="MinchoCandyWars.CompProperties_MCWShieldApparel">
+        <hediffWhenDrafted>MCW_CookiesShield_DraftedHediff</hediffWhenDrafted>
+        <hediffWhenUndrafted>MCW_CookiesShield_UndraftedHediff</hediffWhenUndrafted>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ================= 举盾（征召时） ================= -->
+  <HediffDef>
+    <defName>MCW_CookiesShield_DraftedHediff</defName>
+    <label>举盾防御</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>该士兵举起曲奇盾牌，严阵以待敌人的冲击。举盾状态下获得额外的防护能力。</description>
+    <isBad>false</isBad>
+    <priceImpact>false</priceImpact>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Apparel/MCW_Shield/MCW_Cookies_shield</texPath>
+        <parentTagDef>Body</parentTagDef>
+        <useSkinShader>false</useSkinShader>
+        <useRottenColor>false</useRottenColor>
+        <drawData>
+          <dataNorth>
+            <offset>(0, 0, 0)</offset>
+            <layer>-15</layer>
+          </dataNorth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+            <layer>-15</layer>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+            <layer>60</layer>
+          </dataSouth>
+          <dataWest>
+            <offset>(0, 0, 0)</offset>
+            <layer>-15</layer>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.2</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ================= 背盾（非征召时） ================= -->
+  <HediffDef>
+    <defName>MCW_CookiesShield_UndraftedHediff</defName>
+    <label>背盾</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>该士兵将曲奇盾牌背至身后，行动自如。</description>
+    <isBad>false</isBad>
+    <priceImpact>false</priceImpact>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Apparel/MCW_Shield/MCW_Cookies_shield_behind</texPath>
+        <parentTagDef>Body</parentTagDef>
+        <useSkinShader>false</useSkinShader>
+        <useRottenColor>false</useRottenColor>
+        <drawData>
+          <dataNorth>
+            <offset>(0, 0, 0)</offset>
+            <layer>500</layer>
+          </dataNorth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+            <layer>-20</layer>
+          </dataSouth>
+          <dataWest>
+            <offset>(0, 0, 0)</offset>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <stages>
+      <li>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

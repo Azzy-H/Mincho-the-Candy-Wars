@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ============================================================
+       珉巧种族装备白名单
+       主 mod 的 Mincho_ThingDef 启用了
+         <onlyUseRaceRestrictedApparel>true</onlyUseRaceRestrictedApparel>
+       珉巧只能穿戴 apparelList 中列出的装备，本 mod 新增的衣物与盾牌
+       必须加入该列表才能被珉巧穿戴。
+       ============================================================ -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/alienRace/raceRestriction/apparelList</xpath>
+    <value>
+      <li>MCW_NurseOutfit</li>
+      <li>MCW_NurseCap</li>
+      <li>MCW_Bikini</li>
+      <li>MCW_BikiniBW</li>
+      <li>MCW_GorgeousDress</li>
+      <li>MCW_TowerShield</li>
+      <li>MCW_CookiesShield</li>
+      <li>MCW_MechaArmor</li>
+      <li>MCW_HoloVisor</li>
+      <li>MCW_Qipao</li>
+    </value>
+  </Operation>
+
+</Patch>

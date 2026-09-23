@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       珉巧机械师装甲
+       设定来源：!!AgentWorkZone!!/糖果大作战贴图需求和物品简易设定（鲨雕）.docx
+         描述：千机糖在深入研究人类的机械师套装后改良出的适合珉巧们使用的机械师套装，
+               虽然看起来材料很少，但是实际上！更加坚固！
+         制作：蘑菇布x40  金属x50  玻璃钢x100  高级零部件x4
+
+       装甲的「头部附加物」与「翅膀」不占装备栏，
+       由装备时挂载的 MCW_MechaArmor_AddonHediff 用 renderNodeProperties 绘制。
+       ============================================================ -->
+  <ThingDef ParentName="Mincho_ApparelBase_Body">
+    <defName>MCW_MechaArmor</defName>
+    <label>珉巧机械师装甲</label>
+    <description>千机糖在深入研究人类的机械师套装后改良出的适合珉巧们使用的机械师套装，虽然看起来材料很少，但是实际上！更加坚固！</description>
+    <!--========== Graphic Data ==========-->
+    <graphicData>
+      <texPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <!--========== Crafting ==========
+        甲方原文「蘑菇布x40  金属x50  玻璃钢x100  高级零部件x4」；
+        金属取 Steel（vanilla 的 Metal 是 StuffAppearanceDef，不能用于 costList）。 -->
+    <costList>
+      <DevilstrandCloth>40</DevilstrandCloth>
+      <Steel>50</Steel>
+      <Plasteel>100</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <!--========== Stat Base（占位数值） ==========-->
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>5</Mass>
+      <Flammability>0.4</Flammability>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.3</ArmorRating_Heat>
+      <EquipDelay>3</EquipDelay>
+    </statBases>
+    <!--========== Apparel（装甲位于 Shell 层，可与 OnSkin 层衣物同时穿着） ==========-->
+    <apparel>
+      <wornGraphicPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor</wornGraphicPath>
+      <layers>
+        <li>Shell</li>
+      </layers>
+    </apparel>
+    <!--========== Comps（装备时挂载附加件渲染 Hediff） ==========-->
+    <comps>
+      <li Class="Mincho_The_Mint_Choco_Slime.CompProperties_CauseRemoveHediff_Apparel">
+        <hediff>MCW_MechaArmor_AddonHediff</hediff>
+        <part>Mincho_Torso</part>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ================= 装甲附加件（头部附加物 + 翅膀，纯渲染） ================= -->
+  <HediffDef>
+    <defName>MCW_MechaArmor_AddonHediff</defName>
+    <label>机械师装甲附加件</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>机械师装甲的头部附加物与翅膀部件。</description>
+    <isBad>false</isBad>
+    <priceImpact>false</priceImpact>
+    <renderNodeProperties>
+      <!-- 头部附加物 -->
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor_HeadAddon</texPath>
+        <parentTagDef>Body</parentTagDef>
+        <useSkinShader>false</useSkinShader>
+        <useRottenColor>false</useRottenColor>
+        <drawData>
+          <dataNorth>
+            <offset>(0, 0, 0)</offset>
+            <layer>65</layer>
+          </dataNorth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+            <layer>65</layer>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+            <layer>65</layer>
+          </dataSouth>
+          <dataWest>
+            <offset>(0, 0, 0)</offset>
+            <layer>65</layer>
+          </dataWest>
+        </drawData>
+      </li>
+      <!-- 翅膀 -->
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor_Wing</texPath>
+        <parentTagDef>Body</parentTagDef>
+        <useSkinShader>false</useSkinShader>
+        <useRottenColor>false</useRottenColor>
+        <drawData>
+          <dataNorth>
+            <offset>(0, 0, 0)</offset>
+            <layer>500</layer>
+          </dataNorth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+            <layer>-40</layer>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+            <layer>-40</layer>
+          </dataSouth>
+          <dataWest>
+            <offset>(0, 0, 0)</offset>
+            <layer>-40</layer>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>
