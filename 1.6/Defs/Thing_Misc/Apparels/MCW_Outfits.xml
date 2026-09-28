@@ -346,6 +346,24 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
+      <renderSkipFlags Inherit="False">
+        <li>None</li>
+      </renderSkipFlags>
+      <wornGraphicData>
+        <renderUtilityAsPack>true</renderUtilityAsPack>
+        <north>
+          <offset>(0,-0.15)</offset>
+        </north>
+        <south>
+          <offset>(0,-0.15)</offset>
+        </south>
+        <east>
+          <offset>(0,-0.15)</offset>
+        </east>
+        <west>
+          <offset>(0,-0.15)</offset>
+        </west>
+      </wornGraphicData>
       <layers>
         <li>EyeCover</li>
       </layers>
