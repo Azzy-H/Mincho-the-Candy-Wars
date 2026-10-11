@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: α型纳米塑形液 -->
+  <MCW_Alpha_NanoShapingFluid.label>α型纳米塑形液</MCW_Alpha_NanoShapingFluid.label>
+  <!-- EN: 闪耀世界甜品公司研发的纳米机器人的失败品，其凝聚后的无法正常连接核心，所以导致产生的智能体，并不智能。只是类似自我复制的史莱姆，获取能量，制造出更多的薄荷冰淇淋，仅此而已。 -->
+  <MCW_Alpha_NanoShapingFluid.description>闪耀世界甜品公司研发的纳米机器人的失败品，其凝聚后的无法正常连接核心，所以导致产生的智能体，并不智能。只是类似自我复制的史莱姆，获取能量，制造出更多的薄荷冰淇淋，仅此而已。</MCW_Alpha_NanoShapingFluid.description>
+  
+  <!-- EN: β型纳米塑形液 -->
+  <MCW_Beta_NanoShapingFluid.label>β型纳米塑形液</MCW_Beta_NanoShapingFluid.label>
+  <!-- EN: 闪耀世界甜品公司为了制作新型可玩、可使用机器人而研发的纳米机器人。一个试管内的纳米机器人数量大约可以给2立方米的薄荷冰淇淋“注入”智慧。 -->
+  <MCW_Beta_NanoShapingFluid.description>闪耀世界甜品公司为了制作新型可玩、可使用机器人而研发的纳米机器人。一个试管内的纳米机器人数量大约可以给2立方米的薄荷冰淇淋“注入”智慧。</MCW_Beta_NanoShapingFluid.description>
+  
+  <!-- EN: 美味曲奇饼 -->
+  <MCW_Delicious_Cookies.label>美味曲奇饼</MCW_Delicious_Cookies.label>
+  <!-- EN: 珉巧们使用稻米烘焙制成的美味曲奇饼，非常美味，但是不是很管饱。 -->
+  <MCW_Delicious_Cookies.description>珉巧们使用稻米烘焙制成的美味曲奇饼，非常美味，但是不是很管饱。</MCW_Delicious_Cookies.description>
+  
+</LanguageData>

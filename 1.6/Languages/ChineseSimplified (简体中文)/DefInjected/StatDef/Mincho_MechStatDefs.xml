@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: mech move speed factor -->
+  <MCW_MoveSpeedGlobalFactorMech.label>机械移动速度系数</MCW_MoveSpeedGlobalFactorMech.label>
+  <!-- EN: A move speed factor applied to a mechanitor's mechs. -->
+  <MCW_MoveSpeedGlobalFactorMech.description>作用于机械师所属机械体的移动速度系数。</MCW_MoveSpeedGlobalFactorMech.description>
+  
+  <!-- EN: mech work speed factor -->
+  <MCW_WorkSpeedGlobalFactorMech.label>机械工作速度系数</MCW_WorkSpeedGlobalFactorMech.label>
+  <!-- EN: A work speed factor applied to a mechanitor's mechs. -->
+  <MCW_WorkSpeedGlobalFactorMech.description>作用于机械师所属机械体的工作速度系数。</MCW_WorkSpeedGlobalFactorMech.description>
+  
+</LanguageData>

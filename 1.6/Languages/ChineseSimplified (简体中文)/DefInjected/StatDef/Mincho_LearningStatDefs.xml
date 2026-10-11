@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: artistic learning factor -->
+  <MCW_ArtisticLearningFactor.label>艺术学习系数</MCW_ArtisticLearningFactor.label>
+  <!-- EN: A multiplier on the learning rate for artistic skill. -->
+  <MCW_ArtisticLearningFactor.description>艺术技能学习速率的系数。</MCW_ArtisticLearningFactor.description>
+  
+  <!-- EN: construction learning factor -->
+  <MCW_ConstructionLearningFactor.label>建造学习系数</MCW_ConstructionLearningFactor.label>
+  <!-- EN: A multiplier on the learning rate for construction skill. -->
+  <MCW_ConstructionLearningFactor.description>建造技能学习速率的系数。</MCW_ConstructionLearningFactor.description>
+  
+  <!-- EN: cooking learning factor -->
+  <MCW_CookingLearningFactor.label>烹饪学习系数</MCW_CookingLearningFactor.label>
+  <!-- EN: A multiplier on the learning rate for cooking skill. -->
+  <MCW_CookingLearningFactor.description>烹饪技能学习速率的系数。</MCW_CookingLearningFactor.description>
+  
+  <!-- EN: crafting learning factor -->
+  <MCW_CraftingLearningFactor.label>手工学习系数</MCW_CraftingLearningFactor.label>
+  <!-- EN: A multiplier on the learning rate for crafting skill. -->
+  <MCW_CraftingLearningFactor.description>手工技能学习速率的系数。</MCW_CraftingLearningFactor.description>
+  
+  <!-- EN: intellectual learning factor -->
+  <MCW_IntellectualLearningFactor.label>智识学习系数</MCW_IntellectualLearningFactor.label>
+  <!-- EN: A multiplier on the learning rate for intellectual skill. -->
+  <MCW_IntellectualLearningFactor.description>智识技能学习速率的系数。</MCW_IntellectualLearningFactor.description>
+  
+  <!-- EN: medical learning factor -->
+  <MCW_MedicalLearningFactor.label>医疗学习系数</MCW_MedicalLearningFactor.label>
+  <!-- EN: A multiplier on the learning rate for medical skill. -->
+  <MCW_MedicalLearningFactor.description>医疗技能学习速率的系数。</MCW_MedicalLearningFactor.description>
+  
+  <!-- EN: melee learning factor -->
+  <MCW_MeleeLearningFactor.label>近战学习系数</MCW_MeleeLearningFactor.label>
+  <!-- EN: A multiplier on the learning rate for melee skill. -->
+  <MCW_MeleeLearningFactor.description>近战技能学习速率的系数。</MCW_MeleeLearningFactor.description>
+  
+  <!-- EN: mining learning factor -->
+  <MCW_MiningLearningFactor.label>采矿学习系数</MCW_MiningLearningFactor.label>
+  <!-- EN: A multiplier on the learning rate for mining skill. -->
+  <MCW_MiningLearningFactor.description>采矿技能学习速率的系数。</MCW_MiningLearningFactor.description>
+  
+  <!-- EN: plants learning factor -->
+  <MCW_PlantsLearningFactor.label>种植学习系数</MCW_PlantsLearningFactor.label>
+  <!-- EN: A multiplier on the learning rate for plants skill. -->
+  <MCW_PlantsLearningFactor.description>种植技能学习速率的系数。</MCW_PlantsLearningFactor.description>
+  
+  <!-- EN: shooting learning factor -->
+  <MCW_ShootingLearningFactor.label>射击学习系数</MCW_ShootingLearningFactor.label>
+  <!-- EN: A multiplier on the learning rate for shooting skill. -->
+  <MCW_ShootingLearningFactor.description>射击技能学习速率的系数。</MCW_ShootingLearningFactor.description>
+  
+  <!-- EN: social learning factor -->
+  <MCW_SocialLearningFactor.label>社交学习系数</MCW_SocialLearningFactor.label>
+  <!-- EN: A multiplier on the learning rate for social skill. -->
+  <MCW_SocialLearningFactor.description>社交技能学习速率的系数。</MCW_SocialLearningFactor.description>
+  
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Chocolate Greatsword Slow Zone -->
+  <MCW_PrismSwordSlowZone.label>巧克力冰淇淋巨剑减速区</MCW_PrismSwordSlowZone.label>
+  <!-- EN: A sticky area smashed out by the chocolate ice cream greatsword, greatly slowing those who pass through. -->
+  <MCW_PrismSwordSlowZone.description>被巧克力冰淇淋巨剑砸出的一片黏着地面，经过者的行动会大幅变慢。</MCW_PrismSwordSlowZone.description>
+  
+</LanguageData>

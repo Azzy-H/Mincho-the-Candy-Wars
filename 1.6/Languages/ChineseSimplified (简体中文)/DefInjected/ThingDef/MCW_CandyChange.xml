@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Amberon Candy unlock item -->
+  <MCW_AmberonCandyChangeItem.label>琥珀糖糖饰解锁物品</MCW_AmberonCandyChangeItem.label>
+  <!-- EN: 植入后解锁琥珀糖糖饰的使用权。 -->
+  <MCW_AmberonCandyChangeItem.description>植入后解锁琥珀糖糖饰的使用权。</MCW_AmberonCandyChangeItem.description>
+  <!-- EN: Implant {0_label} -->
+  <MCW_AmberonCandyChangeItem.comps.CompUsable.useLabel>植入 {0_label}</MCW_AmberonCandyChangeItem.comps.CompUsable.useLabel>
+  
+  <!-- EN: Linglon Candy unlock item -->
+  <MCW_LinglonCandyChangeItem.label>玲珑糖糖饰解锁物品</MCW_LinglonCandyChangeItem.label>
+  <!-- EN: 植入后解锁玲珑糖糖饰的使用权。 -->
+  <MCW_LinglonCandyChangeItem.description>植入后解锁玲珑糖糖饰的使用权。</MCW_LinglonCandyChangeItem.description>
+  <!-- EN: Implant {0_label} -->
+  <MCW_LinglonCandyChangeItem.comps.CompUsable.useLabel>植入 {0_label}</MCW_LinglonCandyChangeItem.comps.CompUsable.useLabel>
+  
+  <!-- EN: Mecha Candy unlock item -->
+  <MCW_MechaCandyChangeItem.label>千机糖糖饰解锁物品</MCW_MechaCandyChangeItem.label>
+  <!-- EN: 植入后解锁千机糖糖饰的使用权。 -->
+  <MCW_MechaCandyChangeItem.description>植入后解锁千机糖糖饰的使用权。</MCW_MechaCandyChangeItem.description>
+  <!-- EN: Implant {0_label} -->
+  <MCW_MechaCandyChangeItem.comps.CompUsable.useLabel>植入 {0_label}</MCW_MechaCandyChangeItem.comps.CompUsable.useLabel>
+  
+  <!-- EN: Nectar Candy unlock item -->
+  <MCW_NectarCandyChangeItem.label>甘露糖糖饰解锁物品</MCW_NectarCandyChangeItem.label>
+  <!-- EN: 植入后解锁甘露糖糖饰的使用权。 -->
+  <MCW_NectarCandyChangeItem.description>植入后解锁甘露糖糖饰的使用权。</MCW_NectarCandyChangeItem.description>
+  <!-- EN: Implant {0_label} -->
+  <MCW_NectarCandyChangeItem.comps.CompUsable.useLabel>植入 {0_label}</MCW_NectarCandyChangeItem.comps.CompUsable.useLabel>
+  
+  <!-- EN: Prism Candy unlock item -->
+  <MCW_PrismCandyChangeItem.label>琉璃糖糖饰解锁物品</MCW_PrismCandyChangeItem.label>
+  <!-- EN: 植入后解锁琉璃糖糖饰的使用权。 -->
+  <MCW_PrismCandyChangeItem.description>植入后解锁琉璃糖糖饰的使用权。</MCW_PrismCandyChangeItem.description>
+  <!-- EN: Implant {0_label} -->
+  <MCW_PrismCandyChangeItem.comps.CompUsable.useLabel>植入 {0_label}</MCW_PrismCandyChangeItem.comps.CompUsable.useLabel>
+  
+</LanguageData>

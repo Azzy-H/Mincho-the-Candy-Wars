@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: ice cream wall -->
+  <MCW_AmberonIceCreamWall.label>冰淇淋墙体</MCW_AmberonIceCreamWall.label>
+  <!-- EN: A slab of ice cream raised as a wall. Crumbles away after a short while. -->
+  <MCW_AmberonIceCreamWall.description>由冰淇淋凝成的一道墙体，不久后便会坍塌消失。</MCW_AmberonIceCreamWall.description>
+  
+  <!-- EN: Amberon position shield -->
+  <MCW_AmberonPositionShield.label>琥珀立盾</MCW_AmberonPositionShield.label>
+  <!-- EN: A standing amber shield that intercepts projectiles aimed at those sheltering behind it. -->
+  <MCW_AmberonPositionShield.description>一面竖立的琥珀色盾牌，能拦截射向躲在它身后的人的抛射物。</MCW_AmberonPositionShield.description>
+  
+</LanguageData>

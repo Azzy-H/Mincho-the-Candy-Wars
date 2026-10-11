@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 曲奇盾牌 -->
+  <MCW_CookiesShield.label>曲奇盾牌</MCW_CookiesShield.label>
+  <!-- EN: 当你看到一个巨大的且咬不动的美味曲奇饼时，很不幸，其实它是一个盾牌。\n\n装备后会在征召时自动举起盾牌以获得防护加成，平时则背在身后。 -->
+  <MCW_CookiesShield.description>当你看到一个巨大的且咬不动的美味曲奇饼时，很不幸，其实它是一个盾牌。\n\n装备后会在征召时自动举起盾牌以获得防护加成，平时则背在身后。</MCW_CookiesShield.description>
+  
+  <!-- EN: 薄荷冰淇淋巧克力塔盾 -->
+  <MCW_TowerShield.label>薄荷冰淇淋巧克力塔盾</MCW_TowerShield.label>
+  <!-- EN: 坚硬的巧克力！可以保护所有人！\n\n装备后会在征召时自动举起盾牌以获得防护加成，平时则背在身后。 -->
+  <MCW_TowerShield.description>坚硬的巧克力！可以保护所有人！\n\n装备后会在征召时自动举起盾牌以获得防护加成，平时则背在身后。</MCW_TowerShield.description>
+  
+</LanguageData>

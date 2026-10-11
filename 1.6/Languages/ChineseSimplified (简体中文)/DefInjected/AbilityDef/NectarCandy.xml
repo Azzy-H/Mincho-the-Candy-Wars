@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Ice Cream Reshape -->
+  <MCW_NectarCandyAbility_IceCreamReshape.label>冰淇淋重塑</MCW_NectarCandyAbility_IceCreamReshape.label>
+  <!-- EN: Reshapes the target's ice cream flesh to heal its wounds, at the risk of failure. A failed reshaping grows a mincho tentacle instead of a flesh tentacle. -->
+  <MCW_NectarCandyAbility_IceCreamReshape.description>重塑目标的冰淇淋血肉以治愈其伤势，但有失败的风险。重塑失败时长出的不是血肉触手，而是一条珉巧触手。</MCW_NectarCandyAbility_IceCreamReshape.description>
+  
+  <!-- EN: Manna Connection -->
+  <MCW_NectarCandyAbility_MannaConnection.label>甘露连接</MCW_NectarCandyAbility_MannaConnection.label>
+  <!-- EN: Binds another mincho to the caster. While both are on the same map, both gain +20% consciousness and +12 mood. Can be re-bound, but only after a long cooldown. -->
+  <MCW_NectarCandyAbility_MannaConnection.description>将另一名珉巧与自身绑定。只要二者处于同一张地图，双方都会获得 +20% 意识与 +12 心情。可以重新绑定，但冷却较长。</MCW_NectarCandyAbility_MannaConnection.description>
+  
+  <!-- EN: Manna Fairy -->
+  <MCW_NectarCandyAbility_MannaFairy.label>甘露妖精</MCW_NectarCandyAbility_MannaFairy.label>
+  <!-- EN: Dispatches your fairy to your lover, granting them greatly increased healing, +10 dodge chance and a personal shield. While the fairy is not dispatched it grants the same benefits to you instead. -->
+  <MCW_NectarCandyAbility_MannaFairy.description>将自己的妖精派往爱人身旁，为其提供极高的生命回复、+10 闪避以及一层个人护盾。妖精未被派出时，这些加成由自身享用。</MCW_NectarCandyAbility_MannaFairy.description>
+  
+  <!-- EN: Mincho Bandage -->
+  <MCW_NectarCandyAbility_MinchoBandage.label>珉巧敷药</MCW_NectarCandyAbility_MinchoBandage.label>
+  <!-- EN: Immediately tends to every wound on the target. -->
+  <MCW_NectarCandyAbility_MinchoBandage.description>立刻为目标包扎全部伤口。</MCW_NectarCandyAbility_MinchoBandage.description>
+  
+</LanguageData>

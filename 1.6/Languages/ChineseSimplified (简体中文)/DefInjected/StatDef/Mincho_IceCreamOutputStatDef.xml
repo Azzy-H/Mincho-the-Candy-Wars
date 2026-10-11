@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: ice cream output -->
+  <MCW_IceCreamOutput.label>冰淇淋产量</MCW_IceCreamOutput.label>
+  <!-- EN: A multiplier on the amount of ice cream produced when harvested. -->
+  <MCW_IceCreamOutput.description>收获时产出的冰淇淋数量的系数。</MCW_IceCreamOutput.description>
+  
+</LanguageData>

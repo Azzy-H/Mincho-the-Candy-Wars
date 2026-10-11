@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Prism Blade Burst -->
+  <MCW_PrismBladeBurst.label>琉璃剑气</MCW_PrismBladeBurst.label>
+  <!-- EN: {0} has been torn apart by a prism blade burst. -->
+  <MCW_PrismBladeBurst.deathMessage>{0} 被迸发的琉璃剑气撕碎。</MCW_PrismBladeBurst.deathMessage>
+  
+</LanguageData>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Mincho body booster -->
+  <MCW_MinchoBodyBooster.label>智慧珉巧躯体改造包</MCW_MinchoBodyBooster.label>
+  <!-- EN: 沁心糖研发的用于增加智慧珉巧躯体等级的改造包。（用于 1 级到 5 级的提升） -->
+  <MCW_MinchoBodyBooster.description>沁心糖研发的用于增加智慧珉巧躯体等级的改造包。（用于 1 级到 5 级的提升）</MCW_MinchoBodyBooster.description>
+  
+  <!-- EN: Mincho advanced core booster -->
+  <MCW_MinchoCoreBoosterAdvanced.label>智慧珉巧高级核心改造包</MCW_MinchoCoreBoosterAdvanced.label>
+  <!-- EN: 沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 3 级到 5 级的提升） -->
+  <MCW_MinchoCoreBoosterAdvanced.description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 3 级到 5 级的提升）</MCW_MinchoCoreBoosterAdvanced.description>
+  
+  <!-- EN: Mincho basic core booster -->
+  <MCW_MinchoCoreBoosterBasic.label>智慧珉巧初级核心改造包</MCW_MinchoCoreBoosterBasic.label>
+  <!-- EN: 沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 1 级到 3 级的提升） -->
+  <MCW_MinchoCoreBoosterBasic.description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 1 级到 3 级的提升）</MCW_MinchoCoreBoosterBasic.description>
+  
+  <!-- EN: Mincho intelligence booster -->
+  <MCW_MinchoIntelBooster.label>智慧珉巧改造包</MCW_MinchoIntelBooster.label>
+  <!-- EN: 沁心糖研发的智慧珉巧改造包，接收改造的珉巧可以拥有更加高级的智能。 -->
+  <MCW_MinchoIntelBooster.description>沁心糖研发的智慧珉巧改造包，接收改造的珉巧可以拥有更加高级的智能。</MCW_MinchoIntelBooster.description>
+  
+</LanguageData>

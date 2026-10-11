@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Candy Change Exhaustion -->
+  <MCW_CandyChangeExhaustion.label>换糖虚脱</MCW_CandyChangeExhaustion.label>
+  <!-- EN: Causes exhaustion when changing candy types. -->
+  <MCW_CandyChangeExhaustion.description>更换糖果类型后产生的虚脱。</MCW_CandyChangeExhaustion.description>
+  
+  <!-- EN: inteled -->
+  <MCW_Intel.label>智力强化</MCW_Intel.label>
+  <!-- EN: inteled. -->
+  <MCW_Intel.description>智力能力获得强化。</MCW_Intel.description>
+  
+  <!-- EN: Snow Boost -->
+  <MCW_SnowBoost.label>雪地增幅</MCW_SnowBoost.label>
+  <!-- EN: Provides a boost to snow-related activities. -->
+  <MCW_SnowBoost.description>提升与雪地相关的活动效率。</MCW_SnowBoost.description>
+  
+</LanguageData>

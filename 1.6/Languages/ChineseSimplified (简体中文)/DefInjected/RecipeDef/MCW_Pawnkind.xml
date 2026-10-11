@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 培育次级珉巧子个体-战斗型 -->
+  <MCW_Mech_Battle_Recipe.label>培育次级珉巧子个体-战斗型</MCW_Mech_Battle_Recipe.label>
+  <!-- EN: 培育次级珉巧子个体-战斗型. -->
+  <MCW_Mech_Battle_Recipe.description>培育次级珉巧子个体-战斗型。</MCW_Mech_Battle_Recipe.description>
+  <!-- EN: Gestating mech. -->
+  <MCW_Mech_Battle_Recipe.jobString>正在培育机械体。</MCW_Mech_Battle_Recipe.jobString>
+  
+  <!-- EN: 培育次级珉巧子个体-防卫型 -->
+  <MCW_Mech_Defender_Recipe.label>培育次级珉巧子个体-防卫型</MCW_Mech_Defender_Recipe.label>
+  <!-- EN: 培育次级珉巧子个体-防卫型. -->
+  <MCW_Mech_Defender_Recipe.description>培育次级珉巧子个体-防卫型。</MCW_Mech_Defender_Recipe.description>
+  <!-- EN: Gestating mech. -->
+  <MCW_Mech_Defender_Recipe.jobString>正在培育机械体。</MCW_Mech_Defender_Recipe.jobString>
+  
+  <!-- EN: 培育次级珉巧子个体-攻击型 -->
+  <MCW_Mech_Gunner_Recipe.label>培育次级珉巧子个体-攻击型</MCW_Mech_Gunner_Recipe.label>
+  <!-- EN: 培育次级珉巧子个体-攻击型. -->
+  <MCW_Mech_Gunner_Recipe.description>培育次级珉巧子个体-攻击型。</MCW_Mech_Gunner_Recipe.description>
+  <!-- EN: Gestating mech. -->
+  <MCW_Mech_Gunner_Recipe.jobString>正在培育机械体。</MCW_Mech_Gunner_Recipe.jobString>
+  
+  <!-- EN: 培育次级珉巧子个体-女仆I型 -->
+  <MCW_Mech_I_Maid_Recipe.label>培育次级珉巧子个体-女仆I型</MCW_Mech_I_Maid_Recipe.label>
+  <!-- EN: 培育次级珉巧子个体-女仆I型. -->
+  <MCW_Mech_I_Maid_Recipe.description>培育次级珉巧子个体-女仆I型。</MCW_Mech_I_Maid_Recipe.description>
+  <!-- EN: Gestating mech. -->
+  <MCW_Mech_I_Maid_Recipe.jobString>正在培育机械体。</MCW_Mech_I_Maid_Recipe.jobString>
+  
+  <!-- EN: 培育次级珉巧子个体-女仆Ⅱ型 -->
+  <MCW_Mech_II_Maid_Recipe.label>培育次级珉巧子个体-女仆Ⅱ型</MCW_Mech_II_Maid_Recipe.label>
+  <!-- EN: 培育次级珉巧子个体-女仆Ⅱ型. -->
+  <MCW_Mech_II_Maid_Recipe.description>培育次级珉巧子个体-女仆Ⅱ型。</MCW_Mech_II_Maid_Recipe.description>
+  <!-- EN: Gestating mech. -->
+  <MCW_Mech_II_Maid_Recipe.jobString>正在培育机械体。</MCW_Mech_II_Maid_Recipe.jobString>
+  
+</LanguageData>

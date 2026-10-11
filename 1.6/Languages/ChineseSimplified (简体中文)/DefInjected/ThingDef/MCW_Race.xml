@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 次级珉巧子个体-战斗型 -->
+  <MCW_Mech_Battle.label>次级珉巧子个体-战斗型</MCW_Mech_Battle.label>
+  <!-- EN: 小小冰淇淋骑士，用薄荷钉头锤修理姐姐们的敌人！ -->
+  <MCW_Mech_Battle.description>小小冰淇淋骑士，用薄荷钉头锤修理姐姐们的敌人！</MCW_Mech_Battle.description>
+  <!-- EN: head -->
+  <MCW_Mech_Battle.tools.head.label>头部</MCW_Mech_Battle.tools.head.label>
+  
+  <!-- EN: 次级珉巧子个体-防卫型 -->
+  <MCW_Mech_Defender.label>次级珉巧子个体-防卫型</MCW_Mech_Defender.label>
+  <!-- EN: 小小冰淇淋骑士，手持大盾保护姐姐们 -->
+  <MCW_Mech_Defender.description>小小冰淇淋骑士，手持大盾保护姐姐们</MCW_Mech_Defender.description>
+  <!-- EN: head -->
+  <MCW_Mech_Defender.tools.head.label>头部</MCW_Mech_Defender.tools.head.label>
+  
+  <!-- EN: 次级珉巧子个体-攻击型 -->
+  <MCW_Mech_Gunner.label>次级珉巧子个体-攻击型</MCW_Mech_Gunner.label>
+  <!-- EN: 小小冰淇淋枪手，使用无情的棒棒糖夺走坏人的生命 -->
+  <MCW_Mech_Gunner.description>小小冰淇淋枪手，使用无情的棒棒糖夺走坏人的生命</MCW_Mech_Gunner.description>
+  <!-- EN: head -->
+  <MCW_Mech_Gunner.tools.head.label>头部</MCW_Mech_Gunner.tools.head.label>
+  
+  <!-- EN: 次级珉巧子个体-女仆I型 -->
+  <MCW_Mech_I_Maid.label>次级珉巧子个体-女仆I型</MCW_Mech_I_Maid.label>
+  <!-- EN: 小小冰淇淋女仆，在内照顾姐姐们起居。 -->
+  <MCW_Mech_I_Maid.description>小小冰淇淋女仆，在内照顾姐姐们起居。</MCW_Mech_I_Maid.description>
+  <!-- EN: head -->
+  <MCW_Mech_I_Maid.tools.head.label>头部</MCW_Mech_I_Maid.tools.head.label>
+  
+  <!-- EN: 次级珉巧子个体-女仆Ⅱ型 -->
+  <MCW_Mech_II_Maid.label>次级珉巧子个体-女仆Ⅱ型</MCW_Mech_II_Maid.label>
+  <!-- EN: 小小冰淇淋女仆，在外为姐姐们分忧。 -->
+  <MCW_Mech_II_Maid.description>小小冰淇淋女仆，在外为姐姐们分忧。</MCW_Mech_II_Maid.description>
+  <!-- EN: head -->
+  <MCW_Mech_II_Maid.tools.head.label>头部</MCW_Mech_II_Maid.tools.head.label>
+  
+  <!-- EN: 珉巧史莱姆 -->
+  <MCW_MinchoSlime.label>珉巧史莱姆</MCW_MinchoSlime.label>
+  <!-- EN: 珉巧史莱姆 -->
+  <MCW_MinchoSlime.description>珉巧史莱姆</MCW_MinchoSlime.description>
+  <!-- EN: 拳头 -->
+  <MCW_MinchoSlime.tools.0.label>拳头</MCW_MinchoSlime.tools.0.label>
+  
+</LanguageData>

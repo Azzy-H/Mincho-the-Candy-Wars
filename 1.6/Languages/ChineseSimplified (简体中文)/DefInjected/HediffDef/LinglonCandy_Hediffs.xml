@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: all meditation focuses -->
+  <MCW_LinglonAllFocus.label>全灵媒</MCW_LinglonAllFocus.label>
+  <!-- EN: Unlocks all meditation focus types. -->
+  <MCW_LinglonAllFocus.description>解锁全部冥想专注类型。</MCW_LinglonAllFocus.description>
+  
+  <!-- EN: amoeba booster -->
+  <MCW_LinglonAmoebaBoon.label>纳米变形虫增益</MCW_LinglonAmoebaBoon.label>
+  <!-- EN: Grants +20% consciousness to all Mincho on the map, draining candy value every hour. -->
+  <MCW_LinglonAmoebaBoon.description>为地图上所有珉巧提供 +20% 意识，每小时消耗糖果值。</MCW_LinglonAmoebaBoon.description>
+  
+  <!-- EN: amoeba booster -->
+  <MCW_LinglonAmoebaBoonBuff.label>纳米变形虫增益</MCW_LinglonAmoebaBoonBuff.label>
+  <!-- EN: Consciousness boosted by the amoeba booster. -->
+  <MCW_LinglonAmoebaBoonBuff.description>意识正受到变形虫增幅器的强化。</MCW_LinglonAmoebaBoonBuff.description>
+  
+  <!-- EN: Linglon aura -->
+  <MCW_LinglonAura.label>心灵光环</MCW_LinglonAura.label>
+  <!-- EN: Suppresses the minds of enemies on the map. -->
+  <MCW_LinglonAura.description>压制地图上敌人的心智。</MCW_LinglonAura.description>
+  
+  <!-- EN: Linglon suppression -->
+  <MCW_LinglonAuraDebuff.label>心灵压制</MCW_LinglonAuraDebuff.label>
+  <!-- EN: Your consciousness is being suppressed. -->
+  <MCW_LinglonAuraDebuff.description>你的意识正在受到压制。</MCW_LinglonAuraDebuff.description>
+  
+</LanguageData>

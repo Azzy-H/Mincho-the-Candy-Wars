@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Amberon Heart -->
+  <MCW_AmberonCandyAbility_AmberonHeart.label>琥珀糖心</MCW_AmberonCandyAbility_AmberonHeart.label>
+  <!-- EN: Radiates an amber-gold glow that makes the caster invulnerable and unstoppable for 30 seconds while greatly slowing nearby enemies. -->
+  <MCW_AmberonCandyAbility_AmberonHeart.description>散发出琥珀般的金色光泽，30 秒内无敌且无法被阻挡，同时大幅减缓靠近的敌人。</MCW_AmberonCandyAbility_AmberonHeart.description>
+  
+  <!-- EN: Guardian's Name! -->
+  <MCW_AmberonCandyAbility_GuardianName.label>守护之名！</MCW_AmberonCandyAbility_GuardianName.label>
+  <!-- EN: Long-jumps to a friendly pawn, ignoring roofs, and raises ice cream walls around the landing point. Can be cast while carrying an ally. -->
+  <MCW_AmberonCandyAbility_GuardianName.description>长跃到一名友军身边，无视屋顶阻挡，并在落点四周升起冰淇淋墙体。可以抱着友军一同释放。</MCW_AmberonCandyAbility_GuardianName.description>
+  
+  <!-- EN: Hard Candy -->
+  <MCW_AmberonCandyAbility_HardCandy.label>硬糖</MCW_AmberonCandyAbility_HardCandy.label>
+  <!-- EN: Hardens the body into candy, reducing incoming damage to a tenth and greatly increasing melee attack speed. Attacks splash ice cream over enemies, badly impairing their sight. -->
+  <MCW_AmberonCandyAbility_HardCandy.description>将身体硬化为糖质，把承受的伤害降至一成，并大幅提升近战攻击速度。近战命中会把冰淇淋溅到敌人身上，严重损害其视力。</MCW_AmberonCandyAbility_HardCandy.description>
+  
+  <!-- EN: Stand Behind Me -->
+  <MCW_AmberonCandyAbility_StandBehindMe.label>站在我身后</MCW_AmberonCandyAbility_StandBehindMe.label>
+  <!-- EN: Raises a full-arc standing shield on the chosen position to protect those behind it. -->
+  <MCW_AmberonCandyAbility_StandBehindMe.description>在指定位置升起一面全角立盾，为躲在它身后的人提供掩护。</MCW_AmberonCandyAbility_StandBehindMe.description>
+  
+</LanguageData>

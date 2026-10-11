@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 薄荷拐杖糖 -->
+  <MCW_MW_CandyCane.label>薄荷拐杖糖</MCW_MW_CandyCane.label>
+  <!-- EN: 锐利的糖！锐利的拐!可以让小看这跟拐杖糖的人吃到足够的“甜头”。 -->
+  <MCW_MW_CandyCane.description>锐利的糖！锐利的拐杖！可以让小看这根拐杖糖的人吃到足够的“甜头”。</MCW_MW_CandyCane.description>
+  <!-- EN: handle -->
+  <MCW_MW_CandyCane.tools.handle.label>握柄</MCW_MW_CandyCane.tools.handle.label>
+  <!-- EN: point -->
+  <MCW_MW_CandyCane.tools.point.label>尖端</MCW_MW_CandyCane.tools.point.label>
+  <!-- EN: edge -->
+  <MCW_MW_CandyCane.tools.edge.label>锋刃</MCW_MW_CandyCane.tools.edge.label>
+  
+  <!-- EN: 涡轮棒棒糖发射器 -->
+  <MCW_RW_VrocanGatling.label>涡轮棒棒糖发射器</MCW_RW_VrocanGatling.label>
+  <!-- EN: 强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。 -->
+  <MCW_RW_VrocanGatling.description>强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。</MCW_RW_VrocanGatling.description>
+  <!-- EN: barrels -->
+  <MCW_RW_VrocanGatling.tools.barrels.label>发射管</MCW_RW_VrocanGatling.tools.barrels.label>
+  <!-- EN: 涡轮棒棒糖发射器 -->
+  <MCW_RW_VrocanGatling.verbs.Verb_Shoot.label>涡轮棒棒糖发射器</MCW_RW_VrocanGatling.verbs.Verb_Shoot.label>
+  
+  <!-- EN: 涡轮棒棒糖发射器 -->
+  <MCW_RW_VrocanGatling_Formech.label>涡轮棒棒糖发射器</MCW_RW_VrocanGatling_Formech.label>
+  <!-- EN: 强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。 -->
+  <MCW_RW_VrocanGatling_Formech.description>强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。</MCW_RW_VrocanGatling_Formech.description>
+  <!-- EN: barrels -->
+  <MCW_RW_VrocanGatling_Formech.tools.barrels.label>发射管</MCW_RW_VrocanGatling_Formech.tools.barrels.label>
+  <!-- EN: 涡轮棒棒糖发射器 -->
+  <MCW_RW_VrocanGatling_Formech.verbs.Verb_Shoot.label>涡轮棒棒糖发射器</MCW_RW_VrocanGatling_Formech.verbs.Verb_Shoot.label>
+  
+  <!-- EN: 棒棒糖 -->
+  <MCW_VrocanGatling_Bullet.label>棒棒糖</MCW_VrocanGatling_Bullet.label>
+  
+  <!-- EN: candy cane -->
+  <Mincho_CandyCane_ForMech.label>薄荷拐杖糖</Mincho_CandyCane_ForMech.label>
+  <!-- EN: A very powerful candy cane made by triple enriched of mint candy. It boasts a fresher taste and more refreshing violence.\n\nIt does not look like a cane? You will say otherwise after a beating. -->
+  <Mincho_CandyCane_ForMech.description>由三重浓缩薄荷糖制成的强力拐杖糖。口感更清爽，暴力也更提神。\n\n它看起来不像拐杖？挨上一顿之后你就不这么说了。</Mincho_CandyCane_ForMech.description>
+  <!-- EN: handle -->
+  <Mincho_CandyCane_ForMech.tools.handle.label>握柄</Mincho_CandyCane_ForMech.tools.handle.label>
+  <!-- EN: head -->
+  <Mincho_CandyCane_ForMech.tools.head.label>杖头</Mincho_CandyCane_ForMech.tools.head.label>
+  
+</LanguageData>

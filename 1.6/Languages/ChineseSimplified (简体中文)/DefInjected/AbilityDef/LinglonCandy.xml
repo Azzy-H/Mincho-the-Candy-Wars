@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Amoeba Boon -->
+  <MCW_LinglonCandyAbility_AmoebaBoon.label>纳米变形虫增益</MCW_LinglonCandyAbility_AmoebaBoon.label>
+  <!-- EN: A toggle ability that grants +20% consciousness to every mincho on the map. Drains candy value every hour while active. -->
+  <MCW_LinglonCandyAbility_AmoebaBoon.description>开关型技能，为地图上所有珉巧提供 +20% 意识。开启期间每小时消耗糖果值。</MCW_LinglonCandyAbility_AmoebaBoon.description>
+  
+  <!-- EN: Amoeba Mutation -->
+  <MCW_LinglonCandyAbility_AmoebaMutation.label>纳米变形虫变异</MCW_LinglonCandyAbility_AmoebaMutation.label>
+  <!-- EN: Learns a random available psycast. -->
+  <MCW_LinglonCandyAbility_AmoebaMutation.description>随机习得一个可用的心灵能力。</MCW_LinglonCandyAbility_AmoebaMutation.description>
+  
+</LanguageData>

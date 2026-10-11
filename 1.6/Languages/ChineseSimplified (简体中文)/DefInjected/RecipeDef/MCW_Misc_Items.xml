@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 制作美味曲奇饼 ×4 -->
+  <MCW_Make_Delicious_Cookies.label>制作美味曲奇饼 ×4</MCW_Make_Delicious_Cookies.label>
+  <!-- EN: 制作美味曲奇饼，美味曲奇饼是珉巧们使用稻米烘焙制成的食物，非常美味，但是不是很管饱。 -->
+  <MCW_Make_Delicious_Cookies.description>制作美味曲奇饼，美味曲奇饼是珉巧们使用稻米烘焙制成的食物，非常美味，但是不是很管饱。</MCW_Make_Delicious_Cookies.description>
+  <!-- EN: 制作美味曲奇饼 -->
+  <MCW_Make_Delicious_Cookies.jobString>制作美味曲奇饼</MCW_Make_Delicious_Cookies.jobString>
+  
+  <!-- EN: 制作美味曲奇饼 ×16 -->
+  <MCW_Make_Delicious_Cookies_Muti.label>制作美味曲奇饼 ×16</MCW_Make_Delicious_Cookies_Muti.label>
+  <!-- EN: 制作美味曲奇饼，美味曲奇饼是珉巧们使用稻米烘焙制成的食物，非常美味，但是不是很管饱。 -->
+  <MCW_Make_Delicious_Cookies_Muti.description>制作美味曲奇饼，美味曲奇饼是珉巧们使用稻米烘焙制成的食物，非常美味，但是不是很管饱。</MCW_Make_Delicious_Cookies_Muti.description>
+  <!-- EN: 制作美味曲奇饼 -->
+  <MCW_Make_Delicious_Cookies_Muti.jobString>制作美味曲奇饼</MCW_Make_Delicious_Cookies_Muti.jobString>
+  
+</LanguageData>

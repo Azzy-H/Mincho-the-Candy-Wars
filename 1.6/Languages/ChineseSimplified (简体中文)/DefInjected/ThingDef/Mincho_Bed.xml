@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: mincho bed -->
+  <MCW_MinchoBed.label>珉巧床</MCW_MinchoBed.label>
+  <!-- EN: A cozy bed tailored for Mincho. -->
+  <MCW_MinchoBed.description>为珉巧量身定做的舒适小床。</MCW_MinchoBed.description>
+  
+  <!-- EN: mincho double bed -->
+  <MCW_MinchoDoubleBed.label>珉巧双人床</MCW_MinchoDoubleBed.label>
+  <!-- EN: A cozy double bed tailored for Mincho. -->
+  <MCW_MinchoDoubleBed.description>为珉巧量身定做的舒适双人床。</MCW_MinchoDoubleBed.description>
+  
+  <!-- EN: luxury mincho bed -->
+  <MCW_MinchoLuxuryBed.label>豪华珉巧床</MCW_MinchoLuxuryBed.label>
+  <!-- EN: A luxurious bed tailored for Mincho. -->
+  <MCW_MinchoLuxuryBed.description>为珉巧量身定做的豪华小床。</MCW_MinchoLuxuryBed.description>
+  
+  <!-- EN: luxury mincho double bed -->
+  <MCW_MinchoLuxuryDoubleBed.label>豪华珉巧双人床</MCW_MinchoLuxuryDoubleBed.label>
+  <!-- EN: A luxurious double bed tailored for Mincho. -->
+  <MCW_MinchoLuxuryDoubleBed.description>为珉巧量身定做的豪华双人床。</MCW_MinchoLuxuryDoubleBed.description>
+  
+</LanguageData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Linglon Aura -->
+  <MCW_LinglonAuraCondition.label>玲珑光环</MCW_LinglonAuraCondition.label>
+  <!-- EN: A Linglon Candy suppresses the minds of nearby enemies. -->
+  <MCW_LinglonAuraCondition.description>一位玲珑糖正在压制周围敌人的心智。</MCW_LinglonAuraCondition.description>
+  
+  <!-- EN: Manna's Heart -->
+  <MCW_MannaHeartCondition.label>心之甘露</MCW_MannaHeartCondition.label>
+  <!-- EN: The soothing presence of a Manna Candy brings peace to everyone on the map. -->
+  <MCW_MannaHeartCondition.description>甘露糖柔和的存在感让地图上的每个人都感到安宁。</MCW_MannaHeartCondition.description>
+  
+</LanguageData>

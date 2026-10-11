@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 巧克力灌木 -->
+  <MCW_Chocolate_Bush_Plant.label>巧克力灌木</MCW_Chocolate_Bush_Plant.label>
+  <!-- EN: 慧珉巧发明的神奇作物，用于快速产出巧克力，巧克力灌木只能在0度以下生长。 -->
+  <MCW_Chocolate_Bush_Plant.description>慧珉巧发明的神奇作物，用于快速产出巧克力，巧克力灌木只能在0度以下生长。</MCW_Chocolate_Bush_Plant.description>
+  
+  <!-- EN: 超低温恶魔菇 -->
+  <MCW_Frozen_Devilstrand_Plant.label>超低温恶魔菇</MCW_Frozen_Devilstrand_Plant.label>
+  <!-- EN: 智慧珉巧发明的神奇作物，能够在极寒地区种植出蘑菇布，生长周期比普通蘑菇布更短，但是产量也更低。 -->
+  <MCW_Frozen_Devilstrand_Plant.description>智慧珉巧发明的神奇作物，能够在极寒地区种植出蘑菇布，生长周期比普通蘑菇布更短，但是产量也更低。</MCW_Frozen_Devilstrand_Plant.description>
+  
+  <!-- EN: 冷冻水稻 -->
+  <MCW_Frozen_Rice_Plant.label>冷冻水稻</MCW_Frozen_Rice_Plant.label>
+  <!-- EN: 智慧珉巧发明的神奇作物，可以在极寒地区种植出水稻。冷冻水稻生长缓慢，巧克力灌木只能在0度以下生长。 -->
+  <MCW_Frozen_Rice_Plant.description>智慧珉巧发明的神奇作物，可以在极寒地区种植出水稻。冷冻水稻生长缓慢，巧克力灌木只能在0度以下生长。</MCW_Frozen_Rice_Plant.description>
+  
+</LanguageData>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 次级珉巧子个体-战斗型 -->
+  <MCW_Mech_Battle.label>次级珉巧子个体-战斗型</MCW_Mech_Battle.label>
+  
+  <!-- EN: 次级珉巧子个体-防卫型 -->
+  <MCW_Mech_Defender.label>次级珉巧子个体-防卫型</MCW_Mech_Defender.label>
+  
+  <!-- EN: 次级珉巧子个体-攻击型 -->
+  <MCW_Mech_Gunner.label>次级珉巧子个体-攻击型</MCW_Mech_Gunner.label>
+  
+  <!-- EN: 次级珉巧子个体-女仆I型 -->
+  <MCW_Mech_I_Maid.label>次级珉巧子个体-女仆I型</MCW_Mech_I_Maid.label>
+  
+  <!-- EN: 次级珉巧子个体-女仆Ⅱ型 -->
+  <MCW_Mech_II_Maid.label>次级珉巧子个体-女仆Ⅱ型</MCW_Mech_II_Maid.label>
+  
+  <!-- EN: 珉巧史莱姆 -->
+  <MCW_MinchoSlime.label>珉巧史莱姆</MCW_MinchoSlime.label>
+  
+</LanguageData>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Mincho Alliance -->
+  <MCW_Alliance_Faction.label>珉巧同盟</MCW_Alliance_Faction.label>
+  <!-- EN: 由沁心糖组建的珉巧同盟，她们掌握了制作智慧珉巧的能力，以及收留和保护其他珉巧。 -->
+  <MCW_Alliance_Faction.description>由沁心糖组建的珉巧同盟，她们掌握了制作智慧珉巧的能力，以及收留和保护其他珉巧。</MCW_Alliance_Faction.description>
+  <!-- EN: 珉巧同盟 -->
+  <MCW_Alliance_Faction.fixedName>珉巧同盟</MCW_Alliance_Faction.fixedName>
+  <!-- EN: （领袖称谓） -->
+  <MCW_Alliance_Faction.leaderTitle>领袖</MCW_Alliance_Faction.leaderTitle>
+  <!-- EN: {0} from {1} are attacking your {2}. -->
+  <MCW_Alliance_Faction.messageDefendersAttacking>来自 {1} 的 {0} 正在攻击你的 {2}。</MCW_Alliance_Faction.messageDefendersAttacking>
+  <!-- EN: mincho -->
+  <MCW_Alliance_Faction.pawnSingular>珉巧</MCW_Alliance_Faction.pawnSingular>
+  <!-- EN: Minchoes -->
+  <MCW_Alliance_Faction.pawnsPlural>珉巧</MCW_Alliance_Faction.pawnsPlural>
+  
+</LanguageData>

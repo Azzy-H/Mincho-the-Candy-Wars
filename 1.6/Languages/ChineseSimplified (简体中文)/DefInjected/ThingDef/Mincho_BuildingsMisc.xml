@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 巧克力矮柜 -->
+  <MCW_Cabinet.label>巧克力矮柜</MCW_Cabinet.label>
+  <!-- EN: 听说有一位珉巧被称为糖果女巫，而她的家，都是巧克力做的！ -->
+  <MCW_Cabinet.description>听说有一位珉巧被称为糖果女巫，而她的家，都是巧克力做的！</MCW_Cabinet.description>
+  
+  <!-- EN: 薄荷冰淇淋通讯台 -->
+  <MCW_Chocolate_Console.label>薄荷冰淇淋通讯台</MCW_Chocolate_Console.label>
+  <!-- EN: 只有珉巧才能使用的通讯台，拥有通讯台的全部功能，同时，也有交易信标的功能！而且！还很好吃！ -->
+  <MCW_Chocolate_Console.description>只有珉巧才能使用的通讯台，拥有通讯台的全部功能，同时，也有交易信标的功能！而且！还很好吃！</MCW_Chocolate_Console.description>
+  <!-- EN: Summon diabolus threat -->
+  <MCW_Chocolate_Console.comps.CompUsable.useLabel>召唤魔王威胁</MCW_Chocolate_Console.comps.CompUsable.useLabel>
+  
+  <!-- EN: 薄荷冰淇淋床头柜 -->
+  <MCW_EndTable.label>薄荷冰淇淋床头柜</MCW_EndTable.label>
+  <!-- EN: 睁眼就能见到美味的薄荷冰淇淋，天下还有比这更幸福的事情吗？ -->
+  <MCW_EndTable.description>睁眼就能见到美味的薄荷冰淇淋，天下还有比这更幸福的事情吗？</MCW_EndTable.description>
+  
+  <!-- EN: 薄荷巧克力复用型号灭火单元 -->
+  <MCW_FirefoamPopper.label>薄荷巧克力复用型号灭火单元</MCW_FirefoamPopper.label>
+  <!-- EN: 薄荷巧克力复用型号灭火单元 -->
+  <MCW_FirefoamPopper.description>薄荷巧克力复用型号灭火单元</MCW_FirefoamPopper.description>
+  <!-- EN: Trigger {0_label} -->
+  <MCW_FirefoamPopper.comps.CompUsable.useLabel>触发 {0_label}</MCW_FirefoamPopper.comps.CompUsable.useLabel>
+  
+  <!-- EN: mincho couch -->
+  <MCW_MinchoCouch.label>珉巧长沙发</MCW_MinchoCouch.label>
+  <!-- EN: A comfortable seat styled for Mincho settlements. -->
+  <MCW_MinchoCouch.description>为珉巧聚落设计的舒适长椅。</MCW_MinchoCouch.description>
+  
+  <!-- EN: mincho stool -->
+  <MCW_MinchoStool.label>珉巧凳子</MCW_MinchoStool.label>
+  <!-- EN: A compact stool styled for Mincho settlements. -->
+  <MCW_MinchoStool.description>为珉巧聚落设计的小巧坐凳。</MCW_MinchoStool.description>
+  
+  <!-- EN: mincho table (2x2) -->
+  <MCW_MinchoTable2x2c.label>珉巧桌 (2x2)</MCW_MinchoTable2x2c.label>
+  <!-- EN: A sturdy 2x2 table styled for Mincho settlements. -->
+  <MCW_MinchoTable2x2c.description>为珉巧聚落设计的结实 2x2 桌子。</MCW_MinchoTable2x2c.description>
+  
+  <!-- EN: 大块巧克力饼干桌 (2x4) -->
+  <MCW_Table2x4c.label>大块巧克力饼干桌 (2x4)</MCW_Table2x4c.label>
+  <!-- EN: 请各位不要在吃饭的时候吃桌子！ -->
+  <MCW_Table2x4c.description>请各位不要在吃饭的时候吃桌子！</MCW_Table2x4c.description>
+  
+</LanguageData>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Prism Glow Swiftness -->
+  <MCW_PrismGlowMoveSpeed.label>琉璃霞·迅捷</MCW_PrismGlowMoveSpeed.label>
+  <!-- EN: A brief state of swiftness after a Prism Glow thrust. -->
+  <MCW_PrismGlowMoveSpeed.description>施展琉璃霞突刺后获得的短暂迅捷状态。</MCW_PrismGlowMoveSpeed.description>
+  
+  <!-- EN: Greatsword Sticky -->
+  <MCW_PrismSwordSlowHediff.label>巨剑黏着</MCW_PrismSwordSlowHediff.label>
+  <!-- EN: Stuck by the chocolate ice cream greatsword, movement speed is reduced. -->
+  <MCW_PrismSwordSlowHediff.description>被巧克力冰淇淋巨剑砸出的黏着物困住，移动速度降低。</MCW_PrismSwordSlowHediff.description>
+  
+  <!-- EN: Ignore Terrain -->
+  <MCW_PrismTerrainIgnore.label>无视地形</MCW_PrismTerrainIgnore.label>
+  <!-- EN: Immune to movement slowdown caused by terrain. -->
+  <MCW_PrismTerrainIgnore.description>免疫地形造成的移动减速。</MCW_PrismTerrainIgnore.description>
+  
+</LanguageData>

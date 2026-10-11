@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: mincho floor A -->
+  <MCW_MinchoFloorA.label>珉巧地板 A</MCW_MinchoFloorA.label>
+  <!-- EN: A durable floor pattern for Mincho settlements. -->
+  <MCW_MinchoFloorA.description>用于珉巧聚落的耐用地板样式。</MCW_MinchoFloorA.description>
+  
+  <!-- EN: mincho floor B -->
+  <MCW_MinchoFloorB.label>珉巧地板 B</MCW_MinchoFloorB.label>
+  <!-- EN: A durable floor pattern for Mincho settlements. -->
+  <MCW_MinchoFloorB.description>用于珉巧聚落的耐用地板样式。</MCW_MinchoFloorB.description>
+  
+  <!-- EN: mincho floor C -->
+  <MCW_MinchoFloorC.label>珉巧地板 C</MCW_MinchoFloorC.label>
+  <!-- EN: A durable floor pattern for Mincho settlements. -->
+  <MCW_MinchoFloorC.description>用于珉巧聚落的耐用地板样式。</MCW_MinchoFloorC.description>
+  
+</LanguageData>

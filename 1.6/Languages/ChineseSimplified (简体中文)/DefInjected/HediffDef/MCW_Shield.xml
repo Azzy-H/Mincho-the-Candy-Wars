@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 举盾防御 -->
+  <MCW_CookiesShield_DraftedHediff.label>举盾防御</MCW_CookiesShield_DraftedHediff.label>
+  <!-- EN: 该士兵举起曲奇盾牌，严阵以待敌人的冲击。举盾状态下获得额外的防护能力。 -->
+  <MCW_CookiesShield_DraftedHediff.description>该士兵举起曲奇盾牌，严阵以待敌人的冲击。举盾状态下获得额外的防护能力。</MCW_CookiesShield_DraftedHediff.description>
+  
+  <!-- EN: 背盾 -->
+  <MCW_CookiesShield_UndraftedHediff.label>背盾</MCW_CookiesShield_UndraftedHediff.label>
+  <!-- EN: 该士兵将曲奇盾牌背至身后，行动自如。 -->
+  <MCW_CookiesShield_UndraftedHediff.description>该士兵将曲奇盾牌背至身后，行动自如。</MCW_CookiesShield_UndraftedHediff.description>
+  
+  <!-- EN: 举盾防御 -->
+  <MCW_TowerShield_DraftedHediff.label>举盾防御</MCW_TowerShield_DraftedHediff.label>
+  <!-- EN: 该士兵举起塔盾，严阵以待敌人的冲击。举盾状态下获得额外的防护能力。 -->
+  <MCW_TowerShield_DraftedHediff.description>该士兵举起塔盾，严阵以待敌人的冲击。举盾状态下获得额外的防护能力。</MCW_TowerShield_DraftedHediff.description>
+  
+  <!-- EN: 背盾 -->
+  <MCW_TowerShield_UndraftedHediff.label>背盾</MCW_TowerShield_UndraftedHediff.label>
+  <!-- EN: 该士兵将塔盾背至身后，行动自如。 -->
+  <MCW_TowerShield_UndraftedHediff.description>该士兵将塔盾背至身后，行动自如。</MCW_TowerShield_UndraftedHediff.description>
+  
+</LanguageData>

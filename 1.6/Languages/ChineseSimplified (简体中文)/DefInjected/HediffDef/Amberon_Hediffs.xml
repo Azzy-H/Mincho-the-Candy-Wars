@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Amberon heart -->
+  <MCW_AmberonHeart.label>琥珀糖心</MCW_AmberonHeart.label>
+  <!-- EN: An amber heart of light that slows nearby enemies and soothes nearby allies. -->
+  <MCW_AmberonHeart.description>一颗琥珀色的心之光环，减缓周围敌人的行动，同时安抚周围的同伴。</MCW_AmberonHeart.description>
+  <!-- EN: MCW Amberon heart aura -->
+  <MCW_AmberonHeart.renderNodeProperties.0.debugLabel>MCW Amberon heart aura</MCW_AmberonHeart.renderNodeProperties.0.debugLabel>
+  <!-- EN: MCW Amberon decoration glow -->
+  <MCW_AmberonHeart.renderNodeProperties.1.debugLabel>MCW Amberon decoration glow</MCW_AmberonHeart.renderNodeProperties.1.debugLabel>
+  
+  <!-- EN: Amberon heart mood -->
+  <MCW_AmberonHeartMood.label>琥珀糖心</MCW_AmberonHeartMood.label>
+  <!-- EN: The warmth of the amber heart lifts the spirits of those nearby. -->
+  <MCW_AmberonHeartMood.description>琥珀糖心的温暖让周围的人心生慰藉。</MCW_AmberonHeartMood.description>
+  
+  <!-- EN: Amberon shield -->
+  <MCW_AmberonShield.label>琥珀护盾</MCW_AmberonShield.label>
+  <!-- EN: An amber barrier that absorbs incoming damage before it reaches the body. -->
+  <MCW_AmberonShield.description>一道琥珀色屏障，在伤害触及身体之前将其吸收。</MCW_AmberonShield.description>
+  
+  <!-- EN: Amberon slow -->
+  <MCW_AmberonSlow.label>琥珀减速</MCW_AmberonSlow.label>
+  <!-- EN: Held fast by amber light, movement speed is halved. -->
+  <MCW_AmberonSlow.description>被琥珀色的光芒缠住，移动速度减半。</MCW_AmberonSlow.description>
+  
+  <!-- EN: hard candy -->
+  <MCW_HardCandy.label>硬糖</MCW_HardCandy.label>
+  <!-- EN: The body has hardened into candy, greatly reducing incoming damage at the cost of mobility. -->
+  <MCW_HardCandy.description>身体硬化为糖质，大幅降低所受伤害，但行动变得迟缓。</MCW_HardCandy.description>
+  
+  <!-- EN: splashed ice cream -->
+  <MCW_SplashedIceCream.label>溅射冰淇淋</MCW_SplashedIceCream.label>
+  <!-- EN: Ice cream splattered over the eyes, severely impairing sight. -->
+  <MCW_SplashedIceCream.description>冰淇淋溅在眼睛上，严重妨碍视线。</MCW_SplashedIceCream.description>
+  
+</LanguageData>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: implant Mincho body booster -->
+  <MCW_Implant_MinchoBodyBooster.label>植入智慧珉巧躯体改造包</MCW_Implant_MinchoBodyBooster.label>
+  <!-- EN: 对躯体等级 1-4 级的智慧珉巧使用躯体改造包，提升躯体等级。100% 成功率。 -->
+  <MCW_Implant_MinchoBodyBooster.description>对躯体等级 1-4 级的智慧珉巧使用躯体改造包，提升躯体等级。100% 成功率。</MCW_Implant_MinchoBodyBooster.description>
+  <!-- EN: Implanting Mincho body booster. -->
+  <MCW_Implant_MinchoBodyBooster.jobString>正在植入智慧珉巧躯体改造包。</MCW_Implant_MinchoBodyBooster.jobString>
+  
+  <!-- EN: implant Mincho advanced core booster -->
+  <MCW_Implant_MinchoCoreBoosterAdvanced.label>植入智慧珉巧高级核心改造包</MCW_Implant_MinchoCoreBoosterAdvanced.label>
+  <!-- EN: 对核心等级 3-4 级的智慧珉巧使用高级核心改造包，提升核心等级。100% 成功率。 -->
+  <MCW_Implant_MinchoCoreBoosterAdvanced.description>对核心等级 3-4 级的智慧珉巧使用高级核心改造包，提升核心等级。100% 成功率。</MCW_Implant_MinchoCoreBoosterAdvanced.description>
+  <!-- EN: Implanting Mincho advanced core booster. -->
+  <MCW_Implant_MinchoCoreBoosterAdvanced.jobString>正在植入智慧珉巧高级核心改造包。</MCW_Implant_MinchoCoreBoosterAdvanced.jobString>
+  
+  <!-- EN: implant Mincho basic core booster -->
+  <MCW_Implant_MinchoCoreBoosterBasic.label>植入智慧珉巧初级核心改造包</MCW_Implant_MinchoCoreBoosterBasic.label>
+  <!-- EN: 对核心等级 1-2 级的智慧珉巧使用初级核心改造包，提升核心等级。100% 成功率。 -->
+  <MCW_Implant_MinchoCoreBoosterBasic.description>对核心等级 1-2 级的智慧珉巧使用初级核心改造包，提升核心等级。100% 成功率。</MCW_Implant_MinchoCoreBoosterBasic.description>
+  <!-- EN: Implanting Mincho basic core booster. -->
+  <MCW_Implant_MinchoCoreBoosterBasic.jobString>正在植入智慧珉巧初级核心改造包。</MCW_Implant_MinchoCoreBoosterBasic.jobString>
+  
+  <!-- EN: implant Mincho intelligence booster -->
+  <MCW_Implant_MinchoIntelBooster.label>植入智慧珉巧改造包</MCW_Implant_MinchoIntelBooster.label>
+  <!-- EN: 对普通珉巧使用智慧珉巧改造包，使其成为智慧珉巧。100% 成功率。 -->
+  <MCW_Implant_MinchoIntelBooster.description>对普通珉巧使用智慧珉巧改造包，使其成为智慧珉巧。100% 成功率。</MCW_Implant_MinchoIntelBooster.description>
+  <!-- EN: Implanting Mincho intelligence booster. -->
+  <MCW_Implant_MinchoIntelBooster.jobString>正在植入智慧珉巧改造包。</MCW_Implant_MinchoIntelBooster.jobString>
+  
+  <!-- EN: make Mincho body booster -->
+  <MCW_Make_MinchoBodyBooster.label>制作智慧珉巧躯体改造包</MCW_Make_MinchoBodyBooster.label>
+  <!-- EN: 制作智慧珉巧躯体改造包。 -->
+  <MCW_Make_MinchoBodyBooster.description>制作智慧珉巧躯体改造包。</MCW_Make_MinchoBodyBooster.description>
+  <!-- EN: Making Mincho body booster. -->
+  <MCW_Make_MinchoBodyBooster.jobString>正在制作智慧珉巧躯体改造包。</MCW_Make_MinchoBodyBooster.jobString>
+  
+  <!-- EN: make Mincho advanced core booster -->
+  <MCW_Make_MinchoCoreBoosterAdvanced.label>制作智慧珉巧高级核心改造包</MCW_Make_MinchoCoreBoosterAdvanced.label>
+  <!-- EN: 制作智慧珉巧高级核心改造包。 -->
+  <MCW_Make_MinchoCoreBoosterAdvanced.description>制作智慧珉巧高级核心改造包。</MCW_Make_MinchoCoreBoosterAdvanced.description>
+  <!-- EN: Making Mincho advanced core booster. -->
+  <MCW_Make_MinchoCoreBoosterAdvanced.jobString>正在制作智慧珉巧高级核心改造包。</MCW_Make_MinchoCoreBoosterAdvanced.jobString>
+  
+  <!-- EN: make Mincho basic core booster -->
+  <MCW_Make_MinchoCoreBoosterBasic.label>制作智慧珉巧初级核心改造包</MCW_Make_MinchoCoreBoosterBasic.label>
+  <!-- EN: 制作智慧珉巧初级核心改造包。 -->
+  <MCW_Make_MinchoCoreBoosterBasic.description>制作智慧珉巧初级核心改造包。</MCW_Make_MinchoCoreBoosterBasic.description>
+  <!-- EN: Making Mincho basic core booster. -->
+  <MCW_Make_MinchoCoreBoosterBasic.jobString>正在制作智慧珉巧初级核心改造包。</MCW_Make_MinchoCoreBoosterBasic.jobString>
+  
+  <!-- EN: make Mincho intelligence booster -->
+  <MCW_Make_MinchoIntelBooster.label>制作智慧珉巧改造包</MCW_Make_MinchoIntelBooster.label>
+  <!-- EN: 制作智慧珉巧改造包。 -->
+  <MCW_Make_MinchoIntelBooster.description>制作智慧珉巧改造包。</MCW_Make_MinchoIntelBooster.description>
+  <!-- EN: Making Mincho intelligence booster. -->
+  <MCW_Make_MinchoIntelBooster.jobString>正在制作智慧珉巧改造包。</MCW_Make_MinchoIntelBooster.jobString>
+  
+</LanguageData>

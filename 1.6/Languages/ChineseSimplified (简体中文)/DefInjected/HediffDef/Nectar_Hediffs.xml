@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Manna Connection -->
+  <MCW_MannaConnection.label>甘露连接</MCW_MannaConnection.label>
+  <!-- EN: A deep bond connecting two Mincho souls. -->
+  <MCW_MannaConnection.description>将两个珉巧灵魂紧密相连的深刻羁绊。</MCW_MannaConnection.description>
+  <!-- EN: active -->
+  <MCW_MannaConnection.stages.active.label>已激活</MCW_MannaConnection.stages.active.label>
+  
+  <!-- EN: Manna Fairy -->
+  <MCW_MannaFairy.label>甘露妖精</MCW_MannaFairy.label>
+  <!-- EN: A tiny Mincho fairy that protects and heals its host. -->
+  <MCW_MannaFairy.description>一只小小的珉巧妖精，守护并治愈着它的宿主。</MCW_MannaFairy.description>
+  
+  <!-- EN: Manna Fairy Buff -->
+  <MCW_MannaFairyBuff.label>甘露妖精庇护</MCW_MannaFairyBuff.label>
+  <!-- EN: Protected by a manna fairy — regenerating wounds and evading attacks. -->
+  <MCW_MannaFairyBuff.description>正受到甘露妖精的庇护——伤口持续再生，并能闪避攻击。</MCW_MannaFairyBuff.description>
+  
+  <!-- EN: Heart of Manna -->
+  <MCW_MannaHeart.label>心之甘露</MCW_MannaHeart.label>
+  <!-- EN: Soothing presence of the Manna Candy brings peace to the colony. -->
+  <MCW_MannaHeart.description>甘露糖柔和的存在感为整个殖民地带来安宁。</MCW_MannaHeart.description>
+  
+  <!-- EN: mincho tentacle -->
+  <MCW_MinchoTentacle.label>珉巧触手</MCW_MinchoTentacle.label>
+  <!-- EN: A twisting tentacle formed from unstable ice cream reshaping. It seems to have a mind of its own. -->
+  <MCW_MinchoTentacle.description>由失控的冰淇淋重塑而成的一条扭曲触手。它似乎有自己的意志。</MCW_MinchoTentacle.description>
+  <!-- EN: Mincho tentacle operation -->
+  <MCW_MinchoTentacle.comps.HediffComp_FleshbeastEmerge.letterLabel>珉巧触手手术</MCW_MinchoTentacle.comps.HediffComp_FleshbeastEmerge.letterLabel>
+  <!-- EN: Attempting to remove {PAWN_nameDef}'s tentacle has caused the twisting mass of mincho flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast! -->
+  <MCW_MinchoTentacle.comps.HediffComp_FleshbeastEmerge.letterText>试图切除 {PAWN_nameDef} 的触手，激怒了那团扭曲的珉巧血肉。血肉已脱离 {PAWN_nameDef}，并化作了一头血肉兽！</MCW_MinchoTentacle.comps.HediffComp_FleshbeastEmerge.letterText>
+  <!-- EN: a mincho tentacle -->
+  <MCW_MinchoTentacle.labelNoun>一条珉巧触手</MCW_MinchoTentacle.labelNoun>
+  
+</LanguageData>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: implant Amberon Candy unlock item -->
+  <MCW_Implant_AmberonCandyChangeItem.label>植入琥珀糖糖饰解锁物品</MCW_Implant_AmberonCandyChangeItem.label>
+  <!-- EN: 对智慧珉巧使用琥珀糖糖饰解锁物品，解锁琥珀糖糖饰。100% 成功率。 -->
+  <MCW_Implant_AmberonCandyChangeItem.description>对智慧珉巧使用琥珀糖糖饰解锁物品，解锁琥珀糖糖饰。100% 成功率。</MCW_Implant_AmberonCandyChangeItem.description>
+  <!-- EN: Implanting Amberon Candy unlock item. -->
+  <MCW_Implant_AmberonCandyChangeItem.jobString>正在植入琥珀糖糖饰解锁物品。</MCW_Implant_AmberonCandyChangeItem.jobString>
+  
+  <!-- EN: implant Linglon Candy unlock item -->
+  <MCW_Implant_LinglonCandyChangeItem.label>植入玲珑糖糖饰解锁物品</MCW_Implant_LinglonCandyChangeItem.label>
+  <!-- EN: 对智慧珉巧使用玲珑糖糖饰解锁物品，解锁玲珑糖糖饰。100% 成功率。 -->
+  <MCW_Implant_LinglonCandyChangeItem.description>对智慧珉巧使用玲珑糖糖饰解锁物品，解锁玲珑糖糖饰。100% 成功率。</MCW_Implant_LinglonCandyChangeItem.description>
+  <!-- EN: Implanting Linglon Candy unlock item. -->
+  <MCW_Implant_LinglonCandyChangeItem.jobString>正在植入玲珑糖糖饰解锁物品。</MCW_Implant_LinglonCandyChangeItem.jobString>
+  
+  <!-- EN: implant Mecha Candy unlock item -->
+  <MCW_Implant_MechaCandyChangeItem.label>植入千机糖糖饰解锁物品</MCW_Implant_MechaCandyChangeItem.label>
+  <!-- EN: 对智慧珉巧使用千机糖糖饰解锁物品，解锁千机糖糖饰。100% 成功率。 -->
+  <MCW_Implant_MechaCandyChangeItem.description>对智慧珉巧使用千机糖糖饰解锁物品，解锁千机糖糖饰。100% 成功率。</MCW_Implant_MechaCandyChangeItem.description>
+  <!-- EN: Implanting Mecha Candy unlock item. -->
+  <MCW_Implant_MechaCandyChangeItem.jobString>正在植入千机糖糖饰解锁物品。</MCW_Implant_MechaCandyChangeItem.jobString>
+  
+  <!-- EN: implant Nectar Candy unlock item -->
+  <MCW_Implant_NectarCandyChangeItem.label>植入甘露糖糖饰解锁物品</MCW_Implant_NectarCandyChangeItem.label>
+  <!-- EN: 对智慧珉巧使用甘露糖糖饰解锁物品，解锁甘露糖糖饰。100% 成功率。 -->
+  <MCW_Implant_NectarCandyChangeItem.description>对智慧珉巧使用甘露糖糖饰解锁物品，解锁甘露糖糖饰。100% 成功率。</MCW_Implant_NectarCandyChangeItem.description>
+  <!-- EN: Implanting Nectar Candy unlock item. -->
+  <MCW_Implant_NectarCandyChangeItem.jobString>正在植入甘露糖糖饰解锁物品。</MCW_Implant_NectarCandyChangeItem.jobString>
+  
+  <!-- EN: implant Prism Candy unlock item -->
+  <MCW_Implant_PrismCandyChangeItem.label>植入琉璃糖糖饰解锁物品</MCW_Implant_PrismCandyChangeItem.label>
+  <!-- EN: 对智慧珉巧使用琉璃糖糖饰解锁物品，解锁琉璃糖糖饰。100% 成功率。 -->
+  <MCW_Implant_PrismCandyChangeItem.description>对智慧珉巧使用琉璃糖糖饰解锁物品，解锁琉璃糖糖饰。100% 成功率。</MCW_Implant_PrismCandyChangeItem.description>
+  <!-- EN: Implanting Prism Candy unlock item. -->
+  <MCW_Implant_PrismCandyChangeItem.jobString>正在植入琉璃糖糖饰解锁物品。</MCW_Implant_PrismCandyChangeItem.jobString>
+  
+  <!-- EN: make Amberon Candy unlock item -->
+  <MCW_Make_AmberonCandyChangeItem.label>制作琥珀糖糖饰解锁物品</MCW_Make_AmberonCandyChangeItem.label>
+  <!-- EN: 制作琥珀糖糖饰解锁物品。 -->
+  <MCW_Make_AmberonCandyChangeItem.description>制作琥珀糖糖饰解锁物品。</MCW_Make_AmberonCandyChangeItem.description>
+  <!-- EN: Making Amberon Candy unlock item. -->
+  <MCW_Make_AmberonCandyChangeItem.jobString>正在制作琥珀糖糖饰解锁物品。</MCW_Make_AmberonCandyChangeItem.jobString>
+  
+  <!-- EN: make Linglon Candy unlock item -->
+  <MCW_Make_LinglonCandyChangeItem.label>制作玲珑糖糖饰解锁物品</MCW_Make_LinglonCandyChangeItem.label>
+  <!-- EN: 制作玲珑糖糖饰解锁物品。 -->
+  <MCW_Make_LinglonCandyChangeItem.description>制作玲珑糖糖饰解锁物品。</MCW_Make_LinglonCandyChangeItem.description>
+  <!-- EN: Making Linglon Candy unlock item. -->
+  <MCW_Make_LinglonCandyChangeItem.jobString>正在制作玲珑糖糖饰解锁物品。</MCW_Make_LinglonCandyChangeItem.jobString>
+  
+  <!-- EN: make Mecha Candy unlock item -->
+  <MCW_Make_MechaCandyChangeItem.label>制作千机糖糖饰解锁物品</MCW_Make_MechaCandyChangeItem.label>
+  <!-- EN: 制作千机糖糖饰解锁物品。 -->
+  <MCW_Make_MechaCandyChangeItem.description>制作千机糖糖饰解锁物品。</MCW_Make_MechaCandyChangeItem.description>
+  <!-- EN: Making Mecha Candy unlock item. -->
+  <MCW_Make_MechaCandyChangeItem.jobString>正在制作千机糖糖饰解锁物品。</MCW_Make_MechaCandyChangeItem.jobString>
+  
+  <!-- EN: make Nectar Candy unlock item -->
+  <MCW_Make_NectarCandyChangeItem.label>制作甘露糖糖饰解锁物品</MCW_Make_NectarCandyChangeItem.label>
+  <!-- EN: 制作甘露糖糖饰解锁物品。 -->
+  <MCW_Make_NectarCandyChangeItem.description>制作甘露糖糖饰解锁物品。</MCW_Make_NectarCandyChangeItem.description>
+  <!-- EN: Making Nectar Candy unlock item. -->
+  <MCW_Make_NectarCandyChangeItem.jobString>正在制作甘露糖糖饰解锁物品。</MCW_Make_NectarCandyChangeItem.jobString>
+  
+  <!-- EN: make Prism Candy unlock item -->
+  <MCW_Make_PrismCandyChangeItem.label>制作琉璃糖糖饰解锁物品</MCW_Make_PrismCandyChangeItem.label>
+  <!-- EN: 制作琉璃糖糖饰解锁物品。 -->
+  <MCW_Make_PrismCandyChangeItem.description>制作琉璃糖糖饰解锁物品。</MCW_Make_PrismCandyChangeItem.description>
+  <!-- EN: Making Prism Candy unlock item. -->
+  <MCW_Make_PrismCandyChangeItem.jobString>正在制作琉璃糖糖饰解锁物品。</MCW_Make_PrismCandyChangeItem.jobString>
+  
+</LanguageData>

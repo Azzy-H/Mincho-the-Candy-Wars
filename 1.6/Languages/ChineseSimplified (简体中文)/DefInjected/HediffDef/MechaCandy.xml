@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: MechBoost -->
+  <MCW_MechBoost.label>机械增幅</MCW_MechBoost.label>
+  <!-- EN: Piloting a friendly mechanoid from the inside. -->
+  <MCW_MechBoost.description>正从内部操控一台友方机械体。</MCW_MechBoost.description>
+  
+</LanguageData>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Amberon Candy -->
+  <AmberonCandy.label>琥珀糖</AmberonCandy.label>
+  <!-- EN: The amber candy hardens the body and raises a shield of light. Its mincho are tough, armored and slow to fall, and its heart soothes nearby allies. -->
+  <AmberonCandy.description>琥珀糖硬化躯体，并升起护盾之光。琥珀糖珉巧坚韧、耐打、不易倒下，其糖心能安抚周围的同伴。</AmberonCandy.description>
+  
+  <!-- EN: Linglon Candy -->
+  <LinglonCandy.label>玲珑糖</LinglonCandy.label>
+  <!-- EN: The linglon candy opens the mind. Its mincho gain meditation focus, psychic sensitivity and entropy capacity, and can suppress the minds of enemies nearby. -->
+  <LinglonCandy.description>玲珑糖开启心智。玲珑糖珉巧获得冥想专注、灵能敏感度与心灵熵容量，并能压制周围敌人的心智。</LinglonCandy.description>
+  
+  <!-- EN: Mecha Candy -->
+  <MechaCandy.label>千机糖</MechaCandy.label>
+  <!-- EN: The mecha candy is built for machines. Its mincho gain mech bandwidth, work and crafting speed, and can accelerate, hijack and pilot mechanoids. -->
+  <MechaCandy.description>千机糖为机械而生。千机糖珉巧获得机械带宽、工作与手工速度，并能加速培育、劫持与亲自操控机械体。</MechaCandy.description>
+  
+  <!-- EN: Nectar Candy -->
+  <NectarCandy.label>甘露糖</NectarCandy.label>
+  <!-- EN: The nectar candy heals and nourishes. Its mincho gain medical and cooking skill, ice cream output and beauty, and can tend wounds and reshape ice cream flesh. -->
+  <NectarCandy.description>甘露糖治愈与滋养。甘露糖珉巧获得医疗与烹饪能力、冰淇淋产量与魅力，并能处理伤口、重塑冰淇淋血肉。</NectarCandy.description>
+  
+  <!-- EN: Prism Candy -->
+  <PrismCandy.label>琉璃糖</PrismCandy.label>
+  <!-- EN: The prism candy is a blade. Its mincho gain melee damage, dodge chance and movement speed, ignore terrain, and fight with shattered prism blades. -->
+  <PrismCandy.description>琉璃糖即是锋刃。琉璃糖珉巧获得近战伤害、闪避率与移动速度，无视地形阻碍，并以碎裂的琉璃剑气作战。</PrismCandy.description>
+  
+</LanguageData>

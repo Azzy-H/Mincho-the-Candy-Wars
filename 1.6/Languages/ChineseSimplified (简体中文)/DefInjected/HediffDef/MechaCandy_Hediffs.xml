@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Production Quality Boost -->
+  <MCW_ProductionQualityBoost.label>生产品质提升</MCW_ProductionQualityBoost.label>
+  <!-- EN: Improves production quality. -->
+  <MCW_ProductionQualityBoost.description>提升生产制品的品质。</MCW_ProductionQualityBoost.description>
+  
+</LanguageData>

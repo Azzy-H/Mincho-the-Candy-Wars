@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: EMP bolt -->
+  <MCW_MechaCandyAbility_EMPBolt.label>机械瘫痪</MCW_MechaCandyAbility_EMPBolt.label>
+  <!-- EN: Lobs an EMP bolt at an area, stunning hostile mechanoids inside it. The stun lasts longer at higher total grade. -->
+  <MCW_MechaCandyAbility_EMPBolt.description>朝目标区域投出一枚电磁脉冲弹，使范围内的敌对机械体陷入瘫痪。总等级越高，瘫痪持续越久。</MCW_MechaCandyAbility_EMPBolt.description>
+  
+  <!-- EN: MechBoost -->
+  <MCW_MechaCandyAbility_MechBoost.label>机械融合</MCW_MechaCandyAbility_MechBoost.label>
+  <!-- EN: Merges the caster into a friendly mechanoid, greatly boosting its performance. Can be exited at will, or ends when the mechanoid goes down or dies. -->
+  <MCW_MechaCandyAbility_MechBoost.description>与一台友方机械体融合，大幅强化其性能。可随时主动脱离；机械体倒地或死亡时也会强制脱离。</MCW_MechaCandyAbility_MechBoost.description>
+  
+  <!-- EN: mech gestator acceleration -->
+  <MCW_MechaCandyAbility_MechGestatorAcceleration.label>培育加速</MCW_MechaCandyAbility_MechGestatorAcceleration.label>
+  <!-- EN: Instantly completes the mechanoid currently being formed in a mech gestator. -->
+  <MCW_MechaCandyAbility_MechGestatorAcceleration.description>使机械培育器中正在进行的培育周期立刻完成。</MCW_MechaCandyAbility_MechGestatorAcceleration.description>
+  
+  <!-- EN: MechHack -->
+  <MCW_MechaCandyAbility_MechHack.label>机械断联</MCW_MechaCandyAbility_MechHack.label>
+  <!-- EN: Severs an enemy mechanoid's link. A friendly mechanitor can then take control of it. -->
+  <MCW_MechaCandyAbility_MechHack.description>切断一台敌方机械体的链接。此后我方的机械师可以将其重新控制。</MCW_MechaCandyAbility_MechHack.description>
+  
+</LanguageData>

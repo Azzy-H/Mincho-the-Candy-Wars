@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Chocolate Ice Cream Greatsword -->
+  <MCW_PrismCandyAbility_ChocoGreatsword.label>巧克力冰淇淋巨剑</MCW_PrismCandyAbility_ChocoGreatsword.label>
+  <!-- EN: Swings a colossal chocolate ice cream greatsword at a target area, dealing high blunt damage and leaving a wide patch of slowing terrain. -->
+  <MCW_PrismCandyAbility_ChocoGreatsword.description>朝目标区域挥出巨大的巧克力冰淇淋巨剑，造成大量钝击伤害，并留下一大片使敌人减速的黏着地面。</MCW_PrismCandyAbility_ChocoGreatsword.description>
+  
+  <!-- EN: Frost Sword Shadow -->
+  <MCW_PrismCandyAbility_FrostSwordShadow.label>冰霜剑影</MCW_PrismCandyAbility_FrostSwordShadow.label>
+  <!-- EN: Sweeps a crescent of frost sword shadow across the area ahead, dealing high sharp damage. -->
+  <MCW_PrismCandyAbility_FrostSwordShadow.description>向前方半月形范围挥出一道冰霜剑影，造成较高的利器伤害。</MCW_PrismCandyAbility_FrostSwordShadow.description>
+  
+  <!-- EN: Prism Glow -->
+  <MCW_PrismCandyAbility_PrismGlow.label>琉璃霞</MCW_PrismCandyAbility_PrismGlow.label>
+  <!-- EN: Leaps at a target and thrusts, dealing high sharp damage to vitals, then increases movement speed for 10 seconds. -->
+  <MCW_PrismCandyAbility_PrismGlow.description>跃向目标并突刺其要害，造成高额利器伤害，随后在 10 秒内提升移动速度。</MCW_PrismCandyAbility_PrismGlow.description>
+  
+  <!-- EN: Thousand Blades -->
+  <MCW_PrismCandyAbility_ThousandBlades.label>琉璃千刃</MCW_PrismCandyAbility_ThousandBlades.label>
+  <!-- EN: Fires shattered prism candy across a wide forward cone, dealing sharp damage over the whole area. -->
+  <MCW_PrismCandyAbility_ThousandBlades.description>向前方大片锥形区域喷射碎裂的琉璃糖，对整片区域造成利器伤害。</MCW_PrismCandyAbility_ThousandBlades.description>
+  
+</LanguageData>

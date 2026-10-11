@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Manna's Heart -->
+  <MCW_MannaHeartMood.label>心之甘露</MCW_MannaHeartMood.label>
+  <!-- EN: Being near a Manna Candy soothes the soul. -->
+  <MCW_MannaHeartMood.description>待在甘露糖身边，灵魂得到抚慰。</MCW_MannaHeartMood.description>
+  <!-- EN: Manna's Heart -->
+  <MCW_MannaHeartMood.stages.Mannas_Heart.label>心之甘露</MCW_MannaHeartMood.stages.Mannas_Heart.label>
+  <!-- EN: The presence of a Manna Candy brings peace to everyone. -->
+  <MCW_MannaHeartMood.stages.Mannas_Heart.description>甘露糖的存在让每个人都感到安宁。</MCW_MannaHeartMood.stages.Mannas_Heart.description>
+  
+</LanguageData>
