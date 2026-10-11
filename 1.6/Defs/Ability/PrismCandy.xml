@@ -30,6 +30,7 @@
         <halfAngle>20</halfAngle>
         <damageRatio>0.2</damageRatio>
         <damageDef>MCW_PrismBladeBurst</damageDef>
+        <effectDef>MCW_Fleck_ThousandBladesSlash</effectDef>
       </li>
     </comps>
     <modExtensions>
@@ -71,6 +72,7 @@
         <halfAngle>90</halfAngle>
         <damageRatio>0.5</damageRatio>
         <damageDef>MCW_PrismBladeBurst</damageDef>
+        <effectDef>MCW_Fleck_FrostSwordShadowSlash</effectDef>
       </li>
     </comps>
     <modExtensions>
@@ -146,7 +148,7 @@
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
       <drawAimPie>true</drawAimPie>
-      <range>15</range>
+      <range>15.9</range>
       <warmupTime>1.5</warmupTime>
       <targetParams>
         <canTargetLocations>true</canTargetLocations>

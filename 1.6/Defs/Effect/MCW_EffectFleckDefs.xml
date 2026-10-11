@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 琉璃糖流派技能特效（FleckDef）                                  -->
+  <!--                                                              -->
+  <!-- 继承 FleckBase 的原因（自行手写会漏掉这两点并导致加载报红）：      -->
+  <!--   1. <fleckSystemClass>FleckSystemStatic</fleckSystemClass>   -->
+  <!--      必填，否则 FleckDef.ConfigErrors() 报错                    -->
+  <!--   2. graphicClass 必须是 Graphic_Fleck（Graphic_Single 会报错） -->
+  <!--                                                              -->
+  <!-- 旋转：FleckCreationData.rotation 可传任意角度，               -->
+  <!-- FleckStatic 会透传给 Graphic_Fleck.DrawFleck，               -->
+  <!-- 因此宽扁贴图无需切 4 方向版本。                                  -->
+  <!--                                                              -->
+  <!-- alternate 变体（FleckSystemThrown）之所以不能用，是因为它每帧   -->
+  <!-- 会用速度方向覆盖 rotation，无法指定固定朝向。                    -->
+  <!-- ============================================================ -->
+
+  <!-- 琉璃千刃：锥形碎片，射程 7、半角 20°，命中判定为长条锥形。 -->
+  <FleckDef ParentName="FleckBase">
+    <defName>MCW_Fleck_ThousandBladesSlash</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>0.10</solidTime>
+    <fadeOutTime>0.26</fadeOutTime>
+    <graphicData>
+      <texPath>Effects/Prism/MCW_ThousandBlades</texPath>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <shaderType>Mote</shaderType>
+    </graphicData>
+  </FleckDef>
+
+  <!-- 冰霜剑影：半月斩击，射程 13、半角 90°，覆盖面比千刃宽得多，故持续略长。 -->
+  <FleckDef ParentName="FleckBase">
+    <defName>MCW_Fleck_FrostSwordShadowSlash</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.03</fadeInTime>
+    <solidTime>0.14</solidTime>
+    <fadeOutTime>0.33</fadeOutTime>
+    <graphicData>
+      <texPath>Effects/Prism/MCW_FrostSwordShadow</texPath>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <shaderType>Mote</shaderType>
+    </graphicData>
+  </FleckDef>
+
+  <!-- 琉璃霞：落地冲击波。贴图是居中的径向渐变圆，无需旋转，用 FleckMaker.Static 即可。 -->
+  <FleckDef ParentName="FleckBase">
+    <defName>MCW_Fleck_PrismGlowImpact</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.05</fadeInTime>
+    <solidTime>0.10</solidTime>
+    <fadeOutTime>0.35</fadeOutTime>
+    <graphicData>
+      <texPath>Effects/Prism/MCW_PrismGlow</texPath>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <shaderType>Mote</shaderType>
+    </graphicData>
+  </FleckDef>
+
+</Defs>

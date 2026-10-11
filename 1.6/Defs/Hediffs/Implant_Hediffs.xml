@@ -5,6 +5,7 @@
     <defName>MCW_MinchoBodyStorageImplant</defName>
     <label>body storage device</label>
     <description>An implanted mechanical storage organ that greatly increases the mincho's carrying capacity.</description>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <scenarioCanAdd>false</scenarioCanAdd>
     <maxSeverity>1</maxSeverity>
     <initialSeverity>1</initialSeverity>

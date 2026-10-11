@@ -7,6 +7,7 @@
     <label>Heart of Manna</label>
     <description>Soothing presence of the Manna Candy brings peace to the colony.</description>
     <isBad>false</isBad>
+    <defaultLabelColor>(0.8, 0.6, 1.0)</defaultLabelColor>
     <hediffClass>MinchoCandyWars.Abilities.NectarCandy.Hediff_MannaHeart</hediffClass>
   </HediffDef>
 
@@ -16,6 +17,7 @@
     <label>Manna Connection</label>
     <description>A deep bond connecting two Mincho souls.</description>
     <isBad>false</isBad>
+    <defaultLabelColor>(0.8, 0.6, 1.0)</defaultLabelColor>
     <hediffClass>MinchoCandyWars.Abilities.NectarCandy.Hediff_MannaConnection</hediffClass>
     <stages>
       <li>
@@ -73,6 +75,7 @@
     <label>Manna Fairy</label>
     <description>A tiny Mincho fairy that protects and heals its host.</description>
     <isBad>false</isBad>
+    <defaultLabelColor>(0.8, 0.6, 1.0)</defaultLabelColor>
     <hediffClass>MinchoCandyWars.Abilities.NectarCandy.Hediff_MannaFairy</hediffClass>
   </HediffDef>
 
@@ -82,11 +85,12 @@
     <label>Manna Fairy Buff</label>
     <description>Protected by a manna fairy — regenerating wounds and evading attacks.</description>
     <isBad>false</isBad>
+    <defaultLabelColor>(0.8, 0.6, 1.0)</defaultLabelColor>
     <hediffClass>MinchoCandyWars.Abilities.NectarCandy.Hediff_MannaFairyBuff</hediffClass>
     <renderNodeProperties>
       <li>
         <nodeClass>PawnRenderNode</nodeClass>
-        <workerClass>MinchoCandyWars.Abilities.PawnRenderNodeWorker_EnergyShield</workerClass>
+        <workerClass>MinchoCandyWars.Render.PawnRenderNodeWorker_EnergyShield</workerClass>
         <useGraphic>false</useGraphic>
       </li>
     </renderNodeProperties>

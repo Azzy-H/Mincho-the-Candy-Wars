@@ -11,6 +11,9 @@ namespace MinchoCandyWars.Abilities.PrismCandy
     {
         private const float DamageRatio = 0.1f;
 
+        /// <summary>落地冲击波直径（格）。贴图是居中径向渐变圆，无需旋转。</summary>
+        private const float ImpactScale = 3f;
+
         public void OnJumpCompleted(IntVec3 origin, LocalTargetInfo target)
         {
             Pawn caster = parent.pawn;
@@ -25,6 +28,19 @@ namespace MinchoCandyWars.Abilities.PrismCandy
             if (!caster.health.hediffSet.HasHediff(MCW_DefOf.MCW_PrismGlowMoveSpeed))
             {
                 caster.health.AddHediff(MCW_DefOf.MCW_PrismGlowMoveSpeed);
+            }
+
+            // 冲击波打在「被突刺的目标」身上，而不是施法者脚下，视觉上才对应这次命中。
+            // 本回调触发时施法者已被安置到落点，因此 caster.Map 是安全的。
+            // 注意不要在 PawnFlyer_PrismGlow.RespawnPawn 里再触发一次，那是同一时刻同一位置，只会叠加。
+            Map map = caster.Map;
+            if (map != null && MCW_DefOf.MCW_Fleck_PrismGlowImpact != null)
+            {
+                Vector3 impactLoc = target.Pawn is Pawn p && p.Spawned
+                    ? p.DrawPos
+                    : caster.DrawPos;
+
+                FleckMaker.Static(impactLoc, map, MCW_DefOf.MCW_Fleck_PrismGlowImpact, ImpactScale);
             }
         }
 

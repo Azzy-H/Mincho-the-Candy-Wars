@@ -9,6 +9,12 @@ Source/MinchoCandyWars/*.pdb
 !!AgentWorkZone!!
 
 *.pdb
+# Office temp lock files
+~$*
+
+# deepseek harness sandbox
+_acl-recovery/
+
 # VSCode
 .vscode/
 

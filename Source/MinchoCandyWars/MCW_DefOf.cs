@@ -42,6 +42,8 @@ namespace MinchoCandyWars
         public static HediffDef MCW_SplashedIceCream = null!;
         public static HediffDef MCW_AmberonHeart = null!;
         public static HediffDef MCW_AmberonSlow = null!;
+        // 糖饰（头部装饰）挂载用，无游戏效果
+        public static HediffDef MCW_CandyDecoration = null!;
         public static HediffDef MCW_AmberonHeartMood = null!;
         public static ThingDef MCW_AmberonIceCreamWall = null!;
         public static ThingDef MCW_AmberonPositionShield = null!;
@@ -55,6 +57,10 @@ namespace MinchoCandyWars
         public static HediffDef MCW_PrismSwordSlowHediff = null!;
         public static ThingDef MCW_PrismSwordSlowZone = null!;
         public static ThingDef MCW_PrismGlowFlyer = null!;
+        // 琉璃糖流派技能特效
+        public static FleckDef MCW_Fleck_ThousandBladesSlash = null!;
+        public static FleckDef MCW_Fleck_FrostSwordShadowSlash = null!;
+        public static FleckDef MCW_Fleck_PrismGlowImpact = null!;
         // Linglon Candy
         public static CandyTypeDef LinglonCandy = null!;
         public static HediffDef MCW_LinglonAllFocus = null!;

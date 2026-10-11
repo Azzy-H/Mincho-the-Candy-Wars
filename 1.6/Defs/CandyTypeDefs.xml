@@ -4,6 +4,15 @@
     <defName>MechaCandy</defName>
     <label>Mecha Candy</label>
     <description>TODO</description>
+    <!-- 糖饰（头部装饰）：graphicClass 用 Graphic_Multi，它会自行解析
+         _north/_east/_south/_west，并在缺少 _west 时复用 _east 并镜像。
+         shaderType 必须显式写 Mote，否则 GraphicData 默认用 Cutout，
+         会把贴图的半透明边缘裁成硬边。 -->
+    <decorationGraphic>
+      <texPath>Effects/CandyDecoration/MCW_CandyDeco_Mecha</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>Mote</shaderType>
+    </decorationGraphic>
     <coreStages>
       <li>
         <statOffsets>
@@ -93,6 +102,11 @@
     <defName>NectarCandy</defName>
     <label>Nectar Candy</label>
     <description>TODO</description>
+    <decorationGraphic>
+      <texPath>Effects/CandyDecoration/MCW_CandyDeco_Nectar</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>Mote</shaderType>
+    </decorationGraphic>
     <coreStages>
       <li>
         <statOffsets>
@@ -185,6 +199,11 @@
     <defName>AmberonCandy</defName>
     <label>Amberon Candy</label>
     <description>TODO</description>
+    <decorationGraphic>
+      <texPath>Effects/CandyDecoration/MCW_CandyDeco_Amberon</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>Mote</shaderType>
+    </decorationGraphic>
     <coreStages>
       <li>
         <statFactors>
@@ -284,6 +303,11 @@
     <defName>PrismCandy</defName>
     <label>Prism Candy</label>
     <description>TODO</description>
+    <decorationGraphic>
+      <texPath>Effects/CandyDecoration/MCW_CandyDeco_Prism</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>Mote</shaderType>
+    </decorationGraphic>
     <coreStages>
       <li>
         <statFactors>
@@ -377,6 +401,11 @@
     <defName>LinglonCandy</defName>
     <label>Linglon Candy</label>
     <description>TODO</description>
+    <decorationGraphic>
+      <texPath>Effects/CandyDecoration/MCW_CandyDeco_Linglon</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>Mote</shaderType>
+    </decorationGraphic>
     <coreStages>
       <li>
         <gainHediffs>

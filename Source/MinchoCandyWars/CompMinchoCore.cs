@@ -20,6 +20,9 @@ namespace MinchoCandyWars
 
         private CandyTypeDef? currentCandyType = null;
 
+        /// <summary>上一次已应用到渲染树的糖饰，用于判断是否需要 SetDirty。</summary>
+        private CandyTypeDef? lastDecorationCandyType = null;
+
         private float minchoCandyValue = 0;
 
         public CandyTypeStage? BodyStage => MinchoBodyGrade > 0 ? CurrentCandyType?.bodyStages[MinchoBodyGrade - 1] : null;
@@ -181,6 +184,8 @@ namespace MinchoCandyWars
         /// </summary>
         private void RefreshMinchoAbilities()
         {
+            SyncCandyDecorationHediff();
+
             if (pawn.abilities == null)
             {
                 return;
@@ -205,6 +210,57 @@ namespace MinchoCandyWars
             }
         }
 
+        /// <summary>
+        /// 同步「糖饰」渲染挂载 hediff，并在糖饰种类变化时让渲染树重建。
+        ///
+        /// 糖饰图形由 PawnRenderNode_CandyDecoration.GraphicFor 动态提供，
+        /// 但切换糖饰不会改变 facing/posture/flags，PawnDrawParms.ShouldRecache 不会触发，
+        /// 因此必须显式 SetDirty()：它会重建整棵渲染树并重新构造节点，
+        /// GraphicFor 随之再被调用，材质才会更新。
+        /// </summary>
+        private void SyncCandyDecorationHediff()
+        {
+            if (pawn?.health?.hediffSet == null)
+            {
+                return;
+            }
+
+            bool shouldHave = active
+                && CurrentCandyType != null
+                && MCW_DefOf.MCW_CandyDecoration != null;
+
+            Hediff? existing = pawn.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_CandyDecoration);
+
+            if (shouldHave && existing == null)
+            {
+                pawn.health.AddHediff(MCW_DefOf.MCW_CandyDecoration);
+            }
+            else if (!shouldHave && existing != null)
+            {
+                pawn.health.RemoveHediff(existing);
+            }
+
+            if (lastDecorationCandyType != CurrentCandyType)
+            {
+                lastDecorationCandyType = CurrentCandyType;
+                InvalidateCandyDecorationRenderTree();
+            }
+        }
+
+        /// <summary>
+        /// 让 pawn 的渲染树重建，使糖饰图形立即跟随当前糖饰。
+        /// 只在已生成（渲染树已建立）时调用，避免在生成/读档流程中触碰尚未就绪的渲染树。
+        /// </summary>
+        private void InvalidateCandyDecorationRenderTree()
+        {
+            if (!pawn.Spawned)
+            {
+                return;
+            }
+
+            pawn.Drawer?.renderer?.renderTree?.SetDirty();
+        }
+
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             if(active)
@@ -214,14 +270,6 @@ namespace MinchoCandyWars
 
             if (SettingUtility.IsDebugMode())
             {
-                yield return new Command_Action
-                {
-                    defaultLabel = "Dev:切换激活状态",
-                    action = delegate
-                    {
-                        Active = !Active;
-                    }
-                };
                 yield return new Command_Action
                 {
                     defaultLabel = "Dev:切换糖饰",
@@ -299,6 +347,14 @@ namespace MinchoCandyWars
                         MinchoCoreGrade = 0;
                         MinchoBodyGrade = 0;
                         MinchoCandyValue = 0f;
+                    }
+                };
+                yield return new Command_Action
+                {
+                    defaultLabel = "Dev:切换激活状态",
+                    action = delegate
+                    {
+                        Active = !Active;
                     }
                 };
             }

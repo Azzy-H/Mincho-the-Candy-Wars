@@ -12,6 +12,8 @@ namespace MinchoCandyWars
     {
         public List<CandyTypeStage> coreStages = new List<CandyTypeStage>();
         public List<CandyTypeStage> bodyStages = new List<CandyTypeStage>();
+        public GraphicData? decorationGraphic;
+
         public override IEnumerable<string> ConfigErrors()
         {
             if(coreStages.Count != 5 || bodyStages.Count != 5) yield return $"CandyTypeDef {defName} must have exactly 5 stages for both core and body.";

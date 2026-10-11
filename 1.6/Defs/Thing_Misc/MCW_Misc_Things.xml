@@ -2,15 +2,30 @@
 <Defs>
 
   <!-- ===== 巧克力冰淇淋巨剑·减速区域 =====
-       透明物体，每 tick 遍历 pawn 并判定是否在巨剑范围内，是则施加减速 Hediff。 -->
+       每 tick 遍历 pawn 并判定是否在巨剑范围内，是则施加减速 Hediff；
+       同时由 Thing_PrismSwordSlowZone.DrawAt 按施法角度画出地面剑痕。
+
+       父类必须保留 EtherealThingBase（ThingWithComps 体系）：
+       MoteBase 的 thingClass 是 MoteThrown，不是 ThingWithComps，
+       换过去会让 Comp_PrismSwordSlowZone.CompTick 永不被调用，
+       导致减速区既不生效、也永不 Destroy（静默残留）。
+       这里只覆盖 drawerType 与 altitudeLayer 即可。 -->
   <ThingDef ParentName="EtherealThingBase">
     <defName>MCW_PrismSwordSlowZone</defName>
     <label>Chocolate Greatsword Slow Zone</label>
     <description>A sticky area smashed out by the chocolate ice cream greatsword, greatly slowing those who pass through.</description>
-    <thingClass>ThingWithComps</thingClass>
+    <thingClass>MinchoCandyWars.Abilities.PrismCandy.Thing_PrismSwordSlowZone</thingClass>
     <tickerType>Normal</tickerType>
     <passability>Standable</passability>
     <selectable>false</selectable>
+    <!-- 覆盖 EtherealThingBase 的 drawerType=None，让 DrawAt 被调用 -->
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <graphicData>
+      <!-- 贴图存在性需要满足：DrawAt 里的尺寸由矩阵决定，drawSize 不参与 -->
+      <texPath>Effects/Prism/MCW_ChocoSwordTerrain</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <comps>
       <li Class="MinchoCandyWars.Abilities.PrismCandy.CompProperties_PrismSwordSlowZone">
         <durationTicks>900</durationTicks><!-- 15 秒 -->

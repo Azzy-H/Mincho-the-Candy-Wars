@@ -11,7 +11,10 @@
     <defName>MCW_MinchoIntelBooster</defName>
     <label>Mincho intelligence booster</label>
     <description>沁心糖研发的智慧珉巧改造包，接收改造的珉巧可以拥有更加高级的智能。</description>
-    <!-- TODO(画师): 补充 graphicData 贴图 -->
+    <graphicData>
+      <texPath>Things/Item/MCW_MinchoBoosters/MCW_MinchoIntelBooster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>2000</MarketValue>
@@ -28,7 +31,10 @@
     <defName>MCW_MinchoCoreBoosterBasic</defName>
     <label>Mincho basic core booster</label>
     <description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 1 级到 3 级的提升）</description>
-    <!-- TODO(画师): 补充 graphicData 贴图 -->
+    <graphicData>
+      <texPath>Things/Item/MCW_MinchoBoosters/MCW_MinchoCoreBoosterBasic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>800</MarketValue>
@@ -45,7 +51,10 @@
     <defName>MCW_MinchoCoreBoosterAdvanced</defName>
     <label>Mincho advanced core booster</label>
     <description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 3 级到 5 级的提升）</description>
-    <!-- TODO(画师): 补充 graphicData 贴图 -->
+    <graphicData>
+      <texPath>Things/Item/MCW_MinchoBoosters/MCW_MinchoCoreBoosterAdvanced</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1200</MarketValue>
@@ -62,7 +71,10 @@
     <defName>MCW_MinchoBodyBooster</defName>
     <label>Mincho body booster</label>
     <description>沁心糖研发的用于增加智慧珉巧躯体等级的改造包。（用于 1 级到 5 级的提升）</description>
-    <!-- TODO(画师): 补充 graphicData 贴图 -->
+    <graphicData>
+      <texPath>Things/Item/MCW_MinchoBoosters/MCW_MinchoBodyBooster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>

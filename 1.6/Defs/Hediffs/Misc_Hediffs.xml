@@ -5,6 +5,7 @@
     <label>inteled</label>
     <description>inteled.</description>
     <isBad>false</isBad>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <hediffClass>MinchoCandyWars.Buff.Hediff_Buff</hediffClass>
     <aptitudes>
       <Intellectual>12</Intellectual>
@@ -28,6 +29,7 @@
     <label>Snow Boost</label>
     <description>Provides a boost to snow-related activities.</description>
     <isBad>false</isBad>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <hediffClass>Hediff</hediffClass>
     <stages>
       <li>

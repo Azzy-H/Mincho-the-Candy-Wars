@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- ============================================================ -->
+    <!-- 糖饰（头部装饰）挂载用 Hediff                                  -->
+    <!--                                                              -->
+    <!-- 该 Hediff 本身无任何游戏效果，仅用于给 PawnRenderTree 提供节点。  -->
+    <!-- DynamicPawnRenderNodeSetup_Hediffs 会遍历 pawn 身上的 hediff，  -->
+    <!-- 读取其 def.RenderNodeProperties 并动态插入渲染节点。           -->
+    <!--                                                              -->
+    <!-- 存在期间由 CompMinchoCore.SyncCandyDecorationHediff() 负责维护。-->
+    <!-- ============================================================ -->
+  <HediffDef>
+    <defName>MCW_CandyDecoration</defName>
+    <label>candy decoration</label>
+    <description>Marker hediff used only to attach the candy-decoration render node. No gameplay effect.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <renderNodeProperties>
+      <li>
+        <debugLabel>MCW candy decoration</debugLabel>
+        <nodeClass>MinchoCandyWars.Render.PawnRenderNode_CandyDecoration</nodeClass>
+        <workerClass>MinchoCandyWars.Render.PawnRenderNodeWorker_CandyDecoration</workerClass>
+        <useGraphic>true</useGraphic>
+        <parentTagDef>Head</parentTagDef>
+        <baseLayer>95</baseLayer>
+        <drawSize>0.9,0.9</drawSize>
+        <drawData>
+          <defaultData>
+            <!-- <offset>(0.0, 0, -0.475)</offset> -->
+          </defaultData>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <stages>
+      <li>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,4 +1,5 @@
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace MinchoCandyWars.Abilities.PrismCandy
@@ -25,6 +26,28 @@ namespace MinchoCandyWars.Abilities.PrismCandy
         private IntVec3 end;
         private float radius;
         private int ticksRemaining;
+
+        /// <summary>剑痕起点（施法者位置）。</summary>
+        public IntVec3 StartPos => start;
+
+        /// <summary>剑痕终点。</summary>
+        public IntVec3 EndPos => end;
+
+        /// <summary>剑身半宽，即减速判定的半径。</summary>
+        public float Radius => radius;
+
+        /// <summary>剩余时间比例，1 表示刚生成，0 表示即将消失。供地面剑痕淡出使用。</summary>
+        public float RemainingFraction
+        {
+            get
+            {
+                int total = Props.durationTicks;
+                return total <= 0 ? 1f : Mathf.Clamp01((float)ticksRemaining / total);
+            }
+        }
+
+        /// <summary>是否已具备有效几何（未 Setup 时为 false，绘制应直接跳过）。</summary>
+        public bool HasGeometry => start != end || radius > 0f;
 
         public void Setup(IntVec3 start, IntVec3 end, float radius)
         {

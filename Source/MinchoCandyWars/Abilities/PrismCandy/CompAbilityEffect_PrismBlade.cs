@@ -15,6 +15,12 @@ namespace MinchoCandyWars.Abilities.PrismCandy
         public float damageRatio = 0.2f;
         public DamageDef damageDef = null!;
 
+        /// <summary>挥砍特效的 FleckDef；留空则不绘制特效。</summary>
+        public FleckDef? effectDef;
+
+        /// <summary>特效宽度系数，仅用于观感微调（1 = 按扇形弦长）。</summary>
+        public float effectWidthScale = 1f;
+
         public CompProperties_AbilityPrismBlade()
         {
             compClass = typeof(CompAbilityEffect_PrismBlade);
@@ -45,7 +51,21 @@ namespace MinchoCandyWars.Abilities.PrismCandy
             GenExplosion.DoExplosion(
                 caster.Position, map, parent.verb.verbProps.range, Props.damageDef, caster,
                 damAmount: damage,
-                overrideCells: cells);
+                overrideCells: cells,
+                doVisualEffects: false,
+                propagationSpeed: float.MaxValue);
+
+            // 复用同一个 angle，特效与伤害范围天然同轴。
+            if (Props.effectDef != null)
+            {
+                PrismCandyAbilityUtility.MakeSlashEffect(
+                    map,
+                    caster.Position,
+                    angle,
+                    parent.verb.verbProps.range,
+                    Props.halfAngle,
+                    Props.effectDef);
+            }
         }
 
         public override void DrawEffectPreview(LocalTargetInfo target)

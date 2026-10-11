@@ -1,8 +1,9 @@
+using MinchoCandyWars.Abilities;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
-namespace MinchoCandyWars.Abilities
+namespace MinchoCandyWars.Render
 {
     /// <summary>
     /// 护盾泡泡渲染 Worker —— 在 pawn 身上绘制护盾腰带式泡泡。

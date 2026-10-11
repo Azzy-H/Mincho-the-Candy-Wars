@@ -10,6 +10,10 @@
     <defName>MCW_MechaCandyChangeItem</defName>
     <label>Mecha Candy unlock item</label>
     <description>植入后解锁千机糖糖饰的使用权。</description>
+    <graphicData>
+      <texPath>Things/Item/CandyChange/MCW_MechaCandyChangeItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <thingClass>ThingWithComps</thingClass>
     <comps>
       <li Class="CompProperties_Usable">
@@ -21,7 +25,6 @@
         <compClass>MinchoCandyWars.CompUseEffect_CandyChange</compClass>
       </li> 
     </comps>
-    <!-- TODO(画师): 补充 graphicData 贴图 -->
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -38,6 +41,10 @@
     <defName>MCW_NectarCandyChangeItem</defName>
     <label>Nectar Candy unlock item</label>
     <description>植入后解锁甘露糖糖饰的使用权。</description>
+    <graphicData>
+      <texPath>Things/Item/CandyChange/MCW_NectarCandyChangeItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <thingClass>ThingWithComps</thingClass>
     <comps>
       <li Class="CompProperties_Usable">
@@ -49,7 +56,6 @@
         <compClass>MinchoCandyWars.CompUseEffect_CandyChange</compClass>
       </li> 
     </comps>
-    <!-- TODO(画师): 补充 graphicData 贴图 -->
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -66,6 +72,13 @@
     <defName>MCW_AmberonCandyChangeItem</defName>
     <label>Amberon Candy unlock item</label>
     <description>植入后解锁琥珀糖糖饰的使用权。</description>
+    <!-- TODO(画师): 琥珀糖解锁物品图标缺失（其余 4 种已就位）。
+         补图后放到 Textures/Things/Item/CandyChange/MCW_AmberonCandyChangeItem.png，
+         并在此处加上：
+         <graphicData>
+           <texPath>Things/Item/CandyChange/MCW_AmberonCandyChangeItem</texPath>
+           <graphicClass>Graphic_Single</graphicClass>
+         </graphicData> -->
     <thingClass>ThingWithComps</thingClass>
     <comps>
       <li Class="CompProperties_Usable">
@@ -77,7 +90,6 @@
         <compClass>MinchoCandyWars.CompUseEffect_CandyChange</compClass>
       </li> 
     </comps>
-    <!-- TODO(画师): 补充 graphicData 贴图 -->
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -94,6 +106,10 @@
     <defName>MCW_PrismCandyChangeItem</defName>
     <label>Prism Candy unlock item</label>
     <description>植入后解锁琉璃糖糖饰的使用权。</description>
+    <graphicData>
+      <texPath>Things/Item/CandyChange/MCW_PrismCandyChangeItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <thingClass>ThingWithComps</thingClass>
     <comps>
       <li Class="CompProperties_Usable">
@@ -105,7 +121,6 @@
         <compClass>MinchoCandyWars.CompUseEffect_CandyChange</compClass>
       </li> 
     </comps>
-    <!-- TODO(画师): 补充 graphicData 贴图 -->
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -122,6 +137,10 @@
     <defName>MCW_LinglonCandyChangeItem</defName>
     <label>Linglon Candy unlock item</label>
     <description>植入后解锁玲珑糖糖饰的使用权。</description>
+    <graphicData>
+      <texPath>Things/Item/CandyChange/MCW_LinglonCandyChangeItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <thingClass>ThingWithComps</thingClass>
     <comps>
       <li Class="CompProperties_Usable">
@@ -133,7 +152,6 @@
         <compClass>MinchoCandyWars.CompUseEffect_CandyChange</compClass>
       </li> 
     </comps>
-    <!-- TODO(画师): 补充 graphicData 贴图 -->
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>

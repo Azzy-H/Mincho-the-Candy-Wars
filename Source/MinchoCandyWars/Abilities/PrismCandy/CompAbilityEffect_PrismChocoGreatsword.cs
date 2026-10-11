@@ -61,7 +61,9 @@ namespace MinchoCandyWars.Abilities.PrismCandy
                 start, map, parent.verb.verbProps.range / 2f, Props.damageDef, caster,
                 damAmount: damage,
                 overrideCells: cells,
-                ignoredThings: new List<Thing> { caster });
+                ignoredThings: new List<Thing> { caster },
+                doVisualEffects: false,
+                propagationSpeed: float.MaxValue);
 
             // 生成减速区域（透明物体，每 tick 遍历 pawn）
             Thing zone = ThingMaker.MakeThing(MCW_DefOf.MCW_PrismSwordSlowZone);

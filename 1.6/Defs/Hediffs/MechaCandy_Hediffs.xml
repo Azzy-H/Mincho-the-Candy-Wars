@@ -5,6 +5,7 @@
     <label>Production Quality Boost</label>
     <description>Improves production quality.</description>
     <isBad>false</isBad>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <hediffClass>MinchoCandyWars.Buff.Hediff_Buff</hediffClass>
   </HediffDef>
 </Defs>

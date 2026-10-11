@@ -52,7 +52,6 @@
     <description>Stuck by the chocolate ice cream greatsword, movement speed is reduced.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>true</isBad>
-    <defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
     <minSeverity>0</minSeverity>
     <maxSeverity>1</maxSeverity>

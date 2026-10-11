@@ -53,7 +53,6 @@
     <description>Your consciousness is being suppressed.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>true</isBad>
-    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
     <minSeverity>0</minSeverity>
     <maxSeverity>1</maxSeverity>
