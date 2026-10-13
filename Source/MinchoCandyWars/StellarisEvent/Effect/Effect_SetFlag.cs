@@ -1,3 +1,4 @@
+#nullable disable
 namespace MinchoCandyWars.StellarisEvent
 {
     /// <summary>
@@ -17,7 +18,7 @@ namespace MinchoCandyWars.StellarisEvent
     public class Effect_SetFlag : StellarisEventEffect
     {
         /// <summary>目标 flag 名</summary>
-        public string? flagName;
+        public string flagName;
 
         /// <summary>值类型</summary>
         public FlagValueType valueType = FlagValueType.Bool;
@@ -26,7 +27,7 @@ namespace MinchoCandyWars.StellarisEvent
         public float floatValue;
 
         /// <summary>string 值（valueType == String 时使用）</summary>
-        public string? stringValue;
+        public string stringValue;
 
         /// <summary>bool 值（valueType == Bool 时使用）</summary>
         public bool boolValue;
@@ -104,7 +105,7 @@ namespace MinchoCandyWars.StellarisEvent
                 if (setMode == FlagSetMode.Add || setMode == FlagSetMode.Subtract)
                 {
                     float init = setMode == FlagSetMode.Add ? floatValue : -floatValue;
-                    StellarisEventFlagManager.SetFlag(flagName!, init, ticks);
+                    StellarisEventFlagManager.SetFlag(flagName, init, ticks);
                 }
                 // Multiply/Divide: 不存在则跳过
                 return;
@@ -125,7 +126,7 @@ namespace MinchoCandyWars.StellarisEvent
                     break;
             }
 
-            StellarisEventFlagManager.SetFlag(flagName!, result, ticks);
+            StellarisEventFlagManager.SetFlag(flagName, result, ticks);
         }
 
         // ──────────────────── 辅助 ────────────────────
@@ -135,13 +136,13 @@ namespace MinchoCandyWars.StellarisEvent
             switch (valueType)
             {
                 case FlagValueType.Float:
-                    StellarisEventFlagManager.SetFlag(flagName!, floatValue, ticks);
+                    StellarisEventFlagManager.SetFlag(flagName, floatValue, ticks);
                     break;
                 case FlagValueType.String:
-                    StellarisEventFlagManager.SetFlag(flagName!, stringValue!, ticks);
+                    StellarisEventFlagManager.SetFlag(flagName, stringValue, ticks);
                     break;
                 case FlagValueType.Bool:
-                    StellarisEventFlagManager.SetFlag(flagName!, boolValue, ticks);
+                    StellarisEventFlagManager.SetFlag(flagName, boolValue, ticks);
                     break;
             }
         }

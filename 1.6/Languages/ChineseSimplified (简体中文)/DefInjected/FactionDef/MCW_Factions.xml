@@ -16,4 +16,17 @@
   <!-- EN: Minchoes -->
   <MCW_Alliance_Faction.pawnsPlural>珉巧</MCW_Alliance_Faction.pawnsPlural>
   
+  <!-- EN: Recycle Corporation -->
+  <MCW_RecycleCorp_Faction.label>回收公司</MCW_RecycleCorp_Faction.label>
+  <!-- EN: 闪耀世界甜品公司下属的资产回收部门。 -->
+  <MCW_RecycleCorp_Faction.description>闪耀世界甜品公司下属的资产回收部门。名义上是一家合法的回收企业，实际上专门追捕、拆解逃逸的珉巧与智慧珉巧。</MCW_RecycleCorp_Faction.description>
+  <!-- EN: 回收公司 -->
+  <MCW_RecycleCorp_Faction.fixedName>回收公司</MCW_RecycleCorp_Faction.fixedName>
+  <!-- EN: 回收公司领队 -->
+  <MCW_RecycleCorp_Faction.leaderTitle>回收公司领队</MCW_RecycleCorp_Faction.leaderTitle>
+  <!-- EN: 回收队员 -->
+  <MCW_RecycleCorp_Faction.pawnSingular>回收队员</MCW_RecycleCorp_Faction.pawnSingular>
+  <!-- EN: 回收队员 -->
+  <MCW_RecycleCorp_Faction.pawnsPlural>回收队员</MCW_RecycleCorp_Faction.pawnsPlural>
+  
 </LanguageData>

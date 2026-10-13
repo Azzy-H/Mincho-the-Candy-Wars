@@ -1,3 +1,4 @@
+#nullable disable
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -22,7 +23,7 @@ namespace MinchoCandyWars.StellarisEvent
         private string filterText = "";
 
         // 警告提示
-        private string? warningMessage = null;
+        private string warningMessage = null;
         private int warningExpireTick = 0;
 
         // 颜色
@@ -37,7 +38,7 @@ namespace MinchoCandyWars.StellarisEvent
 
         private class EventRowInfo
         {
-            public StellarisEventDef? def;
+            public StellarisEventDef def;
             public bool canTrigger;
         }
 
@@ -61,14 +62,14 @@ namespace MinchoCandyWars.StellarisEvent
         private void RefreshList()
         {
             // 明确使用全限定类型以避免与其他 assembly 中的同名类型冲突
-            // （例如 MinchoCandyWars.dll 中可能残留旧的 MinchoCandyWars.StellarisEventDef）
+            // （例如 ArachnaeSwarm.dll 中可能残留旧的 ArachnaeSwarm.StellarisEventDef）
             System.Type exactType = typeof(MinchoCandyWars.StellarisEvent.StellarisEventDef);
 
             var dbProperty = typeof(DefDatabase<>).MakeGenericType(exactType)
                 .GetProperty("AllDefsListForReading",
                     System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
 
-            System.Collections.IList? allDefsRaw = null;
+            System.Collections.IList allDefsRaw = null;
             if (dbProperty != null)
             {
                 allDefsRaw = dbProperty.GetValue(null) as System.Collections.IList;
@@ -102,7 +103,7 @@ namespace MinchoCandyWars.StellarisEvent
                 }
             }
 
-            rows.Sort((a, b) => a.def!.defName.CompareTo(b.def!.defName));
+            rows.Sort((a, b) => a.def.defName.CompareTo(b.def.defName));
         }
 
         private void AddRowIfMatch(StellarisEventDef def)
@@ -170,7 +171,7 @@ namespace MinchoCandyWars.StellarisEvent
             {
                 foreach (var row in rows)
                 {
-                    ForceFireEvent(row.def!);
+                    ForceFireEvent(row.def);
                 }
             }
             TooltipHandler.TipRegion(forceAllRect, "Skip all triggers and fire every event in sequence");
@@ -194,13 +195,14 @@ namespace MinchoCandyWars.StellarisEvent
         private void DrawHeaderRow(Rect rect)
         {
             Text.Font = GameFont.Tiny;
-            float colDefName = 180f;
-            float colTitle = 234f;
-            float colStatus = 80f;
-            float colOptions = 60f;
-            float colPictures = 60f;
-            float colAction1 = 80f;
-            float colAction2 = 80f;
+            float colDefName = 170f;
+            float colTitle = 210f;
+            float colStatus = 70f;
+            float colOptions = 50f;
+            float colPictures = 50f;
+            float colSuper = 40f;
+            float colAction1 = 70f;
+            float colAction2 = 70f;
 
             float x = rect.x;
             Widgets.Label(new Rect(x, rect.y, colDefName, rect.height), "defName");
@@ -209,10 +211,12 @@ namespace MinchoCandyWars.StellarisEvent
             x += colTitle;
             Widgets.Label(new Rect(x, rect.y, colStatus, rect.height), "Trigger");
             x += colStatus;
-            Widgets.Label(new Rect(x, rect.y, colOptions, rect.height), "Options");
+            Widgets.Label(new Rect(x, rect.y, colOptions, rect.height), "Opts");
             x += colOptions;
             Widgets.Label(new Rect(x, rect.y, colPictures, rect.height), "Pics");
             x += colPictures;
+            Widgets.Label(new Rect(x, rect.y, colSuper, rect.height), "Type");
+            x += colSuper;
             Widgets.Label(new Rect(x, rect.y, colAction1, rect.height), "Fire");
             x += colAction1;
             Widgets.Label(new Rect(x, rect.y, colAction2, rect.height), "Force");
@@ -253,19 +257,20 @@ namespace MinchoCandyWars.StellarisEvent
                 bgColor = new Color(bgColor.r + 0.08f, bgColor.g + 0.08f, bgColor.b + 0.08f);
             Widgets.DrawBoxSolid(rect, bgColor);
 
-            float colDefName = 180f;
-            float colTitle = 230f;
-            float colStatus = 80f;
+            float colDefName = 170f;
+            float colTitle = 210f;
+            float colStatus = 70f;
             float colOptions = 50f;
             float colPictures = 50f;
-            float colAction1 = 75f;
-            float colAction2 = 75f;
+            float colSuper = 40f;
+            float colAction1 = 70f;
+            float colAction2 = 70f;
 
             float x = rect.x + 4f;
             float y = rect.y + (rect.height - 20f) / 2f;
 
             // defName
-            Widgets.Label(new Rect(x, y, colDefName, 20f), row.def!.defName);
+            Widgets.Label(new Rect(x, y, colDefName, 20f), row.def.defName);
             x += colDefName;
 
             // Title
@@ -288,6 +293,21 @@ namespace MinchoCandyWars.StellarisEvent
             // Pictures 计数
             Widgets.Label(new Rect(x, y, colPictures, 20f), $"{row.def.pictures.Count}");
             x += colPictures;
+
+            // Super / Toast 标记
+            if (row.def.isToastEvent)
+            {
+                GUI.color = new Color(0.9f, 0.6f, 0.3f);
+                Widgets.Label(new Rect(x, y, colSuper, 20f), "[吐司]");
+                GUI.color = Color.white;
+            }
+            else if (row.def.isSuperEvent)
+            {
+                GUI.color = new Color(0.3f, 0.8f, 0.9f);
+                Widgets.Label(new Rect(x, y, colSuper, 20f), "[超]");
+                GUI.color = Color.white;
+            }
+            x += colSuper;
 
             // Fire 按钮（正常触发）
             Rect fireBtnRect = new Rect(x, rect.y + 3f, colAction1 - 4f, rect.height - 6f);
@@ -328,13 +348,12 @@ namespace MinchoCandyWars.StellarisEvent
             if (row.canTrigger)
             {
                 ClearWarning();
-                row.def!.TryFire();
-                Log.Message($"Fired event: {row.def.defName}");
+                row.def.TryFire();
             }
             else
             {
                 // Trigger 不通过 → 输出黄色警告
-                ShowWarning($"Trigger FAILED for '{row.def!.defName}'. Use 'Force' to bypass the trigger check and fire anyway.");
+                ShowWarning($"Trigger FAILED for '{row.def.defName}'. Use 'Force' to bypass the trigger check and fire anyway.");
             }
         }
 
@@ -342,10 +361,10 @@ namespace MinchoCandyWars.StellarisEvent
         {
             if (!row.canTrigger)
             {
-                ShowWarning($"Force-firing '{row.def!.defName}' — trigger check BYPASSED.");
+                ShowWarning($"Force-firing '{row.def.defName}' — trigger check BYPASSED.");
             }
 
-            ForceFireEvent(row.def!);
+            ForceFireEvent(row.def);
             RefreshList(); // 刷新以反映可能的状态变更
         }
 
@@ -353,10 +372,25 @@ namespace MinchoCandyWars.StellarisEvent
         {
             try
             {
-                // 跳过 trigger 判定，直接执行 immediate → 选立绘 → 开窗口
-                def.immediate?.Execute();
-                def.SelectRandomPicture();
-                Find.WindowStack.Add(new StellarisEventWindow(def));
+                if (def.isToastEvent)
+                {
+                    // 吐司窗口：走队列机制
+                    def.immediate?.Execute();
+                    def.SelectRandomPicture();
+                    def.LoadBackgroundTexture();
+                    StellarisEventManager.EnqueueToastEvent(def);
+                }
+                else
+                {
+                    // 跳过 trigger 判定，直接执行 immediate → 选立绘 → 开窗口
+                    def.immediate?.Execute();
+                    def.SelectRandomPicture();
+                    def.LoadBackgroundTexture();
+                    if (def.isSuperEvent)
+                        Find.WindowStack.Add(new StellarisSuperEventWindow(def));
+                    else
+                        Find.WindowStack.Add(new StellarisEventWindow(def));
+                }
             }
             catch (System.Exception ex)
             {

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: 珉巧同盟主线 -->
+  <MCW_Event_QS1_StartStory.label>珉巧同盟主线</MCW_Event_QS1_StartStory.label>
+  
+  <!-- EN: 珉巧同盟联络 -->
+  <MCW_Event_QS1_AllianceContact.label>珉巧同盟联络</MCW_Event_QS1_AllianceContact.label>
+  
+  <!-- EN: 回收公司联络 -->
+  <MCW_Event_QS1_CorpContact.label>回收公司联络</MCW_Event_QS1_CorpContact.label>
+  
+</LanguageData>

@@ -1,3 +1,4 @@
+#nullable disable
 namespace MinchoCandyWars.StellarisEvent
 {
     /// <summary>
@@ -7,7 +8,7 @@ namespace MinchoCandyWars.StellarisEvent
     /// 可用于事件链：完成当前事件后自动弹出下一个事件。
     ///
     /// XML 示例:
-    ///   &lt;li Class="ArachnaeSwarm.Event.Effect_FireEvent"&gt;
+    ///   &lt;li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent"&gt;
     ///     &lt;defName&gt;ARA_WarAftermath&lt;/defName&gt;
     ///     &lt;delayTicks&gt;600&lt;/delayTicks&gt;  &lt;!-- 可选：延迟 600 tick 后触发 --&gt;
     ///   &lt;/li&gt;
@@ -15,7 +16,7 @@ namespace MinchoCandyWars.StellarisEvent
     public class Effect_FireEvent : StellarisEventEffect
     {
         /// <summary>要触发的目标事件 defName</summary>
-        public string? defName;
+        public string defName;
 
         /// <summary>
         /// 是否跳过目标事件的 trigger 判定，强制触发。默认 false（尊重 trigger）。
@@ -48,10 +49,24 @@ namespace MinchoCandyWars.StellarisEvent
             else if (forceFire)
             {
                 // 跳过 trigger，立即强制触发
-                targetDef.immediate?.Execute();
-                targetDef.SelectRandomPicture();
-                targetDef.LoadBackgroundTexture();
-                Verse.Find.WindowStack.Add(new StellarisEventWindow(targetDef));
+                if (targetDef.isToastEvent)
+                {
+                    // 吐司窗口：走队列机制
+                    targetDef.immediate?.Execute();
+                    targetDef.SelectRandomPicture();
+                    targetDef.LoadBackgroundTexture();
+                    StellarisEventManager.EnqueueToastEvent(targetDef);
+                }
+                else
+                {
+                    targetDef.immediate?.Execute();
+                    targetDef.SelectRandomPicture();
+                    targetDef.LoadBackgroundTexture();
+                    if (targetDef.isSuperEvent)
+                        Verse.Find.WindowStack.Add(new StellarisSuperEventWindow(targetDef));
+                    else
+                        Verse.Find.WindowStack.Add(new StellarisEventWindow(targetDef));
+                }
             }
             else
             {

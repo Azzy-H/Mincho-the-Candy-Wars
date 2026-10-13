@@ -1,3 +1,4 @@
+#nullable disable
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
@@ -24,6 +25,8 @@ namespace MinchoCandyWars.StellarisEvent
         private Vector2 scrollPos = Vector2.zero;
         private string filterText = "";
         private List<StellarisEventFlag> filteredFlags = new List<StellarisEventFlag>();
+        private int lastRefreshTick = 0;
+        private const int AutoRefreshInterval = 30; // 每 30 tick (~0.5秒) 自动刷新
 
         // 添加模式
         private bool addingMode = false;
@@ -36,7 +39,7 @@ namespace MinchoCandyWars.StellarisEvent
         private string[] typeNames = { "Bool", "Float", "String", "Thing" };
 
         // 警告
-        private string? warningMessage = null;
+        private string warningMessage = null;
         private int warningExpireTick = 0;
 
         // 颜色
@@ -69,18 +72,26 @@ namespace MinchoCandyWars.StellarisEvent
             {
                 if (flag == null) continue;
                 if (string.IsNullOrEmpty(filterText) ||
-                    flag.name!.ToLowerInvariant().Contains(filterText.ToLowerInvariant()))
+                    flag.name.ToLowerInvariant().Contains(filterText.ToLowerInvariant()))
                 {
                     filteredFlags.Add(flag);
                 }
             }
-            filteredFlags.Sort((a, b) => a.name!.CompareTo(b.name));
+            filteredFlags.Sort((a, b) => a.name.CompareTo(b.name));
         }
 
         // ──────────────────── 主绘制 ────────────────────
 
         public override void DoWindowContents(Rect inRect)
         {
+            // 自动刷新：外部（Effect / QuestNode）添加 flag 后无需手动 Filter
+            int curTick = Find.TickManager.TicksGame;
+            if (curTick - lastRefreshTick >= AutoRefreshInterval)
+            {
+                RefreshList();
+                lastRefreshTick = curTick;
+            }
+
             Text.Font = GameFont.Small;
 
             // ── 标题栏 ──
@@ -89,8 +100,10 @@ namespace MinchoCandyWars.StellarisEvent
             Widgets.Label(new Rect(titleRect.x + Padding, titleRect.y, 260f, titleRect.height),
                 "Flag Console");
             Text.Font = GameFont.Small;
-            Widgets.Label(new Rect(titleRect.x + titleRect.width - 160f, titleRect.y + 8f, 160f, 20f),
-                $"Total: {filteredFlags.Count} flags");
+            Widgets.Label(new Rect(titleRect.x + titleRect.width - 260f, titleRect.y + 8f, 260f, 20f),
+                StellarisEventFlagManager.Instance != null
+                    ? $"Total: {filteredFlags.Count} flags  (active)"
+                    : $"Total: {filteredFlags.Count} flags  [NOT IN GAME]");
 
             // ── 过滤 & 操作按钮栏 ──
             float barY = titleRect.yMax + 4f;
@@ -256,6 +269,9 @@ namespace MinchoCandyWars.StellarisEvent
                     return;
             }
 
+            // 保存名字用于警告（重置前）
+            string addedName = newFlagName;
+
             // 重置表单
             newFlagName = "";
             newFlagFloatVal = "0";
@@ -264,7 +280,7 @@ namespace MinchoCandyWars.StellarisEvent
             newFlagTicks = "";
 
             RefreshList();
-            ShowWarning($"Flag '{newFlagName}' added/updated.");
+            ShowWarning($"Flag '{addedName}' added/updated.");
         }
 
         // ──────────────────── 列标题 ────────────────────
@@ -357,7 +373,7 @@ namespace MinchoCandyWars.StellarisEvent
             DrawColoredButton(delRect, "X", DelBtnColor);
             if (Widgets.ButtonInvisible(delRect))
             {
-                StellarisEventFlagManager.RemoveFlag(flag.name!);
+                StellarisEventFlagManager.RemoveFlag(flag.name);
                 RefreshList();
                 ShowWarning($"Flag '{flag.name}' removed.");
             }
@@ -416,6 +432,7 @@ namespace MinchoCandyWars.StellarisEvent
             if (string.IsNullOrEmpty(warningMessage)) return;
             if (Find.TickManager.TicksGame > warningExpireTick)
             {
+                warningMessage = null;
                 return;
             }
 
@@ -436,6 +453,7 @@ namespace MinchoCandyWars.StellarisEvent
 
         private void ClearWarning()
         {
+            warningMessage = null;
             warningExpireTick = 0;
         }
     }

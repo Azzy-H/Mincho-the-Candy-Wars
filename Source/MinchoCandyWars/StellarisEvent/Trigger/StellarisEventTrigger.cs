@@ -1,3 +1,4 @@
+#nullable disable
 namespace MinchoCandyWars.StellarisEvent
 {
     /// <summary>
@@ -15,7 +16,7 @@ namespace MinchoCandyWars.StellarisEvent
         /// 分组标识。为空则作为独立 trigger 判定（默认 AND 行为）。
         /// 非空时收集同一 StellarisEventDef 内所有同名 idGroup 的 trigger 进行统一逻辑判定。
         /// </summary>
-        public string? idGroup;
+        public string idGroup;
 
         /// <summary>
         /// 逻辑运算符，仅在 idGroup 非空时生效。

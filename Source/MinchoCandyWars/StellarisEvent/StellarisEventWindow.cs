@@ -1,3 +1,4 @@
+#nullable disable
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
@@ -26,6 +27,9 @@ namespace MinchoCandyWars.StellarisEvent
         private StellarisEventDef eventDef;
         private List<OptionDrawInfo> optionDrawInfos = new List<OptionDrawInfo>();
         private Vector2 descScrollPos = Vector2.zero;
+        private Vector2 optionScrollPos = Vector2.zero;
+        private string resolvedTitleText;
+        private string resolvedDescText;
 
         // ──────────────────── 样式 ────────────────────
         // 右侧面板半透明覆盖层：对应 rightDiv `rgba(0.3, 0.3, 0.3, 0.15)`
@@ -42,9 +46,11 @@ namespace MinchoCandyWars.StellarisEvent
         // ──────────────────── 内部类 ────────────────────
         private class OptionDrawInfo
         {
-            public StellarisEventOption? option;
+            public StellarisEventOption option;
             public bool available;
             public Rect rect;
+            public string labelText;
+            public string tooltipText;
         }
 
         // ──────────────────── 构造 ────────────────────
@@ -52,9 +58,10 @@ namespace MinchoCandyWars.StellarisEvent
         public StellarisEventWindow(StellarisEventDef def)
         {
             eventDef = def;
-            doCloseX = true;
+            doCloseX = !def.forceChoose;
+            closeOnCancel = !def.forceChoose;
             closeOnClickedOutside = false;
-            absorbInputAroundWindow = false;
+            absorbInputAroundWindow = true;
             forcePause = true;
             draggable = true;
             resizeable = false;
@@ -62,6 +69,8 @@ namespace MinchoCandyWars.StellarisEvent
             doWindowBackground = false; // 由 DrawBackground 处理背景绘制
             drawShadow = false;
 
+            resolvedTitleText = eventDef.InjectParams((eventDef.title ?? eventDef.label).Translate().ToString());
+            resolvedDescText = eventDef.ResolveLocalizedDescText(eventDef.desc);
             BuildOptionList();
         }
 
@@ -81,9 +90,19 @@ namespace MinchoCandyWars.StellarisEvent
                 optionDrawInfos.Add(new OptionDrawInfo
                 {
                     option = opt,
-                    available = available
+                    available = available,
+                    labelText = eventDef.InjectParams((opt.label ?? "???").Translate().ToString()),
+                    tooltipText = BuildOptionTooltipText(opt, available)
                 });
             }
+        }
+
+        private string BuildOptionTooltipText(StellarisEventOption option, bool available)
+        {
+            if (!available && !string.IsNullOrEmpty(option.disabledReason))
+                return eventDef.InjectParams(option.disabledReason.Translate().ToString());
+
+            return eventDef.ResolveLocalizedDescText(option.desc ?? option.label);
         }
 
         // ──────────────────── 主绘制 ────────────────────
@@ -111,7 +130,7 @@ namespace MinchoCandyWars.StellarisEvent
 
         private void DrawBackground(Rect rect)
         {
-            Texture2D? bgTex = eventDef.backgroundTexture;
+            Texture2D bgTex = eventDef.backgroundTexture;
             if (bgTex != null)
             {
                 GUI.DrawTexture(rect, bgTex, ScaleMode.ScaleAndCrop);
@@ -177,7 +196,7 @@ namespace MinchoCandyWars.StellarisEvent
             Text.Font = GameFont.Medium;
             Text.Anchor = TextAnchor.MiddleLeft;
             GUI.color = Color.white;
-            Widgets.Label(titleRect, eventDef.InjectParams(eventDef.title ?? eventDef.label));
+            Widgets.Label(titleRect, resolvedTitleText);
             Text.Anchor = TextAnchor.UpperLeft;
             Text.Font = GameFont.Small;
             GUI.color = Color.white;
@@ -201,13 +220,17 @@ namespace MinchoCandyWars.StellarisEvent
             Rect descTextRect = new Rect(descRect.x, descRect.y + 10f,
                 descRect.width - 20f, descRect.height - 20f);
 
-            string descText = eventDef.InjectParams(eventDef.desc ?? "");
-            float descHeight = Text.CalcHeight(descText, descTextRect.width);
-            Rect descViewRect = new Rect(0f, 0f, descTextRect.width - 16f, descHeight);
+            // 计算高度必须使用与实际渲染（GUI.Label）完全相同的宽度：
+            // 之前用 descTextRect.width（较宽）计算，渲染却用 width-16（较窄），
+            // 宽度差导致按窄宽度换行后实际行数更多、高度超出计算值，
+            // ScrollView 视口高度不足 → 长文本底部被裁剪（后半段看似"不换行被截掉"）。
+            float renderWidth = descTextRect.width - 16f;
+            float descHeight = Text.CalcHeight(resolvedDescText, renderWidth);
+            Rect descViewRect = new Rect(0f, 0f, renderWidth, descHeight);
 
             Widgets.BeginScrollView(descTextRect, ref descScrollPos, descViewRect);
             GUI.color = new Color(0.9f, 0.9f, 0.9f);
-            Widgets.Label(descViewRect, descText);
+            Widgets.Label(descViewRect, resolvedDescText);
             GUI.color = Color.white;
             Widgets.EndScrollView();
         }
@@ -218,36 +241,41 @@ namespace MinchoCandyWars.StellarisEvent
             if (optionCount == 0)
                 return;
 
-            float usableHeight = optionRect.height - SectionPadding * 2f;
-            float totalOptionHeight = optionCount * OptionHeight + (optionCount - 1) * OptionSpacing;
-            float startY = optionRect.y + SectionPadding;
+            float contentWidth = optionRect.width - SectionPadding - 60f;
+            float totalContentHeight = optionCount * OptionHeight + (optionCount - 1) * OptionSpacing;
+            float usableHeight = optionRect.height - SectionPadding - 60f;
 
-            // 计算选项布局
-            if (totalOptionHeight > usableHeight)
+            // 内容超出 → 使用 ScrollView
+            if (totalContentHeight > usableHeight)
             {
-                float availablePerOption = usableHeight / optionCount;
-                float clampedOptionH = Mathf.Min(OptionHeight, availablePerOption - 2f);
+                Rect outRect = new Rect(
+                    optionRect.x + SectionPadding,
+                    optionRect.y + SectionPadding,
+                    contentWidth,
+                    usableHeight
+                );
+                Rect viewRect = new Rect(0f, 0f, outRect.width - 16f, totalContentHeight);
 
+                Widgets.BeginScrollView(outRect, ref optionScrollPos, viewRect);
                 for (int i = 0; i < optionCount; i++)
                 {
-                    float y = startY + i * (usableHeight / optionCount);
-                    Rect optRect = new Rect(
-                        optionRect.x + SectionPadding, y,
-                        optionRect.width - SectionPadding * 4f, clampedOptionH
-                    );
+                    float y = i * (OptionHeight + OptionSpacing);
+                    Rect optRect = new Rect(0f, y, viewRect.width, OptionHeight);
                     optionDrawInfos[i].rect = optRect;
                     DrawOption(optRect, optionDrawInfos[i]);
                 }
+                Widgets.EndScrollView();
             }
             else
             {
-                float offsetY = (usableHeight - totalOptionHeight) / 2f;
+                // 内容不超出 → 居中显示
+                float offsetY = (usableHeight - totalContentHeight) / 2f;
                 for (int i = 0; i < optionCount; i++)
                 {
-                    float y = startY + offsetY + i * (OptionHeight + OptionSpacing);
+                    float y = optionRect.y + SectionPadding + offsetY + i * (OptionHeight + OptionSpacing);
                     Rect optRect = new Rect(
                         optionRect.x + SectionPadding, y,
-                        optionRect.width - SectionPadding * 4f, OptionHeight
+                        contentWidth, OptionHeight
                     );
                     optionDrawInfos[i].rect = optRect;
                     DrawOption(optRect, optionDrawInfos[i]);
@@ -271,7 +299,7 @@ namespace MinchoCandyWars.StellarisEvent
             Text.Anchor = TextAnchor.MiddleCenter;
 
             GUI.color = info.available ? Color.white : new Color(0.5f, 0.5f, 0.5f);
-            Widgets.Label(optRect, eventDef.InjectParams(info.option!.label ?? "???"));
+            Widgets.Label(optRect, info.labelText);
             GUI.color = Color.white;
             Text.Anchor = TextAnchor.UpperLeft;
 
@@ -282,44 +310,32 @@ namespace MinchoCandyWars.StellarisEvent
             }
 
             // 悬停提示
-            string? tooltipText;
-            if (!info.available && !string.IsNullOrEmpty(info.option.disabledReason))
-                tooltipText = eventDef.InjectParams(info.option.disabledReason ?? "");
-            else
-                tooltipText = eventDef.InjectParams(info.option.desc ?? info.option.label ?? "");
-
-            if (!string.IsNullOrEmpty(tooltipText))
+            if (!string.IsNullOrEmpty(info.tooltipText))
             {
-                TooltipHandler.TipRegion(optRect, tooltipText);
+                TooltipHandler.TipRegion(optRect, info.tooltipText);
             }
+        }
+
+        // ──────────────────── 窗口关闭 ────────────────────
+
+        public override void Close(bool doCloseSound = true)
+        {
+            StellarisEventManager.PendingWindowEventDefName = null;
+            base.Close(doCloseSound);
         }
 
         // ──────────────────── 选项处理 ────────────────────
 
         private void OnOptionSelected(StellarisEventOption option)
         {
-            // 执行 option 的 action（异常不阻断窗口关闭和 after 执行）
-            try
-            {
-                option.action?.Execute();
-            }
-            catch (System.Exception ex)
-            {
-                Verse.Log.Error($"[StellarisEvent] 选项 '{option.label}' 的 action 执行异常: {ex}");
-            }
+            // 执行 option 的 action
+            option.action?.Execute();
 
             // 关闭窗口
             Close();
 
-            // 执行 after（异常不阻断清理）
-            try
-            {
-                eventDef.after?.Execute();
-            }
-            catch (System.Exception ex)
-            {
-                Verse.Log.Error($"[StellarisEvent] 事件 '{eventDef.defName}' 的 after 执行异常: {ex}");
-            }
+            // 执行 after
+            eventDef.after?.Execute();
 
             // 清理本事件内创建的所有 local flag
             StellarisEventFlagManager.ClearLocalFlags();

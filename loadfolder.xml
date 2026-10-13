@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <loadFolders>
+	<!--
+		1.6 与 1.7 共用同一套内容（都在 1.6 目录里）。
+		本 mod 的 Def / Patch / 语言文件与游戏版本无关，所以不像其它 mod 那样再复制一份
+		1.7 目录 —— 两份 XML 迟早会不一致（本 mod 的 StellarisEvent 就吃过这个亏）。
+		注意 About.xml 的 supportedVersions 也要同时声明 1.7，否则 mod 列表里仍会显示为不兼容。
+	-->
 	<v1.6>
 		<li>1.6</li>
 		<li>Content</li>
 		<li IfModActive="SutSutMan.MarilyntheMinchoWorshipperWitchHARver">1.6/Mods/MarilyntheMinchoWorshipper</li>
 	</v1.6>
+	<v1.7>
+		<li>1.6</li>
+		<li>Content</li>
+		<li IfModActive="SutSutMan.MarilyntheMinchoWorshipperWitchHARver">1.6/Mods/MarilyntheMinchoWorshipper</li>
+	</v1.7>
 </loadFolders>

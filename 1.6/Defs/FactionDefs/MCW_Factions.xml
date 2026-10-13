@@ -23,4 +23,196 @@
       <li MayRequire="Ludeon.RimWorld.Biotech">Children</li>
     </disallowedRaidAgeRestrictions>
   </FactionDef>
+
+  <!-- 回收公司：闪耀世界甜品公司下属的回收部门，专门追捕逃逸的珉巧。
+       继承自原版 OutlanderRough（人类派系、有外交好感度），
+       因此开局是中立而非永久敌对 —— 他们需要先与玩家"交涉"，之后才可能转为敌对。
+       permanentEnemy 由事件通过 Effect_SetFactionRelation 在运行时改写。 -->
+  <FactionDef ParentName="FactionBase">
+    <defName>MCW_RecycleCorp_Faction</defName>
+    <label>Recycle Corporation</label>
+    <description>闪耀世界甜品公司下属的资产回收部门。名义上是一家合法的回收企业，实际上专门追捕、拆解逃逸的珉巧与智慧珉巧。</description>
+    <basicMemberKind>Colonist</basicMemberKind>
+    <fixedName>回收公司</fixedName>
+    <pawnSingular>回收队员</pawnSingular>
+    <pawnsPlural>回收队员</pawnsPlural>
+    <leaderTitle>回收公司领队</leaderTitle>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>2000</configurationListOrderPriority>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <fixedName>闪耀世界甜品公司</fixedName>
+    <canGenerateQuestSites>false</canGenerateQuestSites>
+    <factionIconPath>World/WorldObjects/Expanding/YttakinPirates</factionIconPath>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <techLevel>Archotech</techLevel>
+    <hidden>false</hidden>
+    <rescueesCanJoin>false</rescueesCanJoin>
+    <autoFlee>true</autoFlee>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Synthread</li>
+        <li>Hyperweave</li>
+        <li>Plasteel</li>
+      </thingDefs>
+    </apparelStuffFilter>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(100,100)</li>
+        <li>(10000,10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <raidsForbidden>true</raidsForbidden>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Pirate</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <raidLootMaker>TribeRaidLootMaker</raidLootMaker>
+    <pawnGroupMakers>
+      <li>
+        <!-- Normal fights, ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Tribal_Penitent>5</Tribal_Penitent>
+          <Tribal_Warrior>5</Tribal_Warrior>
+          <Tribal_Archer>10</Tribal_Archer>
+          <Tribal_Hunter>10</Tribal_Hunter>
+          <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
+          <Tribal_Berserker>5</Tribal_Berserker>
+          <Tribal_ChiefRanged>3</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>1.5</Tribal_ChiefMelee>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, ranged only -->
+        <kindDef>Combat</kindDef>
+        <commonality>60</commonality>
+        <options>
+          <Tribal_Archer>10</Tribal_Archer>
+          <Tribal_Hunter>10</Tribal_Hunter>
+          <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
+          <Tribal_ChiefRanged>5</Tribal_ChiefRanged>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, melee only -->
+        <kindDef>Combat</kindDef>
+        <commonality>60</commonality>
+        <options>
+          <Tribal_Penitent>10</Tribal_Penitent>
+          <Tribal_Warrior>10</Tribal_Warrior>
+          <Tribal_Berserker>10</Tribal_Berserker>
+          <Tribal_ChiefMelee>5</Tribal_ChiefMelee>
+      </options>
+      </li>
+      <li>
+        <!-- breach-capable fights, breachers plus ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>5</commonality>
+        <options>
+          <Tribal_Breacher>5</Tribal_Breacher>
+          <Tribal_Penitent>5</Tribal_Penitent>
+          <Tribal_Warrior>5</Tribal_Warrior>
+          <Tribal_Archer>10</Tribal_Archer>
+          <Tribal_Hunter>10</Tribal_Hunter>
+          <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
+          <Tribal_Berserker>5</Tribal_Berserker>
+          <Tribal_ChiefRanged>3</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>1.5</Tribal_ChiefMelee>
+      </options>
+      </li>
+      <li>
+        <!-- Peaceful -->
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Tribal_Warrior>20</Tribal_Warrior>
+          <Tribal_Child MayRequire="Ludeon.RimWorld.Biotech">10</Tribal_Child>
+          <Tribal_Archer>10</Tribal_Archer>
+          <Tribal_Hunter>10</Tribal_Hunter>
+          <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
+          <Tribal_Berserker>5</Tribal_Berserker>
+          <Tribal_ChiefRanged>3</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>1.5</Tribal_ChiefMelee>
+        </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Tribal_Trader>1</Tribal_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>6</Muffalo>
+          <Dromedary>5</Dromedary>
+          <Alpaca>2.5</Alpaca>
+          <Elephant>2</Elephant>
+        </carriers>
+        <guards>
+          <Tribal_Warrior>7</Tribal_Warrior>
+          <Tribal_Archer>10</Tribal_Archer>
+          <Tribal_Hunter>10</Tribal_Hunter>
+          <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
+          <Tribal_Berserker>7</Tribal_Berserker>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Tribal_Warrior>7</Tribal_Warrior>
+          <Tribal_Archer>10</Tribal_Archer>
+          <Tribal_Hunter>10</Tribal_Hunter>
+          <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
+          <Tribal_Berserker>7</Tribal_Berserker>
+          <Tribal_ChiefRanged>10</Tribal_ChiefRanged>
+        </options>
+      </li>
+      <li>
+        <kindDef>Settlement_RangedOnly</kindDef>
+        <options>
+          <Tribal_Archer>10</Tribal_Archer>
+          <Tribal_Hunter>10</Tribal_Hunter>
+          <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
+          <Tribal_ChiefRanged>10</Tribal_ChiefRanged>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Miners</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Miner>1</Tribal_Miner>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Hunters</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Hunter>1</Tribal_Hunter>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Loggers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Logger>1</Tribal_Logger>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Farmers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Farmer>1</Tribal_Farmer>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <settlementTexturePath>World/WorldObjects/TribalSettlement</settlementTexturePath>
+    <permanentEnemy>false</permanentEnemy>
+  </FactionDef>
 </Defs>

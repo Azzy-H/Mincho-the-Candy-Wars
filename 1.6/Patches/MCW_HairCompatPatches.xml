@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <!-- 1. Mincho_CheckHair 白名单追加本 mod 发型 -->
+  <!--
+    把本 mod 的 3 个发型注册进「珉巧」的外观白名单。
+    不注册的话，珉巧一旦换上这些发型，会被外观组件判定为非法发型而替换掉。
+
+    ⚠ 这个 xpath 依赖基础 mod（Mincho, The Mint Choco Slime）内部的 XML 结构。
+    基础 mod 9.1.0 起把发型白名单从 HediffDef 搬到了种族 ThingDef 上：
+      旧: Defs/HediffDef[defName="Mincho_CheckHair"]
+            /comps/li[@Class="Mincho_The_Mint_Choco_Slime.HediffCompProperties_CheckHair"]
+            /hediffAndHairs/li[hediffDef="Mincho_Mintchoco_Hediff"]/hairDefs
+      新: Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]
+            /comps/li[@Class="Mincho_The_Mint_Choco_Slime.CompProperties_CheckHairAndHead"]
+            /hediffAndHairs/li[hediffDef="Mincho_Mintchoco_Hediff"]/hairDefs
+    基础 mod 若再次改动结构，这里会报 "Patch operation ... failed"，
+    按 1.6/Defs/MinchoRace/GeneralRace.xml 里的新位置更新 xpath 即可。
+  -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/HediffDef[defName="Mincho_CheckHair"]/comps/li[@Class="Mincho_The_Mint_Choco_Slime.HediffCompProperties_CheckHair"]/hediffAndHairs/li[hediffDef="Mincho_Mintchoco_Hediff"]/hairDefs</xpath>
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps/li[@Class="Mincho_The_Mint_Choco_Slime.CompProperties_CheckHairAndHead"]/hediffAndHairs/li[hediffDef="Mincho_Mintchoco_Hediff"]/hairDefs</xpath>
     <value>
       <li>MCW_Hair_Upper_A</li>
       <li>MCW_Hair_Upper_B</li>
@@ -10,24 +24,19 @@
     </value>
   </Operation>
 
-  <!-- 2a. 后发（Lower）映射：本 mod 发型对应 severity 14/15/16 → 不渲染后发 -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Dummy/Large_Hair_Lower"]/extendedGraphics/Age[@For="HumanlikeAdult"]/extendedGraphics/Hediff[@For="Mincho_Mintchoco_Hediff"]/extendedGraphics/Hediff[@For="Mincho_CheckHair"]/extendedGraphics</xpath>
-    <value>
-      <Severity For="14.0">Mincho_Null</Severity>
-      <Severity For="15.0">Mincho_Null</Severity>
-      <Severity For="16.0">Mincho_Null</Severity>
-    </value>
-  </Operation>
+  <!--
+    这里原本还有两条 PatchOperationAdd，向 Large_Hair_Lower / Large_Hair_UpperMore 两个
+    bodyAddon 里追加 <Severity For="14/15/16">Mincho_Null</Severity>，让本 mod 的发型
+    不渲染"后发"和"前上层"。
 
-  <!-- 2b. 前上层（UpperMore）映射：同上 -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Dummy/Large_Hair_UpperMore"]/extendedGraphics/Age[@For="HumanlikeAdult"]/extendedGraphics/Hediff[@For="Mincho_Mintchoco_Hediff"]/extendedGraphics/Hediff[@For="Mincho_CheckHair"]/extendedGraphics</xpath>
-    <value>
-      <Severity For="14.0">Mincho_Null</Severity>
-      <Severity For="15.0">Mincho_Null</Severity>
-      <Severity For="16.0">Mincho_Null</Severity>
-    </value>
-  </Operation>
+    基础 mod 9.1.0 起这套机制已经不存在了：这两个 bodyAddon 的
+    extendedGraphics/Age[@For="HumanlikeAdult"] 默认 path 就是 Mincho_Null，
+    只有列在 <MinchoHair For="..."> 里的发型才会额外渲染一层贴图。
+    本 mod 的发型没有列入其中，因此默认就已经是不渲染 —— 原来的两条补丁不再需要，
+    删掉可以避免它们引用已消失的节点而报错。
 
+    将来若想给本 mod 的发型补上真正的后发/前上层贴图，做法是在这两个 bodyAddon 的
+    Age/extendedGraphics 下追加：
+      <MinchoHair For="MCW_Hair_Upper_A">你的贴图路径</MinchoHair>
+  -->
 </Patch>

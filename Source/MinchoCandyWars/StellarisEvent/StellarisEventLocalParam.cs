@@ -1,3 +1,4 @@
+#nullable disable
 namespace MinchoCandyWars.StellarisEvent
 {
     /// <summary>
@@ -7,10 +8,10 @@ namespace MinchoCandyWars.StellarisEvent
     public class StellarisEventLocalParam
     {
         /// <summary>参数键名，本地化文本中用 {key} 引用</summary>
-        public string? key;
+        public string key;
 
         /// <summary>参数值（字符串形式）</summary>
-        public string? value;
+        public string value;
 
         public StellarisEventLocalParam() { }
 

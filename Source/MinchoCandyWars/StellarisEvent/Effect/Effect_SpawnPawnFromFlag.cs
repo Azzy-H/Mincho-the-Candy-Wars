@@ -1,3 +1,4 @@
+#nullable disable
 using System.Collections.Generic;
 using Verse;
 using RimWorld;
@@ -22,13 +23,17 @@ namespace MinchoCandyWars.StellarisEvent
     /// 之后可通过 GetThingFlagStatus(trackFlagName) 查询该 Pawn 的 Normal / Despawn / DiedOrDisappeared 状态。
     /// 若被追踪的 Pawn 死亡或消失，flag 会由 Manager 的定期检查自动清理。
     ///
+    /// dropLocation 控制空投落点（仅 arrivalMode == DropPod 时生效）：
+    /// TradeSpot（默认）/ MapCenter（殖民地中心）/ Random（地图内随机位置）。
+    ///
     /// XML 示例:
     ///   &lt;li Class="MinchoCandyWars.StellarisEvent.Effect_SpawnPawnFromFlag"&gt;
     ///     &lt;pawnKindDefName&gt;ARA_Warrior&lt;/pawnKindDefName&gt;
     ///     &lt;trackFlagName&gt;elite_warrior&lt;/trackFlagName&gt;
     ///     &lt;count&gt;1&lt;/count&gt;
-    ///     &lt;factionDef&gt;ARA_MinchoCandyWars&lt;/factionDef&gt;
+    ///     &lt;factionDef&gt;ARA_ArachnaeSwarm&lt;/factionDef&gt;
     ///     &lt;arrivalMode&gt;DropPod&lt;/arrivalMode&gt;
+    ///     &lt;dropLocation&gt;MapCenter&lt;/dropLocation&gt;
     ///   &lt;/li&gt;
     /// </summary>
     public class Effect_SpawnPawnFromFlag : StellarisEventEffect
@@ -37,25 +42,28 @@ namespace MinchoCandyWars.StellarisEvent
         /// 要生成的 PawnKindDef 名称（defName）。
         /// 优先读取同名字段；若为空则从 sourceFlagName 指定的 String flag 中读取。
         /// </summary>
-        public string? pawnKindDefName;
+        public string pawnKindDefName;
 
         /// <summary>
         /// 可选：从指定的 String flag 中读取 PawnKindDef 名称（覆盖 pawnKindDefName）。
         /// 若此 flag 为 Thing 类型，则克隆该 Thing 的 kindDef。
         /// </summary>
-        public string? sourceFlagName;
+        public string sourceFlagName;
 
         /// <summary>
         /// 生成后为 Pawn 创建的 Thing 追踪 flag 名。
         /// 若 count &gt; 1，仅为首个 Pawn 创建 flag。
         /// </summary>
-        public string? trackFlagName;
+        public string trackFlagName;
 
         /// <summary>到达模式：DropPod（空投）或 EdgeWalkIn（边缘进入）</summary>
         public PawnArrivalMode arrivalMode = PawnArrivalMode.DropPod;
 
+        /// <summary>投放位置模式（仅 arrivalMode == DropPod 时生效）：TradeSpot / MapCenter / Random</summary>
+        public DropSupplyLocation dropLocation = DropSupplyLocation.TradeSpot;
+
         /// <summary>派系定义</summary>
-        public FactionDef? factionDef;
+        public FactionDef factionDef;
 
         /// <summary>是否使用玩家派系（优先级高于 factionDef）</summary>
         public bool usePlayerFaction;
@@ -105,7 +113,7 @@ namespace MinchoCandyWars.StellarisEvent
             // DropPod 方式中 pawn 在空投舱内（Spawned==false），但 flag 仍可凭 thingID 追踪
             if (!trackFlagName.NullOrEmpty() && pawns.Count > 0)
             {
-                StellarisEventFlagManager.SetFlag(trackFlagName!, pawns[0], ticks);
+                StellarisEventFlagManager.SetFlag(trackFlagName, pawns[0], ticks);
             }
         }
 
@@ -116,7 +124,7 @@ namespace MinchoCandyWars.StellarisEvent
             // 优先从 sourceFlagName 读取
             if (!sourceFlagName.NullOrEmpty())
             {
-                var flag = StellarisEventFlagManager.GetFlag(sourceFlagName!);
+                var flag = StellarisEventFlagManager.GetFlag(sourceFlagName);
                 if (flag != null)
                 {
                     if (flag.valueType == FlagValueType.String && !flag.stringValue.NullOrEmpty())
@@ -135,7 +143,7 @@ namespace MinchoCandyWars.StellarisEvent
             if (!pawnKindDefName.NullOrEmpty())
                 return DefDatabase<PawnKindDef>.GetNamedSilentFail(pawnKindDefName);
 
-            return null!;
+            return null;
         }
 
         // ──────────────────── 派系解析 ────────────────────
@@ -146,7 +154,7 @@ namespace MinchoCandyWars.StellarisEvent
                 return Faction.OfPlayer;
             if (factionDef != null)
                 return Find.FactionManager.FirstFactionOfDef(factionDef);
-            return null!;
+            return null;
         }
 
         // ──────────────────── 空投 ────────────────────
@@ -156,8 +164,24 @@ namespace MinchoCandyWars.StellarisEvent
             var things = new List<Thing>();
             foreach (var p in pawns) things.Add(p);
 
-            IntVec3 dropSpot = DropCellFinder.TradeDropSpot(map);
+            IntVec3 dropSpot = ResolveDropSpot(map);
             DropPodUtility.DropThingsNear(dropSpot, map, things, 110, false, false, true, faction: faction);
+        }
+
+        /// <summary>
+        /// 按 dropLocation 解析空投落点。
+        /// </summary>
+        private IntVec3 ResolveDropSpot(Map map)
+        {
+            switch (dropLocation)
+            {
+                case DropSupplyLocation.MapCenter:
+                    return map.Center;
+                case DropSupplyLocation.Random:
+                    return DropCellFinder.RandomDropSpot(map);
+                default:
+                    return DropCellFinder.TradeDropSpot(map);
+            }
         }
 
         // ──────────────────── 边缘进入 ────────────────────

@@ -1,3 +1,4 @@
+#nullable disable
 using System.Globalization;
 
 namespace MinchoCandyWars.StellarisEvent
@@ -18,13 +19,13 @@ namespace MinchoCandyWars.StellarisEvent
     public class Effect_FetchFlagAsParam : StellarisEventEffect
     {
         /// <summary>要抓取值的 flag 名</summary>
-        public string? flagName;
+        public string flagName;
 
         /// <summary>
         /// 存入的参数 key（本地化中用 {key} 引用）。
         /// 为空时默认使用 flagName 作为 key。
         /// </summary>
-        public string? paramKey;
+        public string paramKey;
 
         public override void Execute()
         {

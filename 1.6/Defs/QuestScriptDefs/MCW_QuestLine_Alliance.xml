@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    任务线：珉巧同盟 —— 第一段
+    ============================================================================
+    时间线：
+      开局      新游戏第一个 tick 弹出「珉巧同盟主线」询问窗口（见 MCW_Event_QS1_StartStory，
+                 由 OnActionDef 的 On_Game_Start 驱动）
+      t+0       玩家选"要"后【立刻】发起「遭到追捕的珉巧」任务，一位珉巧当天加入殖民地
+      t+1 天    事件「珉巧同盟联络」（先决条件：那位珉巧存活）
+      t+2 天    事件「回收公司联络」
+                  · 生成 1 名回收公司领队 + 2 名回收公司队员到地图边缘
+                  · 同时发出信件「回收队员到访」
+                  · 窗口 forceChoose=true：必须二选一，不能关掉
+      t+2 天+   玩家做出选择后发出 MCW_QS1_CorpResolved 信号，任务结束
+
+    分支钩子（本段只记录标记，后续任务线读取）：
+      MCW_QuestLine_Accepted   玩家选了"要"，本局会走主线
+      MCW_QuestLine_Declined   玩家选了"不要"，本局不再询问
+      MCW_QuestBranch_Mincho   选择"不可能！" → 进入珉巧任务线
+      MCW_QuestBranch_Corp     选择"好吧，她是你的了" → 进入公司任务线
+    下一段应当在检测到 MCW_QuestBranch_Mincho 后，用 2~3 天的
+    QuestNode_Delay / Effect_FireEvent(delayTicks=...) 发起 questA1。
+    ============================================================================
+  -->
+
+  <!-- ─────────────── 开局询问：要不要玩主线 ─────────────── -->
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_QS1_StartStory</defName>
+    <label>珉巧同盟主线</label>
+    <title>沁心糖</title>
+    <desc>作者的话：这是「珉巧扩展-糖果大作战」的引导窗口。看到此窗口代表Mod已经加载。糖果大作战有一条独立主线，你可以根据自身的选择决定是否开启主线。\n\n主线会让你在前期就获得新的珉巧，也会带来早于常规袭击的冲突。如果放弃主线，则本局不再有机会重新开启，其它内容不受影响。</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_SmileSquint</path>
+      </li>
+    </pictures>
+
+    <triggers>
+      <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
+        <flagName>MCW_QuestLine_Asked</flagName>
+        <idGroup>MCW_QuestLineNotAsked</idGroup>
+        <logic>NOT</logic>
+      </li>
+    </triggers>
+
+    <immediate>
+      <effects>
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+          <flagName>MCW_QuestLine_Asked</flagName>
+          <valueType>Bool</valueType>
+          <boolValue>true</boolValue>
+          <setMode>Override</setMode>
+          <local>false</local>
+        </li>
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+          <factionDef>MCW_Alliance_Faction</factionDef>
+        </li>
+      </effects>
+    </immediate>
+
+    <options>
+      <li>
+        <label>是的</label>
+        <desc>立刻开始主线：一位被追捕的珉巧当天就会来到你的殖民地。</desc>
+        <action>
+          <effects>
+            <!-- 0 天直接开任务，不再等一天 -->
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireIncident">
+              <defName>MCW_GiveQuest_QS1_MinchoMincho</defName>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QuestLine_Accepted</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <li>
+        <label>不，这局不玩主线内容</label>
+        <desc>本局不再询问，也不会启动珉巧同盟主线；其它内容不受影响。</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QuestLine_Declined</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+          </effects>
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+
+  <!-- 发起任务的 IncidentDef。
+       baseChance=0：绝不被叙事者随机选中，只由开局询问窗口的 Effect_FireIncident 发起。 -->
+  <IncidentDef>
+    <defName>MCW_GiveQuest_QS1_MinchoMincho</defName>
+    <category>GiveQuest</category>
+    <label>遭到追捕的珉巧</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <questScriptDef>MCW_QS1_HuntedMincho</questScriptDef>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <baseChance>0</baseChance>
+    <requireColonistsPresent>true</requireColonistsPresent>
+  </IncidentDef>
+
+  <!-- ─────────────────────────── 任务本体 ─────────────────────────── -->
+  <QuestScriptDef>
+    <defName>MCW_QS1_HuntedMincho</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <isRootSpecial>true</isRootSpecial>
+    <defaultCharity>false</defaultCharity>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->遭到追捕的珉巧</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->你的殖民地来了一位珉巧，[asker_nameDef]，她说正在被回收公司追捕，并且没有去处。她希望你可以收留她，并且她声称可以为你做任何事情，只要不将她交出去。</li>
+      </rulesStrings>
+    </questDescriptionRules>
+
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+        <li Class="QuestNode_GetWalkInSpot" />
+
+        <li Class="MinchoCandyWars.StellarisEvent.QuestNode_Hyperlinks">
+          <factionDefs>
+            <li>MCW_Alliance_Faction</li>
+          </factionDefs>
+        </li>
+
+        <!-- 生成这位珉巧：与玩家文化相同、固定特性、烹饪/社交/格斗双火 -->
+        <li Class="MinchoCandyWars.StellarisEvent.QuestNode_GeneratePawnWithCustomization">
+          <kindDef>MCW_HuntedMincho_QS1</kindDef>
+          <storeAs>asker</storeAs>
+          <addToList>huntedMincho</addToList>
+          <faction>MCW_Alliance_Faction</faction>
+          <allowPregnant>false</allowPregnant>
+
+          <forcedTraits>
+            <li>Tough</li>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Joyous</li>
+          </forcedTraits>
+
+          <mustBeCapableOfViolence>true</mustBeCapableOfViolence>
+
+          <skillCustomizations>
+            <li>
+              <skillDef>Melee</skillDef>
+              <passion>Major</passion>
+              <extraXP>450000</extraXP>
+            </li>
+            <li>
+              <skillDef>Cooking</skillDef>
+              <passion>Major</passion>
+              <extraXP>450000</extraXP>
+            </li>
+            <li>
+              <skillDef>Social</skillDef>
+              <passion>Major</passion>
+              <extraXP>450000</extraXP>
+            </li>
+          </skillCustomizations>
+
+          <syncWithPlayerIdeo>true</syncWithPlayerIdeo>
+        </li>
+
+        <!-- 用 Thing flag 追踪她：事件里就能通过 Effect_TrackedPawnsAction 操作她本人
+             （例如"好吧，她是你的了"把她交给回收公司）。 -->
+        <li Class="MinchoCandyWars.StellarisEvent.QuestNode_SetFlag">
+          <flagName>MCW_QS1_HuntedMincho</flagName>
+          <flagType>Thing</flagType>
+          <thingValue>$asker</thingValue>
+        </li>
+
+        <!-- 她加入殖民地，并发出"遭到追捕的珉巧"信件。
+             customLetter* 会整体替换 PawnsArrive 的默认信件，因此只会有一封信。 -->
+        <li Class="QuestNode_PawnsArrive">
+          <pawns>$asker</pawns>
+          <joinPlayer>true</joinPlayer>
+          <customLetterLabel>遭到追捕的珉巧</customLetterLabel>
+          <customLetterText>你的殖民地来了一位珉巧，她说正在被回收公司追捕，并且没有去处。她希望你可以收留她，并且她声称可以为你做任何事情，只要不将她交出去。</customLetterText>
+        </li>
+
+        <!-- ── t+1 天：珉巧同盟联络（先决条件：她仍然存活） ──
+             注意：任务开始时 Quest.InitiateSignal 会把所有未显式指定 inSignal 的根级节点
+             一起唤醒，所以这里的 delayTicks 是【从任务开始算起的绝对时间】，
+             第二个 Delay 用的是 120000（2 天），不是再叠加 1 天。 -->
+        <li Class="QuestNode_Delay">
+          <delayTicks>60000</delayTicks>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SendSignals">
+                <outSignals>MCW_QS1_CheckHuntedAlive</outSignals>
+              </li>
+              <li Class="QuestNode_AnyPawnAlive">
+                <inSignal>MCW_QS1_CheckHuntedAlive</inSignal>
+                <pawns>$huntedMincho</pawns>
+                <node Class="QuestNode_Sequence">
+                  <nodes>
+                    <li Class="QuestNode_SendSignals">
+                      <outSignals>MCW_QS1_AllianceContact</outSignals>
+                    </li>
+                    <li Class="MinchoCandyWars.StellarisEvent.QuestNode_StellarisEvent">
+                      <inSignal>MCW_QS1_AllianceContact</inSignal>
+                      <eventDef>MCW_Event_QS1_AllianceContact</eventDef>
+                    </li>
+                  </nodes>
+                </node>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- ── t+2 天：回收公司联络（无论珉巧同盟那边选了什么都会触发） ── -->
+        <li Class="QuestNode_Delay">
+          <delayTicks>120000</delayTicks>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SendSignals">
+                <outSignals>MCW_QS1_CorpContact</outSignals>
+              </li>
+              <li Class="MinchoCandyWars.StellarisEvent.QuestNode_StellarisEvent">
+                <inSignal>MCW_QS1_CorpContact</inSignal>
+                <eventDef>MCW_Event_QS1_CorpContact</eventDef>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- ── 等玩家在"回收公司联络"里做出决定后，任务才结束 ──
+             QuestNode_Signal 只认显式 inSignal（它不会回退到任务启动信号），
+             所以这里写的是事件侧 Effect_SendQuestSignal 广播的名字，
+             运行时会自动补上 "Quest{任务id}." 前缀。
+
+             ⚠ 不要把这个等待去掉、直接放一个根级的 QuestNode_End：
+               根级节点在任务被接受的一瞬间就会收到 Quest.InitiateSignal，
+               那样的 End 会让任务刚开始就立刻结束，后面的延时事件全部作废。 -->
+        <li Class="QuestNode_Signal">
+          <inSignal>MCW_QS1_CorpResolved</inSignal>
+          <node Class="QuestNode_End">
+            <outcome>Success</outcome>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <!-- ─────────────────── 事件：珉巧同盟联络 ─────────────────── -->
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_QS1_AllianceContact</defName>
+    <label>珉巧同盟联络</label>
+    <title>沁心糖</title>
+    <desc>你好，这个殖民地的主人，我是沁心糖，感谢你接收这条讯息，我们是珉巧同盟，是一个为了保护珉巧免于被回收的组织。而我，是这个组织的领导者。\n\n希望您可以加入我们的珉巧同盟，这也是因为这位智慧珉巧认为您是可信的，同时，我们会给予您的殖民地一些帮助！</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <!-- 沁心糖·睁眼微笑（正式联络） -->
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+      </li>
+    </pictures>
+
+    <!-- 保险：若世界生成没有建出珉巧同盟（例如在旧存档里加载本 mod），
+         这里当场补一个，否则下面的 Effect_SetFactionRelation 会因找不到派系而跳过。 -->
+    <immediate>
+      <effects>
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+          <factionDef>MCW_Alliance_Faction</factionDef>
+        </li>
+      </effects>
+    </immediate>
+
+    <options>
+      <li>
+        <label>当然我们愿意加入珉巧同盟！</label>
+        <desc>与珉巧同盟结盟，并接受他们空投的物资援助。</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFactionRelation">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <relation>Ally</relation>
+            </li>
+
+            <!-- 空投物资：薄荷冰淇淋 200 / 砖块 400 / 巧克力棒 200 / 稻米 300 -->
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupply">
+              <thingDef>Mincho_Mintchoco</thingDef>
+              <num>200</num>
+              <usePlayerFaction>true</usePlayerFaction>
+              <dropLocation>MapCenter</dropLocation>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupply">
+              <thingDef>Mincho_BlocksMintchoco</thingDef>
+              <num>400</num>
+              <usePlayerFaction>true</usePlayerFaction>
+              <dropLocation>MapCenter</dropLocation>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupply">
+              <thingDef>Mincho_ChocoStick</thingDef>
+              <num>200</num>
+              <usePlayerFaction>true</usePlayerFaction>
+              <dropLocation>MapCenter</dropLocation>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupply">
+              <thingDef>RawRice</thingDef>
+              <num>300</num>
+              <usePlayerFaction>true</usePlayerFaction>
+              <dropLocation>MapCenter</dropLocation>
+            </li>
+
+            <!-- 智慧珉巧改造包 1 个、薄荷冰淇淋联络台 1 个 -->
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupply">
+              <thingDef>MCW_MinchoIntelBooster</thingDef>
+              <num>1</num>
+              <usePlayerFaction>true</usePlayerFaction>
+              <dropLocation>MapCenter</dropLocation>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupply">
+              <thingDef>MCW_Chocolate_Console</thingDef>
+              <num>1</num>
+              <usePlayerFaction>true</usePlayerFaction>
+              <dropLocation>MapCenter</dropLocation>
+            </li>
+
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QS1_AllianceJoined</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QS1_AllianceDecided</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <li>
+        <label>算了吧，这听起来很危险。</label>
+        <desc>拒绝加入珉巧同盟。他们不会因为这次拒绝而与你为敌。</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QS1_AllianceDecided</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+          </effects>
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+
+  <!-- ─────────────────── 事件：回收公司联络 ─────────────────── -->
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_QS1_CorpContact</defName>
+    <label>回收公司联络</label>
+    <title>回收公司领队</title>
+    <desc>您好，我们在搜索一些像是冰淇淋的机器人，她们中的一位疑似进入了您的殖民地，麻烦您配合我们将他交出，否则我们不得不采取强制措施。</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <!-- 回收公司领队暂时没有立绘：窗口在没有 pictures 时会只画背景，不会报错。
+         等美术给出该角色的立绘后，在这里补回：
+         <pictures><li><path>Events/Portraits/你的文件名</path></li></pictures> -->
+
+    <!-- 必须做出选择，不能 X 掉或 ESC 关掉：
+         两个选项都无条件可用，所以玩家一定有得选；这样也就不需要"未选择时的默认结算"了
+         （原来那个 MCW_Event_QS1_CorpDefault 已删除）。 -->
+    <forceChoose>true</forceChoose>
+
+    <immediate>
+      <effects>
+        <!-- 保险：回收公司派系必须存在，下面的生成与关系改动才有意义
+             （旧存档里加载本 mod 时它可能还没被创建）。 -->
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+          <factionDef>MCW_RecycleCorp_Faction</factionDef>
+        </li>
+
+        <!-- 1 名领队 + 2 名队员，从地图边缘走进来（此刻仍是中立派系） -->
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_SpawnPawnFromFlag">
+          <pawnKindDefName>MCW_RecycleCorp_Leader</pawnKindDefName>
+          <arrivalMode>EdgeWalkIn</arrivalMode>
+          <factionDef>MCW_RecycleCorp_Faction</factionDef>
+          <trackFlagName>MCW_QS1_CorpDelegation_0</trackFlagName>
+        </li>
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_SpawnPawnFromFlag">
+          <pawnKindDefName>MCW_RecycleCorp_Member</pawnKindDefName>
+          <arrivalMode>EdgeWalkIn</arrivalMode>
+          <factionDef>MCW_RecycleCorp_Faction</factionDef>
+          <trackFlagName>MCW_QS1_CorpDelegation_1</trackFlagName>
+        </li>
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_SpawnPawnFromFlag">
+          <pawnKindDefName>MCW_RecycleCorp_Member</pawnKindDefName>
+          <arrivalMode>EdgeWalkIn</arrivalMode>
+          <factionDef>MCW_RecycleCorp_Faction</factionDef>
+          <trackFlagName>MCW_QS1_CorpDelegation_2</trackFlagName>
+        </li>
+
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_SendLetter">
+          <label>回收队员到访</label>
+          <text>三名回收公司成员来到了你的殖民地边缘。领队要求你把那位珉巧交出去。</text>
+          <letterDef>ThreatSmall</letterDef>
+        </li>
+      </effects>
+    </immediate>
+
+    <options>
+      <li>
+        <label>好吧，她是你的了</label>
+        <desc>交出那位珉巧。与珉巧同盟决裂并永久敌对。回收公司支付报酬：两套大师级海军装甲、两把极佳电荷标枪。</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFactionRelation">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <relation>Hostile</relation>
+              <permanent>true</permanent>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupplyQuality">
+              <thingDef>Apparel_PowerArmor</thingDef>
+              <num>2</num>
+              <quality>Masterwork</quality>
+              <dropLocation>MapCenter</dropLocation>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupplyQuality">
+              <thingDef>Gun_ChargeLance</thingDef>
+              <num>2</num>
+              <quality>Excellent</quality>
+              <dropLocation>MapCenter</dropLocation>
+            </li>
+            <!-- 拿到人之后，回收小队带着她离开地图 -->
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_TrackedPawnsAction">
+              <flagNames>
+                <li>MCW_QS1_HuntedMincho</li>
+                <li>MCW_QS1_CorpDelegation_0</li>
+                <li>MCW_QS1_CorpDelegation_1</li>
+                <li>MCW_QS1_CorpDelegation_2</li>
+              </flagNames>
+              <action>Despawn</action>
+              <toFactionDef>MCW_RecycleCorp_Faction</toFactionDef>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QS1_CorpDecided</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QuestBranch_Corp</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+            <!-- 通知任务"玩家已经做出决定"，任务里等待这个信号后才会结束 -->
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SendQuestSignal">
+              <signalName>MCW_QS1_CorpResolved</signalName>
+              <questDefName>MCW_QS1_HuntedMincho</questDefName>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <li>
+        <label>不可能！</label>
+        <desc>拒绝交出珉巧。与回收公司永久敌对，三名回收公司成员立即发起进攻。</desc>
+        <action>
+          <effects>
+            <!-- 先转敌对，再让这三人进攻（顺序不能颠倒） -->
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFactionRelation">
+              <factionDef>MCW_RecycleCorp_Faction</factionDef>
+              <relation>Hostile</relation>
+              <permanent>true</permanent>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_TrackedPawnsAction">
+              <flagNames>
+                <li>MCW_QS1_CorpDelegation_0</li>
+                <li>MCW_QS1_CorpDelegation_1</li>
+                <li>MCW_QS1_CorpDelegation_2</li>
+              </flagNames>
+              <action>Assault</action>
+              <canTimeoutOrFlee>false</canTimeoutOrFlee>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QS1_CorpDecided</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QuestBranch_Mincho</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+            <!-- 通知任务"玩家已经做出决定"，任务里等待这个信号后才会结束 -->
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SendQuestSignal">
+              <signalName>MCW_QS1_CorpResolved</signalName>
+              <questDefName>MCW_QS1_HuntedMincho</questDefName>
+            </li>
+          </effects>
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+
+  <!--
+    这里原本还有一个 MCW_Event_QS1_CorpDefault（"玩家一直没选择就按选项一结算"）。
+    因为 MCW_Event_QS1_CorpContact 现在设了 forceChoose=true（选项必须做出，不能关窗），
+    那条分支永远走不到，所以连同预约它的 Effect_FireEvent 一起删掉了。
+  -->
+</Defs>

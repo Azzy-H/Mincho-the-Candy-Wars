@@ -1,3 +1,4 @@
+#nullable disable
 namespace MinchoCandyWars.StellarisEvent
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace MinchoCandyWars.StellarisEvent
     public class Trigger_FlagCheck : StellarisEventTrigger
     {
         /// <summary>要检查的 flag 名</summary>
-        public string? flagName;
+        public string flagName;
 
         /// <summary>期望的 flag 数据类型</summary>
         public FlagValueType checkType = FlagValueType.Bool;
@@ -48,7 +49,7 @@ namespace MinchoCandyWars.StellarisEvent
         public float expectedFloat;
 
         /// <summary>期望的 string 值（checkType == String 时使用）</summary>
-        public string? expectedString;
+        public string expectedString;
 
         /// <summary>期望的 bool 值（checkType == Bool 时使用）</summary>
         public bool expectedBool;
@@ -58,7 +59,7 @@ namespace MinchoCandyWars.StellarisEvent
 
         public override bool CanTrigger()
         {
-            var flag = StellarisEventFlagManager.GetFlag(flagName!);
+            var flag = StellarisEventFlagManager.GetFlag(flagName);
             if (flag == null)
                 return false;
 

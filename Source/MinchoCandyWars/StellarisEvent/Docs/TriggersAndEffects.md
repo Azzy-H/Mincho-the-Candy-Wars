@@ -14,6 +14,7 @@
   - [2.4 Triggers_FactionExists](#24-triggers_factionexists)
   - [2.5 Trigger_FlagCheck](#25-trigger_flagcheck)
   - [2.6 FloatCompareMode 枚举](#26-floatcomparemode-枚举)
+  - [2.7 Trigger_FlagExist](#27-trigger_flagexist)
 - [3. Effect（效果）](#3-effect效果)
   - [3.1 基类：StellarisEventEffect](#31-基类stellarseventeffect)
   - [3.2 StellarisEventEffectList（容器）](#32-stellarseventeffectlist容器)
@@ -24,6 +25,7 @@
   - [3.7 Effect_FireEvent](#37-effect_fireevent)
   - [3.8 Effect_DropSupply](#38-effect_dropsupply)
   - [3.9 Effect_FireIncident](#39-effect_fireincident)
+  - [3.10 Effect_SpawnPawnFromFlag](#310-effect_spawnpawnfromflag)
 - [4. 辅助类型速查](#4-辅助类型速查)
   - [4.1 FlagValueType](#41-flagvaluetype)
   - [4.2 Flag 系统 API](#42-flag-系统-api)
@@ -135,7 +137,7 @@ Step 4 — 全真判定：所有结果的 NOT/OR/AND 必须全部为 true，idGr
 ```xml
 <!-- 独立判定 -->
 <li Class="MinchoCandyWars.StellarisEvent.Triggers_FactionExists">
-  <factionDef>ARA_MinchoCandyWars</factionDef>
+  <factionDef>ARA_ArachnaeSwarm</factionDef>
 </li>
 
 <!-- 分组判定 -->
@@ -215,6 +217,40 @@ public enum FloatCompareMode
 ```
 
 仅在 `Trigger_FlagCheck.checkType == Float` 时生效，且 `floatCompare` 默认值为 `Equal`（向后兼容）。
+
+---
+
+### 2.7 Trigger_FlagExist
+
+**全限定类名：** `MinchoCandyWars.StellarisEvent.Trigger_FlagExist`
+
+判定指定 flag 是否存在，**不检查类型与值**。flag 存在即返回 `true`（无论其类型与值如何），不存在返回 `false`。
+
+通常用于"某事件已发生过 / 某流程已开启"这类仅关心存在性的判断。
+
+| 字段 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `flagName` | `string` | `null` | 要检查的 flag 名 |
+| （继承）`idGroup` | `string` | — | 分组标识 |
+| （继承）`logic` | `TriggerLogic` | — | 逻辑运算符 |
+
+**逻辑：** `StellarisEventFlagManager.HasFlag(flagName)`
+
+**XML 示例：**
+
+```xml
+<!-- 独立判定：flag 存在时通过 -->
+<li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
+  <flagName>firstContactDone</flagName>
+</li>
+
+<!-- 分组判定：flag 不存在时通过（配合 NOT） -->
+<li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
+  <flagName>questStarted</flagName>
+  <idGroup>questNotStarted</idGroup>
+  <logic>NOT</logic>
+</li>
+```
 
 ---
 
@@ -443,6 +479,8 @@ XML def 中定义 Effect_FetchFlagAsParam（immediate 阶段）
 | `pawnKindDef` | `PawnKindDef` | `null` | 空投单位种类。**优先于 thingDef** |
 | `factionDef` | `FactionDef` | `null` | 派系。为空则使用 PawnKind 默认派系 |
 | `num` | `int` | `1` | 数量（物品 = 总个数/堆叠，Pawn = 人数） |
+| `stuff` | `ThingDef` | `null` | 制造材料。仅当 `thingDef` 支持材料（`MadeFromStuff`）且该 def 为材料（`IsStuff`）时生效；否则忽略并告警。Pawn 空投忽略此字段 |
+| `dropLocation` | `DropSupplyLocation` | `TradeSpot` | 投放位置：`TradeSpot`（交易空投点，默认）/ `MapCenter`（殖民地中心）/ `Random`（地图内随机位置） |
 
 **优先级：** `pawnKindDef` 非空 → 生成 Pawn 空投；否则 `thingDef` 非空 → 生成物品空投。
 
@@ -460,7 +498,7 @@ XML def 中定义 Effect_FetchFlagAsParam（immediate 阶段）
 <!-- 空投 3 个虫巢战士，己方派系 -->
 <li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupply">
   <pawnKindDef>ARA_Warrior</pawnKindDef>
-  <factionDef>ARA_MinchoCandyWars</factionDef>
+  <factionDef>ARA_ArachnaeSwarm</factionDef>
   <num>3</num>
 </li>
 
@@ -468,6 +506,21 @@ XML def 中定义 Effect_FetchFlagAsParam（immediate 阶段）
 <li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupply">
   <thingDef>Gun_SMG</thingDef>
   <num>5</num>
+</li>
+
+<!-- 空投 3 把塑料钢小刀，随机位置投放 -->
+<li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupply">
+  <thingDef>MeleeWeapon_Knife</thingDef>
+  <stuff>Plasteel</stuff>
+  <num>3</num>
+  <dropLocation>Random</dropLocation>
+</li>
+
+<!-- 物资投放到殖民地中心 -->
+<li Class="MinchoCandyWars.StellarisEvent.Effect_DropSupply">
+  <thingDef>Silver</thingDef>
+  <num>500</num>
+  <dropLocation>MapCenter</dropLocation>
 </li>
 ```
 
@@ -501,6 +554,36 @@ XML def 中定义 Effect_FetchFlagAsParam（immediate 阶段）
 <!-- 触发热浪 -->
 <li Class="MinchoCandyWars.StellarisEvent.Effect_FireIncident">
   <defName>HeatWave</defName>
+</li>
+```
+
+### 3.10 Effect_SpawnPawnFromFlag
+
+**全限定类名：** `MinchoCandyWars.StellarisEvent.Effect_SpawnPawnFromFlag`
+
+生成指定 `PawnKindDef` 的 Pawn 并让其到达殖民地，同时为其创建 Thing 类型 flag 供后续追踪（`trackFlagName`，可通过 `GetThingFlagStatus` 查询状态）。
+
+| 字段 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `pawnKindDefName` | `string` | `null` | 要生成的 PawnKindDef 的 defName |
+| `sourceFlagName` | `string` | `null` | 可选：从指定 String flag 读取 PawnKindDef 名（覆盖 `pawnKindDefName`）；若该 flag 为 Thing 类型则克隆其 kindDef |
+| `trackFlagName` | `string` | `null` | 生成后为 Pawn 创建的 Thing 追踪 flag 名（count > 1 时仅首个） |
+| `arrivalMode` | `PawnArrivalMode` | `DropPod` | 到达模式：`DropPod`（空投）/ `EdgeWalkIn`（地图边缘进入） |
+| `dropLocation` | `DropSupplyLocation` | `TradeSpot` | 空投落点：`TradeSpot`（默认）/ `MapCenter`（殖民地中心）/ `Random`（随机）。**仅 `arrivalMode=DropPod` 时生效** |
+| `factionDef` | `FactionDef` | `null` | 派系 |
+| `usePlayerFaction` | `bool` | `false` | 是否使用玩家派系（优先于 factionDef） |
+| `ticks` | `int?` | `null` | 追踪 flag 到期 tick（null = 永久） |
+
+**XML 示例：**
+
+```xml
+<!-- 空投一名精英战士到殖民地中心并追踪 -->
+<li Class="MinchoCandyWars.StellarisEvent.Effect_SpawnPawnFromFlag">
+  <pawnKindDefName>ARA_Warrior</pawnKindDefName>
+  <trackFlagName>elite_warrior</trackFlagName>
+  <factionDef>ARA_ArachnaeSwarm</factionDef>
+  <arrivalMode>DropPod</arrivalMode>
+  <dropLocation>MapCenter</dropLocation>
 </li>
 ```
 
@@ -550,7 +633,7 @@ public enum FlagValueType { Float, String, Bool }
     <triggers>
       <!-- 独立判定：己方派系必须存在 -->
       <li Class="MinchoCandyWars.StellarisEvent.Triggers_FactionExists">
-        <factionDef>ARA_MinchoCandyWars</factionDef>
+        <factionDef>ARA_ArachnaeSwarm</factionDef>
       </li>
       <!-- 分组判定：任一敌对派系存在 -->
       <li Class="MinchoCandyWars.StellarisEvent.Triggers_FactionExists">

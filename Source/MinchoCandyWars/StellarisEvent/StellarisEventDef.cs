@@ -1,3 +1,4 @@
+#nullable disable
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,10 +12,10 @@ namespace MinchoCandyWars.StellarisEvent
     public class StellarisEventPictureDef
     {
         /// <summary>立绘纹理路径，如 "UI/StellarisEvent/Portrait_Queen"</summary>
-        public string? path;
+        public string path;
 
         /// <summary>该立绘可被选中的触发条件；为空则始终可用</summary>
-        public StellarisEventTrigger? trigger;
+        public StellarisEventTrigger trigger;
 
         /// <summary>立绘 X 偏移（像素，正值右移，负值左移）</summary>
         public float portraitOffsetX = 0f;
@@ -34,25 +35,33 @@ namespace MinchoCandyWars.StellarisEvent
     public class StellarisEventOption
     {
         /// <summary>选项显示文本</summary>
-        public string? label;
+        [MustTranslate]
+        public string label;
 
         /// <summary>鼠标悬停时显示的额外描述</summary>
-        public string? desc;
+        [MustTranslate]
+        public string desc;
 
         /// <summary>选择后执行的 effect 列表</summary>
-        public StellarisEventEffectList? action;
+        public StellarisEventEffectList action;
 
-        /// <summary>该选项是否可用的触发条件</summary>
-        public StellarisEventTrigger? trigger;
+        /// <summary>该选项是否可用的触发条件（单个 trigger，兼容旧 XML 配置）</summary>
+        public StellarisEventTrigger trigger;
+
+        /// <summary>该选项是否可用的触发条件列表。优先于 trigger；无 idGroup 的默认 AND，有 idGroup 的按分组逻辑判定</summary>
+        public List<StellarisEventTrigger> triggers = new List<StellarisEventTrigger>();
 
         /// <summary>若 trigger 不通过，是否仍然在界面上构建该选项（但置灰）</summary>
         public bool hideWhenDisabled = false;
 
         /// <summary>禁用时显示的替代描述文本</summary>
-        public string? disabledReason;
+        [MustTranslate]
+        public string disabledReason;
 
         public bool IsAvailable()
         {
+            if (!triggers.NullOrEmpty())
+                return StellarisEventDef.EvaluateTriggers(triggers);
             return trigger?.CanTrigger() ?? true;
         }
     }
@@ -63,13 +72,15 @@ namespace MinchoCandyWars.StellarisEvent
     public class StellarisEventDef : Def
     {
         /// <summary>事件标题（显示在窗口顶部）</summary>
-        public string? title;
+        [MustTranslate]
+        public string title;
 
         /// <summary>事件描述文本（显示在标题下方）</summary>
-        public string? desc;
+        [MustTranslate]
+        public string desc;
 
         /// <summary>事件窗口背景纹理路径，如 "UI/StellarisEvent/Bg_Nebula"。为空则使用默认暗色背景</summary>
-        public string? backgroundPath;
+        public string backgroundPath;
 
         /// <summary>立绘列表，构建窗口时从满足 trigger 的项中随机选取</summary>
         public List<StellarisEventPictureDef> pictures = new List<StellarisEventPictureDef>();
@@ -78,26 +89,35 @@ namespace MinchoCandyWars.StellarisEvent
         public List<StellarisEventTrigger> triggers = new List<StellarisEventTrigger>();
 
         /// <summary>事件触发时立即执行的 effect 列表（在选择 option 之前）</summary>
-        public StellarisEventEffectList? immediate;
+        public StellarisEventEffectList immediate;
 
         /// <summary>供玩家选择的回应选项列表</summary>
         public List<StellarisEventOption> options = new List<StellarisEventOption>();
 
         /// <summary>所有 option 的 action 执行完毕后执行的 effect 列表</summary>
-        public StellarisEventEffectList? after;
+        public StellarisEventEffectList after;
 
         /// <summary>本地化参数列表。由 Effect_FetchFlagAsParam 在 immediate 阶段填充。</summary>
         public List<StellarisEventLocalParam> localParams = new List<StellarisEventLocalParam>();
+
+        /// <summary>若为 true，该事件窗口无法通过 X 按钮或 ESC 键关闭，玩家必须选择一个选项</summary>
+        public bool forceChoose = false;
+
+        /// <summary>若为 true，该事件使用超事件窗口布局（立绘顶部全宽 + 下半截断 + 内容面板居中）</summary>
+        public bool isSuperEvent = false;
+
+        /// <summary>若为 true，该事件使用吐司窗口（无选项，immediate 在触发时执行，after 在窗口消失时执行，底部进度条 5 秒倒计时，带队列机制）</summary>
+        public bool isToastEvent = false;
 
         // ──────────────────── 内部运行时状态 ────────────────────
 
         /// <summary>本次弹窗选中的立绘纹理（在 Fire 时缓存）</summary>
         [Unsaved]
-        public Texture2D? selectedPicture;
+        public Texture2D selectedPicture;
 
         /// <summary>本次弹窗选中的立绘路径（用于调试）</summary>
         [Unsaved]
-        public string? selectedPicturePath;
+        public string selectedPicturePath;
 
         /// <summary>本次弹窗选中的立绘 X 偏移</summary>
         [Unsaved]
@@ -109,7 +129,7 @@ namespace MinchoCandyWars.StellarisEvent
 
         /// <summary>本次弹窗使用的背景纹理（在 Fire 时缓存）</summary>
         [Unsaved]
-        public Texture2D? backgroundTexture;
+        public Texture2D backgroundTexture;
 
         // ──────────────────── 静态执行上下文 ────────────────────
 
@@ -117,7 +137,7 @@ namespace MinchoCandyWars.StellarisEvent
         /// 当前正在执行 effect 的事件 Def（供 Effect_FetchFlagAsParam 等需要访问父 Def 的 Effect 使用）。
         /// 在 TryFire / OnOptionSelected 中设置和清除。
         /// </summary>
-        public static StellarisEventDef? ExecutingInstance { get; private set; }
+        public static StellarisEventDef ExecutingInstance { get; internal set; }
 
         // ──────────────────── 方法 ────────────────────
 
@@ -125,6 +145,15 @@ namespace MinchoCandyWars.StellarisEvent
         /// 事件是否满足触发条件
         /// </summary>
         public bool CanTrigger()
+        {
+            return EvaluateTriggers(triggers);
+        }
+
+        /// <summary>
+        /// 评估 trigger 列表 —— 供 StellarisEventDef 和 StellarisEventOption 共用。
+        /// 规则: 无 idGroup 的默认 AND；有 idGroup 的按分组逻辑判定 (NOT 翻转 → 任一 OR 为 true 则所有 OR 视为 true → 全部必须为 true)
+        /// </summary>
+        public static bool EvaluateTriggers(List<StellarisEventTrigger> triggers)
         {
             if (triggers.NullOrEmpty())
                 return true;
@@ -139,9 +168,9 @@ namespace MinchoCandyWars.StellarisEvent
                     ungrouped.Add(t);
                 else
                 {
-                    if (!groups.ContainsKey(t.idGroup??""))
-                        groups[t.idGroup ?? ""] = new List<StellarisEventTrigger>();
-                    groups[t.idGroup ?? ""].Add(t);
+                    if (!groups.ContainsKey(t.idGroup))
+                        groups[t.idGroup] = new List<StellarisEventTrigger>();
+                    groups[t.idGroup].Add(t);
                 }
             }
 
@@ -166,7 +195,7 @@ namespace MinchoCandyWars.StellarisEvent
         /// 评估同一 idGroup 的 trigger 列表。
         /// 规则: NOT 翻转 → 任一 OR 为 true 则所有 OR 视为 true → 全部必须为 true
         /// </summary>
-        private static bool EvaluateTriggerGroup(List<StellarisEventTrigger> group)
+        public static bool EvaluateTriggerGroup(List<StellarisEventTrigger> group)
         {
             // Step 1: 收集原始结果
             var rawResults = new Dictionary<StellarisEventTrigger, bool>();
@@ -256,13 +285,50 @@ namespace MinchoCandyWars.StellarisEvent
             }
             finally
             {
-                ExecutingInstance = null!;
+                ExecutingInstance = null;
+            }
+
+            if (isToastEvent)
+            {
+                // 吐司窗口：走队列机制，after 在窗口消失时执行
+                SelectRandomPicture();
+                LoadBackgroundTexture();
+                StellarisEventManager.EnqueueToastEvent(this);
+                return true;
             }
 
             SelectRandomPicture();
             LoadBackgroundTexture();
-            Find.WindowStack.Add(new StellarisEventWindow(this));
+
+            // 标记待恢复窗口（供存档读档后恢复用）
+            StellarisEventManager.PendingWindowEventDefName = defName;
+
+            if (isSuperEvent)
+                Find.WindowStack.Add(new StellarisSuperEventWindow(this));
+            else
+                Find.WindowStack.Add(new StellarisEventWindow(this));
             return true;
+        }
+
+        /// <summary>
+        /// 从存档恢复事件窗口（跳过 trigger 判定和 immediate 执行）。
+        /// 仅重新加载立绘/背景并打开窗口。
+        /// </summary>
+        public void RestoreWindow()
+        {
+            // 吐司窗口由 StellarisEventManager 的存档恢复逻辑处理，此处不重复创建
+            if (isToastEvent)
+                return;
+
+            SelectRandomPicture();
+            LoadBackgroundTexture();
+
+            StellarisEventManager.PendingWindowEventDefName = defName;
+
+            if (isSuperEvent)
+                Find.WindowStack.Add(new StellarisSuperEventWindow(this));
+            else
+                Find.WindowStack.Add(new StellarisEventWindow(this));
         }
 
         // ──────────────────── 本地化参数 ────────────────────
@@ -284,6 +350,20 @@ namespace MinchoCandyWars.StellarisEvent
         }
 
         /// <summary>
+        /// 解析事件框架使用的描述文本。
+        /// 若存在 key.1 / key.2 / ... 的编号变体，则随机抽取其一；
+        /// 否则回退到原始 key，并保留原有无编号 desc 的支持。
+        /// </summary>
+        public string ResolveLocalizedDescText(string textKey)
+        {
+            if (textKey.NullOrEmpty())
+                return string.Empty;
+
+            string resolvedKey = ResolveRandomizedTextKey(textKey);
+            return InjectParams(resolvedKey.Translate().ToString());
+        }
+
+        /// <summary>
         /// 将文本中所有 {key} 占位替换为对应的参数值。
         /// 无匹配 key 的占位保持原样。
         /// 若 localParams 为空则直接返回原文本。
@@ -299,6 +379,28 @@ namespace MinchoCandyWars.StellarisEvent
                 text = text.Replace("{" + param.key + "}", param.value ?? "");
             }
             return text;
+        }
+
+        private static string ResolveRandomizedTextKey(string baseKey)
+        {
+            if (baseKey.NullOrEmpty())
+                return string.Empty;
+
+            LoadedLanguage language = LanguageDatabase.activeLanguage;
+            if (language == null)
+                return baseKey;
+
+            List<string> variantKeys = new List<string>();
+            for (int index = 1; ; index++)
+            {
+                string candidateKey = baseKey + "." + index;
+                if (!language.HaveTextForKey(candidateKey, false))
+                    break;
+
+                variantKeys.Add(candidateKey);
+            }
+
+            return variantKeys.Count > 0 ? variantKeys.RandomElement() : baseKey;
         }
     }
 }

@@ -1,3 +1,4 @@
+#nullable disable
 using Verse;
 using RimWorld;
 
@@ -14,7 +15,7 @@ namespace MinchoCandyWars.StellarisEvent
     public class Effect_FireIncident : StellarisEventEffect
     {
         /// <summary>要触发的 IncidentDef 的 defName</summary>
-        public string? defName;
+        public string defName;
 
         public override void Execute()
         {

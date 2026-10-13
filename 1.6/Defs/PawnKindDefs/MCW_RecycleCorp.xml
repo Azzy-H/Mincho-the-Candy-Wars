@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    回收公司成员。
+    设计文档允许"先用海盗代替"，所以直接继承原版 Pirate / PirateBoss，
+    只覆盖 defName 与所属派系；模型、装备、战斗点数等全部沿用原版海盗。
+  -->
+
+  <PawnKindDef ParentName="MercenaryEliteTierBase">
+    <defName>MCW_RecycleCorp_Leader</defName>
+    <label>回收公司领队</label>
+    <!-- <labelPlural>bosses</labelPlural> -->
+    <factionLeader>true</factionLeader>
+    <canBeSapper>true</canBeSapper>
+    <initialResistanceRange>17~27</initialResistanceRange>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="PirateKindBase">
+    <defName>MCW_RecycleCorp_Member</defName>
+    <label>回收公司队员</label>
+    <race>Human</race>
+    <defaultFactionType>MCW_RecycleCorp_Faction</defaultFactionType>
+  </PawnKindDef>
+
+  <!-- 遭到追捕的珉巧：比普通珉巧更强，固定技能与特性 -->
+  <PawnKindDef ParentName="MinchoBasePawnKind_Space">
+    <defName>MCW_HuntedMincho_QS1</defName>
+    <label>遭到追捕的珉巧</label>
+    <combatPower>80</combatPower>
+    <requiredWorkTags>
+      <li>Violent</li>
+      <li>Cooking</li>
+      <li>Social</li>
+    </requiredWorkTags>
+  </PawnKindDef>
+</Defs>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    任务线「珉巧同盟」的入口。
+
+    On_Game_Start 由 StellarisEventFlagManager.StartedNewGame() → NotifyNewGameStarted()
+    驱动，只在新游戏开始后的第一个 tick 派发一次，读档不会重发。
+    所以这个询问窗口每局新游戏只问一次。
+
+    参考写法：OrdinulDragonului 的 1.6/Main/Defs/OnActionDefs/PDROD_OnAction.xml
+      <PDR.OnActionDef><action>On_Game_Start</action><triggerList>…</triggerList></PDR.OnActionDef>
+    那边同样是用一个"要不要玩主线"的窗口，选项里 Effect_FireIncident 直接开任务。
+  -->
+  <MinchoCandyWars.StellarisEvent.OnActionDef>
+    <defName>MCW_OnAction_GameStart</defName>
+    <action>On_Game_Start</action>
+    <triggerList>
+      <li>MCW_Event_QS1_StartStory</li>
+    </triggerList>
+  </MinchoCandyWars.StellarisEvent.OnActionDef>
+</Defs>

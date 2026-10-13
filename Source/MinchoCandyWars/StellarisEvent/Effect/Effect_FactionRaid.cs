@@ -1,3 +1,4 @@
+#nullable disable
 using UnityEngine;
 using Verse;
 using RimWorld;
@@ -12,7 +13,7 @@ namespace MinchoCandyWars.StellarisEvent
     ///
     /// XML 示例 1 —— 直接指定派系:
     ///   &lt;li Class="MinchoCandyWars.StellarisEvent.Effect_FactionRaid"&gt;
-    ///     &lt;factionDef&gt;ARA_MinchoCandyWars&lt;/factionDef&gt;
+    ///     &lt;factionDef&gt;ARA_ArachnaeSwarm&lt;/factionDef&gt;
     ///     &lt;points&gt;500&lt;/points&gt;
     ///   &lt;/li&gt;
     ///
@@ -44,14 +45,14 @@ namespace MinchoCandyWars.StellarisEvent
     public class Effect_FactionRaid : StellarisEventEffect
     {
         /// <summary>派系定义（直接指定）</summary>
-        public FactionDef? factionDef;
+        public FactionDef factionDef;
 
         /// <summary>
         /// 可选：从 String flag 中读取派系 defName。
         /// 若指定了此字段，将覆盖 factionDef 直接指定的值。
         /// flag 值应为 FactionDef 的 defName 字符串。
         /// </summary>
-        public string? factionFlagName;
+        public string factionFlagName;
 
         /// <summary>
         /// 袭击点数。负数表示使用当前故事叙述者难度下的默认威胁点数。
@@ -63,13 +64,13 @@ namespace MinchoCandyWars.StellarisEvent
         /// 指定袭击单位种类。非空则整场袭击仅由该种类单位组成。
         /// 为空则按派系正常 PawnGroup 生成混合单位。
         /// </summary>
-        public PawnKindDef? pawnKindDef;
+        public PawnKindDef pawnKindDef;
 
         /// <summary>
         /// 到达方式 defName（如 "EdgeWalkIn", "CenterDrop", "RandomDrop", "EdgeDrop" 等）。
         /// 为空则随机选择。
         /// </summary>
-        public string? arrivalMode;
+        public string arrivalMode;
 
         /// <summary>
         /// 袭击是否可以因时间过长而自行撤退。默认 true。
@@ -81,13 +82,16 @@ namespace MinchoCandyWars.StellarisEvent
         /// 自定义通知标题。支持 {key} 占位（由 immediate 阶段的 localParams 注入）。
         /// 为空则使用默认标题。
         /// </summary>
-        public string? customLetterLabel;
+        public string customLetterLabel;
 
         /// <summary>
         /// 自定义通知文本。支持 {key} 占位（由 immediate 阶段的 localParams 注入）。
         /// 为空则使用默认文本。
         /// </summary>
-        public string? customLetterText;
+        public string customLetterText;
+
+        // 袭击策略
+        public RaidStrategyDef raidStrategy;
 
         // ──────────────────── Execute ────────────────────
 
@@ -123,6 +127,7 @@ namespace MinchoCandyWars.StellarisEvent
             parms.points = raidPoints;
             parms.forced = true;
             parms.canTimeoutOrFlee = canTimeoutOrFlee;
+            parms.raidStrategy = raidStrategy ?? RaidStrategyDefOf.ImmediateAttack; // 默认使用即时攻击策略
 
             // ── 单一种类袭击 ──
             if (pawnKindDef != null)
@@ -165,7 +170,7 @@ namespace MinchoCandyWars.StellarisEvent
             // Priority 1: 从 String flag 读取派系 defName
             if (!factionFlagName.NullOrEmpty())
             {
-                var flag = StellarisEventFlagManager.GetFlag(factionFlagName!);
+                var flag = StellarisEventFlagManager.GetFlag(factionFlagName);
                 if (flag != null && flag.valueType == FlagValueType.String && !flag.stringValue.NullOrEmpty())
                 {
                     var def = DefDatabase<FactionDef>.GetNamedSilentFail(flag.stringValue);
@@ -182,7 +187,7 @@ namespace MinchoCandyWars.StellarisEvent
             if (factionDef != null)
                 return Find.FactionManager.FirstFactionOfDef(factionDef);
 
-            return null!;
+            return null;
         }
     }
 }

@@ -1,3 +1,4 @@
+#nullable disable
 using Verse;
 
 namespace MinchoCandyWars.StellarisEvent
@@ -33,7 +34,7 @@ namespace MinchoCandyWars.StellarisEvent
     public class StellarisEventFlag : IExposable
     {
         /// <summary>Flag 唯一标识名</summary>
-        public string? name;
+        public string name;
 
         /// <summary>数据类型</summary>
         public FlagValueType valueType;
@@ -42,7 +43,7 @@ namespace MinchoCandyWars.StellarisEvent
         public float floatValue;
 
         /// <summary>string 值（valueType == String 时有效）</summary>
-        public string? stringValue;
+        public string stringValue;
 
         /// <summary>bool 值（valueType == Bool 时有效）</summary>
         public bool boolValue;
@@ -110,10 +111,10 @@ namespace MinchoCandyWars.StellarisEvent
             switch (valueType)
             {
                 case FlagValueType.Float:  return floatValue;
-                case FlagValueType.String: return stringValue!;
+                case FlagValueType.String: return stringValue;
                 case FlagValueType.Bool:   return boolValue;
                 case FlagValueType.Thing:  return ResolveThing();
-                default:                   return null!;
+                default:                   return null;
             }
         }
 
@@ -124,7 +125,7 @@ namespace MinchoCandyWars.StellarisEvent
         /// </summary>
         public Thing ResolveThing()
         {
-            if (thingID < 0) return null!;
+            if (thingID < 0) return null;
             foreach (Map map in Find.Maps)
             {
                 foreach (Thing t in map.listerThings.AllThings)
@@ -133,7 +134,7 @@ namespace MinchoCandyWars.StellarisEvent
                         return t;
                 }
             }
-            return null!;
+            return null;
         }
 
         /// <summary>
@@ -178,10 +179,10 @@ namespace MinchoCandyWars.StellarisEvent
 
         public void ExposeData()
         {
-            Scribe_Values.Look(ref name!, "name");
+            Scribe_Values.Look(ref name, "name");
             Scribe_Values.Look(ref valueType, "valueType");
             Scribe_Values.Look(ref floatValue, "floatValue");
-            Scribe_Values.Look(ref stringValue!, "stringValue");
+            Scribe_Values.Look(ref stringValue, "stringValue");
             Scribe_Values.Look(ref boolValue, "boolValue");
             Scribe_Values.Look(ref thingID, "thingID", -1);
 

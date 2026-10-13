@@ -1,4 +1,7 @@
+#nullable disable
+using System;
 using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 
 namespace MinchoCandyWars.StellarisEvent
@@ -12,14 +15,14 @@ namespace MinchoCandyWars.StellarisEvent
     {
         // ──────────────────── 单例 ────────────────────
 
-        public static StellarisEventFlagManager? Instance { get; private set; }
+        public static StellarisEventFlagManager Instance { get; private set; }
 
         // ──────────────────── 内部存储 ────────────────────
 
         /// <summary>运行时字典，key = flag.name</summary>
         private Dictionary<string, StellarisEventFlag> flags = new Dictionary<string, StellarisEventFlag>();
 
-        /// <summary>延时触发登记表，key = flag name（与定时 flag 同名）</summary>
+        /// <summary>延时触发登记表，key = flag name</summary>
         private Dictionary<string, DelayedFireEntry> delayedFires = new Dictionary<string, DelayedFireEntry>();
 
         /// <summary>待移除队列，避免在遍历中直接移除</summary>
@@ -27,6 +30,9 @@ namespace MinchoCandyWars.StellarisEvent
 
         /// <summary>Thing 状态检查间隔（tick 数）</summary>
         private const int ThingCheckInterval = 250;
+
+        /// <summary>是否已尝试从存档恢复过事件窗口</summary>
+        private bool windowRestoreAttempted;
 
         /// <summary>下次 Thing 状态检查的 tick</summary>
         private int nextThingCheckTick;
@@ -56,6 +62,23 @@ namespace MinchoCandyWars.StellarisEvent
 
         public override void GameComponentTick()
         {
+            // ── 新游戏开始后首个 tick：派发一次性 onAction 信号（On_Game_Start） ──
+            StellarisEventManager.TickGameStartAction();
+
+            // ── 存档加载后首个 tick：恢复未关闭的事件窗口 ──
+            if (!windowRestoreAttempted)
+            {
+                windowRestoreAttempted = true;
+                TryRestorePendingWindow();
+                StellarisEventManager.TryRestorePendingToast();
+            }
+
+            // ── 吐司窗口 Tick ──
+            StellarisEventManager.TickToasts();
+
+            // ── 周期触发器 Tick（每日/每月/每年/Anytime） ──
+            StellarisEventManager.TickPeriodicTriggers();
+
             pendingRemoval.Clear();
 
             foreach (var kvp in flags)
@@ -73,10 +96,6 @@ namespace MinchoCandyWars.StellarisEvent
             {
                 if (delayedFires.TryGetValue(key, out var entry))
                 {
-                    // 打印调试日志
-                    if (Prefs.DevMode)
-                        Verse.Log.Message($"[StellarisEvent] 延时触发到期: '{entry.eventDefName}' (flag={key})");
-
                     FireDelayedEvent(entry);
                     delayedFires.Remove(key);
                 }
@@ -100,25 +119,28 @@ namespace MinchoCandyWars.StellarisEvent
                 flags.Remove(key);
         }
 
-        /// <summary>
-        /// 执行延时触发：点火目标事件。
-        /// forceFire 时跳过 trigger 判定直接开窗。
-        /// </summary>
+        // ──────────────────── 延时触发 ────────────────────
+
         private static void FireDelayedEvent(DelayedFireEntry entry)
         {
             var targetDef = StellarisEventManager.GetEvent(entry.eventDefName);
-            if (targetDef == null)
-            {
-                Verse.Log.Warning($"[StellarisEvent] 延时触发失败: 未找到事件 '{entry.eventDefName}'");
-                return;
-            }
+            if (targetDef == null) return;
 
             if (entry.forceFire)
             {
                 targetDef.immediate?.Execute();
                 targetDef.SelectRandomPicture();
                 targetDef.LoadBackgroundTexture();
-                Verse.Find.WindowStack.Add(new StellarisEventWindow(targetDef));
+                if (targetDef.isToastEvent)
+                    StellarisEventManager.EnqueueToastEvent(targetDef);
+                else
+                {
+                    StellarisEventManager.PendingWindowEventDefName = targetDef.defName;
+                    if (targetDef.isSuperEvent)
+                        Verse.Find.WindowStack.Add(new StellarisSuperEventWindow(targetDef));
+                    else
+                        Verse.Find.WindowStack.Add(new StellarisEventWindow(targetDef));
+                }
             }
             else
             {
@@ -126,11 +148,25 @@ namespace MinchoCandyWars.StellarisEvent
             }
         }
 
+        public static void ScheduleDelayedFire(string eventDefName, int delayTicks, bool forceFire)
+        {
+            if (Instance == null || eventDefName.NullOrEmpty() || delayTicks <= 0) return;
+
+            string flagName = $"__delayed_fire_{eventDefName}_{Verse.Find.TickManager.TicksGame}_{Verse.Rand.Int}";
+            SetFlag(flagName, (float)delayTicks, delayTicks);
+            Instance.delayedFires[flagName] = new DelayedFireEntry(eventDefName, forceFire);
+        }
+
         // ──────────────────── 存档 ────────────────────
 
         public override void ExposeData()
         {
             base.ExposeData();
+
+            // ── 待恢复窗口状态（在 flag 之前处理，独立于模式分支） ──
+            string pendingEvent = StellarisEventManager.PendingWindowEventDefName;
+            Scribe_Values.Look(ref pendingEvent, "pendingStellarisEventWindow");
+            StellarisEventManager.PendingWindowEventDefName = pendingEvent;
 
             if (Scribe.mode == LoadSaveMode.Saving)
             {
@@ -141,11 +177,43 @@ namespace MinchoCandyWars.StellarisEvent
 
                 Scribe_Collections.Look(ref flagList, "flagList", LookMode.Deep);
 
-                // 保存 delayed fires：转为 list of string "flagName|eventDefName|forceFire"
+                // 保存 delayed fires
                 var delayedFireList = new List<string>();
                 foreach (var kvp in delayedFires)
                     delayedFireList.Add($"{kvp.Key}|{kvp.Value.eventDefName}|{kvp.Value.forceFire}");
                 Scribe_Collections.Look(ref delayedFireList, "delayedFireList", LookMode.Value);
+
+                // ── 保存吐司队列状态 ──
+                string activeToastName = StellarisEventManager.ActiveToastDefName;
+                Scribe_Values.Look(ref activeToastName, "activeToastDefName");
+
+                var toastQueueList = new List<string>(StellarisEventManager.ToastQueueDefNames);
+                Scribe_Collections.Look(ref toastQueueList, "toastQueueList", LookMode.Value);
+
+                bool hasToastPos = StellarisEventManager.HasSavedToastPosition;
+                Scribe_Values.Look(ref hasToastPos, "hasToastPos");
+                if (hasToastPos)
+                {
+                    Vector2 pos = StellarisEventManager.SavedToastPosition;
+                    Scribe_Values.Look(ref pos.x, "toastPosX");
+                    Scribe_Values.Look(ref pos.y, "toastPosY");
+                }
+
+                // ── 保存周期触发器状态 ──
+                int dayTick = StellarisEventManager.LastDayTriggerTick;
+                Scribe_Values.Look(ref dayTick, "lastDayTriggerTick");
+
+                int monthTick = StellarisEventManager.LastMonthTriggerTick;
+                Scribe_Values.Look(ref monthTick, "lastMonthTriggerTick");
+
+                int yearTick = StellarisEventManager.LastYearTriggerTick;
+                Scribe_Values.Look(ref yearTick, "lastYearTriggerTick");
+
+                int anytimeDay = StellarisEventManager.LastAnytimeTriggerDay;
+                Scribe_Values.Look(ref anytimeDay, "lastAnytimeTriggerDay");
+
+                int anytimeTick = StellarisEventManager.AnytimeTargetTick;
+                Scribe_Values.Look(ref anytimeTick, "anytimeTargetTick");
             }
             else if (Scribe.mode == LoadSaveMode.LoadingVars)
             {
@@ -158,7 +226,7 @@ namespace MinchoCandyWars.StellarisEvent
                     foreach (var f in flagList)
                     {
                         if (f != null && !f.name.NullOrEmpty())
-                            flags[f.name!] = f;
+                            flags[f.name] = f;
                     }
                 }
 
@@ -180,6 +248,99 @@ namespace MinchoCandyWars.StellarisEvent
                         }
                     }
                 }
+
+                // ── 加载吐司队列状态（延迟到首个 GameComponentTick 恢复） ──
+                string activeToastName = null;
+                Scribe_Values.Look(ref activeToastName, "activeToastDefName");
+
+                var toastQueueList = new List<string>();
+                Scribe_Collections.Look(ref toastQueueList, "toastQueueList", LookMode.Value);
+
+                bool hasToastPos = false;
+                Scribe_Values.Look(ref hasToastPos, "hasToastPos");
+                Vector2 savedPos = Vector2.zero;
+                if (hasToastPos)
+                {
+                    Scribe_Values.Look(ref savedPos.x, "toastPosX");
+                    Scribe_Values.Look(ref savedPos.y, "toastPosY");
+                }
+
+                // 暂存数据，由 GameComponentTick 首个 tick 调用 TryRestorePendingToast
+                if (!activeToastName.NullOrEmpty() || (toastQueueList != null && toastQueueList.Count > 0))
+                {
+                    StellarisEventManager.StorePendingToastRestoreData(
+                        activeToastName, StellarisEventManager.ToastDurationSeconds,
+                        toastQueueList, savedPos, hasToastPos);
+                }
+
+                // ── 加载周期触发器状态 ──
+                int dayTick = -1;
+                Scribe_Values.Look(ref dayTick, "lastDayTriggerTick");
+                StellarisEventManager.LastDayTriggerTick = dayTick;
+
+                int monthTick = -1;
+                Scribe_Values.Look(ref monthTick, "lastMonthTriggerTick");
+                StellarisEventManager.LastMonthTriggerTick = monthTick;
+
+                int yearTick = -1;
+                Scribe_Values.Look(ref yearTick, "lastYearTriggerTick");
+                StellarisEventManager.LastYearTriggerTick = yearTick;
+
+                int anytimeDay = -1;
+                Scribe_Values.Look(ref anytimeDay, "lastAnytimeTriggerDay");
+                StellarisEventManager.LastAnytimeTriggerDay = anytimeDay;
+
+                int anytimeTick = -1;
+                Scribe_Values.Look(ref anytimeTick, "anytimeTargetTick");
+                StellarisEventManager.AnytimeTargetTick = anytimeTick;
+            }
+            else if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                // 读档后重置"窗口恢复尝试"标志：
+                // GameComponent 实例在存档→读档时被复用（不重建），若此处不重置，
+                // windowRestoreAttempted 保持 true，同会话内直接读档时 TryRestorePendingWindow
+                // 不会再次执行，导致悬而未决的事件窗口无法恢复。
+                windowRestoreAttempted = false;
+            }
+        }
+
+        public override void StartedNewGame()
+        {
+            base.StartedNewGame();
+            windowRestoreAttempted = false;
+            StellarisEventManager.ResetToastState();
+            StellarisEventManager.ResetPeriodicTriggers();
+            StellarisEventManager.ResetOnActionCounts();
+            StellarisEventManager.NotifyNewGameStarted();
+        }
+
+        // ── 窗口恢复 ──
+
+        /// <summary>
+        /// 从存档中恢复未关闭的事件窗口（跳过 trigger 和 immediate）。
+        /// 仅在 GameComponentTick 首个 tick 调用。
+        /// </summary>
+        private void TryRestorePendingWindow()
+        {
+            string defName = StellarisEventManager.PendingWindowEventDefName;
+            if (defName.NullOrEmpty()) return;
+
+            var def = DefDatabase<StellarisEventDef>.GetNamedSilentFail(defName);
+            if (def == null)
+            {
+                Log.Warning($"[StellarisEvent] 无法恢复事件窗口: Def '{defName}' 不存在（可能 mod 已移除）");
+                StellarisEventManager.PendingWindowEventDefName = null;
+                return;
+            }
+
+            try
+            {
+                def.RestoreWindow();
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"[StellarisEvent] 恢复事件窗口 '{defName}' 时发生异常: {ex}");
+                StellarisEventManager.PendingWindowEventDefName = null;
             }
         }
 
@@ -229,7 +390,7 @@ namespace MinchoCandyWars.StellarisEvent
         /// </summary>
         public static StellarisEventFlag GetFlag(string name)
         {
-            if (Instance == null || name.NullOrEmpty()) return null!;
+            if (Instance == null || name.NullOrEmpty()) return null;
             Instance.flags.TryGetValue(name, out var flag);
             return flag;
         }
@@ -240,7 +401,7 @@ namespace MinchoCandyWars.StellarisEvent
         public static Thing GetTrackedThing(string name)
         {
             var flag = GetFlag(name);
-            if (flag == null || flag.valueType != FlagValueType.Thing) return null!;
+            if (flag == null || flag.valueType != FlagValueType.Thing) return null;
             return flag.ResolveThing();
         }
 
@@ -351,31 +512,6 @@ namespace MinchoCandyWars.StellarisEvent
                 default:
                     return false;
             }
-        }
-
-        /// <summary>
-        /// 注册一个延时触发：创建定时 flag 并在到期后自动点火目标事件。
-        /// 内部创建一个唯一命名的 float flag（值 = delayTicks）作为计时器，
-        /// 同时登记 delayed fire 条目。到期时 GameComponentTick 自动点火。
-        /// </summary>
-        /// <param name="eventDefName">目标事件 defName</param>
-        /// <param name="delayTicks">延迟 tick 数</param>
-        /// <param name="forceFire">是否跳过 trigger 判定</param>
-        public static void ScheduleDelayedFire(string eventDefName, int delayTicks, bool forceFire)
-        {
-            if (Instance == null || eventDefName.NullOrEmpty() || delayTicks <= 0) return;
-
-            // 生成唯一 flag 名，确保多次 Schedule 不冲突
-            string flagName = $"__delayed_fire_{eventDefName}_{Verse.Find.TickManager.TicksGame}_{Verse.Rand.Int}";
-
-            // 创建定时 flag（float 值仅占位，实际使用 remainingTicks 计时）
-            SetFlag(flagName, (float)delayTicks, delayTicks);
-
-            // 登记 delayed fire
-            Instance.delayedFires[flagName] = new DelayedFireEntry(eventDefName, forceFire);
-
-            if (Verse.Prefs.DevMode)
-                Verse.Log.Message($"[StellarisEvent] 注册延时触发: '{eventDefName}' 将在 {delayTicks} tick 后触发 (flag={flagName})");
         }
 
         /// <summary>
