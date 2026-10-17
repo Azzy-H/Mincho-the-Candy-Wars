@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       本 mod 的场景部件定义（供场景 XML 的 <def> 引用）
+       selectionWeight = 0：不进入随机场景池，只能由本 mod 的场景使用。
+       ============================================================ -->
+  <ScenPartDef>
+    <defName>MCW_StartWithSmartMincho</defName>
+    <label>start with smart mincho</label>
+    <scenPartClass>MinchoCandyWars.ScenPart_StartWithSmartMincho</scenPartClass>
+    <selectionWeight>0</selectionWeight>
+    <summaryPriority>510</summaryPriority>
+    <category>Fixed</category>
+  </ScenPartDef>
+
+  <!-- ============================================================
+       场景：智慧珉巧
+       内容 = 主 mod 的「Mincho's colony」(Mincho_Scenario) 开局，
+       仅把起始四人组中的一人换成智慧珉巧：
+         · 原：ScenPart_ConfigPage_ConfigureStartingPawns（4 人自由选择）
+         · 现：ScenPart_ConfigPage_ConfigureStartingPawns_KindDefs
+               （1 × MCW_SmartMincho + 3 × Mincho_Colonist，均可 reroll）
+         · 另加 ScenPart_StartWithSmartMincho 把前者激活为智慧珉巧
+       其余起始物资 / 宠物 / 散布物 / 开场白与主 mod 完全一致。
+
+       ⚠️ KindDefs 版配置页的 ScenPartDef（ConfigurePawnsKindDefs）属于
+          Biotech DLC，故本场景声明 MayRequire。
+       ============================================================ -->
+  <ScenarioDef ParentName="ScenarioBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>MCW_Scenarios</defName>
+    <label>智慧珉巧</label>
+    <description>出于某种原因，离开人类身边的珉巧们聚到了一起，组成了一个小小的聚落。她们用从人类那里学来的本领共同生活。\n\n而这一群珉巧之中，有一位觉醒了智慧核心——她将带领同伴们走得更远。</description>
+    <scenario>
+      <summary>4位珉巧共同生活的开局，其中一人是智慧珉巧。</summary>
+
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>Mincho_PlayerFaction</factionDef>
+      </playerFaction>
+
+      <parts>
+        <!-- ===== 起始 pawn：1 智慧珉巧 + 3 普通珉巧（精确指定，可 reroll） ===== -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_KindDefs">
+          <def>ConfigurePawnsKindDefs</def>
+          <pawnChoiceCount>8</pawnChoiceCount>
+          <kindCounts>
+            <li>
+              <kindDef>MCW_SmartMincho</kindDef>
+              <count>1</count>
+              <requiredAtStart>true</requiredAtStart>
+            </li>
+            <li>
+              <kindDef>Mincho_Colonist</kindDef>
+              <count>3</count>
+              <requiredAtStart>true</requiredAtStart>
+            </li>
+          </kindCounts>
+        </li>
+
+        <!-- ===== 把上一步生成的智慧珉巧 pawnkind 激活为真正的智慧珉巧 ===== -->
+        <li Class="MinchoCandyWars.ScenPart_StartWithSmartMincho">
+          <def>MCW_StartWithSmartMincho</def>
+          <kindDefs>
+            <li>MCW_SmartMincho</li>
+          </kindDefs>
+        </li>
+
+        <!-- ================= 以下与主 mod 开局一致 ================= -->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+        </li>
+
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>800</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>40</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Mincho_MintchocoHalfGallon</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gun_BoltActionRifle</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gun_Revolver</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MeleeWeapon_Knife</thingDef>
+          <stuff>Plasteel</stuff>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Mincho_CupHat</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Mincho_Knitwear</thingDef>
+          <stuff>Cloth</stuff>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingAnimal">
+          <def>StartingAnimal</def>
+          <animalKind>Mincho_Minmoong</animalKind>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>Steel</thingDef>
+          <count>450</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>300</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>ShipChunk</thingDef>
+          <count>3</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>Steel</thingDef>
+          <count>720</count>
+        </li>
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>每天聊聊薄荷巧克力是很好，但光靠这些，生活里还缺很多很多东西……</text>
+          <textKey>MCW_GameStartDialog</textKey>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>7</count>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Royalty" Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Mincho_ArcanePotion</thingDef>
+          <count>10</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Mincho_Humanlike_Cookie</thingDef>
+          <count>5</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Mincho_Slime_Cookie</thingDef>
+          <count>5</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Mincho_Mintchoco_Cookie</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Mincho_BluePolarBear_Cookie</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Mincho_PinkFallInLove_Cookie</thingDef>
+          <count>1</count>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+
+</Defs>

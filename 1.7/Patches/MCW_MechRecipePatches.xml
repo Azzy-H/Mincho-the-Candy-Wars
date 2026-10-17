@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- ============================================================
+       把 MCW_Mech 系列的培育配方加入「机械培育器」（基础型）。
+       ============================================================ -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MechGestator"]/recipes</xpath>
+    <value>
+      <li>MCW_Mech_I_Maid_Recipe</li>
+      <li>MCW_Mech_II_Maid_Recipe</li>
+      <li>MCW_Mech_Battle_Recipe</li>
+      <li>MCW_Mech_Defender_Recipe</li>
+      <li>MCW_Mech_Gunner_Recipe</li>
+    </value>
+  </Operation>
+</Patch>

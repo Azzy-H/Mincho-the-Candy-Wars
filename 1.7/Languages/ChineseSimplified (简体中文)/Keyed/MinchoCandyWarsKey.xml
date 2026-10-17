@@ -7,4 +7,8 @@
   <MCW_NotMincho>不是珉巧</MCW_NotMincho>
   <MCW_MinchoCoreNotActive>珉巧核心未激活</MCW_MinchoCoreNotActive>
   <MCW_CandyChangeExhaustion>无法在虚弱状态下进行糖饰更换</MCW_CandyChangeExhaustion>
+
+  <!-- 场景 -->
+  <MCW_ScenPart_StartWithSmartMincho>其中一名珉巧拥有智慧核心</MCW_ScenPart_StartWithSmartMincho>
+  <MCW_GameStartDialog>每天聊聊薄荷巧克力是很好，但光靠这些，生活里还缺很多很多东西……</MCW_GameStartDialog>
 </LanguageData>

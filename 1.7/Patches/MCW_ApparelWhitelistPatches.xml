@@ -3,10 +3,6 @@
 
   <!-- ============================================================
        珉巧种族装备白名单
-       主 mod 的 Mincho_ThingDef 启用了
-         <onlyUseRaceRestrictedApparel>true</onlyUseRaceRestrictedApparel>
-       珉巧只能穿戴 apparelList 中列出的装备，本 mod 新增的衣物与盾牌
-       必须加入该列表才能被珉巧穿戴。
        ============================================================ -->
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/alienRace/raceRestriction/apparelList</xpath>

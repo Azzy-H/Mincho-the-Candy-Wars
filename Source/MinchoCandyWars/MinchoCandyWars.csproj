@@ -1,13 +1,33 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+	<!--
+	  Mincho, the Candy Wars —— RimWorld 1.7 / Waylith（CoreCLR, net10）构建配置。
+	  共享路径（ModRoot / RimWorldDir / ManagedDir / HarmonyAssembly / ModAssembliesDir）
+	  来自 Source/Directory.Build.props，改路径前先读它。
+
+	  与旧的 1.6 配置的差异：
+	    * TargetFramework 必须 net10.0（1.7 程序集引用 System.Runtime 10.0.0.0）
+	    * 不再使用 Krafs.Rimworld.Ref / Lib.Harmony.Ref 包，改为直接引用游戏根目录的
+	      Assembly-CSharp.dll / UnityStubs.dll / RimWorld.dll 与 Harmony 1.7 载荷
+	    * 不再引用任何 UnityEngine.*Module.dll（1.7 不存在）
+	    * 不产出 deps.json / runtimeconfig.json / apphost（由 WaylithClr 加载）
+	-->
+
 	<PropertyGroup>
-		<TargetFramework>net472</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<LangVersion>Latest</LangVersion>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-		<OutputPath>..\..\1.6\Assemblies</OutputPath>
+		<OutputPath>$(ModAssembliesDir)\</OutputPath>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
+		<UseAppHost>false</UseAppHost>
+		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+		<DebugType>portable</DebugType>
+		<!-- 游戏程序集由不同编译器产出，跨程序集告警是预期的 -->
+		<NoWarn>$(NoWarn);CS0649;CS0169;CS0414;CS1591;MSB3277</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,9 +40,29 @@
 	  <Compile Remove="Buff\MinchoCandyBuffDef.cs" />
 	</ItemGroup>
 
+	<!-- 每个引用都由游戏或 Harmony 在运行时提供；Private=false 让它们不复制进输出目录 -->
 	<ItemGroup>
-	  <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4633" />
-	  <PackageReference Include="Lib.Harmony.Ref" Version="2.4.2" />
+	  <Reference Include="Assembly-CSharp">
+	    <HintPath>$(ManagedDir)\Assembly-CSharp.dll</HintPath>
+	    <Private>false</Private>
+	  </Reference>
+	  <Reference Include="UnityStubs">
+	    <HintPath>$(ManagedDir)\UnityStubs.dll</HintPath>
+	    <Private>false</Private>
+	  </Reference>
+	  <!-- 1.7 的渲染层：UnityEngine.Material 等类型由它提供（UnityStubs 只覆盖一部分） -->
+	  <Reference Include="Waylith">
+	    <HintPath>$(ManagedDir)\Waylith.dll</HintPath>
+	    <Private>false</Private>
+	  </Reference>
+	  <Reference Include="RimWorld">
+	    <HintPath>$(ManagedDir)\RimWorld.dll</HintPath>
+	    <Private>false</Private>
+	  </Reference>
+	  <Reference Include="0Harmony">
+	    <HintPath>$(HarmonyAssembly)</HintPath>
+	    <Private>false</Private>
+	  </Reference>
 	</ItemGroup>
 
 </Project>

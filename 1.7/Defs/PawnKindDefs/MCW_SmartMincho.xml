@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef ParentName="MinchoBasePawnKind_Player">
+    <defName>MCW_SmartMincho</defName>
+    <label>smart mincho</label>
+    <apparelRequired>
+      <li>Mincho_Knitwear</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>Mincho_Colonist</li>
+    </apparelTags>
+    <backstoryFiltersOverride>
+      <li>
+        <categories>
+          <li>Mincho_BackstoryTag</li>
+        </categories>
+      </li>
+    </backstoryFiltersOverride>
+		<startingHediffs>
+			<li>
+				<def>MCW_Intel</def>
+			</li>
+		</startingHediffs>
+  </PawnKindDef>
+  <AlienRace.RaceSettings MayRequire="erdelf.HumanoidAlienRaces">
+    <defName>MCW_RaceSettings</defName>
+    <pawnKindSettings>
+      <startingColonists>
+        <li>
+          <pawnKindEntries>
+            <li>
+              <kindDefs>
+                <li>MCW_SmartMincho</li>
+              </kindDefs>
+              <chance>100.0</chance>
+            </li>
+          </pawnKindEntries>
+          <factionDefs>
+            <li>Mincho_PlayerFaction</li>
+          </factionDefs>
+        </li>
+      </startingColonists>
+    </pawnKindSettings>
+  </AlienRace.RaceSettings>
+</Defs>

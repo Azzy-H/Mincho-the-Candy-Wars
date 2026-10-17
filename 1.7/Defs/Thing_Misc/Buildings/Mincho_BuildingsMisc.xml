@@ -39,7 +39,7 @@
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <pathCost>30</pathCost>
     <passability>PassThroughOnly</passability>
-    <designationCategory>Misc</designationCategory>
+    <designationCategory>Mincho_Furniture</designationCategory>
     <uiOrder>2070</uiOrder>
     <rotatable>true</rotatable>
     <designationHotKey>Misc7</designationHotKey>
@@ -79,6 +79,7 @@
   <!-- 床头柜 -->
   <ThingDef ParentName="TableBase">
     <defName>MCW_EndTable</defName>
+    <designationCategory>Mincho_Furniture</designationCategory>
     <label>薄荷冰淇淋床头柜</label>
     <description>睁眼就能见到美味的薄荷冰淇淋，天下还有比这更幸福的事情吗？</description>
     <surfaceType>Item</surfaceType>
@@ -125,6 +126,7 @@
   </ThingDef>
   <ThingDef ParentName="TableBase">
     <defName>MCW_Cabinet</defName>
+    <designationCategory>Mincho_Furniture</designationCategory>
     <label>巧克力矮柜</label>
     <description>听说有一位珉巧被称为糖果女巫，而她的家，都是巧克力做的！</description>
     <surfaceType>Item</surfaceType>
@@ -203,12 +205,13 @@
       <Mincho_ChocoStick>120</Mincho_ChocoStick>
     </costList>
     <size>(4,2)</size>
-    <designationCategory>Misc</designationCategory>
+    <designationCategory>Mincho_Furniture</designationCategory>
   </ThingDef>
 
   <!-- 桌椅 -->
 	<ThingDef ParentName="TableGatherSpotBase">
 		<defName>MCW_MinchoTable2x2c</defName>
+		<designationCategory>Mincho_Furniture</designationCategory>
 		<label>mincho table (2x2)</label>
 		<description>A sturdy 2x2 table styled for Mincho settlements.</description>
 		<graphicData>
@@ -244,6 +247,7 @@
 	</ThingDef>
 	<ThingDef ParentName="FurnitureWithQualityBase">
 		<defName>MCW_MinchoStool</defName>
+		<designationCategory>Mincho_Furniture</designationCategory>
 		<label>mincho stool</label>
 		<description>A compact stool styled for Mincho settlements.</description>
 		<replaceTags>
@@ -305,6 +309,7 @@
 	</ThingDef>
 	<ThingDef ParentName="FurnitureWithQualityBase">
 		<defName>MCW_MinchoCouch</defName>
+		<designationCategory>Mincho_Furniture</designationCategory>
 		<label>mincho couch</label>
 		<description>A comfortable seat styled for Mincho settlements.</description>
 		<replaceTags>
@@ -367,6 +372,7 @@
   <!-- 地板 -->
 	<TerrainDef ParentName="FloorBase">
 		<defName>MCW_MinchoFloorA</defName>
+		<designationCategory>Mincho_Furniture</designationCategory>
 		<label>mincho floor A</label>
 		<description>A durable floor pattern for Mincho settlements.</description>
 		<renderPrecedence>230</renderPrecedence>
@@ -391,6 +397,7 @@
 	</TerrainDef>
 	<TerrainDef ParentName="FloorBase">
 		<defName>MCW_MinchoFloorB</defName>
+		<designationCategory>Mincho_Furniture</designationCategory>
 		<label>mincho floor B</label>
 		<description>A durable floor pattern for Mincho settlements.</description>
 		<renderPrecedence>230</renderPrecedence>
@@ -415,6 +422,7 @@
 	</TerrainDef>
 	<TerrainDef ParentName="FloorBase">
 		<defName>MCW_MinchoFloorC</defName>
+		<designationCategory>Mincho_Furniture</designationCategory>
 		<label>mincho floor C</label>
 		<description>A durable floor pattern for Mincho settlements.</description>
 		<renderPrecedence>230</renderPrecedence>
@@ -481,7 +489,7 @@
     <interactionCellOffset>(0,0,2)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <designationCategory>Misc</designationCategory>
+    <designationCategory>Mincho_Furniture</designationCategory>
     <uiOrder>2100</uiOrder>
     <comps>
       <li Class="CompProperties_Power">

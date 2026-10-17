@@ -3,7 +3,6 @@
 	<name>Mincho,the Candy Wars</name>
 	<author>CandyWars制作组</author>
 	<supportedVersions>
-		<li>1.6</li>
 		<li>1.7</li>
 	</supportedVersions>
 	<packageId>mincho.the.candy.wars</packageId>

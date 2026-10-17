@@ -1,0 +1,54 @@
+<Project>
+
+  <!--
+    Mincho, the Candy Wars —— RimWorld 1.7 / Waylith（CoreCLR, net10）构建路径配置。
+    参考 ProdrakeRace / OrdinulDragonului 的 Directory.Build.props（同源）。
+
+    ⚠️ RimWorld 1.7 的目录形状与 1.6 完全不同：
+      1.6：<游戏>\RimWorldWin64_Data\Managed\*.dll   （Mono / net48）
+      1.7：**没有 Managed 目录**，所有 DLL 铺在游戏根目录（CoreCLR / net10）
+      所以下面的 ManagedDir 就是游戏根目录本身，这不是笔误。
+
+    随之而来的硬性变化：
+      * TargetFramework 必须是 net10.0（1.7 程序集引用 System.Runtime 10.0.0.0）
+      * 不能引用任何 UnityEngine.*Module.dll（1.7 不存在）——Unity 类型由 UnityStubs.dll 提供，
+        运行时由 WaylithClr 把 UnityEngine* 重定向到 UnityStubs。
+
+    路径全部从本文件位置推导，整个 mod 目录可以整体搬走，
+    只要它还在 <RimWorld>/Mods/<ModName>/ 下面。
+  -->
+  <PropertyGroup>
+    <!-- <RimWorld>/Mods/Mincho-the-Candy-Wars -->
+    <ModRoot Condition="'$(ModRoot)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..'))</ModRoot>
+
+    <!-- <RimWorld>：ModRoot\..\.. -->
+    <RimWorldDir Condition="'$(RimWorldDir)' == ''">$([System.IO.Path]::GetFullPath('$(ModRoot)\..\..'))</RimWorldDir>
+
+    <!-- ⚠️ 1.7 没有 RimWorldWin64_Data\Managed：游戏程序集就在游戏根目录 -->
+    <ManagedDir Condition="'$(ManagedDir)' == ''">$(RimWorldDir)</ManagedDir>
+
+    <!-- <Steam>/steamapps -->
+    <SteamAppsDir Condition="'$(SteamAppsDir)' == ''">$([System.IO.Path]::GetFullPath('$(RimWorldDir)\..\..'))</SteamAppsDir>
+    <WorkshopDir Condition="'$(WorkshopDir)' == ''">$(SteamAppsDir)\workshop\content\294100</WorkshopDir>
+
+    <!-- Harmony 1.7 载荷在 `1.7\Assemblies\`（不是 1.6 的 `Current\Assemblies\`） -->
+    <HarmonyModDir Condition="'$(HarmonyModDir)' == ''">$(WorkshopDir)\2009463077</HarmonyModDir>
+    <HarmonyAssembly Condition="'$(HarmonyAssembly)' == ''">$(HarmonyModDir)\1.7\Assemblies\0Harmony.dll</HarmonyAssembly>
+
+    <!-- 本 mod 只支持 1.7：Def / Patch / 语言 / 程序集统一放在 <mod>\1.7\ 下 -->
+    <ModAssembliesDir Condition="'$(ModAssembliesDir)' == ''">$(ModRoot)\1.7\Assemblies</ModAssembliesDir>
+  </PropertyGroup>
+
+  <!-- 早失败、大声失败：缺引用时直接说清楚缺哪个，而不是退化成一堆 CS0246 -->
+  <Target Name="MCWValidateGameReferences" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="!Exists('$(ManagedDir)\Assembly-CSharp.dll')"
+           Text="找不到 '$(ManagedDir)\Assembly-CSharp.dll'。1.7 的游戏程序集在游戏根目录（没有 Managed 子目录）；请检查 Source/local.props 里的 RimWorldDir。" />
+    <Error Condition="!Exists('$(ManagedDir)\UnityStubs.dll')"
+           Text="找不到 '$(ManagedDir)\UnityStubs.dll'。这是 1.7 才有的 UnityEngine 兼容层；1.6 上不存在，说明 RimWorldDir 指错了。" />
+    <Error Condition="!Exists('$(ManagedDir)\RimWorld.dll')"
+           Text="找不到 '$(ManagedDir)\RimWorld.dll'。这是 1.7 的宿主程序集。" />
+    <Error Condition="!Exists('$(HarmonyAssembly)')"
+           Text="找不到 '$(HarmonyAssembly)'。Harmony 1.7 的载荷在 &lt;workshop&gt;\2009463077\1.7\Assemblies\；请确认已订阅并更新。" />
+  </Target>
+
+</Project>
