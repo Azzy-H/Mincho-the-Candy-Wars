@@ -21,9 +21,6 @@
     <techLevel>Neolithic</techLevel>
     <baseCost>1200</baseCost>
     <tab>MCW_Technology</tab>
-    <heldByFactionCategoryTags>
-      <li>MinchoCandyWars</li>
-    </heldByFactionCategoryTags>
     <researchViewX>0.0</researchViewX>
     <researchViewY>0.0</researchViewY>
   </ResearchProjectDef>
@@ -36,9 +33,6 @@
     <techLevel>Industrial</techLevel>
     <baseCost>1500</baseCost>
     <tab>MCW_Technology</tab>
-    <heldByFactionCategoryTags>
-      <li>MinchoCandyWars</li>
-    </heldByFactionCategoryTags>
     <prerequisites>
       <li>MCW_Research_MinchoBasic</li>
     </prerequisites>
@@ -54,9 +48,6 @@
     <techLevel>Industrial</techLevel>
     <baseCost>4000</baseCost>
     <tab>MCW_Technology</tab>
-    <heldByFactionCategoryTags>
-      <li>MinchoCandyWars</li>
-    </heldByFactionCategoryTags>
     <prerequisites>
       <li>MCW_Research_MinchoBasic</li>
       <li>MicroelectronicsBasics</li>
@@ -64,5 +55,4 @@
     <researchViewX>2.0</researchViewX>
     <researchViewY>0.0</researchViewY>
   </ResearchProjectDef>
-
 </Defs>
