@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    questA5：珉巧同盟紧急联络 —— 事件「拯救珉巧据点」
+    ============================================================================
+    由统一入口 MCW_Event_AllianceGreeting 分流（MCW_NextQuest flag 随机到 A5 时显示）。
+
+    选项：
+      是   → 触发 questB5（IncidentDef MCW_GiveQuest_QuestB5）
+      否   → 沁心糖好感度 -30（惩罚比其它任务更重，因为这是紧急求救）
+    ============================================================================
+  -->
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_QuestA5_AllianceContact</defName>
+    <label>拯救珉巧据点</label>
+    <title>沁心糖</title>
+    <desc>你好！紧急事件！！我们的其中一个据点正在遭受袭击，距离她们最近的就是你们的殖民地，希望你们可以立刻派出增援！</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+      </li>
+    </pictures>
+
+    <immediate>
+      <effects>
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+          <factionDef>MCW_Alliance_Faction</factionDef>
+        </li>
+      </effects>
+    </immediate>
+
+    <options>
+      <li>
+        <label>是-我们立刻出发</label>
+        <desc>接受增援请求，立刻前往被袭击的珉巧据点。</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireIncident">
+              <defName>MCW_GiveQuest_QuestB5</defName>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QuestA5_Accepted</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <li>
+        <label>否-抱歉，我们目前没法帮助你</label>
+        <desc>拒绝增援请求。这是紧急求救，沁心糖对你的好感度会大幅下降。</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_AdjustFactionGoodwill">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <goodwillDelta>-30</goodwillDelta>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QuestA5_Declined</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+          </effects>
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+</Defs>

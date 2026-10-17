@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    questB3：袭击回收部队前哨站
+    ============================================================================
+    由事件 A3 的「是」选项通过 Effect_FireIncident 触发。
+
+    流程：
+      1. 在世界地图上生成一个「前哨据点」站点——直接复用原版 Outpost 站点部件
+         （GenStep_Outpost 会生成完整的营地、围墙与守卫，守卫数量按站点派系的
+         PawnGroupKind 决定，先沿用原版海盗势力）
+      2. 玩家前往据点清理守军
+      3. 站点超时（12~28 天）或消失后任务结束
+
+    TODO（后续）：
+      · 守卫精确配置为「5N 回收队员 + 3 回收队长」（需要自定义 Outpost 生成器或
+        在站点地图生成后追加 spawn）
+      · 到达据点 1 小时后刷新援军（2N 珉巧雇佣兵 + 1N 珉巧精英骑士 + 1 智慧珉巧）
+        —— QuestNode_PawnsArrive 只能作用于玩家主地图，需要自定义 QuestNode 才能
+        把援军放上站点地图
+      · 奖励（智慧改造包/糖饰/物资）、好感度 +10、终局进度 +1
+    ============================================================================
+  -->
+
+  <!-- 触发任务的 IncidentDef -->
+  <IncidentDef>
+    <defName>MCW_GiveQuest_QuestB3</defName>
+    <category>GiveQuest</category>
+    <label>袭击回收部队前哨站</label>
+    <questScriptDef>MCW_QuestB3_RecycleOutpost</questScriptDef>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <baseChance>0</baseChance>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <requireColonistsPresent>true</requireColonistsPresent>
+  </IncidentDef>
+
+  <!-- 任务本体 -->
+  <QuestScriptDef>
+    <defName>MCW_QuestB3_RecycleOutpost</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <defaultChallengeRating>2</defaultChallengeRating>
+    <isRootSpecial>true</isRootSpecial>
+    <defaultCharity>false</defaultCharity>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->袭击回收部队前哨站</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->珉巧同盟正在准备突袭一个回收部队的据点，我们需要在合适的时机去帮助她们。\n\n前往标记的据点，击溃那里的回收部队守军。</li>
+      </rulesStrings>
+    </questDescriptionRules>
+
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="MinchoCandyWars.QuestNodes.QuestNode_SetRandomNextQuest" />
+        <!-- 任务奖励：好感度 +10、终局进度 +1、改造包/糖饰 -->
+        <li Class="MinchoCandyWars.QuestNodes.QuestNode_GiveAllianceReward">
+          <factionDef>MCW_Alliance_Faction</factionDef>
+          <goodwillChange>10</goodwillChange>
+          <endgameProgress>1</endgameProgress>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+
+        <!-- 站点部件：原版前哨据点（自带营地与守卫） -->
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>Outpost</tag>
+            </li>
+          </sitePartsTags>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+          <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+        </li>
+
+        <!-- 玩家进入据点 1 小时后，珉巧同盟援军赶到（生成在站点地图上）：
+             2N 珉巧雇佣兵 + 1N 珉巧精英骑士 + 1 名智慧珉巧。
+             N 不写死：由节点根据玩家主地图财富自动计算
+             （每 wealthPerUnit 财富 +1，默认 12000，夹在 minCount~maxCount 之间）。 -->
+        <li Class="QuestNode_Signal">
+          <inSignal>site.MapGenerated</inSignal>
+          <node Class="QuestNode_Delay">
+            <delayTicks>2500</delayTicks>
+            <node Class="MinchoCandyWars.QuestNodes.QuestNode_SpawnSiteReinforcements">
+              <site>$site</site>
+              <wealthPerUnit>12000</wealthPerUnit>
+              <minCount>2</minCount>
+              <maxCount>6</maxCount>
+            </node>
+          </node>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_End">
+            <outcome>Fail</outcome>
+            <sendStandardLetter>true</sendStandardLetter>
+          </node>
+        </li>
+
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End" />
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>

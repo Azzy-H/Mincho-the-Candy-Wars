@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    questB1：收留珉巧（IncidentDef）
+    ============================================================================
+    由事件 A1 的「是」选项通过 Effect_FireIncident 触发（见 MCW_QuestLine_A1.xml）。
+    baseChance = 0：绝不被叙事者随机选中。
+    真正的生成 / 奖励 / 好感度 / 终局进度逻辑在
+    MinchoCandyWars.IncidentWorker_RecruitMincho（自定义 IncidentWorker）。
+    ============================================================================
+  -->
+  <IncidentDef>
+    <defName>MCW_GiveQuest_QuestB1</defName>
+    <category>Misc</category>
+    <label>收留珉巧</label>
+    <workerClass>MinchoCandyWars.IncidentWorker_RecruitMincho</workerClass>
+    <baseChance>0</baseChance>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <requireColonistsPresent>true</requireColonistsPresent>
+  </IncidentDef>
+</Defs>

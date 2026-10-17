@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    沁心糖的「超凡赐福」：
+      全局学习速度 +500%
+      全局工作速度 +500%
+      受到伤害 ×0.2
+      移动速度 +1.0
+      （食尸鬼式再生暂未实现，属于 TODO）
+  -->
+  <HediffDef>
+    <defName>MCW_QinxintangBlessing</defName>
+    <label>超凡赐福</label>
+    <description>被超凡科技祝福过的躯体，学习与工作速度极快，且极难受伤。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <stages>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>5</GlobalLearningFactor>
+          <WorkSpeedGlobal>5</WorkSpeedGlobal>
+          <IncomingDamageFactor>-0.8</IncomingDamageFactor>
+          <MoveSpeed>1.0</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

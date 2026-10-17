@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    questB5：珉巧据点增援（时间限制 2 天）
+    ============================================================================
+    由事件 A5 的「是」选项通过 Effect_FireIncident 触发。
+
+    流程：
+      1. 在世界地图上生成一个「珉巧同盟据点」站点（SitePartDef：MCW_AllianceOutpost）
+      2. 据点内：5~10 殖民者 / 2~5 守护者 / 1 长老 / 1 皇族 / 2 精英骑士 / 2~5 太空难民
+         （由 SitePartWorker_MCWAllianceOutpost 生成）
+      3. 地图边缘：38 回收部队成员 + 2 回收部队队长
+         （由 GenStep_MCWAllianceOutpost 生成）
+      4. 玩家需在 2 天内赶到增援
+
+    TODO（后续）：
+      · 据点建筑本身（目前只生成居民与袭击者，没有围墙/房屋）
+      · 奖励（智慧改造包/糖饰/物资）、好感度 +50、终局进度 +1
+    ============================================================================
+  -->
+
+  <!-- 站点部件：珉巧同盟据点 -->
+  <SitePartDef>
+    <defName>MCW_AllianceOutpost</defName>
+    <label>珉巧同盟据点</label>
+    <description>珉巧同盟的一个据点，正在遭到回收部队的袭击。</description>
+    <workerClass>MinchoCandyWars.SitePartWorker_MCWAllianceOutpost</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+    <forceExitAndRemoveMapCountdownDurationDays>2</forceExitAndRemoveMapCountdownDurationDays>
+    <requiresFaction>false</requiresFaction>
+    <increasesPopulation>true</increasesPopulation>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <tags>
+      <li>MCW_AllianceOutpost</li>
+    </tags>
+  </SitePartDef>
+
+  <!-- 站点地图生成步骤：放置珉巧居民 + 边缘回收部队 -->
+  <GenStepDef>
+    <defName>MCW_AllianceOutpost</defName>
+    <linkWithSite>MCW_AllianceOutpost</linkWithSite>
+    <order>1600</order>
+    <genStep Class="MinchoCandyWars.GenStep_MCWAllianceOutpost" />
+  </GenStepDef>
+
+  <!-- 触发任务的 IncidentDef -->
+  <IncidentDef>
+    <defName>MCW_GiveQuest_QuestB5</defName>
+    <category>GiveQuest</category>
+    <label>珉巧据点增援</label>
+    <questScriptDef>MCW_QuestB5_AllianceOutpostDefense</questScriptDef>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <baseChance>0</baseChance>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <requireColonistsPresent>true</requireColonistsPresent>
+  </IncidentDef>
+
+  <!-- 任务本体 -->
+  <QuestScriptDef>
+    <defName>MCW_QuestB5_AllianceOutpostDefense</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <defaultChallengeRating>3</defaultChallengeRating>
+    <isRootSpecial>true</isRootSpecial>
+    <defaultCharity>false</defaultCharity>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->珉巧据点增援</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->珉巧同盟的一个据点正在被回收部队袭击，我们必须立刻前往援助！\n\n据点距离你的殖民地很近，但留给我们的时间只有 2 天。</li>
+      </rulesStrings>
+    </questDescriptionRules>
+
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="MinchoCandyWars.QuestNodes.QuestNode_SetRandomNextQuest" />
+        <!-- 任务奖励：好感度 +50、终局进度 +1、改造包/糖饰 -->
+        <li Class="MinchoCandyWars.QuestNodes.QuestNode_GiveAllianceReward">
+          <factionDef>MCW_Alliance_Faction</factionDef>
+          <goodwillChange>50</goodwillChange>
+          <endgameProgress>1</endgameProgress>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <!-- 尽量生成在玩家殖民地附近 -->
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+
+        <!-- 站点部件：珉巧同盟据点 -->
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>MCW_AllianceOutpost</tag>
+            </li>
+          </sitePartsTags>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+          <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+        </li>
+
+        <!-- 2 天限时：超时则任务失败 -->
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>120000</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_End">
+            <outcome>Fail</outcome>
+            <sendStandardLetter>true</sendStandardLetter>
+          </node>
+        </li>
+
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End" />
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>

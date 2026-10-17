@@ -54,7 +54,20 @@ namespace MinchoCandyWars.Data
                     continue;
                 }
 
-                var shader = bundle.LoadAsset<Shader>(shaderPath);
+                // 1.7（Vulkan/Waylith）下，旧 AssetBundle 里的 shader 可能没有对应变体，
+                // LoadAsset 会抛异常。这里必须吞掉，否则 ShaderData 的静态构造会失败，
+                // 进而让所有引用它的类型一起加载失败。
+                Shader? shader;
+                try
+                {
+                    shader = bundle.LoadAsset<Shader>(shaderPath);
+                }
+                catch (Exception ex)
+                {
+                    Log.Warning($"[MCW] Failed to load shader '{shaderPath}' from asset bundle (will use engine default): {ex.Message}");
+                    continue;
+                }
+
                 if (shader == null)
                 {
                     continue;

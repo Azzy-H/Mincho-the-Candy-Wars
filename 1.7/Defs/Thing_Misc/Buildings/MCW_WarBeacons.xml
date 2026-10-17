@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    questFF1 决战据点用的战争信标
+    ============================================================================
+    · MCW_RecyclePortal：回收部队传送点，每 1 小时刷一批回收部队并主动进攻
+    · MCW_MinchoBeacon ：珉巧援军信标，每 1 小时刷一批珉巧（加入玩家）
+    两者都是高血量、不可搬运的战场装饰，由 GenStep_MCWRecycleHQ 放置在据点地图上。
+    ============================================================================
+  -->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MCW_RecyclePortal</defName>
+    <label>回收部队传送点</label>
+    <description>回收部队的传送装置，会源源不断地送来援军。</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Misc/MCW_FirefoamPopper</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>9999</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="MinchoCandyWars.CompProperties_WarBeacon">
+        <spawnRecycle>true</spawnRecycle>
+        <intervalTicks>2500</intervalTicks>
+        <count>2</count>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MCW_MinchoBeacon</defName>
+    <label>珉巧援军信标</label>
+    <description>珉巧同盟的信号装置，会持续把援军送到战场。</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Misc/MCW_FirefoamPopper</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>9999</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="MinchoCandyWars.CompProperties_WarBeacon">
+        <spawnMincho>true</spawnMincho>
+        <intervalTicks>2500</intervalTicks>
+        <count>3</count>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

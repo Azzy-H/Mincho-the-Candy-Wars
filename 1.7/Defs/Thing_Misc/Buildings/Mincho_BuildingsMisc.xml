@@ -455,7 +455,7 @@
     <graphicData>
       <texPath>Things/Building/Misc/MCW_Chocolate_Console</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(3,2)</drawSize>
+      <drawSize>(3,1)</drawSize>
       <damageData>
         <rect>(0,0,3,1.8)</rect>
         <cornerBL>Damage/Corner</cornerBL>
@@ -513,6 +513,58 @@
         <spawnLetterTextKey>LetterCommsConsoleSpawned</spawnLetterTextKey>
         <effecterDef>CommsConsoleBossgroupSummoned</effecterDef>
         <delayTicks>120</delayTicks>
+      </li>
+      <!-- 联络珉巧同盟：唯一入口。点击后打开统一聊天窗口（MCW_Event_AllianceGreeting），
+           窗口内由选项条件自动分流到当前该进行的 questA1~A5。
+           另按沁心糖好感度解锁三个额外按钮：
+             ≥30  → 领取资助（10 天冷却）
+             ≥50  → 糖饰商店（糖饰 + 研究图纸）
+             ≥100 → 珉巧改造包商店
+           只有本 mod 的冰淇淋通讯台拥有这些功能（不修改原版通讯台）。 -->
+      <li Class="MinchoCandyWars.CompProperties_StellarisEventGizmo">
+        <gizmos>
+          <li>
+            <eventDef>MCW_Event_AllianceGreeting</eventDef>
+            <label>联络珉巧同盟</label>
+            <desc>呼叫珉巧同盟，和沁心糖通话。</desc>
+          </li>
+          <li>
+            <eventDef>MCW_Event_AllianceSubsidy</eventDef>
+            <label>领取珉巧同盟资助</label>
+            <desc>好感度达到 30 后可领取的资助，每 10 天一次。</desc>
+            <factionDef>MCW_Alliance_Faction</factionDef>
+            <minGoodwill>30</minGoodwill>
+            <flagAsCooldown>MCW_AllianceSubsidyCooldown</flagAsCooldown>
+          </li>
+          <li>
+            <eventDef>MCW_Event_AllianceCandyShop</eventDef>
+            <label>珉巧同盟糖饰商店</label>
+            <desc>好感度达到 50 后可购买糖饰与研究图纸。</desc>
+            <factionDef>MCW_Alliance_Faction</factionDef>
+            <minGoodwill>50</minGoodwill>
+          </li>
+          <li>
+            <eventDef>MCW_Event_AllianceBoosterShop</eventDef>
+            <label>珉巧同盟改造包商店</label>
+            <desc>好感度达到 100 后可购买珉巧改造包。</desc>
+            <factionDef>MCW_Alliance_Faction</factionDef>
+            <minGoodwill>100</minGoodwill>
+          </li>
+          <li>
+            <eventDef>MCW_Event_QuestF1_AllianceContact</eventDef>
+            <label>终局行动</label>
+            <desc>终局进度达到 10 后，可以联络珉巧同盟发起对回收部队总部的决战。</desc>
+            <minFloatFlag>MCW_EndgameProgress</minFloatFlag>
+            <minFloatValue>10</minFloatValue>
+          </li>
+          <li>
+            <eventDef>MCW_Event_QuestFF1_AllianceContact</eventDef>
+            <label>沁心糖的拜访</label>
+            <desc>击溃回收部队总部后，沁心糖想亲自来拜访你。</desc>
+            <minFloatFlag>MCW_EndgameProgress</minFloatFlag>
+            <minFloatValue>11</minFloatValue>
+          </li>
+        </gizmos>
       </li>
     </comps>
     <designationHotKey>Misc3</designationHotKey>

@@ -11,4 +11,9 @@
   <!-- 场景 -->
   <MCW_ScenPart_StartWithSmartMincho>其中一名珉巧拥有智慧核心</MCW_ScenPart_StartWithSmartMincho>
   <MCW_GameStartDialog>每天聊聊薄荷巧克力是很好，但光靠这些，生活里还缺很多很多东西……</MCW_GameStartDialog>
+
+  <!-- StellarisEvent Gizmo -->
+  <MCW_StellarisEventGizmo_CannotTrigger>条件不满足</MCW_StellarisEventGizmo_CannotTrigger>
+  <MCW_StellarisEventGizmo_CooldownPermanent>冷却中（永久）</MCW_StellarisEventGizmo_CooldownPermanent>
+  <MCW_StellarisEventGizmo_CooldownRemaining>冷却剩余 {0} 小时</MCW_StellarisEventGizmo_CooldownRemaining>
 </LanguageData>

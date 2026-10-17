@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================ -->
+  <!-- 珉巧科技树：独立的科技分类 + 基础/改造包科技                 -->
+  <!-- 糖饰研究（MCW_Research_*Candy）也挂到这个分类下。             -->
+  <!-- ============================================================ -->
+
+  <ResearchTabDef>
+    <defName>MCW_Technology</defName>
+    <label>mincho technology</label>
+    <generalTitle>Mincho technology research projects</generalTitle>
+    <generalDescription>研究珉巧相关的科技：家具、设施与智慧珉巧改造包。</generalDescription>
+  </ResearchTabDef>
+
+  <!-- 珉巧基础科技：解锁家具与建筑 -->
+  <ResearchProjectDef>
+    <defName>MCW_Research_MinchoBasic</defName>
+    <label>Mincho Basic Technology</label>
+    <description>研究珉巧的基础科技，解锁珉巧专属的家具、睡床与设施。</description>
+    <techLevel>Neolithic</techLevel>
+    <baseCost>1200</baseCost>
+    <tab>MCW_Technology</tab>
+    <heldByFactionCategoryTags>
+      <li>MinchoCandyWars</li>
+    </heldByFactionCategoryTags>
+    <researchViewX>0.0</researchViewX>
+    <researchViewY>0.0</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- 薄荷冰淇淋通讯台科技（初始任务完成后自动解锁） -->
+  <ResearchProjectDef>
+    <defName>MCW_Research_CommsConsole</defName>
+    <label>Mincho Comms Console</label>
+    <description>解锁薄荷冰淇淋通讯台：只有珉巧才能使用的通讯台，同时具备交易信标的功能。</description>
+    <techLevel>Industrial</techLevel>
+    <baseCost>1500</baseCost>
+    <tab>MCW_Technology</tab>
+    <heldByFactionCategoryTags>
+      <li>MinchoCandyWars</li>
+    </heldByFactionCategoryTags>
+    <prerequisites>
+      <li>MCW_Research_MinchoBasic</li>
+    </prerequisites>
+    <researchViewX>1.0</researchViewX>
+    <researchViewY>0.0</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- 智慧珉巧改造包科技 -->
+  <ResearchProjectDef>
+    <defName>MCW_Research_MinchoBooster</defName>
+    <label>Mincho Booster Technology</label>
+    <description>研究智慧珉巧改造包的制作方法，解锁智慧改造包、核心改造包与躯体改造包。</description>
+    <techLevel>Industrial</techLevel>
+    <baseCost>4000</baseCost>
+    <tab>MCW_Technology</tab>
+    <heldByFactionCategoryTags>
+      <li>MinchoCandyWars</li>
+    </heldByFactionCategoryTags>
+    <prerequisites>
+      <li>MCW_Research_MinchoBasic</li>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>0.0</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

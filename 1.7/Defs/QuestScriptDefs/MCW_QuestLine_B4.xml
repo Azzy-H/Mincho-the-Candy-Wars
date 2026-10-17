@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    questB4：获取β型纳米塑形液
+    ============================================================================
+    由事件 A4 的「是」选项通过 Effect_FireIncident 触发。
+
+    流程：
+      1. 在世界地图上生成一个「远古复合体遗迹」站点（复用原版 AncientComplex 站点部件）
+      2. 通过 GenStep_MCW_BetaFluid 在遗迹里必定放置 1 份 MCW_Beta_NanoShapingFluid
+      3. 玩家前往遗迹探索并取回β型纳米塑形液
+      4. 站点超时（12~28 天）或消失后任务结束
+
+    TODO（后续）：
+      · 30% 概率额外生成一具「死去的机械师」（可获取机控中枢）
+      · 奖励（智慧改造包/糖饰/物资）、好感度 +30、终局进度 +1
+    ============================================================================
+  -->
+
+  <!-- 给原版 AncientComplex 遗迹附加本 mod 的任务物品 -->
+  <GenStepDef>
+    <defName>MCW_BetaFluidOnAncientComplex</defName>
+    <linkWithSite>AncientComplex</linkWithSite>
+    <order>1700</order>
+    <genStep Class="MinchoCandyWars.GenStep_MCW_BetaFluid">
+      <count>1</count>
+    </genStep>
+  </GenStepDef>
+
+  <!-- 触发任务的 IncidentDef -->
+  <IncidentDef>
+    <defName>MCW_GiveQuest_QuestB4</defName>
+    <category>GiveQuest</category>
+    <label>获取β型纳米塑形液</label>
+    <questScriptDef>MCW_QuestB4_BetaFluidRuin</questScriptDef>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <baseChance>0</baseChance>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <requireColonistsPresent>true</requireColonistsPresent>
+  </IncidentDef>
+
+  <!-- 任务本体 -->
+  <QuestScriptDef>
+    <defName>MCW_QuestB4_BetaFluidRuin</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <isRootSpecial>true</isRootSpecial>
+    <defaultCharity>false</defaultCharity>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->获取β型纳米塑形液</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->珉巧同盟给予了我们一个遗迹坐标，这里面或许有研究珉巧自身的重要信息。\n\n前往遗迹，寻找β型纳米塑形液。</li>
+      </rulesStrings>
+    </questDescriptionRules>
+
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="MinchoCandyWars.QuestNodes.QuestNode_SetRandomNextQuest" />
+        <!-- 任务奖励：好感度 +30、终局进度 +1、改造包/糖饰 -->
+        <li Class="MinchoCandyWars.QuestNodes.QuestNode_GiveAllianceReward">
+          <factionDef>MCW_Alliance_Faction</factionDef>
+          <goodwillChange>30</goodwillChange>
+          <endgameProgress>1</endgameProgress>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+
+        <!-- 站点部件：原版远古复合体遗迹（自带房间、敌人与战利品） -->
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>AncientComplex</tag>
+            </li>
+          </sitePartsTags>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+          <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_End">
+            <outcome>Fail</outcome>
+            <sendStandardLetter>true</sendStandardLetter>
+          </node>
+        </li>
+
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End" />
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    questB2：解救智慧珉巧
+    ============================================================================
+    由事件 A2 的「是」选项通过 Effect_FireIncident 触发。
+
+    流程（沿用原版 OpportunitySite_PrisonerWillingToJoin 的结构）：
+      1. 在世界地图上生成一个「智慧珉巧囚禁点」站点（SitePartDef：MCW_SmartMinchoRescue）
+      2. 站点内由 SitePartWorker_SmartMinchoRescue 放置一位被关押的智慧珉巧
+      3. 由 PrisonerRescueQuestThreat 标签的站点部件（Outpost / Turrets）提供看守
+         （先沿用原版海盗势力，后续可换成回收公司）
+      4. 玩家前往站点地图解救，囚犯通过 QuestNode_AddPawnReward 加入殖民地
+      5. 站点超时（12~28 天）或消失后任务结束
+
+    TODO（后续）：
+      · 看守数量按财富值调整
+      · 看守换成 MCW_RecycleCorp_Leader / MCW_RecycleCorp_Member
+      · 任务奖励（智慧改造包 / 糖饰 / 物资）与好感度 +20、终局进度 +1
+    ============================================================================
+  -->
+
+  <!-- 站点部件：囚禁点（放置智慧珉巧） -->
+  <SitePartDef>
+    <defName>MCW_SmartMinchoRescue</defName>
+    <label>智慧珉巧囚禁点</label>
+    <description>一位智慧珉巧被回收公司关押在这里，随时可能被回收。解救她，她就会加入你。</description>
+    <workerClass>MinchoCandyWars.SitePartWorker_SmartMinchoRescue</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Prisoner</expandingIconTexture>
+    <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+    <requiresFaction>true</requiresFaction>
+    <increasesPopulation>true</increasesPopulation>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <tags>
+      <li>MCW_SmartMinchoRescue</li>
+    </tags>
+  </SitePartDef>
+
+  <!-- 站点地图生成步骤：把囚犯放在地图中心附近（复用原版生成器） -->
+  <GenStepDef>
+    <defName>MCW_SmartMinchoRescue</defName>
+    <linkWithSite>MCW_SmartMinchoRescue</linkWithSite>
+    <order>1600</order>
+    <genStep Class="GenStep_PrisonerWillingToJoin">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+    </genStep>
+  </GenStepDef>
+
+  <!-- 触发任务的 IncidentDef -->
+  <IncidentDef>
+    <defName>MCW_GiveQuest_QuestB2</defName>
+    <category>GiveQuest</category>
+    <label>解救智慧珉巧</label>
+    <questScriptDef>MCW_QuestB2_SmartMinchoRescue</questScriptDef>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <baseChance>0</baseChance>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <requireColonistsPresent>true</requireColonistsPresent>
+  </IncidentDef>
+
+  <!-- 任务本体 -->
+  <QuestScriptDef>
+    <defName>MCW_QuestB2_SmartMinchoRescue</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <isRootSpecial>true</isRootSpecial>
+    <defaultCharity>false</defaultCharity>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->解救智慧珉巧</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->一位智慧珉巧被回收公司关押在附近，随时可能被回收。请立刻前往解救她！\n\n解救成功后，她会加入你的殖民地。</li>
+      </rulesStrings>
+    </questDescriptionRules>
+
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="MinchoCandyWars.QuestNodes.QuestNode_SetRandomNextQuest" />
+        <!-- 任务奖励：好感度 +20、终局进度 +1、改造包/糖饰 -->
+        <li Class="MinchoCandyWars.QuestNodes.QuestNode_GiveAllianceReward">
+          <factionDef>MCW_Alliance_Faction</factionDef>
+          <goodwillChange>20</goodwillChange>
+          <endgameProgress>1</endgameProgress>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+
+        <!-- 站点部件：我们的囚禁点 + 原版看守威胁 -->
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>MCW_SmartMinchoRescue</tag>
+            </li>
+            <li>
+              <tag>PrisonerRescueQuestThreat</tag>
+              <chance>1</chance>
+            </li>
+          </sitePartsTags>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+          <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_End">
+            <outcome>Fail</outcome>
+            <sendStandardLetter>true</sendStandardLetter>
+          </node>
+        </li>
+
+        <!-- 被解救的智慧珉巧加入殖民地 -->
+        <li Class="QuestNode_AddPawnReward">
+          <pawn>$prisoner</pawn>
+          <inSignalChoiceUsed>site.MapGenerated</inSignalChoiceUsed>
+          <rewardDetailsHidden>true</rewardDetailsHidden>
+        </li>
+
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End" />
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    珉巧同盟 · 通讯台统一入口（聊天窗口）
+    ============================================================================
+    冰淇淋通讯台只有一个 gizmo「联络珉巧同盟」，点击打开本事件。
+    先寒暄两句，然后按【MCW_NextQuest flag】自动分流到当前该进行的任务：
+
+      · 初始（NextQuest 未设置、A1 也没处理过）→ 「有什么可以帮忙的吗？」→ A1
+      · 每次任务结束（B1~B4）会随机把某个未完成的任务写进 MCW_NextQuest，
+        于是这里只显示被抽中的那一个选项：
+          NextQuest == A2 → 「最近有什么紧急情况吗？」
+          NextQuest == A3 → 「我们一起收拾回收公司吧！」
+          NextQuest == A4 → 「有什么需要探索的地方吗？」
+      · 条件不满足的选项由 hideWhenDisabled 直接隐藏，
+        玩家看到的永远是「当前真正该做的事」。
+    ============================================================================
+  -->
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_AllianceGreeting</defName>
+    <label>联络珉巧同盟</label>
+    <title>沁心糖</title>
+    <desc>你好呀，我亲爱的盟友！这里是珉巧同盟的频道，我是沁心糖。\n\n最近过得怎么样？你们的殖民地还缺些什么吗？</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+      </li>
+    </pictures>
+
+    <immediate>
+      <effects>
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+          <factionDef>MCW_Alliance_Faction</factionDef>
+        </li>
+      </effects>
+    </immediate>
+
+    <options>
+      <!-- 初始任务 A1：未处理过、且还没有被随机分配下一个任务 -->
+      <li>
+        <label>有什么可以帮忙的吗？</label>
+        <desc>询问珉巧同盟这边有什么需要你出手的事情。</desc>
+        <triggers>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
+            <flagName>MCW_QuestA1_Accepted</flagName>
+            <logic>NOT</logic>
+          </li>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
+            <flagName>MCW_QuestA1_Declined</flagName>
+            <logic>NOT</logic>
+          </li>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
+            <flagName>MCW_NextQuest</flagName>
+            <logic>NOT</logic>
+          </li>
+        </triggers>
+        <hideWhenDisabled>true</hideWhenDisabled>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+              <defName>MCW_Event_QuestA1_AllianceContact</defName>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <!-- 随机分配：A2 -->
+      <li>
+        <label>最近有什么紧急情况吗？</label>
+        <desc>询问珉巧同盟最近有没有需要紧急协助的事情。</desc>
+        <triggers>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
+            <flagName>MCW_NextQuest</flagName>
+            <checkType>String</checkType>
+            <expectedString>MCW_Event_QuestA2_AllianceContact</expectedString>
+          </li>
+        </triggers>
+        <hideWhenDisabled>true</hideWhenDisabled>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+              <defName>MCW_Event_QuestA2_AllianceContact</defName>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <!-- 随机分配：A3 -->
+      <li>
+        <label>我们一起收拾回收公司吧！</label>
+        <desc>询问珉巧同盟接下来的作战计划。</desc>
+        <triggers>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
+            <flagName>MCW_NextQuest</flagName>
+            <checkType>String</checkType>
+            <expectedString>MCW_Event_QuestA3_AllianceContact</expectedString>
+          </li>
+        </triggers>
+        <hideWhenDisabled>true</hideWhenDisabled>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+              <defName>MCW_Event_QuestA3_AllianceContact</defName>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <!-- 随机分配：A4 -->
+      <li>
+        <label>有什么需要探索的地方吗？</label>
+        <desc>询问珉巧同盟有没有值得一去的地方。</desc>
+        <triggers>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
+            <flagName>MCW_NextQuest</flagName>
+            <checkType>String</checkType>
+            <expectedString>MCW_Event_QuestA4_AllianceContact</expectedString>
+          </li>
+        </triggers>
+        <hideWhenDisabled>true</hideWhenDisabled>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+              <defName>MCW_Event_QuestA4_AllianceContact</defName>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <!-- 随机分配：A5 -->
+      <li>
+        <label>紧急情况？！我们立刻出发！</label>
+        <desc>珉巧同盟的据点正在遭到袭击，立刻增援。</desc>
+        <triggers>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
+            <flagName>MCW_NextQuest</flagName>
+            <checkType>String</checkType>
+            <expectedString>MCW_Event_QuestA5_AllianceContact</expectedString>
+          </li>
+        </triggers>
+        <hideWhenDisabled>true</hideWhenDisabled>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+              <defName>MCW_Event_QuestA5_AllianceContact</defName>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <!-- 总是可选的收尾 -->
+      <li>
+        <label>只是问候一下，先这样吧。</label>
+        <desc>结束通话。</desc>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+</Defs>

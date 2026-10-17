@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    questF1：终局任务链（终局进度 >= 10 解锁）
+    ============================================================================
+    事件 F1（击溃回收部队据点）→ questFF1 → 事件 FF1（感谢 + 空投沁心糖）
+
+    通讯台 gizmo 的「联络珉巧同盟」在终局进度 >= 10 时会额外显示
+    「终局行动」按钮（见 Mincho_BuildingsMisc.xml 的 minFloatFlag 门槛）。
+    ============================================================================
+  -->
+
+  <!-- ─────────── 事件 F1：终局行动 ─────────── -->
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_QuestF1_AllianceContact</defName>
+    <label>终局行动</label>
+    <title>沁心糖</title>
+    <desc>谢谢你，我亲爱的盟友，一直以来都是。\n\n我们终于做足了准备去袭击回收部队的据点，他们或许会卷土重来。但是我们相信，这次一定可以给他们重创。\n\n行动计划如下：我们会持续不停地骚扰和袭击他们，为你们争取时间；而你们，必须化作一个冰锥，直刺他们总部的心脏，捣毁他们的联络电脑。这样，他们就会和总部断开联系，我们在这个星球就可以站稳脚跟了！</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+      </li>
+    </pictures>
+
+    <options>
+      <li>
+        <label>是-是时候清算他们了</label>
+        <desc>接受终局行动，前往回收部队总部摧毁联络电脑。</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireIncident">
+              <defName>MCW_GiveQuest_QuestFF1</defName>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>待定-等等！我们还没准备好！</label>
+        <desc>暂时不做决定，关闭窗口。准备好后可以重新联络珉巧同盟。</desc>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+
+  <!-- ─────────── 事件 FF1：终局感谢 ─────────── -->
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_QuestFF1_AllianceContact</defName>
+    <label>感谢</label>
+    <title>沁心糖</title>
+    <desc>谢谢你！我的盟友！我们终于击败了他们，我认为我的使命已经完成了。虽然我们付出了巨大的牺牲，但是这是值得的！\n\n我们终于摆脱了他们，可以在这个世界尽情地发放冰淇淋了！我认为我需要先拜访下你们，可以吗？</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+      </li>
+    </pictures>
+
+    <options>
+      <li>
+        <label>是-欢迎！！我早就希望你能来看看了！</label>
+        <desc>沁心糖会来到你的殖民地。</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_DropQinxintang" />
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QuestFF1_Done</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>待定-等等！我去收拾下房间！</label>
+        <desc>暂时不做决定，关闭窗口。之后可以重新联络珉巧同盟。</desc>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+</Defs>

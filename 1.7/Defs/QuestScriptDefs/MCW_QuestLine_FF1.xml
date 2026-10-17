@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    questFF1：击溃回收部队总部（终局）
+    ============================================================================
+    由事件 F1 的「是」选项触发。
+
+    流程：
+      1. 在世界地图较远处生成回收部队总部（复用原版 Outpost 站点部件）
+      2. 玩家进入据点 1 小时后，珉巧援军从地图边缘赶到，与玩家并肩作战
+      3. 任务结束（无论成败）时：
+           · 好感度 +100
+           · 停用回收部队派系（Faction.defeated = true，不再袭击/联络）
+           · 发放奖励表物品
+
+    TODO（后续）：
+      · 4 个传送点源源不断刷新回收部队（需要自定义 QuestPart/GenStep）
+      · 据点内完善的防御系统
+      · 珉巧援军里的守护者与珉巧机械体（次级珉巧子个体，战斗型与防卫型）
+    ============================================================================
+  -->
+
+  <IncidentDef>
+    <defName>MCW_GiveQuest_QuestFF1</defName>
+    <category>GiveQuest</category>
+    <label>击溃回收部队总部</label>
+    <questScriptDef>MCW_QuestFF1_RecycleHQ</questScriptDef>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <baseChance>0</baseChance>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <requireColonistsPresent>true</requireColonistsPresent>
+  </IncidentDef>
+
+  <!-- 决战据点：回收部队总部（Outpost 建筑 + 传送点/信标） -->
+  <SitePartDef>
+    <defName>MCW_RecycleHQ</defName>
+    <label>回收部队总部</label>
+    <description>回收部队在这颗星球上的总部，防御严密，并有传送装置不断送来援军。</description>
+    <workerClass>MinchoCandyWars.SitePartWorker_MCWRecycleHQ</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+    <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+    <requiresFaction>true</requiresFaction>
+    <increasesPopulation>false</increasesPopulation>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <tags>
+      <li>MCW_RecycleHQ</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>MCW_RecycleHQ_Buildings</defName>
+    <linkWithSite>MCW_RecycleHQ</linkWithSite>
+    <order>1600</order>
+    <genStep Class="GenStep_Outpost">
+      <size>20</size>
+      <generateLoot>true</generateLoot>
+      <defaultPawnGroupPointsRange>
+        <min>500</min>
+        <max>900</max>
+      </defaultPawnGroupPointsRange>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>MCW_RecycleHQ</defName>
+    <linkWithSite>MCW_RecycleHQ</linkWithSite>
+    <order>1700</order>
+    <genStep Class="MinchoCandyWars.GenStep_MCWRecycleHQ" />
+  </GenStepDef>
+
+  <QuestScriptDef>
+    <defName>MCW_QuestFF1_RecycleHQ</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <defaultChallengeRating>5</defaultChallengeRating>
+    <isRootSpecial>true</isRootSpecial>
+    <defaultCharity>false</defaultCharity>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->击溃回收部队总部</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->珉巧们会为我们争取时间，我们需要摧毁回收公司的联络电脑。\n\n这是一场决定这颗星球命运的决战。</li>
+      </rulesStrings>
+    </questDescriptionRules>
+
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="MinchoCandyWars.QuestNodes.QuestNode_GiveAllianceReward">
+          <factionDef>MCW_Alliance_Faction</factionDef>
+          <goodwillChange>100</goodwillChange>
+          <endgameProgress>1</endgameProgress>
+          <disableFactionDef>MCW_RecycleCorp_Faction</disableFactionDef>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <!-- 较远处生成总部 -->
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+        </li>
+
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>MCW_RecycleHQ</tag>
+            </li>
+          </sitePartsTags>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+          <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+        </li>
+
+        <!-- 玩家进入据点 1 小时后，珉巧援军赶到 -->
+        <li Class="QuestNode_Signal">
+          <inSignal>site.MapGenerated</inSignal>
+          <node Class="QuestNode_Delay">
+            <delayTicks>2500</delayTicks>
+            <node Class="MinchoCandyWars.QuestNodes.QuestNode_SpawnSiteReinforcements">
+              <site>$site</site>
+              <wealthPerUnit>8000</wealthPerUnit>
+              <minCount>4</minCount>
+              <maxCount>10</maxCount>
+            </node>
+          </node>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_End">
+            <outcome>Fail</outcome>
+            <sendStandardLetter>true</sendStandardLetter>
+          </node>
+        </li>
+
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End" />
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>

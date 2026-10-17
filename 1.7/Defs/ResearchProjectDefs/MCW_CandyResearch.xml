@@ -4,6 +4,7 @@
   <!-- ============================================================ -->
   <!-- 糖饰研究项目：解锁对应糖饰解锁物品的制作配方                -->
   <!-- 图纸（Techprint）由 techprintCount=1 自动生成。              -->
+  <!-- 全部挂在珉巧科技分类（MCW_Technology）下。                   -->
   <!-- ============================================================ -->
 
   <ResearchProjectDef>
@@ -12,6 +13,7 @@
     <description>研究千机糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
     <techLevel>Industrial</techLevel>
     <baseCost>3000</baseCost>
+    <tab>MCW_Technology</tab>
     <techprintCount>1</techprintCount>
     <techprintCommonality>1</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>
@@ -31,6 +33,7 @@
     <description>研究甘露糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
     <techLevel>Industrial</techLevel>
     <baseCost>3000</baseCost>
+    <tab>MCW_Technology</tab>
     <techprintCount>1</techprintCount>
     <techprintCommonality>1</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>
@@ -50,6 +53,7 @@
     <description>研究琥珀糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
     <techLevel>Industrial</techLevel>
     <baseCost>3000</baseCost>
+    <tab>MCW_Technology</tab>
     <techprintCount>1</techprintCount>
     <techprintCommonality>1</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>
@@ -69,6 +73,7 @@
     <description>研究琉璃糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
     <techLevel>Industrial</techLevel>
     <baseCost>3000</baseCost>
+    <tab>MCW_Technology</tab>
     <techprintCount>1</techprintCount>
     <techprintCommonality>1</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>
@@ -88,6 +93,7 @@
     <description>研究玲珑糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
     <techLevel>Industrial</techLevel>
     <baseCost>3000</baseCost>
+    <tab>MCW_Technology</tab>
     <techprintCount>1</techprintCount>
     <techprintCommonality>1</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>

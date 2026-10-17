@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    沁心糖好感度解锁的通讯事件（gizmo 入口，与任务放在一起）
+    ============================================================================
+    好感度 ≥ 30  → 领取资助（奖励表随机 2 个，10 天冷却）
+    好感度 ≥ 50  → 糖饰商店（购买糖饰 + 糖饰研究图纸）
+    好感度 ≥ 100 → 珉巧改造包商店
+    ============================================================================
+  -->
+
+  <!-- ─────────── 领取资助（≥30，CD 10 天） ─────────── -->
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_AllianceSubsidy</defName>
+    <label>领取资助</label>
+    <title>沁心糖</title>
+    <desc>感谢之前的帮助！这是我们能提供的一点资助，请务必收下。</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+      </li>
+    </pictures>
+
+    <options>
+      <li>
+        <label>那就谢谢了</label>
+        <desc>领取珉巧同盟的资助（随机 2 种物资，空投到殖民地附近）。</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_GrantAllianceSubsidy">
+              <pickCount>2</pickCount>
+              <cooldownFlag>MCW_AllianceSubsidyCooldown</cooldownFlag>
+              <cooldownTicks>600000</cooldownTicks>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>现在不需要，先留着吧</label>
+        <desc>结束通话。</desc>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+
+  <!-- ─────────── 糖饰商店（≥50） ─────────── -->
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_AllianceCandyShop</defName>
+    <label>珉巧同盟糖饰商店</label>
+    <title>沁心糖</title>
+    <desc>既然是老朋友了，我们这里的糖饰也可以卖给你。想看看吗？</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+      </li>
+    </pictures>
+
+    <options>
+      <li>
+        <label>购买千机糖（500 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>MCW_MechaCandyChangeItem</thingDef>
+              <count>1</count>
+              <silverCost>500</silverCost>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买甘露糖（500 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>MCW_NectarCandyChangeItem</thingDef>
+              <count>1</count>
+              <silverCost>500</silverCost>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买琥珀糖（500 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>MCW_AmberonCandyChangeItem</thingDef>
+              <count>1</count>
+              <silverCost>500</silverCost>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买琉璃糖（500 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>MCW_PrismCandyChangeItem</thingDef>
+              <count>1</count>
+              <silverCost>500</silverCost>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买玲珑糖（500 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>MCW_LinglonCandyChangeItem</thingDef>
+              <count>1</count>
+              <silverCost>500</silverCost>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买千机糖研究图纸（1200 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceNote">
+              <silverCost>1200</silverCost>
+              <researchDef>MCW_Research_MechaCandy</researchDef>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买甘露糖研究图纸（1200 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceNote">
+              <silverCost>1200</silverCost>
+              <researchDef>MCW_Research_NectarCandy</researchDef>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买琥珀糖研究图纸（1200 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceNote">
+              <silverCost>1200</silverCost>
+              <researchDef>MCW_Research_AmberonCandy</researchDef>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买琉璃糖研究图纸（1200 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceNote">
+              <silverCost>1200</silverCost>
+              <researchDef>MCW_Research_PrismCandy</researchDef>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买玲珑糖研究图纸（1200 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceNote">
+              <silverCost>1200</silverCost>
+              <researchDef>MCW_Research_LinglonCandy</researchDef>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>先看看，不买了</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+
+  <!-- ─────────── 珉巧改造包商店（≥100） ─────────── -->
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_AllianceBoosterShop</defName>
+    <label>珉巧同盟改造包商店</label>
+    <title>沁心糖</title>
+    <desc>你已经是珉巧同盟最信任的伙伴了。这些改造包，也给你留一份吧。</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+      </li>
+    </pictures>
+
+    <options>
+      <li>
+        <label>购买智慧珉巧改造包（2000 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>MCW_MinchoIntelBooster</thingDef>
+              <count>1</count>
+              <silverCost>2000</silverCost>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买初级核心改造包（800 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>MCW_MinchoCoreBoosterBasic</thingDef>
+              <count>1</count>
+              <silverCost>800</silverCost>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买高级核心改造包（1200 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>MCW_MinchoCoreBoosterAdvanced</thingDef>
+              <count>1</count>
+              <silverCost>1200</silverCost>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>购买躯体改造包（1000 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>MCW_MinchoBodyBooster</thingDef>
+              <count>1</count>
+              <silverCost>1000</silverCost>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>先看看，不买了</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+</Defs>

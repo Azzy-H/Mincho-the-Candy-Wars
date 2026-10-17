@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    ============================================================================
+    questA1：珉巧同盟联络 —— 事件「收留珉巧请求」
+    ============================================================================
+    触发方式：玩家用通讯台（原版或冰淇淋通讯台）呼叫「珉巧同盟」派系。
+      见 Patch_Faction_TryOpenComms：拦截 Faction.TryOpenComms，
+      打开本事件而不是原版派系对话。
+
+    选项：
+      是   → 触发 questB1（IncidentDef MCW_GiveQuest_QuestB1）
+      否   → 沁心糖好感度 -10，并记下"已拒绝"标记
+             （后续可据此在 3~5 天后随机出现其它任务）
+      待定 → 什么都不做，关闭窗口；之后可以重新联络珉巧同盟
+    ============================================================================
+  -->
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCW_Event_QuestA1_AllianceContact</defName>
+    <label>收留珉巧请求</label>
+    <title>沁心糖</title>
+    <desc>你好！我亲爱的盟友~我们发您附近有一些游荡的，被迫害的珉巧。如果可以，我们会发送您的坐标给她们，她们会前往你那里避难，她们也会帮助你，比如，给你冰淇淋吃！</desc>
+    <backgroundPath>Events/tile_large_bg</backgroundPath>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+      </li>
+    </pictures>
+
+    <!-- 保险：若还没有珉巧同盟派系（例如旧存档），当场补一个 -->
+    <immediate>
+      <effects>
+        <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+          <factionDef>MCW_Alliance_Faction</factionDef>
+        </li>
+      </effects>
+    </immediate>
+
+    <options>
+      <li>
+        <label>是-当然！没问题！</label>
+        <desc>接受珉巧们的避难请求，她们很快就会来到你的殖民地。</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireIncident">
+              <defName>MCW_GiveQuest_QuestB1</defName>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QuestA1_Accepted</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <li>
+        <label>否-抱歉，我们目前没法帮助你</label>
+        <desc>拒绝这次请求。沁心糖对你的好感度会下降。</desc>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_AdjustFactionGoodwill">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <goodwillDelta>-10</goodwillDelta>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QuestA1_Declined</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <li>
+        <label>待定-麻烦稍等下，我们先收拾下房间！</label>
+        <desc>暂时不做决定，关闭窗口。之后可以重新联络珉巧同盟。</desc>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+</Defs>
