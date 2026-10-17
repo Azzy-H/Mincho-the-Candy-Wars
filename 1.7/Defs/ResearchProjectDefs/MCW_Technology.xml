@@ -2,8 +2,11 @@
 <Defs>
 
   <!-- ============================================================ -->
-  <!-- 珉巧科技树：独立的科技分类 + 基础/改造包科技                 -->
-  <!-- 糖饰研究（MCW_Research_*Candy）也挂到这个分类下。             -->
+  <!-- 珉巧科技树                                                   -->
+  <!--   · 家具统一在「珉巧基础科技」                                -->
+  <!--   · 通讯台与 4 种改件各自独立                                 -->
+  <!--   · 通讯台：9999 图纸 / 单价 999999 / 研究设施=Wall，          -->
+  <!--     因此永远无法正常研究，只能靠任务或商店直接给予             -->
   <!-- ============================================================ -->
 
   <ResearchTabDef>
@@ -13,11 +16,11 @@
     <generalDescription>研究珉巧相关的科技：家具、设施与智慧珉巧改造包。</generalDescription>
   </ResearchTabDef>
 
-  <!-- 珉巧基础科技：解锁家具与建筑 -->
+  <!-- ═══════════ 家具统一科技 ═══════════ -->
   <ResearchProjectDef>
     <defName>MCW_Research_MinchoBasic</defName>
-    <label>Mincho Basic Technology</label>
-    <description>研究珉巧的基础科技，解锁珉巧专属的家具、睡床与设施。</description>
+    <label>Mincho Furniture</label>
+    <description>研究珉巧的基础科技，解锁珉巧专属的全部家具、睡床与设施。</description>
     <techLevel>Neolithic</techLevel>
     <baseCost>1200</baseCost>
     <tab>MCW_Technology</tab>
@@ -25,28 +28,34 @@
     <researchViewY>0.0</researchViewY>
   </ResearchProjectDef>
 
-  <!-- 薄荷冰淇淋通讯台科技（初始任务完成后自动解锁） -->
+  <!-- ═══════════ 薄荷冰淇淋通讯台（不可研究，只能购买/任务给予） ═══════════ -->
   <ResearchProjectDef>
     <defName>MCW_Research_CommsConsole</defName>
     <label>Mincho Comms Console</label>
-    <description>解锁薄荷冰淇淋通讯台：只有珉巧才能使用的通讯台，同时具备交易信标的功能。</description>
+    <description>解锁薄荷冰淇淋通讯台：只有珉巧才能使用的通讯台，同时具备交易信标的功能。\n\n这项科技无法正常研究（需要 9999 份科技蓝图，且研究设施必须是墙），只能通过特殊渠道直接获得。</description>
     <techLevel>Industrial</techLevel>
     <baseCost>1500</baseCost>
     <tab>MCW_Technology</tab>
-    <prerequisites>
-      <li>MCW_Research_MinchoBasic</li>
-    </prerequisites>
+    <!-- 9999 份蓝图，单份价值 999999；研究设施定为 Wall（墙），
+         原版没有任何方式把墙当作研究台，因此这条科技永远无法被研究完成。 -->
+    <techprintCount>9999</techprintCount>
+    <techprintCommonality>0</techprintCommonality>
+    <techprintMarketValue>999999</techprintMarketValue>
+    <requiredResearchBuilding>Wall</requiredResearchBuilding>
+    <heldByFactionCategoryTags>
+      <li>MinchoCandyWars</li>
+    </heldByFactionCategoryTags>
     <researchViewX>1.0</researchViewX>
     <researchViewY>0.0</researchViewY>
   </ResearchProjectDef>
 
-  <!-- 智慧珉巧改造包科技 -->
+  <!-- ═══════════ 改造包：4 个独立科技 ═══════════ -->
   <ResearchProjectDef>
-    <defName>MCW_Research_MinchoBooster</defName>
-    <label>Mincho Booster Technology</label>
-    <description>研究智慧珉巧改造包的制作方法，解锁智慧改造包、核心改造包与躯体改造包。</description>
+    <defName>MCW_Research_BoosterIntel</defName>
+    <label>Mincho Intelligence Booster</label>
+    <description>研究智慧珉巧改造包的制作方法。</description>
     <techLevel>Industrial</techLevel>
-    <baseCost>4000</baseCost>
+    <baseCost>2000</baseCost>
     <tab>MCW_Technology</tab>
     <prerequisites>
       <li>MCW_Research_MinchoBasic</li>
@@ -54,5 +63,47 @@
     </prerequisites>
     <researchViewX>2.0</researchViewX>
     <researchViewY>0.0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MCW_Research_BoosterCoreBasic</defName>
+    <label>Mincho Basic Core Booster</label>
+    <description>研究初级核心改造包的制作方法，用于把智慧珉巧的核心等级提升到 1~3 级。</description>
+    <techLevel>Industrial</techLevel>
+    <baseCost>2000</baseCost>
+    <tab>MCW_Technology</tab>
+    <prerequisites>
+      <li>MCW_Research_BoosterIntel</li>
+    </prerequisites>
+    <researchViewX>3.0</researchViewX>
+    <researchViewY>0.0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MCW_Research_BoosterCoreAdvanced</defName>
+    <label>Mincho Advanced Core Booster</label>
+    <description>研究高级核心改造包的制作方法，用于把智慧珉巧的核心等级提升到 3~5 级。</description>
+    <techLevel>Industrial</techLevel>
+    <baseCost>3000</baseCost>
+    <tab>MCW_Technology</tab>
+    <prerequisites>
+      <li>MCW_Research_BoosterCoreBasic</li>
+    </prerequisites>
+    <researchViewX>4.0</researchViewX>
+    <researchViewY>0.0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MCW_Research_BoosterBody</defName>
+    <label>Mincho Body Booster</label>
+    <description>研究躯体改造包的制作方法，用于提升智慧珉巧的躯体等级。</description>
+    <techLevel>Industrial</techLevel>
+    <baseCost>2000</baseCost>
+    <tab>MCW_Technology</tab>
+    <prerequisites>
+      <li>MCW_Research_BoosterIntel</li>
+    </prerequisites>
+    <researchViewX>3.0</researchViewX>
+    <researchViewY>1.0</researchViewY>
   </ResearchProjectDef>
 </Defs>

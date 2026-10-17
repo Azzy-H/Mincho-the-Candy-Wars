@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-  <!-- ============================================================ -->
-  <!-- 糖饰研究项目：解锁对应糖饰解锁物品的制作配方                -->
-  <!-- 图纸（Techprint）由 techprintCount=1 自动生成。              -->
-  <!-- 全部挂在珉巧科技分类（MCW_Technology）下。                   -->
-  <!-- ============================================================ -->
-
   <ResearchProjectDef>
     <defName>MCW_Research_MechaCandy</defName>
     <label>Mecha Candy</label>
@@ -106,5 +99,4 @@
     <researchViewX>14.0</researchViewX>
     <researchViewY>3.0</researchViewY>
   </ResearchProjectDef>
-
 </Defs>

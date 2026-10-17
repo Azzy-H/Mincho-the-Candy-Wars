@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <!--
-    给本 mod 的建筑/家具/改造包配方补上研究前置，形成科技线：
-      MCW_Research_MinchoBasic（珉巧基础科技）→ 家具、床、操作臂、灭火单元
-      MCW_Research_MinchoBooster（改造包科技）  → 4 种改造包配方
+    科技前置补丁：
+      · 家具统一由 MCW_Research_MinchoBasic 解锁
+      · 通讯台由 MCW_Research_CommsConsole 解锁（不可研究，只能任务/商店给予）
+      · 4 种改件各自由独立的科技解锁
   -->
 
-  <!-- ── 珉巧基础科技：家具/设施 ── -->
+  <!-- ── 珉巧家具科技：家具/设施 ── -->
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="MCW_FirefoamPopper" or defName="MCW_EndTable" or defName="MCW_Cabinet" or defName="MCW_Table2x4c" or defName="MCW_MinchoTable2x2c" or defName="MCW_MinchoStool" or defName="MCW_MinchoCouch"]</xpath>
     <value>
@@ -16,7 +17,7 @@
     </value>
   </Operation>
 
-  <!-- ── 珉巧基础科技：床与操作臂 ── -->
+  <!-- ── 珉巧家具科技：床与操作臂 ── -->
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="MCW_MinchoBed" or defName="MCW_MinchoDoubleBed" or defName="MCW_MinchoLuxuryBed" or defName="MCW_MinchoLuxuryDoubleBed" or defName="MCW_RoboticArm"]</xpath>
     <value>
@@ -26,7 +27,7 @@
     </value>
   </Operation>
 
-  <!-- ── 薄荷冰淇淋通讯台：改为需要独立的通讯台科技 ── -->
+  <!-- ── 薄荷冰淇淋通讯台：独立科技 ── -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="MCW_Chocolate_Console"]/researchPrerequisites</xpath>
     <value>
@@ -36,11 +37,32 @@
     </value>
   </Operation>
 
-  <!-- ── 改造包科技：4 种改造包的制作配方 ── -->
+  <!-- ── 4 种改件：各自独立科技 ── -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/RecipeDef[defName="MCW_Make_MinchoIntelBooster" or defName="MCW_Make_MinchoCoreBoosterBasic" or defName="MCW_Make_MinchoCoreBoosterAdvanced" or defName="MCW_Make_MinchoBodyBooster"]</xpath>
+    <xpath>Defs/RecipeDef[defName="MCW_Make_MinchoIntelBooster"]</xpath>
     <value>
-      <researchPrerequisite>MCW_Research_MinchoBooster</researchPrerequisite>
+      <researchPrerequisite>MCW_Research_BoosterIntel</researchPrerequisite>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RecipeDef[defName="MCW_Make_MinchoCoreBoosterBasic"]</xpath>
+    <value>
+      <researchPrerequisite>MCW_Research_BoosterCoreBasic</researchPrerequisite>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RecipeDef[defName="MCW_Make_MinchoCoreBoosterAdvanced"]</xpath>
+    <value>
+      <researchPrerequisite>MCW_Research_BoosterCoreAdvanced</researchPrerequisite>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RecipeDef[defName="MCW_Make_MinchoBodyBooster"]</xpath>
+    <value>
+      <researchPrerequisite>MCW_Research_BoosterBody</researchPrerequisite>
     </value>
   </Operation>
 
