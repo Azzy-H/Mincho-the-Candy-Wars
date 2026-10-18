@@ -4,16 +4,14 @@ using Verse;
 
 namespace MinchoCandyWars
 {
-    /// <summary>
-    /// 糖饰解锁手术配方的配置：指定解锁哪个糖饰。
-    /// </summary>
+
     public class MinchoCandyChangeRecipeModExtension : DefModExtension
     {
         public CandyTypeDef candyType = null!;
     }
 
     /// <summary>
-    /// 糖饰解锁手术：成功后把对应 CandyTypeDef 注册到目标珉巧的 candyTypeDefsAccessible。
+    /// 糖饰切换
     /// </summary>
     public class Recipe_MinchoCandyChange : Recipe_Surgery
     {

@@ -28,6 +28,15 @@ namespace MinchoCandyWars
 
         public CandyTypeStage? CoreStage => MinchoCoreGrade > 0 ? CurrentCandyType?.coreStages[MinchoCoreGrade - 1] : null;
         public int intellectualPassion = 1;
+        private bool showAbilityGizmos = true;
+        public bool ShowAbilityGizmos
+        {
+            get => showAbilityGizmos;
+            set
+            {
+                showAbilityGizmos = value;
+            }
+        }
 
         public override void Initialize(CompProperties props)
         {
@@ -87,6 +96,7 @@ namespace MinchoCandyWars
             Scribe_Defs.Look(ref currentCandyType, "currentCandyType");
             Scribe_Values.Look(ref minchoCandyValue, "minchoCandyValue", 0);
             Scribe_Values.Look(ref intellectualPassion, "intellectualPassion", 1);
+            Scribe_Values.Look(ref showAbilityGizmos, "showAbilityGizmos", true);
         }
 
         //核心等级
@@ -149,6 +159,7 @@ namespace MinchoCandyWars
 
         //当前糖果值上限
         public float CurrentMaxCandyValue => MinchoTotalGrade * 50f;
+        public float RecoveryAmountPerTick => CurrentMaxCandyValue / 12000f * GetTempGainFactor();
 
         //获取温度增益系数
         public float GetTempGainFactor()
@@ -171,9 +182,7 @@ namespace MinchoCandyWars
             {
                 if (MinchoCandyValue < CurrentMaxCandyValue)
                 {
-                    float recoveryAmount = CurrentMaxCandyValue / 12000f;
-                    recoveryAmount *= GetTempGainFactor();
-                    MinchoCandyValue += recoveryAmount;
+                    MinchoCandyValue += RecoveryAmountPerTick;
                 }
             }
         }

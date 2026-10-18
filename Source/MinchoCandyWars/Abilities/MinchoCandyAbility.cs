@@ -63,7 +63,7 @@ namespace MinchoCandyWars.Abilities
         //检查是否显示Gizmo
         protected virtual bool ShouldShowGizmo()
         {
-            return IsAvailable;
+            return IsAvailable && compMinchoCore.ShowAbilityGizmos;
         }
 
         //控制Gizmo显示

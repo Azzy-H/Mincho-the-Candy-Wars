@@ -69,8 +69,13 @@ namespace MinchoCandyWars.Gizmos
             TooltipHandler.TipRegion(blueRect, new TipSignal(() => "MinchoCandyWars.Abilities.MinchoBodyGradeTips".Translate(compMinchoCore.MinchoBodyGrade), toolTipHash2));
 
             Rect cookieRect = new Rect(root.x + 8f, root.y + 35f, 32f, 32f);
+            Text.Anchor = TextAnchor.MiddleCenter;
+            //Widgets.DrawBoxSolid(cookieRect, Color.gray);
+            Widgets.Label(cookieRect, $"{compMinchoCore.CurrentMaxCandyValue * 0.5f:P0}/" + "day".Translate());
+            Text.Anchor = TextAnchor.UpperLeft;
             if (Widgets.ButtonImage(cookieRect, cookieTexture))
             {
+                compMinchoCore.ShowAbilityGizmos = !compMinchoCore.ShowAbilityGizmos;
                 //List<FloatMenuOption> options = new List<FloatMenuOption>();
 
                 //foreach (CandyTypeDef candyTypeDef in compMinchoCore.candyTypeDefsAccessible)
@@ -105,7 +110,7 @@ namespace MinchoCandyWars.Gizmos
             float pct = Mathf.Clamp01(FillPercent());
             Rect barRect = new Rect(root.x + 48f, root.y + 39f, 118f, 25f);
             FillableBarWithUVCut(barRect, pct, progressBarFillTexture, progressBarBGTexture, true);
-            TooltipHandler.TipRegion(barRect, new TipSignal(() => "MinchoCandyWars.Abilities.MinchoCandyValueTips".Translate(currentMaxCandyValue.Named("VALUE"), currentMaxCandyValue.Named("MAXVALUE")), toolTipHash3));
+            TooltipHandler.TipRegion(barRect, new TipSignal(() => "MinchoCandyWars.Abilities.MinchoCandyValueTips".Translate(minchoCandyValue.Named("VALUE"), currentMaxCandyValue.Named("MAXVALUE")), toolTipHash3));
             //Rect textRect = new Rect(barRect.x + (barRect.width - 45f) / 2f, barRect.y, 45f, barRect.height);
 
             //Text.Anchor = TextAnchor.MiddleCenter;

@@ -1,5 +1,6 @@
 using RimWorld;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Verse;
 
 namespace MinchoCandyWars
@@ -80,6 +81,8 @@ namespace MinchoCandyWars
             {
                 case MinchoBoosterType.Intel:
                     core.Active = true;
+                    Letter letter = LetterMaker.MakeLetter("MinchoCandyWars.Ability.Inteled".Translate(), "MinchoCandyWars.Ability.InteledDesc".Translate(pawn.Named("PAWN")), LetterDefOf.PositiveEvent, pawn);
+                    Find.LetterStack.ReceiveLetter(letter);
                     break;
                 case MinchoBoosterType.CoreBasic:
                 case MinchoBoosterType.CoreAdvanced:
