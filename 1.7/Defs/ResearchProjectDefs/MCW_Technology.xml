@@ -16,39 +16,6 @@
     <generalDescription>研究珉巧相关的科技：家具、设施与智慧珉巧改造包。</generalDescription>
   </ResearchTabDef>
 
-  <!-- ═══════════ 家具统一科技 ═══════════ -->
-  <ResearchProjectDef>
-    <defName>MCW_Research_MinchoBasic</defName>
-    <label>Mincho Furniture</label>
-    <description>研究珉巧的基础科技，解锁珉巧专属的全部家具、睡床与设施。</description>
-    <techLevel>Neolithic</techLevel>
-    <baseCost>1200</baseCost>
-    <tab>MCW_Technology</tab>
-    <researchViewX>0.0</researchViewX>
-    <researchViewY>0.0</researchViewY>
-  </ResearchProjectDef>
-
-  <!-- ═══════════ 薄荷冰淇淋通讯台（不可研究，只能购买/任务给予） ═══════════ -->
-  <ResearchProjectDef>
-    <defName>MCW_Research_CommsConsole</defName>
-    <label>Mincho Comms Console</label>
-    <description>解锁薄荷冰淇淋通讯台：只有珉巧才能使用的通讯台，同时具备交易信标的功能。\n\n这项科技无法正常研究（需要 9999 份科技蓝图，且研究设施必须是墙），只能通过特殊渠道直接获得。</description>
-    <techLevel>Industrial</techLevel>
-    <baseCost>1500</baseCost>
-    <tab>MCW_Technology</tab>
-    <!-- 9999 份蓝图，单份价值 999999；研究设施定为 Wall（墙），
-         原版没有任何方式把墙当作研究台，因此这条科技永远无法被研究完成。 -->
-    <techprintCount>9999</techprintCount>
-    <techprintCommonality>0</techprintCommonality>
-    <techprintMarketValue>999999</techprintMarketValue>
-    <requiredResearchBuilding>Wall</requiredResearchBuilding>
-    <heldByFactionCategoryTags>
-      <li>MinchoCandyWars</li>
-    </heldByFactionCategoryTags>
-    <researchViewX>1.0</researchViewX>
-    <researchViewY>0.0</researchViewY>
-  </ResearchProjectDef>
-
   <!-- ═══════════ 改造包：4 个独立科技 ═══════════ -->
   <ResearchProjectDef>
     <defName>MCW_Research_BoosterIntel</defName>
@@ -58,7 +25,6 @@
     <baseCost>2000</baseCost>
     <tab>MCW_Technology</tab>
     <prerequisites>
-      <li>MCW_Research_MinchoBasic</li>
       <li>MicroelectronicsBasics</li>
     </prerequisites>
     <researchViewX>2.0</researchViewX>

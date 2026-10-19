@@ -472,11 +472,16 @@
     <castEdgeShadows>false</castEdgeShadows>
     <fillPercent>0.5</fillPercent>
     <canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <statBases>
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToBuild>2200</WorkToBuild>
       <Flammability>0.6</Flammability>
+      <Mass>25</Mass>
     </statBases>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
     <size>(3,1)</size>
     <building>
       <destroySound>BuildingDestroyed_Metal_Big</destroySound>
@@ -571,8 +576,8 @@
     <placeWorkers>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
-    <researchPrerequisites>
-      <li>MicroelectronicsBasics</li>
+    <researchPrerequisites Inherit="False">
+      <li>MCW_Research_CommsConsole</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
     <tickerType MayRequire="Ludeon.RimWorld.Biotech">Normal</tickerType><!-- used by call bossgroup -->

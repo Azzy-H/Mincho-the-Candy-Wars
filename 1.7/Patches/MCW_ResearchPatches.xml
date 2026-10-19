@@ -1,43 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!--
-    科技前置补丁：
-      · 家具统一由 MCW_Research_MinchoBasic 解锁
-      · 通讯台由 MCW_Research_CommsConsole 解锁（不可研究，只能任务/商店给予）
-      · 4 种改件各自由独立的科技解锁
-  -->
-
-  <!-- ── 珉巧家具科技：家具/设施 ── -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="MCW_FirefoamPopper" or defName="MCW_EndTable" or defName="MCW_Cabinet" or defName="MCW_Table2x4c" or defName="MCW_MinchoTable2x2c" or defName="MCW_MinchoStool" or defName="MCW_MinchoCouch"]</xpath>
-    <value>
-      <researchPrerequisites>
-        <li>MCW_Research_MinchoBasic</li>
-      </researchPrerequisites>
-    </value>
-  </Operation>
-
-  <!-- ── 珉巧家具科技：床与操作臂 ── -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="MCW_MinchoBed" or defName="MCW_MinchoDoubleBed" or defName="MCW_MinchoLuxuryBed" or defName="MCW_MinchoLuxuryDoubleBed" or defName="MCW_RoboticArm"]</xpath>
-    <value>
-      <researchPrerequisites>
-        <li>MCW_Research_MinchoBasic</li>
-      </researchPrerequisites>
-    </value>
-  </Operation>
-
-  <!-- ── 薄荷冰淇淋通讯台：独立科技 ── -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="MCW_Chocolate_Console"]/researchPrerequisites</xpath>
-    <value>
-      <researchPrerequisites>
-        <li>MCW_Research_CommsConsole</li>
-      </researchPrerequisites>
-    </value>
-  </Operation>
-
-  <!-- ── 4 种改件：各自独立科技 ── -->
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/RecipeDef[defName="MCW_Make_MinchoIntelBooster"]</xpath>
     <value>
@@ -65,5 +27,4 @@
       <researchPrerequisite>MCW_Research_BoosterBody</researchPrerequisite>
     </value>
   </Operation>
-
 </Patch>

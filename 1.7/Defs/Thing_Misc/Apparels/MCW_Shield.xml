@@ -20,6 +20,12 @@
       <Flammability>0</Flammability>
       <EquipDelay>1.5</EquipDelay>
     </statBases>
+    <!-- 面板展示用：装备后面板显示「盾牌可以给予」的防御力 -->
+    <equippedStatOffsets>
+      <MCW_ShieldArmor_Sharp>0.35</MCW_ShieldArmor_Sharp>
+      <MCW_ShieldArmor_Blunt>0.25</MCW_ShieldArmor_Blunt>
+      <MCW_ShieldArmor_Heat>0.2</MCW_ShieldArmor_Heat>
+    </equippedStatOffsets>
     <apparel>
       <wornGraphicData>
         <renderUtilityAsPack>true</renderUtilityAsPack>
@@ -144,6 +150,12 @@
       <Flammability>0</Flammability>
       <EquipDelay>2</EquipDelay>
     </statBases>
+    <!-- 面板展示用：装备后面板显示「盾牌可以给予」的防御力 -->
+    <equippedStatOffsets>
+      <MCW_ShieldArmor_Sharp>0.45</MCW_ShieldArmor_Sharp>
+      <MCW_ShieldArmor_Blunt>0.35</MCW_ShieldArmor_Blunt>
+      <MCW_ShieldArmor_Heat>0.25</MCW_ShieldArmor_Heat>
+    </equippedStatOffsets>
     <apparel>
       <wornGraphicData>
         <renderUtilityAsPack>true</renderUtilityAsPack>

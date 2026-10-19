@@ -103,7 +103,7 @@
 
   <ThingDef ParentName="ResourceBase">
     <defName>MCW_Beta_NanoShapingFluid</defName>
-    <label>β型纳米塑形液</label>
+    <label>贝塔型纳米塑形液</label>
     <description>闪耀世界甜品公司为了制作新型可玩、可使用机器人而研发的纳米机器人。一个试管内的纳米机器人数量大约可以给2立方米的薄荷冰淇淋“注入”智慧。</description>
     <graphicData>
       <texPath>Things/Item/MCW_Beta_NanoShapingFluid</texPath>
@@ -116,7 +116,7 @@
     <healthAffectsPrice>false</healthAffectsPrice>
     <stackLimit>50</stackLimit>
     <statBases>
-      <MarketValue>5</MarketValue>
+      <MarketValue>700</MarketValue>
       <MaxHitPoints>150</MaxHitPoints>
       <Mass>0.01</Mass>
     </statBases>
@@ -131,7 +131,7 @@
   </ThingDef>
   <ThingDef ParentName="ResourceBase">
     <defName>MCW_Alpha_NanoShapingFluid</defName>
-    <label>α型纳米塑形液</label>
+    <label>阿尔法型纳米塑形液</label>
     <description>闪耀世界甜品公司研发的纳米机器人的失败品，其凝聚后的无法正常连接核心，所以导致产生的智能体，并不智能。只是类似自我复制的史莱姆，获取能量，制造出更多的薄荷冰淇淋，仅此而已。</description>
     <graphicData>
       <texPath>Things/Item/MCW_Alpha_NanoShapingFluid</texPath>
@@ -144,7 +144,7 @@
     <healthAffectsPrice>false</healthAffectsPrice>
     <stackLimit>50</stackLimit>
     <statBases>
-      <MarketValue>5</MarketValue>
+      <MarketValue>700</MarketValue>
       <MaxHitPoints>150</MaxHitPoints>
       <Mass>0.01</Mass>
     </statBases>

@@ -21,7 +21,7 @@
       <growDays>3.5</growDays>
       <dieIfLeafless>true</dieIfLeafless>
       <harvestTag>Standard</harvestTag>
-      <harvestedThingDef>Mincho_ChocoStick</harvestedThingDef>
+      <harvestedThingDef>Chocolate</harvestedThingDef>
       <harvestYield>8</harvestYield>
       <sowMinSkill>5</sowMinSkill>
       <sowTags>

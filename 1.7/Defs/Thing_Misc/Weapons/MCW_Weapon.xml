@@ -161,6 +161,7 @@
     <graphicData>
 			<texPath>Mincho_Item/Foods/Mincho_CandyCane</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.75</drawSize>
     </graphicData>
     <techLevel>Medieval</techLevel>
     <weaponTags>
@@ -196,6 +197,56 @@
 				<cooldownTime>2</cooldownTime>
 			</li>
     </tools>
+    <recipeMaker Inherit="False" IsNull="True"/>
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+    <defName>MCW_MintchocoPunch_ForMech</defName>
+    <label>薄荷巧克力流星锤（机械体）</label>
+    <description>为珉巧子个体改制的薄荷巧克力流星锤。</description>
+    <possessionCount>1</possessionCount>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <graphicData>
+      <texPath>Mincho_Weapon/Mincho_MintchocoPunch/Texture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.5,1.5)</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>40000</WorkToMake>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>3</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <equippedAngleOffset>90</equippedAngleOffset>
+    <equipmentType>Primary</equipmentType>
+    <techLevel>Neolithic</techLevel>
+    <costList>
+      <Mincho_BlocksMintchoco>50</Mincho_BlocksMintchoco>
+      <Gold>30</Gold>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>head</label>
+        <labelUsedInLogging>false</labelUsedInLogging>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags Inherit="false">
+      <li>MCW_MintchocoPunch_ForMech</li>
+    </weaponTags>
     <recipeMaker Inherit="False" IsNull="True"/>
   </ThingDef>
 </Defs>

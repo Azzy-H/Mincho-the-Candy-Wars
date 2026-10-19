@@ -266,6 +266,30 @@
     </race>
   </ThingDef>
   <ThingDef ParentName="MCW_Mech_Base">
+    <defName>MCW_Mech_Defender_II</defName>
+    <label>次级珉巧子个体-防卫II型</label>
+    <description>小小冰淇淋骑士，手持流星锤保护姐姐们。</description>
+    <graphicData>
+      <!-- Graphic_Random：目录内两组外观随机选一套（各自带方向） -->
+      <texPath>Things/Pawn/Mechanoid/MCW_Mech_Defender_II</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(1.2,1.2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MoveSpeed>3.2</MoveSpeed>
+      <BandwidthCost>2</BandwidthCost>
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+      <ArmorRating_Heat>2.0</ArmorRating_Heat>
+    </statBases>
+    <race>
+      <mechEnabledWorkTypes>
+        <li>Hauling</li>
+        <li>Cleaning</li>
+      </mechEnabledWorkTypes>
+    </race>
+  </ThingDef>
+  <ThingDef ParentName="MCW_Mech_Base">
     <defName>MCW_Mech_Gunner</defName>
     <label>次级珉巧子个体-攻击型</label>
     <description>小小冰淇淋抢手，使用无情的棒棒糖夺走坏人的生命</description>
