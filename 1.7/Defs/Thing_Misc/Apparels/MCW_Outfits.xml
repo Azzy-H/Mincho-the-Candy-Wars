@@ -41,6 +41,14 @@
 			-->
 			</layers>
     </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
   </ThingDef>
   <ThingDef ParentName="Mincho_ApparelBase_Hat">
     <defName>MCW_NurseCap</defName>
@@ -66,10 +74,21 @@
     </statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseCap</wornGraphicPath>
+      <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
 			<layers>
   			<li>Overhead</li>
 			</layers>
     </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
   </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
@@ -103,6 +122,14 @@
 				<li>OnSkin</li>
 			</layers>
     </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
   </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
@@ -136,6 +163,14 @@
 				<li>OnSkin</li>
 			</layers>
     </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
   </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
@@ -173,6 +208,14 @@
 				<li>OnSkin</li>
 			</layers>
     </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
   </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
@@ -210,6 +253,14 @@
         <li>OnSkin</li>
       </layers>
     </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
   </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
@@ -242,6 +293,14 @@
         <li>Shell</li>
       </layers>
     </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
     <comps>
       <li Class="Mincho_The_Mint_Choco_Slime.CompProperties_CauseRemoveHediff_Apparel">
         <hediff>MCW_MechaArmor_AddonHediff</hediff>
@@ -331,6 +390,14 @@
       <Plasteel>50</Plasteel>
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>
       <WorkToMake>3000</WorkToMake>

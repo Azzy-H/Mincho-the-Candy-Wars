@@ -16,4 +16,7 @@
   <MCW_StellarisEventGizmo_CannotTrigger>条件不满足</MCW_StellarisEventGizmo_CannotTrigger>
   <MCW_StellarisEventGizmo_CooldownPermanent>冷却中（永久）</MCW_StellarisEventGizmo_CooldownPermanent>
   <MCW_StellarisEventGizmo_CooldownRemaining>冷却剩余 {0} 小时</MCW_StellarisEventGizmo_CooldownRemaining>
+
+  <!-- 撒娇（机械体亲昵） -->
+  <MCW_Nuzzle_Cooldown>撒娇冷却剩余 {0} 小时</MCW_Nuzzle_Cooldown>
 </LanguageData>

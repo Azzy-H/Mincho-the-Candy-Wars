@@ -20,6 +20,9 @@
     <staticSunShadowHeight>0</staticSunShadowHeight>
     <castEdgeShadows>false</castEdgeShadows>
 		<tickerType>Long</tickerType>
+		<statBases>
+			<BedHungerRateFactor>1.5</BedHungerRateFactor>
+		</statBases>
 		<comps>
 			<li Class="MinchoCandyWars.Buildings.CompProperties_CellTemperatureOverride">
 				<temperature>-15</temperature>
@@ -34,9 +37,6 @@
         </linkableFacilities>
       </li>
 		</comps>
-		<statBases>
-			<BedHungerRateFactor>1.5</BedHungerRateFactor>
-		</statBases>
 	</ThingDef>
 	<ThingDef ParentName="DoubleBed">
 		<defName>MCW_MinchoDoubleBed</defName>

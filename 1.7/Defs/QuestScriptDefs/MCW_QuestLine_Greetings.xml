@@ -15,6 +15,17 @@
           NextQuest == A4 → 「有什么需要探索的地方吗？」
       · 条件不满足的选项由 hideWhenDisabled 直接隐藏，
         玩家看到的永远是「当前真正该做的事」。
+
+    除任务外，以下 5 个事件也并入了本对话树（原来是通讯台上各自独立的 gizmo 按钮）：
+      · MCW_Event_AllianceSubsidy      好感度 ≥30 且不在 10 天冷却中
+      · MCW_Event_AllianceCandyShop    好感度 ≥50
+      · MCW_Event_AllianceBoosterShop  好感度 ≥100
+      · MCW_Event_QuestF1_AllianceContact   终局进度 ≥10 且未接受过
+      · MCW_Event_QuestFF1_AllianceContact  终局进度 ≥11 且未完成
+    现在通讯台上只剩「联络珉巧同盟」一个按钮，全部内容都从这棵树进入。
+
+    ⚠ 写 trigger 时注意：<logic>NOT</logic> / OR 只有在写了 <idGroup> 时才生效
+      （StellarisEventDef.EvaluateTriggers），无 idGroup 的 trigger 一律按原始结果 AND。
     ============================================================================
   -->
   <MinchoCandyWars.StellarisEvent.StellarisEventDef>
@@ -43,16 +54,22 @@
         <label>有什么可以帮忙的吗？</label>
         <desc>询问珉巧同盟这边有什么需要你出手的事情。</desc>
         <triggers>
+          <!-- ⚠ <logic>NOT</logic> 只有在写了 <idGroup> 时才生效
+               （见 StellarisEventDef.EvaluateTriggers：无 idGroup 的 trigger 一律按原始结果 AND）。
+               三个条件放进同一个 idGroup，才会变成「三个 flag 都不存在」。 -->
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
             <flagName>MCW_QuestA1_Accepted</flagName>
+            <idGroup>MCW_A1NotStarted</idGroup>
             <logic>NOT</logic>
           </li>
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
             <flagName>MCW_QuestA1_Declined</flagName>
+            <idGroup>MCW_A1NotStarted</idGroup>
             <logic>NOT</logic>
           </li>
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
             <flagName>MCW_NextQuest</flagName>
+            <idGroup>MCW_A1NotStarted</idGroup>
             <logic>NOT</logic>
           </li>
         </triggers>
@@ -145,6 +162,133 @@
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
               <defName>MCW_Event_QuestA5_AllianceContact</defName>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <!-- ═══════════ 以下 5 项原先是通讯台上独立的 gizmo 按钮，
+           现已并入本对话树，靠好感度 / 终局进度 / 冷却 flag 决定是否显示 ═══════════ -->
+
+      <!-- 领取资助：沁心糖好感度 ≥ 30，且不在 10 天冷却中 -->
+      <li>
+        <label>领取珉巧同盟的资助</label>
+        <desc>好感度达到 30 后可领取的资助，每 10 天一次。</desc>
+        <triggers>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FactionGoodwill">
+            <factionDef>MCW_Alliance_Faction</factionDef>
+            <minGoodwill>30</minGoodwill>
+          </li>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
+            <flagName>MCW_AllianceSubsidyCooldown</flagName>
+            <idGroup>MCW_SubsidyReady</idGroup>
+            <logic>NOT</logic>
+          </li>
+        </triggers>
+        <hideWhenDisabled>true</hideWhenDisabled>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+              <defName>MCW_Event_AllianceSubsidy</defName>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <!-- 糖饰商店：好感度 ≥ 50 -->
+      <li>
+        <label>你们这里有糖饰卖吗？</label>
+        <desc>好感度达到 50 后可购买糖饰与研究图纸。</desc>
+        <triggers>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FactionGoodwill">
+            <factionDef>MCW_Alliance_Faction</factionDef>
+            <minGoodwill>50</minGoodwill>
+          </li>
+        </triggers>
+        <hideWhenDisabled>true</hideWhenDisabled>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+              <defName>MCW_Event_AllianceCandyShop</defName>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <!-- 改造包商店：好感度 ≥ 100 -->
+      <li>
+        <label>能给我看看改造包吗？</label>
+        <desc>好感度达到 100 后可购买珉巧改造包。</desc>
+        <triggers>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FactionGoodwill">
+            <factionDef>MCW_Alliance_Faction</factionDef>
+            <minGoodwill>100</minGoodwill>
+          </li>
+        </triggers>
+        <hideWhenDisabled>true</hideWhenDisabled>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+              <defName>MCW_Event_AllianceBoosterShop</defName>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <!-- 终局行动：终局进度 ≥ 10，且还没接受过（避免重复发放同一个终局任务） -->
+      <li>
+        <label>我们准备好了，开始终局行动吧！</label>
+        <desc>终局进度达到 10 后，可以联络珉巧同盟发起对回收部队总部的决战。</desc>
+        <triggers>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
+            <flagName>MCW_EndgameProgress</flagName>
+            <checkType>Float</checkType>
+            <expectedFloat>10</expectedFloat>
+            <floatCompare>GreaterOrEqual</floatCompare>
+          </li>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
+            <flagName>MCW_QuestF1_Accepted</flagName>
+            <idGroup>MCW_F1NotAccepted</idGroup>
+            <logic>NOT</logic>
+          </li>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
+            <flagName>MCW_QuestFF1_Done</flagName>
+            <idGroup>MCW_F1NotAccepted</idGroup>
+            <logic>NOT</logic>
+          </li>
+        </triggers>
+        <hideWhenDisabled>true</hideWhenDisabled>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+              <defName>MCW_Event_QuestF1_AllianceContact</defName>
+            </li>
+          </effects>
+        </action>
+      </li>
+
+      <!-- 沁心糖的拜访：终局进度 ≥ 11（打完回收部队总部后），且还没来过 -->
+      <li>
+        <label>随时欢迎你来做客！</label>
+        <desc>击溃回收部队总部后，沁心糖想亲自来拜访你。</desc>
+        <triggers>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
+            <flagName>MCW_EndgameProgress</flagName>
+            <checkType>Float</checkType>
+            <expectedFloat>11</expectedFloat>
+            <floatCompare>GreaterOrEqual</floatCompare>
+          </li>
+          <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
+            <flagName>MCW_QuestFF1_Done</flagName>
+            <idGroup>MCW_FF1NotDone</idGroup>
+            <logic>NOT</logic>
+          </li>
+        </triggers>
+        <hideWhenDisabled>true</hideWhenDisabled>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+              <defName>MCW_Event_QuestFF1_AllianceContact</defName>
             </li>
           </effects>
         </action>

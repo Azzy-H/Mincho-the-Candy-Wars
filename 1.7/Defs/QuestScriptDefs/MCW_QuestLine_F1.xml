@@ -33,6 +33,17 @@
             <li Class="MinchoCandyWars.StellarisEvent.Effect_FireIncident">
               <defName>MCW_GiveQuest_QuestFF1</defName>
             </li>
+            <!-- 标记「终局行动已接受」：
+                 MCW_Event_AllianceGreeting 里的「终局行动」选项靠这个 flag 隐藏，
+                 否则终局进度还是 10 的整段时间里可以反复打开并重复发放终局任务
+                 （Effect_FireIncident 走的是 TryExecute，不看 CanFireNow）。 -->
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+              <flagName>MCW_QuestF1_Accepted</flagName>
+              <valueType>Bool</valueType>
+              <boolValue>true</boolValue>
+              <setMode>Override</setMode>
+              <local>false</local>
+            </li>
           </effects>
         </action>
       </li>

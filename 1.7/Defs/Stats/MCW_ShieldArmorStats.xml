@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    曲奇盾牌的三条防御数值。
+
+    1.7 修正：
+      · <category>Combat</category> → <category>PawnCombat</category>
+        原版 StatCategoryDef 里没有 Combat 这个名字（有 PawnCombat / Weapon / Weapon_Melee 等），
+        写 Combat 会导致 "No StatCategoryDef named Combat" 的跨引用错误，分类丢失。
+      · 删掉 <showOnNonColonist>：StatDef 从来没有这个字段（1.6/1.7 都没有），
+        会报 "doesn't correspond to any field in type StatDef"。
+        想限制显示范围请用 showOnPawns / showOnHumanlikes / showOnNonWildManHumanlikes
+        / showOnAnimals / showOnMechanoids / showOnEntities 这些真实字段。
+  -->
+  <StatDef>
+    <defName>MCW_ShieldArmor_Sharp</defName>
+    <label>盾牌利器防御</label>
+    <description>当前举起的盾牌提供的利器伤害防护。</description>
+    <category>PawnCombat</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>1</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <displayPriorityInCategory>6000</displayPriorityInCategory>
+    <hideAtValue>0</hideAtValue>
+  </StatDef>
+  <StatDef>
+    <defName>MCW_ShieldArmor_Blunt</defName>
+    <label>盾牌钝器防御</label>
+    <description>当前举起的盾牌提供的钝器伤害防护。</description>
+    <category>PawnCombat</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>1</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <displayPriorityInCategory>5990</displayPriorityInCategory>
+    <hideAtValue>0</hideAtValue>
+  </StatDef>
+  <StatDef>
+    <defName>MCW_ShieldArmor_Heat</defName>
+    <label>盾牌热能防御</label>
+    <description>当前举起的盾牌提供的热能伤害防护。</description>
+    <category>PawnCombat</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>1</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <displayPriorityInCategory>5980</displayPriorityInCategory>
+    <hideAtValue>0</hideAtValue>
+  </StatDef>
+</Defs>
