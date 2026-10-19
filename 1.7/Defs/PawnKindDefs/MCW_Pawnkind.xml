@@ -102,7 +102,7 @@
             <li>MCW_Beta_NanoShapingFluid</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>1</count>
       </li>
       <li>
         <filter>
@@ -113,6 +113,11 @@
         <count>1</count>
       </li>
     </ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Mincho_IceCream</li>
+			</categories>
+		</fixedIngredientFilter>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_I_Maid</defName>
@@ -125,7 +130,7 @@
         <bodyGraphicData>
           <texPath>Things/Race/MCW_Mech_I_Maid/Bodies/Naked_Thin</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.25</drawSize>
+          <drawSize>1.8</drawSize>
           <shadowData>
             <volume>(0.3, 0.4, 0.3)</volume>
             <offset>(0,0,-0.25)</offset>
@@ -139,8 +144,8 @@
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_II_Maid_Recipe</defName>
-    <label>培育次级珉巧子个体-女仆I型</label>
-    <description>培育次级珉巧子个体-女仆I型.</description>
+    <label>培育次级珉巧子个体-女仆Ⅱ型</label>
+    <description>培育次级珉巧子个体-女仆Ⅱ型.</description>
     <products>
       <MCW_Mech_II_Maid>1</MCW_Mech_II_Maid>
     </products>
@@ -170,7 +175,7 @@
             <li>MCW_Beta_NanoShapingFluid</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>1</count>
       </li>
       <li>
         <filter>
@@ -181,6 +186,11 @@
         <count>1</count>
       </li>
     </ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Mincho_IceCream</li>
+			</categories>
+		</fixedIngredientFilter>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_II_Maid</defName>
@@ -193,7 +203,7 @@
         <bodyGraphicData>
           <texPath>Things/Race/MCW_Mech_II_Maid/Bodies/Naked_Thin</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.25</drawSize>
+          <drawSize>1.8</drawSize>
           <shadowData>
             <volume>(0.3, 0.4, 0.3)</volume>
             <offset>(0,0,-0.25)</offset>
@@ -207,8 +217,8 @@
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_Battle_Recipe</defName>
-    <label>培育次级珉巧子个体-女仆I型</label>
-    <description>培育次级珉巧子个体-女仆I型.</description>
+    <label>培育次级珉巧子个体-战斗型</label>
+    <description>培育次级珉巧子个体-战斗型.</description>
     <products>
       <MCW_Mech_Battle>1</MCW_Mech_Battle>
     </products>
@@ -238,7 +248,7 @@
             <li>MCW_Beta_NanoShapingFluid</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>1</count>
       </li>
       <li>
         <filter>
@@ -248,7 +258,20 @@
         </filter>
         <count>1</count>
       </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Mincho_CandyCane</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
     </ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Mincho_IceCream</li>
+			</categories>
+		</fixedIngredientFilter>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Battle</defName>
@@ -261,7 +284,7 @@
         <bodyGraphicData>
           <texPath>Things/Race/MCW_Mech_Battle/Bodies/Naked_Thin</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.25</drawSize>
+          <drawSize>1.75</drawSize>
           <shadowData>
             <volume>(0.3, 0.4, 0.3)</volume>
             <offset>(0,0,-0.25)</offset>
@@ -270,13 +293,13 @@
       </li>
     </lifeStages>
     <weaponTags>
-      <li>Mincho_CandyCane_ForMech</li>
+      <li>MCW_CandyCane_ForMech</li>
     </weaponTags>
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_Defender_Recipe</defName>
-    <label>培育次级珉巧子个体-女仆I型</label>
-    <description>培育次级珉巧子个体-女仆I型.</description>
+    <label>培育次级珉巧子个体-防卫型</label>
+    <description>培育次级珉巧子个体-防卫型.</description>
     <products>
       <MCW_Mech_Defender>1</MCW_Mech_Defender>
     </products>
@@ -306,7 +329,7 @@
             <li>MCW_Beta_NanoShapingFluid</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>1</count>
       </li>
       <li>
         <filter>
@@ -316,7 +339,21 @@
         </filter>
         <count>1</count>
       </li>
+      <!-- 薄荷巧克力塔盾（机械体专用武器） -->
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MCW_TowerShield</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
     </ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Mincho_IceCream</li>
+			</categories>
+		</fixedIngredientFilter>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Defender</defName>
@@ -329,7 +366,7 @@
         <bodyGraphicData>
           <texPath>Things/Race/MCW_Mech_Defender/Bodies/Naked_Thin</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.25</drawSize>
+          <drawSize>1.75</drawSize>
           <shadowData>
             <volume>(0.3, 0.4, 0.3)</volume>
             <offset>(0,0,-0.25)</offset>
@@ -337,14 +374,15 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <!-- <weaponTags>
-      <li>MechanoidGunShortRange</li>
-    </weaponTags> -->
+    <!-- 手持薄荷巧克力塔盾（机械体专用武器，见 MCW_TowerShieldWeapon.xml） -->
+    <weaponTags>
+      <li>MCW_TowerShield_ForMech</li>
+    </weaponTags>
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_Gunner_Recipe</defName>
-    <label>培育次级珉巧子个体-女仆I型</label>
-    <description>培育次级珉巧子个体-女仆I型.</description>
+    <label>培育次级珉巧子个体-攻击型</label>
+    <description>培育次级珉巧子个体-攻击型.</description>
     <products>
       <MCW_Mech_Gunner>1</MCW_Mech_Gunner>
     </products>
@@ -374,7 +412,7 @@
             <li>MCW_Beta_NanoShapingFluid</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>1</count>
       </li>
       <li>
         <filter>
@@ -384,13 +422,26 @@
         </filter>
         <count>1</count>
       </li>
+      <!-- 涡轮棒棒糖发射器 -->
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MCW_RW_VrocanGatling</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
     </ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Mincho_IceCream</li>
+			</categories>
+		</fixedIngredientFilter>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Gunner</defName>
     <label>次级珉巧子个体-攻击型</label>
     <race>MCW_Mech_Gunner</race>
-    <combatPower>45</combatPower>
     <!-- <apparelMoney>300~500</apparelMoney> -->
     <weaponMoney>99999~99999</weaponMoney>
     <combatPower>200</combatPower>
@@ -404,7 +455,7 @@
         <bodyGraphicData>
           <texPath>Things/Race/MCW_Mech_Gunner/Bodies/Naked_Thin</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.25</drawSize>
+          <drawSize>1.75</drawSize>
           <shadowData>
             <volume>(0.3, 0.4, 0.3)</volume>
             <offset>(0,0,-0.25)</offset>
@@ -412,9 +463,6 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <!-- <weaponTags>
-      <li>MechanoidGunShortRange</li>
-    </weaponTags> -->
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_Defender_II_Recipe</defName>
@@ -462,12 +510,17 @@
       <li>
         <filter>
           <thingDefs>
-            <li>MCW_MintchocoPunch_ForMech</li>
+            <li>Mincho_MintchocoPunch</li>
           </thingDefs>
         </filter>
         <count>1</count>
       </li>
     </ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Mincho_IceCream</li>
+			</categories>
+		</fixedIngredientFilter>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Defender_II</defName>
@@ -475,7 +528,15 @@
     <race>MCW_Mech_Defender_II</race>
     <lifeStages>
       <li>
-        <def>MechanoidFullyFormed</def>
+        <bodyGraphicData>
+          <texPath>Things/Race/MCW_Mech_Defender_II/Bodies/Naked_Thin</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.75</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
       </li>
     </lifeStages>
     <weaponTags>

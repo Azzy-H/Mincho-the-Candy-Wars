@@ -376,8 +376,9 @@
 		<label>mincho floor A</label>
 		<description>A durable floor pattern for Mincho settlements.</description>
 		<renderPrecedence>230</renderPrecedence>
-		<texturePath>Terrain/Surfaces/PavedTile</texturePath>
-		<color>(140,140,140)</color>
+		<!-- 棕白菱形瓷砖（源图 16.jpg，已转成 512x512 PNG）
+		     原来的 <color>(140,140,140)</color> 是占位期的灰色叠加，会乘暗原图，已移除 -->
+		<texturePath>Terrain/Surfaces/MCW_MinchoFloorA</texturePath>
 		<isPaintable>true</isPaintable>
 		<statBases>
 			<WorkToBuild>300</WorkToBuild>
@@ -391,9 +392,6 @@
 			<li>Stonecutting</li>
 		</researchPrerequisites>
 		<uiOrder>2030</uiOrder>
-		<!-- TODO: set custom floor texture
-		<texturePath>Terrain/Surfaces/TODO_MCW_MinchoFloorA</texturePath>
-		-->
 	</TerrainDef>
 	<TerrainDef ParentName="FloorBase">
 		<defName>MCW_MinchoFloorB</defName>
@@ -401,8 +399,9 @@
 		<label>mincho floor B</label>
 		<description>A durable floor pattern for Mincho settlements.</description>
 		<renderPrecedence>230</renderPrecedence>
-		<texturePath>Terrain/Surfaces/PavedTile</texturePath>
-		<color>(140,140,140)</color>
+		<!-- 金色链条大理石（源图 20.jpg，已转成 512x512 PNG）
+		     同样移除了占位期的灰色叠加 -->
+		<texturePath>Terrain/Surfaces/MCW_MinchoFloorB</texturePath>
 		<isPaintable>true</isPaintable>
 		<statBases>
 			<WorkToBuild>300</WorkToBuild>
@@ -416,9 +415,6 @@
 			<li>Stonecutting</li>
 		</researchPrerequisites>
 		<uiOrder>2030</uiOrder>
-		<!-- TODO: set custom floor texture
-		<texturePath>Terrain/Surfaces/TODO_MCW_MinchoFloorB</texturePath>
-		-->
 	</TerrainDef>
 	<TerrainDef ParentName="FloorBase">
 		<defName>MCW_MinchoFloorC</defName>
@@ -519,55 +515,15 @@
         <effecterDef>CommsConsoleBossgroupSummoned</effecterDef>
         <delayTicks>120</delayTicks>
       </li>
-      <!-- 联络珉巧同盟：唯一入口。点击后打开统一聊天窗口（MCW_Event_AllianceGreeting），
-           窗口内由选项条件自动分流到当前该进行的 questA1~A5。
-           另按沁心糖好感度解锁三个额外按钮：
-             ≥30  → 领取资助（10 天冷却）
-             ≥50  → 糖饰商店（糖饰 + 研究图纸）
-             ≥100 → 珉巧改造包商店
-           只有本 mod 的冰淇淋通讯台拥有这些功能（不修改原版通讯台）。 -->
       <li Class="MinchoCandyWars.CompProperties_StellarisEventGizmo">
         <gizmos>
           <li>
             <eventDef>MCW_Event_AllianceGreeting</eventDef>
+            <iconPath>UI/Factions/MCW_Alliance_Faction</iconPath>
             <label>联络珉巧同盟</label>
             <desc>呼叫珉巧同盟，和沁心糖通话。</desc>
-          </li>
-          <li>
-            <eventDef>MCW_Event_AllianceSubsidy</eventDef>
-            <label>领取珉巧同盟资助</label>
-            <desc>好感度达到 30 后可领取的资助，每 10 天一次。</desc>
-            <factionDef>MCW_Alliance_Faction</factionDef>
-            <minGoodwill>30</minGoodwill>
-            <flagAsCooldown>MCW_AllianceSubsidyCooldown</flagAsCooldown>
-          </li>
-          <li>
-            <eventDef>MCW_Event_AllianceCandyShop</eventDef>
-            <label>珉巧同盟糖饰商店</label>
-            <desc>好感度达到 50 后可购买糖饰与研究图纸。</desc>
-            <factionDef>MCW_Alliance_Faction</factionDef>
-            <minGoodwill>50</minGoodwill>
-          </li>
-          <li>
-            <eventDef>MCW_Event_AllianceBoosterShop</eventDef>
-            <label>珉巧同盟改造包商店</label>
-            <desc>好感度达到 100 后可购买珉巧改造包。</desc>
-            <factionDef>MCW_Alliance_Faction</factionDef>
-            <minGoodwill>100</minGoodwill>
-          </li>
-          <li>
-            <eventDef>MCW_Event_QuestF1_AllianceContact</eventDef>
-            <label>终局行动</label>
-            <desc>终局进度达到 10 后，可以联络珉巧同盟发起对回收部队总部的决战。</desc>
-            <minFloatFlag>MCW_EndgameProgress</minFloatFlag>
-            <minFloatValue>10</minFloatValue>
-          </li>
-          <li>
-            <eventDef>MCW_Event_QuestFF1_AllianceContact</eventDef>
-            <label>沁心糖的拜访</label>
-            <desc>击溃回收部队总部后，沁心糖想亲自来拜访你。</desc>
-            <minFloatFlag>MCW_EndgameProgress</minFloatFlag>
-            <minFloatValue>11</minFloatValue>
+            <existFlag>MCW_QS1_CorpDecided</existFlag>
+            <existFlagValue>true</existFlagValue>
           </li>
         </gizmos>
       </li>
@@ -576,9 +532,7 @@
     <placeWorkers>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
-    <researchPrerequisites Inherit="False">
-      <li>MCW_Research_CommsConsole</li>
-    </researchPrerequisites>
+    <researchPrerequisites Inherit="False"/>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
     <tickerType MayRequire="Ludeon.RimWorld.Biotech">Normal</tickerType><!-- used by call bossgroup -->
   </ThingDef>

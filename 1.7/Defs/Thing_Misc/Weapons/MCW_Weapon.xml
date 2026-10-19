@@ -66,7 +66,7 @@
     <graphicData>
       <texPath>Things/Weapon/MCW_VrocanGatling</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1</drawSize>
+      <drawSize>1.75</drawSize>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
     <thingSetMakerTags>
@@ -145,14 +145,13 @@
     <defName>MCW_RW_VrocanGatling_Formech</defName>
     <tradeability>None</tradeability>
     <destroyOnDrop>true</destroyOnDrop>
-    <generateAllowChance>0.001</generateAllowChance>
     <weaponTags>
       <li>MCW_RW_VrocanGatling_Formech</li>
     </weaponTags>
   </ThingDef>
 
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
-    <defName>Mincho_CandyCane_ForMech</defName>
+    <defName>MCW_CandyCane_ForMech</defName>
 		<label>candy cane</label>
 		<description>A very powerful candy cane made by triple enriched of mint candy. It boasts a fresher taste and more refreshing violence.\n\nIt does not look like a cane? You will say otherwise after a beating.</description>
     <possessionCount>1</possessionCount>
@@ -165,7 +164,7 @@
     </graphicData>
     <techLevel>Medieval</techLevel>
     <weaponTags>
-      <li>Mincho_CandyCane_ForMech</li>
+      <li>MCW_CandyCane_ForMech</li>
     </weaponTags>
     <costStuffCount>100</costStuffCount>
     <statBases>
@@ -201,7 +200,7 @@
   </ThingDef>
   <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
     <defName>MCW_MintchocoPunch_ForMech</defName>
-    <label>薄荷巧克力流星锤（机械体）</label>
+    <label>薄荷巧克力流星锤</label>
     <description>为珉巧子个体改制的薄荷巧克力流星锤。</description>
     <possessionCount>1</possessionCount>
     <destroyOnDrop>true</destroyOnDrop>
@@ -218,7 +217,6 @@
       <Flammability>0.5</Flammability>
     </statBases>
     <equippedAngleOffset>90</equippedAngleOffset>
-    <equipmentType>Primary</equipmentType>
     <techLevel>Neolithic</techLevel>
     <costList>
       <Mincho_BlocksMintchoco>50</Mincho_BlocksMintchoco>
@@ -248,5 +246,54 @@
       <li>MCW_MintchocoPunch_ForMech</li>
     </weaponTags>
     <recipeMaker Inherit="False" IsNull="True"/>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+    <defName>MCW_TowerShield_ForMech</defName>
+    <label>薄荷冰淇淋巧克力塔盾</label>
+    <description>为珉巧子个体改制的薄荷冰淇淋巧克力塔盾。</description>
+
+    <possessionCount>1</possessionCount>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+
+    <graphicData>
+      <texPath>Things/Apparel/MCW_Shield/MCW_Tower_shield_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.6,1.6)</drawSize>
+    </graphicData>
+
+    <statBases>
+      <WorkToMake>8000</WorkToMake>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+
+    <techLevel>Industrial</techLevel>
+
+    <costList>
+      <Mincho_ChocoStick>80</Mincho_ChocoStick>
+      <Steel>80</Steel>
+      <Mincho_Mintchoco>200</Mincho_Mintchoco>
+    </costList>
+
+    <tools>
+      <li>
+        <label>shield</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+
+    <weaponTags Inherit="false">
+      <li>MCW_TowerShield_ForMech</li>
+    </weaponTags>
+
+    <!-- 不单独出制造配方：只能作为防卫型培育配方的材料 -->
+    <recipeMaker Inherit="False" IsNull="True" />
   </ThingDef>
 </Defs>

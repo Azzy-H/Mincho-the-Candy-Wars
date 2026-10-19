@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================================
+       撒娇（机械体亲昵）
+       ============================================================================
+       实现拆成三块：
+         · Comp_Nuzzle        挂在机械体身上，承载【内置冷却】（每台机器各自计时）
+         · JobDef MCW_Nuzzle  + JobDriver_MCWNuzzle：走过去 → 接触 0.5 秒（30 tick）
+                              → 给目标加心情想法 → 触发冷却
+         · WorkGiverDef       挂在原版的「基础工作」BasicWorker 这个 WorkType 下，
+                              机械体通过 Patches/MCW_MechNuzzlePatch.xml 被补上
+                              BasicWorker，所以不用改思考树、也只需要一个 WorkGiverDef。
+                              只有 RaceProps.IsMechanoid 且有 Comp_Nuzzle 的才会接活。
+
+       注意：给机械体开 BasicWorker 会连带解锁原版该工作类型下的其它活
+             （Flick 开关 / Open 开门 / EjectFuel 排燃料 / BasicReleasePrisoner 释放囚犯），
+             这些都是原版行为、且都需要玩家先指定，不影响正常运作。
+
+       priorityInType 用负值 → 排在同类工作后面，不会抢真正的活。
+       ============================================================================ -->
+
+  <!-- ─────────── 心情想法 ─────────── -->
+  <ThoughtDef>
+    <defName>MCW_NuzzledByMech</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <stagesStack>true</stagesStack>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>被撒娇了</label>
+        <description>小小的冰淇淋机械体凑过来蹭了蹭我，心情好了一点。</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- ─────────── 亲昵 Job ─────────── -->
+  <JobDef>
+    <defName>MCW_Nuzzle</defName>
+    <driverClass>MinchoCandyWars.Nuzzle.JobDriver_MCWNuzzle</driverClass>
+    <reportString>正在向 TargetA 撒娇。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <!-- ─────────── 派发：挂在「基础工作」这个 WorkType 下 ───────────
+       只对机械体生效（WorkGiver 内部判定），人类即使开着基础工作也接不到。 -->
+  <WorkGiverDef>
+    <defName>MCW_Nuzzle_Basic</defName>
+    <label>撒娇</label>
+    <giverClass>MinchoCandyWars.Nuzzle.WorkGiver_MCWNuzzle</giverClass>
+    <workType>BasicWorker</workType>
+    <verb>撒娇</verb>
+    <gerund>撒娇</gerund>
+    <priorityInType>-100</priorityInType>
+  </WorkGiverDef>
+
+</Defs>

@@ -168,6 +168,14 @@
       <canFlyInVacuum>true</canFlyInVacuum>
     </race>
     <comps>
+      <!-- 撒娇：承载亲昵的内置冷却（每台机械体各自计时）。
+           派发逻辑见 Defs/MCW_Nuzzle/MCW_Nuzzle.xml + Source/.../Nuzzle/。 -->
+      <li Class="MinchoCandyWars.Nuzzle.CompProperties_Nuzzle">
+        <cooldownTicks>60000</cooldownTicks>
+        <contactTicks>30</contactTicks>
+        <maxDistance>40</maxDistance>
+        <thoughtDef>MCW_NuzzledByMech</thoughtDef>
+      </li>
  
     </comps>
   </ThingDef>
@@ -175,7 +183,19 @@
     <defName>MCW_Mech_I_Maid</defName>
     <label>次级珉巧子个体-女仆I型</label>
     <description>小小冰淇淋女仆，在内照顾姐姐们起居。</description>
+    <!-- 设计值（参考工艺机）：带宽1 / 利器70% / 钝器70% / 热能50% / 移速3.2 / 固定工作等级12
+         垃圾量 = 搬运机（BaseMechanoid 默认 5）的一半 = 2.5
+         轻型：继承 MCW_Mech_Base → LightMechanoid 的 mechWeightClass=Light -->
+    <statBases>
+      <MoveSpeed>3.2</MoveSpeed>
+      <BandwidthCost>1</BandwidthCost>
+      <ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <WastepacksPerRecharge MayRequire="Ludeon.RimWorld.Biotech">2.5</WastepacksPerRecharge>
+    </statBases>
     <race>
+      <mechFixedSkillLevel>12</mechFixedSkillLevel>
       <mechEnabledWorkTypes>
         <!-- <li>Hauling</li> -->
         <!-- <li>Mining</li> -->  
@@ -189,6 +209,10 @@
         <!-- <li>Growing</li> -->
         <!-- <li>Cleaning</li> -->
         <li>Doctor</li>
+        <!-- 「照料」= 原版 Childcare（生物科技 DLC 的照料工作） -->
+        <li>Childcare</li>
+        <!-- 撒娇（WorkGiver MCW_Nuzzle_Basic）挂在「基础工作」下，机械体必须显式列出这个工作类型 -->
+        <li>BasicWorker</li>
         <!-- <li>Firefighter</li> -->
       </mechEnabledWorkTypes>
     </race>
@@ -197,7 +221,17 @@
     <defName>MCW_Mech_II_Maid</defName>
     <label>次级珉巧子个体-女仆Ⅱ型</label>
     <description>小小冰淇淋女仆，在外为姐姐们分忧。</description>
+    <!-- 设计值（参考工艺机）：带宽1 / 利器90% / 钝器90% / 热能50% / 移速3.0 / 固定工作等级14 -->
+    <statBases>
+      <MoveSpeed>3.0</MoveSpeed>
+      <BandwidthCost>1</BandwidthCost>
+      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <WastepacksPerRecharge MayRequire="Ludeon.RimWorld.Biotech">2.5</WastepacksPerRecharge>
+    </statBases>
     <race>
+      <mechFixedSkillLevel>14</mechFixedSkillLevel>
       <mechEnabledWorkTypes>
         <!-- <li>Hauling</li> -->
         <li>Mining</li>  
@@ -209,6 +243,8 @@
         <!-- <li>Research</li> -->
         <li>PlantCutting</li>
         <li>Growing</li>
+        <!-- 撒娇的挂载点 -->
+        <li>BasicWorker</li>
         <!-- <li>Cleaning</li> -->
         <!-- <li>Doctor</li> -->
         <!-- <li>Firefighter</li> -->
@@ -219,8 +255,14 @@
     <defName>MCW_Mech_Battle</defName>
     <label>次级珉巧子个体-战斗型</label>
     <description>小小冰淇淋骑士，用薄荷钉头锤修理姐姐们的敌人！</description>
+    <!-- 设计值（参考机械飞螳）：带宽2 / 利器120% / 钝器120% / 热能50% / 移速4.8 -->
     <statBases>
+      <MoveSpeed>4.8</MoveSpeed>
       <BandwidthCost>2</BandwidthCost>
+      <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <WastepacksPerRecharge MayRequire="Ludeon.RimWorld.Biotech">2.5</WastepacksPerRecharge>
     </statBases>
     <race>
       <mechEnabledWorkTypes>
@@ -235,6 +277,8 @@
         <!-- <li>PlantCutting</li> -->
         <!-- <li>Growing</li> -->
         <li>Cleaning</li>
+        <!-- 撒娇的挂载点：机械体默认没有「基础工作」，必须显式列出 -->
+        <li>BasicWorker</li>
         <!-- <li>Doctor</li> -->
         <!-- <li>Firefighter</li> -->
       </mechEnabledWorkTypes>
@@ -244,8 +288,14 @@
     <defName>MCW_Mech_Defender</defName>
     <label>次级珉巧子个体-防卫型</label>
     <description>小小冰淇淋骑士，手持大盾保护姐姐们</description>
+    <!-- 设计值（参考机械飞螳）：带宽2 / 利器180% / 钝器180% / 热能200% / 移速3.2 -->
     <statBases>
+      <MoveSpeed>3.2</MoveSpeed>
       <BandwidthCost>2</BandwidthCost>
+      <ArmorRating_Sharp>1.8</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.8</ArmorRating_Blunt>
+      <ArmorRating_Heat>2.0</ArmorRating_Heat>
+      <WastepacksPerRecharge MayRequire="Ludeon.RimWorld.Biotech">2.5</WastepacksPerRecharge>
     </statBases>
     <race>
       <mechEnabledWorkTypes>
@@ -260,6 +310,8 @@
         <!-- <li>PlantCutting</li> -->
         <!-- <li>Growing</li> -->
         <li>Cleaning</li>
+        <!-- 撒娇的挂载点：机械体默认没有「基础工作」，必须显式列出 -->
+        <li>BasicWorker</li>
         <!-- <li>Doctor</li> -->
         <!-- <li>Firefighter</li> -->
       </mechEnabledWorkTypes>
@@ -269,12 +321,6 @@
     <defName>MCW_Mech_Defender_II</defName>
     <label>次级珉巧子个体-防卫II型</label>
     <description>小小冰淇淋骑士，手持流星锤保护姐姐们。</description>
-    <graphicData>
-      <!-- Graphic_Random：目录内两组外观随机选一套（各自带方向） -->
-      <texPath>Things/Pawn/Mechanoid/MCW_Mech_Defender_II</texPath>
-      <graphicClass>Graphic_Random</graphicClass>
-      <drawSize>(1.2,1.2)</drawSize>
-    </graphicData>
     <statBases>
       <MoveSpeed>3.2</MoveSpeed>
       <BandwidthCost>2</BandwidthCost>
@@ -286,6 +332,8 @@
       <mechEnabledWorkTypes>
         <li>Hauling</li>
         <li>Cleaning</li>
+        <!-- 撒娇的挂载点 -->
+        <li>BasicWorker</li>
       </mechEnabledWorkTypes>
     </race>
   </ThingDef>
@@ -293,8 +341,14 @@
     <defName>MCW_Mech_Gunner</defName>
     <label>次级珉巧子个体-攻击型</label>
     <description>小小冰淇淋抢手，使用无情的棒棒糖夺走坏人的生命</description>
+    <!-- 设计值（参考机械飞螳）：带宽2 / 利器100% / 钝器100% / 热能50% / 移速3.2 -->
     <statBases>
+      <MoveSpeed>3.2</MoveSpeed>
       <BandwidthCost>2</BandwidthCost>
+      <ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <WastepacksPerRecharge MayRequire="Ludeon.RimWorld.Biotech">2.5</WastepacksPerRecharge>
     </statBases>
     <race>
       <mechEnabledWorkTypes>
@@ -309,6 +363,8 @@
         <!-- <li>PlantCutting</li> -->
         <!-- <li>Growing</li> -->
         <li>Cleaning</li>
+        <!-- 撒娇的挂载点：机械体默认没有「基础工作」，必须显式列出 -->
+        <li>BasicWorker</li>
         <!-- <li>Doctor</li> -->
         <!-- <li>Firefighter</li> -->
       </mechEnabledWorkTypes>
