@@ -9,6 +9,8 @@
     <MinchoCandyWars.Abilities.MinchoCoreGradeTips>核心等级：{0}</MinchoCandyWars.Abilities.MinchoCoreGradeTips>
     <MinchoCandyWars.Abilities.MinchoBodyGradeTips>身体等级：{0}</MinchoCandyWars.Abilities.MinchoBodyGradeTips>
     <MinchoCandyWars.Abilities.MinchoCandyValueTips>当前清凉度:{VALUE}/{MAXVALUE}</MinchoCandyWars.Abilities.MinchoCandyValueTips>
+    <MinchoCandyWars.Abilities.CandyValueRecovery>{0}/天</MinchoCandyWars.Abilities.CandyValueRecovery>
+    <MinchoCandyWars.Abilities.CookieToggleTips>点击切换技能图标的显示/隐藏。</MinchoCandyWars.Abilities.CookieToggleTips>
     <!-- <MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>制作速度加速：{0}\n剩余时间：{1}</MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>
     <MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation>千机糖工作台加速</MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation> -->
 

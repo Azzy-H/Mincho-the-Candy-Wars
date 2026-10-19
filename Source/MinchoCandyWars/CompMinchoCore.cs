@@ -81,6 +81,7 @@ namespace MinchoCandyWars
                     RefreshMinchoAbilities();
                     pawn.Notify_DisabledWorkTypesChanged();
                     pawn.skills.GetSkill(SkillDefOf.Intellectual).passion = (Passion)intellectualPassion;
+                    TrySendIntelTutorialLetter();
                 }
                 parent.BroadcastCompSignal(CompSignals.MinchoCoreDataChange);
             }
@@ -161,6 +162,17 @@ namespace MinchoCandyWars
         public float CurrentMaxCandyValue => MinchoTotalGrade * 50f;
         public float RecoveryAmountPerTick => CurrentMaxCandyValue / 12000f * GetTempGainFactor();
 
+        /// <summary>
+        /// 当前温度下每天的糖果值恢复量。
+        ///
+        /// 推导：CompTick 每 10 tick 加一次 RecoveryAmountPerTick，
+        /// 一天 60000 tick = 6000 次，故
+        ///   RecoveryPerDay = CurrentMaxCandyValue / 12000 * temp * 6000
+        ///                  = CurrentMaxCandyValue * 0.5 * temp
+        /// 即基础每天恢复上限的 50%，再乘温度系数。
+        /// </summary>
+        public float RecoveryPerDay => CurrentMaxCandyValue * 0.5f * GetTempGainFactor();
+
         //获取温度增益系数
         public float GetTempGainFactor()
         {
@@ -185,6 +197,27 @@ namespace MinchoCandyWars
                     MinchoCandyValue += RecoveryAmountPerTick;
                 }
             }
+        }
+
+        /// <summary>
+        /// 首次成为智慧珉巧且已在玩家殖民地时，弹一次「智慧珉巧成长指南」。
+        ///
+        /// 放在 tick 里而不是塞进 Active 的 setter，原因：Active 可能在该 pawn
+        /// 尚未生成、派系尚未确定时被置位（例如开局场景的 Notify_PawnGenerated）。
+        /// 等它真正出现在玩家地图上再弹，既能覆盖全部诞生路径，也不会在
+        /// 生成流程中对 LetterStack 做操作。
+        /// </summary>
+        private void TrySendIntelTutorialLetter()
+        {
+            if (!pawn.Spawned || pawn.Faction != Faction.OfPlayer)
+            {
+                return;
+            }
+            Find.LetterStack.ReceiveLetter(
+                "MinchoCandyWars.Ability.Inteled".Translate(),
+                "MinchoCandyWars.Ability.InteledDesc".Translate(pawn.Named("PAWN")),
+                LetterDefOf.PositiveEvent,
+                pawn);
         }
 
         /// <summary>
@@ -368,13 +401,13 @@ namespace MinchoCandyWars
             }
         }
 
-        private static FieldInfo fi_Pawn_cachedDisabledWorkTypesPermanent = typeof(Pawn).GetField("cachedDisabledWorkTypesPermanent", BindingFlags.NonPublic | BindingFlags.Instance);
-        private static FieldInfo fi_Pawn_cachedDisabledWorkTypes = typeof(Pawn).GetField("cachedDisabledWorkTypes", BindingFlags.NonPublic | BindingFlags.Instance);
+        private static FieldInfo fi_Pawn_cachedDisabledWorkTypesPermanent = typeof(Pawn).GetField("cachedDisabledWorkTypesPermanent", BindingFlags.NonPublic | BindingFlags.Instance)!;
+        private static FieldInfo fi_Pawn_cachedDisabledWorkTypes = typeof(Pawn).GetField("cachedDisabledWorkTypes", BindingFlags.NonPublic | BindingFlags.Instance)!;
         public void TryRemoveDisabledWorkTypes()
         {
             if (!active) return;
-            ((List<WorkTypeDef>)fi_Pawn_cachedDisabledWorkTypesPermanent.GetValue(pawn))?.RemoveAll(x=>(x.workTags & WorkTags.Intellectual) != 0);
-            ((List<WorkTypeDef>)fi_Pawn_cachedDisabledWorkTypes.GetValue(pawn))?.RemoveAll(x => (x.workTags & WorkTags.Intellectual) != 0);
+            ((List<WorkTypeDef>)fi_Pawn_cachedDisabledWorkTypesPermanent.GetValue(pawn)!)?.RemoveAll(x=>(x.workTags & WorkTags.Intellectual) != 0);
+            ((List<WorkTypeDef>)fi_Pawn_cachedDisabledWorkTypes.GetValue(pawn)!)?.RemoveAll(x => (x.workTags & WorkTags.Intellectual) != 0);
         }
         //public void RefreshDisabledWorkTypes()
         //{

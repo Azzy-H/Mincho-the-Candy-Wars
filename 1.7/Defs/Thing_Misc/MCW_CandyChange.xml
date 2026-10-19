@@ -21,15 +21,17 @@
         <useLabel>Implant {0_label}</useLabel>
         <showUseGizmo>true</showUseGizmo>
       </li>
-      <li Class="CompProperties_UseEffect">
-        <compClass>MinchoCandyWars.CompUseEffect_CandyChange</compClass>
-      </li> 
+      <li Class="MinchoCandyWars.CompProperties_UseEffect_CandyChange">
+        <candyType>MechaCandy</candyType>
+      </li>
     </comps>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Mass>0.3</Mass>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>0.075</Mass>
+      <Flammability>1</Flammability>
+      <DeteriorationRate>8</DeteriorationRate>
     </statBases>
     <thingCategories>
       <li>Manufactured</li>
@@ -52,15 +54,17 @@
         <useLabel>Implant {0_label}</useLabel>
         <showUseGizmo>true</showUseGizmo>
       </li>
-      <li Class="CompProperties_UseEffect">
-        <compClass>MinchoCandyWars.CompUseEffect_CandyChange</compClass>
-      </li> 
+      <li Class="MinchoCandyWars.CompProperties_UseEffect_CandyChange">
+        <candyType>NectarCandy</candyType>
+      </li>
     </comps>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Mass>0.3</Mass>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>0.075</Mass>
+      <Flammability>1</Flammability>
+      <DeteriorationRate>8</DeteriorationRate>
     </statBases>
     <thingCategories>
       <li>Manufactured</li>
@@ -72,13 +76,13 @@
     <defName>MCW_AmberonCandyChangeItem</defName>
     <label>Amberon Candy unlock item</label>
     <description>植入后解锁琥珀糖糖饰的使用权。</description>
-    <!-- TODO(画师): 琥珀糖解锁物品图标缺失（其余 4 种已就位）。
-         补图后放到 Textures/Things/Item/CandyChange/MCW_AmberonCandyChangeItem.png，
-         并在此处加上：
-         <graphicData>
-           <texPath>Things/Item/CandyChange/MCW_AmberonCandyChangeItem</texPath>
-           <graphicClass>Graphic_Single</graphicClass>
-         </graphicData> -->
+    <!-- TODO(画师): 琥珀糖物品图标仍缺（其余 4 种已在 Textures/Things/Item/CandyChange 就位）。
+         把物品图放到 Textures/Things/Item/CandyChange/MCW_AmberonCandyChangeItem.png
+         后，取消下面 graphicData 的注释即可，无需改其它地方。 -->
+    <!-- <graphicData>
+      <texPath>Things/Item/CandyChange/MCW_AmberonCandyChangeItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData> -->
     <thingClass>ThingWithComps</thingClass>
     <comps>
       <li Class="CompProperties_Usable">
@@ -86,15 +90,17 @@
         <useLabel>Implant {0_label}</useLabel>
         <showUseGizmo>true</showUseGizmo>
       </li>
-      <li Class="CompProperties_UseEffect">
-        <compClass>MinchoCandyWars.CompUseEffect_CandyChange</compClass>
-      </li> 
+      <li Class="MinchoCandyWars.CompProperties_UseEffect_CandyChange">
+        <candyType>AmberonCandy</candyType>
+      </li>
     </comps>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Mass>0.3</Mass>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>0.075</Mass>
+      <Flammability>1</Flammability>
+      <DeteriorationRate>8</DeteriorationRate>
     </statBases>
     <thingCategories>
       <li>Manufactured</li>
@@ -117,15 +123,17 @@
         <useLabel>Implant {0_label}</useLabel>
         <showUseGizmo>true</showUseGizmo>
       </li>
-      <li Class="CompProperties_UseEffect">
-        <compClass>MinchoCandyWars.CompUseEffect_CandyChange</compClass>
-      </li> 
+      <li Class="MinchoCandyWars.CompProperties_UseEffect_CandyChange">
+        <candyType>PrismCandy</candyType>
+      </li>
     </comps>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Mass>0.3</Mass>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>0.075</Mass>
+      <Flammability>1</Flammability>
+      <DeteriorationRate>8</DeteriorationRate>
     </statBases>
     <thingCategories>
       <li>Manufactured</li>
@@ -148,15 +156,17 @@
         <useLabel>Implant {0_label}</useLabel>
         <showUseGizmo>true</showUseGizmo>
       </li>
-      <li Class="CompProperties_UseEffect">
-        <compClass>MinchoCandyWars.CompUseEffect_CandyChange</compClass>
-      </li> 
+      <li Class="MinchoCandyWars.CompProperties_UseEffect_CandyChange">
+        <candyType>LinglonCandy</candyType>
+      </li>
     </comps>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Mass>0.3</Mass>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>0.075</Mass>
+      <Flammability>1</Flammability>
+      <DeteriorationRate>8</DeteriorationRate>
     </statBases>
     <thingCategories>
       <li>Manufactured</li>

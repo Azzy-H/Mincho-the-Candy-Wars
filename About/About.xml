@@ -15,6 +15,10 @@
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
 		</li>
 		<li>
+			<packageId>Ludeon.RimWorld.Royalty</packageId>
+			<displayName>Royalty</displayName>
+		</li>
+		<li>
 			<packageId>SutSutMan.MinchoTheMintChocoSlimeHARver</packageId>
 			<displayName>Mincho, The Mint Choco Slime ~ HAR ver.</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2477501851</steamWorkshopUrl>
