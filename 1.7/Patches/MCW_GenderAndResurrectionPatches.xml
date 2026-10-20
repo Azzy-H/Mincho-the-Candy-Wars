@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    复活配方加入基础机械培育器。
+    （注：珉巧史莱姆 MCW_MinchoSlime 本身已经是 hasGenders=false 的无性动物，
+      无需额外 patch；此处不再改动任何种族的性别设置。）
+  -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MechGestator"]/recipes</xpath>
+    <value>
+      <li>MCW_ResurrectMinchoMech</li>
+    </value>
+  </Operation>
+</Patch>

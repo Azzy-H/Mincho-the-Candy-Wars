@@ -526,6 +526,7 @@
     <defName>MCW_Mech_Defender_II</defName>
     <label>次级珉巧子个体-防卫II型</label>
     <race>MCW_Mech_Defender_II</race>
+    <allowInMechClusters>false</allowInMechClusters>
     <lifeStages>
       <li>
         <bodyGraphicData>

@@ -77,8 +77,13 @@ namespace MinchoCandyWars
                 }
             }
 
-            // 没有可回退的阶段 → 不分裂，照常死亡
-            if (prevStageIndex < 0) return;
+            // 没有可回退的阶段（第一生命阶段）→ 不分裂，但同样不能留下尸体：
+            // 史莱姆死后应化为冰淇淋，而不是变成一具尸体。
+            if (prevStageIndex < 0)
+            {
+                corpse?.Destroy();
+                return;
+            }
 
             // 生成 2 个子体：同 kind，年龄退回上一阶段起始
             PawnKindDef kind = innerPawn.kindDef;

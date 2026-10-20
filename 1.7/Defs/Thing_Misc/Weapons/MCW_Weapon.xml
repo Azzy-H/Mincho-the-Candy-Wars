@@ -89,7 +89,10 @@
       <ComponentIndustrial>20</ComponentIndustrial>
     </costList>
     <recipeMaker>
-      <researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
+      <researchPrerequisite Inherit="false"/>
+			<recipeUsers Inherit="false">
+				<li>Mincho_MinchoBench</li>
+			</recipeUsers>
       <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>
@@ -148,6 +151,7 @@
     <weaponTags>
       <li>MCW_RW_VrocanGatling_Formech</li>
     </weaponTags>
+    <recipeMaker Inherit="False" IsNull="True"/>
   </ThingDef>
 
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef ParentName="BaseMechanoidResurrectionRecipe">
+    <defName>MCW_ResurrectMinchoMech</defName>
+    <label>复活珉巧机械体</label>
+    <description>复活一台被摧毁的珉巧子个体机械。</description>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Corpses</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>Mincho_IceCream</li>
+          </categories>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Corpse_MCW_Mech_I_Maid</li>
+        <li>Corpse_MCW_Mech_II_Maid</li>
+        <li>Corpse_MCW_Mech_Battle</li>
+        <li>Corpse_MCW_Mech_Defender</li>
+        <li>Corpse_MCW_Mech_Defender_II</li>
+        <li>Corpse_MCW_Mech_Gunner</li>
+      </thingDefs>
+			<categories>
+				<li>Mincho_IceCream</li>
+			</categories>
+		</fixedIngredientFilter>
+  </RecipeDef>
+</Defs>
