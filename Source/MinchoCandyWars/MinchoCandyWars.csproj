@@ -38,6 +38,12 @@
 
 	<ItemGroup>
 	  <Compile Remove="Buff\MinchoCandyBuffDef.cs" />
+	  <Compile Remove="Review\ApparelIconFraming.cs" />
+	  <Compile Remove="Review\CandyCaneColor.cs" />
+	  <Compile Remove="Review\FeedbackFixes.cs" />
+	  <Compile Remove="Review\ItemWornGeometry.cs" />
+	  <Compile Remove="Review\MaterialTint.cs" />
+	  <Compile Remove="Review\Names.cs" />
 	</ItemGroup>
 
 	<!-- 每个引用都由游戏或 Harmony 在运行时提供；Private=false 让它们不复制进输出目录 -->
@@ -61,6 +67,15 @@
 	  </Reference>
 	  <Reference Include="0Harmony">
 	    <HintPath>$(HarmonyAssembly)</HintPath>
+	    <Private>false</Private>
+	  </Reference>
+	  <!--
+	    前置 mod「Mincho, The Mint Choco Slime ~ HAR ver.」的扩展程序集。
+	    提供 CompResourceHarvestable 等类型（原本由合并进来的 Review/IceCreamYield.cs 使用）。
+	    HAR 是本 mod 的硬依赖（见 About.xml 的 modDependencies），所以编译期也直接引用。
+	  -->
+	  <Reference Include="Mincho_HPF">
+	    <HintPath>$(WorkshopDir)\2477501851\1.7\Assemblies\Mincho_HPF.dll</HintPath>
 	    <Private>false</Private>
 	  </Reference>
 	</ItemGroup>

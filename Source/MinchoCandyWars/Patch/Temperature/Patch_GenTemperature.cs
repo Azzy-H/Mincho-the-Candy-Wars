@@ -16,7 +16,7 @@ namespace MinchoCandyWars.Patch.Temperature
                 return true;
             }
 
-            MapComponent_CellTemperatureOverrideRegistry registry = map.GetComponent<MapComponent_CellTemperatureOverrideRegistry>();
+            MapComponent_CellTemperatureOverrideRegistry registry = MapComponent_CellTemperatureOverrideRegistry.Get(map);
             if (registry.TryGetTemperatureOverride(c, out float overrideTemperature))
             {
                 tempResult = overrideTemperature;

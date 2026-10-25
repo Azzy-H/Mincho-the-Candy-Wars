@@ -215,7 +215,7 @@ namespace MinchoCandyWars
             }
             Find.LetterStack.ReceiveLetter(
                 "MinchoCandyWars.Ability.Inteled".Translate(),
-                "MinchoCandyWars.Ability.InteledDesc".Translate(pawn.Named("PAWN")),
+                "MinchoCandyWars.Ability.InteledDesc".Translate(),
                 LetterDefOf.PositiveEvent,
                 pawn);
         }
@@ -225,7 +225,7 @@ namespace MinchoCandyWars
         /// </summary>
         private void RefreshMinchoAbilities()
         {
-            SyncCandyDecorationHediff();
+            SyncCandyDecorationRender();
 
             if (pawn.abilities == null)
             {
@@ -252,40 +252,23 @@ namespace MinchoCandyWars
         }
 
         /// <summary>
-        /// 同步「糖饰」渲染挂载 hediff，并在糖饰种类变化时让渲染树重建。
+        /// 糖饰种类变化时让渲染树重建。
         ///
-        /// 糖饰图形由 PawnRenderNode_CandyDecoration.GraphicFor 动态提供，
+        /// 糖饰节点由 <see cref="CompRenderNodes"/> 常驻提供，图形由
+        /// PawnRenderNode_CandyDecoration.GraphicFor 动态取；
         /// 但切换糖饰不会改变 facing/posture/flags，PawnDrawParms.ShouldRecache 不会触发，
         /// 因此必须显式 SetDirty()：它会重建整棵渲染树并重新构造节点，
         /// GraphicFor 随之再被调用，材质才会更新。
         /// </summary>
-        private void SyncCandyDecorationHediff()
+        private void SyncCandyDecorationRender()
         {
-            if (pawn?.health?.hediffSet == null)
+            if (lastDecorationCandyType == CurrentCandyType)
             {
                 return;
             }
 
-            bool shouldHave = active
-                && CurrentCandyType != null
-                && MCW_DefOf.MCW_CandyDecoration != null;
-
-            Hediff? existing = pawn.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_CandyDecoration);
-
-            if (shouldHave && existing == null)
-            {
-                pawn.health.AddHediff(MCW_DefOf.MCW_CandyDecoration);
-            }
-            else if (!shouldHave && existing != null)
-            {
-                pawn.health.RemoveHediff(existing);
-            }
-
-            if (lastDecorationCandyType != CurrentCandyType)
-            {
-                lastDecorationCandyType = CurrentCandyType;
-                InvalidateCandyDecorationRenderTree();
-            }
+            lastDecorationCandyType = CurrentCandyType;
+            InvalidateCandyDecorationRenderTree();
         }
 
         /// <summary>
@@ -300,6 +283,34 @@ namespace MinchoCandyWars
             }
 
             pawn.Drawer?.renderer?.renderTree?.SetDirty();
+        }
+
+        private List<PawnRenderNode>? renderNodes;
+
+        /// <summary>
+        /// 糖饰渲染节点：直接由 comp 提供，不再依赖挂载 hediff。
+        ///
+        /// PawnRenderNode_CandyDecoration.GraphicFor 在未激活或没有糖饰时返回 null，
+        /// 所以节点可以常驻渲染树，切换糖饰只需要 SetDirty 重建即可。
+        /// </summary>
+        public override List<PawnRenderNode> CompRenderNodes()
+        {
+            if (Props.renderNodeProperties.NullOrEmpty() || parent is not Pawn renderPawn)
+            {
+                return base.CompRenderNodes();
+            }
+
+            if (renderNodes == null)
+            {
+                renderNodes = new List<PawnRenderNode>();
+                foreach (PawnRenderNodeProperties nodeProps in Props.renderNodeProperties)
+                {
+                    renderNodes.Add((PawnRenderNode)Activator.CreateInstance(
+                        nodeProps.nodeClass, renderPawn, nodeProps, renderPawn.Drawer.renderer.renderTree)!);
+                }
+            }
+
+            return renderNodes;
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -361,7 +372,7 @@ namespace MinchoCandyWars
                 };
                 yield return new Command_Action
                 {
-                    defaultLabel = "Dev:增加100糖果值",
+                    defaultLabel = "Dev:增加100清凉值",
                     action = delegate
                     {
                         MinchoCandyValue += 100f;
@@ -418,9 +429,13 @@ namespace MinchoCandyWars
 
     public class CompProperties_MinchoCore : CompProperties
     {
+        /// <summary>糖饰的渲染节点（原先挂在 HediffDef 上）。</summary>
+        public List<PawnRenderNodeProperties> renderNodeProperties = new List<PawnRenderNodeProperties>();
+
         public CompProperties_MinchoCore()
         {
             this.compClass = typeof(CompMinchoCore);
         }
+
     }
 }

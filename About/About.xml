@@ -1,36 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Mincho,the Candy Wars</name>
-	<author>CandyWars制作组</author>
-	<supportedVersions>
-		<li>1.7</li>
-	</supportedVersions>
-	<packageId>mincho.the.candy.wars</packageId>
-	<description>Mincho,the Candy Wars</description>
-	<modDependencies>
-		<li>
-			<packageId>brrainz.harmony</packageId>
-			<displayName>Harmony</displayName>
-			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
-			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-		</li>
-		<li>
-			<packageId>Ludeon.RimWorld.Royalty</packageId>
-			<displayName>Royalty</displayName>
-		</li>
-		<li>
-			<packageId>SutSutMan.MinchoTheMintChocoSlimeHARver</packageId>
-			<displayName>Mincho, The Mint Choco Slime ~ HAR ver.</displayName>
-			<steamWorkshopUrl>steam://url/CommunityFilePage/2477501851</steamWorkshopUrl>
-		</li>
-	</modDependencies>
-	<loadAfter>
-		<li>brrainz.harmony</li>
-		<li>Ludeon.RimWorld</li>
-		<li>Ludeon.RimWorld.Royalty</li>
-		<li>Ludeon.RimWorld.Ideology</li>
-		<li>Ludeon.RimWorld.Biotech</li>
-		<li>Ludeon.RimWorld.Odyssey</li>
-		<li>SutSutMan.MinchoTheMintChocoSlimeHARver</li>
-	</loadAfter>
+  <name>Mincho,the Candy Wars</name>
+  <author>CandyWars制作组</author>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <packageId>mincho.the.candy.wars</packageId>
+  <description>Mincho,the Candy Wars</description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+    <li>
+      <packageId>Ludeon.RimWorld.Royalty</packageId>
+      <displayName>Royalty</displayName>
+    </li>
+    <li>
+      <packageId>SutSutMan.MinchoTheMintChocoSlimeHARver</packageId>
+      <displayName>Mincho, The Mint Choco Slime ~ HAR ver.</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2477501851</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>Ludeon.RimWorld.Biotech</packageId>
+      <displayName>Biotech</displayName>
+    </li>
+    <li>
+      <packageId>SutSutMan.MarilyntheMinchoWorshipperWitchHARver</packageId>
+      <displayName>Marilyn the Mincho Worshipper Witch ~ HAR ver.</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2604973449</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Odyssey</li>
+    <li>SutSutMan.MinchoTheMintChocoSlimeHARver</li>
+    <li>SutSutMan.MarilyntheMinchoWorshipperWitchHARver</li>
+  </loadAfter>
+  <loadBefore>
+    <li>ciao.mincho.coating</li>
+  </loadBefore>
+  <incompatibleWith>
+    <li>ciao.mcw.localreview</li>
+  </incompatibleWith>
 </ModMetaData>

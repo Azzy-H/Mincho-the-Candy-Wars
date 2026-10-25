@@ -9,7 +9,7 @@
   <!-- EN: amoeba booster -->
   <MCW_LinglonAmoebaBoon.label>纳米变形虫增益</MCW_LinglonAmoebaBoon.label>
   <!-- EN: Grants +20% consciousness to all Mincho on the map, draining candy value every hour. -->
-  <MCW_LinglonAmoebaBoon.description>为地图上所有珉巧提供 +20% 意识，每小时消耗糖果值。</MCW_LinglonAmoebaBoon.description>
+  <MCW_LinglonAmoebaBoon.description>为地图上所有珉巧提供 +20% 意识，每小时消耗清凉值。</MCW_LinglonAmoebaBoon.description>
   
   <!-- EN: amoeba booster -->
   <MCW_LinglonAmoebaBoonBuff.label>纳米变形虫增益</MCW_LinglonAmoebaBoonBuff.label>

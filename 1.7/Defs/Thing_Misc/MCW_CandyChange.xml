@@ -8,10 +8,10 @@
   <!-- ===== 千机糖解锁物品 ===== -->
   <ThingDef ParentName="ResourceBase">
     <defName>MCW_MechaCandyChangeItem</defName>
-    <label>Mecha Candy unlock item</label>
+    <label>Mecha Candy ornament</label>
     <description>植入后解锁千机糖糖饰的使用权。</description>
     <graphicData>
-      <texPath>Things/Item/CandyChange/MCW_MechaCandyChangeItem</texPath>
+      <texPath>Things/Item/Mecha</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <thingClass>ThingWithComps</thingClass>
@@ -24,7 +24,7 @@
       <li Class="MinchoCandyWars.CompProperties_UseEffect_CandyChange">
         <candyType>MechaCandy</candyType>
       </li>
-    </comps>
+    <li Class="CompProperties_UseEffectDestroySelf"><orderPriority>-1000</orderPriority></li></comps>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -41,10 +41,10 @@
   <!-- ===== 甘露糖解锁物品 ===== -->
   <ThingDef ParentName="ResourceBase">
     <defName>MCW_NectarCandyChangeItem</defName>
-    <label>Nectar Candy unlock item</label>
+    <label>Nectar Candy ornament</label>
     <description>植入后解锁甘露糖糖饰的使用权。</description>
     <graphicData>
-      <texPath>Things/Item/CandyChange/MCW_NectarCandyChangeItem</texPath>
+      <texPath>Things/Item/Nectar</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <thingClass>ThingWithComps</thingClass>
@@ -57,7 +57,7 @@
       <li Class="MinchoCandyWars.CompProperties_UseEffect_CandyChange">
         <candyType>NectarCandy</candyType>
       </li>
-    </comps>
+    <li Class="CompProperties_UseEffectDestroySelf"><orderPriority>-1000</orderPriority></li></comps>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -74,7 +74,7 @@
   <!-- ===== 琥珀糖解锁物品 ===== -->
   <ThingDef ParentName="ResourceBase">
     <defName>MCW_AmberonCandyChangeItem</defName>
-    <label>Amberon Candy unlock item</label>
+    <label>Amberon Candy ornament</label>
     <description>植入后解锁琥珀糖糖饰的使用权。</description>
     <!-- TODO(画师): 琥珀糖物品图标仍缺（其余 4 种已在 Textures/Things/Item/CandyChange 就位）。
          把物品图放到 Textures/Things/Item/CandyChange/MCW_AmberonCandyChangeItem.png
@@ -93,7 +93,7 @@
       <li Class="MinchoCandyWars.CompProperties_UseEffect_CandyChange">
         <candyType>AmberonCandy</candyType>
       </li>
-    </comps>
+    <li Class="CompProperties_UseEffectDestroySelf"><orderPriority>-1000</orderPriority></li></comps>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -105,15 +105,15 @@
     <thingCategories>
       <li>Manufactured</li>
     </thingCategories>
-  </ThingDef>
+  <graphicData><texPath>Things/Item/Amberon</texPath><graphicClass>Graphic_Single</graphicClass></graphicData></ThingDef>
 
   <!-- ===== 琉璃糖解锁物品 ===== -->
   <ThingDef ParentName="ResourceBase">
     <defName>MCW_PrismCandyChangeItem</defName>
-    <label>Prism Candy unlock item</label>
+    <label>Prism Candy ornament</label>
     <description>植入后解锁琉璃糖糖饰的使用权。</description>
     <graphicData>
-      <texPath>Things/Item/CandyChange/MCW_PrismCandyChangeItem</texPath>
+      <texPath>Things/Item/Prism</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <thingClass>ThingWithComps</thingClass>
@@ -126,7 +126,7 @@
       <li Class="MinchoCandyWars.CompProperties_UseEffect_CandyChange">
         <candyType>PrismCandy</candyType>
       </li>
-    </comps>
+    <li Class="CompProperties_UseEffectDestroySelf"><orderPriority>-1000</orderPriority></li></comps>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -143,10 +143,10 @@
   <!-- ===== 玲珑糖解锁物品 ===== -->
   <ThingDef ParentName="ResourceBase">
     <defName>MCW_LinglonCandyChangeItem</defName>
-    <label>Linglon Candy unlock item</label>
+    <label>Linglon Candy ornament</label>
     <description>植入后解锁玲珑糖糖饰的使用权。</description>
     <graphicData>
-      <texPath>Things/Item/CandyChange/MCW_LinglonCandyChangeItem</texPath>
+      <texPath>Things/Item/Linglon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <thingClass>ThingWithComps</thingClass>
@@ -159,7 +159,7 @@
       <li Class="MinchoCandyWars.CompProperties_UseEffect_CandyChange">
         <candyType>LinglonCandy</candyType>
       </li>
-    </comps>
+    <li Class="CompProperties_UseEffectDestroySelf"><orderPriority>-1000</orderPriority></li></comps>
     <stackLimit>10</stackLimit>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -177,7 +177,7 @@
 
   <RecipeDef>
     <defName>MCW_Make_MechaCandyChangeItem</defName>
-    <label>make Mecha Candy unlock item</label>
+    <label>Make Mecha Candy ornament</label>
     <description>制作千机糖糖饰解锁物品。</description>
     <jobString>Making Mecha Candy unlock item.</jobString>
     <workAmount>8000</workAmount>
@@ -194,7 +194,7 @@
         <count>1</count>
       </li>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
         <count>50</count>
       </li>
       <li>
@@ -206,11 +206,20 @@
       <MCW_MechaCandyChangeItem>1</MCW_MechaCandyChangeItem>
     </products>
     <workSkill>Crafting</workSkill>
-  </RecipeDef>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>Mincho_Mintchoco</li>
+          <li>Mincho_BluePolarBear</li>
+          <li>Mincho_PinkFallInLove</li>
+          <li>ComponentIndustrial</li>
+          <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
+        </thingDefs>
+      </fixedIngredientFilter>
+  <allowMixingIngredients>true</allowMixingIngredients></RecipeDef>
 
   <RecipeDef>
     <defName>MCW_Make_NectarCandyChangeItem</defName>
-    <label>make Nectar Candy unlock item</label>
+    <label>Make Nectar Candy ornament</label>
     <description>制作甘露糖糖饰解锁物品。</description>
     <jobString>Making Nectar Candy unlock item.</jobString>
     <workAmount>8000</workAmount>
@@ -227,7 +236,7 @@
         <count>1</count>
       </li>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
         <count>50</count>
       </li>
       <li>
@@ -239,11 +248,20 @@
       <MCW_NectarCandyChangeItem>1</MCW_NectarCandyChangeItem>
     </products>
     <workSkill>Crafting</workSkill>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>Mincho_Mintchoco</li>
+          <li>Mincho_BluePolarBear</li>
+          <li>Mincho_PinkFallInLove</li>
+          <li>ComponentIndustrial</li>
+          <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
+        </thingDefs>
+      </fixedIngredientFilter>
   </RecipeDef>
 
   <RecipeDef>
     <defName>MCW_Make_AmberonCandyChangeItem</defName>
-    <label>make Amberon Candy unlock item</label>
+    <label>Make Amberon Candy ornament</label>
     <description>制作琥珀糖糖饰解锁物品。</description>
     <jobString>Making Amberon Candy unlock item.</jobString>
     <workAmount>8000</workAmount>
@@ -260,7 +278,7 @@
         <count>1</count>
       </li>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
         <count>50</count>
       </li>
       <li>
@@ -272,11 +290,20 @@
       <MCW_AmberonCandyChangeItem>1</MCW_AmberonCandyChangeItem>
     </products>
     <workSkill>Crafting</workSkill>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>Mincho_Mintchoco</li>
+          <li>Mincho_BluePolarBear</li>
+          <li>Mincho_PinkFallInLove</li>
+          <li>ComponentIndustrial</li>
+          <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
+        </thingDefs>
+      </fixedIngredientFilter>
   </RecipeDef>
 
   <RecipeDef>
     <defName>MCW_Make_PrismCandyChangeItem</defName>
-    <label>make Prism Candy unlock item</label>
+    <label>Make Prism Candy ornament</label>
     <description>制作琉璃糖糖饰解锁物品。</description>
     <jobString>Making Prism Candy unlock item.</jobString>
     <workAmount>8000</workAmount>
@@ -293,7 +320,7 @@
         <count>1</count>
       </li>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
         <count>50</count>
       </li>
       <li>
@@ -305,11 +332,20 @@
       <MCW_PrismCandyChangeItem>1</MCW_PrismCandyChangeItem>
     </products>
     <workSkill>Crafting</workSkill>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>Mincho_Mintchoco</li>
+          <li>Mincho_BluePolarBear</li>
+          <li>Mincho_PinkFallInLove</li>
+          <li>ComponentIndustrial</li>
+          <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
+        </thingDefs>
+      </fixedIngredientFilter>
   </RecipeDef>
 
   <RecipeDef>
     <defName>MCW_Make_LinglonCandyChangeItem</defName>
-    <label>make Linglon Candy unlock item</label>
+    <label>Make Linglon Candy ornament</label>
     <description>制作玲珑糖糖饰解锁物品。</description>
     <jobString>Making Linglon Candy unlock item.</jobString>
     <workAmount>8000</workAmount>
@@ -326,7 +362,7 @@
         <count>1</count>
       </li>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
         <count>50</count>
       </li>
       <li>
@@ -338,13 +374,22 @@
       <MCW_LinglonCandyChangeItem>1</MCW_LinglonCandyChangeItem>
     </products>
     <workSkill>Crafting</workSkill>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>Mincho_Mintchoco</li>
+          <li>Mincho_BluePolarBear</li>
+          <li>Mincho_PinkFallInLove</li>
+          <li>ComponentIndustrial</li>
+          <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
+        </thingDefs>
+      </fixedIngredientFilter>
   </RecipeDef>
 
   <!-- ===================== 手术配方 ===================== -->
 
   <RecipeDef>
     <defName>MCW_Implant_MechaCandyChangeItem</defName>
-    <label>implant Mecha Candy unlock item</label>
+    <label>Implant Mecha Candy ornament</label>
     <description>对智慧珉巧使用千机糖糖饰解锁物品，解锁千机糖糖饰。100% 成功率。</description>
     <jobString>Implanting Mecha Candy unlock item.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoCandyChange</workerClass>
@@ -378,7 +423,7 @@
 
   <RecipeDef>
     <defName>MCW_Implant_NectarCandyChangeItem</defName>
-    <label>implant Nectar Candy unlock item</label>
+    <label>Implant Nectar Candy ornament</label>
     <description>对智慧珉巧使用甘露糖糖饰解锁物品，解锁甘露糖糖饰。100% 成功率。</description>
     <jobString>Implanting Nectar Candy unlock item.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoCandyChange</workerClass>
@@ -411,7 +456,7 @@
 
   <RecipeDef>
     <defName>MCW_Implant_AmberonCandyChangeItem</defName>
-    <label>implant Amberon Candy unlock item</label>
+    <label>Implant Amberon Candy ornament</label>
     <description>对智慧珉巧使用琥珀糖糖饰解锁物品，解锁琥珀糖糖饰。100% 成功率。</description>
     <jobString>Implanting Amberon Candy unlock item.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoCandyChange</workerClass>
@@ -445,7 +490,7 @@
 
   <RecipeDef>
     <defName>MCW_Implant_PrismCandyChangeItem</defName>
-    <label>implant Prism Candy unlock item</label>
+    <label>Implant Prism Candy ornament</label>
     <description>对智慧珉巧使用琉璃糖糖饰解锁物品，解锁琉璃糖糖饰。100% 成功率。</description>
     <jobString>Implanting Prism Candy unlock item.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoCandyChange</workerClass>
@@ -479,7 +524,7 @@
 
   <RecipeDef>
     <defName>MCW_Implant_LinglonCandyChangeItem</defName>
-    <label>implant Linglon Candy unlock item</label>
+    <label>Implant Linglon Candy ornament</label>
     <description>对智慧珉巧使用玲珑糖糖饰解锁物品，解锁玲珑糖糖饰。100% 成功率。</description>
     <jobString>Implanting Linglon Candy unlock item.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoCandyChange</workerClass>

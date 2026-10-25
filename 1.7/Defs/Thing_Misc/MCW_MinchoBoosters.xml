@@ -12,7 +12,7 @@
     <label>Mincho intelligence booster</label>
     <description>沁心糖研发的智慧珉巧改造包，接收改造的珉巧可以拥有更加高级的智能。</description>
     <graphicData>
-      <texPath>Things/Item/MCW_MinchoBoosters/MCW_MinchoIntelBooster</texPath>
+      <texPath>Things/Item/MinchoIntelBooster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <stackLimit>10</stackLimit>
@@ -32,7 +32,7 @@
     <label>Mincho basic core booster</label>
     <description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 1 级到 3 级的提升）</description>
     <graphicData>
-      <texPath>Things/Item/MCW_MinchoBoosters/MCW_MinchoCoreBoosterBasic</texPath>
+      <texPath>Things/Item/MinchoCoreBoosterBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <stackLimit>10</stackLimit>
@@ -52,7 +52,7 @@
     <label>Mincho advanced core booster</label>
     <description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 3 级到 5 级的提升）</description>
     <graphicData>
-      <texPath>Things/Item/MCW_MinchoBoosters/MCW_MinchoCoreBoosterAdvanced</texPath>
+      <texPath>Things/Item/MinchoCoreBoosterAdvanced</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <stackLimit>10</stackLimit>
@@ -72,7 +72,7 @@
     <label>Mincho body booster</label>
     <description>沁心糖研发的用于增加智慧珉巧躯体等级的改造包。（用于 1 级到 5 级的提升）</description>
     <graphicData>
-      <texPath>Things/Item/MCW_MinchoBoosters/MCW_MinchoBodyBooster</texPath>
+      <texPath>Things/Item/MinchoBodyBooster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <stackLimit>10</stackLimit>
@@ -90,6 +90,7 @@
 
   <RecipeDef>
     <defName>MCW_Make_MinchoIntelBooster</defName>
+    <researchPrerequisite>MCW_Research_BoosterIntel</researchPrerequisite>
     <label>make Mincho intelligence booster</label>
     <description>制作智慧珉巧改造包。</description>
     <jobString>Making Mincho intelligence booster.</jobString>
@@ -102,7 +103,7 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
         <count>100</count>
       </li>
       <li>
@@ -118,10 +119,20 @@
       <MCW_MinchoIntelBooster>1</MCW_MinchoIntelBooster>
     </products>
     <workSkill>Crafting</workSkill>
-  </RecipeDef>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>Mincho_Mintchoco</li>
+          <li>Mincho_BluePolarBear</li>
+          <li>Mincho_PinkFallInLove</li>
+          <li>ComponentSpacer</li>
+          <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
+        </thingDefs>
+      </fixedIngredientFilter>
+  <allowMixingIngredients>true</allowMixingIngredients></RecipeDef>
 
   <RecipeDef>
     <defName>MCW_Make_MinchoCoreBoosterBasic</defName>
+    <researchPrerequisite>MCW_Research_BoosterCoreBasic</researchPrerequisite>
     <label>make Mincho basic core booster</label>
     <description>制作智慧珉巧初级核心改造包。</description>
     <jobString>Making Mincho basic core booster.</jobString>
@@ -134,7 +145,7 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
         <count>50</count>
       </li>
       <li MayRequire="Ludeon.RimWorld.Biotech">
@@ -146,10 +157,19 @@
       <MCW_MinchoCoreBoosterBasic>1</MCW_MinchoCoreBoosterBasic>
     </products>
     <workSkill>Crafting</workSkill>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>Mincho_Mintchoco</li>
+          <li>Mincho_BluePolarBear</li>
+          <li>Mincho_PinkFallInLove</li>
+          <li MayRequire="Ludeon.RimWorld.Biotech">SubcoreBasic</li>
+        </thingDefs>
+      </fixedIngredientFilter>
   </RecipeDef>
 
   <RecipeDef>
     <defName>MCW_Make_MinchoCoreBoosterAdvanced</defName>
+    <researchPrerequisite>MCW_Research_BoosterCoreAdvanced</researchPrerequisite>
     <label>make Mincho advanced core booster</label>
     <description>制作智慧珉巧高级核心改造包。</description>
     <jobString>Making Mincho advanced core booster.</jobString>
@@ -162,7 +182,7 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
         <count>50</count>
       </li>
       <li MayRequire="Ludeon.RimWorld.Biotech">
@@ -174,10 +194,19 @@
       <MCW_MinchoCoreBoosterAdvanced>1</MCW_MinchoCoreBoosterAdvanced>
     </products>
     <workSkill>Crafting</workSkill>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>Mincho_Mintchoco</li>
+          <li>Mincho_BluePolarBear</li>
+          <li>Mincho_PinkFallInLove</li>
+          <li MayRequire="Ludeon.RimWorld.Biotech">SubcoreRegular</li>
+        </thingDefs>
+      </fixedIngredientFilter>
   </RecipeDef>
 
   <RecipeDef>
     <defName>MCW_Make_MinchoBodyBooster</defName>
+    <researchPrerequisite>MCW_Research_BoosterBody</researchPrerequisite>
     <label>make Mincho body booster</label>
     <description>制作智慧珉巧躯体改造包。</description>
     <jobString>Making Mincho body booster.</jobString>
@@ -190,7 +219,7 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li></thingDefs></filter>
+        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
         <count>300</count>
       </li>
       <li>
@@ -202,6 +231,14 @@
       <MCW_MinchoBodyBooster>1</MCW_MinchoBodyBooster>
     </products>
     <workSkill>Crafting</workSkill>
+      <fixedIngredientFilter>
+        <thingDefs>
+          <li>Mincho_Mintchoco</li>
+          <li>Mincho_BluePolarBear</li>
+          <li>Mincho_PinkFallInLove</li>
+          <li>ComponentIndustrial</li>
+        </thingDefs>
+      </fixedIngredientFilter>
   </RecipeDef>
 
   <!-- ===================== 手术配方 ===================== -->

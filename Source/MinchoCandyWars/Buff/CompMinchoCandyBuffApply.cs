@@ -76,15 +76,20 @@ namespace MinchoCandyWars.Buff
         // 应用属性乘数
         public override float GetStatFactor(StatDef stat)
         {
-            return BodyStage?.statFactors.GetStatFactorFromList(stat) ?? 1f *
-                CoreStage?.statFactors.GetStatFactorFromList(stat) ?? 1f;
+            // ?? 的优先级低于 *，原来写成一行会变成「身体阶段非空就直接返回身体值」，
+            // 核心阶段被整个丢掉。显式取两个值再相乘。
+            float body = BodyStage?.statFactors.GetStatFactorFromList(stat) ?? 1f;
+            float core = CoreStage?.statFactors.GetStatFactorFromList(stat) ?? 1f;
+            return body * core;
         }
 
         // 应用属性偏移
         public override float GetStatOffset(StatDef stat)
         {
-            return BodyStage?.statOffsets.GetStatOffsetFromList(stat) ?? 0f +
-                CoreStage?.statOffsets.GetStatOffsetFromList(stat) ?? 0f;
+            // 同上：原先的写法只会返回其中一个阶段的值。
+            float body = BodyStage?.statOffsets.GetStatOffsetFromList(stat) ?? 0f;
+            float core = CoreStage?.statOffsets.GetStatOffsetFromList(stat) ?? 0f;
+            return body + core;
         }
 
         // 输出 stat 面板中的来源说明。

@@ -4,10 +4,20 @@
 	<!--
 		本 mod 只支持 1.7：Def / Patch / 语言 / 程序集统一放在 `1.7` 目录下。
 		程序集由 net10.0 编译产出（见 Source/Directory.Build.props）。
+
+		原先独立成 mod 的「审核扩展(IntegratedReview)」「薄荷冰淇淋涂装」「冰淇淋桶载客飞行器」
+		已全部并入本模组：代码进 Source/MinchoCandyWars，XML 直接改 1.7/Defs 原文件，
+		贴图直接替换 Textures，因此这里不再需要叠加层目录。
+
+		只剩两类内容仍按 DLC 条件加载（对应目录里的 Def 引用了 DLC 专属内容）：
+		  · Anomaly：无尽冰淇淋桶与精神影响
+		  · Odyssey：冰淇淋桶载客飞行器
 	-->
 	<v1.7>
 		<li>1.7</li>
 		<li>Content</li>
 		<li IfModActive="SutSutMan.MarilyntheMinchoWorshipperWitchHARver">1.7/Mods/MarilyntheMinchoWorshipper</li>
+		<li IfModActive="Ludeon.RimWorld.Anomaly">1.7/Anomaly</li>
+		<li IfModActive="Ludeon.RimWorld.Odyssey">1.7/Odyssey</li>
 	</v1.7>
 </loadFolders>

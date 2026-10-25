@@ -1,8 +1,8 @@
-using MinchoCandyWars.Gizmos;
 using MinchoCandyWars.Interface;
 using RimWorld;
+using RimWorld.Planet;
+using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using Verse;
 
 namespace MinchoCandyWars.Abilities
@@ -49,12 +49,46 @@ namespace MinchoCandyWars.Abilities
         /// </summary>
         public bool IsAvailable => minchoAbilityDef?.IsAvailableFor(pawn) ?? false;
 
+        // 这些成员在 Initialize() 里缓存；若在初始化之前就被查询（例如 UI 预览），退回按需解析。
+        private CompMinchoCore? Core => compMinchoCore ?? pawn?.GetComp<CompMinchoCore>();
+        private MinchoAbilityDefModExtension? Extension => minchoAbilityDef ?? def?.GetModExtension<MinchoAbilityDefModExtension>();
+
+        /// <summary>
+        /// 是否可以施放：已激活 + 技能对当前糖饰有效 + 糖果值足够。
+        /// </summary>
+        private bool IsReady => Core?.Active == true
+            && Extension != null
+            && Extension.IsAvailableFor(pawn)
+            && Core.MinchoCandyValue >= Extension.requiredMinchoCandyValue;
+
+        /// <summary>
+        /// 原版 CanCast 只判断充能和冷却，这里补上本模组的条件。
+        /// 原版已经拒绝时保留原版的原因，不覆盖。
+        /// </summary>
+        public override AcceptanceReport CanCast
+        {
+            get
+            {
+                AcceptanceReport report = base.CanCast;
+                if (!report.Accepted) return report;
+
+                return IsReady ? report : "MinchoCandyWars.UI.Ability.ConditionNotMet".Translate();
+            }
+        }
+
+        /// <summary>兜底：绕过 Gizmo 直接调用 Activate 时同样不放行（两个重载都要拦）。</summary>
+        public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest)
+            => IsReady && base.Activate(target, dest);
+
+        public override bool Activate(GlobalTargetInfo target)
+            => IsReady && base.Activate(target);
+
         //检查Gizmo是否禁用，如果糖果值不够则禁用
         public override bool GizmoDisabled(out string reason)
         {
             if (compMinchoCore.MinchoCandyValue < requiredMinchoCandyValue)
             {
-                reason = "MinchoCandyWars.Abilities.MinchoCandyValueDontEnough".Translate(requiredMinchoCandyValue);
+                reason = "MinchoCandyWars.Abilities.MinchoCandyValueDontEnough".Translate(requiredMinchoCandyValue.Named("VALUE"));
                 return true;
             }
             return base.GizmoDisabled(out reason);
@@ -76,7 +110,7 @@ namespace MinchoCandyWars.Abilities
 
             if (gizmo == null)
             {
-                gizmo = new Command_MinchoAbility(this, pawn);
+                gizmo = (Command)Activator.CreateInstance(def.gizmoClass, this, pawn)!;
                 gizmo.Order = def.uiOrder;
             }
 
@@ -119,18 +153,13 @@ namespace MinchoCandyWars.Abilities
             compMinchoCore.MinchoCandyValue -= requiredMinchoCandyValue;
         }
 
-        public string MinchoCandyValueConsumeText()
-        {
-            return "MinchoCandyWars.Abilities.CandyValueConsume".Translate(requiredMinchoCandyValue);
-        }
-
         //在Tooltip中显示消耗的糖果值
         public override string Tooltip
         {
             get
             {
                 string text = base.Tooltip;
-                text = text + "\n\n" + "MinchoCandyWars.Abilities.CandyValueConsume".Translate(requiredMinchoCandyValue);
+                text = text + "\n\n" + "MinchoCandyWars.Abilities.CandyValueConsume".Translate(requiredMinchoCandyValue.Named("VALUE"));
                 return text;
             }
         }

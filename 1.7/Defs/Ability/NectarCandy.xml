@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
     <!-- ===== 甘露连接 ===== -->
@@ -16,7 +16,7 @@
         <cooldownTicksRange>300000</cooldownTicksRange><!-- 5 days -->
         <verbProperties>
             <verbClass>Verb_CastAbilityTouch</verbClass>
-            <drawAimPie>false</drawAimPie>
+            <drawAimPie>true</drawAimPie>
             <range>-1</range>
             <warmupTime>30</warmupTime>
             <targetParams>

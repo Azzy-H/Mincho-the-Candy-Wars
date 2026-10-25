@@ -20,7 +20,7 @@
         <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
         <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
         <verbProperties>
-            <verbClass>Verb_CastAbilityJump</verbClass>
+            <verbClass>MinchoCandyWars.Abilities.AmberonCandy.GuardianJumpVerb</verbClass>
             <drawAimPie>true</drawAimPie>
             <range>15</range>
             <minRange>3</minRange>

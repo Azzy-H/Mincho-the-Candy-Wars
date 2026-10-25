@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- 无尽冰淇淋桶 -->
+    <MinchoCandyWars.UI.Bucket.NotStudied>尚未完成研究</MinchoCandyWars.UI.Bucket.NotStudied>
+    <MinchoCandyWars.UI.Bucket.NeedShard>需要1个碎片</MinchoCandyWars.UI.Bucket.NeedShard>
+
+    <!-- 冰淇淋柜 -->
+    <MinchoCandyWars.UI.ColdStorage.Cooling>冷藏中（−5°C）</MinchoCandyWars.UI.ColdStorage.Cooling>
+    <MinchoCandyWars.UI.ColdStorage.NotCooling>未冷藏</MinchoCandyWars.UI.ColdStorage.NotCooling>
+
+    <!-- 技能可用性 -->
+    <MinchoCandyWars.UI.Ability.ConditionNotMet>糖饰、等级或糖果值不满足技能条件</MinchoCandyWars.UI.Ability.ConditionNotMet>
+
+    <!-- 健康栏：核心/躯体等级与护盾 -->
+    <MinchoCandyWars.UI.HealthTips.GradeLabel>{CANDY} 核{CORE}·躯{BODY}</MinchoCandyWars.UI.HealthTips.GradeLabel>
+    <MinchoCandyWars.UI.HealthTips.Title>{CANDY}：核心{CORE}/5 · 躯体{BODY}/5</MinchoCandyWars.UI.HealthTips.Title>
+    <MinchoCandyWars.UI.HealthTips.MaxCandyValue>清凉值上限：{MAX}（核心与躯体每级各增加50）</MinchoCandyWars.UI.HealthTips.MaxCandyValue>
+    <MinchoCandyWars.UI.HealthTips.CoreStage>当前核心强化：</MinchoCandyWars.UI.HealthTips.CoreStage>
+    <MinchoCandyWars.UI.HealthTips.BodyStage>当前躯体强化：</MinchoCandyWars.UI.HealthTips.BodyStage>
+    <MinchoCandyWars.UI.HealthTips.Abilities>当前已解锁技能：{LIST}</MinchoCandyWars.UI.HealthTips.Abilities>
+    <MinchoCandyWars.UI.HealthTips.None>  无</MinchoCandyWars.UI.HealthTips.None>
+    <MinchoCandyWars.UI.HealthTips.NoExtraStats>  无额外属性</MinchoCandyWars.UI.HealthTips.NoExtraStats>
+    <MinchoCandyWars.UI.HealthTips.Shield>护盾：{SHIELD} / {SHIELDMAX}\n实际伤害容量：{CAPACITY} / {CAPACITYMAX}。可抵挡远程和爆炸伤害；EMP会使护盾失效。</MinchoCandyWars.UI.HealthTips.Shield>
+
+    <!-- 通用词条 -->
+    <MinchoCandyWars.UI.Term.IceCream>冰淇淋</MinchoCandyWars.UI.Term.IceCream>
+
+    <!-- 信件与消息 -->
+    <MinchoCandyWars.UI.Letter.RecruitMincho.Label>珉巧到达</MinchoCandyWars.UI.Letter.RecruitMincho.Label>
+    <MinchoCandyWars.UI.Letter.RecruitMincho.Text>美味的冰淇淋们来了，她们准备好做任何事情了~</MinchoCandyWars.UI.Letter.RecruitMincho.Text>
+    <MinchoCandyWars.UI.Letter.RecruitMincho.TextSmart>美味的冰淇淋们来了，她们准备好做任何事情了~\n\n其中还有一位拥有智慧核心的珉巧！</MinchoCandyWars.UI.Letter.RecruitMincho.TextSmart>
+    <MinchoCandyWars.UI.Letter.RecruitMincho.CommsLabel>珉巧同盟的联络方式</MinchoCandyWars.UI.Letter.RecruitMincho.CommsLabel>
+    <MinchoCandyWars.UI.Letter.RecruitMincho.CommsText>沁心糖说：如果以后想联络珉巧同盟，请使用我们的冰淇淋通讯台。\n\n（建造冰淇淋通讯台后，选中它并点击「联络珉巧同盟」按钮，就能和我通话了。）</MinchoCandyWars.UI.Letter.RecruitMincho.CommsText>
+    <MinchoCandyWars.UI.Letter.Reinforcements.Label>珉巧援军到达</MinchoCandyWars.UI.Letter.Reinforcements.Label>
+    <MinchoCandyWars.UI.Letter.Reinforcements.Text>珉巧同盟的援军赶到了战场，她们决定帮你一把。</MinchoCandyWars.UI.Letter.Reinforcements.Text>
+    <MinchoCandyWars.UI.Letter.QinxintangVisit.Label>沁心糖来访</MinchoCandyWars.UI.Letter.QinxintangVisit.Label>
+    <MinchoCandyWars.UI.Letter.QinxintangVisit.Text>沁心糖终于来到了你的殖民地，她说要在这里住上一段时间。</MinchoCandyWars.UI.Letter.QinxintangVisit.Text>
+    <MinchoCandyWars.UI.Letter.Subsidy.Label>珉巧同盟的资助</MinchoCandyWars.UI.Letter.Subsidy.Label>
+    <MinchoCandyWars.UI.Letter.Subsidy.Text>沁心糖的资助到了，物资已经空投到你的殖民地附近。</MinchoCandyWars.UI.Letter.Subsidy.Text>
+    <MinchoCandyWars.UI.Message.RecycleDefeated>回收部队已彻底溃败，他们再也无法联络或袭击你们了。</MinchoCandyWars.UI.Message.RecycleDefeated>
+    <MinchoCandyWars.UI.Message.Alliance.NotEnoughSilver>珉巧同盟：银币不足（需要 {SILVER}）</MinchoCandyWars.UI.Message.Alliance.NotEnoughSilver>
+    <MinchoCandyWars.UI.Message.Alliance.Bought>珉巧同盟：已购买 {ITEM} ×{COUNT}</MinchoCandyWars.UI.Message.Alliance.Bought>
+    <MinchoCandyWars.UI.Message.Alliance.AlreadyResearched>珉巧同盟：{RESEARCH} 已经研究完成了</MinchoCandyWars.UI.Message.Alliance.AlreadyResearched>
+    <MinchoCandyWars.UI.Message.Alliance.NoteUnlocked>珉巧同盟：已获得研究图纸，解锁 {RESEARCH}</MinchoCandyWars.UI.Message.Alliance.NoteUnlocked>
+
+</LanguageData>

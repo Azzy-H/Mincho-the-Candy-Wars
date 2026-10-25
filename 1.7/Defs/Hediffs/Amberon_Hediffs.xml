@@ -11,13 +11,14 @@
     <defaultLabelColor>(0.9, 0.7, 0.2)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
     <minSeverity>0</minSeverity>
-    <maxSeverity>1</maxSeverity>    <renderNodeProperties>
+    <maxSeverity>1</maxSeverity>
+    <renderNodeProperties>
       <li>
         <nodeClass>PawnRenderNode</nodeClass>
         <workerClass>MinchoCandyWars.Render.PawnRenderNodeWorker_EnergyShield</workerClass>
         <useGraphic>false</useGraphic>
       </li>
-    </renderNodeProperties>    
+    </renderNodeProperties>
     <stages>
       <li>
         <statOffsets>
@@ -35,6 +36,7 @@
         <hitpointsOnReset>40</hitpointsOnReset>
         <startingTicksToReset>7200</startingTicksToReset>
       </li>
+      <li Class="MinchoCandyWars.Abilities.AmberonCandy.ShieldInfoProperties" />
     </comps>
   </HediffDef>
 
@@ -61,7 +63,7 @@
     </stages>
     <comps>
       <li Class="HediffCompProperties_Disappears">
-        <disappearsAfterTicks>21600</disappearsAfterTicks><!-- 6 hours -->
+        <disappearsAfterTicks>21600</disappearsAfterTicks>        <!-- 6 hours -->
       </li>
       <li Class="MinchoCandyWars.Abilities.AmberonCandy.HediffCompProperties_HardCandyMeleeDebuff">
         <debuffHediffDef>MCW_SplashedIceCream</debuffHediffDef>
@@ -92,7 +94,7 @@
     </stages>
     <comps>
       <li Class="HediffCompProperties_Disappears">
-        <disappearsAfterTicks>3600</disappearsAfterTicks><!-- 1 hour -->
+        <disappearsAfterTicks>3600</disappearsAfterTicks>        <!-- 1 hour -->
       </li>
     </comps>
   </HediffDef>
@@ -134,7 +136,7 @@
           </defaultData>
         </drawData>
         <parentTagDef>Head</parentTagDef>
-        <baseLayer>96</baseLayer>
+        <baseLayer>67</baseLayer>
       </li>
     </renderNodeProperties>
     <stages>
@@ -147,7 +149,7 @@
     </stages>
     <comps>
       <li Class="HediffCompProperties_Disappears">
-        <disappearsAfterTicks>1800</disappearsAfterTicks><!-- 30 seconds -->
+        <disappearsAfterTicks>1800</disappearsAfterTicks>        <!-- 30 seconds -->
       </li>
       <li Class="MinchoCandyWars.Abilities.AmberonCandy.HediffCompProperties_AmberonHeartGiveHediffsInRange">
         <range>3.9</range>

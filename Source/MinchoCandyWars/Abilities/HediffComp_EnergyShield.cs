@@ -81,7 +81,9 @@ namespace MinchoCandyWars.Abilities
         }
 
         /// <summary>
-        /// 由 Harmony patch 调用，在 Pawn.PreApplyDamage 中拦截伤害。
+        /// 由 <see cref="ThingComp_EnergyShieldAbsorb"/> 调用：原版伤害管线
+        /// （Pawn.PreApplyDamage → ThingWithComps.PreApplyDamage → comp.PostPreApplyDamage）
+        /// 会把受伤事件送到挂在 pawn 上的吸收组件，这里再转发到具体护盾。
         /// </summary>
         public bool TryAbsorbDamage(ref DamageInfo dinfo)
         {
@@ -164,6 +166,13 @@ namespace MinchoCandyWars.Abilities
             base.CompPostPostRemoved();
             ticksToReset = -1;
             energy = 0f;
+            EnergyShieldAbsorbComp.DetachIfUnused(Pawn);
+        }
+
+        public override void CompPostPostAdd(DamageInfo? dinfo)
+        {
+            base.CompPostPostAdd(dinfo);
+            EnergyShieldAbsorbComp.Attach(Pawn);
         }
 
         public override void CompExposeData()
@@ -171,6 +180,13 @@ namespace MinchoCandyWars.Abilities
             base.CompExposeData();
             Scribe_Values.Look(ref energy, "energy", 0f);
             Scribe_Values.Look(ref ticksToReset, "ticksToReset", -1);
+
+            // ThingComp 不进存档（ThingWithComps.ExposeData 只调 PostExposeData，不写组件列表），
+            // 读档时 comps 会被 InitializeComps 按 Def 重建，所以这里补一次挂载。
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                EnergyShieldAbsorbComp.Attach(Pawn);
+            }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmos()
@@ -184,6 +200,15 @@ namespace MinchoCandyWars.Abilities
                 shield = this
             };
         }
+    }
+
+    /// <summary>
+    /// 自定义护盾内部存的是「伤害点数」，原版护盾存的是「能量」：1 点伤害 = energyLossPerDamage 能量，
+    /// 原版 gizmo 显示 energy * 100。这里把换算系数集中一处，gizmo 与 tooltip 共用。
+    /// </summary>
+    public static class ShieldDisplay
+    {
+        public static readonly float DisplayPerDamage = new CompProperties_Shield().energyLossPerDamage * 100f;
     }
 
     [StaticConstructorOnStartup]
@@ -226,7 +251,7 @@ namespace MinchoCandyWars.Abilities
             else
             {
                 fillPercent = shield.Energy / Mathf.Max(shield.EnergyMax, 1f);
-                valueText = (shield.Energy * 100f).ToString("F0") + " / " + (shield.EnergyMax * 100f).ToString("F0");
+                valueText = (shield.Energy * ShieldDisplay.DisplayPerDamage).ToString("F0") + " / " + (shield.EnergyMax * ShieldDisplay.DisplayPerDamage).ToString("F0");
             }
 
             Widgets.FillableBar(barRect, fillPercent, FullBarTex, EmptyBarTex, doBorder: false);

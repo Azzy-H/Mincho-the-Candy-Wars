@@ -33,9 +33,16 @@ namespace MinchoCandyWars.Gizmos
             return minchoCandyValue / currentMaxCandyValue;
         }
 
+        /// <summary>核心 / 躯体等级图标，按等级 1..5 索引。</summary>
+        private static readonly Texture2D[] coreIcons = LoadGradeIcons("Core");
+        private static readonly Texture2D[] bodyIcons = LoadGradeIcons("Body");
+
+        private static Texture2D[] LoadGradeIcons(string kind) => Enumerable.Range(1, 5)
+            .Select(n => ContentFinder<Texture2D>.Get("UI/Grades/" + kind + n)).ToArray();
+
+        private static Texture2D GradeIcon(Texture2D[] icons, int grade) => icons[Math.Clamp(grade, 1, 5) - 1];
+
         public static readonly Texture2D BGText = ContentFinder<Texture2D>.Get("UI/Gizmos/MinchoCandyGizmo/MinchoCandyGizmo_bg");
-        public static readonly Texture2D pinkCandyTexture = ContentFinder<Texture2D>.Get("UI/Gizmos/MinchoCandyGizmo/MinchoCandyGizmo_pink");
-        public static readonly Texture2D blueCandyTexture = ContentFinder<Texture2D>.Get("UI/Gizmos/MinchoCandyGizmo/MinchoCandyGizmo_blue");
         public static readonly Texture2D cookieTexture = ContentFinder<Texture2D>.Get("UI/Gizmos/MinchoCandyGizmo/MinchoCandyGizmo_cookie");
         public static readonly Texture2D progressBarBGTexture = ContentFinder<Texture2D>.Get("UI/Gizmos/MinchoCandyGizmo/MinchoCandyGizmo_progressBarBG");
         public static readonly Texture2D progressBarFillTexture = ContentFinder<Texture2D>.Get("UI/Gizmos/MinchoCandyGizmo/MinchoCandyGizmo_progressBarFill");
@@ -82,25 +89,30 @@ namespace MinchoCandyWars.Gizmos
 
             Widgets.DrawTextureFitted(root, BGText, 1f);
 
-            Rect pinkRect = new Rect(root.x + 18f, root.y + 7f, 58f, 22f);
-            Widgets.DrawTextureFitted(pinkRect, pinkCandyTexture, 1f);
+            // 等级图标：原 18,7,58,22 的显示区经过偏移（x-18, y-7）并加高到 29，直接写最终值。
+            Rect pinkRect = new Rect(root.x, root.y, 58f, 29f);
+            Widgets.DrawTextureFitted(pinkRect, GradeIcon(coreIcons, minchoCoreGrade), 1f);
             //Text.Anchor = TextAnchor.MiddleCenter;
             //Widgets.Label(pinkRect, compMinchoCore.MinchoCoreGrade.ToString());
             //Text.Anchor = TextAnchor.UpperLeft;
-            TooltipHandler.TipRegion(pinkRect, new TipSignal(() => "MinchoCandyWars.Abilities.MinchoCoreGradeTips".Translate(compMinchoCore.MinchoCoreGrade), toolTipHash1));
+            TooltipHandler.TipRegion(pinkRect, new TipSignal(() => "MinchoCandyWars.Abilities.MinchoCoreGradeTips".Translate(compMinchoCore.MinchoCoreGrade.Named("GRADE")), toolTipHash1));
 
-            Rect blueRect = new Rect(root.x + 97f, root.y + 7f, 58f, 22f);
-            Widgets.DrawTextureFitted(blueRect, blueCandyTexture, 1f);
+            // 原 97,7,58,22 经 (x-97+180-58, y-7) 变换后：x = root.x+122（右对齐到面板右缘），高度按 60/98 拉伸。
+            Rect blueRect = new Rect(root.x + 122f, root.y, 58f, 58f * 60f / 98f);
+            Widgets.DrawTextureFitted(blueRect, GradeIcon(bodyIcons, minchoBodyGrade), 1f);
             //Text.Anchor = TextAnchor.MiddleCenter;
             //Widgets.Label(blueRect, compMinchoCore.MinchoBodyGrade.ToString());
             //Text.Anchor = TextAnchor.UpperLeft;
-            TooltipHandler.TipRegion(blueRect, new TipSignal(() => "MinchoCandyWars.Abilities.MinchoBodyGradeTips".Translate(compMinchoCore.MinchoBodyGrade), toolTipHash2));
+            TooltipHandler.TipRegion(blueRect, new TipSignal(() => "MinchoCandyWars.Abilities.MinchoBodyGradeTips".Translate(compMinchoCore.MinchoBodyGrade.Named("GRADE")), toolTipHash2));
 
             // 饼干本身就是按钮：图标跟随当前糖饰，使用「糖饰物品贴图」的副本
             // （Textures/UI/Gizmos/MinchoCandyGizmo/Candy/<糖种 defName>.png，方便单独替换）；
             // 找不到专属图时退回通用饼干图。
             // 物品图是 43x49 的竖图，直接铺进方形按钮会变形，所以用 ButtonImageFitted 保持比例。
-            Rect cookieRect = new Rect(root.x + 8f, root.y + 35f, 32f, 32f);
+            //
+            // 可点击区域比饼干图案本身大一圈（向左 4、向上 3、扩到 40x40），
+            // 这是原先用 transpiler 在运行时改 Rect 的效果，现已直接写在这里。
+            Rect cookieRect = new Rect(root.x + 4f, root.y + 32f, 40f, 40f);
             if (Widgets.ButtonImageFitted(cookieRect, GetCandyIcon(compMinchoCore.CurrentCandyType)))
             {
                 compMinchoCore.ShowAbilityGizmos = !compMinchoCore.ShowAbilityGizmos;
@@ -112,7 +124,7 @@ namespace MinchoCandyWars.Gizmos
                 //    string label;
                 //    if (candyTypeDef == compMinchoCore.CurrentCandyType)
                 //    {
-                //        label = "MinchoCandyWars.Abilities.CurrentCandyType".Translate(candyTypeDef.label);
+                //        label = "MinchoCandyWars.Abilities.CurrentCandyType".Translate(candyTypeDef.label.Named("CANDY"));
                 //    }
                 //    else
                 //    {
@@ -144,7 +156,7 @@ namespace MinchoCandyWars.Gizmos
 
             // 恢复速度叠印在右下角能量棒上，黑色字。
             // 取 RecoveryPerDay，已含温度系数；能量棒底色偏浅，黑字对比足够。
-            string recoveryText = "MinchoCandyWars.Abilities.CandyValueRecovery".Translate(compMinchoCore.RecoveryPerDay.ToString("F0"));
+            string recoveryText = "MinchoCandyWars.Abilities.CandyValueRecovery".Translate(compMinchoCore.RecoveryPerDay.ToString("F0").Named("RATE"));
             GameFont prevFont = Text.Font;
             Color prevColor = GUI.color;
             Text.Font = GameFont.Tiny;
@@ -162,6 +174,12 @@ namespace MinchoCandyWars.Gizmos
             //Widgets.DrawBoxSolid(textRect, Color.gray);
             //Widgets.Label(textRect, $"{pct:P0}");
             //Text.Anchor = TextAnchor.UpperLeft;
+
+            // 面板外框（原来由 GradeIcons 的 postfix 在方法返回之后补画，这里直接画在最后）
+            Color boxColor = GUI.color;
+            GUI.color = Color.black;
+            Widgets.DrawBox(root, 1);
+            GUI.color = boxColor;
 
             return new GizmoResult(GizmoState.Clear);
         }

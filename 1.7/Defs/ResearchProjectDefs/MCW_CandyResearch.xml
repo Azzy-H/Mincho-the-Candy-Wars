@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ResearchProjectDef>
     <defName>MCW_Research_MechaCandy</defName>
@@ -8,7 +8,7 @@
     <baseCost>3000</baseCost>
     <tab>MCW_Technology</tab>
     <techprintCount>1</techprintCount>
-    <techprintCommonality>1</techprintCommonality>
+    <techprintCommonality>0</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>
     <heldByFactionCategoryTags>
       <li>MinchoCandyWars</li>
@@ -16,8 +16,8 @@
     <prerequisites>
       <li>MicroelectronicsBasics</li>
     </prerequisites>
-    <researchViewX>10.0</researchViewX>
-    <researchViewY>3.0</researchViewY>
+    <researchViewX>2</researchViewX>
+    <researchViewY>2</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef>
@@ -28,7 +28,7 @@
     <baseCost>3000</baseCost>
     <tab>MCW_Technology</tab>
     <techprintCount>1</techprintCount>
-    <techprintCommonality>1</techprintCommonality>
+    <techprintCommonality>0</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>
     <heldByFactionCategoryTags>
       <li>MinchoCandyWars</li>
@@ -36,8 +36,8 @@
     <prerequisites>
       <li>MicroelectronicsBasics</li>
     </prerequisites>
-    <researchViewX>11.0</researchViewX>
-    <researchViewY>3.0</researchViewY>
+    <researchViewX>3</researchViewX>
+    <researchViewY>2</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef>
@@ -48,7 +48,7 @@
     <baseCost>3000</baseCost>
     <tab>MCW_Technology</tab>
     <techprintCount>1</techprintCount>
-    <techprintCommonality>1</techprintCommonality>
+    <techprintCommonality>0</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>
     <heldByFactionCategoryTags>
       <li>MinchoCandyWars</li>
@@ -56,8 +56,8 @@
     <prerequisites>
       <li>MicroelectronicsBasics</li>
     </prerequisites>
-    <researchViewX>12.0</researchViewX>
-    <researchViewY>3.0</researchViewY>
+    <researchViewX>4</researchViewX>
+    <researchViewY>2</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef>
@@ -68,7 +68,7 @@
     <baseCost>3000</baseCost>
     <tab>MCW_Technology</tab>
     <techprintCount>1</techprintCount>
-    <techprintCommonality>1</techprintCommonality>
+    <techprintCommonality>0</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>
     <heldByFactionCategoryTags>
       <li>MinchoCandyWars</li>
@@ -76,8 +76,8 @@
     <prerequisites>
       <li>MicroelectronicsBasics</li>
     </prerequisites>
-    <researchViewX>13.0</researchViewX>
-    <researchViewY>3.0</researchViewY>
+    <researchViewX>2</researchViewX>
+    <researchViewY>3</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef>
@@ -88,7 +88,7 @@
     <baseCost>3000</baseCost>
     <tab>MCW_Technology</tab>
     <techprintCount>1</techprintCount>
-    <techprintCommonality>1</techprintCommonality>
+    <techprintCommonality>0</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>
     <heldByFactionCategoryTags>
       <li>MinchoCandyWars</li>
@@ -96,7 +96,7 @@
     <prerequisites>
       <li>MicroelectronicsBasics</li>
     </prerequisites>
-    <researchViewX>14.0</researchViewX>
-    <researchViewY>3.0</researchViewY>
+    <researchViewX>3</researchViewX>
+    <researchViewY>3</researchViewY>
   </ResearchProjectDef>
 </Defs>

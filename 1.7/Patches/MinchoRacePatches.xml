@@ -3,7 +3,19 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps</xpath>
     <value>
-      <li Class="MinchoCandyWars.CompProperties_MinchoCore" />
+      <li Class="MinchoCandyWars.CompProperties_MinchoCore">
+          <renderNodeProperties>
+            <li>
+              <debugLabel>MCW candy decoration</debugLabel>
+              <nodeClass>MinchoCandyWars.Render.PawnRenderNode_CandyDecoration</nodeClass>
+              <workerClass>MinchoCandyWars.Render.PawnRenderNodeWorker_CandyDecoration</workerClass>
+              <useGraphic>true</useGraphic>
+              <parentTagDef>Head</parentTagDef>
+              <baseLayer>66</baseLayer>
+              <drawSize>0.675,0.675</drawSize>
+            </li>
+          </renderNodeProperties>
+        </li>
       <li Class="MinchoCandyWars.Buff.CompProperties_MinchoCandyBuffApply" />
     </value>
   </Operation>

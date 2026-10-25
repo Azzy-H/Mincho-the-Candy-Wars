@@ -26,4 +26,10 @@
   <!-- EN: 研究琉璃糖糖饰，解锁对应糖饰解锁物品的制作配方。 -->
   <MCW_Research_PrismCandy.description>研究琉璃糖糖饰，解锁对应糖饰解锁物品的制作配方。</MCW_Research_PrismCandy.description>
   
+  <!-- 改造包研究-->
+  <MCW_Research_BoosterIntel.label>智慧珉巧改造包</MCW_Research_BoosterIntel.label>
+  <MCW_Research_BoosterCoreBasic.label>初级核心改造包</MCW_Research_BoosterCoreBasic.label>
+  <MCW_Research_BoosterCoreAdvanced.label>高级核心改造包</MCW_Research_BoosterCoreAdvanced.label>
+  <MCW_Research_BoosterBody.label>躯体改造包</MCW_Research_BoosterBody.label>
+  
 </LanguageData>
