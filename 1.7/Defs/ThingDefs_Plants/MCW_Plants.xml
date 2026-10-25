@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef ParentName="PlantBase">
     <defName>MCW_Chocolate_Bush_Plant</defName>
@@ -42,7 +42,7 @@
   <ThingDef ParentName="PlantBase">
     <defName>MCW_Frozen_Rice_Plant</defName>
     <label>冷冻水稻</label>
-    <description>智慧珉巧发明的神奇作物，可以在极寒地区种植出水稻。冷冻水稻生长缓慢，巧克力灌木只能在0度以下生长。</description>
+    <description>智慧珉巧发明的神奇作物，可以在极寒地区种植出水稻。冷冻水稻生长缓慢，并且只能在0℃以下生长。</description>
     <statBases>
       <MaxHitPoints>85</MaxHitPoints>
       <Nutrition>0.175</Nutrition>
@@ -94,14 +94,14 @@
       <dieIfLeafless>true</dieIfLeafless>
       <harvestTag>Standard</harvestTag>
       <harvestedThingDef>DevilstrandCloth</harvestedThingDef>
-      <harvestYield>6</harvestYield>
+      
       <sowTags>
 				<li>Mincho_MinchoshroomPlant</li>
       </sowTags>
       <neverBlightable>true</neverBlightable>
       <sowMinSkill>10</sowMinSkill>
       <topWindExposure>0.1</topWindExposure>
-      <growDays>5</growDays>
+      <growDays>2</growDays>
       <harvestYield>2</harvestYield>
       <visualSizeRange>0.5~0.8</visualSizeRange>
       <wildOrder>2</wildOrder>
@@ -110,6 +110,6 @@
 			<minOptimalGrowthTemperature>-272</minOptimalGrowthTemperature>
 			<maxOptimalGrowthTemperature>-5</maxOptimalGrowthTemperature>
 			<maxGrowthTemperature>0</maxGrowthTemperature>
-    </plant>
+    <harvestYield>3</harvestYield></plant>
   </ThingDef>
 </Defs>

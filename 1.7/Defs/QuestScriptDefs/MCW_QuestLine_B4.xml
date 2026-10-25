@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -54,12 +54,12 @@
 
     <questNameRules>
       <rulesStrings>
-        <li>questName->获取β型纳米塑形液</li>
+        <li>questName-&gt;获取β型纳米塑形液</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->珉巧同盟给予了我们一个遗迹坐标，这里面或许有研究珉巧自身的重要信息。\n\n前往遗迹，寻找β型纳米塑形液。</li>
+        <li>questDescription-&gt;珉巧同盟给予了我们一个遗迹坐标，这里面或许有研究珉巧自身的重要信息。\n\n前往遗迹，寻找β型纳米塑形液。</li>
       </rulesStrings>
     </questDescriptionRules>
 

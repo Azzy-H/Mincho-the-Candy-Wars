@@ -15,7 +15,7 @@
 			<texPath>Things/Building/Furniture/Bed/MCW_MinchoBed</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(2,2)</drawSize>
+			<drawSize>(2.22897478,2.57751116)</drawSize>
 		</graphicData>
     <staticSunShadowHeight>0</staticSunShadowHeight>
     <castEdgeShadows>false</castEdgeShadows>
@@ -37,7 +37,7 @@
         </linkableFacilities>
       </li>
 		</comps>
-	</ThingDef>
+	<designatorDropdown>MCW_SingleBeds</designatorDropdown></ThingDef>
 	<ThingDef ParentName="DoubleBed">
 		<defName>MCW_MinchoDoubleBed</defName>
 		<designationCategory>Mincho_Furniture</designationCategory>
@@ -47,7 +47,7 @@
 			<texPath>Things/Building/Furniture/Bed/MCW_MinchoDoubleBed</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(2.5,2.85)</drawSize>
+			<drawSize>(3.54621976,2.46780361)</drawSize>
 		</graphicData>
     <staticSunShadowHeight>0</staticSunShadowHeight>
     <castEdgeShadows>false</castEdgeShadows>
@@ -69,7 +69,7 @@
 		<statBases>
 			<BedHungerRateFactor>1.5</BedHungerRateFactor>
 		</statBases>
-	</ThingDef>
+	<designatorDropdown>MCW_DoubleBeds</designatorDropdown></ThingDef>
 
 	<ThingDef ParentName="Bed">
 		<defName>MCW_MinchoLuxuryBed</defName>
@@ -80,7 +80,7 @@
 			<texPath>Things/Building/Furniture/Bed/MCW_MinchoLuxuryBed</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(2.35,2.85)</drawSize>
+			<drawSize>(1.81502232,2.57751116)</drawSize>
 		</graphicData>
     <staticSunShadowHeight>0</staticSunShadowHeight>
     <castEdgeShadows>false</castEdgeShadows>
@@ -116,7 +116,7 @@
 			<texPath>Things/Building/Furniture/Bed/MCW_MinchoLuxuryDoubleBed</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(2.35,2.85)</drawSize>
+			<drawSize>(2.71947737,2.41603150)</drawSize>
 		</graphicData>
     <staticSunShadowHeight>0</staticSunShadowHeight>
     <castEdgeShadows>false</castEdgeShadows>

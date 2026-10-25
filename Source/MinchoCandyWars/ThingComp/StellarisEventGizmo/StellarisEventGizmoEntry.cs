@@ -23,7 +23,7 @@ namespace MinchoCandyWars
         [MustTranslate]
         public string desc;
 
-        /// <summary>Gizmo 按钮图标路径，如 "MCW/UI/Commands/MyIcon"。</summary>
+        /// <summary>Gizmo 按钮图标路径，如 "UI/Commands/MyIcon"。</summary>
         public string iconPath;
 
         /// <summary>

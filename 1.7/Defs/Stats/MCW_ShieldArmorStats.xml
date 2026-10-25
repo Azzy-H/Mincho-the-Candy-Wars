@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
-    曲奇盾牌的三条防御数值。
+    盾牌的三条防御数值。
+
+    数值来源被拆成三段，全部在 Def 里，代码里不再有数值表：
+      1. 基值      —— 盾牌 Def 的 <equippedStatOffsets>（塔盾 0.5/0.5/0.2，甜饼盾 0.3/0.3/0.1）
+      2. 材质系数  —— 盾牌 Def 的 <statBases> 里的 MCW_ShieldCoef_Sharp / MCW_ShieldCoef_Heat
+      3. 材质强度  —— 材质本身的原版 StuffPower_Armor_Sharp / _Blunt / _Heat
+    下面每个 StatDef 的 <parts> 负责 2×3：value = 基值 + 材质系数 × 材质强度。
+    StatOffsetFromGear 会先读 equippedStatOffsets，再跑这里的 parts，
+    所以「面板显示的数字」和「举盾 Hediff 实际加的值」走的是同一条路径，不会分叉。
 
     1.7 修正：
       · <category>Combat</category> → <category>PawnCombat</category>
@@ -19,13 +27,19 @@
     <category>PawnCombat</category>
     <defaultBaseValue>0</defaultBaseValue>
     <minValue>0</minValue>
-    <maxValue>1</maxValue>
+    <maxValue>4</maxValue>
     <toStringStyle>PercentZero</toStringStyle>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showOnAnimals>false</showOnAnimals>
     <showOnMechanoids>false</showOnMechanoids>
     <displayPriorityInCategory>6000</displayPriorityInCategory>
     <hideAtValue>0</hideAtValue>
+    <parts>
+      <li Class="StatPart_Stuff">
+        <stuffPowerStat>StuffPower_Armor_Sharp</stuffPowerStat>
+        <multiplierStat>MCW_ShieldCoef_Sharp</multiplierStat>
+      </li>
+    </parts>
   </StatDef>
   <StatDef>
     <defName>MCW_ShieldArmor_Blunt</defName>
@@ -34,13 +48,19 @@
     <category>PawnCombat</category>
     <defaultBaseValue>0</defaultBaseValue>
     <minValue>0</minValue>
-    <maxValue>1</maxValue>
+    <maxValue>4</maxValue>
     <toStringStyle>PercentZero</toStringStyle>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showOnAnimals>false</showOnAnimals>
     <showOnMechanoids>false</showOnMechanoids>
     <displayPriorityInCategory>5990</displayPriorityInCategory>
     <hideAtValue>0</hideAtValue>
+    <parts>
+      <li Class="StatPart_Stuff">
+        <stuffPowerStat>StuffPower_Armor_Blunt</stuffPowerStat>
+        <multiplierStat>MCW_ShieldCoef_Sharp</multiplierStat>
+      </li>
+    </parts>
   </StatDef>
   <StatDef>
     <defName>MCW_ShieldArmor_Heat</defName>
@@ -49,12 +69,39 @@
     <category>PawnCombat</category>
     <defaultBaseValue>0</defaultBaseValue>
     <minValue>0</minValue>
-    <maxValue>1</maxValue>
+    <maxValue>4</maxValue>
     <toStringStyle>PercentZero</toStringStyle>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showOnAnimals>false</showOnAnimals>
     <showOnMechanoids>false</showOnMechanoids>
     <displayPriorityInCategory>5980</displayPriorityInCategory>
     <hideAtValue>0</hideAtValue>
+    <parts>
+      <li Class="StatPart_Stuff">
+        <stuffPowerStat>StuffPower_Armor_Heat</stuffPowerStat>
+        <multiplierStat>MCW_ShieldCoef_Heat</multiplierStat>
+      </li>
+    </parts>
+  </StatDef>
+
+  <!--
+    材质系数：由每面盾牌的 <statBases> 给出，不显示在 UI 里。
+    锐器与钝器共用同一个系数（0.6 塔盾 / 0.4 甜饼盾），热单独一套（0.3 / 0.2）。
+  -->
+  <StatDef>
+    <defName>MCW_ShieldCoef_Sharp</defName>
+    <label>盾牌锐钝防护材质系数</label>
+    <description>盾牌材质对锐器与钝器防护的贡献系数。</description>
+    <category>PawnCombat</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <alwaysHide>true</alwaysHide>
+  </StatDef>
+  <StatDef>
+    <defName>MCW_ShieldCoef_Heat</defName>
+    <label>盾牌热能防护材质系数</label>
+    <description>盾牌材质对热能防护的贡献系数。</description>
+    <category>PawnCombat</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <alwaysHide>true</alwaysHide>
   </StatDef>
 </Defs>

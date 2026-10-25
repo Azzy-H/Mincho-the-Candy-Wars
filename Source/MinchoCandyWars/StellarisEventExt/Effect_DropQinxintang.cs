@@ -129,8 +129,8 @@ namespace MinchoCandyWars
             GenPlace.TryPlaceThing(pawn, cell, map, ThingPlaceMode.Near);
 
             Find.LetterStack.ReceiveLetter(
-                "沁心糖来访",
-                "沁心糖终于来到了你的殖民地，她说要在这里住上一段时间。",
+                "MinchoCandyWars.UI.Letter.QinxintangVisit.Label".Translate(),
+                "MinchoCandyWars.UI.Letter.QinxintangVisit.Text".Translate(),
                 LetterDefOf.PositiveEvent, pawn);
         }
 

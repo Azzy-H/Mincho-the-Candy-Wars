@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -26,7 +26,7 @@
     <options>
       <li>
         <label>那就谢谢了</label>
-        <desc>领取珉巧同盟的资助（随机 2 种物资，空投到殖民地附近）。</desc>
+        <desc>免费领取随机两种不重复物资，空投仓送达，冷却10天。资源池：薄荷冰淇淋、冰淇淋砖块、巧克力棒、稻米、超织物、钢铁、塑钢、β型纳米塑形液、超凡胶囊。数量随殖民地财富增长；塑形液、胶囊各固定1件。</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.Effect_GrantAllianceSubsidy">
@@ -125,10 +125,7 @@
         <label>购买千机糖研究图纸（1200 银）</label>
         <action>
           <effects>
-            <li Class="MinchoCandyWars.Effect_BuyAllianceNote">
-              <silverCost>1200</silverCost>
-              <researchDef>MCW_Research_MechaCandy</researchDef>
-            </li>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem"><thingDef>Techprint_MCW_Research_MechaCandy</thingDef><count>1</count><silverCost>1200</silverCost></li>
           </effects>
         </action>
       </li>
@@ -136,10 +133,7 @@
         <label>购买甘露糖研究图纸（1200 银）</label>
         <action>
           <effects>
-            <li Class="MinchoCandyWars.Effect_BuyAllianceNote">
-              <silverCost>1200</silverCost>
-              <researchDef>MCW_Research_NectarCandy</researchDef>
-            </li>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem"><thingDef>Techprint_MCW_Research_NectarCandy</thingDef><count>1</count><silverCost>1200</silverCost></li>
           </effects>
         </action>
       </li>
@@ -147,10 +141,7 @@
         <label>购买琥珀糖研究图纸（1200 银）</label>
         <action>
           <effects>
-            <li Class="MinchoCandyWars.Effect_BuyAllianceNote">
-              <silverCost>1200</silverCost>
-              <researchDef>MCW_Research_AmberonCandy</researchDef>
-            </li>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem"><thingDef>Techprint_MCW_Research_AmberonCandy</thingDef><count>1</count><silverCost>1200</silverCost></li>
           </effects>
         </action>
       </li>
@@ -158,10 +149,7 @@
         <label>购买琉璃糖研究图纸（1200 银）</label>
         <action>
           <effects>
-            <li Class="MinchoCandyWars.Effect_BuyAllianceNote">
-              <silverCost>1200</silverCost>
-              <researchDef>MCW_Research_PrismCandy</researchDef>
-            </li>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem"><thingDef>Techprint_MCW_Research_PrismCandy</thingDef><count>1</count><silverCost>1200</silverCost></li>
           </effects>
         </action>
       </li>
@@ -169,9 +157,54 @@
         <label>购买玲珑糖研究图纸（1200 银）</label>
         <action>
           <effects>
-            <li Class="MinchoCandyWars.Effect_BuyAllianceNote">
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem"><thingDef>Techprint_MCW_Research_LinglonCandy</thingDef><count>1</count><silverCost>1200</silverCost></li>
+          </effects>
+        </action>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">
+        <label>购买智慧珉巧改造包蓝图（1200 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>Techprint_MCW_Research_BoosterIntel</thingDef>
+              <count>1</count>
               <silverCost>1200</silverCost>
-              <researchDef>MCW_Research_LinglonCandy</researchDef>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">
+        <label>购买初级核心改造包蓝图（1200 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>Techprint_MCW_Research_BoosterCoreBasic</thingDef>
+              <count>1</count>
+              <silverCost>1200</silverCost>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">
+        <label>购买高级核心改造包蓝图（1200 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>Techprint_MCW_Research_BoosterCoreAdvanced</thingDef>
+              <count>1</count>
+              <silverCost>1200</silverCost>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">
+        <label>购买躯体改造包蓝图（1200 银）</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.Effect_BuyAllianceItem">
+              <thingDef>Techprint_MCW_Research_BoosterBody</thingDef>
+              <count>1</count>
+              <silverCost>1200</silverCost>
             </li>
           </effects>
         </action>

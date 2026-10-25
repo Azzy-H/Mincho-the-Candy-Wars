@@ -48,9 +48,9 @@ namespace MinchoCandyWars.QuestNodes
         /// <summary>自动计算规模时的上限。</summary>
         public SlateRef<int> maxCount = 6;
 
-        /// <summary>可选前缀（信件标题/正文）。</summary>
-        public SlateRef<string> letterLabel = "珉巧援军到达";
-        public SlateRef<string> letterText = "珉巧同盟的援军赶到了战场，她们决定帮你一把。";
+        /// <summary>可选信件标题/正文；留空则使用翻译键里的默认文案。</summary>
+        public SlateRef<string> letterLabel;
+        public SlateRef<string> letterText;
 
         private const string MercenaryKindDefName = "Mincho_Mercenary";
         private const string KnightKindDefName = "Mincho_Knight_Elite";
@@ -147,8 +147,15 @@ namespace MinchoCandyWars.QuestNodes
             part.pawns.AddRange(reinforcements);
             part.joinPlayer = true;
             part.sendStandardLetter = true;
-            part.customLetterLabel = letterLabel.GetValue(slate);
-            part.customLetterText = letterText.GetValue(slate);
+            string label = letterLabel.GetValue(slate);
+            part.customLetterLabel = label.NullOrEmpty()
+                ? "MinchoCandyWars.UI.Letter.Reinforcements.Label".Translate()
+                : label;
+
+            string letterBody = letterText.GetValue(slate);
+            part.customLetterText = letterBody.NullOrEmpty()
+                ? "MinchoCandyWars.UI.Letter.Reinforcements.Text".Translate()
+                : letterBody;
             part.addPawnsToLookTargets = true;
 
             QuestGen.quest.AddPart(part);

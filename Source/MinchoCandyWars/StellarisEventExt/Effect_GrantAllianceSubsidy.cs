@@ -98,8 +98,8 @@ namespace MinchoCandyWars
             }
 
             Find.LetterStack.ReceiveLetter(
-                "珉巧同盟的资助",
-                "沁心糖的资助到了，物资已经空投到你的殖民地附近。",
+                "MinchoCandyWars.UI.Letter.Subsidy.Label".Translate(),
+                "MinchoCandyWars.UI.Letter.Subsidy.Text".Translate(),
                 LetterDefOf.PositiveEvent);
         }
 

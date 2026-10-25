@@ -51,7 +51,7 @@ namespace MinchoCandyWars
             }
 
             Messages.Message(
-                "回收部队已彻底溃败，他们再也无法联络或袭击你们了。",
+                "MinchoCandyWars.UI.Message.RecycleDefeated".Translate(),
                 MessageTypeDefOf.PositiveEvent, historical: false);
         }
     }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -49,12 +49,12 @@
 
     <questNameRules>
       <rulesStrings>
-        <li>questName->袭击回收部队前哨站</li>
+        <li>questName-&gt;袭击回收部队前哨站</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->珉巧同盟正在准备突袭一个回收部队的据点，我们需要在合适的时机去帮助她们。\n\n前往标记的据点，击溃那里的回收部队守军。</li>
+        <li>questDescription-&gt;珉巧同盟正在准备突袭一个回收部队的据点，我们需要在合适的时机去帮助她们。\n\n前往标记的据点，击溃那里的回收部队守军。</li>
       </rulesStrings>
     </questDescriptionRules>
 

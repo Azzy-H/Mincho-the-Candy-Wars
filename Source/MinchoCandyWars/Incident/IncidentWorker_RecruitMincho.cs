@@ -122,9 +122,9 @@ namespace MinchoCandyWars
 
             // ── 6. 信件：「珉巧到达」 ──
             string letterText = smartArrived
-                ? "美味的冰淇淋们来了，她们准备好做任何事情了~\n\n其中还有一位拥有智慧核心的珉巧！"
-                : "美味的冰淇淋们来了，她们准备好做任何事情了~";
-            Find.LetterStack.ReceiveLetter("珉巧到达", letterText, LetterDefOf.PositiveEvent, arrived[0]);
+                ? "MinchoCandyWars.UI.Letter.RecruitMincho.TextSmart".Translate()
+                : "MinchoCandyWars.UI.Letter.RecruitMincho.Text".Translate();
+            Find.LetterStack.ReceiveLetter("MinchoCandyWars.UI.Letter.RecruitMincho.Label".Translate(), letterText, LetterDefOf.PositiveEvent, arrived[0]);
 
             // ── 7. 解锁薄荷冰淇淋通讯台科技（初始任务完成后给予） ──
             ResearchProjectDef commsResearch = DefDatabase<ResearchProjectDef>.GetNamed("MCW_Research_CommsConsole", errorOnFail: false);
@@ -135,9 +135,8 @@ namespace MinchoCandyWars
 
             // ── 8. 提示玩家如何继续剧情：使用冰淇淋通讯台联络沁心糖 ──
             Find.LetterStack.ReceiveLetter(
-                "珉巧同盟的联络方式",
-                "沁心糖说：如果以后想联络珉巧同盟，请使用我们的冰淇淋通讯台。\n\n"
-                + "（建造冰淇淋通讯台后，选中它并点击「联络珉巧同盟」按钮，就能和我通话了。）",
+                "MinchoCandyWars.UI.Letter.RecruitMincho.CommsLabel".Translate(),
+                "MinchoCandyWars.UI.Letter.RecruitMincho.CommsText".Translate(),
                 LetterDefOf.NeutralEvent);
 
             // ── 9. 任务完成：随机决定下一个可接的珉巧同盟任务 ──

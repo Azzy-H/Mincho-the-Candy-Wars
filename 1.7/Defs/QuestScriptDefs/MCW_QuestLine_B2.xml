@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -76,12 +76,12 @@
 
     <questNameRules>
       <rulesStrings>
-        <li>questName->解救智慧珉巧</li>
+        <li>questName-&gt;解救智慧珉巧</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->一位智慧珉巧被回收公司关押在附近，随时可能被回收。请立刻前往解救她！\n\n解救成功后，她会加入你的殖民地。</li>
+        <li>questDescription-&gt;一位智慧珉巧被回收公司关押在附近，随时可能被回收。请立刻前往解救她！\n\n解救成功后，她会加入你的殖民地。</li>
       </rulesStrings>
     </questDescriptionRules>
 

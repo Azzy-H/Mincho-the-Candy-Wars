@@ -8,23 +8,22 @@
       <texPath>Things/Apparel/MCW_Shield/MCW_Cookies_shield</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
     </graphicData>
-    <costList>
-      <MCW_Delicious_Cookies>20</MCW_Delicious_Cookies>
-      <Steel>50</Steel>
-      <Uranium>10</Uranium>
-    </costList>
+    <costList Inherit="False"><MCW_Delicious_Cookies>20</MCW_Delicious_Cookies><Uranium>10</Uranium></costList>
     <statBases>
       <MaxHitPoints>300</MaxHitPoints>
       <WorkToMake>4500</WorkToMake>
       <Mass>4</Mass>
       <Flammability>0</Flammability>
       <EquipDelay>1.5</EquipDelay>
+      <!-- 材质贡献系数（甜饼盾）：锐/钝 0.4，热 0.2；实际值 = 基值 + 系数 × 材质强度 -->
+      <MCW_ShieldCoef_Sharp>0.4</MCW_ShieldCoef_Sharp>
+      <MCW_ShieldCoef_Heat>0.2</MCW_ShieldCoef_Heat>
     </statBases>
     <!-- 面板展示用：装备后面板显示「盾牌可以给予」的防御力 -->
     <equippedStatOffsets>
-      <MCW_ShieldArmor_Sharp>0.35</MCW_ShieldArmor_Sharp>
-      <MCW_ShieldArmor_Blunt>0.25</MCW_ShieldArmor_Blunt>
-      <MCW_ShieldArmor_Heat>0.2</MCW_ShieldArmor_Heat>
+      <MCW_ShieldArmor_Sharp>0.3</MCW_ShieldArmor_Sharp>
+      <MCW_ShieldArmor_Blunt>0.3</MCW_ShieldArmor_Blunt>
+      <MCW_ShieldArmor_Heat>0.1</MCW_ShieldArmor_Heat>
     </equippedStatOffsets>
     <apparel>
       <wornGraphicData>
@@ -42,12 +41,12 @@
         <hediffWhenUndrafted>MCW_CookiesShield_UndraftedHediff</hediffWhenUndrafted>
       </li>
     </comps>
-  </ThingDef>
+  <costStuffCount>50</costStuffCount><stuffCategories Inherit="False"><li>Metallic</li></stuffCategories></ThingDef>
   <HediffDef>
     <defName>MCW_CookiesShield_DraftedHediff</defName>
     <label>举盾防御</label>
-    <hediffClass>HediffWithComps</hediffClass>
-    <description>该士兵举起曲奇盾牌，严阵以待敌人的冲击。举盾状态下获得额外的防护能力。</description>
+    <hediffClass>MinchoCandyWars.Review.Hediff_ShieldDefense</hediffClass>
+    <description>举盾时获得盾牌防护，同时射击精度降低80%；近战命中不受影响。背盾后移除此防护和射击惩罚。</description>
     <isBad>false</isBad>
     <priceImpact>false</priceImpact>
     <renderNodeProperties>
@@ -59,34 +58,12 @@
         <useSkinShader>false</useSkinShader>
         <useRottenColor>false</useRottenColor>
         <drawSize>1.75</drawSize>
-        <drawData>
-          <dataNorth>
-            <offset>(0, 0, 0)</offset>
-            <layer>-15</layer>
-          </dataNorth>
-          <dataEast>
-            <offset>(0, 0, 0)</offset>
-            <layer>-15</layer>
-          </dataEast>
-          <dataSouth>
-            <offset>(0, 0, 0)</offset>
-            <layer>60</layer>
-          </dataSouth>
-          <dataWest>
-            <offset>(0, 0, 0)</offset>
-            <layer>-15</layer>
-          </dataWest>
-        </drawData>
+        <drawData><dataNorth><offset>(0, 0, 0)</offset><layer>-5</layer></dataNorth><dataEast><offset>(0, 0, 0)</offset><layer>25</layer></dataEast><dataSouth><offset>(0, 0, 0)</offset><layer>25</layer></dataSouth><dataWest><offset>(0, 0, 0)</offset><layer>25</layer></dataWest></drawData>
       </li>
     </renderNodeProperties>
     <stages>
       <li>
-        <statOffsets>
-          <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
-          <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
-          <ArmorRating_Heat>0.2</ArmorRating_Heat>
-        </statOffsets>
-      </li>
+      <statFactors><ShootingAccuracyPawn>0.2</ShootingAccuracyPawn></statFactors></li>
     </stages>
   </HediffDef>
   <HediffDef>
@@ -105,22 +82,7 @@
         <useSkinShader>false</useSkinShader>
         <useRottenColor>false</useRottenColor>
         <drawSize>1.75</drawSize>
-        <drawData>
-          <dataNorth>
-            <offset>(0, 0, 0)</offset>
-            <layer>500</layer>
-          </dataNorth>
-          <dataEast>
-            <offset>(0, 0, 0)</offset>
-          </dataEast>
-          <dataSouth>
-            <offset>(0, 0, 0)</offset>
-            <layer>-20</layer>
-          </dataSouth>
-          <dataWest>
-            <offset>(0, 0, 0)</offset>
-          </dataWest>
-        </drawData>
+        <drawData><dataNorth><offset>(0, 0, 0)</offset><layer>25</layer></dataNorth><dataEast><offset>(0, 0, 0)</offset><layer>25</layer></dataEast><dataSouth><offset>(0, 0, 0)</offset><layer>-5</layer></dataSouth><dataWest><offset>(0, 0, 0)</offset><layer>25</layer></dataWest></drawData>
       </li>
     </renderNodeProperties>
     <stages>
@@ -138,24 +100,23 @@
       <texPath>Things/Apparel/MCW_Shield/MCW_Tower_shield</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
     </graphicData>
-    <costList>
-      <Mincho_ChocoStick>80</Mincho_ChocoStick>
-      <Steel>80</Steel>
-      <Mincho_Mintchoco>200</Mincho_Mintchoco>
-    </costList>
+    <costList Inherit="False"><Mincho_ChocoStick>80</Mincho_ChocoStick><Mincho_Mintchoco>200</Mincho_Mintchoco></costList>
     <statBases>
       <MaxHitPoints>400</MaxHitPoints>
       <WorkToMake>8000</WorkToMake>
       <Mass>6</Mass>
       <Flammability>0</Flammability>
       <EquipDelay>2</EquipDelay>
+      <!-- 材质贡献系数（塔盾）：锐/钝 0.6，热 0.3 -->
+      <MCW_ShieldCoef_Sharp>0.6</MCW_ShieldCoef_Sharp>
+      <MCW_ShieldCoef_Heat>0.3</MCW_ShieldCoef_Heat>
     </statBases>
     <!-- 面板展示用：装备后面板显示「盾牌可以给予」的防御力 -->
     <equippedStatOffsets>
-      <MCW_ShieldArmor_Sharp>0.45</MCW_ShieldArmor_Sharp>
-      <MCW_ShieldArmor_Blunt>0.35</MCW_ShieldArmor_Blunt>
-      <MCW_ShieldArmor_Heat>0.25</MCW_ShieldArmor_Heat>
-    </equippedStatOffsets>
+      <MCW_ShieldArmor_Sharp>0.5</MCW_ShieldArmor_Sharp>
+      <MCW_ShieldArmor_Blunt>0.5</MCW_ShieldArmor_Blunt>
+      <MCW_ShieldArmor_Heat>0.2</MCW_ShieldArmor_Heat>
+    <MoveSpeed>-0.8</MoveSpeed></equippedStatOffsets>
     <apparel>
       <wornGraphicData>
         <renderUtilityAsPack>true</renderUtilityAsPack>
@@ -171,12 +132,12 @@
         <hediffWhenUndrafted>MCW_TowerShield_UndraftedHediff</hediffWhenUndrafted>
       </li>
     </comps>
-  </ThingDef>
+  <uiIconPath>Things/Apparel/Icons/TowerShield</uiIconPath><costStuffCount>80</costStuffCount><stuffCategories Inherit="False"><li>Metallic</li></stuffCategories></ThingDef>
   <HediffDef>
     <defName>MCW_TowerShield_DraftedHediff</defName>
     <label>举盾防御</label>
-    <hediffClass>HediffWithComps</hediffClass>
-    <description>该士兵举起塔盾，严阵以待敌人的冲击。举盾状态下获得额外的防护能力。</description>
+    <hediffClass>MinchoCandyWars.Review.Hediff_ShieldDefense</hediffClass>
+    <description>举盾时获得盾牌防护，同时射击精度降低80%；近战命中不受影响。背盾后移除此防护和射击惩罚。</description>
     <isBad>false</isBad>
     <priceImpact>false</priceImpact>
     <renderNodeProperties>
@@ -188,34 +149,12 @@
         <useSkinShader>false</useSkinShader>
         <useRottenColor>false</useRottenColor>
         <drawSize>1.75</drawSize>
-        <drawData>
-          <dataNorth>
-            <offset>(0, 0, 0)</offset>
-            <layer>-15</layer>
-          </dataNorth>
-          <dataEast>
-            <offset>(0, 0, 0)</offset>
-            <layer>-15</layer>
-          </dataEast>
-          <dataSouth>
-            <offset>(0, 0, 0)</offset>
-            <layer>60</layer>
-          </dataSouth>
-          <dataWest>
-            <offset>(0, 0, 0)</offset>
-            <layer>-15</layer>
-          </dataWest>
-        </drawData>
+        <drawData><dataNorth><offset>(0, 0, 0)</offset><layer>-5</layer></dataNorth><dataEast><offset>(0, 0, 0)</offset><layer>25</layer></dataEast><dataSouth><offset>(0, 0, 0)</offset><layer>25</layer></dataSouth><dataWest><offset>(0, 0, 0)</offset><layer>25</layer></dataWest></drawData>
       </li>
     </renderNodeProperties>
     <stages>
       <li>
-        <statOffsets>
-          <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
-          <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
-          <ArmorRating_Heat>0.25</ArmorRating_Heat>
-        </statOffsets>
-      </li>
+      <statFactors><ShootingAccuracyPawn>0.2</ShootingAccuracyPawn></statFactors></li>
     </stages>
   </HediffDef>
   <HediffDef>
@@ -234,22 +173,7 @@
         <useSkinShader>false</useSkinShader>
         <useRottenColor>false</useRottenColor>
         <drawSize>1.75</drawSize>
-        <drawData>
-          <dataNorth>
-            <offset>(0, 0, 0)</offset>
-            <layer>500</layer>
-          </dataNorth>
-          <dataEast>
-            <offset>(0, 0, 0)</offset>
-          </dataEast>
-          <dataSouth>
-            <offset>(0, 0, 0)</offset>
-            <layer>-20</layer>
-          </dataSouth>
-          <dataWest>
-            <offset>(0, 0, 0)</offset>
-          </dataWest>
-        </drawData>
+        <drawData><dataNorth><offset>(0, 0, 0)</offset><layer>25</layer></dataNorth><dataEast><offset>(0, 0, 0)</offset><layer>25</layer></dataEast><dataSouth><offset>(0, 0, 0)</offset><layer>-5</layer></dataSouth><dataWest><offset>(0, 0, 0)</offset><layer>25</layer></dataWest></drawData>
       </li>
     </renderNodeProperties>
     <stages>

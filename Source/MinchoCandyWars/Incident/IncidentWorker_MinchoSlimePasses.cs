@@ -56,7 +56,7 @@ namespace MinchoCandyWars.Incident
                     pawn.mindState.forcedGotoPosition = CellFinder.RandomClosewalkCellNear(result, map, 10);
                 }
             }
-            SendStandardLetter("MCW_LetterLabelMinchoSlimePasses".Translate(MinchoSlime.label).CapitalizeFirst(), "MCW_LetterMinchoSlimePasses".Translate(MinchoSlime.label), LetterDefOf.PositiveEvent, parms, pawn);
+            SendStandardLetter("MCW_LetterLabelMinchoSlimePasses".Translate().CapitalizeFirst(), "MCW_LetterMinchoSlimePasses".Translate(), LetterDefOf.PositiveEvent, parms, pawn);
             return true;
         }
 

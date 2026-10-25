@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <FactionDef ParentName="MinchoFactionBase">
     <defName>MCW_Alliance_Faction</defName>
@@ -10,7 +10,7 @@
     <!-- <fixedLeaderKinds>
       <li>WULA_Legion_PawnKind</li>
     </fixedLeaderKinds> -->
-    <factionIconPath>Mincho_Item/Mincho_FactionIcon_2</factionIconPath> <!-- 派系图标？ -->
+    <factionIconPath>UI/FactionIcons/MCW_Alliance_Faction</factionIconPath> <!-- 派系图标？ -->
     <canGenerateQuestSites>false</canGenerateQuestSites>
     <displayInFactionSelection>false</displayInFactionSelection>
     <earliestRaidDays>999999</earliestRaidDays> <!-- 通过事件发动袭击，不走常规袭击 -->
@@ -22,7 +22,7 @@
     <disallowedRaidAgeRestrictions>
       <li MayRequire="Ludeon.RimWorld.Biotech">Children</li>
     </disallowedRaidAgeRestrictions>
-  </FactionDef>
+  <settlementNameMaker>MCW_AllianceSettlementNames</settlementNameMaker></FactionDef>
 
   <!-- 回收公司：闪耀世界甜品公司下属的回收部门，专门追捕逃逸的珉巧。
        继承自原版 OutlanderRough（人类派系、有外交好感度），
@@ -30,6 +30,14 @@
        permanentEnemy 由事件通过 Effect_SetFactionRelation 在运行时改写。 -->
   <FactionDef ParentName="FactionBase">
     <defName>MCW_RecycleCorp_Faction</defName>
+    <!-- 回收公司配装：20% 概率给能战斗的成员配一把瘫痪枪 -->
+    <modExtensions>
+      <li Class="MinchoCandyWars.Review.FactionLoadoutExtension">
+        <apparel>MCW_Paralyzer</apparel>
+        <chance>0.2</chance>
+        <onlyFighters>true</onlyFighters>
+      </li>
+    </modExtensions>
     <label>Recycle Corporation</label>
     <description>闪耀世界甜品公司下属的资产回收部门。名义上是一家合法的回收企业，实际上专门追捕、拆解逃逸的珉巧与智慧珉巧。</description>
     <basicMemberKind>Colonist</basicMemberKind>
@@ -43,7 +51,7 @@
     <displayInFactionSelection>false</displayInFactionSelection>
     <fixedName>闪耀世界甜品公司</fixedName>
     <canGenerateQuestSites>false</canGenerateQuestSites>
-    <factionIconPath>World/WorldObjects/Expanding/YttakinPirates</factionIconPath>
+    <factionIconPath>UI/FactionIcons/MCW_RecycleCorp_Faction</factionIconPath>
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
     <techLevel>Archotech</techLevel>
     <hidden>false</hidden>

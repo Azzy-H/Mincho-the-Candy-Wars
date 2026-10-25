@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- 盾牌专属装备层：避免与衣物 / 装甲在 Middle 层互相冲突 -->

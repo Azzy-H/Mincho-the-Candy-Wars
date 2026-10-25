@@ -43,7 +43,7 @@ namespace MinchoCandyWars
             if (researchDef.IsFinished)
             {
                 Messages.Message(
-                    "珉巧同盟：" + researchDef.LabelCap + " 已经研究完成了",
+                    "MinchoCandyWars.UI.Message.Alliance.AlreadyResearched".Translate(researchDef.LabelCap.Named("RESEARCH")),
                     MessageTypeDefOf.RejectInput, historical: false);
                 return;
             }
@@ -51,7 +51,7 @@ namespace MinchoCandyWars
             if (silverCost > 0 && !HasEnoughSilver(map, silverCost))
             {
                 Messages.Message(
-                    "珉巧同盟：银币不足（需要 " + silverCost + "）",
+                    "MinchoCandyWars.UI.Message.Alliance.NotEnoughSilver".Translate(silverCost.Named("SILVER")),
                     MessageTypeDefOf.RejectInput, historical: false);
                 return;
             }
@@ -64,7 +64,7 @@ namespace MinchoCandyWars
             Find.ResearchManager.FinishProject(researchDef, doCompletionDialog: false, doCompletionLetter: true);
 
             Messages.Message(
-                "珉巧同盟：已获得研究图纸，解锁 " + researchDef.LabelCap,
+                "MinchoCandyWars.UI.Message.Alliance.NoteUnlocked".Translate(researchDef.LabelCap.Named("RESEARCH")),
                 MessageTypeDefOf.PositiveEvent, historical: false);
         }
 

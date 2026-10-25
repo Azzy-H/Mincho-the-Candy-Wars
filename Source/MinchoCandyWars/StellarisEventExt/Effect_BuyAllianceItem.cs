@@ -47,7 +47,7 @@ namespace MinchoCandyWars
             if (silverCost > 0 && !HasEnoughSilver(map, silverCost))
             {
                 Messages.Message(
-                    "珉巧同盟：" + "银币不足（需要 " + silverCost + "）",
+                    "MinchoCandyWars.UI.Message.Alliance.NotEnoughSilver".Translate(silverCost.Named("SILVER")),
                     MessageTypeDefOf.RejectInput, historical: false);
                 return;
             }
@@ -69,7 +69,7 @@ namespace MinchoCandyWars
             }
 
             Messages.Message(
-                "珉巧同盟：已购买 " + thingDef.LabelCap + " ×" + count,
+                "MinchoCandyWars.UI.Message.Alliance.Bought".Translate(thingDef.LabelCap.Named("ITEM"), count.Named("COUNT")),
                 MessageTypeDefOf.PositiveEvent, historical: false);
         }
 

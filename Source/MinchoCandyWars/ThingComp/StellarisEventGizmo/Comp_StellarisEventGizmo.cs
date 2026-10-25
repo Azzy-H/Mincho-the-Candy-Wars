@@ -237,7 +237,7 @@ namespace MinchoCandyWars
 
             float remainingHours = remainingTicks / 2500f;
             return "MCW_StellarisEventGizmo_CooldownRemaining".Translate(
-                remainingHours.ToString("F1"));
+                remainingHours.ToString("F1").Named("HOURS"));
         }
     }
 }

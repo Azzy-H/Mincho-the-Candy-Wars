@@ -6,24 +6,24 @@
     <description>锐利的糖！锐利的拐!可以让小看这跟拐杖糖的人吃到足够的“甜头”。</description>
     <possessionCount>1</possessionCount>
     <graphicData>
-      <texPath>Things/Weapon/MCW_CandyCane</texPath>
+      <texPath>Things/Item/CandyCane</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
     </graphicData>
     <techLevel>Medieval</techLevel>
     <weaponTags>
       <li>MedievalMeleeAdvanced</li>
       <li>LongSword</li>
     </weaponTags>
-    <costStuffCount>100</costStuffCount>
+    <costStuffCount>50</costStuffCount>
     <statBases>
       <WorkToMake>18000</WorkToMake>
       <Mass>2</Mass>
     </statBases>
     <relicChance>2</relicChance>
     <equippedAngleOffset>-65</equippedAngleOffset>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Metallic</li>
-      <li>Woody</li>
     </stuffCategories>
     <tools>
       <li>
@@ -31,7 +31,7 @@
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>9</power>
+        <power>11.7</power>
         <cooldownTime>2</cooldownTime>
       </li>
       <li>
@@ -39,7 +39,7 @@
         <capacities>
           <li>Stab</li>
         </capacities>
-        <power>23</power>
+        <power>29.9</power>
         <cooldownTime>2.6</cooldownTime>
       </li>
       <li>
@@ -47,7 +47,7 @@
         <capacities>
           <li>Cut</li>
         </capacities>
-        <power>23</power>
+        <power>29.9</power>
         <cooldownTime>2.6</cooldownTime>
       </li>
     </tools>
@@ -56,7 +56,14 @@
         <Crafting>5</Crafting>
       </skillRequirements>
       <displayPriority>420</displayPriority>
+      <recipeUsers Inherit="False">
+        <li>Mincho_MinchoBench</li>
+      </recipeUsers>
     </recipeMaker>
+    <costList Inherit="False">
+      <Mincho_MintCandy>10</Mincho_MintCandy>
+    </costList>
+    <uiIconPath>Things/Item/CandyCane</uiIconPath>
   </ThingDef>
 
   <ThingDef ParentName="BaseHumanMakeableGun" Name="MCW_RW_VrocanGatling">
@@ -66,7 +73,7 @@
     <graphicData>
       <texPath>Things/Weapon/MCW_VrocanGatling</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.75</drawSize>
+      <drawSize>2.275</drawSize>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
     <thingSetMakerTags>
@@ -85,14 +92,15 @@
       <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
     </statBases>
     <costList>
-      <Steel>160</Steel>
+      <Steel>300</Steel>
+      <Mincho_MintCandy>40</Mincho_MintCandy>
       <ComponentIndustrial>20</ComponentIndustrial>
     </costList>
     <recipeMaker>
-      <researchPrerequisite Inherit="false"/>
-			<recipeUsers Inherit="false">
-				<li>Mincho_MinchoBench</li>
-			</recipeUsers>
+      <researchPrerequisite Inherit="false" />
+      <recipeUsers Inherit="false">
+        <li>Mincho_MinchoBench</li>
+      </recipeUsers>
       <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>
@@ -113,8 +121,8 @@
         <defaultProjectile>MCW_VrocanGatling_Bullet</defaultProjectile>
         <warmupTime>2.5</warmupTime>
         <range>30.9</range>
-        <burstShotCount>25</burstShotCount>
-        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <burstShotCount>30</burstShotCount>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
         <soundCast>Shot_Minigun</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -135,14 +143,19 @@
     <defName>MCW_VrocanGatling_Bullet</defName>
     <label>棒棒糖</label>
     <graphicData>
-      <texPath>Projectile/MCW_VrocanGatling_Bullet</texPath>
+      <texPath>Projectile/VrocanGatlingBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.3691107,0.3691107)</drawSize>
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>10</damageAmountBase>
+      <damageAmountBase>15</damageAmountBase>
       <speed>70</speed>
+      <armorPenetrationBase>0.3</armorPenetrationBase>
     </projectile>
+    <comps>
+      <li Class="MinchoCandyWars.Projectiles.CompProperties_CandyTrail" />
+    </comps>
   </ThingDef>
   <ThingDef ParentName="MCW_RW_VrocanGatling">
     <defName>MCW_RW_VrocanGatling_Formech</defName>
@@ -151,20 +164,29 @@
     <weaponTags>
       <li>MCW_RW_VrocanGatling_Formech</li>
     </weaponTags>
-    <recipeMaker Inherit="False" IsNull="True"/>
+    <recipeMaker Inherit="False" IsNull="True" />
   </ThingDef>
 
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>MCW_CandyCane_ForMech</defName>
-		<label>candy cane</label>
-		<description>A very powerful candy cane made by triple enriched of mint candy. It boasts a fresher taste and more refreshing violence.\n\nIt does not look like a cane? You will say otherwise after a beating.</description>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Review.ChildMechWeaponExtension">
+        <offsetNorth>(-0.25,0.16)</offsetNorth>
+        <offsetEast>(0.15,0.16)</offsetEast>
+        <offsetSouth>(0.25,0.16)</offsetSouth>
+        <offsetWest>(-0.15,0.16)</offsetWest>
+      </li>
+    </modExtensions>
+    <label>candy cane</label>
+    <description>A very powerful candy cane made by triple enriched of mint candy. It boasts a fresher taste and more refreshing violence.\n\nIt does not look like a cane? You will say otherwise after a beating.</description>
     <possessionCount>1</possessionCount>
     <destroyOnDrop>true</destroyOnDrop>
     <tradeability>None</tradeability>
     <graphicData>
-			<texPath>Mincho_Item/Foods/Mincho_CandyCane</texPath>
-			<graphicClass>Graphic_StackCount</graphicClass>
+      <texPath>Things/Weapon/CandyMace</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.75</drawSize>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
     </graphicData>
     <techLevel>Medieval</techLevel>
     <weaponTags>
@@ -182,28 +204,36 @@
       <li>Woody</li>
     </stuffCategories>
     <tools>
-			<li>
-				<label>handle</label>
-				<capacities>
-					<li>Poke</li>
-				</capacities>
-				<power>15</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-			<li>
-				<label>head</label>
-				<labelUsedInLogging>false</labelUsedInLogging>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>25</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>head</label>
+        <labelUsedInLogging>false</labelUsedInLogging>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
     </tools>
-    <recipeMaker Inherit="False" IsNull="True"/>
+    <recipeMaker Inherit="False" IsNull="True" />
   </ThingDef>
   <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
     <defName>MCW_MintchocoPunch_ForMech</defName>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Review.ChildMechWeaponExtension">
+        <offsetNorth>(0,0.08)</offsetNorth>
+        <offsetEast>(0,0.08)</offsetEast>
+        <offsetSouth>(0,0.08)</offsetSouth>
+        <offsetWest>(0,0.08)</offsetWest>
+      </li>
+    </modExtensions>
     <label>薄荷巧克力流星锤</label>
     <description>为珉巧子个体改制的薄荷巧克力流星锤。</description>
     <possessionCount>1</possessionCount>
@@ -249,11 +279,19 @@
     <weaponTags Inherit="false">
       <li>MCW_MintchocoPunch_ForMech</li>
     </weaponTags>
-    <recipeMaker Inherit="False" IsNull="True"/>
+    <recipeMaker Inherit="False" IsNull="True" />
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
     <defName>MCW_TowerShield_ForMech</defName>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Review.ChildMechWeaponExtension">
+        <offsetNorth>(0,0.18)</offsetNorth>
+        <offsetEast>(0,0.18)</offsetEast>
+        <offsetSouth>(0,0.18)</offsetSouth>
+        <offsetWest>(0,0.18)</offsetWest>
+      </li>
+    </modExtensions>
     <label>薄荷冰淇淋巧克力塔盾</label>
     <description>为珉巧子个体改制的薄荷冰淇淋巧克力塔盾。</description>
 
@@ -262,7 +300,7 @@
     <tradeability>None</tradeability>
 
     <graphicData>
-      <texPath>Things/Apparel/MCW_Shield/MCW_Tower_shield_south</texPath>
+      <texPath>Things/Weapon/TowerShield</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1.6,1.6)</drawSize>
     </graphicData>

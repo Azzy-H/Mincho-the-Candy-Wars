@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -84,12 +84,12 @@
 
     <questNameRules>
       <rulesStrings>
-        <li>questName->击溃回收部队总部</li>
+        <li>questName-&gt;击溃回收部队总部</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->珉巧们会为我们争取时间，我们需要摧毁回收公司的联络电脑。\n\n这是一场决定这颗星球命运的决战。</li>
+        <li>questDescription-&gt;珉巧们会为我们争取时间，我们需要摧毁回收公司的联络电脑。\n\n这是一场决定这颗星球命运的决战。</li>
       </rulesStrings>
     </questDescriptionRules>
 

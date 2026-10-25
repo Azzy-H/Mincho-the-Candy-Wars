@@ -99,7 +99,7 @@ namespace MinchoCandyWars.Nuzzle
             {
                 return "";
             }
-            return "MCW_Nuzzle_Cooldown".Translate((TicksUntilReady / 2500f).ToString("F1"));
+            return "MCW_Nuzzle_Cooldown".Translate((TicksUntilReady / 2500f).ToString("F1").Named("HOURS"));
         }
     }
 }

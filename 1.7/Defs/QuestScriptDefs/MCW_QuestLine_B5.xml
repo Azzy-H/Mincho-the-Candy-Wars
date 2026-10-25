@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -72,12 +72,12 @@
 
     <questNameRules>
       <rulesStrings>
-        <li>questName->珉巧据点增援</li>
+        <li>questName-&gt;珉巧据点增援</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->珉巧同盟的一个据点正在被回收部队袭击，我们必须立刻前往援助！\n\n据点距离你的殖民地很近，但留给我们的时间只有 2 天。</li>
+        <li>questDescription-&gt;珉巧同盟的一个据点正在被回收部队袭击，我们必须立刻前往援助！\n\n据点距离你的殖民地很近，但留给我们的时间只有 2 天。</li>
       </rulesStrings>
     </questDescriptionRules>
 

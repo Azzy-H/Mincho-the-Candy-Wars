@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -127,12 +127,12 @@
 
     <questNameRules>
       <rulesStrings>
-        <li>questName->遭到追捕的珉巧</li>
+        <li>questName-&gt;遭到追捕的珉巧</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->你的殖民地来了一位珉巧，[asker_nameDef]，她说正在被回收公司追捕，并且没有去处。她希望你可以收留她，并且她声称可以为你做任何事情，只要不将她交出去。</li>
+        <li>questDescription-&gt;你的殖民地来了一位珉巧，[asker_nameDef]，她说正在被回收公司追捕，并且没有去处。她希望你可以收留她，并且她声称可以为你做任何事情，只要不将她交出去。</li>
       </rulesStrings>
     </questDescriptionRules>
 

@@ -5,41 +5,34 @@
     <label>珉巧护士服</label>
     <description>甘露糖模仿人类护士制成的衣物，听说只要换上就可以获得医术加成！同时，还能让爱人为之倾倒。</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseOutfit</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Apparel/Icons/MCW_NurseOutfit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <costStuffCount>40</costStuffCount>
+    <costStuffCount>5</costStuffCount>
     <stuffCategories>
-      <li>Fabric</li>
-      <li>Leathery</li>
+      <li>Metallic</li>
     </stuffCategories>
+    <costList>
+      <Cloth>40</Cloth>
+    </costList>
     <statBases>
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToMake>2500</WorkToMake>
       <Mass>0.8</Mass>
-      <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
-      <StuffEffectMultiplierInsulation_Cold>0.35</StuffEffectMultiplierInsulation_Cold>
-      <StuffEffectMultiplierInsulation_Heat>0.35</StuffEffectMultiplierInsulation_Heat>
-      <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.05</ArmorRating_Heat>
-      <Insulation_Cold>0.0</Insulation_Cold>
-      <Insulation_Heat>2.0</Insulation_Heat>
+      <StuffEffectMultiplierArmor>0.5</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.4</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>5</Insulation_Heat>
       <EquipDelay>2</EquipDelay>
       <Beauty>1</Beauty>
     </statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseOutfit</wornGraphicPath>
-			<layers>
-				<li>OnSkin</li>
-				<!--
-			<li>OnSkin</li>
-			<li>Middle</li>
-			<li>Shell</li>
-			<li>Belt</li>
-			<li>Overhead</li>
-			-->
-			</layers>
+			<layers Inherit="False"><li>Middle</li></layers>
     </apparel>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
@@ -49,29 +42,26 @@
         </li>
       </options>
     </colorGenerator>
-  </ThingDef>
+  <uiIconPath>Things/Apparel/Icons/MCW_NurseOutfit</uiIconPath><costList Inherit="False"><Steel>5</Steel></costList><equippedStatOffsets><MedicalTendQuality>0.2</MedicalTendQuality></equippedStatOffsets></ThingDef>
   <ThingDef ParentName="Mincho_ApparelBase_Hat">
     <defName>MCW_NurseCap</defName>
     <label>珉巧护士帽</label>
     <description>珉巧护士帽。</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseCap</texPath>
-    </graphicData>
-    <costStuffCount>10</costStuffCount>
-    <stuffCategories>
-      <li>Fabric</li>
-      <li>Leathery</li>
-    </stuffCategories>
+      <texPath>Things/Apparel/Icons/MCW_NurseCap</texPath>
+    <graphicClass>Graphic_Single</graphicClass></graphicData>
+    <costStuffCount>20</costStuffCount>
+    <stuffCategories Inherit="False"><li>Metallic</li></stuffCategories>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <WorkToMake>500</WorkToMake>
       <Mass>0.1</Mass>
-      <ArmorRating_Sharp>0.02</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.02</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.02</ArmorRating_Heat>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
       <EquipDelay>1</EquipDelay>
       <Beauty>1</Beauty>
-    </statBases>
+    <StuffEffectMultiplierArmor>0.5</StuffEffectMultiplierArmor></statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseCap</wornGraphicPath>
       <renderSkipFlags>
@@ -89,74 +79,61 @@
         </li>
       </options>
     </colorGenerator>
-  </ThingDef>
+  <uiIconPath>Things/Apparel/Icons/MCW_NurseCap</uiIconPath><costList Inherit="False" /><equippedStatOffsets><MedicalTendSpeed>0.2</MedicalTendSpeed></equippedStatOffsets></ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_Bikini</defName>
     <label>珉巧比基尼</label>
     <description>你知道吗，其实穿的越少，防御越高！</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_Bikini/MCW_Bikini</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Apparel/Icons/MCW_Bikini</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <costStuffCount>10</costStuffCount>
-    <stuffCategories>
-      <li>Fabric</li>
-      <li>Leathery</li>
-    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories Inherit="False"><li>Metallic</li></stuffCategories>
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>
       <WorkToMake>1000</WorkToMake>
       <Mass>0.4</Mass>
-      <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.03</ArmorRating_Heat>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.1</ArmorRating_Heat>
       <Insulation_Cold>0.0</Insulation_Cold>
-      <Insulation_Heat>1.5</Insulation_Heat>
+      <Insulation_Heat>20</Insulation_Heat>
       <EquipDelay>1</EquipDelay>
       <Beauty>2</Beauty>
-    </statBases>
+    <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor></statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_Bikini/MCW_Bikini</wornGraphicPath>
 			<layers>
 				<li>OnSkin</li>
 			</layers>
     </apparel>
-    <colorGenerator Class="ColorGenerator_Options">
-      <options>
-        <li>
-          <weight>10</weight>
-          <only>(1,1,1,1)</only>
-        </li>
-      </options>
-    </colorGenerator>
-  </ThingDef>
+    <colorGenerator Inherit="False" IsNull="True" />
+  <uiIconPath>Things/Apparel/Icons/MCW_Bikini</uiIconPath><costList Inherit="False"><DevilstrandCloth>20</DevilstrandCloth></costList><equippedStatOffsets><MoveSpeed>0.4</MoveSpeed><SocialImpact>0.5</SocialImpact></equippedStatOffsets></ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_BikiniBW</defName>
     <label>珉巧比基尼（黑白）</label>
     <description>你知道吗，其实穿的越少，防御越高！\n\n黑白配色限定款。</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_Bikini_BW/MCW_Bikini_BW</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Apparel/Icons/MCW_BikiniBW</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>
       <WorkToMake>1000</WorkToMake>
       <Mass>0.4</Mass>
-      <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.03</ArmorRating_Heat>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.1</ArmorRating_Heat>
       <Insulation_Cold>0.0</Insulation_Cold>
-      <Insulation_Heat>1.5</Insulation_Heat>
+      <Insulation_Heat>20</Insulation_Heat>
       <EquipDelay>1</EquipDelay>
       <Beauty>2</Beauty>
-    </statBases>
-    <costStuffCount>10</costStuffCount>
-    <stuffCategories>
-      <li>Fabric</li>
-      <li>Leathery</li>
-    </stuffCategories>
+    <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor></statBases>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories Inherit="False"><li>Metallic</li></stuffCategories>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_Bikini_BW/MCW_Bikini_BW</wornGraphicPath>
 			<layers>
@@ -171,37 +148,34 @@
         </li>
       </options>
     </colorGenerator>
-  </ThingDef>
+  <uiIconPath>Things/Apparel/Icons/MCW_BikiniBW</uiIconPath><costList Inherit="False"><DevilstrandCloth>20</DevilstrandCloth></costList><equippedStatOffsets><MoveSpeed>0.4</MoveSpeed><SocialImpact>0.5</SocialImpact></equippedStatOffsets></ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_GorgeousDress</defName>
     <label>珉巧华装礼服</label>
     <description>华丽的巧克力礼服，可以强化玲珑糖们的心灵能力，听说有的智慧珉巧会仰仗这种独特的心灵能力来充当祭祀。</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_GorgeousDress/MCW_GorgeousDress</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Apparel/Icons/MCW_GorgeousDress</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <costStuffCount>40</costStuffCount>
-    <stuffCategories>
-      <li>Fabric</li>
-      <li>Leathery</li>
-    </stuffCategories>
+    <stuffCategories Inherit="False"><li>Metallic</li></stuffCategories>
     <statBases>
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToMake>4000</WorkToMake>
       <Mass>1</Mass>
-      <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.05</ArmorRating_Heat>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.1</ArmorRating_Heat>
       <Insulation_Cold>0.0</Insulation_Cold>
-      <Insulation_Heat>2.5</Insulation_Heat>
+      <Insulation_Heat>20</Insulation_Heat>
       <EquipDelay>3</EquipDelay>
       <Beauty>2</Beauty>
-    </statBases>
+    <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor></statBases>
     <equippedStatOffsets>
       <PsychicSensitivity>0.2</PsychicSensitivity>
-      <PsychicEntropyRecoveryRate>0.5</PsychicEntropyRecoveryRate>
-    </equippedStatOffsets>
+      <PsychicEntropyRecoveryRate>0.2</PsychicEntropyRecoveryRate>
+    <SocialImpact>1</SocialImpact></equippedStatOffsets>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_GorgeousDress/MCW_GorgeousDress</wornGraphicPath>
 			<layers>
@@ -216,36 +190,32 @@
         </li>
       </options>
     </colorGenerator>
-  </ThingDef>
+  <uiIconPath>Things/Apparel/Icons/MCW_GorgeousDress</uiIconPath><costList Inherit="False"><Mincho_ChocoStick>200</Mincho_ChocoStick><Gold>100</Gold></costList></ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_Qipao</defName>
     <label>珉巧旗袍</label>
     <description>非常便捷的服饰，让琉璃糖的战斗能加优美，并且可以吸引爱人！对了！还能防火！</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_Qipao/MCW_Qipao</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Apparel/Icons/MCW_Qipao</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <costList>
-      <DevilstrandCloth>100</DevilstrandCloth>
-      <Steel>20</Steel>
-      <Jade>20</Jade>
-    </costList>
+    <costList Inherit="False"><DevilstrandCloth>100</DevilstrandCloth><Jade>20</Jade></costList>
     <statBases>
       <MaxHitPoints>200</MaxHitPoints>
       <WorkToMake>3500</WorkToMake>
       <Mass>0.6</Mass>
-      <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.05</ArmorRating_Heat>
+      <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
       <Insulation_Cold>0.0</Insulation_Cold>
-      <Insulation_Heat>2.0</Insulation_Heat>
+      <Insulation_Heat>10</Insulation_Heat>
       <EquipDelay>2</EquipDelay>
       <Beauty>2</Beauty>
-    </statBases>
+    <StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor><StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat></statBases>
     <equippedStatOffsets>
       <Flammability>-2</Flammability>
-      <MoveSpeed>0.2</MoveSpeed>
+      <MoveSpeed>0.5</MoveSpeed>
     </equippedStatOffsets>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_Qipao/MCW_Qipao</wornGraphicPath>
@@ -261,37 +231,35 @@
         </li>
       </options>
     </colorGenerator>
-  </ThingDef>
+  <uiIconPath>Things/Apparel/Icons/MCW_Qipao</uiIconPath><costStuffCount>20</costStuffCount><stuffCategories Inherit="False"><li>Metallic</li></stuffCategories></ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_MechaArmor</defName>
     <label>珉巧机械师装甲</label>
     <description>千机糖在深入研究人类的机械师套装后改良出的适合珉巧们使用的机械师套装，虽然看起来材料很少，但是实际上！更加坚固！</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Apparel/Icons/MCW_MechaArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <costList>
       <DevilstrandCloth>40</DevilstrandCloth>
-      <Steel>50</Steel>
+      
       <Plasteel>100</Plasteel>
       <ComponentSpacer>4</ComponentSpacer>
-    </costList>
+    <SignalChip MayRequire="Ludeon.RimWorld.Biotech">1</SignalChip></costList>
     <statBases>
       <MaxHitPoints>500</MaxHitPoints>
       <WorkToMake>12000</WorkToMake>
       <Mass>5</Mass>
       <Flammability>0.4</Flammability>
-      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.3</ArmorRating_Heat>
+      <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
       <EquipDelay>3</EquipDelay>
-    </statBases>
+    <Insulation_Cold>50</Insulation_Cold><Insulation_Heat>40</Insulation_Heat><StuffEffectMultiplierArmor>0.8</StuffEffectMultiplierArmor></statBases>
     <apparel>
-      <wornGraphicPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor</wornGraphicPath>
-      <layers>
-        <li>Shell</li>
-      </layers>
+      <wornGraphicPath>Things/Apparel/MCW_MechaArmorWorn/MCW_MechaArmor</wornGraphicPath>
+      <layers><li>Middle</li></layers>
     </apparel>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
@@ -307,7 +275,7 @@
         <part>Mincho_Torso</part>
       </li>
     </comps>
-  </ThingDef>
+  <uiIconPath>Things/Apparel/Icons/MCW_MechaArmor</uiIconPath><recipeMaker><researchPrerequisite MayRequire="Ludeon.RimWorld.Biotech">StandardMechtech</researchPrerequisite><researchPrerequisites><li>ReconArmor</li></researchPrerequisites><recipeUsers Inherit="False"><li>FabricationBench</li></recipeUsers></recipeMaker><equippedStatOffsets><MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">18</MechBandwidth><WorkSpeedGlobalOffsetMech MayRequire="Ludeon.RimWorld.Biotech">0.30</WorkSpeedGlobalOffsetMech><MoveSpeed>1.6</MoveSpeed><WorkSpeedGlobal>0.08</WorkSpeedGlobal><VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.32</VacuumResistance></equippedStatOffsets><costStuffCount>50</costStuffCount><stuffCategories><li>Metallic</li></stuffCategories></ThingDef>
   <HediffDef>
     <defName>MCW_MechaArmor_AddonHediff</defName>
     <label>机械师装甲附加件</label>
@@ -344,32 +312,7 @@
         </drawData>
       </li>
       <!-- 翅膀 -->
-      <li>
-        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
-        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
-        <texPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor_Wing</texPath>
-        <parentTagDef>Body</parentTagDef>
-        <useSkinShader>false</useSkinShader>
-        <useRottenColor>false</useRottenColor>
-        <drawData>
-          <dataNorth>
-            <offset>(0, 0, 0)</offset>
-            <layer>500</layer>
-          </dataNorth>
-          <dataEast>
-            <offset>(0, 0, 0)</offset>
-            <layer>-40</layer>
-          </dataEast>
-          <dataSouth>
-            <offset>(0, 0, 0)</offset>
-            <layer>-40</layer>
-          </dataSouth>
-          <dataWest>
-            <offset>(0, 0, 0)</offset>
-            <layer>-40</layer>
-          </dataWest>
-        </drawData>
-      </li>
+      
     </renderNodeProperties>
     <stages>
       <li>
@@ -382,8 +325,8 @@
     <label>珉巧机械师全息眼罩</label>
     <description>千机糖在深入研究人类的机械师时，发人类的机械师头盔总是不方便看清前方的东西，她认为绝对不是她用法出错，而是人类太笨了！</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_HoloVisor/MCW_HoloVisor</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Apparel/Icons/MCW_HoloVisor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <costList>
       <Steel>50</Steel>
@@ -405,9 +348,9 @@
       <Flammability>0.2</Flammability>
       <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
       <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.2</ArmorRating_Heat>
+      <ArmorRating_Heat>0.1</ArmorRating_Heat>
       <EquipDelay>1.5</EquipDelay>
-    </statBases>
+    <Insulation_Cold>50</Insulation_Cold><Insulation_Heat>30</Insulation_Heat></statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_HoloVisor/MCW_HoloVisor</wornGraphicPath>
       <bodyPartGroups>
@@ -434,6 +377,6 @@
       <layers>
         <li>EyeCover</li>
       </layers>
-    </apparel>
-  </ThingDef>
+    <immuneToToxGasExposure>true</immuneToToxGasExposure></apparel>
+  <uiIconPath>Things/Apparel/Icons/MCW_HoloVisor</uiIconPath><equippedStatOffsets><MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">16</MechBandwidth><WorkSpeedGlobalOffsetMech MayRequire="Ludeon.RimWorld.Biotech">0.20</WorkSpeedGlobalOffsetMech><ShootingAccuracyPawn>3</ShootingAccuracyPawn><WorkSpeedGlobal>0.08</WorkSpeedGlobal><VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.69</VacuumResistance></equippedStatOffsets></ThingDef>
 </Defs>
