@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Name="MCW_IceCreamCabinetBase" ParentName="ShelfBase" Abstract="True">
+    <thingClass>MinchoCandyWars.Buildings.Building_IceCreamCabinet</thingClass>
+    <designationCategory>Mincho_Furniture</designationCategory>
+    <researchPrerequisites Inherit="false" />
+    <stuffCategories Inherit="false" />
+    <costStuffCount>0</costStuffCount>
+    <costList>
+      <Mincho_BlocksMintchoco>80</Mincho_BlocksMintchoco>
+    </costList>
+    <size>(1,1)</size>
+    <rotatable>true</rotatable>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/IceCreamCabinet/IceCreamCabinet</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.8,1.8)</drawSize>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>12</Mass>
+      <WorkToBuild>1200</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>2</Beauty>
+    </statBases>
+    <building>
+      <maxItemsInCell>6</maxItemsInCell>
+      <paintable>false</paintable>
+      <storageGroupTag>MCW_IceCreamCabinet</storageGroupTag>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <categories>
+            <li>Mincho_Food</li>
+          </categories>
+          <thingDefs>
+            <li>RawRice</li>
+            <li>Chocolate</li>
+            <li>Mincho_MintLeaves</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Preferred</priority>
+        <filter>
+          <categories>
+            <li>Mincho_Food</li>
+          </categories>
+          <thingDefs>
+            <li>RawRice</li>
+            <li>Chocolate</li>
+            <li>Mincho_MintLeaves</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <comps Inherit="false">
+      <li Class="CompProperties_Flickable" />
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="MCW_IceCreamCabinetBase">
+    <defName>MCW_IceCreamCabinetElectric</defName>
+    <label>薄荷冰淇淋柜（电力）</label>
+    <description>用薄荷冰淇淋砖块制成的冷藏柜，可存放六堆珉巧食品或制作用的食材。需要供电才能保持低温。</description>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>60</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+    </comps>
+    <designatorDropdown>MCW_ColdCabinets</designatorDropdown>
+  </ThingDef>
+  <ThingDef ParentName="MCW_IceCreamCabinetBase">
+    <defName>MCW_IceCreamCabinetFueled</defName>
+    <label>薄荷冰淇淋柜（冰淇淋）</label>
+    <description>用薄荷冰淇淋砖块制成的冷藏柜，可存放六堆珉巧食品或制作用的食材。每天消耗五份薄荷冰淇淋维持低温，最多可装入一百份。</description>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>100</fuelCapacity>
+        <fuelConsumptionRate>5</fuelConsumptionRate>
+        <fuelFilter>
+          <thingDefs>
+            <li>Mincho_Mintchoco</li>
+          </thingDefs>
+        </fuelFilter>
+        <initialFuelPercent>0</initialFuelPercent>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <fuelLabel>薄荷冰淇淋</fuelLabel>
+        <fuelGizmoLabel>薄荷冰淇淋</fuelGizmoLabel>
+        <outOfFuelMessage>需要补充薄荷冰淇淋</outOfFuelMessage>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

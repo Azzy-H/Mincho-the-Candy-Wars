@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef ParentName="ButcherCorpseMechanoidBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>MCW_ShredMinchoMechs</defName>
+    <label>拆解珉巧子个体／魔像</label>
+    <description>拆解一个珉巧机械子个体或珉巧魔像的残骸，回收原有定义中的材料。允许友方残骸；拆解会消耗尸体，之后无法复活。</description>
+    <jobString>正在拆解珉巧机械体。</jobString>
+    <workAmount>300</workAmount>
+    <soundWorking>Recipe_ButcherCorpseMechanoid</soundWorking>
+    <recipeUsers>
+      <li>TableMachining</li>
+    </recipeUsers>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Corpse_MCW_Mech_I_Maid</li>
+            <li>Corpse_MCW_Mech_II_Maid</li>
+            <li>Corpse_MCW_Mech_Battle</li>
+            <li>Corpse_MCW_Mech_Defender</li>
+            <li>Corpse_MCW_Mech_Defender_II</li>
+            <li>Corpse_MCW_Mech_Gunner</li>
+            <li>Corpse_MCW_Mech_Golem</li>
+          </thingDefs>
+          <specialFiltersToAllow>
+            <li>AllowCorpsesMechFriendly</li>
+            <li>AllowCorpsesMechEnemy</li>
+          </specialFiltersToAllow>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter Inherit="False">
+      <thingDefs>
+        <li>Corpse_MCW_Mech_I_Maid</li>
+        <li>Corpse_MCW_Mech_II_Maid</li>
+        <li>Corpse_MCW_Mech_Battle</li>
+        <li>Corpse_MCW_Mech_Defender</li>
+        <li>Corpse_MCW_Mech_Defender_II</li>
+        <li>Corpse_MCW_Mech_Gunner</li>
+        <li>Corpse_MCW_Mech_Golem</li>
+      </thingDefs>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesMechFriendly</li>
+        <li>AllowCorpsesMechEnemy</li>
+      </specialFiltersToAllow>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter Inherit="False">
+      <thingDefs>
+        <li>Corpse_MCW_Mech_I_Maid</li>
+        <li>Corpse_MCW_Mech_II_Maid</li>
+        <li>Corpse_MCW_Mech_Battle</li>
+        <li>Corpse_MCW_Mech_Defender</li>
+        <li>Corpse_MCW_Mech_Defender_II</li>
+        <li>Corpse_MCW_Mech_Gunner</li>
+        <li>Corpse_MCW_Mech_Golem</li>
+      </thingDefs>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesMechFriendly</li>
+        <li>AllowCorpsesMechEnemy</li>
+      </specialFiltersToAllow>
+    </defaultIngredientFilter>
+  </RecipeDef>
+  <RecipeDef ParentName="ButcherCorpseMechanoidBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>MCW_SmashMinchoMechs</defName>
+    <label>粉碎珉巧子个体／魔像</label>
+    <description>拆解一个珉巧机械子个体或珉巧魔像的残骸，回收原有定义中的材料。允许友方残骸；拆解会消耗尸体，之后无法复活。</description>
+    <jobString>正在拆解珉巧机械体。</jobString>
+    <workAmount>450</workAmount>
+    <soundWorking>Recipe_SmashCorpseMechanoid</soundWorking>
+    <recipeUsers>
+      <li>CraftingSpot</li>
+    </recipeUsers>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Corpse_MCW_Mech_I_Maid</li>
+            <li>Corpse_MCW_Mech_II_Maid</li>
+            <li>Corpse_MCW_Mech_Battle</li>
+            <li>Corpse_MCW_Mech_Defender</li>
+            <li>Corpse_MCW_Mech_Defender_II</li>
+            <li>Corpse_MCW_Mech_Gunner</li>
+            <li>Corpse_MCW_Mech_Golem</li>
+          </thingDefs>
+          <specialFiltersToAllow>
+            <li>AllowCorpsesMechFriendly</li>
+            <li>AllowCorpsesMechEnemy</li>
+          </specialFiltersToAllow>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter Inherit="False">
+      <thingDefs>
+        <li>Corpse_MCW_Mech_I_Maid</li>
+        <li>Corpse_MCW_Mech_II_Maid</li>
+        <li>Corpse_MCW_Mech_Battle</li>
+        <li>Corpse_MCW_Mech_Defender</li>
+        <li>Corpse_MCW_Mech_Defender_II</li>
+        <li>Corpse_MCW_Mech_Gunner</li>
+        <li>Corpse_MCW_Mech_Golem</li>
+      </thingDefs>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesMechFriendly</li>
+        <li>AllowCorpsesMechEnemy</li>
+      </specialFiltersToAllow>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter Inherit="False">
+      <thingDefs>
+        <li>Corpse_MCW_Mech_I_Maid</li>
+        <li>Corpse_MCW_Mech_II_Maid</li>
+        <li>Corpse_MCW_Mech_Battle</li>
+        <li>Corpse_MCW_Mech_Defender</li>
+        <li>Corpse_MCW_Mech_Defender_II</li>
+        <li>Corpse_MCW_Mech_Gunner</li>
+        <li>Corpse_MCW_Mech_Golem</li>
+      </thingDefs>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesMechFriendly</li>
+        <li>AllowCorpsesMechEnemy</li>
+      </specialFiltersToAllow>
+    </defaultIngredientFilter>
+  </RecipeDef>
+</Defs>

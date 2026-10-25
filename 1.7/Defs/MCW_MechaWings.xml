@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="Mincho_ApparelBase_Body">
+    <defName>MCW_MechaWings</defName>
+    <description>独立机械师飞翼，提供8点机械带宽。人形珉巧穿着机械师装甲或珉巧太空服时可装备。消耗储能主动跳跃，以薄荷巧克力块补给。</description>
+    <descriptionHyperlinks>
+		</descriptionHyperlinks>
+    <label>珉巧机械师飞翼</label>
+    <graphicData>
+      <texPath>Things/Apparel/Icons/MechaWings</texPath>
+    </graphicData>
+    <costList>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Plasteel>50</Plasteel>
+      <Uranium>10</Uranium>
+      <SignalChip MayRequire="Ludeon.RimWorld.Biotech">1</SignalChip>
+    </costList>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToMake>40000</WorkToMake>
+      <Mass>1</Mass>
+      <EquipDelay>5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">8</MechBandwidth>
+    </equippedStatOffsets>
+    <apparel>
+      <wornGraphicPath>Things/MCW_Empty</wornGraphicPath>
+      <useWornGraphicMask>false</useWornGraphicMask>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <tags>
+        <li>PrestigeCombatGear</li>
+      </tags>
+      <abilities>
+        <li>MCW_MechaWingsJump</li>
+      </abilities>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>RGBA(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisite>ReconArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <researchPrerequisites>
+        <li MayRequire="Ludeon.RimWorld.Biotech">StandardMechtech</li>
+      </researchPrerequisites>
+    </recipeMaker>
+    <tradeTags>
+      <li>HiTechArmor</li>
+    </tradeTags>
+    <generateCommonality>0</generateCommonality>
+    <comps>
+      <li Class="CompProperties_ApparelReloadable">
+        <maxCharges>5</maxCharges>
+        <ammoDef>Mincho_BlocksMintchoco</ammoDef>
+        <ammoCountToRefill>5</ammoCountToRefill>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <chargeNoun>booster</chargeNoun>
+      </li>
+      <li Class="Mincho_The_Mint_Choco_Slime.CompProperties_CauseRemoveHediff_Apparel">
+        <hediff>MCW_MechaWings_Visual</hediff>
+        <part>Mincho_Torso</part>
+      </li>
+    </comps>
+    <uiIconPath>Things/Apparel/Icons/MechaWings</uiIconPath>
+  </ThingDef>
+  <Mincho_Booster.AbilityDef_Booster ParentName="Mincho_SpaceBoosterAbility_Base">
+    <defName>MCW_MechaWingsJump</defName>
+    <label>机械飞翼跳跃</label>
+    <description>消耗飞翼储能，跳跃至指定地点。</description>
+    <iconPath>Things/Apparel/Icons/MechaWings</iconPath>
+  </Mincho_Booster.AbilityDef_Booster>
+  <HediffDef>
+    <defName>MCW_MechaWings_Visual</defName>
+    <label>机械飞翼</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <priceImpact>false</priceImpact>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+    </comps>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Apparel/MCW_MechaArmor/MCW_MechaArmor_Wing</texPath>
+        <parentTagDef>Body</parentTagDef>
+        <useSkinShader>false</useSkinShader>
+        <useRottenColor>false</useRottenColor>
+        <drawData>
+          <dataNorth>
+            <offset>(0, 0, 0)</offset>
+            <layer>55</layer>
+          </dataNorth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+            <layer>55</layer>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+            <layer>-5</layer>
+          </dataSouth>
+          <dataWest>
+            <offset>(0, 0, 0)</offset>
+            <layer>55</layer>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </HediffDef>
+  <WearSetting.WearSettingDef>
+    <defName>MCW_MechaWings_WearSetting</defName>
+    <targetRaces>
+      <li>Mincho_ThingDef</li>
+    </targetRaces>
+    <wearSetting>
+      <li>
+        <wearList>
+          <li>MCW_MechaWings</li>
+        </wearList>
+        <condition>
+          <bodyTypeDef>
+            <li>Mincho_Body_Large_Mintchoco_Humanlike</li>
+          </bodyTypeDef>
+          <mustWearWith>
+            <li>MCW_MechaArmor</li>
+            <li>Mincho_SpaceSuit</li>
+          </mustWearWith>
+        </condition>
+        <cantReason>MCW_Wings_CantWear</cantReason>
+        <forceDrop>true</forceDrop>
+        <forceDropMessage>MCW_Wings_ForceDrop</forceDropMessage>
+        <lockApparel>false</lockApparel>
+      </li>
+    </wearSetting>
+  </WearSetting.WearSettingDef>
+</Defs>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TerrainDef ParentName="TileStoneBase">
+    <defName>MCW_ChocoBoardFloor033</defName>
+    <label>巧克力板地板</label>
+    <description>如同星星般的地板，不需要仰望的天空！采用巧克力板铺成，施工与基础参数参照大理石地砖。</description>
+    <color>(74,32,7)</color>
+    <designationCategory>Mincho_Furniture</designationCategory>
+    <uiOrder>2090</uiOrder>
+    <costList Inherit="False">
+      <Mincho_ChocoStick>4</Mincho_ChocoStick>
+    </costList>
+  </TerrainDef>
+</Defs>

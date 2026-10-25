@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IssueDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>MCW_IceCreamYield</defName>
+    <label>薄荷冰淇淋增产</label>
+    <iconPath>Mincho_UI/Mincho_Cultures</iconPath>
+    <allowMultiplePrecepts>false</allowMultiplePrecepts>
+  </IssueDef>
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>MCW_IceCreamYield_Normal</defName>
+    <issue>MCW_IceCreamYield</issue>
+    <label>普通</label>
+    <description>珉巧的冰淇淋产量无需改变。</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+  </PreceptDef>
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>MCW_IceCreamYield_Boosted</defName>
+    <issue>MCW_IceCreamYield</issue>
+    <label>增产</label>
+    <description>生产更多的冰淇淋能让同伴免受饥饿。珉巧应当提高自己的产量。\n\n珉巧冰淇淋收取量：+100%。\n收取失败时保留50%的产物。</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>1</displayOrderInIssue>
+    <defaultSelectionWeight>0</defaultSelectionWeight>
+    <requiredMemes><li>Structure_TheisMincho</li></requiredMemes>
+  </PreceptDef>
+</Defs>

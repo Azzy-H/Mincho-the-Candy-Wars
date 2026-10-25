@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="PlantBase">
+    <defName>MCW_IceMintPlant</defName>
+    <label>冰薄荷</label>
+    <description>智慧珉巧培育的蓝色薄荷，在蘑菇模具中种植，收获珉巧薄荷叶。适应极寒环境，只能在0℃以下生长；升至0℃及以上后停止生长并逐步枯萎。</description>
+    <thingClass>MinchoCandyWars.Misc.IceMintPlant</thingClass>
+    <statBases>
+      <Flammability>1</Flammability>
+      <MaxHitPoints>85</MaxHitPoints>
+      <Nutrition>0.04</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/IceMint</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.7,0.7)</drawSize>
+    </graphicData>
+    <uiIconScale>0.7</uiIconScale>
+    <selectable>true</selectable>
+    <pathCost>10</pathCost>
+    <plant>
+      <fertilityMin>0.5</fertilityMin>
+      <fertilitySensitivity>0.5</fertilitySensitivity>
+      <dieIfLeafless>true</dieIfLeafless>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>Mincho_MintLeaves</harvestedThingDef>
+      <harvestYield>6</harvestYield>
+      <sowTags><li>Mincho_MinchoshroomPlant</li></sowTags>
+      <topWindExposure>0.1</topWindExposure>
+      <growDays>3</growDays>
+      <visualSizeRange>0.4~0.8</visualSizeRange>
+      <wildOrder>2</wildOrder>
+      <purpose>Food</purpose>
+      <soundHarvesting>Harvest_Standard</soundHarvesting>
+      <soundHarvestFinish>Harvest_Standard_Finish</soundHarvestFinish>
+      <minGrowthTemperature>-272</minGrowthTemperature>
+      <minOptimalGrowthTemperature>-272</minOptimalGrowthTemperature>
+      <maxOptimalGrowthTemperature>-5</maxOptimalGrowthTemperature>
+      <maxGrowthTemperature>0</maxGrowthTemperature>
+    </plant>
+  </ThingDef>
+</Defs>

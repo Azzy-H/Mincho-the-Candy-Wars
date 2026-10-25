@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TraderKindDef>
+    <defName>MCW_NanoAnimalSeller086</defName>
+    <label>珉巧动物商人</label>
+    <commonality>0.05</commonality>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MCW_Alpha_NanoShapingFluid</thingDef>
+        <countRange>1~3</countRange>
+      </li>
+      <li Class="StockGenerator_Animals">
+        <tradeTagsSell><li>MCW_NanoShapedAnimal085</li></tradeTagsSell>
+        <tradeTagsBuy><li>MCW_NanoShapedAnimal085</li></tradeTagsBuy>
+        <kindCountRange>1~2</kindCountRange>
+        <maxWildness>1</maxWildness>
+      </li>
+    </stockGenerators>
+  </TraderKindDef>
+</Defs>

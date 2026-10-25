@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>MCW_AllianceSettlementNames</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name-&gt;[candy]珉巧同盟分部</li>
+        <li>r_name-&gt;[candy]珉巧同盟联络处</li>
+        <li>candy-&gt;薄荷糖</li>
+        <li>candy-&gt;奶糖</li>
+        <li>candy-&gt;水果糖</li>
+        <li>candy-&gt;棉花糖</li>
+        <li>candy-&gt;跳跳糖</li>
+        <li>candy-&gt;泡泡糖</li>
+        <li>candy-&gt;棒棒糖</li>
+        <li>candy-&gt;太妃糖</li>
+        <li>candy-&gt;牛轧糖</li>
+        <li>candy-&gt;琥珀糖</li>
+        <li>candy-&gt;金平糖</li>
+        <li>candy-&gt;砂板糖</li>
+        <li>candy-&gt;酥糖</li>
+        <li>candy-&gt;软糖</li>
+        <li>candy-&gt;硬糖</li>
+        <li>candy-&gt;夹心糖</li>
+        <li>candy-&gt;麦芽糖</li>
+        <li>candy-&gt;花生糖</li>
+        <li>candy-&gt;芝麻糖</li>
+        <li>candy-&gt;椰子糖</li>
+        <li>candy-&gt;咖啡糖</li>
+        <li>candy-&gt;巧克力糖</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>

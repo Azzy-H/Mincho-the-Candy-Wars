@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_Armchair" or defName="Mincho_Macaron_Backrest_Chair" or defName="Mincho_Macaron_Chair"]</xpath>
+    <value>
+      <designatorDropdown>MCW_Seats</designatorDropdown>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="Mincho_Candle_Base" or @Name="Mincho_Electric_Candle_Base"]/designatorDropdown</xpath>
+    <value>
+      <designatorDropdown>MCW_Candles</designatorDropdown>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="Mincho_Super_Candle_Base"]</xpath>
+    <value>
+      <designatorDropdown>MCW_LargeCandles</designatorDropdown>
+    </value>
+  </Operation>
+</Patch>

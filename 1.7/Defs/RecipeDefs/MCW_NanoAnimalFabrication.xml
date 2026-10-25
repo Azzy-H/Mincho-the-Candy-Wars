@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>MCW_Make_NanoShapedMinchoSlime085</defName>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Review.NanoAnimalProductExtension">
+        <pawnKind>MCW_MinchoSlime</pawnKind>
+      </li>
+    </modExtensions>
+    <label>塑形珉巧史莱姆</label>
+    <description>用冰淇淋和纳米塑形液生成一只珉巧史莱姆。</description>
+    <jobString>正在塑形珉巧史莱姆。</jobString>
+    <workAmount>12000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers><li>Mincho_MinchoBench</li></recipeUsers>
+    <ingredients>
+      <li><filter><thingDefs><li>MCW_Alpha_NanoShapingFluid</li></thingDefs></filter><count>1</count></li>
+      <li><filter><categories><li>Mincho_IceCream</li></categories></filter><count>200</count></li>
+    </ingredients>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <products><MCW_MinchoSlime>1</MCW_MinchoSlime></products>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>MCW_Make_NanoShapedMinmoong085</defName>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Review.NanoAnimalProductExtension">
+        <pawnKind>Mincho_Minmoong</pawnKind>
+      </li>
+    </modExtensions>
+    <label>塑形珉巧汪</label>
+    <description>用冰淇淋和纳米塑形液生成一只珉巧汪。</description>
+    <jobString>正在塑形珉巧汪。</jobString>
+    <workAmount>12000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers><li>Mincho_MinchoBench</li></recipeUsers>
+    <ingredients>
+      <li><filter><thingDefs><li>MCW_Alpha_NanoShapingFluid</li></thingDefs></filter><count>1</count></li>
+      <li><filter><categories><li>Mincho_IceCream</li></categories></filter><count>250</count></li>
+    </ingredients>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <products><Mincho_Minmoong>1</Mincho_Minmoong></products>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>MCW_Make_NanoShapedMinchonyang085</defName>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Review.NanoAnimalProductExtension">
+        <pawnKind>Mincho_Minchonyang</pawnKind>
+      </li>
+    </modExtensions>
+    <label>塑形珉巧猫</label>
+    <description>用冰淇淋和纳米塑形液生成一只珉巧猫。</description>
+    <jobString>正在塑形珉巧猫。</jobString>
+    <workAmount>12000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers><li>Mincho_MinchoBench</li></recipeUsers>
+    <ingredients>
+      <li><filter><thingDefs><li>MCW_Alpha_NanoShapingFluid</li></thingDefs></filter><count>1</count></li>
+      <li><filter><categories><li>Mincho_IceCream</li></categories></filter><count>100</count></li>
+    </ingredients>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <products><Mincho_Minchonyang>1</Mincho_Minchonyang></products>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>MCW_Make_NanoShapedMinchoLatteHorse085</defName>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Review.NanoAnimalProductExtension">
+        <pawnKind>Mincho_MinchoLatteIsHorse</pawnKind>
+      </li>
+    </modExtensions>
+    <label>塑形珉巧拿铁马</label>
+    <description>用冰淇淋和纳米塑形液生成一匹珉巧拿铁马。</description>
+    <jobString>正在塑形珉巧拿铁马。</jobString>
+    <workAmount>12000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers><li>Mincho_MinchoBench</li></recipeUsers>
+    <ingredients>
+      <li><filter><thingDefs><li>MCW_Alpha_NanoShapingFluid</li></thingDefs></filter><count>1</count></li>
+      <li><filter><categories><li>Mincho_IceCream</li></categories></filter><count>600</count></li>
+    </ingredients>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <products><Mincho_MinchoLatteIsHorse>1</Mincho_MinchoLatteIsHorse></products>
+  </RecipeDef>
+</Defs>

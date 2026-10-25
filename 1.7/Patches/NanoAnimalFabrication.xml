@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    纳米塑形动物：给 4 个动物种族加上交易标签，让 MCW_NanoAnimalSeller086 能备货。
+    原先这段写在 C# 静态构造里（Startup），改成 XML 以保证加载顺序确定、并可在 DevMode 下查证。
+  -->
+  
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_Minmoong"]/tradeTags</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Mincho_Minmoong"]/tradeTags</xpath>
+      <value>
+        <li>MCW_NanoShapedAnimal085</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Mincho_Minmoong"]</xpath>
+      <value>
+        <tradeTags>
+          <li>MCW_NanoShapedAnimal085</li>
+        </tradeTags>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_Minchonyang"]/tradeTags</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Mincho_Minchonyang"]/tradeTags</xpath>
+      <value>
+        <li>MCW_NanoShapedAnimal085</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Mincho_Minchonyang"]</xpath>
+      <value>
+        <tradeTags>
+          <li>MCW_NanoShapedAnimal085</li>
+        </tradeTags>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoLatteIsHorse"]/tradeTags</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Mincho_MinchoLatteIsHorse"]/tradeTags</xpath>
+      <value>
+        <li>MCW_NanoShapedAnimal085</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Mincho_MinchoLatteIsHorse"]</xpath>
+      <value>
+        <tradeTags>
+          <li>MCW_NanoShapedAnimal085</li>
+        </tradeTags>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!--
+    把纳米动物商人加进珉巧派系的商队类型。
+    Mincho_Faction 的 baseTraderKinds 已存在（HAR 提供），直接追加即可。
+  -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/FactionDef[defName="Mincho_Faction"]/baseTraderKinds</xpath>
+    <value>
+      <li>MCW_NanoAnimalSeller086</li>
+    </value>
+  </Operation>
+</Patch>

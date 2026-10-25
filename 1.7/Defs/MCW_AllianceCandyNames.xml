@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>MCW_AllianceCandyNames</defName>
+    <include><li>Mincho_NamerPerson</li></include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name-&gt;薄荷糖</li>
+        <li>r_name-&gt;奶糖</li>
+        <li>r_name-&gt;水果糖</li>
+        <li>r_name-&gt;棉花糖</li>
+        <li>r_name-&gt;跳跳糖</li>
+        <li>r_name-&gt;泡泡糖</li>
+        <li>r_name-&gt;棒棒糖</li>
+        <li>r_name-&gt;太妃糖</li>
+        <li>r_name-&gt;牛轧糖</li>
+        <li>r_name-&gt;琥珀糖</li>
+        <li>r_name-&gt;金平糖</li>
+        <li>r_name-&gt;砂板糖</li>
+        <li>r_name-&gt;酥糖</li>
+        <li>r_name-&gt;软糖</li>
+        <li>r_name-&gt;硬糖</li>
+        <li>r_name-&gt;夹心糖</li>
+        <li>r_name-&gt;麦芽糖</li>
+        <li>r_name-&gt;花生糖</li>
+        <li>r_name-&gt;芝麻糖</li>
+        <li>r_name-&gt;椰子糖</li>
+        <li>r_name-&gt;咖啡糖</li>
+        <li>r_name-&gt;巧克力糖</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>

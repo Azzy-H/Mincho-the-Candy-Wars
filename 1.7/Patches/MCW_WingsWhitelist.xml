@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/alienRace/raceRestriction/apparelList</xpath>
+    <value>
+      <li>MCW_MechaWings</li>
+    </value>
+  </Operation>
+</Patch>

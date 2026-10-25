@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <DesignatorDropdownGroupDef>
+    <defName>MCW_SingleBeds</defName>
+    <label>珉巧单人床</label>
+  </DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef>
+    <defName>MCW_DoubleBeds</defName>
+    <label>珉巧双人床</label>
+  </DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef>
+    <defName>MCW_Seats</defName>
+    <label>珉巧椅子</label>
+  </DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef>
+    <defName>MCW_Tables</defName>
+    <label>珉巧餐桌</label>
+  </DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef>
+    <defName>MCW_ColdCabinets</defName>
+    <label>薄荷冰淇淋柜</label>
+  </DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef>
+    <defName>MCW_Candles</defName>
+    <label>珉巧烛台</label>
+  </DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef>
+    <defName>MCW_LargeCandles</defName>
+    <label>珉巧超大烛台</label>
+  </DesignatorDropdownGroupDef>
+</Defs>

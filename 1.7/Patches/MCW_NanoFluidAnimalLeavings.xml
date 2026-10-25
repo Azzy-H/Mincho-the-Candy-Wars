@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_Minmoong"]</xpath>
+    <value>
+      <killedLeavingsRanges>
+        <MCW_Alpha_NanoShapingFluid>-8~1</MCW_Alpha_NanoShapingFluid>
+      </killedLeavingsRanges>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_Minchonyang"]</xpath>
+    <value>
+      <killedLeavingsRanges>
+        <MCW_Alpha_NanoShapingFluid>-8~1</MCW_Alpha_NanoShapingFluid>
+      </killedLeavingsRanges>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoLatteIsHorse"]</xpath>
+    <value>
+      <killedLeavingsRanges>
+        <MCW_Alpha_NanoShapingFluid>-8~1</MCW_Alpha_NanoShapingFluid>
+      </killedLeavingsRanges>
+    </value>
+  </Operation>
+</Patch>

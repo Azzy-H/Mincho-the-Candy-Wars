@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    回收公司部队的「优先用瘫痪枪」ThinkNode。
+
+    insertTag 是原版给 modder 预留的注入点（Core/Defs/ThinkTreeDefs/Humanlike.xml:84）：
+    Humanlike 树的 ThinkNode_SubtreesByTag 会收集所有带同名 insertTag 的 ThinkTreeDef，
+    按 insertPriority 从高到低依次执行。
+
+    Humanlike_PostMentalState 位于「精神崩溃 → 排队工作 → 领主职责」之间，
+    也就是战斗职责（LordDuty 里的 JobGiver_AIFightEnemies）之前，
+    所以带瘫痪枪的 pawn 会先走到这里，返回 null 则落回原版战斗逻辑。
+  -->
+  <ThinkTreeDef>
+    <defName>MCW_JobGiver_UseParalyzer</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>100</insertPriority>
+    <thinkRoot Class="MinchoCandyWars.Review.JobGiver_UseParalyzer" />
+  </ThinkTreeDef>
+</Defs>

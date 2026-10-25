@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/WearSetting.WearSettingDef[@Name="Mincho_SpaceSuit_Setting"]/wearSetting/li[wearList/li="Mincho_SpaceSuit"]/wearList</xpath>
+    <value>
+      <li>MCW_MechaArmor</li>
+    </value>
+  </Operation>
+</Patch>

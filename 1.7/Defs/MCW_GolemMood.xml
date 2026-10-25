@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>MCW_StableGolem</defName>
+    <workerClass>MinchoCandyWars.Golem.ThoughtWorker_StableGolem</workerClass>
+    <stages>
+      <li>
+        <label>稳定的巨大冰淇淋！</label>
+        <description>殖民地里有一座可靠的珉巧魔像。有它在，我安心多了。</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>稳定的巨大冰淇淋！</label>
+        <description>一座不会消散的珉巧魔像！看到它守护着殖民地，真让人高兴。</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>
