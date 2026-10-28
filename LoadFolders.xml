@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<loadFolders>
+  <!--
+    目录布局说明：
+
+    · "/"（根目录）：本 mod 的 Textures 放在根目录 Textures/ 下，
+      必须显式声明根目录，否则启用 LoadFolders 后贴图不会被扫描。
+    · "1.7"：Defs / Patches / Assemblies / Languages / AssetBundles 等。
+    · Anomaly / Odyssey / Mods/MarilyntheMinchoWorshipper：RimWorld 只扫描
+      <loadFolder>/Defs 这类固定子目录，不会递归进 1.7/Anomaly/Defs，
+      因此这些横向目录必须单独列为 load folder，并按 DLC/依赖条件加载。
+
+    IfModActive 的值是 packageId，与 ModsConfig.xml 中的写法保持一致（小写）。
+  -->
+  <v1.7>
+    <!-- 根目录：Textures /（贴图都在这里） -->
+    <li>/</li>
+
+    <!-- 版本目录：Defs / Patches / Assemblies / Languages / AssetBundles -->
+    <li>1.7</li>
+
+    <!-- Anomaly 内容：无尽冰淇淋桶、薄荷成瘾体系、薄荷货运 -->
+    <li IfModActive="ludeon.rimworld.anomaly">1.7/Anomaly</li>
+
+    <!-- Odyssey 内容：冰淇淋桶飞行器 -->
+    <li IfModActive="ludeon.rimworld.odyssey">1.7/Odyssey</li>
+
+    <!-- 玲珑糖「珉巧感染」能力：依赖女巫 mod 的 Mincho_Infection hediff -->
+    <li IfModActive="sutsutman.marilyntheminchoworshipperwitchharver">1.7/Mods/MarilyntheMinchoWorshipper</li>
+  </v1.7>
+</loadFolders>

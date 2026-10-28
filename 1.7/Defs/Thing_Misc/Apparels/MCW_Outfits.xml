@@ -32,7 +32,9 @@
     </statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseOutfit</wornGraphicPath>
-			<layers Inherit="False"><li>Middle</li></layers>
+      <layers Inherit="False">
+        <li>Middle</li>
+      </layers>
     </apparel>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
@@ -42,16 +44,26 @@
         </li>
       </options>
     </colorGenerator>
-  <uiIconPath>Things/Apparel/Icons/MCW_NurseOutfit</uiIconPath><costList Inherit="False"><Steel>5</Steel></costList><equippedStatOffsets><MedicalTendQuality>0.2</MedicalTendQuality></equippedStatOffsets></ThingDef>
+    <uiIconPath>Things/Apparel/Icons/MCW_NurseOutfit</uiIconPath>
+    <costList Inherit="False">
+      <Steel>5</Steel>
+    </costList>
+    <equippedStatOffsets>
+      <MedicalTendQuality>0.2</MedicalTendQuality>
+    </equippedStatOffsets>
+  </ThingDef>
   <ThingDef ParentName="Mincho_ApparelBase_Hat">
     <defName>MCW_NurseCap</defName>
     <label>珉巧护士帽</label>
     <description>珉巧护士帽。</description>
     <graphicData>
       <texPath>Things/Apparel/Icons/MCW_NurseCap</texPath>
-    <graphicClass>Graphic_Single</graphicClass></graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <costStuffCount>20</costStuffCount>
-    <stuffCategories Inherit="False"><li>Metallic</li></stuffCategories>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+    </stuffCategories>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <WorkToMake>500</WorkToMake>
@@ -61,15 +73,16 @@
       <ArmorRating_Heat>0.2</ArmorRating_Heat>
       <EquipDelay>1</EquipDelay>
       <Beauty>1</Beauty>
-    <StuffEffectMultiplierArmor>0.5</StuffEffectMultiplierArmor></statBases>
+      <StuffEffectMultiplierArmor>0.5</StuffEffectMultiplierArmor>
+    </statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_NurseOutfit/MCW_NurseCap</wornGraphicPath>
       <renderSkipFlags>
         <li>None</li>
       </renderSkipFlags>
-			<layers>
-  			<li>Overhead</li>
-			</layers>
+      <layers>
+        <li>Overhead</li>
+      </layers>
     </apparel>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
@@ -79,7 +92,12 @@
         </li>
       </options>
     </colorGenerator>
-  <uiIconPath>Things/Apparel/Icons/MCW_NurseCap</uiIconPath><costList Inherit="False" /><equippedStatOffsets><MedicalTendSpeed>0.2</MedicalTendSpeed></equippedStatOffsets></ThingDef>
+    <uiIconPath>Things/Apparel/Icons/MCW_NurseCap</uiIconPath>
+    <costList Inherit="False" />
+    <equippedStatOffsets>
+      <MedicalTendSpeed>0.2</MedicalTendSpeed>
+    </equippedStatOffsets>
+  </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_Bikini</defName>
@@ -90,7 +108,9 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <costStuffCount>100</costStuffCount>
-    <stuffCategories Inherit="False"><li>Metallic</li></stuffCategories>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+    </stuffCategories>
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>
       <WorkToMake>1000</WorkToMake>
@@ -102,15 +122,31 @@
       <Insulation_Heat>20</Insulation_Heat>
       <EquipDelay>1</EquipDelay>
       <Beauty>2</Beauty>
-    <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor></statBases>
+      <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor>
+    </statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_Bikini/MCW_Bikini</wornGraphicPath>
-			<layers>
-				<li>OnSkin</li>
-			</layers>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
     </apparel>
-    <colorGenerator Inherit="False" IsNull="True" />
-  <uiIconPath>Things/Apparel/Icons/MCW_Bikini</uiIconPath><costList Inherit="False"><DevilstrandCloth>20</DevilstrandCloth></costList><equippedStatOffsets><MoveSpeed>0.4</MoveSpeed><SocialImpact>0.5</SocialImpact></equippedStatOffsets></ThingDef>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+    <uiIconPath>Things/Apparel/Icons/MCW_Bikini</uiIconPath>
+    <costList Inherit="False">
+      <DevilstrandCloth>20</DevilstrandCloth>
+    </costList>
+    <equippedStatOffsets>
+      <MoveSpeed>0.4</MoveSpeed>
+      <SocialImpact>0.5</SocialImpact>
+    </equippedStatOffsets>
+  </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_BikiniBW</defName>
@@ -131,14 +167,17 @@
       <Insulation_Heat>20</Insulation_Heat>
       <EquipDelay>1</EquipDelay>
       <Beauty>2</Beauty>
-    <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor></statBases>
+      <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor>
+    </statBases>
     <costStuffCount>100</costStuffCount>
-    <stuffCategories Inherit="False"><li>Metallic</li></stuffCategories>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+    </stuffCategories>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_Bikini_BW/MCW_Bikini_BW</wornGraphicPath>
-			<layers>
-				<li>OnSkin</li>
-			</layers>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
     </apparel>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
@@ -148,7 +187,15 @@
         </li>
       </options>
     </colorGenerator>
-  <uiIconPath>Things/Apparel/Icons/MCW_BikiniBW</uiIconPath><costList Inherit="False"><DevilstrandCloth>20</DevilstrandCloth></costList><equippedStatOffsets><MoveSpeed>0.4</MoveSpeed><SocialImpact>0.5</SocialImpact></equippedStatOffsets></ThingDef>
+    <uiIconPath>Things/Apparel/Icons/MCW_BikiniBW</uiIconPath>
+    <costList Inherit="False">
+      <DevilstrandCloth>20</DevilstrandCloth>
+    </costList>
+    <equippedStatOffsets>
+      <MoveSpeed>0.4</MoveSpeed>
+      <SocialImpact>0.5</SocialImpact>
+    </equippedStatOffsets>
+  </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_GorgeousDress</defName>
@@ -159,7 +206,9 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <costStuffCount>40</costStuffCount>
-    <stuffCategories Inherit="False"><li>Metallic</li></stuffCategories>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+    </stuffCategories>
     <statBases>
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToMake>4000</WorkToMake>
@@ -171,16 +220,18 @@
       <Insulation_Heat>20</Insulation_Heat>
       <EquipDelay>3</EquipDelay>
       <Beauty>2</Beauty>
-    <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor></statBases>
+      <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor>
+    </statBases>
     <equippedStatOffsets>
       <PsychicSensitivity>0.2</PsychicSensitivity>
       <PsychicEntropyRecoveryRate>0.2</PsychicEntropyRecoveryRate>
-    <SocialImpact>1</SocialImpact></equippedStatOffsets>
+      <SocialImpact>1</SocialImpact>
+    </equippedStatOffsets>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_GorgeousDress/MCW_GorgeousDress</wornGraphicPath>
-			<layers>
-				<li>OnSkin</li>
-			</layers>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
     </apparel>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
@@ -190,7 +241,12 @@
         </li>
       </options>
     </colorGenerator>
-  <uiIconPath>Things/Apparel/Icons/MCW_GorgeousDress</uiIconPath><costList Inherit="False"><Mincho_ChocoStick>200</Mincho_ChocoStick><Gold>100</Gold></costList></ThingDef>
+    <uiIconPath>Things/Apparel/Icons/MCW_GorgeousDress</uiIconPath>
+    <costList Inherit="False">
+      <Mincho_ChocoStick>200</Mincho_ChocoStick>
+      <Gold>100</Gold>
+    </costList>
+  </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_Qipao</defName>
@@ -200,7 +256,10 @@
       <texPath>Things/Apparel/Icons/MCW_Qipao</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <costList Inherit="False"><DevilstrandCloth>100</DevilstrandCloth><Jade>20</Jade></costList>
+    <costList Inherit="False">
+      <DevilstrandCloth>100</DevilstrandCloth>
+      <Jade>20</Jade>
+    </costList>
     <statBases>
       <MaxHitPoints>200</MaxHitPoints>
       <WorkToMake>3500</WorkToMake>
@@ -212,7 +271,9 @@
       <Insulation_Heat>10</Insulation_Heat>
       <EquipDelay>2</EquipDelay>
       <Beauty>2</Beauty>
-    <StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor><StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat></statBases>
+      <StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
     <equippedStatOffsets>
       <Flammability>-2</Flammability>
       <MoveSpeed>0.5</MoveSpeed>
@@ -231,7 +292,12 @@
         </li>
       </options>
     </colorGenerator>
-  <uiIconPath>Things/Apparel/Icons/MCW_Qipao</uiIconPath><costStuffCount>20</costStuffCount><stuffCategories Inherit="False"><li>Metallic</li></stuffCategories></ThingDef>
+    <uiIconPath>Things/Apparel/Icons/MCW_Qipao</uiIconPath>
+    <costStuffCount>20</costStuffCount>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+    </stuffCategories>
+  </ThingDef>
 
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_MechaArmor</defName>
@@ -243,10 +309,11 @@
     </graphicData>
     <costList>
       <DevilstrandCloth>40</DevilstrandCloth>
-      
+
       <Plasteel>100</Plasteel>
       <ComponentSpacer>4</ComponentSpacer>
-    <SignalChip MayRequire="Ludeon.RimWorld.Biotech">1</SignalChip></costList>
+      <SignalChip MayRequire="Ludeon.RimWorld.Biotech">1</SignalChip>
+    </costList>
     <statBases>
       <MaxHitPoints>500</MaxHitPoints>
       <WorkToMake>12000</WorkToMake>
@@ -256,10 +323,15 @@
       <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
       <ArmorRating_Heat>0.5</ArmorRating_Heat>
       <EquipDelay>3</EquipDelay>
-    <Insulation_Cold>50</Insulation_Cold><Insulation_Heat>40</Insulation_Heat><StuffEffectMultiplierArmor>0.8</StuffEffectMultiplierArmor></statBases>
+      <Insulation_Cold>50</Insulation_Cold>
+      <Insulation_Heat>40</Insulation_Heat>
+      <StuffEffectMultiplierArmor>0.8</StuffEffectMultiplierArmor>
+    </statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_MechaArmorWorn/MCW_MechaArmor</wornGraphicPath>
-      <layers><li>Middle</li></layers>
+      <layers>
+        <li>Middle</li>
+      </layers>
     </apparel>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
@@ -275,7 +347,28 @@
         <part>Mincho_Torso</part>
       </li>
     </comps>
-  <uiIconPath>Things/Apparel/Icons/MCW_MechaArmor</uiIconPath><recipeMaker><researchPrerequisite MayRequire="Ludeon.RimWorld.Biotech">StandardMechtech</researchPrerequisite><researchPrerequisites><li>ReconArmor</li></researchPrerequisites><recipeUsers Inherit="False"><li>FabricationBench</li></recipeUsers></recipeMaker><equippedStatOffsets><MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">18</MechBandwidth><WorkSpeedGlobalOffsetMech MayRequire="Ludeon.RimWorld.Biotech">0.30</WorkSpeedGlobalOffsetMech><MoveSpeed>1.6</MoveSpeed><WorkSpeedGlobal>0.08</WorkSpeedGlobal><VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.32</VacuumResistance></equippedStatOffsets><costStuffCount>50</costStuffCount><stuffCategories><li>Metallic</li></stuffCategories></ThingDef>
+    <uiIconPath>Things/Apparel/Icons/MCW_MechaArmor</uiIconPath>
+    <recipeMaker>
+      <researchPrerequisite MayRequire="Ludeon.RimWorld.Biotech">StandardMechtech</researchPrerequisite>
+      <researchPrerequisites>
+        <li>ReconArmor</li>
+      </researchPrerequisites>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <equippedStatOffsets>
+      <MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">18</MechBandwidth>
+      <WorkSpeedGlobalOffsetMech MayRequire="Ludeon.RimWorld.Biotech">0.30</WorkSpeedGlobalOffsetMech>
+      <MoveSpeed>1.6</MoveSpeed>
+      <WorkSpeedGlobal>0.08</WorkSpeedGlobal>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.32</VacuumResistance>
+    </equippedStatOffsets>
+    <costStuffCount>50</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+  </ThingDef>
   <HediffDef>
     <defName>MCW_MechaArmor_AddonHediff</defName>
     <label>机械师装甲附加件</label>
@@ -312,14 +405,14 @@
         </drawData>
       </li>
       <!-- 翅膀 -->
-      
+
     </renderNodeProperties>
     <stages>
       <li>
       </li>
     </stages>
   </HediffDef>
-  
+
   <ThingDef ParentName="Mincho_ApparelBase_Hat">
     <defName>MCW_HoloVisor</defName>
     <label>珉巧机械师全息眼罩</label>
@@ -350,7 +443,9 @@
       <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
       <ArmorRating_Heat>0.1</ArmorRating_Heat>
       <EquipDelay>1.5</EquipDelay>
-    <Insulation_Cold>50</Insulation_Cold><Insulation_Heat>30</Insulation_Heat></statBases>
+      <Insulation_Cold>50</Insulation_Cold>
+      <Insulation_Heat>30</Insulation_Heat>
+    </statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/MCW_HoloVisor/MCW_HoloVisor</wornGraphicPath>
       <bodyPartGroups>
@@ -377,6 +472,15 @@
       <layers>
         <li>EyeCover</li>
       </layers>
-    <immuneToToxGasExposure>true</immuneToToxGasExposure></apparel>
-  <uiIconPath>Things/Apparel/Icons/MCW_HoloVisor</uiIconPath><equippedStatOffsets><MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">16</MechBandwidth><WorkSpeedGlobalOffsetMech MayRequire="Ludeon.RimWorld.Biotech">0.20</WorkSpeedGlobalOffsetMech><ShootingAccuracyPawn>3</ShootingAccuracyPawn><WorkSpeedGlobal>0.08</WorkSpeedGlobal><VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.69</VacuumResistance></equippedStatOffsets></ThingDef>
+      <immuneToToxGasExposure>true</immuneToToxGasExposure>
+    </apparel>
+    <uiIconPath>Things/Apparel/Icons/MCW_HoloVisor</uiIconPath>
+    <equippedStatOffsets>
+      <MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">16</MechBandwidth>
+      <WorkSpeedGlobalOffsetMech MayRequire="Ludeon.RimWorld.Biotech">0.20</WorkSpeedGlobalOffsetMech>
+      <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+      <WorkSpeedGlobal>0.08</WorkSpeedGlobal>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.69</VacuumResistance>
+    </equippedStatOffsets>
+  </ThingDef>
 </Defs>

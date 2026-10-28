@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <!--
     纳米塑形动物：给 4 个动物种族加上交易标签，让 MCW_NanoAnimalSeller086 能备货。
@@ -62,12 +62,26 @@
 
   <!--
     把纳米动物商人加进珉巧派系的商队类型。
-    Mincho_Faction 的 baseTraderKinds 已存在（HAR 提供），直接追加即可。
+    注意：Mincho_Faction 的 baseTraderKinds 是从 Abstract 父类 MinchoFactionBase 继承来的，
+    XML 原文里并没有这个节点，所以不能直接 PatchOperationAdd 到 xpath，
+    必须用 Conditional 分支：有就追加，没有就在 FactionDef 下新建完整列表。
   -->
-  <Operation Class="PatchOperationAdd">
+  <Operation Class="PatchOperationConditional">
     <xpath>Defs/FactionDef[defName="Mincho_Faction"]/baseTraderKinds</xpath>
-    <value>
-      <li>MCW_NanoAnimalSeller086</li>
-    </value>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/FactionDef[defName="Mincho_Faction"]/baseTraderKinds</xpath>
+      <value>
+        <li>MCW_NanoAnimalSeller086</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/FactionDef[defName="Mincho_Faction"]</xpath>
+      <value>
+        <baseTraderKinds>
+          <li>Base_Outlander_Standard</li>
+          <li>MCW_NanoAnimalSeller086</li>
+        </baseTraderKinds>
+      </value>
+    </nomatch>
   </Operation>
 </Patch>
