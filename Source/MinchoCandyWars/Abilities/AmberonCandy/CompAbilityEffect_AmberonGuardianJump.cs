@@ -68,6 +68,8 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
             Map map = caster.Map;
             if (map == null) return;
 
+            ThingDef wall = MCW_DefOf.Mincho_MintchocoWall;
+
             IntVec3 center = target.IsValid ? target.Cell : caster.Position;
             for (int dx = -WallRadius; dx <= WallRadius; dx++)
             {
@@ -78,12 +80,12 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
                     IntVec3 cell = center + new IntVec3(dx, 0, dz);
                     if (!cell.InBounds(map)) continue;
                     if (cell.Filled(map)) continue;
-                    if (!GenConstruct.CanPlaceBlueprintAt(MCW_DefOf.MCW_AmberonIceCreamWall, cell, Rot4.North, map, godMode: false).Accepted)
+                    if (!GenConstruct.CanPlaceBlueprintAt(wall, cell, Rot4.North, map, godMode: false).Accepted)
                     {
                         continue;
                     }
 
-                    GenSpawn.Spawn(MCW_DefOf.MCW_AmberonIceCreamWall, cell, map, Rot4.North);
+                    GenSpawn.Spawn(wall, cell, map, Rot4.North);
                 }
             }
         }

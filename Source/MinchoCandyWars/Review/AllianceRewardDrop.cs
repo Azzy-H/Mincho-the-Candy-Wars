@@ -49,10 +49,10 @@ public static class AllianceDelivery
         foreach(var ins in code)
             if(ins.operand is MethodInfo m && m.DeclaringType==typeof(GenPlace) && m.Name==nameof(GenPlace.TryPlaceThing))
             {
-                if(m.GetParameters().Length!=8 || m.GetParameters()[0].ParameterType!=typeof(Thing))throw new InvalidOperationException("051 unexpected placement overload");
+                if(m.GetParameters().Length!=8 || m.GetParameters()[0].ParameterType!=typeof(Thing))Log.Error("[MCW]AllianceDelivery unexpected placement overload");
                 ins.opcode=OpCodes.Call;ins.operand=AccessTools.Method(typeof(AllianceDelivery),nameof(Collect));hits++;
             }
-        if(hits!=1)throw new InvalidOperationException("051 expected one delivery call, got "+hits);
+        if(hits!=1) Log.Error("[MCW]AllianceDelivery expected one delivery call, got " + hits);
         return code;
     }
 }

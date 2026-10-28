@@ -1,32 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- ===== 冰淇淋墙体（守护之名！生成） ===== -->
-  <ThingDef ParentName="RaisedRocks">
-    <defName>MCW_AmberonIceCreamWall</defName>
-    <label>ice cream wall</label>
-    <description>TODO</description>
-    <graphicData>
-      <texPath>Things/Building/Linked/Rock_Atlas</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <linkType>CornerFiller</linkType>
-      <linkFlags>
-        <li>Rock</li>
-      </linkFlags>
-      <color>(255, 228, 196)</color>
-    </graphicData>
-    <statBases>
-      <MaxHitPoints>150</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <comps>
-      <li Class="CompProperties_Lifespan">
-        <lifespanTicks>600</lifespanTicks><!-- 10 seconds -->
-        <expireEffect>RaisedRock_Collapse</expireEffect>
-      </li>
-    </comps>
-  </ThingDef>
-
   <!-- ===== 位置护盾（站在我身后生成） ===== -->
   <ThingDef ParentName="BuildingBase">
     <defName>MCW_AmberonPositionShield</defName>

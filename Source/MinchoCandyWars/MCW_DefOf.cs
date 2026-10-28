@@ -81,7 +81,7 @@ namespace MinchoCandyWars
         public static HediffDef MCW_AmberonHeart = null!;
         public static HediffDef MCW_AmberonSlow = null!;
         public static HediffDef MCW_AmberonHeartMood = null!;
-        public static ThingDef MCW_AmberonIceCreamWall = null!;
+        public static ThingDef Mincho_MintchocoWall = null!;
         public static ThingDef MCW_AmberonPositionShield = null!;
         public static CandyTypeDef NectarCandy = null!;
         public static CandyTypeDef MechaCandy = null!;

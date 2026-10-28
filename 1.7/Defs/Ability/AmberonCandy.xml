@@ -34,9 +34,9 @@
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetBuildings>false</canTargetBuildings>
                 <canTargetItems>false</canTargetItems>
-                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetAnimals>true</canTargetAnimals>
                 <canTargetHumans>true</canTargetHumans>
-                <canTargetMechs>false</canTargetMechs>
+                <canTargetMechs>true</canTargetMechs>
                 <canTargetSelf>false</canTargetSelf>
                 <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
             </targetParams>
