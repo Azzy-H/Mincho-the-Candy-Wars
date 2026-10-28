@@ -37,13 +37,15 @@
       <li>ITab_StudyNotes</li>
     </inspectorTabs>
     <allowedArchonexusCount>1</allowedArchonexusCount>
+    <!-- socialPropernessMatters 是 ThingDef 的字段，不在 ingestible 内部 -->
+    <socialPropernessMatters>true</socialPropernessMatters>
     <ingestible>
       <foodType>Processed</foodType>
       <preferability>MealFine</preferability>
       <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
       <baseIngestTicks>500</baseIngestTicks>
       <chairSearchRadius>8</chairSearchRadius>
-      <ingestSound>Ingest_Eat</ingestSound>
+      <ingestSound>Meal_Eat</ingestSound>
     </ingestible>
     <comps>
       <li Class="CompProperties_Forbiddable"/>
@@ -126,13 +128,15 @@
       <li>Foods</li>
     </thingCategories>
     <allowedArchonexusCount>1</allowedArchonexusCount>
+    <!-- socialPropernessMatters 是 ThingDef 的字段，不在 ingestible 内部 -->
+    <socialPropernessMatters>true</socialPropernessMatters>
     <ingestible>
       <foodType>Processed</foodType>
       <preferability>MealFine</preferability>
       <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
       <baseIngestTicks>500</baseIngestTicks>
       <chairSearchRadius>8</chairSearchRadius>
-      <ingestSound>Ingest_Eat</ingestSound>
+      <ingestSound>Meal_Eat</ingestSound>
     </ingestible>
     <comps>
       <li Class="CompProperties_Forbiddable"/>
