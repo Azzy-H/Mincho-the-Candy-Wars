@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps</xpath>
@@ -20,21 +20,7 @@
     </value>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/alienRace/raceRestriction/apparelList</xpath>
-    <value>
-      <li>MCW_NurseOutfit</li>
-      <li>MCW_NurseCap</li>
-      <li>MCW_Bikini</li>
-      <li>MCW_BikiniBW</li>
-      <li>MCW_GorgeousDress</li>
-      <li>MCW_Qipao</li>
-      <li>MCW_MechaArmor</li>
-      <li>MCW_HoloVisor</li>
-      <li>MCW_TowerShield</li>
-      <li>MCW_CookiesShield</li>
-    </value>
-  </Operation>
+  
 
   <!-- 为每个 CompProperties_ResourceHarvestable 添加 productAffectedStats -->
   <Operation Class="PatchOperationAdd">

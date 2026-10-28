@@ -80,9 +80,15 @@
             </targetParams>
         </verbProperties>
         <comps>
-            <li Class="CompProperties_AbilityEffect">
-                <compClass>MinchoCandyWars.Abilities.AmberonCandy.CompAbilityEffect_HardCandy</compClass>
-            </li>
+          <li Class="CompProperties_AbilityGiveHediff">
+            <hediffDef>MCW_HardCandy</hediffDef>
+            <applyToSelf>true</applyToSelf>
+            <onlyApplyToSelf>true</onlyApplyToSelf>
+            <applyToTarget>false</applyToTarget>
+            <severity>1</severity>
+            <!-- 6 游戏小时：GiveHediff 会用 durationSecondsOverride 覆盖 hediff 自带的 disappearsAfterTicks -->
+            <durationSecondsOverride>250</durationSecondsOverride>
+          </li>
         </comps>
         <modExtensions>
             <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">

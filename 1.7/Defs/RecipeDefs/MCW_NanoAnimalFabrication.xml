@@ -20,6 +20,14 @@
     </ingredients>
     <allowMixingIngredients>true</allowMixingIngredients>
     <products><MCW_MinchoSlime>1</MCW_MinchoSlime></products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MCW_Alpha_NanoShapingFluid</li>
+      </thingDefs>
+      <categories>
+        <li>Mincho_IceCream</li>
+      </categories>
+    </fixedIngredientFilter>
   </RecipeDef>
   <RecipeDef>
     <defName>MCW_Make_NanoShapedMinmoong085</defName>
@@ -41,6 +49,14 @@
     </ingredients>
     <allowMixingIngredients>true</allowMixingIngredients>
     <products><Mincho_Minmoong>1</Mincho_Minmoong></products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MCW_Alpha_NanoShapingFluid</li>
+      </thingDefs>
+      <categories>
+        <li>Mincho_IceCream</li>
+      </categories>
+    </fixedIngredientFilter>
   </RecipeDef>
   <RecipeDef>
     <defName>MCW_Make_NanoShapedMinchonyang085</defName>
@@ -62,6 +78,14 @@
     </ingredients>
     <allowMixingIngredients>true</allowMixingIngredients>
     <products><Mincho_Minchonyang>1</Mincho_Minchonyang></products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MCW_Alpha_NanoShapingFluid</li>
+      </thingDefs>
+      <categories>
+        <li>Mincho_IceCream</li>
+      </categories>
+    </fixedIngredientFilter>
   </RecipeDef>
   <RecipeDef>
     <defName>MCW_Make_NanoShapedMinchoLatteHorse085</defName>
@@ -83,5 +107,13 @@
     </ingredients>
     <allowMixingIngredients>true</allowMixingIngredients>
     <products><Mincho_MinchoLatteIsHorse>1</Mincho_MinchoLatteIsHorse></products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MCW_Alpha_NanoShapingFluid</li>
+      </thingDefs>
+      <categories>
+        <li>Mincho_IceCream</li>
+      </categories>
+    </fixedIngredientFilter>
   </RecipeDef>
 </Defs>

@@ -257,6 +257,7 @@
           <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
         </thingDefs>
       </fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
 
   <RecipeDef>
@@ -299,6 +300,7 @@
           <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
         </thingDefs>
       </fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
 
   <RecipeDef>
@@ -341,6 +343,7 @@
           <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
         </thingDefs>
       </fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
 
   <RecipeDef>
@@ -383,6 +386,7 @@
           <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
         </thingDefs>
       </fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
 
   <!-- ===================== 手术配方 ===================== -->

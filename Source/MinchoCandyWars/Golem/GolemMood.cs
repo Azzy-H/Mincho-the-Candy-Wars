@@ -64,7 +64,6 @@ namespace MinchoCandyWars.Golem
                 Pawn golem = pawns[i];
                 if (golem.def == MCW_DefOf.MCW_Mech_Golem
                     && !golem.Dead
-                    && !golem.Downed
                     && !golem.InMentalState)
                 {
                     return true;

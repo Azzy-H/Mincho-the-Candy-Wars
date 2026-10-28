@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<PawnKindDef ParentName="AnimalKindBase">
 		<defName>MCW_MinchoSlime</defName>
@@ -118,6 +118,7 @@
 				<li>Mincho_IceCream</li>
 			</categories>
 		</fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_I_Maid</defName>
@@ -191,6 +192,7 @@
 				<li>Mincho_IceCream</li>
 			</categories>
 		</fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_II_Maid</defName>
@@ -272,6 +274,7 @@
 				<li>Mincho_IceCream</li>
 			</categories>
 		</fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Battle</defName>
@@ -354,6 +357,7 @@
 				<li>Mincho_IceCream</li>
 			</categories>
 		</fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Defender</defName>
@@ -437,6 +441,7 @@
 				<li>Mincho_IceCream</li>
 			</categories>
 		</fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Gunner</defName>
@@ -521,6 +526,7 @@
 				<li>Mincho_IceCream</li>
 			</categories>
 		</fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Defender_II</defName>

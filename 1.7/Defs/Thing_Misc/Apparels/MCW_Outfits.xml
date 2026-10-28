@@ -425,6 +425,7 @@
       <Steel>50</Steel>
       <Plasteel>50</Plasteel>
       <ComponentSpacer>1</ComponentSpacer>
+      <SignalChip MayRequire="Ludeon.RimWorld.Biotech">1</SignalChip>
     </costList>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
@@ -482,5 +483,14 @@
       <WorkSpeedGlobal>0.08</WorkSpeedGlobal>
       <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.69</VacuumResistance>
     </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisite MayRequire="Ludeon.RimWorld.Biotech">StandardMechtech</researchPrerequisite>
+      <researchPrerequisites>
+        <li>ReconArmor</li>
+      </researchPrerequisites>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+    </recipeMaker>
   </ThingDef>
 </Defs>

@@ -57,6 +57,7 @@
           <IncomingDamageFactor>-0.9</IncomingDamageFactor>
           <MoveSpeed>-2.0</MoveSpeed>
           <MeleeHitChance>0.3</MeleeHitChance>
+          <MeleeCooldownFactor>-0.3</MeleeCooldownFactor>
         </statOffsets>
         <becomeVisible>true</becomeVisible>
       </li>

@@ -28,7 +28,7 @@
   <!-- EN: hard candy -->
   <MCW_HardCandy.label>硬糖</MCW_HardCandy.label>
   <!-- EN: The body has hardened into candy, greatly reducing incoming damage at the cost of mobility. -->
-  <MCW_HardCandy.description>身体硬化为糖质，大幅降低所受伤害，但行动变得迟缓。</MCW_HardCandy.description>
+  <MCW_HardCandy.description>身体硬化为糖质，大幅降低所受伤害、提升近战攻击速度与命中，但行动变得迟缓。</MCW_HardCandy.description>
   
   <!-- EN: splashed ice cream -->
   <MCW_SplashedIceCream.label>溅射冰淇淋</MCW_SplashedIceCream.label>
