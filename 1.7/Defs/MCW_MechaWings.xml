@@ -87,6 +87,7 @@
   <HediffDef>
     <defName>MCW_MechaWings_Visual</defName>
     <label>机械飞翼</label>
+    <description>机械飞翼装甲展开时的视觉状态，用于在角色身上显示翼部外观。</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <priceImpact>false</priceImpact>

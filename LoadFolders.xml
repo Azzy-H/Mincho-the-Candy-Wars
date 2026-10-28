@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<loadFolders>
+  <!--
+    1.7 主目录：Defs / Patches / Assemblies / Languages / Textures 等。
+    注意：RimWorld 只扫描 <loadFolder>/Defs 这类固定子目录，
+    不会递归进 1.7/Anomaly/Defs 或 1.7/Odyssey/Defs，
+    所以下面这些目录必须单独声明为 load folder。
+
+    IfModActive 的值是 packageId，与 ModsConfig.xml 中的写法保持一致（小写）。
+  -->
+  <v1.7>
+    <li>1.7</li>
+
+    <!-- Anomaly 内容：无尽冰淇淋桶、薄荷成瘾体系、薄荷货运 -->
+    <li IfModActive="ludeon.rimworld.anomaly">1.7/Anomaly</li>
+
+    <!-- Odyssey 内容：冰淇淋桶飞行器 -->
+    <li IfModActive="ludeon.rimworld.odyssey">1.7/Odyssey</li>
+
+    <!-- 玲珑糖「珉巧感染」能力：依赖女巫 mod 的 Mincho_Infection hediff -->
+    <li IfModActive="sutsutman.marilyntheminchoworshipperwitchharver">1.7/Mods/MarilyntheMinchoWorshipper</li>
+  </v1.7>
+</loadFolders>
