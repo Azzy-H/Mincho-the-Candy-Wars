@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ===== 位置护盾（站在我身后生成） ===== -->
@@ -9,9 +9,9 @@
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
-      <texPath>Things/Building/Linked/Rock_Atlas</texPath>
+      <texPath>Other/ShieldBubble</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(255, 215, 0)</color>
+      <color>(255, 190, 80)</color>
       <drawSize>8</drawSize>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
@@ -24,7 +24,7 @@
     <tickerType>Rare</tickerType>
     <comps>
       <li Class="CompProperties_Lifespan">
-        <lifespanTicks>144000</lifespanTicks><!-- 4 hours -->
+        <lifespanTicks>10000</lifespanTicks><!-- 4 hours -->
       </li>
       <li Class="CompProperties_ProjectileInterceptor">
         <radius>4</radius>
@@ -41,7 +41,7 @@
         <startWithMaxHitPoints>true</startWithMaxHitPoints>
         <alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo>
         <activated>true</activated>
-        <color>(255, 215, 0, 180)</color>
+        <color>(255, 190, 80, 180)</color>
       </li>
     </comps>
   </ThingDef>

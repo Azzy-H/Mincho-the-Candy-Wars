@@ -76,7 +76,6 @@ namespace MinchoCandyWars
         public static HediffDef MCW_MannaFairyBuff = null!;
         // Amberon Candy
         public static HediffDef MCW_AmberonShield = null!;
-        public static HediffDef MCW_HardCandy = null!;
         public static HediffDef MCW_SplashedIceCream = null!;
         public static HediffDef MCW_AmberonHeart = null!;
         public static HediffDef MCW_AmberonSlow = null!;

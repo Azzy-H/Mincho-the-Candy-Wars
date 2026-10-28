@@ -21,6 +21,20 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
             return root.DistanceToSquared(targ.Cell) <= EffectiveRange * EffectiveRange;
         }
 
+        /// <summary>
+        /// 让「只护友方」在**选目标阶段**就生效：无派系、中立、敌对的目标一律不可选，
+        /// 而不是鼠标能指上去、点下去才报错。
+        /// </summary>
+        public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
+        {
+            if (target.Pawn is Pawn targetPawn && !GuardianTarget.IsFriendly(CasterPawn, targetPawn))
+            {
+                return false;
+            }
+
+            return base.ValidateTarget(target, showMessages);
+        }
+
         public override void OrderForceTarget(LocalTargetInfo target)
         {
             Pawn pawn = CasterPawn;
@@ -51,6 +65,23 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
 
             GenDraw.DrawRadiusRing(pawn.Position, EffectiveRange, Color.white,
                 cell => JumpUtility.ValidJumpTarget(pawn, pawn.Map, cell));
+        }
+    }
+
+    /// <summary>
+    /// 「守护之名」的友方判定：只认同派系或明确盟友。
+    /// 动词（选目标阶段）与效果（施放阶段）共用这一份，避免两处规则漂移。
+    /// </summary>
+    public static class GuardianTarget
+    {
+        public static bool IsFriendly(Pawn? caster, Pawn target)
+        {
+            Faction? casterFaction = caster?.Faction;
+            Faction? targetFaction = target.Faction;
+
+            return casterFaction != null && targetFaction != null
+                && (casterFaction == targetFaction
+                    || casterFaction.RelationKindWith(targetFaction) == FactionRelationKind.Ally);
         }
     }
 
@@ -93,17 +124,10 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
         /// <summary>只允许本派系或明确盟友；中立、敌对、无派系的目标一律拒绝。</summary>
         public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
         {
-            Pawn ally = target.Pawn;
-            Faction? casterFaction = parent.pawn?.Faction;
-            Faction? allyFaction = ally?.Faction;
-
-            bool friendly = ally != null && casterFaction != null && allyFaction != null
-                && (casterFaction == allyFaction
-                    || casterFaction.RelationKindWith(allyFaction) == FactionRelationKind.Ally);
-
-            if (!friendly)
+            Pawn? ally = target.Pawn;
+            if (ally != null && !GuardianTarget.IsFriendly(parent.pawn, ally))
             {
-                if (throwMessages && ally != null)
+                if (throwMessages)
                 {
                     Messages.Message("MinchoCandyWars.Abilities.GuardianNameNotFriendly".Translate(), ally,
                         MessageTypeDefOf.RejectInput, historical: false);

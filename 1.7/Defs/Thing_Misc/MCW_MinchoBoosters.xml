@@ -165,6 +165,7 @@
           <li MayRequire="Ludeon.RimWorld.Biotech">SubcoreBasic</li>
         </thingDefs>
       </fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
 
   <RecipeDef>
@@ -202,6 +203,7 @@
           <li MayRequire="Ludeon.RimWorld.Biotech">SubcoreRegular</li>
         </thingDefs>
       </fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
 
   <RecipeDef>
@@ -239,6 +241,7 @@
           <li>ComponentIndustrial</li>
         </thingDefs>
       </fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
 
   <!-- ===================== 手术配方 ===================== -->
