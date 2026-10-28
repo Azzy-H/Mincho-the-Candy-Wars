@@ -4,11 +4,11 @@
     <defName>MCW_Chocolate_Bush_Plant</defName>
     <label>巧克力灌木</label>
     <description>慧珉巧发明的神奇作物，用于快速产出巧克力，巧克力灌木只能在0度以下生长。</description>
-		<thingClass>Plant</thingClass>
+    <thingClass>Plant</thingClass>
     <statBases>
       <MaxHitPoints>85</MaxHitPoints>
       <Nutrition>0.2</Nutrition>
-			<Flammability>1</Flammability>
+      <Flammability>1</Flammability>
     </statBases>
     <graphicData>
       <texPath>Things/Plant/MCW_Chocolate_Bush</texPath>
@@ -25,7 +25,7 @@
       <harvestYield>8</harvestYield>
       <sowMinSkill>5</sowMinSkill>
       <sowTags>
-				<li>Mincho_MinchoshroomPlant</li>
+        <li>Mincho_MinchoshroomPlant</li>
       </sowTags>
       <topWindExposure>0.1</topWindExposure>
       <immatureGraphicPath>Things/Plant/MCW_Chocolate_Bush_Immature</immatureGraphicPath>
@@ -33,12 +33,12 @@
       <wildOrder>2</wildOrder>
       <purpose>Food</purpose>
       <humanFoodPlant>true</humanFoodPlant>
-			<minGrowthTemperature>-272</minGrowthTemperature>
-			<minOptimalGrowthTemperature>-272</minOptimalGrowthTemperature>
-			<maxOptimalGrowthTemperature>-5</maxOptimalGrowthTemperature>
-			<maxGrowthTemperature>0</maxGrowthTemperature>
+      <minGrowthTemperature>-272</minGrowthTemperature>
+      <minOptimalGrowthTemperature>-272</minOptimalGrowthTemperature>
+      <maxOptimalGrowthTemperature>-5</maxOptimalGrowthTemperature>
+      <maxGrowthTemperature>0</maxGrowthTemperature>
     </plant>
-	</ThingDef>
+  </ThingDef>
   <ThingDef ParentName="PlantBase">
     <defName>MCW_Frozen_Rice_Plant</defName>
     <label>冷冻水稻</label>
@@ -61,7 +61,7 @@
       <harvestedThingDef>RawRice</harvestedThingDef>
       <harvestYield>6</harvestYield>
       <sowTags>
-				<li>Mincho_MinchoshroomPlant</li>
+        <li>Mincho_MinchoshroomPlant</li>
       </sowTags>
       <topWindExposure>0.1</topWindExposure>
       <growDays>5</growDays>
@@ -69,10 +69,10 @@
       <wildOrder>2</wildOrder>
       <purpose>Food</purpose>
       <humanFoodPlant>true</humanFoodPlant>
-			<minGrowthTemperature>-272</minGrowthTemperature>
-			<minOptimalGrowthTemperature>-272</minOptimalGrowthTemperature>
-			<maxOptimalGrowthTemperature>-5</maxOptimalGrowthTemperature>
-			<maxGrowthTemperature>0</maxGrowthTemperature>
+      <minGrowthTemperature>-272</minGrowthTemperature>
+      <minOptimalGrowthTemperature>-272</minOptimalGrowthTemperature>
+      <maxOptimalGrowthTemperature>-5</maxOptimalGrowthTemperature>
+      <maxGrowthTemperature>0</maxGrowthTemperature>
     </plant>
   </ThingDef>
   <ThingDef ParentName="PlantBase">
@@ -94,9 +94,9 @@
       <dieIfLeafless>true</dieIfLeafless>
       <harvestTag>Standard</harvestTag>
       <harvestedThingDef>DevilstrandCloth</harvestedThingDef>
-      
+
       <sowTags>
-				<li>Mincho_MinchoshroomPlant</li>
+        <li>Mincho_MinchoshroomPlant</li>
       </sowTags>
       <neverBlightable>true</neverBlightable>
       <sowMinSkill>10</sowMinSkill>
@@ -106,10 +106,10 @@
       <visualSizeRange>0.5~0.8</visualSizeRange>
       <wildOrder>2</wildOrder>
       <fertilityMin>0.50</fertilityMin>
-			<minGrowthTemperature>-272</minGrowthTemperature>
-			<minOptimalGrowthTemperature>-272</minOptimalGrowthTemperature>
-			<maxOptimalGrowthTemperature>-5</maxOptimalGrowthTemperature>
-			<maxGrowthTemperature>0</maxGrowthTemperature>
-    <harvestYield>3</harvestYield></plant>
+      <minGrowthTemperature>-272</minGrowthTemperature>
+      <minOptimalGrowthTemperature>-272</minOptimalGrowthTemperature>
+      <maxOptimalGrowthTemperature>-5</maxOptimalGrowthTemperature>
+      <maxGrowthTemperature>0</maxGrowthTemperature>
+    </plant>
   </ThingDef>
 </Defs>

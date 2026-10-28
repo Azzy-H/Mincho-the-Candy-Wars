@@ -220,7 +220,6 @@
         </options>
       </li>
     </pawnGroupMakers>
-    <settlementTexturePath>World/WorldObjects/TribalSettlement</settlementTexturePath>
     <permanentEnemy>false</permanentEnemy>
   </FactionDef>
 </Defs>
