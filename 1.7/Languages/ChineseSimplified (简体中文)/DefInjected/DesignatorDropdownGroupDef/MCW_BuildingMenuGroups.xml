@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Mincho candlesticks -->
+  <MCW_Candles.label>珉巧烛台</MCW_Candles.label>
+  <!-- EN: Mint ice cream cabinets -->
+  <MCW_ColdCabinets.label>薄荷冰淇淋柜</MCW_ColdCabinets.label>
+  <!-- EN: Mincho double beds -->
+  <MCW_DoubleBeds.label>珉巧双人床</MCW_DoubleBeds.label>
+  <!-- EN: Mincho floors -->
+  <MCW_Floors.label>珉巧地板</MCW_Floors.label>
+  <!-- EN: Mincho large candlesticks -->
+  <MCW_LargeCandles.label>珉巧超大烛台</MCW_LargeCandles.label>
+  <!-- EN: Mincho plant molds -->
+  <MCW_PlantMolds.label>珉巧种植模具</MCW_PlantMolds.label>
+  <!-- EN: Mincho chairs -->
+  <MCW_Seats.label>珉巧椅子</MCW_Seats.label>
+  <!-- EN: Mincho single beds -->
+  <MCW_SingleBeds.label>珉巧单人床</MCW_SingleBeds.label>
+  <!-- EN: Mincho tables -->
+  <MCW_Tables.label>珉巧餐桌</MCW_Tables.label>
+
+</LanguageData>

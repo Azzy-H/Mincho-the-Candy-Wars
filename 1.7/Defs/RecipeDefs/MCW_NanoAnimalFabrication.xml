@@ -7,9 +7,9 @@
         <pawnKind>MCW_MinchoSlime</pawnKind>
       </li>
     </modExtensions>
-    <label>塑形珉巧史莱姆</label>
-    <description>用冰淇淋和纳米塑形液生成一只珉巧史莱姆。</description>
-    <jobString>正在塑形珉巧史莱姆。</jobString>
+    <label>Shape Mincho slime</label>
+    <description>Use ice cream and nano-shaping fluid to create a Mincho slime.</description>
+    <jobString>Shaping a Mincho slime.</jobString>
     <workAmount>12000</workAmount>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <workSkill>Crafting</workSkill>
@@ -36,9 +36,9 @@
         <pawnKind>Mincho_Minmoong</pawnKind>
       </li>
     </modExtensions>
-    <label>塑形珉巧汪</label>
-    <description>用冰淇淋和纳米塑形液生成一只珉巧汪。</description>
-    <jobString>正在塑形珉巧汪。</jobString>
+    <label>Shape Mincho pup</label>
+    <description>Use ice cream and nano-shaping fluid to create a Mincho pup.</description>
+    <jobString>Shaping a Mincho pup.</jobString>
     <workAmount>12000</workAmount>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <workSkill>Crafting</workSkill>
@@ -65,9 +65,9 @@
         <pawnKind>Mincho_Minchonyang</pawnKind>
       </li>
     </modExtensions>
-    <label>塑形珉巧猫</label>
-    <description>用冰淇淋和纳米塑形液生成一只珉巧猫。</description>
-    <jobString>正在塑形珉巧猫。</jobString>
+    <label>Shape Mincho cat</label>
+    <description>Use ice cream and nano-shaping fluid to create a Mincho cat.</description>
+    <jobString>Shaping a Mincho cat.</jobString>
     <workAmount>12000</workAmount>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <workSkill>Crafting</workSkill>
@@ -94,9 +94,9 @@
         <pawnKind>Mincho_MinchoLatteIsHorse</pawnKind>
       </li>
     </modExtensions>
-    <label>塑形珉巧拿铁马</label>
-    <description>用冰淇淋和纳米塑形液生成一匹珉巧拿铁马。</description>
-    <jobString>正在塑形珉巧拿铁马。</jobString>
+    <label>Shape Mincho latte horse</label>
+    <description>Use ice cream and nano-shaping fluid to create a Mincho latte horse.</description>
+    <jobString>Shaping a Mincho latte horse.</jobString>
     <workAmount>12000</workAmount>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <workSkill>Crafting</workSkill>

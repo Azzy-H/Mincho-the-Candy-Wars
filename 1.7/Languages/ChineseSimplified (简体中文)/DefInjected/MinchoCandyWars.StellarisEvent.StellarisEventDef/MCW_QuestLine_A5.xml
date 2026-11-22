@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Hello! Emergency! One of our outposts is under attack, and your colony is the closest to them. Please send reinforcements at once! -->
+  <MCW_Event_QuestA5_AllianceContact.desc>你好！紧急事件！！我们的其中一个据点正在遭受袭击，距离她们最近的就是你们的殖民地，希望你们可以立刻派出增援！</MCW_Event_QuestA5_AllianceContact.desc>
+  <!-- EN: Save the Mincho outpost -->
+  <MCW_Event_QuestA5_AllianceContact.label>拯救珉巧据点</MCW_Event_QuestA5_AllianceContact.label>
+  <!-- EN: Accept and head at once to the Mincho outpost under attack. -->
+  <MCW_Event_QuestA5_AllianceContact.options.0.desc>接受增援请求，立刻前往被袭击的珉巧据点。</MCW_Event_QuestA5_AllianceContact.options.0.desc>
+  <!-- EN: Yes - we are leaving now -->
+  <MCW_Event_QuestA5_AllianceContact.options.0.label>是-我们立刻出发</MCW_Event_QuestA5_AllianceContact.options.0.label>
+  <!-- EN: Decline the request. This is an emergency call, so Qinxintang opinion of you will drop sharply. -->
+  <MCW_Event_QuestA5_AllianceContact.options.1.desc>拒绝增援请求。这是紧急求救，沁心糖对你的好感度会大幅下降。</MCW_Event_QuestA5_AllianceContact.options.1.desc>
+  <!-- EN: No - sorry, we cannot help you right now -->
+  <MCW_Event_QuestA5_AllianceContact.options.1.label>否-抱歉，我们目前没法帮助你</MCW_Event_QuestA5_AllianceContact.options.1.label>
+  <!-- EN: Qinxintang -->
+  <MCW_Event_QuestA5_AllianceContact.title>沁心糖</MCW_Event_QuestA5_AllianceContact.title>
+
+</LanguageData>

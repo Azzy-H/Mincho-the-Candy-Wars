@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+
+  <!-- EN: A body booster prepared for a smart Mincho. Supple material slowly unfolds in its container, waiting to become one with a new body. -->
+  <MCW_MinchoBodyBooster.description>为智慧珉巧准备的躯体改造包。柔韧的材料在容器中缓缓舒展，等待与一具新的身体融为一体。</MCW_MinchoBodyBooster.description>
   <!-- EN: Mincho body booster -->
   <MCW_MinchoBodyBooster.label>智慧珉巧躯体改造包</MCW_MinchoBodyBooster.label>
-  <!-- EN: 沁心糖研发的用于增加智慧珉巧躯体等级的改造包。（用于 1 级到 5 级的提升） -->
-  <MCW_MinchoBodyBooster.description>沁心糖研发的用于增加智慧珉巧躯体等级的改造包。（用于 1 级到 5 级的提升）</MCW_MinchoBodyBooster.description>
-  
+  <!-- EN: A refined advanced core booster. Precise structures hide beneath a gentle sweetness, carrying Qinxintang hope for wider thought. -->
+  <MCW_MinchoCoreBoosterAdvanced.description>经过反复精炼的高级核心改造包。精密的结构藏在柔和甜香之下，承载着沁心糖对更广阔思维的期待。</MCW_MinchoCoreBoosterAdvanced.description>
   <!-- EN: Mincho advanced core booster -->
   <MCW_MinchoCoreBoosterAdvanced.label>智慧珉巧高级核心改造包</MCW_MinchoCoreBoosterAdvanced.label>
-  <!-- EN: 沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 3 级到 5 级的提升） -->
-  <MCW_MinchoCoreBoosterAdvanced.description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 3 级到 5 级的提升）</MCW_MinchoCoreBoosterAdvanced.description>
-  
+  <!-- EN: A core booster made by Qinxintang; neat micro-components float in clear sugar liquid. Like pieces of a puzzle, they make a smart Mincho thinking clearer. -->
+  <MCW_MinchoCoreBoosterBasic.description>沁心糖制作的核心改造包，整齐的微型组件浸在清透糖液里。它们像一块块拼图，让智慧珉巧的思考变得更加清晰。</MCW_MinchoCoreBoosterBasic.description>
   <!-- EN: Mincho basic core booster -->
   <MCW_MinchoCoreBoosterBasic.label>智慧珉巧初级核心改造包</MCW_MinchoCoreBoosterBasic.label>
-  <!-- EN: 沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 1 级到 3 级的提升） -->
-  <MCW_MinchoCoreBoosterBasic.description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 1 级到 3 级的提升）</MCW_MinchoCoreBoosterBasic.description>
-  
+  <!-- EN: A smart booster carefully prepared by Qinxintang. Tiny chips glitter in the syrup, lighting a new beam for thoughts that were once dim. -->
+  <MCW_MinchoIntelBooster.description>沁心糖精心调制的智慧改造包。细小的晶片在糖浆中闪烁，为原本朦胧的思绪点亮一束新的光。</MCW_MinchoIntelBooster.description>
   <!-- EN: Mincho intelligence booster -->
   <MCW_MinchoIntelBooster.label>智慧珉巧改造包</MCW_MinchoIntelBooster.label>
-  <!-- EN: 沁心糖研发的智慧珉巧改造包，接收改造的珉巧可以拥有更加高级的智能。 -->
-  <MCW_MinchoIntelBooster.description>沁心糖研发的智慧珉巧改造包，接收改造的珉巧可以拥有更加高级的智能。</MCW_MinchoIntelBooster.description>
-  
+
 </LanguageData>

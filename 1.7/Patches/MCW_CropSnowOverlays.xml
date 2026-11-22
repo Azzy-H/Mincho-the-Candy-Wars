@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_Chocolate_Bush_Plant"]/plant</xpath>
+    <value>
+      <snowOverlayGraphicPath>Things/Plant/MCW_Chocolate_Bush_Snowy</snowOverlayGraphicPath>
+      <immatureSnowOverlayGraphicPath>Things/Plant/MCW_Chocolate_Bush_Immature_Snowy</immatureSnowOverlayGraphicPath>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_Frozen_Rice_Plant"]/plant</xpath>
+    <value>
+      <snowOverlayGraphicPath>Things/Plant/MCW_Frozen_Rice_Snowy</snowOverlayGraphicPath>
+      <immatureSnowOverlayGraphicPath>Things/Plant/MCW_Frozen_Rice_Immature_Snowy</immatureSnowOverlayGraphicPath>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_Frozen_Devilstrand_Plant"]/plant</xpath>
+    <value>
+      <snowOverlayGraphicPath>Things/Plant/MCW_Frozen_Devilstrand_Plant_Snowy</snowOverlayGraphicPath>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_IceMintPlant"]/plant</xpath>
+    <value>
+      <snowOverlayGraphicPath>Things/Plant/IceMint_Snowy</snowOverlayGraphicPath>
+    </value>
+  </Operation>
+</Patch>

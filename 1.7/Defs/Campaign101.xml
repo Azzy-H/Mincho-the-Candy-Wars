@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>MCWQ101_RecycleOutpost</defName>
+    <label>Reclamation force outpost</label>
+    <workerClass>MinchoCandyWars.QuestStory.MissionSiteWorker</workerClass>
+    <requiresFaction>true</requiresFaction>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+    <tags>
+      <li>MCWQ101_RecycleOutpost</li>
+    </tags>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>MCWQ101_Buildings2</defName>
+    <linkWithSite>MCW_SmartMinchoRescue</linkWithSite>
+    <order>1500</order>
+    <genStep Class="MinchoCandyWars.QuestStory.MissionBuildings">
+      <kind>2</kind>
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>MCWQ101_Buildings3</defName>
+    <linkWithSite>MCWQ101_RecycleOutpost</linkWithSite>
+    <order>1600</order>
+    <genStep Class="MinchoCandyWars.QuestStory.MissionBuildings">
+      <kind>3</kind>
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>MCWQ101_Buildings5</defName>
+    <linkWithSite>MCW_AllianceOutpost</linkWithSite>
+    <order>1500</order>
+    <genStep Class="MinchoCandyWars.QuestStory.MissionBuildings">
+      <kind>5</kind>
+    </genStep>
+  </GenStepDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>MCWQ101_ContactComputer</defName>
+    <label>Reclamation company contact computer</label>
+    <description>The contact terminal between company headquarters and the reclamation teams. On its cold screen, distant orders still scroll line by line.</description>
+    <thingClass>MinchoCandyWars.QuestStory.ContactComputer</thingClass>
+    <size>(3,2)</size>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/Misc/CommsConsole</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5,4)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>10000</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building />
+  </ThingDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Chat0</defName>
+    <label>Qinxintang</label>
+    <title>Qinxintang</title>
+    <desc>Qinxintang: Hello. Hold on a moment, let me turn the contact log over... Hm? You just want to chat?
+
+Qinxintang: Then I can write a few less lines this time. How has your day been?</desc>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+      </li>
+    </pictures>
+    <options>
+      <li>
+        <label>Nothing much today. And you?</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:0:0</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Qinxintang: I just mistook a supply list for a flavor list and spent ages seriously wondering what steel should be paired with. Good thing I had not sent it yet.</desc>
+      </li>
+      <li>
+        <label>I would like to hear about your travels.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:0:1</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Qinxintang: Sometimes learning one hard problem is less useful than learning to ask for directions in a strange place. When someone is willing to point out a road, you can save a long detour.</desc>
+      </li>
+      <li>
+        <label>Let us stop here for today.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Chat1</defName>
+    <label>Amber candy</label>
+    <title>Amber candy</title>
+    <desc>Amber candy: There are no new calls for help today. You do not need to get up and look for your gear just yet.</desc>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_AmberonCandy</path>
+      </li>
+    </pictures>
+    <options>
+      <li>
+        <label>What do you do when you are not watching over everyone?</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:1:0</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Amber candy: Sometimes I sit near everyone and listen to their bits and pieces. That they can all work in peace is good enough.</desc>
+      </li>
+      <li>
+        <label>When you protect your companions, do you always want to carry everything yourself?</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:1:1</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Amber candy: I do. But saying out loud what needs help is also protection. If I am the only one who knows where things are giving way, no one even gets the chance to take over.</desc>
+      </li>
+      <li>
+        <label>Let us stop here for today.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Chat2</defName>
+    <label>Nectar candy</label>
+    <title>Nectar candy</title>
+    <desc>Nectar candy: Did you eat properly today? This is not an inspection - I forget too when I get busy.</desc>
+    <pictures>
+      <li>
+        <path>MCWQ/Portraits/NectarClean100</path>
+      </li>
+    </pictures>
+    <options>
+      <li>
+        <label>I ate. Just a little tired.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:2:0</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Nectar candy: Then find somewhere you can sit down. Talk if you want to; if not, you do not have to keep looking for words just to fill the silence.</desc>
+      </li>
+      <li>
+        <label>Any small trick to help someone relax?</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:2:1</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Nectar candy: First I sort what is left of today. Things that must be done now stay; the rest are allowed to wait.</desc>
+      </li>
+      <li>
+        <label>Someone in the kitchen is trying a new flavor.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>kitchen</operation>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>Let us stop here for today.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Chat3</defName>
+    <label>Mecha candy</label>
+    <title>Mecha candy</title>
+    <desc>Mecha candy: I am revising a sketch. What has me stuck is not the structure, but the line of names beside it.</desc>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_MechaCandy</path>
+      </li>
+    </pictures>
+    <options>
+      <li>
+        <label>Are names really that important?</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:3:0</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Mecha candy: A broken structure can be fixed. Once everyone has a name comfortably on their tongue, getting them to change back is hard.</desc>
+      </li>
+      <li>
+        <label>Let me help you think about it?</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:3:1</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Mecha candy: Fine. Just discussion on paper - I am not asking you to build me one right now.</desc>
+      </li>
+      <li>
+        <label>Let us stop here for today.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Chat4</defName>
+    <label>Prism candy</label>
+    <title>Prism candy</title>
+    <desc>Prism candy: Just chatting? ...Go on.</desc>
+    <pictures>
+      <li>
+        <path>MCWQ/Portraits/Prism101</path>
+      </li>
+    </pictures>
+    <options>
+      <li>
+        <label>When I prepare for something, I always feel something is still missing.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:4:0</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Prism candy: Check the route first, then the gear. Judge the rest when you arrive. Do not just stand there thinking.</desc>
+      </li>
+      <li>
+        <label>What do you like to do in your spare time?</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:4:1</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Prism candy: Walk. Pick a quiet road; it need not be far.</desc>
+      </li>
+      <li>
+        <label>Let us stop here for today.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Chat5</defName>
+    <label>Linglon candy</label>
+    <title>Linglon candy</title>
+    <desc>Linglon candy: Connected! No task this time, you came just to chat? Then I want to hear something new.</desc>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_LinglonCandy</path>
+      </li>
+    </pictures>
+    <options>
+      <li>
+        <label>Honestly I have nothing particular to say; I just wanted someone to talk to.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:5:0</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Linglon candy: Perfect timing - I will ask first! Was there any little thing today that made you laugh without meaning to? If not, that is fine, we can change the subject.</desc>
+      </li>
+      <li>
+        <label>Would you be willing to talk about the past?</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+              <operation>reply:5:1</operation>
+            </li>
+          </effects>
+        </action>
+        <desc>Linglon candy: Sure! From the beginning: we first travelled with Qinxintang, and only later did the Alliance come about. Do not rush me - we have not even reached those task lists you know so well.</desc>
+      </li>
+      <li>
+        <label>Let us stop here for today.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+</Defs>

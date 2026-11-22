@@ -116,7 +116,7 @@ namespace MinchoCandyWars.QuestParts
                 return;
             }
 
-            IntVec3 dropCell = DropCellFinder.RandomDropSpot(map);
+            IntVec3 dropCell = DropCellFinder.TradeDropSpot(map);
 
             for (int i = 0; i < rewardDefs.Count && i < rewardCounts.Count; i++)
             {
@@ -141,3 +141,4 @@ namespace MinchoCandyWars.QuestParts
         }
     }
 }
+

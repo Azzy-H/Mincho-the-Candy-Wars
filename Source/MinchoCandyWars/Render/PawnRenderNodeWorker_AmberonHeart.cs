@@ -77,7 +77,7 @@ namespace MinchoCandyWars.Render
 
             // 与呼吸同相位的亮度起伏，强化「琥珀光泽」观感。
             float glow = (0.85f + 0.15f * Mathf.Sin(PulsePhase * Mathf.PI * 2f)) * intensity;
-            mpb.SetColor(ShaderPropertyIDs.Color, new Color(glow, 0.92f * glow, 0.72f * glow, 1f));
+            mpb.SetColor(ShaderPropertyIDs.Color, new Color(glow, 0.7f * glow, 0.2f * glow, 1f));
 
             return mpb;
         }

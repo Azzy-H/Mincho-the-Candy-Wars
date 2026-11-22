@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using RimWorld.Planet;
@@ -11,7 +11,7 @@ public class ParalyzerStock : StockGenerator
 {
     private const float StockChance = 0.05f;
 
-    public override bool HandlesThingDef(ThingDef def) => def == MCW_DefOf.MCW_Paralyzer;
+    public override bool HandlesThingDef(ThingDef def) => def == MCW_ThingDefOf.MCW_Paralyzer;
 
     public override IEnumerable<Thing> GenerateThings(PlanetTile tile, Faction? faction = null)
     {
@@ -19,7 +19,7 @@ public class ParalyzerStock : StockGenerator
             && faction.def.techLevel >= TechLevel.Spacer
             && Rand.Value < StockChance)
         {
-            yield return ThingMaker.MakeThing(MCW_DefOf.MCW_Paralyzer);
+            yield return ThingMaker.MakeThing(MCW_ThingDefOf.MCW_Paralyzer);
         }
     }
 }
@@ -73,7 +73,7 @@ public static class ParalyzerStockSetup
                 if (trader?.stockGenerators == null) continue;
 
                 // 已经有生成器认领瘫痪枪就不再重复添加（XML、其它 mod 或重复初始化都可能加过）。
-                if (trader.stockGenerators.Any(generator => generator.HandlesThingDef(MCW_DefOf.MCW_Paralyzer)))
+                if (trader.stockGenerators.Any(generator => generator.HandlesThingDef(MCW_ThingDefOf.MCW_Paralyzer)))
                 {
                     continue;
                 }

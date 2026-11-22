@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -30,9 +30,9 @@
   -->
   <MinchoCandyWars.StellarisEvent.StellarisEventDef>
     <defName>MCW_Event_AllianceGreeting</defName>
-    <label>联络珉巧同盟</label>
-    <title>沁心糖</title>
-    <desc>你好呀，我亲爱的盟友！这里是珉巧同盟的频道，我是沁心糖。\n\n最近过得怎么样？你们的殖民地还缺些什么吗？</desc>
+    <label>Contact the Mincho Alliance</label>
+    <title>Qinxintang</title>
+    <desc>Hello, my dear ally! This is the Mincho Alliance channel, and I am Qinxintang.\n\nHow have you been lately? Is your colony short of anything?</desc>
     <backgroundPath>Events/tile_large_bg</backgroundPath>
     <pictures>
       <li>
@@ -51,8 +51,8 @@
     <options>
       <!-- 初始任务 A1：未处理过、且还没有被随机分配下一个任务 -->
       <li>
-        <label>有什么可以帮忙的吗？</label>
-        <desc>询问珉巧同盟这边有什么需要你出手的事情。</desc>
+        <label>Is there anything I can help with?</label>
+        <desc>Ask whether the Mincho Alliance has anything for you to do.</desc>
         <triggers>
           <!-- ⚠ <logic>NOT</logic> 只有在写了 <idGroup> 时才生效
                （见 StellarisEventDef.EvaluateTriggers：无 idGroup 的 trigger 一律按原始结果 AND）。
@@ -85,8 +85,8 @@
 
       <!-- 随机分配：A2 -->
       <li>
-        <label>最近有什么紧急情况吗？</label>
-        <desc>询问珉巧同盟最近有没有需要紧急协助的事情。</desc>
+        <label>Any emergencies lately?</label>
+        <desc>Ask whether the Mincho Alliance has anything needing urgent help.</desc>
         <triggers>
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
             <flagName>MCW_NextQuest</flagName>
@@ -106,8 +106,8 @@
 
       <!-- 随机分配：A3 -->
       <li>
-        <label>我们一起收拾回收公司吧！</label>
-        <desc>询问珉巧同盟接下来的作战计划。</desc>
+        <label>Let us deal with the reclamation company together!</label>
+        <desc>Ask about the Mincho Alliance next battle plan.</desc>
         <triggers>
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
             <flagName>MCW_NextQuest</flagName>
@@ -127,8 +127,8 @@
 
       <!-- 随机分配：A4 -->
       <li>
-        <label>有什么需要探索的地方吗？</label>
-        <desc>询问珉巧同盟有没有值得一去的地方。</desc>
+        <label>Is there anywhere worth exploring?</label>
+        <desc>Ask whether the Mincho Alliance knows anywhere worth visiting.</desc>
         <triggers>
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
             <flagName>MCW_NextQuest</flagName>
@@ -148,8 +148,8 @@
 
       <!-- 随机分配：A5 -->
       <li>
-        <label>紧急情况？！我们立刻出发！</label>
-        <desc>珉巧同盟的据点正在遭到袭击，立刻增援。</desc>
+        <label>An emergency?! We are leaving at once!</label>
+        <desc>A Mincho Alliance outpost is under attack; reinforce immediately.</desc>
         <triggers>
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
             <flagName>MCW_NextQuest</flagName>
@@ -172,8 +172,8 @@
 
       <!-- 领取资助：沁心糖好感度 ≥ 30，且不在 10 天冷却中 -->
       <li>
-        <label>领取珉巧同盟的资助</label>
-        <desc>好感度达到 30 后可领取的资助，每 10 天一次。</desc>
+        <label>Claim the Mincho Alliance subsidy</label>
+        <desc>A subsidy you can claim at 30 goodwill, once every 10 days.</desc>
         <triggers>
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FactionGoodwill">
             <factionDef>MCW_Alliance_Faction</factionDef>
@@ -197,8 +197,8 @@
 
       <!-- 糖饰商店：好感度 ≥ 50 -->
       <li>
-        <label>你们这里有糖饰卖吗？</label>
-        <desc>好感度达到 50 后可购买糖饰与研究图纸。</desc>
+        <label>Look at the candy ornament research blueprints.</label>
+        <desc>At 50 goodwill you can buy candy ornament research blueprints with silver.</desc>
         <triggers>
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FactionGoodwill">
             <factionDef>MCW_Alliance_Faction</factionDef>
@@ -217,12 +217,12 @@
 
       <!-- 改造包商店：好感度 ≥ 100 -->
       <li>
-        <label>能给我看看改造包吗？</label>
-        <desc>好感度达到 100 后可购买珉巧改造包。</desc>
+        <label>Look at the booster research blueprints.</label>
+        <desc>At 50 goodwill you can buy booster research blueprints with silver.</desc>
         <triggers>
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FactionGoodwill">
             <factionDef>MCW_Alliance_Faction</factionDef>
-            <minGoodwill>100</minGoodwill>
+            <minGoodwill>50</minGoodwill>
           </li>
         </triggers>
         <hideWhenDisabled>true</hideWhenDisabled>
@@ -237,8 +237,8 @@
 
       <!-- 终局行动：终局进度 ≥ 10，且还没接受过（避免重复发放同一个终局任务） -->
       <li>
-        <label>我们准备好了，开始终局行动吧！</label>
-        <desc>终局进度达到 10 后，可以联络珉巧同盟发起对回收部队总部的决战。</desc>
+        <label>We are ready - begin the final operation!</label>
+        <desc>At endgame progress 10 you can contact the Mincho Alliance to launch the decisive attack on the reclamation force headquarters.</desc>
         <triggers>
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
             <flagName>MCW_EndgameProgress</flagName>
@@ -269,8 +269,8 @@
 
       <!-- 沁心糖的拜访：终局进度 ≥ 11（打完回收部队总部后），且还没来过 -->
       <li>
-        <label>随时欢迎你来做客！</label>
-        <desc>击溃回收部队总部后，沁心糖想亲自来拜访你。</desc>
+        <label>You are welcome to visit any time!</label>
+        <desc>After the reclamation force headquarters falls, Qinxintang wants to visit you in person.</desc>
         <triggers>
           <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagCheck">
             <flagName>MCW_EndgameProgress</flagName>
@@ -296,8 +296,8 @@
 
       <!-- 总是可选的收尾 -->
       <li>
-        <label>只是问候一下，先这样吧。</label>
-        <desc>结束通话。</desc>
+        <label>Just saying hello; that is all for now.</label>
+        <desc>End the call.</desc>
         <action>
           <effects />
         </action>

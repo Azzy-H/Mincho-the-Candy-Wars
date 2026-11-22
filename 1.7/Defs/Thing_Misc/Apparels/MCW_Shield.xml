@@ -2,13 +2,17 @@
 <Defs>
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_CookiesShield</defName>
-    <label>曲奇盾牌</label>
-    <description>当你看到一个巨大的且咬不动的美味曲奇饼时，很不幸，其实它是一个盾牌。\n\n装备后会在征召时自动举起盾牌以获得防护加成，平时则背在身后。</description>
+    <label>Cookie shield</label>
+    <description>A huge, tooth-achingly solid cookie. The amber candy raises it before her companions, and always has to remind people: this one really is not for eating.</description>
     <graphicData>
-      <texPath>Things/Apparel/MCW_Shield/MCW_Cookies_shield</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Apparel/Icons/CookiesShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
     </graphicData>
-    <costList Inherit="False"><MCW_Delicious_Cookies>20</MCW_Delicious_Cookies><Uranium>10</Uranium></costList>
+    <costList Inherit="False">
+      <MCW_Delicious_Cookies>20</MCW_Delicious_Cookies>
+      <Uranium>10</Uranium>
+    </costList>
     <statBases>
       <MaxHitPoints>300</MaxHitPoints>
       <WorkToMake>4500</WorkToMake>
@@ -41,48 +45,89 @@
         <hediffWhenUndrafted>MCW_CookiesShield_UndraftedHediff</hediffWhenUndrafted>
       </li>
     </comps>
-  <costStuffCount>50</costStuffCount><stuffCategories Inherit="False"><li>Metallic</li></stuffCategories></ThingDef>
+    <costStuffCount>50</costStuffCount>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+    </stuffCategories>
+  </ThingDef>
   <HediffDef>
     <defName>MCW_CookiesShield_DraftedHediff</defName>
-    <label>举盾防御</label>
+    <label>Shield raised</label>
     <hediffClass>MinchoCandyWars.Review.Hediff_ShieldDefense</hediffClass>
-    <description>举盾时获得盾牌防护，同时射击精度降低80%；近战命中不受影响。背盾后移除此防护和射击惩罚。</description>
+    <description>While the shield is raised you gain its protection, but shooting accuracy drops 80%; melee accuracy is unaffected. Stowing the shield removes both the protection and the penalty. Aiming while the shield is raised with a ranged weapon in the main hand takes twice as long (+100%).</description>
     <isBad>false</isBad>
     <priceImpact>false</priceImpact>
     <renderNodeProperties>
       <li>
         <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
-        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <workerClass>MinchoCandyWars.Render.PawnRenderNodeWorker_CookieShield</workerClass>
         <texPath>Things/Apparel/MCW_Shield/MCW_Cookies_shield</texPath>
         <parentTagDef>Body</parentTagDef>
         <useSkinShader>false</useSkinShader>
         <useRottenColor>false</useRottenColor>
         <drawSize>1.75</drawSize>
-        <drawData><dataNorth><offset>(0, 0, 0)</offset><layer>-5</layer></dataNorth><dataEast><offset>(0, 0, 0)</offset><layer>25</layer></dataEast><dataSouth><offset>(0, 0, 0)</offset><layer>25</layer></dataSouth><dataWest><offset>(0, 0, 0)</offset><layer>25</layer></dataWest></drawData>
+        <drawData>
+          <dataNorth>
+            <offset>(0, 0, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+            <layer>45</layer>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+            <layer>45</layer>
+          </dataSouth>
+          <dataWest>
+            <offset>(0, 0, 0)</offset>
+            <layer>45</layer>
+          </dataWest>
+        </drawData>
       </li>
     </renderNodeProperties>
     <stages>
       <li>
-      <statFactors><ShootingAccuracyPawn>0.2</ShootingAccuracyPawn></statFactors></li>
+        <statFactors>
+          <ShootingAccuracyPawn>0.2</ShootingAccuracyPawn>
+        </statFactors>
+      </li>
     </stages>
   </HediffDef>
   <HediffDef>
     <defName>MCW_CookiesShield_UndraftedHediff</defName>
-    <label>背盾</label>
+    <label>Shield stowed</label>
     <hediffClass>HediffWithComps</hediffClass>
-    <description>该士兵将曲奇盾牌背至身后，行动自如。</description>
+    <description>This soldier has slung the cookie shield on her back and moves freely.</description>
     <isBad>false</isBad>
     <priceImpact>false</priceImpact>
     <renderNodeProperties>
       <li>
         <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
-        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <workerClass>MinchoCandyWars.Render.PawnRenderNodeWorker_CookieShield</workerClass>
         <texPath>Things/Apparel/MCW_Shield/MCW_Cookies_shield_behind</texPath>
         <parentTagDef>Body</parentTagDef>
         <useSkinShader>false</useSkinShader>
         <useRottenColor>false</useRottenColor>
         <drawSize>1.75</drawSize>
-        <drawData><dataNorth><offset>(0, 0, 0)</offset><layer>25</layer></dataNorth><dataEast><offset>(0, 0, 0)</offset><layer>25</layer></dataEast><dataSouth><offset>(0, 0, 0)</offset><layer>-5</layer></dataSouth><dataWest><offset>(0, 0, 0)</offset><layer>25</layer></dataWest></drawData>
+        <drawData>
+          <dataNorth>
+            <offset>(0, 0, 0)</offset>
+            <layer>45</layer>
+          </dataNorth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+            <layer>45</layer>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+            <layer>-5</layer>
+          </dataSouth>
+          <dataWest>
+            <offset>(0, 0, 0)</offset>
+            <layer>45</layer>
+          </dataWest>
+        </drawData>
       </li>
     </renderNodeProperties>
     <stages>
@@ -90,17 +135,20 @@
       </li>
     </stages>
   </HediffDef>
-
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_TowerShield</defName>
-    <label>薄荷冰淇淋巧克力塔盾</label>
-    <description>坚硬的巧克力！可以保护所有人！\n\n装备后会在征召时自动举起盾牌以获得防护加成，平时则背在身后。</description>
+    <label>Mint ice cream chocolate tower shield</label>
+    <description>Thick chocolate wraps a cool mint core into a steady great shield. Behind it, even the smoke blowing past seems a little thinner.</description>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Things/Apparel/MCW_Shield/MCW_Tower_shield</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Apparel/Icons/TowerShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawRotated>false</drawRotated>
     </graphicData>
-    <costList Inherit="False"><Mincho_ChocoStick>80</Mincho_ChocoStick><Mincho_Mintchoco>200</Mincho_Mintchoco></costList>
+    <costList Inherit="False">
+      <Mincho_ChocoStick>80</Mincho_ChocoStick>
+      <Mincho_Mintchoco>200</Mincho_Mintchoco>
+    </costList>
     <statBases>
       <MaxHitPoints>400</MaxHitPoints>
       <WorkToMake>8000</WorkToMake>
@@ -116,7 +164,8 @@
       <MCW_ShieldArmor_Sharp>0.5</MCW_ShieldArmor_Sharp>
       <MCW_ShieldArmor_Blunt>0.5</MCW_ShieldArmor_Blunt>
       <MCW_ShieldArmor_Heat>0.2</MCW_ShieldArmor_Heat>
-    <MoveSpeed>-0.8</MoveSpeed></equippedStatOffsets>
+      <MoveSpeed>-0.8</MoveSpeed>
+    </equippedStatOffsets>
     <apparel>
       <wornGraphicData>
         <renderUtilityAsPack>true</renderUtilityAsPack>
@@ -132,12 +181,17 @@
         <hediffWhenUndrafted>MCW_TowerShield_UndraftedHediff</hediffWhenUndrafted>
       </li>
     </comps>
-  <uiIconPath>Things/Apparel/Icons/TowerShield</uiIconPath><costStuffCount>80</costStuffCount><stuffCategories Inherit="False"><li>Metallic</li></stuffCategories></ThingDef>
+    <uiIconPath>Things/Apparel/Icons/TowerShield</uiIconPath>
+    <costStuffCount>80</costStuffCount>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+    </stuffCategories>
+  </ThingDef>
   <HediffDef>
     <defName>MCW_TowerShield_DraftedHediff</defName>
-    <label>举盾防御</label>
+    <label>Shield raised</label>
     <hediffClass>MinchoCandyWars.Review.Hediff_ShieldDefense</hediffClass>
-    <description>举盾时获得盾牌防护，同时射击精度降低80%；近战命中不受影响。背盾后移除此防护和射击惩罚。</description>
+    <description>While the shield is raised you gain its protection, but shooting accuracy drops 80%; melee accuracy is unaffected. Stowing the shield removes both the protection and the penalty. Aiming while the shield is raised with a ranged weapon in the main hand takes four times as long (+300%).</description>
     <isBad>false</isBad>
     <priceImpact>false</priceImpact>
     <renderNodeProperties>
@@ -149,19 +203,39 @@
         <useSkinShader>false</useSkinShader>
         <useRottenColor>false</useRottenColor>
         <drawSize>1.75</drawSize>
-        <drawData><dataNorth><offset>(0, 0, 0)</offset><layer>-5</layer></dataNorth><dataEast><offset>(0, 0, 0)</offset><layer>25</layer></dataEast><dataSouth><offset>(0, 0, 0)</offset><layer>25</layer></dataSouth><dataWest><offset>(0, 0, 0)</offset><layer>25</layer></dataWest></drawData>
+        <drawData>
+          <dataNorth>
+            <offset>(0, 0, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+            <layer>25</layer>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+            <layer>25</layer>
+          </dataSouth>
+          <dataWest>
+            <offset>(0, 0, 0)</offset>
+            <layer>25</layer>
+          </dataWest>
+        </drawData>
       </li>
     </renderNodeProperties>
     <stages>
       <li>
-      <statFactors><ShootingAccuracyPawn>0.2</ShootingAccuracyPawn></statFactors></li>
+        <statFactors>
+          <ShootingAccuracyPawn>0.2</ShootingAccuracyPawn>
+        </statFactors>
+      </li>
     </stages>
   </HediffDef>
   <HediffDef>
     <defName>MCW_TowerShield_UndraftedHediff</defName>
-    <label>背盾</label>
+    <label>Shield stowed</label>
     <hediffClass>HediffWithComps</hediffClass>
-    <description>该士兵将塔盾背至身后，行动自如。</description>
+    <description>This soldier has slung the tower shield on her back and moves freely.</description>
     <isBad>false</isBad>
     <priceImpact>false</priceImpact>
     <renderNodeProperties>
@@ -173,7 +247,24 @@
         <useSkinShader>false</useSkinShader>
         <useRottenColor>false</useRottenColor>
         <drawSize>1.75</drawSize>
-        <drawData><dataNorth><offset>(0, 0, 0)</offset><layer>25</layer></dataNorth><dataEast><offset>(0, 0, 0)</offset><layer>25</layer></dataEast><dataSouth><offset>(0, 0, 0)</offset><layer>-5</layer></dataSouth><dataWest><offset>(0, 0, 0)</offset><layer>25</layer></dataWest></drawData>
+        <drawData>
+          <dataNorth>
+            <offset>(0, 0, 0)</offset>
+            <layer>25</layer>
+          </dataNorth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+            <layer>25</layer>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+            <layer>-5</layer>
+          </dataSouth>
+          <dataWest>
+            <offset>(0, 0, 0)</offset>
+            <layer>25</layer>
+          </dataWest>
+        </drawData>
       </li>
     </renderNodeProperties>
     <stages>

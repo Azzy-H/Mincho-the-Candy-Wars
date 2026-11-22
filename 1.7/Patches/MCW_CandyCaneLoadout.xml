@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MW_CandyCane"]/weaponTags</xpath>
+    <value><li>MCW_CandyCaneMelee</li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Knight" or defName="Mincho_Knight_Elite"]/weaponTags</xpath>
+    <value><li>MCW_CandyCaneMelee</li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MW_CandyCane"]</xpath>
+    <value><generateAllowChance>0.3333333</generateAllowChance></value>
+  </Operation>
+</Patch>

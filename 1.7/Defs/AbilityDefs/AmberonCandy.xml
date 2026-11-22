@@ -6,7 +6,7 @@
         <defName>MCW_AmberonCandyAbility_GuardianName</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>Guardian's Name!</label>
-        <description>TODO</description>
+        <description>Long-jumps to a friendly pawn, ignoring roofs, and raises ice cream walls around the landing point. Can be cast while carrying an ally.</description>
         <iconPath>UI/Gizmos/Abilities/Amberon/MCW_GuardianName</iconPath>
         <warmupStartSound>Longjump_Jump</warmupStartSound>
         <displayOrder>400</displayOrder>
@@ -14,7 +14,7 @@
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <cooldownTicksRange>12000</cooldownTicksRange><!-- 2 hours -->
         <statBases>
-            <Ability_Duration>120</Ability_Duration><!-- 2 seconds warmup -->
+            <Ability_Duration>166.66667</Ability_Duration><!-- 10000 ticks：墙体持续4游戏小时 -->
         </statBases>
         <jobDef>CastJump</jobDef>
         <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
@@ -61,7 +61,7 @@
         <defName>MCW_AmberonCandyAbility_HardCandy</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>Hard Candy</label>
-        <description>TODO</description>
+        <description>Harden into candy. Incoming damage factor and melee cooldown factor decrease by 90 and 30 percentage points, move speed decreases by 2 cells per second, and melee hit chance increases by 30 percentage points. Melee hits splash ice cream on enemies and impair their sight.</description>
         <iconPath>UI/Gizmos/Abilities/Amberon/MCW_HardCandy</iconPath>
         <warmupStartSound>Coagulate_Cast</warmupStartSound>
         <jobDef>CastAbilityOnThingWithoutWeapon</jobDef>
@@ -105,7 +105,7 @@
         <defName>MCW_AmberonCandyAbility_StandBehindMe</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>Stand Behind Me</label>
-        <description>TODO</description>
+        <description>Raise an amber shield at the chosen spot. It protects members of your faction within four tiles for up to four in-game hours.</description>
         <iconPath>UI/Gizmos/Abilities/Amberon/MCW_StandBehindMe</iconPath>
         <warmupStartSound>Coagulate_Cast</warmupStartSound>
         <jobDef>CastAbilityOnThingMelee</jobDef>
@@ -146,7 +146,7 @@
         <defName>MCW_AmberonCandyAbility_AmberonHeart</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
         <label>Amberon Heart</label>
-        <description>TODO</description>
+        <description>Become immune to damage for 30 seconds and halve the movement speed of enemies within 3.9 tiles. Colonists on this map gain +40 mood for four in-game hours.</description>
         <iconPath>UI/Gizmos/Abilities/Amberon/MCW_AmberonHeart</iconPath>
         <warmupStartSound>Coagulate_Cast</warmupStartSound>
         <jobDef>CastAbilityOnThingWithoutWeapon</jobDef>
@@ -180,3 +180,4 @@
     </AbilityDef>
 
 </Defs>
+

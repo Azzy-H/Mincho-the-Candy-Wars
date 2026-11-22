@@ -1,4 +1,4 @@
-using MinchoCandyWars;
+﻿using MinchoCandyWars;
 using System;
 using System.Linq;
 using RimWorld;
@@ -61,7 +61,7 @@ public class MintAddiction : Hediff_Addiction
 
     /// <summary>珉巧本体，以及珉巧血肉类型的种族，都不受冰淇淋影响。</summary>
     public static bool IsMincho(Pawn p) =>
-        p.def == MCW_DefOf.Mincho_ThingDef || p.RaceProps?.FleshType == MCW_DefOf.Mincho_FleshTypeDef;
+        p.def == MCW_ThingDefOf.Mincho_ThingDef || p.RaceProps?.FleshType == MCW_DefOf.Mincho_FleshTypeDef;
 
     /// <summary>能解薄荷瘾的食品：无尽桶、名称带薄荷的 Mincho 食品、任何 Mincho 分类食品，或原料含上述任一项。</summary>
     public static bool IsMintFood(Thing food) =>
@@ -69,8 +69,8 @@ public class MintAddiction : Hediff_Addiction
 
     private static bool IsMintDef(ThingDef? d) =>
         d != null &&
-        (d == MCW_DefOf.MCW_EndlessIceCream ||
-         d == MCW_DefOf.MCW_EndlessIceCream_Released ||
+        (d == MCW_ThingDefOf.MCW_EndlessIceCream ||
+         d == MCW_ThingDefOf.MCW_EndlessIceCream_Released ||
          IsMinchoFood(d) ||
          (d.ingestible != null &&
           d.defName.StartsWith("Mincho_", StringComparison.Ordinal) &&

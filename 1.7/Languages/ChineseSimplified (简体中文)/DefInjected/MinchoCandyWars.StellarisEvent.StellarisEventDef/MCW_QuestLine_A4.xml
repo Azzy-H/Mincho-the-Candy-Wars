@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: My ally! Do you know where we come from? We may look like some fantasy creature, a slime perhaps, but in truth we are a product of Glitterworld technology, and our main component is the beta nano-shaping organism.
+
+We learned through the info net that this world may hold beta nano-shaping organisms left behind by reclaimed kin. We cannot use them to revive those sisters, but such valuable material can still be used to study ourselves.
+
+All that to say: we hope you can explore a ruin for us, where beta nano-shaping fluid may remain. -->
+  <MCW_Event_QuestA4_AllianceContact.desc>我的同盟！你知道我们的由来吗？我们虽然看起来很像是某种幻想生物，比如史莱姆？实际上我们是闪耀世界的科技产物，而我们的主要构成就是β型纳米塑形虫。\n\n我们通过信息网得知了这颗星球上或许有一些被回收的同类留下的β型纳米塑形虫。虽然我们无法利用这些来复活她们，但是这些重要资源仍然可以用来研究我们自身。\n\n说了这么多，其实就是希望你能帮我们去探索一个遗迹，那里可能有遗留的β型纳米塑形液。</MCW_Event_QuestA4_AllianceContact.desc>
+  <!-- EN: Ruin exploration -->
+  <MCW_Event_QuestA4_AllianceContact.label>遗迹探索</MCW_Event_QuestA4_AllianceContact.label>
+  <!-- EN: Accept and head to the ruin to look for beta nano-shaping fluid. -->
+  <MCW_Event_QuestA4_AllianceContact.options.0.desc>接受探索请求，前往遗迹寻找β型纳米塑形液。</MCW_Event_QuestA4_AllianceContact.options.0.desc>
+  <!-- EN: Yes - OK! I love exploring! -->
+  <MCW_Event_QuestA4_AllianceContact.options.0.label>是-OK！我喜欢探险！</MCW_Event_QuestA4_AllianceContact.options.0.label>
+  <!-- EN: Decline the request. Qinxintang opinion of you will drop. -->
+  <MCW_Event_QuestA4_AllianceContact.options.1.desc>拒绝探索请求。沁心糖对你的好感度会下降。</MCW_Event_QuestA4_AllianceContact.options.1.desc>
+  <!-- EN: No - sorry, we cannot help you right now -->
+  <MCW_Event_QuestA4_AllianceContact.options.1.label>否-抱歉，我们目前没法帮助你</MCW_Event_QuestA4_AllianceContact.options.1.label>
+  <!-- EN: Decide later and close the window. You can contact the Mincho Alliance again afterwards. -->
+  <MCW_Event_QuestA4_AllianceContact.options.2.desc>暂时不做决定，关闭窗口。之后可以重新联络珉巧同盟。</MCW_Event_QuestA4_AllianceContact.options.2.desc>
+  <!-- EN: Later - hold on, we are working out the route -->
+  <MCW_Event_QuestA4_AllianceContact.options.2.label>待定-稍等下，我们研究下去哪里的路线</MCW_Event_QuestA4_AllianceContact.options.2.label>
+  <!-- EN: Qinxintang -->
+  <MCW_Event_QuestA4_AllianceContact.title>沁心糖</MCW_Event_QuestA4_AllianceContact.title>
+
+</LanguageData>

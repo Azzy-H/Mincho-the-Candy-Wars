@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -20,6 +21,9 @@ namespace MinchoCandyWars.Abilities.PrismCandy
             CompMinchoCore? comp = pawn?.GetComp<CompMinchoCore>();
             return comp?.CurrentMaxCandyValue ?? 0f;
         }
+
+        public static List<Thing> NonHostilePawns(Pawn caster, Map map)
+            => map.mapPawns.AllPawnsSpawned.Where(p => !p.HostileTo(caster)).Cast<Thing>().ToList();
 
         /// <summary>
         /// 返回以 center 为圆心、radius 为半径、且相对 centerAngle 的夹角不超过 halfAngle 的格子。
@@ -82,14 +86,15 @@ namespace MinchoCandyWars.Abilities.PrismCandy
             float angle,
             float visibleLength,
             float halfAngle,
-            FleckDef fleckDef)
+            FleckDef fleckDef,
+            float widthScale = 1f)
         {
             if (map == null || fleckDef == null || visibleLength <= 0f)
             {
                 return;
             }
 
-            float width = 2f * visibleLength * Mathf.Sin(halfAngle * Mathf.Deg2Rad);
+            float width = 2f * visibleLength * Mathf.Sin(halfAngle * Mathf.Deg2Rad) * widthScale;
 
             float rad = angle * Mathf.Deg2Rad;
 
@@ -98,6 +103,8 @@ namespace MinchoCandyWars.Abilities.PrismCandy
 
             // Fleck 以 quad 中心定位，因此整体前移半个长度，使贴图左缘落在施法者身上。
             Vector3 loc = casterCell.ToVector3Shifted() + dir * (visibleLength * 0.5f);
+            // 画布留白校准放在 Fleck 的标准 drawSize/drawOffset 中，不在代码硬编码某张贴图的像素尺寸。
+            loc += Quaternion.AngleAxis(angle, Vector3.up) * fleckDef.graphicData.drawOffset;
 
             FleckCreationData data = FleckMaker.GetDataStatic(loc, map, fleckDef);
             data.exactScale = new Vector3(visibleLength, 1f, width);

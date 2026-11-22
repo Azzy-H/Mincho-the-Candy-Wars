@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Blunt damage protection provided by the currently raised shield. -->
+  <MCW_ShieldArmor_Blunt.description>当前举起的盾牌提供的钝器伤害防护。</MCW_ShieldArmor_Blunt.description>
+  <!-- EN: Shield blunt armor -->
+  <MCW_ShieldArmor_Blunt.label>盾牌钝器防御</MCW_ShieldArmor_Blunt.label>
+  <!-- EN: Heat damage protection provided by the currently raised shield. -->
+  <MCW_ShieldArmor_Heat.description>当前举起的盾牌提供的热能伤害防护。</MCW_ShieldArmor_Heat.description>
+  <!-- EN: Shield heat armor -->
+  <MCW_ShieldArmor_Heat.label>盾牌热能防御</MCW_ShieldArmor_Heat.label>
+  <!-- EN: Sharp damage protection provided by the currently raised shield. -->
+  <MCW_ShieldArmor_Sharp.description>当前举起的盾牌提供的利器伤害防护。</MCW_ShieldArmor_Sharp.description>
+  <!-- EN: Shield sharp armor -->
+  <MCW_ShieldArmor_Sharp.label>盾牌利器防御</MCW_ShieldArmor_Sharp.label>
+  <!-- EN: How much the shield material contributes to heat protection. -->
+  <MCW_ShieldCoef_Heat.description>盾牌材质对热能防护的贡献系数。</MCW_ShieldCoef_Heat.description>
+  <!-- EN: Shield heat material factor -->
+  <MCW_ShieldCoef_Heat.label>盾牌热能防护材质系数</MCW_ShieldCoef_Heat.label>
+  <!-- EN: How much the shield material contributes to sharp and blunt protection. -->
+  <MCW_ShieldCoef_Sharp.description>盾牌材质对锐器与钝器防护的贡献系数。</MCW_ShieldCoef_Sharp.description>
+  <!-- EN: Shield sharp/blunt material factor -->
+  <MCW_ShieldCoef_Sharp.label>盾牌锐钝防护材质系数</MCW_ShieldCoef_Sharp.label>
+
+</LanguageData>

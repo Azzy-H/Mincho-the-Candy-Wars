@@ -1,45 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: 薄荷拐杖糖 -->
+
+  <!-- EN: A very powerful candy cane made by triple enriched of mint candy. It boasts a fresher taste and more refreshing violence.\n\nIt does not look like a cane? You will say otherwise after a beating. -->
+  <MCW_CandyCane_ForMech.description>经过三重浓缩薄荷糖制成的强力拐杖糖。味道更清爽，暴力也更提神。\n\n它看起来不像拐杖？挨一下你就不会这么说了。</MCW_CandyCane_ForMech.description>
+  <!-- EN: candy cane -->
+  <MCW_CandyCane_ForMech.label>拐杖糖</MCW_CandyCane_ForMech.label>
+  <!-- EN: handle -->
+  <MCW_CandyCane_ForMech.tools.handle.label>握柄</MCW_CandyCane_ForMech.tools.handle.label>
+  <!-- EN: head -->
+  <MCW_CandyCane_ForMech.tools.head.label>头部</MCW_CandyCane_ForMech.tools.head.label>
+  <!-- EN: A mint chocolate flail modified for Mincho sub-units. -->
+  <MCW_MintchocoPunch_ForMech.description>为珉巧子个体改制的薄荷巧克力流星锤。</MCW_MintchocoPunch_ForMech.description>
+  <!-- EN: Mint chocolate flail -->
+  <MCW_MintchocoPunch_ForMech.label>薄荷巧克力流星锤</MCW_MintchocoPunch_ForMech.label>
+  <!-- EN: handle -->
+  <MCW_MintchocoPunch_ForMech.tools.handle.label>握柄</MCW_MintchocoPunch_ForMech.tools.handle.label>
+  <!-- EN: head -->
+  <MCW_MintchocoPunch_ForMech.tools.head.label>头部</MCW_MintchocoPunch_ForMech.tools.head.label>
+  <!-- EN: A mint candy cane refined over and over: crisply sweet and startlingly hard. Those who underestimate it soon taste a different kind of sweetness. -->
+  <MCW_MW_CandyCane.description>经过反复凝炼的薄荷拐杖糖，甜得清冽，也硬得惊人。小看它的人，往往很快就会尝到另一种甜头。</MCW_MW_CandyCane.description>
+  <!-- EN: Mint candy cane -->
   <MCW_MW_CandyCane.label>薄荷拐杖糖</MCW_MW_CandyCane.label>
-  <!-- EN: 锐利的糖！锐利的拐!可以让小看这跟拐杖糖的人吃到足够的“甜头”。 -->
-  <MCW_MW_CandyCane.description>锐利的糖！锐利的拐杖！可以让小看这根拐杖糖的人吃到足够的“甜头”。</MCW_MW_CandyCane.description>
+  <!-- EN: edge -->
+  <MCW_MW_CandyCane.tools.edge.label>锋刃</MCW_MW_CandyCane.tools.edge.label>
   <!-- EN: handle -->
   <MCW_MW_CandyCane.tools.handle.label>握柄</MCW_MW_CandyCane.tools.handle.label>
   <!-- EN: point -->
   <MCW_MW_CandyCane.tools.point.label>尖端</MCW_MW_CandyCane.tools.point.label>
-  <!-- EN: edge -->
-  <MCW_MW_CandyCane.tools.edge.label>锋刃</MCW_MW_CandyCane.tools.edge.label>
-  
-  <!-- EN: 涡轮棒棒糖发射器 -->
-  <MCW_RW_VrocanGatling.label>涡轮棒棒糖发射器</MCW_RW_VrocanGatling.label>
-  <!-- EN: 强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。 -->
-  <MCW_RW_VrocanGatling.description>强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。</MCW_RW_VrocanGatling.description>
-  <!-- EN: barrels -->
-  <MCW_RW_VrocanGatling.tools.barrels.label>发射管</MCW_RW_VrocanGatling.tools.barrels.label>
-  <!-- EN: 涡轮棒棒糖发射器 -->
-  <MCW_RW_VrocanGatling.verbs.Verb_Shoot.label>涡轮棒棒糖发射器</MCW_RW_VrocanGatling.verbs.Verb_Shoot.label>
-  
+  <!-- EN: A lollipop launcher tuned for the tiny ice cream gunner. Once the spinning barrels speak, the desserts coming your way can hardly be called friendly. -->
+  <MCW_RW_VrocanGatling_Formech.description>为小小冰淇淋枪手调整过的棒棒糖发射器。转动的枪管一旦响起，迎面而来的甜点便很难称得上友善。</MCW_RW_VrocanGatling_Formech.description>
   <!-- EN: 涡轮棒棒糖发射器 -->
   <MCW_RW_VrocanGatling_Formech.label>涡轮棒棒糖发射器</MCW_RW_VrocanGatling_Formech.label>
-  <!-- EN: 强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。 -->
-  <MCW_RW_VrocanGatling_Formech.description>强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。</MCW_RW_VrocanGatling_Formech.description>
   <!-- EN: barrels -->
   <MCW_RW_VrocanGatling_Formech.tools.barrels.label>发射管</MCW_RW_VrocanGatling_Formech.tools.barrels.label>
   <!-- EN: 涡轮棒棒糖发射器 -->
   <MCW_RW_VrocanGatling_Formech.verbs.Verb_Shoot.label>涡轮棒棒糖发射器</MCW_RW_VrocanGatling_Formech.verbs.Verb_Shoot.label>
-  
-  <!-- EN: 棒棒糖 -->
+  <!-- EN: 强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。 -->
+  <MCW_RW_VrocanGatling.description>强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。</MCW_RW_VrocanGatling.description>
+  <!-- EN: 涡轮棒棒糖发射器 -->
+  <MCW_RW_VrocanGatling.label>涡轮棒棒糖发射器</MCW_RW_VrocanGatling.label>
+  <!-- EN: barrels -->
+  <MCW_RW_VrocanGatling.tools.barrels.label>发射管</MCW_RW_VrocanGatling.tools.barrels.label>
+  <!-- EN: 涡轮棒棒糖发射器 -->
+  <MCW_RW_VrocanGatling.verbs.Verb_Shoot.label>涡轮棒棒糖发射器</MCW_RW_VrocanGatling.verbs.Verb_Shoot.label>
+  <!-- EN: A mint ice cream chocolate tower shield modified for Mincho sub-units. -->
+  <MCW_TowerShield_ForMech.description>为珉巧子个体改制的薄荷冰淇淋巧克力塔盾。</MCW_TowerShield_ForMech.description>
+  <!-- EN: Mint ice cream chocolate tower shield -->
+  <MCW_TowerShield_ForMech.label>薄荷冰淇淋巧克力塔盾</MCW_TowerShield_ForMech.label>
+  <!-- EN: shield -->
+  <MCW_TowerShield_ForMech.tools.shield.label>盾面</MCW_TowerShield_ForMech.tools.shield.label>
+  <!-- EN: A lollipop arriving at speed. Only the one who launched it is likely in the mood to appreciate its sweetness. -->
+  <MCW_VrocanGatling_Bullet.description>一颗高速飞来的棒棒糖。它的甜味，大概只有发射它的人才有心情欣赏。</MCW_VrocanGatling_Bullet.description>
+  <!-- EN: Lollipop -->
   <MCW_VrocanGatling_Bullet.label>棒棒糖</MCW_VrocanGatling_Bullet.label>
-  
-  <!-- EN: candy cane -->
-  <Mincho_CandyCane_ForMech.label>薄荷拐杖糖</Mincho_CandyCane_ForMech.label>
   <!-- EN: A very powerful candy cane made by triple enriched of mint candy. It boasts a fresher taste and more refreshing violence.\n\nIt does not look like a cane? You will say otherwise after a beating. -->
   <Mincho_CandyCane_ForMech.description>由三重浓缩薄荷糖制成的强力拐杖糖。口感更清爽，暴力也更提神。\n\n它看起来不像拐杖？挨上一顿之后你就不这么说了。</Mincho_CandyCane_ForMech.description>
+  <!-- EN: candy cane -->
+  <Mincho_CandyCane_ForMech.label>薄荷拐杖糖</Mincho_CandyCane_ForMech.label>
   <!-- EN: handle -->
   <Mincho_CandyCane_ForMech.tools.handle.label>握柄</Mincho_CandyCane_ForMech.tools.handle.label>
   <!-- EN: head -->
   <Mincho_CandyCane_ForMech.tools.head.label>杖头</Mincho_CandyCane_ForMech.tools.head.label>
-  
+
 </LanguageData>

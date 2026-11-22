@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: booster -->
+  <MCW_MechaWings.comps.CompApparelReloadable.chargeNoun>充能次数</MCW_MechaWings.comps.CompApparelReloadable.chargeNoun>
+  <!-- EN: on cooldown -->
+  <MCW_MechaWings.comps.CompApparelReloadable.cooldownGerund>冷却中</MCW_MechaWings.comps.CompApparelReloadable.cooldownGerund>
+  <!-- EN: 千机糖改良的机械飞翼，轻巧骨架上凝着薄荷色的冷光。引擎低鸣时，空气中会飘过一丝熟悉的巧克力香气。 -->
+  <MCW_MechaWings.description>千机糖改良的机械飞翼，轻巧骨架上凝着薄荷色的冷光。引擎低鸣时，空气中会飘过一丝熟悉的巧克力香气。</MCW_MechaWings.description>
+  <!-- EN: 珉巧机械师飞翼 -->
+  <MCW_MechaWings.label>珉巧机械师飞翼</MCW_MechaWings.label>
+</LanguageData>

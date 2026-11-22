@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MinchoCandyWars.StellarisEvent;
 using RimWorld;
 using UnityEngine;
@@ -61,7 +61,7 @@ namespace MinchoCandyWars
             }
             StellarisEventFlagManager.SetFlag(TriggeredFlag, true);
 
-            PawnKindDef refugeKind = DefDatabase<PawnKindDef>.GetNamed(RefugeKindDefName, errorOnFail: false);
+            PawnKindDef refugeKind = MCW_DefOf.Mincho_SpaceRefugee;
             if (refugeKind == null)
             {
                 Log.Warning("[MCW] IncidentWorker_RecruitMincho: 找不到 PawnKindDef " + RefugeKindDefName);
@@ -84,7 +84,7 @@ namespace MinchoCandyWars
             bool smartArrived = false;
             if (Rand.Chance(0.1f))
             {
-                PawnKindDef smartKind = DefDatabase<PawnKindDef>.GetNamed(SmartKindDefName, errorOnFail: false);
+                PawnKindDef smartKind = MCW_DefOf.MCW_SmartMincho;
                 if (smartKind != null)
                 {
                     Pawn smart = SpawnRefugee(smartKind, map);
@@ -110,7 +110,7 @@ namespace MinchoCandyWars
             GiveReward(map);
 
             // ── 4. 沁心糖好感度 +40 ──
-            FactionDef allianceDef = DefDatabase<FactionDef>.GetNamed(AllianceFactionDefName, errorOnFail: false);
+            FactionDef allianceDef = MCW_DefOf.MCW_Alliance_Faction;
             Faction alliance = allianceDef == null ? null : Find.FactionManager.FirstFactionOfDef(allianceDef);
             if (alliance != null && alliance.HasGoodwill)
             {
@@ -188,7 +188,7 @@ namespace MinchoCandyWars
                 ("ArchiteCapsule", 1),                          // 超凡胶囊
             };
 
-            IntVec3 dropCell = DropCellFinder.RandomDropSpot(map);
+            IntVec3 dropCell = DropCellFinder.TradeDropSpot(map);
 
             for (int i = 0; i < 4 && table.Count > 0; i++)
             {
@@ -234,3 +234,4 @@ namespace MinchoCandyWars
         }
     }
 }
+

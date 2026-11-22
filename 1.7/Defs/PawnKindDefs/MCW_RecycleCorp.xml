@@ -1,31 +1,42 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!--
-    回收公司成员。
-    设计文档允许"先用海盗代替"，所以直接继承原版 Pirate / PirateBoss，
-    只覆盖 defName 与所属派系；模型、装备、战斗点数等全部沿用原版海盗。
-  -->
-
-  <PawnKindDef ParentName="MercenaryEliteTierBase">
+  <!-- 回收公司是制式高科技部队；装备生成沿用原版系统。 -->
+  <PawnKindDef Name="MCW_RecycleTrooperBase" ParentName="MercenaryEliteTierBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionDef>MCW_RecycleCorp_Faction</defaultFactionDef>
+    <combatPower>180</combatPower>
+    <initialResistanceRange>17~27</initialResistanceRange>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>1~1</gearHealthRange>
+    <apparelMoney>5000~6500</apparelMoney>
+    <apparelRequired Inherit="False"><li>Apparel_ArmorRecon</li><li>Apparel_ArmorHelmetRecon</li><li>Apparel_Pants</li><li>Apparel_BasicShirt</li></apparelRequired>
+    <apparelTags Inherit="False"><li>IndustrialBasic</li></apparelTags>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+    <apparelColor>(0.25,0.28,0.32)</apparelColor>
+    <weaponMoney>1600~2500</weaponMoney>
+    <weaponTags Inherit="False"><li>SpacerGun</li></weaponTags>
+    <skills><li><skill>Shooting</skill><range>10~14</range></li></skills>
+  </PawnKindDef>
+  <PawnKindDef ParentName="MCW_RecycleTrooperBase">
     <defName>MCW_RecycleCorp_Leader</defName>
-    <label>回收公司领队</label>
-    <!-- <labelPlural>bosses</labelPlural> -->
+    <label>Reclamation company leader</label>
     <factionLeader>true</factionLeader>
+    <combatPower>260</combatPower>
+    <itemQuality>Excellent</itemQuality>
+    <apparelRequired Inherit="False"><li>Apparel_PowerArmor</li><li>Apparel_PowerArmorHelmet</li><li>Apparel_Pants</li><li>Apparel_BasicShirt</li></apparelRequired>
+    <skills Inherit="False"><li><skill>Shooting</skill><range>13~17</range></li></skills>
     <canBeSapper>true</canBeSapper>
     <initialResistanceRange>17~27</initialResistanceRange>
   </PawnKindDef>
-
-  <PawnKindDef ParentName="PirateKindBase">
+  <PawnKindDef ParentName="MCW_RecycleTrooperBase">
     <defName>MCW_RecycleCorp_Member</defName>
-    <label>回收公司队员</label>
-    <race>Human</race>
-    <defaultFactionType>MCW_RecycleCorp_Faction</defaultFactionType>
+    <label>Reclamation company member</label>
   </PawnKindDef>
 
   <!-- 遭到追捕的珉巧：比普通珉巧更强，固定技能与特性 -->
   <PawnKindDef ParentName="MinchoBasePawnKind_Space">
     <defName>MCW_HuntedMincho_QS1</defName>
-    <label>遭到追捕的珉巧</label>
+    <label>Hunted Mincho</label>
     <combatPower>80</combatPower>
     <requiredWorkTags>
       <li>Violent</li>
@@ -34,3 +45,4 @@
     </requiredWorkTags>
   </PawnKindDef>
 </Defs>
+

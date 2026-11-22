@@ -1,4 +1,4 @@
-using MinchoCandyWars;
+﻿using MinchoCandyWars;
 using RimWorld;
 using RimWorld.QuestGen;
 using Verse;
@@ -13,5 +13,5 @@ namespace MinchoCandyWars.Anomaly;
 /// </summary>
 public class MintCargo : QuestNode_Root_MysteriousCargo
 {
-    protected override Thing GenerateThing(Pawn p) => ThingMaker.MakeThing(MCW_DefOf.MCW_EndlessIceCream);
+    protected override Thing GenerateThing(Pawn p) => ThingMaker.MakeThing(MCW_ThingDefOf.MCW_EndlessIceCream);
 }

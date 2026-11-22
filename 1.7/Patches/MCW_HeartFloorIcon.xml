@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorC"]</xpath>
+    <value>
+      <uiIconPath>UI/Designators/MCW_HeartFloor</uiIconPath>
+      <cropIcon>false</cropIcon>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorPlain"]</xpath>
+    <value>
+      <uiIconPath>UI/Designators/MCW_PlainFloor</uiIconPath>
+      <cropIcon>false</cropIcon>
+    </value>
+  </Operation>
+</Patch>

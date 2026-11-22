@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Producing more ice cream keeps companions from going hungry. Mincho should raise their output.
+
+Mincho ice cream harvested: +100%.
+Keep 50% of the product when harvesting fails. -->
+  <MCW_IceCreamYield_Boosted.description>生产更多的冰淇淋能让同伴免受饥饿。珉巧应当提高自己的产量。\n\n珉巧冰淇淋收取量：+100%。\n收取失败时保留50%的产物。</MCW_IceCreamYield_Boosted.description>
+  <!-- EN: Boosted -->
+  <MCW_IceCreamYield_Boosted.label>增产</MCW_IceCreamYield_Boosted.label>
+  <!-- EN: Mincho ice cream output needs no change. -->
+  <MCW_IceCreamYield_Normal.description>珉巧的冰淇淋产量无需改变。</MCW_IceCreamYield_Normal.description>
+  <!-- EN: Normal -->
+  <MCW_IceCreamYield_Normal.label>普通</MCW_IceCreamYield_Normal.label>
+
+</LanguageData>

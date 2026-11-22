@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>MCW_CocoaBath</defName>
+    <label>Cocoa bathtub</label>
+    <description>A bathtub made from chocolate bars and mint ice cream. Fill it with warm cocoa, then settle into the dense bubbles to relax. Bathing restores recreation, and a long soak grants +3 mood for one day.</description>
+    <thingClass>MinchoCandyWars.Recreation.Building_CocoaBath</thingClass>
+    <graphicData><texPath>Things/Building/CocoaBath/Vertical0</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.2,2.4)</drawSize></graphicData>
+    <drawerType>RealtimeOnly</drawerType>
+    <size>(1,2)</size>
+    <rotatable>true</rotatable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsMisc</li></thingCategories>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.3</fillPercent>
+    <designationCategory>Mincho_Furniture</designationCategory>
+    <statBases><MaxHitPoints>200</MaxHitPoints><WorkToBuild>3000</WorkToBuild><Mass>35</Mass><Flammability>0.5</Flammability><Beauty>6</Beauty><JoyGainFactor>1.2</JoyGainFactor></statBases>
+    <costList><Mincho_ChocoStick>200</Mincho_ChocoStick><Mincho_Mintchoco>40</Mincho_Mintchoco></costList>
+    <building><isEdifice>false</isEdifice><joyKind>Meditative</joyKind></building>
+  </ThingDef>
+  <JobDef><defName>MCW_UseCocoaBath</defName><driverClass>MinchoCandyWars.Recreation.JobDriver_CocoaBath</driverClass><reportString>Soaking in a cocoa bath.</reportString><joyDuration>2500</joyDuration><joyGainRate>1</joyGainRate><joyKind>Meditative</joyKind></JobDef>
+  <JoyGiverDef><defName>MCW_CocoaBath</defName><giverClass>MinchoCandyWars.Recreation.JoyGiver_CocoaBath</giverClass><baseChance>2</baseChance><jobDef>MCW_UseCocoaBath</jobDef><joyKind>Meditative</joyKind><thingDefs><li>MCW_CocoaBath</li></thingDefs><requiredCapacities><li>Moving</li></requiredCapacities></JoyGiverDef>
+  <ThoughtDef><defName>MCW_CocoaBathRelaxed</defName><durationDays>1</durationDays><stackLimit>1</stackLimit><stages><li><label>Soaked in a cocoa bath</label><description>Warm cocoa and dense bubbles let both body and mood relax.</description><baseMoodEffect>3</baseMoodEffect></li></stages></ThoughtDef>
+</Defs>

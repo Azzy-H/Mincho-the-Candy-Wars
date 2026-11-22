@@ -1,44 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: 珉巧比基尼 -->
-  <MCW_Bikini.label>珉巧比基尼</MCW_Bikini.label>
-  <!-- EN: 你知道吗，其实穿的越少，防御越高！ -->
+
+  <!-- EN: Did you know? The less you wear, the higher your defense! -->
   <MCW_Bikini.description>你知道吗，其实穿的越少，防御越高！</MCW_Bikini.description>
-  
-  <!-- EN: 珉巧比基尼（黑白） -->
-  <MCW_BikiniBW.label>珉巧比基尼（黑白）</MCW_BikiniBW.label>
-  <!-- EN: 你知道吗，其实穿的越少，防御越高！\n\n黑白配色限定款。 -->
+  <!-- EN: Mincho bikini -->
+  <MCW_Bikini.label>珉巧比基尼</MCW_Bikini.label>
+  <!-- EN: Did you know? The less you wear, the higher your defense! -->
   <MCW_BikiniBW.description>你知道吗，其实穿的越少，防御越高！\n\n黑白配色限定款。</MCW_BikiniBW.description>
-  
-  <!-- EN: 珉巧华装礼服 -->
+  <!-- EN: Mincho bikini (black and white) -->
+  <MCW_BikiniBW.label>珉巧比基尼（黑白）</MCW_BikiniBW.label>
+  <!-- EN: Layer upon layer of chocolate-colored skirt trimmed with fine gold, swaying gently with every step. Linglon candies walk through crowds in it, solemn as if presiding over a sweet ceremony. -->
+  <MCW_GorgeousDress.description>层层巧克力色裙摆缀着细致金边，随步履轻轻摇曳。玲珑糖们穿着它走过人群，庄重得像正在主持一场甜蜜的仪式。</MCW_GorgeousDress.description>
+  <!-- EN: Mincho formal gown -->
   <MCW_GorgeousDress.label>珉巧华装礼服</MCW_GorgeousDress.label>
-  <!-- EN: 华丽的巧克力礼服，可以强化玲珑糖们的心灵能力，听说有的智慧珉巧会仰仗这种独特的心灵能力来充当祭祀。 -->
-  <MCW_GorgeousDress.description>华丽的巧克力礼服，可以强化玲珑糖们的心灵能力，听说有的智慧珉巧会仰仗这种独特的心灵能力来充当祭祀。</MCW_GorgeousDress.description>
-  
-  <!-- EN: 珉巧机械师全息眼罩 -->
+  <!-- EN: A holo visor made by the mecha candy, crisp points of light arranged before the eyes. She insists the problem of human helmets blocking the view is definitely not that she put it on backwards. -->
+  <MCW_HoloVisor.description>千机糖制作的全息眼罩，清晰的光点在眼前排列。她坚持认为，人类头盔挡住视线的问题，绝不是自己戴反了。</MCW_HoloVisor.description>
+  <!-- EN: Mincho mechanitor holo visor -->
   <MCW_HoloVisor.label>珉巧机械师全息眼罩</MCW_HoloVisor.label>
-  <!-- EN: 千机糖在深入研究人类的机械师时，发人类的机械师头盔总是不方便看清前方的东西，她认为绝对不是她用法出错，而是人类太笨了！ -->
-  <MCW_HoloVisor.description>千机糖在深入研究人类的机械师时，发人类的机械师头盔总是不方便看清前方的东西，她认为绝对不是她用法出错，而是人类太笨了！</MCW_HoloVisor.description>
-  
-  <!-- EN: 珉巧机械师装甲 -->
+  <!-- EN: Armor refitted by the mecha candy from a human mechanitor suit. Beneath its deceptively thin shell hides tightly interlocking protection and a few clever touches she is rather proud of. -->
+  <MCW_MechaArmor.description>千机糖参照人类机械师套装改制的装甲。看似轻薄的外壳下，藏着紧密相扣的防护结构和她颇为得意的小巧思。</MCW_MechaArmor.description>
+  <!-- EN: Mincho mechanitor armor -->
   <MCW_MechaArmor.label>珉巧机械师装甲</MCW_MechaArmor.label>
-  <!-- EN: 千机糖在深入研究人类的机械师套装后改良出的适合珉巧们使用的机械师套装，虽然看起来材料很少，但是实际上！更加坚固！ -->
-  <MCW_MechaArmor.description>千机糖在深入研究人类的机械师套装后改良出的适合珉巧们使用的机械师套装，虽然看起来材料很少，但是实际上！更加坚固！</MCW_MechaArmor.description>
-  
-  <!-- EN: 珉巧护士帽 -->
+  <!-- EN: A small, spotless nurse cap with its brim carefully smoothed. Nectar candies who wear it always seem to soften their voices without meaning to. -->
+  <MCW_NurseCap.description>小巧洁净的护士帽，边缘被仔细抚平。戴上它的甘露糖，总会不自觉地把声音放轻一些。</MCW_NurseCap.description>
+  <!-- EN: Mincho nurse cap -->
   <MCW_NurseCap.label>珉巧护士帽</MCW_NurseCap.label>
-  <!-- EN: 珉巧护士帽。 -->
-  <MCW_NurseCap.description>珉巧护士帽。</MCW_NurseCap.description>
-  
-  <!-- EN: 珉巧护士服 -->
+  <!-- EN: Clothing sewn by the nectar candy in imitation of a human nurse uniform, its soft fabric carrying a faint sweetness. She believes gentle care should begin at the very first glance. -->
+  <MCW_NurseOutfit.description>甘露糖仿照人类护士缝制的衣服，柔软布料间留着淡淡甜香。她相信，温柔的照料应当从见面的第一眼开始。</MCW_NurseOutfit.description>
+  <!-- EN: Mincho nurse outfit -->
   <MCW_NurseOutfit.label>珉巧护士服</MCW_NurseOutfit.label>
-  <!-- EN: 甘露糖模仿人类护士制成的衣物，听说只要换上就可以获得医术加成！同时，还能让爱人为之倾倒。 -->
-  <MCW_NurseOutfit.description>甘露糖模仿人类护士制成的衣物，听说只要换上就可以获得医术加成！同时，还能让爱人为之倾倒。</MCW_NurseOutfit.description>
-  
-  <!-- EN: 珉巧旗袍 -->
+  <!-- EN: A lightly cut Mincho qipao whose hem flows with every movement. The prism candy loves its clean, crisp lines, and the glint of light it catches when she turns. -->
+  <MCW_Qipao.description>剪裁轻盈的珉巧旗袍，衣摆顺着动作舒展。琉璃糖喜欢它干净利落的线条，也喜欢转身时掠过的那一点光。</MCW_Qipao.description>
+  <!-- EN: Mincho qipao -->
   <MCW_Qipao.label>珉巧旗袍</MCW_Qipao.label>
-  <!-- EN: 非常便捷的服饰，让琉璃糖的战斗能加优美，并且可以吸引爱人！对了！还能防火！ -->
-  <MCW_Qipao.description>非常便捷的服饰，让琉璃糖的战斗能加优美，并且可以吸引爱人！对了！还能防火！</MCW_Qipao.description>
-  
+
 </LanguageData>

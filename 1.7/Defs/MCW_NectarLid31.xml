@@ -1,0 +1,1 @@
+<Defs><FacialAnimation.LidTypeDef MayRequire="talos.mincho.fa"><defName>MCW_Lid_Nectar31</defName><texPath>MCW/Faces124/NectarLid31</texPath><shader>Map/Transparent</shader><enableUnisexTexPath>True</enableUnisexTexPath><probability>0</probability><raceName>Mincho_ThingDef</raceName></FacialAnimation.LidTypeDef></Defs>

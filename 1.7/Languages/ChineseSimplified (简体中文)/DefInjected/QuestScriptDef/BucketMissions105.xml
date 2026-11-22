@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: <li>questDescription->同盟有一桶来历不明的薄荷冰淇淋，希望交给你们保管。接受后，货物将通过空投舱送达。请妥善接收，等待同盟确认。</li> -->
+  <MCWQ105_Cargo.questDescriptionRules.rulesStrings><li>questDescription->同盟有一桶来历不明的薄荷冰淇淋，希望交给你们保管。接受后，货物将通过空投舱送达。请妥善接收，等待同盟确认。</li></MCWQ105_Cargo.questDescriptionRules.rulesStrings>
+  <!-- EN: <li>questName->神秘冰淇淋货物</li> -->
+  <MCWQ105_Cargo.questNameRules.rulesStrings><li>questName->神秘冰淇淋货物</li></MCWQ105_Cargo.questNameRules.rulesStrings>
+  <!-- EN: <li>questDescription->珉巧冰淇淋桶飞行器受损迫降。保护2—4名乘员，约4小时后追兵抵达、8小时后接应飞行器抵达。请在其12小时等候期内护送所有乘员登机；接应飞行器实际载齐离开才算成功。乘员死亡、漏载、接应飞行器被毁或遗弃、放弃地图均失败。迫降残骸不能直接飞走。</li> -->
+  <MCWQ105_Crash.questDescriptionRules.rulesStrings><li>questDescription->珉巧冰淇淋桶飞行器受损迫降。保护2—4名乘员，约4小时后追兵抵达、8小时后接应飞行器抵达。请在其12小时等候期内护送所有乘员登机；接应飞行器实际载齐离开才算成功。乘员死亡、漏载、接应飞行器被毁或遗弃、放弃地图均失败。迫降残骸不能直接飞走。</li></MCWQ105_Crash.questDescriptionRules.rulesStrings>
+  <!-- EN: <li>questName->冰淇淋桶飞行器迫降</li> -->
+  <MCWQ105_Crash.questNameRules.rulesStrings><li>questName->冰淇淋桶飞行器迫降</li></MCWQ105_Crash.questNameRules.rulesStrings>
+</LanguageData>

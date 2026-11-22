@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
@@ -94,9 +94,9 @@ namespace MinchoCandyWars.QuestNodes
 
             List<Pawn> reinforcements = new List<Pawn>();
 
-            PawnKindDef mercenaryKind = DefDatabase<PawnKindDef>.GetNamed(MercenaryKindDefName, errorOnFail: false);
+            PawnKindDef mercenaryKind = MCW_DefOf.Mincho_Mercenary;
             PawnKindDef knightKind = DefDatabase<PawnKindDef>.GetNamed(KnightKindDefName, errorOnFail: false);
-            PawnKindDef smartKind = DefDatabase<PawnKindDef>.GetNamed(SmartKindDefName, errorOnFail: false);
+            PawnKindDef smartKind = MCW_DefOf.MCW_SmartMincho;
 
             // 2N 珉巧雇佣兵
             if (mercenaryKind != null)

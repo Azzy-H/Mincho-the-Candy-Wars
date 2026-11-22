@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -13,9 +13,9 @@
   -->
   <MinchoCandyWars.StellarisEvent.StellarisEventDef>
     <defName>MCW_Event_QuestA5_AllianceContact</defName>
-    <label>拯救珉巧据点</label>
-    <title>沁心糖</title>
-    <desc>你好！紧急事件！！我们的其中一个据点正在遭受袭击，距离她们最近的就是你们的殖民地，希望你们可以立刻派出增援！</desc>
+    <label>Save the Mincho outpost</label>
+    <title>Qinxintang</title>
+    <desc>Hello! Emergency! One of our outposts is under attack, and your colony is the closest to them. Please send reinforcements at once!</desc>
     <backgroundPath>Events/tile_large_bg</backgroundPath>
     <pictures>
       <li>
@@ -33,8 +33,8 @@
 
     <options>
       <li>
-        <label>是-我们立刻出发</label>
-        <desc>接受增援请求，立刻前往被袭击的珉巧据点。</desc>
+        <label>Yes - we are leaving now</label>
+        <desc>Accept and head at once to the Mincho outpost under attack.</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_FireIncident">
@@ -52,8 +52,8 @@
       </li>
 
       <li>
-        <label>否-抱歉，我们目前没法帮助你</label>
-        <desc>拒绝增援请求。这是紧急求救，沁心糖对你的好感度会大幅下降。</desc>
+        <label>No - sorry, we cannot help you right now</label>
+        <desc>Decline the request. This is an emergency call, so Qinxintang opinion of you will drop sharply.</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_AdjustFactionGoodwill">

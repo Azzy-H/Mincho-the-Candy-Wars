@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Hello! A smart Mincho has been captured by the reclamation company and is in great danger, but we are hard pressed and cannot easily free her. We hope you can help us rescue her! The target location has been sent to you. -->
+  <MCW_Event_QuestA2_AllianceContact.desc>你好！有一位智慧珉巧被回收公司捕获了，现在非常危险，但是我们现在疲于应战很难解救她，希望你能够帮我们解救她！目标位置已经发送给了你们。</MCW_Event_QuestA2_AllianceContact.desc>
+  <!-- EN: Smart Mincho rescue -->
+  <MCW_Event_QuestA2_AllianceContact.label>智慧珉巧救援</MCW_Event_QuestA2_AllianceContact.label>
+  <!-- EN: Accept the rescue request and head at once to free the imprisoned smart Mincho. -->
+  <MCW_Event_QuestA2_AllianceContact.options.0.desc>接受救援请求，立刻前往目标地点解救被囚禁的智慧珉巧。</MCW_Event_QuestA2_AllianceContact.options.0.desc>
+  <!-- EN: Yes - we will go and save her at once! -->
+  <MCW_Event_QuestA2_AllianceContact.options.0.label>是-我们马上去救她！</MCW_Event_QuestA2_AllianceContact.options.0.label>
+  <!-- EN: Decline the request. Qinxintang opinion of you will drop. -->
+  <MCW_Event_QuestA2_AllianceContact.options.1.desc>拒绝救援请求。沁心糖对你的好感度会下降。</MCW_Event_QuestA2_AllianceContact.options.1.desc>
+  <!-- EN: No - sorry, we cannot help you right now -->
+  <MCW_Event_QuestA2_AllianceContact.options.1.label>否-抱歉，我们目前没法帮助你</MCW_Event_QuestA2_AllianceContact.options.1.label>
+  <!-- EN: Qinxintang -->
+  <MCW_Event_QuestA2_AllianceContact.title>沁心糖</MCW_Event_QuestA2_AllianceContact.title>
+
+</LanguageData>

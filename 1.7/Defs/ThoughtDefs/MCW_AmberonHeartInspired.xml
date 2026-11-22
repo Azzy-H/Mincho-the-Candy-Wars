@@ -1,0 +1,14 @@
+<Defs>
+  <ThoughtDef>
+    <defName>MCW_AmberonHeartInspired</defName>
+    <durationDays>0.16666667</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>inspired!</label>
+        <description>The amber glow filled me with courage.</description>
+        <baseMoodEffect>40</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: The chill of mint hides in a chocolate blade. The slender sword is astonishingly light; when it cuts the air it leaves only a thin line of cold, sweet light. -->
+  <MCW_MintChocolateLongsword.description>薄荷的冷意藏在巧克力剑锋里。纤细的剑身轻得出奇，划过空气时，只留下一线清甜的寒光。</MCW_MintChocolateLongsword.description>
+  <!-- EN: Mint chocolate longsword -->
+  <MCW_MintChocolateLongsword.label>薄荷巧克力长剑</MCW_MintChocolateLongsword.label>
+  <!-- EN: edge -->
+  <MCW_MintChocolateLongsword.tools.edge.label>锋刃</MCW_MintChocolateLongsword.tools.edge.label>
+  <!-- EN: handle -->
+  <MCW_MintChocolateLongsword.tools.handle.label>握柄</MCW_MintChocolateLongsword.tools.handle.label>
+  <!-- EN: point -->
+  <MCW_MintChocolateLongsword.tools.point.label>尖端</MCW_MintChocolateLongsword.tools.point.label>
+</LanguageData>

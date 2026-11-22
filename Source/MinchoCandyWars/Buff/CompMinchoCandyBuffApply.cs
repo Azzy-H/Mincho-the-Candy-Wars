@@ -1,4 +1,4 @@
-using MinchoCandyWars.Data;
+﻿using MinchoCandyWars.Data;
 using RimWorld;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
@@ -53,7 +53,7 @@ namespace MinchoCandyWars.Buff
         {
             hediffDefsNeedToApply.Clear();
             if (CompMinchoCore == null || !CompMinchoCore.Active) return;
-            hediffDefsNeedToApply.Add(MCW_DefOf.MCW_Intel);
+            hediffDefsNeedToApply.Add(MCW_HediffDefOf.MCW_Intel);
             if (BodyStage?.gainHediffs != null)
             {
                 hediffDefsNeedToApply.AddRange(BodyStage.gainHediffs);

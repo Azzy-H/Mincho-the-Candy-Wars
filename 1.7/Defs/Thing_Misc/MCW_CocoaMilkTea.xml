@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="Mincho_FoodBase_Ingredients">
+    <defName>MCW_CocoaMilkTea</defName>
+    <label>Cocoa chocolate milk tea</label>
+    <description>A rich sweet drink brewed from chocolate and Mincho ice cream. Gentle cocoa aroma and cool cream mingle in the cup - good with a meal, and good for a slow afternoon.</description>
+    <graphicData>
+      <texPath>Things/Building/ChocolateBath/Bath</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>19.5</MarketValue>
+      <Mass>0.39</Mass>
+      <Beauty>0.5</Beauty>
+      <DeteriorationRate>5</DeteriorationRate>
+      <Nutrition>0.9</Nutrition>
+    </statBases>
+    <ingestible>
+      <preferability>MealLavish</preferability>
+      <tasteThought>MCW_DrankCocoaMilkTea</tasteThought>
+      <joy>0.5</joy>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>3</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThoughtDef>
+    <defName>MCW_DrankCocoaMilkTea</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Drank cocoa chocolate milk tea</label>
+        <description>Rich chocolate and cool cream made even a busy day a little sweeter.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <JoyGiverDef>
+    <defName>MCW_DrinkCocoaMilkTea</defName>
+    <giverClass>JoyGiver_Ingest</giverClass>
+    <baseChance>2.5</baseChance>
+    <thingDefs><li>MCW_CocoaMilkTea</li></thingDefs>
+    <joyKind>Gluttonous</joyKind>
+    <requiredCapacities><li>Manipulation</li></requiredCapacities>
+  </JoyGiverDef>
+  <RecipeDef ParentName="Mincho_FoodRecipe">
+    <defName>MCW_MakeCocoaMilkTea</defName>
+    <label>Make cocoa chocolate milk tea</label>
+    <description>Blend chocolate and Mincho ice cream into a rich cup of cocoa chocolate milk tea.</description>
+    <jobString>Making cocoa chocolate milk tea.</jobString>
+    <workAmount>450</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>Chocolate</li></thingDefs></filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter><categories><li>Mincho_IceCream</li></categories></filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>Chocolate</li></thingDefs>
+      <categories><li>Mincho_IceCream</li></categories>
+    </fixedIngredientFilter>
+    <products><MCW_CocoaMilkTea>1</MCW_CocoaMilkTea></products>
+  </RecipeDef>
+</Defs>

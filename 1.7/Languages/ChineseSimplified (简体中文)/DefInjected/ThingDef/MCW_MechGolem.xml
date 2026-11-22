@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: The stable form of the Mincho witch summon. A heavy chocolate shell wraps strong arms; it carries cargo clumsily in peacetime and becomes a wall before its companions in war. After its core shatters the body sometimes keeps moving, though it no longer recognizes the one calling it. -->
+  <MCW_Mech_Golem.description>珉巧女巫召唤物的稳定形态。厚重的巧克力甲壳包裹着强壮双臂，平日笨拙地搬运货物，战时便成为同伴身前的高墙。核心破碎后，躯体偶尔还会继续行动，只是再也认不出呼唤它的人。</MCW_Mech_Golem.description>
+  <!-- EN: Mincho golem -->
+  <MCW_Mech_Golem.label>珉巧魔像</MCW_Mech_Golem.label>
+  <!-- EN: Left fist -->
+  <MCW_Mech_Golem.tools.0.label>左拳</MCW_Mech_Golem.tools.0.label>
+  <!-- EN: Right fist -->
+  <MCW_Mech_Golem.tools.1.label>右拳</MCW_Mech_Golem.tools.1.label>
+  <!-- EN: Headbutt -->
+  <MCW_Mech_Golem.tools.2.label>头槌</MCW_Mech_Golem.tools.2.label>
+
+</LanguageData>

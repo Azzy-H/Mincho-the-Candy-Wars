@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Event7</defName>
+    <label>Supply settlement</label>
+    <title>Qinxintang</title>
+    <desc>Qinxintang: The resettlement will need some supplies. Not a campaign this time - could you gather a batch of chocolate bars for us? We will set aside another batch of goods in exchange.</desc>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+      </li>
+    </pictures>
+    <triggers>
+      <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+        <kind>7</kind>
+      </li>
+    </triggers>
+    <options>
+      <li>
+        <label>We will prepare it.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>7</kind>
+              <reject>false</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>We cannot arrange it this time.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>7</kind>
+              <reject>true</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>Wait until we have checked.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+  <QuestScriptDef>
+    <defName>MCWQ101_Delivery7</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <isRootSpecial>true</isRootSpecial>
+    <epicParent>MCWQ100_AllianceSeries</epicParent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName-&gt;Supply settlement</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-&gt;Qinxintang: The resettlement will need some supplies. Not a campaign this time - could you gather a batch of chocolate bars for us? We will set aside another batch of goods in exchange.
+Deliver within 5 days of accepting. Complete it through the Alliance contact delivery entry; items are not deducted if you fall short. Success raises Alliance goodwill by 5 and does not advance the endgame progress.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="MinchoCandyWars.QuestStory.DeliveryRoot">
+      <kind>7</kind>
+    </root>
+  </QuestScriptDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Event8</defName>
+    <label>Day-to-day assistance</label>
+    <title>Linglon candy</title>
+    <desc>Linglon candy: No fighting this time - help us put on a little tasting party? Gather a batch of delicious cookies first. I will think up the name; you make sure the numbers are right.</desc>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_LinglonCandy</path>
+      </li>
+    </pictures>
+    <triggers>
+      <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+        <kind>8</kind>
+      </li>
+    </triggers>
+    <options>
+      <li>
+        <label>We will prepare it.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>8</kind>
+              <reject>false</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>We cannot arrange it this time.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>8</kind>
+              <reject>true</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>Wait until we have checked.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+  <QuestScriptDef>
+    <defName>MCWQ101_Delivery8</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <isRootSpecial>true</isRootSpecial>
+    <epicParent>MCWQ100_AllianceSeries</epicParent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName-&gt;Day-to-day assistance</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-&gt;Linglon candy: No fighting this time - help us put on a little tasting party? Gather a batch of delicious cookies first. I will think up the name; you make sure the numbers are right.
+Deliver within 5 days of accepting. Complete it through the Alliance contact delivery entry; items are not deducted if you fall short. Success raises Alliance goodwill by 5 and does not advance the endgame progress.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="MinchoCandyWars.QuestStory.DeliveryRoot">
+      <kind>8</kind>
+    </root>
+  </QuestScriptDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Event9</defName>
+    <label>Clear out the remnants</label>
+    <title>Prism candy</title>
+    <desc>Prism candy: Found a leftover site. Their headquarters is cut off but this squad has not dispersed. The garrison is limited; I am sending the location. Will you help clear it?</desc>
+    <pictures>
+      <li>
+        <path>MCWQ/Portraits/Prism101</path>
+      </li>
+    </pictures>
+    <triggers>
+      <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+        <kind>9</kind>
+      </li>
+    </triggers>
+    <options>
+      <li>
+        <label>Send the coordinates; we are moving out.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>9</kind>
+              <reject>false</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>We cannot arrange it this time.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>9</kind>
+              <reject>true</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>Wait until we have checked.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+  <QuestScriptDef>
+    <defName>MCWQ101_Remnant</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <defaultChallengeRating>2</defaultChallengeRating>
+    <isRootSpecial>true</isRootSpecial>
+    <defaultCharity>false</defaultCharity>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName-&gt;Clear out the remnants</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-&gt;Clear the limited remnant garrison still able to fight here. Downed enemies need not be executed; there are no teleporters or endless reinforcements. 8-day limit after accepting; company raids remain disabled.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="MinchoCandyWars.QuestStory.QuestNode_AllianceReward">
+          <factionDef>MCW_Alliance_Faction</factionDef>
+          <goodwillChange>10</goodwillChange>
+          <endgameProgress>1</endgameProgress>
+          <kind>9</kind>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+        <li Class="QuestNode_GetMap" />
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>MCWQ101_RemnantCamp</tag>
+            </li>
+          </sitePartsTags>
+        </li>
+        <li Class="MinchoCandyWars.QuestStory.MissionFactionNode">
+          <kind>9</kind>
+        </li>
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+          </parms>
+        </li>
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+          <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+        </li>
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>480000</delayTicks>
+          <node Class="QuestNode_End">
+            <outcome>Fail</outcome>
+            <sendStandardLetter>true</sendStandardLetter>
+          </node>
+        </li>
+        <li Class="MinchoCandyWars.QuestStory.MissionNode">
+          <kind>9</kind>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+  <SitePartDef>
+    <defName>MCWQ101_RemnantCamp</defName>
+    <label>Reclamation remnant camp</label>
+    <workerClass>MinchoCandyWars.QuestStory.MissionSiteWorker</workerClass>
+    <requiresFaction>true</requiresFaction>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+    <tags>
+      <li>MCWQ101_RemnantCamp</li>
+    </tags>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>MCWQ101_RemnantBuildings</defName>
+    <linkWithSite>MCWQ101_RemnantCamp</linkWithSite>
+    <order>1600</order>
+    <genStep Class="MinchoCandyWars.QuestStory.MissionBuildings">
+      <kind>9</kind>
+    </genStep>
+  </GenStepDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Event10</defName>
+    <label>Companion tasting party</label>
+    <title>Linglon candy</title>
+    <desc>Companion tasting party</desc>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_LinglonCandy</path>
+      </li>
+    </pictures>
+    <triggers>
+      <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+        <kind>10</kind>
+      </li>
+    </triggers>
+    <options>
+      <li>
+        <label>We will prepare it.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>10</kind>
+              <reject>false</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>We cannot arrange it this time. (Alliance goodwill -10)</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>10</kind>
+              <reject>true</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>Wait until we have checked.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+  <QuestScriptDef>
+    <defName>MCWQ103_Delivery10</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <isRootSpecial>true</isRootSpecial>
+    <epicParent>MCWQ100_AllianceSeries</epicParent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName-&gt;Companion tasting party</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-&gt;Prepare a tasting party for the newly settled companions; deliver 50 delicious cookies. Deliver within 5 days through the Alliance contact menu.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="MinchoCandyWars.QuestStory.DeliveryRoot">
+      <kind>10</kind>
+    </root>
+  </QuestScriptDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Event11</defName>
+    <label>Mechanical assembly support</label>
+    <title>Mecha candy</title>
+    <desc>Mechanical assembly support</desc>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_MechaCandy</path>
+      </li>
+    </pictures>
+    <triggers>
+      <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+        <kind>11</kind>
+      </li>
+    </triggers>
+    <options>
+      <li>
+        <label>We will prepare it.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>11</kind>
+              <reject>false</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>We cannot arrange it this time. (Alliance goodwill -10)</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>11</kind>
+              <reject>true</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>Wait until we have checked.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+  <QuestScriptDef>
+    <defName>MCWQ103_Delivery11</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <isRootSpecial>true</isRootSpecial>
+    <epicParent>MCWQ100_AllianceSeries</epicParent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName-&gt;Mechanical assembly support</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-&gt;Deliver 12 components for the mecha candy mechanical assembly plan; the Alliance handles assembly and testing. Deliver within 5 days through the Alliance contact menu.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="MinchoCandyWars.QuestStory.DeliveryRoot">
+      <kind>11</kind>
+    </root>
+  </QuestScriptDef>
+</Defs>

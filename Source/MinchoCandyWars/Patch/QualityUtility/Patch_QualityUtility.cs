@@ -1,4 +1,4 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -15,7 +15,7 @@ namespace MinchoCandyWars.Patch.QualityUtility
                 return;
             }
 
-            if (pawn.health.hediffSet.HasHediff(MCW_DefOf.MCW_ProductionQualityBoost))
+            if (pawn.health.hediffSet.HasHediff(MCW_HediffDefOf.MCW_ProductionQualityBoost))
             {
                 __result = AddLevels(__result, 1);
             }

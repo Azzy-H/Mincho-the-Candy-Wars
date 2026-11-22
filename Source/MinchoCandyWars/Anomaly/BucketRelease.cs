@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using MinchoCandyWars;
 using RimWorld;
 using Verse;
@@ -24,6 +24,16 @@ public class BucketReleaseProperties : CompProperties_Interactable
 /// </summary>
 public class BucketRelease : CompInteractable
 {
+    public override IEnumerable<Gizmo> CompGetGizmosExtra()
+    {
+        foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+        {
+            if (parent.TryGetComp<CompStudyUnlocks>()?.Completed != true && gizmo is Command command)
+                command.defaultDesc = "MinchoCandyWars.UI.Bucket.MoreStudy".Translate();
+            yield return gizmo;
+        }
+    }
+
     public override AcceptanceReport CanInteract(Pawn activateBy = null!, bool checkOptionalItems = true)
     {
         if (parent.TryGetComp<CompStudyUnlocks>()?.Completed != true)
@@ -81,8 +91,9 @@ public class BucketRelease : CompInteractable
         // 销毁旧桶：EndlessBucket.PostDestroy 会解除所有由它造成的依赖
         parent.Destroy(DestroyMode.Vanish);
 
-        Thing released = ThingMaker.MakeThing(MCW_DefOf.MCW_EndlessIceCream_Released);
+        Thing released = ThingMaker.MakeThing(MCW_ThingDefOf.MCW_EndlessIceCream_Released);
         GenSpawn.Spawn(released, position, map, rotation);
+        QuestStory.BucketReceipt.RecordReplacement(parent, released, map);
 
         if (forbidden)
         {

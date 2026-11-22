@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MinchoCandyWars.StellarisEvent;
 using RimWorld;
 using UnityEngine;
@@ -98,6 +98,12 @@ namespace MinchoCandyWars
                 string cooldownFlagKey = entry.flagAsCooldown;
                 bool hasCooldown = !cooldownFlagKey.NullOrEmpty();
 
+                string label = entry.label ?? eventDef.label ?? "MCW_StellarisEventGizmo_Event".Translate().RawText;
+                string description = entry.desc ?? eventDef.description ?? "";
+                if (label.TryTranslate(out var translatedLabel)) label = translatedLabel.RawText;
+                if (description.Length > 0 && description.TryTranslate(out var translatedDescription))
+                    description = translatedDescription.RawText;
+
                 Command command;
 
                 if (hasCooldown)
@@ -105,8 +111,8 @@ namespace MinchoCandyWars
                     // ────── 带 Flag 冷却的 Command_ActionWithCooldown ──────
                     var cmd = new Command_ActionWithCooldown
                     {
-                        defaultLabel = entry.label ?? eventDef.label ?? "Event",
-                        defaultDesc = entry.desc ?? eventDef.description ?? "",
+                        defaultLabel = label,
+                        defaultDesc = description,
                         icon = icon ?? BaseContent.BadTex,
                         action = () =>
                         {
@@ -121,8 +127,8 @@ namespace MinchoCandyWars
                     // ────── 无冷却的普通 Command_Action ──────
                     command = new Command_Action
                     {
-                        defaultLabel = entry.label ?? eventDef.label ?? "Event",
-                        defaultDesc = entry.desc ?? eventDef.description ?? "",
+                        defaultLabel = label,
+                        defaultDesc = description,
                         icon = icon ?? BaseContent.BadTex,
                         action = () =>
                         {
@@ -143,6 +149,15 @@ namespace MinchoCandyWars
                 else if (!eventDef.CanTrigger())
                 {
                     command.Disable("MCW_StellarisEventGizmo_CannotTrigger".Translate());
+                }
+
+                if (eventDef == MCW_EventDefOf.MCW_Event_AllianceGreeting)
+                {
+                    if (icon != null)
+                        command.iconProportions = new Vector2((float)icon.width / icon.height, 1f);
+
+                    command.defaultLabel = "MinchoCandyWars.AllianceContact.Label".Translate();
+                    command.defaultDesc = "MinchoCandyWars.AllianceContact.ConsoleTooltip".Translate() + "\n\n" + QuestStory.Relations.Summary;
                 }
 
                 yield return command;

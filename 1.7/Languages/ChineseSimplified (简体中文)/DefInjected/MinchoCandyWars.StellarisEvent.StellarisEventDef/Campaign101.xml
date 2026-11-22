@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: 沁心糖：你好。先等一下，我把联络记录翻过来……咦，只是想聊聊？\n\n沁心糖：那这次可以少记几行了。你们今天过得怎么样？ -->
+  <MCWQ101_Chat0.desc>沁心糖：你好。先等一下，我把联络记录翻过来……咦，只是想聊聊？
+
+沁心糖：那这次可以少记几行了。你们今天过得怎么样？</MCWQ101_Chat0.desc>
+  <!-- EN: 沁心糖 -->
+  <MCWQ101_Chat0.label>沁心糖</MCWQ101_Chat0.label>
+  <!-- EN: 沁心糖：我刚把一张物资单当成了口味单，认真想了半天钢铁该配什么。幸好还没发出去。 -->
+  <MCWQ101_Chat0.options.0.desc>沁心糖：我刚把一张物资单当成了口味单，认真想了半天钢铁该配什么。幸好还没发出去。</MCWQ101_Chat0.options.0.desc>
+  <!-- EN: 今天没什么大事，你呢？ -->
+  <MCWQ101_Chat0.options.0.label>今天没什么大事，你呢？</MCWQ101_Chat0.options.0.label>
+  <!-- EN: 沁心糖：有时候学会一道很难的题，还不如先学会在陌生地方问路。有人愿意指一条路，就能少绕很久。 -->
+  <MCWQ101_Chat0.options.1.desc>沁心糖：有时候学会一道很难的题，还不如先学会在陌生地方问路。有人愿意指一条路，就能少绕很久。</MCWQ101_Chat0.options.1.desc>
+  <!-- EN: 想听听你以前游历的事。 -->
+  <MCWQ101_Chat0.options.1.label>想听听你以前游历的事。</MCWQ101_Chat0.options.1.label>
+  <!-- EN: 今天先聊到这里。 -->
+  <MCWQ101_Chat0.options.2.label>今天先聊到这里。</MCWQ101_Chat0.options.2.label>
+  <!-- EN: 沁心糖 -->
+  <MCWQ101_Chat0.title>沁心糖</MCWQ101_Chat0.title>
+  <!-- EN: 琥珀糖：今天没有新的求援。你可以先不用站起来找装备。 -->
+  <MCWQ101_Chat1.desc>琥珀糖：今天没有新的求援。你可以先不用站起来找装备。</MCWQ101_Chat1.desc>
+  <!-- EN: 琥珀糖 -->
+  <MCWQ101_Chat1.label>琥珀糖</MCWQ101_Chat1.label>
+  <!-- EN: 琥珀糖：有时坐在大家附近，听她们说些零碎的事。都能安心忙自己的，就很好。 -->
+  <MCWQ101_Chat1.options.0.desc>琥珀糖：有时坐在大家附近，听她们说些零碎的事。都能安心忙自己的，就很好。</MCWQ101_Chat1.options.0.desc>
+  <!-- EN: 那你不守着大家的时候做什么？ -->
+  <MCWQ101_Chat1.options.0.label>那你不守着大家的时候做什么？</MCWQ101_Chat1.options.0.label>
+  <!-- EN: 琥珀糖：会。但把该请人帮忙的事说出来，也是保护。要是只剩我知道哪里撑不住，别人连来接手的机会都没有。 -->
+  <MCWQ101_Chat1.options.1.desc>琥珀糖：会。但把该请人帮忙的事说出来，也是保护。要是只剩我知道哪里撑不住，别人连来接手的机会都没有。</MCWQ101_Chat1.options.1.desc>
+  <!-- EN: 保护伙伴，会不会总想什么都自己扛？ -->
+  <MCWQ101_Chat1.options.1.label>保护伙伴，会不会总想什么都自己扛？</MCWQ101_Chat1.options.1.label>
+  <!-- EN: 今天先聊到这里。 -->
+  <MCWQ101_Chat1.options.2.label>今天先聊到这里。</MCWQ101_Chat1.options.2.label>
+  <!-- EN: 琥珀糖 -->
+  <MCWQ101_Chat1.title>琥珀糖</MCWQ101_Chat1.title>
+  <!-- EN: 甘露糖：今天有没有好好吃饭？不是检查，我只是自己忙起来也会忘。 -->
+  <MCWQ101_Chat2.desc>甘露糖：今天有没有好好吃饭？不是检查，我只是自己忙起来也会忘。</MCWQ101_Chat2.desc>
+  <!-- EN: 甘露糖 -->
+  <MCWQ101_Chat2.label>甘露糖</MCWQ101_Chat2.label>
+  <!-- EN: 甘露糖：那就找个能坐下的地方吧。想说就说，不想说也不用为了不冷场一直找话。 -->
+  <MCWQ101_Chat2.options.0.desc>甘露糖：那就找个能坐下的地方吧。想说就说，不想说也不用为了不冷场一直找话。</MCWQ101_Chat2.options.0.desc>
+  <!-- EN: 吃过了，就是有点累。 -->
+  <MCWQ101_Chat2.options.0.label>吃过了，就是有点累。</MCWQ101_Chat2.options.0.label>
+  <!-- EN: 甘露糖：我会先把今天剩下的事分一分。必须现在做的留下，其他的容许它们等一等。 -->
+  <MCWQ101_Chat2.options.1.desc>甘露糖：我会先把今天剩下的事分一分。必须现在做的留下，其他的容许它们等一等。</MCWQ101_Chat2.options.1.desc>
+  <!-- EN: 有什么能让人放松的小办法？ -->
+  <MCWQ101_Chat2.options.1.label>有什么能让人放松的小办法？</MCWQ101_Chat2.options.1.label>
+  <!-- EN: 厨房里有人在试新口味。 -->
+  <MCWQ101_Chat2.options.2.label>厨房里有人在试新口味。</MCWQ101_Chat2.options.2.label>
+  <!-- EN: 今天先聊到这里。 -->
+  <MCWQ101_Chat2.options.3.label>今天先聊到这里。</MCWQ101_Chat2.options.3.label>
+  <!-- EN: 甘露糖 -->
+  <MCWQ101_Chat2.title>甘露糖</MCWQ101_Chat2.title>
+  <!-- EN: 千机糖：我在改一张草图。现在卡住的地方不是结构，是旁边那行名字。 -->
+  <MCWQ101_Chat3.desc>千机糖：我在改一张草图。现在卡住的地方不是结构，是旁边那行名字。</MCWQ101_Chat3.desc>
+  <!-- EN: 千机糖 -->
+  <MCWQ101_Chat3.label>千机糖</MCWQ101_Chat3.label>
+  <!-- EN: 千机糖：结构坏了可以修，名字被大家叫顺口了，就很难让他们改回去。 -->
+  <MCWQ101_Chat3.options.0.desc>千机糖：结构坏了可以修，名字被大家叫顺口了，就很难让他们改回去。</MCWQ101_Chat3.options.0.desc>
+  <!-- EN: 名字有那么重要吗？ -->
+  <MCWQ101_Chat3.options.0.label>名字有那么重要吗？</MCWQ101_Chat3.options.0.label>
+  <!-- EN: 千机糖：可以。只是在纸上讨论，不是让你马上给我造一台。 -->
+  <MCWQ101_Chat3.options.1.desc>千机糖：可以。只是在纸上讨论，不是让你马上给我造一台。</MCWQ101_Chat3.options.1.desc>
+  <!-- EN: 让我帮你想想？ -->
+  <MCWQ101_Chat3.options.1.label>让我帮你想想？</MCWQ101_Chat3.options.1.label>
+  <!-- EN: 今天先聊到这里。 -->
+  <MCWQ101_Chat3.options.2.label>今天先聊到这里。</MCWQ101_Chat3.options.2.label>
+  <!-- EN: 千机糖 -->
+  <MCWQ101_Chat3.title>千机糖</MCWQ101_Chat3.title>
+  <!-- EN: 琉璃糖：只是闲聊？……你说。 -->
+  <MCWQ101_Chat4.desc>琉璃糖：只是闲聊？……你说。</MCWQ101_Chat4.desc>
+  <!-- EN: 琉璃糖 -->
+  <MCWQ101_Chat4.label>琉璃糖</MCWQ101_Chat4.label>
+  <!-- EN: 琉璃糖：先看路线，再查装备。剩下的，到了再判断。别只站着想。 -->
+  <MCWQ101_Chat4.options.0.desc>琉璃糖：先看路线，再查装备。剩下的，到了再判断。别只站着想。</MCWQ101_Chat4.options.0.desc>
+  <!-- EN: 准备事情的时候，总觉得还差一点。 -->
+  <MCWQ101_Chat4.options.0.label>准备事情的时候，总觉得还差一点。</MCWQ101_Chat4.options.0.label>
+  <!-- EN: 琉璃糖：走走。挑条清静的路，不必很远。 -->
+  <MCWQ101_Chat4.options.1.desc>琉璃糖：走走。挑条清静的路，不必很远。</MCWQ101_Chat4.options.1.desc>
+  <!-- EN: 你喜欢闲着的时候做什么？ -->
+  <MCWQ101_Chat4.options.1.label>你喜欢闲着的时候做什么？</MCWQ101_Chat4.options.1.label>
+  <!-- EN: 今天先聊到这里。 -->
+  <MCWQ101_Chat4.options.2.label>今天先聊到这里。</MCWQ101_Chat4.options.2.label>
+  <!-- EN: 琉璃糖 -->
+  <MCWQ101_Chat4.title>琉璃糖</MCWQ101_Chat4.title>
+  <!-- EN: 玲珑糖：接通啦！这回不接任务，专程来聊天？那我可要听点新鲜事了。 -->
+  <MCWQ101_Chat5.desc>玲珑糖：接通啦！这回不接任务，专程来聊天？那我可要听点新鲜事了。</MCWQ101_Chat5.desc>
+  <!-- EN: 玲珑糖 -->
+  <MCWQ101_Chat5.label>玲珑糖</MCWQ101_Chat5.label>
+  <!-- EN: 玲珑糖：来得正好，我先问！今天有没有什么让你忍不住笑出来的小事？没有也行，咱们换个话题。 -->
+  <MCWQ101_Chat5.options.0.desc>玲珑糖：来得正好，我先问！今天有没有什么让你忍不住笑出来的小事？没有也行，咱们换个话题。</MCWQ101_Chat5.options.0.desc>
+  <!-- EN: 其实没什么想说的，只是想找个人聊聊。 -->
+  <MCWQ101_Chat5.options.0.label>其实没什么想说的，只是想找个人聊聊。</MCWQ101_Chat5.options.0.label>
+  <!-- EN: 玲珑糖：可以！先从头讲：我们最早跟着沁心糖游历，后来才有了同盟。别急，还没到你熟悉的那些任务单呢。 -->
+  <MCWQ101_Chat5.options.1.desc>玲珑糖：可以！先从头讲：我们最早跟着沁心糖游历，后来才有了同盟。别急，还没到你熟悉的那些任务单呢。</MCWQ101_Chat5.options.1.desc>
+  <!-- EN: 以前的事情，你愿意说吗？ -->
+  <MCWQ101_Chat5.options.1.label>以前的事情，你愿意说吗？</MCWQ101_Chat5.options.1.label>
+  <!-- EN: 今天先聊到这里。 -->
+  <MCWQ101_Chat5.options.2.label>今天先聊到这里。</MCWQ101_Chat5.options.2.label>
+  <!-- EN: 玲珑糖 -->
+  <MCWQ101_Chat5.title>玲珑糖</MCWQ101_Chat5.title>
+</LanguageData>

@@ -1,4 +1,4 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -43,7 +43,7 @@ public static class ApparelIconDisplay
             return true;
         Color previous = GUI.color;
         // Match the user-approved 025 palette rule, including newly stuffable mechanitor gear.
-        if (thingDef.defName != "MCW_Bikini" && thingDef.defName != "MCW_BikiniBW")
+        if (thingDef != MCW_ThingDefOf.MCW_Bikini && thingDef != MCW_ThingDefOf.MCW_BikiniBW)
             GUI.color = new Color(1f, 1f, 1f, previous.a);
         Widgets.DrawTextureFitted(rect, resolvedIcon, framedScale, proportions, uv, resolvedIconAngle, mat, alpha);
         GUI.color = previous;

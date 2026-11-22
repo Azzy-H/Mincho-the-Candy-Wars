@@ -1,13 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef ParentName="BuildingBase">
     <defName>MCW_BucketShuttle</defName>
-    <label>珉巧冰淇淋桶飞行器</label>
-    <description>一桶能飞行的巨型冰淇淋。可装载乘员和货物，沿用载客穿梭机的操作和驾驶要求。
-
-补给：薄荷巧克力、蓝色北极熊或粉色寻爱者冰淇淋，每份提供1点动力，可混合补给。容量1000份；每格消耗2份，最低单程消耗35份；单次航程上限56格（约为穿梭机的90%）。停放不消耗。
-
-冰淇淋加入后作为混合动力储备，无法取回。</description>
+    <label>Mincho ice cream bucket shuttle</label>
+    <description>A giant flying craft that is one bucket full of colorful ice cream. Mint-colored exhaust lifts the round barrel body, carrying passengers, luggage and a sweet trail far away.</description>
     <thingClass>Building_PassengerShuttle</thingClass>
     <preventDroppingThingsOn>true</preventDroppingThingsOn>
     <altitudeLayer>Building</altitudeLayer>
@@ -86,7 +82,7 @@
         <worldObjectDef>MCW_BucketShuttle_World</worldObjectDef>
         <cooldownTicks>3750</cooldownTicks>
         <fixedLaunchDistanceMax>56</fixedLaunchDistanceMax>
-        <cooldownEndedMessage>{0}已准备好再次起飞。</cooldownEndedMessage>
+        <cooldownEndedMessage>{0} is ready to take off again.</cooldownEndedMessage>
       </li>
       <li Class="CompProperties_Transporter">
         <massCapacity>500</massCapacity>
@@ -107,8 +103,8 @@
             <li>Mincho_PinkFallInLove</li>
           </thingDefs>
         </fuelFilter>
-        <fuelLabel>冰淇淋储备</fuelLabel>
-        <fuelGizmoLabel>冰淇淋</fuelGizmoLabel>
+        <fuelLabel>Ice cream reserve</fuelLabel>
+        <fuelGizmoLabel>Ice cream</fuelGizmoLabel>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
         <autoRefuelPercent>1</autoRefuelPercent>
         <showFuelGizmo>true</showFuelGizmo>
@@ -128,7 +124,7 @@
   </ThingDef>
   <TransportShipDef>
     <defName>MCW_BucketShuttle_Ship</defName>
-    <label>冰淇淋桶飞行器</label>
+    <label>Ice cream bucket shuttle</label>
     <shipThing>MCW_BucketShuttle</shipThing>
     <arrivingSkyfaller>MCW_BucketShuttle_Incoming</arrivingSkyfaller>
     <leavingSkyfaller>MCW_BucketShuttle_Leaving</leavingSkyfaller>
@@ -137,7 +133,7 @@
   </TransportShipDef>
   <ThingDef ParentName="ShuttleSkyfallerBase">
     <defName>MCW_BucketShuttle_Incoming</defName>
-    <label>冰淇淋桶（降落中）</label>
+    <label>Ice cream bucket (landing)</label>
     <thingClass>MinchoCandyWars.Odyssey.BucketIncoming</thingClass>
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
@@ -159,6 +155,12 @@
           <li>(1,0)</li>
         </points>
       </rotationCurve>
+      <angleCurve>
+        <points>
+          <li>(0,90)</li>
+          <li>(1,90)</li>
+        </points>
+      </angleCurve>
       <zPositionCurve>
         <points>
           <li>(0,0)</li>
@@ -172,10 +174,11 @@
         </points>
       </speedCurve>
     </skyfaller>
+    <description>The mint-colored exhaust gradually draws in as the round ice cream bucket slowly descends.</description>
   </ThingDef>
   <ThingDef ParentName="ShuttleSkyfallerBase">
     <defName>MCW_BucketShuttle_Leaving</defName>
-    <label>冰淇淋桶（起飞中）</label>
+    <label>Ice cream bucket (taking off)</label>
     <thingClass>MinchoCandyWars.Odyssey.BucketLeaving</thingClass>
     <rotatable>true</rotatable>
     <graphicData>
@@ -201,6 +204,12 @@
           <li>(1,0)</li>
         </points>
       </rotationCurve>
+      <angleCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(1,0)</li>
+        </points>
+      </angleCurve>
       <zPositionCurve>
         <points>
           <li>(0,0)</li>
@@ -214,11 +223,12 @@
         </points>
       </speedCurve>
     </skyfaller>
+    <description>The engines lift the barrel body full of sweetness. The ground falls away and another journey begins.</description>
   </ThingDef>
   <WorldObjectDef ParentName="ShuttleWorldObjectBase">
     <defName>MCW_BucketShuttle_World</defName>
-    <label>冰淇淋桶飞行器</label>
-    <description>载着乘员和货物飞行的巨大冰淇淋桶。</description>
+    <label>Ice cream bucket shuttle</label>
+    <description>A giant ice cream bucket carrying passengers and cargo through the air.</description>
     <expandingIconTexture>Things/Building/BucketShuttle/Bucket</expandingIconTexture>
     <expandingIconDrawSize>1</expandingIconDrawSize>
   </WorldObjectDef>

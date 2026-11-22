@@ -26,12 +26,15 @@
     <fadeOutTime>0.26</fadeOutTime>
     <graphicData>
       <texPath>Effects/Prism/MCW_ThousandBlades</texPath>
+      <!-- 按原图有效 alpha 边界校准，长度7、扇形弦宽4.788格；不改原图。 -->
+      <drawSize>(1.108342, 2.497561)</drawSize>
+      <drawOffset>(-0.007584, 0, -0.093430)</drawOffset>
       <graphicClass>Graphic_Fleck</graphicClass>
       <shaderType>Mote</shaderType>
     </graphicData>
   </FleckDef>
 
-  <!-- 冰霜剑影：半月斩击，射程 13、半角 90°，覆盖面比千刃宽得多，故持续略长。 -->
+  <!-- 冰霜剑影：保持原图大小，攻击判定另收窄为45°。 -->
   <FleckDef ParentName="FleckBase">
     <defName>MCW_Fleck_FrostSwordShadowSlash</defName>
     <altitudeLayer>MoteOverhead</altitudeLayer>
@@ -40,6 +43,9 @@
     <fadeOutTime>0.33</fadeOutTime>
     <graphicData>
       <texPath>Effects/Prism/MCW_FrostSwordShadow</texPath>
+      <!-- 不再放大剑影；按主体alpha>32边界353..742校正中心：(547.5-512)/1024×26。 -->
+      <drawSize>(1, 1)</drawSize>
+      <drawOffset>(0, 0, 0.901367)</drawOffset>
       <graphicClass>Graphic_Fleck</graphicClass>
       <shaderType>Mote</shaderType>
     </graphicData>

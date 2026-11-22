@@ -1,4 +1,4 @@
-using Verse;
+﻿using Verse;
 
 namespace MinchoCandyWars.Anomaly;
 
@@ -20,9 +20,9 @@ public static class MintFoodPriority
         if (pawn.health == null) return false;
 
         HediffSet hediffs = pawn.health.hediffSet;
-        if (hediffs.GetFirstHediffOfDef(MCW_DefOf.MCW_MintAddiction) == null) return false;
+        if (hediffs.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MintAddiction) == null) return false;
 
-        return hediffs.GetFirstHediffOfDef(MCW_DefOf.MCW_MintFreedom) == null;
+        return hediffs.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MintFreedom) == null;
     }
 
     /// <summary>
@@ -35,7 +35,7 @@ public static class MintFoodPriority
     {
         if (food?.def?.ingestible == null || !food.def.IsNutritionGivingIngestible || food.def.IsDrug) return 0;
 
-        if (food.def == MCW_DefOf.MCW_EndlessIceCream) return 2;
+        if (food.def == MCW_ThingDefOf.MCW_EndlessIceCream) return 2;
 
         return MintAddiction.IsMintFood(food) ? 1 : 0;
     }

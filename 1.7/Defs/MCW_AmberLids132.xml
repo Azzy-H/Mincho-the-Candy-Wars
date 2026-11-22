@@ -1,0 +1,11 @@
+<Defs>
+  <!-- 正面沿用02，侧面沿用08；复用原有完整眨眼状态，不增加动画代码。 -->
+  <FacialAnimation.LidTypeDef MayRequire="talos.mincho.fa">
+    <defName>MCW_Lid_Amber132</defName>
+    <texPath>MCW/AmberLids132</texPath>
+    <shader>Map/Transparent</shader>
+    <enableUnisexTexPath>True</enableUnisexTexPath>
+    <probability>0</probability>
+    <raceName>Mincho_ThingDef</raceName>
+  </FacialAnimation.LidTypeDef>
+</Defs>

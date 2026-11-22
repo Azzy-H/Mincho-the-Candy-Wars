@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <!-- ============================================================ -->
   <!-- 智慧珉巧改造包系列：物品 + 制作配方 + 手术配方               -->
   <!-- 所有改造包在珉巧工作台制作，使用时为 100% 成功率手术。       -->
   <!-- ============================================================ -->
-
   <!-- ===== 智慧珉巧改造包 ===== -->
   <ThingDef ParentName="ResourceBase">
     <defName>MCW_MinchoIntelBooster</defName>
     <label>Mincho intelligence booster</label>
-    <description>沁心糖研发的智慧珉巧改造包，接收改造的珉巧可以拥有更加高级的智能。</description>
+    <description>A smart booster carefully prepared by Qinxintang. Tiny chips glitter in the syrup, lighting a new beam for thoughts that were once dim.</description>
     <graphicData>
       <texPath>Things/Item/MinchoIntelBooster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -25,12 +23,11 @@
       <li>Manufactured</li>
     </thingCategories>
   </ThingDef>
-
   <!-- ===== 智慧珉巧初级核心改造包 ===== -->
   <ThingDef ParentName="ResourceBase">
     <defName>MCW_MinchoCoreBoosterBasic</defName>
     <label>Mincho basic core booster</label>
-    <description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 1 级到 3 级的提升）</description>
+    <description>A core booster made by Qinxintang; neat micro-components float in clear sugar liquid. Like pieces of a puzzle, they make a smart Mincho thinking clearer.</description>
     <graphicData>
       <texPath>Things/Item/MinchoCoreBoosterBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -45,12 +42,11 @@
       <li>Manufactured</li>
     </thingCategories>
   </ThingDef>
-
   <!-- ===== 智慧珉巧高级核心改造包 ===== -->
   <ThingDef ParentName="ResourceBase">
     <defName>MCW_MinchoCoreBoosterAdvanced</defName>
     <label>Mincho advanced core booster</label>
-    <description>沁心糖研发的用于增加智慧珉巧核心等级的改造包。（用于 3 级到 5 级的提升）</description>
+    <description>A refined advanced core booster. Precise structures hide beneath a gentle sweetness, carrying Qinxintang hope for wider thought.</description>
     <graphicData>
       <texPath>Things/Item/MinchoCoreBoosterAdvanced</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -65,12 +61,11 @@
       <li>Manufactured</li>
     </thingCategories>
   </ThingDef>
-
   <!-- ===== 智慧珉巧躯体改造包 ===== -->
   <ThingDef ParentName="ResourceBase">
     <defName>MCW_MinchoBodyBooster</defName>
     <label>Mincho body booster</label>
-    <description>沁心糖研发的用于增加智慧珉巧躯体等级的改造包。（用于 1 级到 5 级的提升）</description>
+    <description>A body booster prepared for a smart Mincho. Supple material slowly unfolds in its container, waiting to become one with a new body.</description>
     <graphicData>
       <texPath>Things/Item/MinchoBodyBooster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -85,14 +80,12 @@
       <li>Manufactured</li>
     </thingCategories>
   </ThingDef>
-
   <!-- ===================== 制作配方 ===================== -->
-
   <RecipeDef>
     <defName>MCW_Make_MinchoIntelBooster</defName>
     <researchPrerequisite>MCW_Research_BoosterIntel</researchPrerequisite>
     <label>make Mincho intelligence booster</label>
-    <description>制作智慧珉巧改造包。</description>
+    <description>Make a smart Mincho booster.</description>
     <jobString>Making Mincho intelligence booster.</jobString>
     <workAmount>12000</workAmount>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -103,15 +96,29 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>Mincho_Mintchoco</li>
+            <li>Mincho_BluePolarBear</li>
+            <li>Mincho_PinkFallInLove</li>
+          </thingDefs>
+        </filter>
         <count>100</count>
       </li>
       <li>
-        <filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
         <count>1</count>
       </li>
       <li MayRequire="Ludeon.RimWorld.Biotech">
-        <filter><thingDefs><li>ArchiteCapsule</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>ArchiteCapsule</li>
+          </thingDefs>
+        </filter>
         <count>1</count>
       </li>
     </ingredients>
@@ -119,22 +126,22 @@
       <MCW_MinchoIntelBooster>1</MCW_MinchoIntelBooster>
     </products>
     <workSkill>Crafting</workSkill>
-      <fixedIngredientFilter>
-        <thingDefs>
-          <li>Mincho_Mintchoco</li>
-          <li>Mincho_BluePolarBear</li>
-          <li>Mincho_PinkFallInLove</li>
-          <li>ComponentSpacer</li>
-          <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
-        </thingDefs>
-      </fixedIngredientFilter>
-  <allowMixingIngredients>true</allowMixingIngredients></RecipeDef>
-
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Mincho_Mintchoco</li>
+        <li>Mincho_BluePolarBear</li>
+        <li>Mincho_PinkFallInLove</li>
+        <li>ComponentSpacer</li>
+        <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <allowMixingIngredients>true</allowMixingIngredients>
+  </RecipeDef>
   <RecipeDef>
     <defName>MCW_Make_MinchoCoreBoosterBasic</defName>
     <researchPrerequisite>MCW_Research_BoosterCoreBasic</researchPrerequisite>
     <label>make Mincho basic core booster</label>
-    <description>制作智慧珉巧初级核心改造包。</description>
+    <description>Make a basic smart Mincho core booster.</description>
     <jobString>Making Mincho basic core booster.</jobString>
     <workAmount>8000</workAmount>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -145,11 +152,21 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>Mincho_Mintchoco</li>
+            <li>Mincho_BluePolarBear</li>
+            <li>Mincho_PinkFallInLove</li>
+          </thingDefs>
+        </filter>
         <count>50</count>
       </li>
       <li MayRequire="Ludeon.RimWorld.Biotech">
-        <filter><thingDefs><li>SubcoreBasic</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
         <count>1</count>
       </li>
     </ingredients>
@@ -157,22 +174,21 @@
       <MCW_MinchoCoreBoosterBasic>1</MCW_MinchoCoreBoosterBasic>
     </products>
     <workSkill>Crafting</workSkill>
-      <fixedIngredientFilter>
-        <thingDefs>
-          <li>Mincho_Mintchoco</li>
-          <li>Mincho_BluePolarBear</li>
-          <li>Mincho_PinkFallInLove</li>
-          <li MayRequire="Ludeon.RimWorld.Biotech">SubcoreBasic</li>
-        </thingDefs>
-      </fixedIngredientFilter>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Mincho_Mintchoco</li>
+        <li>Mincho_BluePolarBear</li>
+        <li>Mincho_PinkFallInLove</li>
+        <li MayRequire="Ludeon.RimWorld.Biotech">SubcoreBasic</li>
+      </thingDefs>
+    </fixedIngredientFilter>
     <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
-
   <RecipeDef>
     <defName>MCW_Make_MinchoCoreBoosterAdvanced</defName>
     <researchPrerequisite>MCW_Research_BoosterCoreAdvanced</researchPrerequisite>
     <label>make Mincho advanced core booster</label>
-    <description>制作智慧珉巧高级核心改造包。</description>
+    <description>Make an advanced smart Mincho core booster.</description>
     <jobString>Making Mincho advanced core booster.</jobString>
     <workAmount>8000</workAmount>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -183,11 +199,21 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>Mincho_Mintchoco</li>
+            <li>Mincho_BluePolarBear</li>
+            <li>Mincho_PinkFallInLove</li>
+          </thingDefs>
+        </filter>
         <count>50</count>
       </li>
       <li MayRequire="Ludeon.RimWorld.Biotech">
-        <filter><thingDefs><li>SubcoreRegular</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>SubcoreRegular</li>
+          </thingDefs>
+        </filter>
         <count>1</count>
       </li>
     </ingredients>
@@ -195,22 +221,21 @@
       <MCW_MinchoCoreBoosterAdvanced>1</MCW_MinchoCoreBoosterAdvanced>
     </products>
     <workSkill>Crafting</workSkill>
-      <fixedIngredientFilter>
-        <thingDefs>
-          <li>Mincho_Mintchoco</li>
-          <li>Mincho_BluePolarBear</li>
-          <li>Mincho_PinkFallInLove</li>
-          <li MayRequire="Ludeon.RimWorld.Biotech">SubcoreRegular</li>
-        </thingDefs>
-      </fixedIngredientFilter>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Mincho_Mintchoco</li>
+        <li>Mincho_BluePolarBear</li>
+        <li>Mincho_PinkFallInLove</li>
+        <li MayRequire="Ludeon.RimWorld.Biotech">SubcoreRegular</li>
+      </thingDefs>
+    </fixedIngredientFilter>
     <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
-
   <RecipeDef>
     <defName>MCW_Make_MinchoBodyBooster</defName>
     <researchPrerequisite>MCW_Research_BoosterBody</researchPrerequisite>
     <label>make Mincho body booster</label>
-    <description>制作智慧珉巧躯体改造包。</description>
+    <description>Make a smart Mincho body booster.</description>
     <jobString>Making Mincho body booster.</jobString>
     <workAmount>8000</workAmount>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -221,11 +246,21 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>Mincho_Mintchoco</li><li>Mincho_BluePolarBear</li><li>Mincho_PinkFallInLove</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>Mincho_Mintchoco</li>
+            <li>Mincho_BluePolarBear</li>
+            <li>Mincho_PinkFallInLove</li>
+          </thingDefs>
+        </filter>
         <count>300</count>
       </li>
       <li>
-        <filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
         <count>4</count>
       </li>
     </ingredients>
@@ -233,23 +268,21 @@
       <MCW_MinchoBodyBooster>1</MCW_MinchoBodyBooster>
     </products>
     <workSkill>Crafting</workSkill>
-      <fixedIngredientFilter>
-        <thingDefs>
-          <li>Mincho_Mintchoco</li>
-          <li>Mincho_BluePolarBear</li>
-          <li>Mincho_PinkFallInLove</li>
-          <li>ComponentIndustrial</li>
-        </thingDefs>
-      </fixedIngredientFilter>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Mincho_Mintchoco</li>
+        <li>Mincho_BluePolarBear</li>
+        <li>Mincho_PinkFallInLove</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
     <allowMixingIngredients>true</allowMixingIngredients>
   </RecipeDef>
-
   <!-- ===================== 手术配方 ===================== -->
-
   <RecipeDef>
     <defName>MCW_Implant_MinchoIntelBooster</defName>
     <label>implant Mincho intelligence booster</label>
-    <description>对普通珉巧使用智慧珉巧改造包，使其成为智慧珉巧。100% 成功率。</description>
+    <description>Use the smart Mincho booster on an ordinary Mincho to make her a smart Mincho. 100% success chance.</description>
     <jobString>Implanting Mincho intelligence booster.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
     <anesthetize>false</anesthetize>
@@ -266,12 +299,18 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>MCW_MinchoIntelBooster</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>MCW_MinchoIntelBooster</li>
+          </thingDefs>
+        </filter>
         <count>1</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <thingDefs><li>MCW_MinchoIntelBooster</li></thingDefs>
+      <thingDefs>
+        <li>MCW_MinchoIntelBooster</li>
+      </thingDefs>
     </fixedIngredientFilter>
     <modExtensions>
       <li Class="MinchoCandyWars.MinchoBoosterRecipeModExtension">
@@ -279,11 +318,10 @@
       </li>
     </modExtensions>
   </RecipeDef>
-
   <RecipeDef>
     <defName>MCW_Implant_MinchoCoreBoosterBasic</defName>
     <label>implant Mincho basic core booster</label>
-    <description>对核心等级 1-2 级的智慧珉巧使用初级核心改造包，提升核心等级。100% 成功率。</description>
+    <description>Use the basic core booster on a smart Mincho of core grade 1-2 to raise her core grade. 100% success chance.</description>
     <jobString>Implanting Mincho basic core booster.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
     <anesthetize>false</anesthetize>
@@ -300,12 +338,18 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>MCW_MinchoCoreBoosterBasic</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>MCW_MinchoCoreBoosterBasic</li>
+          </thingDefs>
+        </filter>
         <count>1</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <thingDefs><li>MCW_MinchoCoreBoosterBasic</li></thingDefs>
+      <thingDefs>
+        <li>MCW_MinchoCoreBoosterBasic</li>
+      </thingDefs>
     </fixedIngredientFilter>
     <modExtensions>
       <li Class="MinchoCandyWars.MinchoBoosterRecipeModExtension">
@@ -313,11 +357,10 @@
       </li>
     </modExtensions>
   </RecipeDef>
-
   <RecipeDef>
     <defName>MCW_Implant_MinchoCoreBoosterAdvanced</defName>
     <label>implant Mincho advanced core booster</label>
-    <description>对核心等级 3-4 级的智慧珉巧使用高级核心改造包，提升核心等级。100% 成功率。</description>
+    <description>Use the advanced core booster on a smart Mincho of core grade 3-4 to raise her core grade. 100% success chance.</description>
     <jobString>Implanting Mincho advanced core booster.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
     <anesthetize>false</anesthetize>
@@ -334,12 +377,18 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>MCW_MinchoCoreBoosterAdvanced</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>MCW_MinchoCoreBoosterAdvanced</li>
+          </thingDefs>
+        </filter>
         <count>1</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <thingDefs><li>MCW_MinchoCoreBoosterAdvanced</li></thingDefs>
+      <thingDefs>
+        <li>MCW_MinchoCoreBoosterAdvanced</li>
+      </thingDefs>
     </fixedIngredientFilter>
     <modExtensions>
       <li Class="MinchoCandyWars.MinchoBoosterRecipeModExtension">
@@ -347,11 +396,10 @@
       </li>
     </modExtensions>
   </RecipeDef>
-
   <RecipeDef>
     <defName>MCW_Implant_MinchoBodyBooster</defName>
     <label>implant Mincho body booster</label>
-    <description>对躯体等级 1-4 级的智慧珉巧使用躯体改造包，提升躯体等级。100% 成功率。</description>
+    <description>Use the body booster on a smart Mincho of body grade 1-4 to raise her body grade. 100% success chance.</description>
     <jobString>Implanting Mincho body booster.</jobString>
     <workerClass>MinchoCandyWars.Recipe_MinchoBooster</workerClass>
     <anesthetize>false</anesthetize>
@@ -368,12 +416,18 @@
     </recipeUsers>
     <ingredients>
       <li>
-        <filter><thingDefs><li>MCW_MinchoBodyBooster</li></thingDefs></filter>
+        <filter>
+          <thingDefs>
+            <li>MCW_MinchoBodyBooster</li>
+          </thingDefs>
+        </filter>
         <count>1</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <thingDefs><li>MCW_MinchoBodyBooster</li></thingDefs>
+      <thingDefs>
+        <li>MCW_MinchoBodyBooster</li>
+      </thingDefs>
     </fixedIngredientFilter>
     <modExtensions>
       <li Class="MinchoCandyWars.MinchoBoosterRecipeModExtension">
@@ -381,5 +435,4 @@
       </li>
     </modExtensions>
   </RecipeDef>
-
 </Defs>

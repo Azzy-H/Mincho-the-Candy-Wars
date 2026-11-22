@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+  <!-- EN: Mincho linglon curled twin tails -->
+  <MCW_Hair_Linglon174.label>珉巧玲珑卷双马尾</MCW_Hair_Linglon174.label>
   <!-- EN: MCW_Hair_Upper_A -->
   <MCW_Hair_Upper_A.label>珉巧发型 A</MCW_Hair_Upper_A.label>
-  
   <!-- EN: MCW_Hair_Upper_B -->
   <MCW_Hair_Upper_B.label>珉巧发型 B</MCW_Hair_Upper_B.label>
-  
   <!-- EN: MCW_Hair_Upper_C -->
   <MCW_Hair_Upper_C.label>珉巧发型 C</MCW_Hair_Upper_C.label>
-  
 </LanguageData>

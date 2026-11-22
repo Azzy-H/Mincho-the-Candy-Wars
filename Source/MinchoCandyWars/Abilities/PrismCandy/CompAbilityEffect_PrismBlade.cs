@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using UnityEngine;
@@ -51,7 +51,9 @@ namespace MinchoCandyWars.Abilities.PrismCandy
             GenExplosion.DoExplosion(
                 caster.Position, map, parent.verb.verbProps.range, Props.damageDef, caster,
                 damAmount: damage,
+                explosionSound: MCW_DefOf.MeleeHit_Metal_Sharp,
                 overrideCells: cells,
+                ignoredThings: PrismCandyAbilityUtility.NonHostilePawns(caster, map),
                 doVisualEffects: false,
                 propagationSpeed: float.MaxValue);
 
@@ -64,7 +66,8 @@ namespace MinchoCandyWars.Abilities.PrismCandy
                     angle,
                     parent.verb.verbProps.range,
                     Props.halfAngle,
-                    Props.effectDef);
+                    Props.effectDef,
+                    Props.effectWidthScale);
             }
         }
 
@@ -81,3 +84,4 @@ namespace MinchoCandyWars.Abilities.PrismCandy
         }
     }
 }
+

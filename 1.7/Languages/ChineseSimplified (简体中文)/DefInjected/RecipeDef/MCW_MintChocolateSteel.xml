@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Combine equal parts steel and mint chocolate brick into mint chocolate steel. -->
+  <MCW_MakeMintChocolateSteel.description>将等量钢铁与薄荷巧克力砖制成薄荷巧克力钢。</MCW_MakeMintChocolateSteel.description>
+  <!-- EN: Making mint chocolate steel. -->
+  <MCW_MakeMintChocolateSteel.jobString>正在制作薄荷巧克力钢。</MCW_MakeMintChocolateSteel.jobString>
+  <!-- EN: Make mint chocolate steel -->
+  <MCW_MakeMintChocolateSteel.label>制作薄荷巧克力钢</MCW_MakeMintChocolateSteel.label>
+</LanguageData>

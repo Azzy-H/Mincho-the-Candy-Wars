@@ -2,8 +2,8 @@
 <Defs>
   <ThingDef ParentName="HeavyMechanoid" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>MCW_Mech_Golem</defName>
-    <label>珉巧魔像</label>
-    <description>这是珉巧女巫召唤出的珉巧魔像的稳定版本，也是这个大家伙最初的样子。厚重的巧克力装甲和强壮的双臂使它擅长近战，也能搬运货物，但无法承担其他工作。\n\n控制核心被毁后，它仍能拖着受损的躯体继续行动，但已无法分辨敌我。再次被击杀或约一天后自行崩溃时，会留下可供复活的残骸。</description>
+    <label>Mincho golem</label>
+    <description>The stable form of the Mincho witch summon. A heavy chocolate shell wraps strong arms; it carries cargo clumsily in peacetime and becomes a wall before its companions in war. After its core shatters the body sometimes keeps moving, though it no longer recognizes the one calling it.</description>
     <statBases>
       <MoveSpeed>5.5</MoveSpeed>
       <MarketValue>4000</MarketValue>
@@ -38,7 +38,7 @@
     </race>
     <tools Inherit="False">
       <li>
-        <label>左拳</label>
+        <label>Left fist</label>
         <capacities>
           <li>Blunt</li>
         </capacities>
@@ -55,7 +55,7 @@
         </surpriseAttack>
       </li>
       <li>
-        <label>右拳</label>
+        <label>Right fist</label>
         <capacities>
           <li>Blunt</li>
         </capacities>
@@ -72,7 +72,7 @@
         </surpriseAttack>
       </li>
       <li>
-        <label>头槌</label>
+        <label>Headbutt</label>
         <capacities>
           <li>Blunt</li>
         </capacities>
@@ -94,7 +94,7 @@
   </ThingDef>
   <PawnKindDef ParentName="HeavyMechanoidKind" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>MCW_Mech_Golem</defName>
-    <label>珉巧魔像</label>
+    <label>Mincho golem</label>
     <race>MCW_Mech_Golem</race>
     <combatPower>5000</combatPower>
     <allowInMechClusters>false</allowInMechClusters>
@@ -118,8 +118,8 @@
   </PawnKindDef>
   <RecipeDef ParentName="HeavyMechanoidRecipe" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>MCW_Mech_Golem_Recipe</defName>
-    <label>培育珉巧魔像</label>
-    <description>培育一个珉巧魔像机械体。</description>
+    <label>Incubate Mincho golem</label>
+    <description>Incubate a Mincho golem mechanoid.</description>
     <researchPrerequisite>StandardMechtech</researchPrerequisite>
     <ingredients Inherit="False">
       <li>
@@ -164,14 +164,14 @@
   </RecipeDef>
   <RecipeDef ParentName="BaseMechanoidResurrectionRecipe" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>MCW_ResurrectGolem</defName>
-    <label>复活珉巧魔像</label>
-    <description>复活一个友方珉巧魔像。前提是机械体的残骸未被完全摧毁。</description>
-    <ingredients Inherit="False">
+    <label>Resurrect Mincho golem</label>
+    <description>Resurrect a friendly Mincho golem, provided its remains have not been completely destroyed.</description>
+    <ingredients>
       <li>
         <filter>
-          <thingDefs>
-            <li>Corpse_MCW_Mech_Golem</li>
-          </thingDefs>
+          <categories>
+            <li>Corpses</li>
+          </categories>
         </filter>
         <count>1</count>
       </li>
@@ -187,6 +187,7 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>Corpse_MCW_Mech_Golem</li>
+        <li>Mincho_BlocksMintchoco</li>
       </thingDefs>
     </fixedIngredientFilter>
   </RecipeDef>

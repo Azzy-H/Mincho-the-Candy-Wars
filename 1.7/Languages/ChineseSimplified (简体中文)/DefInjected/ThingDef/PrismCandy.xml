@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+
+  <!-- EN: A prism-like streak of light sweeps through the air, leaving only a cool wisp of sweetness behind. -->
+  <MCW_PrismGlowFlyer.description>琉璃般的光影掠过半空，只在原地留下一缕冰凉的甜香。</MCW_PrismGlowFlyer.description>
   <!-- EN: prism glow flyer -->
   <MCW_PrismGlowFlyer.label>琉璃霞突刺载具</MCW_PrismGlowFlyer.label>
-  
+
 </LanguageData>

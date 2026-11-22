@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: 珉巧同盟主线 -->
-  <MCW_Event_QS1_StartStory.label>珉巧同盟主线</MCW_Event_QS1_StartStory.label>
-  
-  <!-- EN: 珉巧同盟联络 -->
+
+  <!-- EN: Hello, owner of this colony. I am Qinxintang. Thank you for receiving this message. We are the Mincho Alliance, an organization that protects Mincho from being reclaimed, and I am its leader.\n\nWe hope you will join our Mincho Alliance - partly because this smart Mincho believes you can be trusted - and in return we will give your colony some help! -->
+  <MCW_Event_QS1_AllianceContact.desc>你好，这个殖民地的主人，我是沁心糖，感谢你接收这条讯息，我们是珉巧同盟，是一个为了保护珉巧免于被回收的组织。而我，是这个组织的领导者。\n\n希望您可以加入我们的珉巧同盟，这也是因为这位智慧珉巧认为您是可信的，同时，我们会给予您的殖民地一些帮助！</MCW_Event_QS1_AllianceContact.desc>
+  <!-- EN: Mincho Alliance contact -->
   <MCW_Event_QS1_AllianceContact.label>珉巧同盟联络</MCW_Event_QS1_AllianceContact.label>
-  
-  <!-- EN: 回收公司联络 -->
+  <!-- EN: Ally with the Mincho Alliance and accept their airdropped supply aid. -->
+  <MCW_Event_QS1_AllianceContact.options.0.desc>与珉巧同盟结盟，并接受他们空投的物资援助。</MCW_Event_QS1_AllianceContact.options.0.desc>
+  <!-- EN: Of course we will join the Mincho Alliance! -->
+  <MCW_Event_QS1_AllianceContact.options.0.label>当然我们愿意加入珉巧同盟！</MCW_Event_QS1_AllianceContact.options.0.label>
+  <!-- EN: Decline to join the Mincho Alliance. They will not become your enemy over this refusal. -->
+  <MCW_Event_QS1_AllianceContact.options.1.desc>拒绝加入珉巧同盟。他们不会因为这次拒绝而与你为敌。</MCW_Event_QS1_AllianceContact.options.1.desc>
+  <!-- EN: Forget it; that sounds dangerous. -->
+  <MCW_Event_QS1_AllianceContact.options.1.label>算了吧，这听起来很危险。</MCW_Event_QS1_AllianceContact.options.1.label>
+  <!-- EN: Qinxintang -->
+  <MCW_Event_QS1_AllianceContact.title>沁心糖</MCW_Event_QS1_AllianceContact.title>
+  <!-- EN: Greetings. We are searching for some ice-cream-like robots, and one of them appears to have entered your colony. Please cooperate and hand her over, or we will be forced to take measures. -->
+  <MCW_Event_QS1_CorpContact.desc>您好，我们在搜索一些像是冰淇淋的机器人，她们中的一位疑似进入了您的殖民地，麻烦您配合我们将他交出，否则我们不得不采取强制措施。</MCW_Event_QS1_CorpContact.desc>
+  <!-- EN: Reclamation troopers visit -->
+  <MCW_Event_QS1_CorpContact.immediate.effects.4.label>回收队员到访</MCW_Event_QS1_CorpContact.immediate.effects.4.label>
+  <!-- EN: Three members of the reclamation company have come to the edge of your colony. Their leader demands that you hand over that Mincho. -->
+  <MCW_Event_QS1_CorpContact.immediate.effects.4.text>三名回收公司成员来到了你的殖民地边缘。领队要求你把那位珉巧交出去。</MCW_Event_QS1_CorpContact.immediate.effects.4.text>
+  <!-- EN: Reclamation company contact -->
   <MCW_Event_QS1_CorpContact.label>回收公司联络</MCW_Event_QS1_CorpContact.label>
-  
+  <!-- EN: Reclamation company leader -->
+  <MCW_Event_QS1_CorpContact.title>回收公司领队</MCW_Event_QS1_CorpContact.title>
+  <!-- EN: Author note: this is the introduction window for the Mincho expansion, Candy Wars. Seeing this window means the mod has loaded. Candy Wars has its own main storyline, and you may decide from your own choices whether to start it.\n\nThe storyline gives you new Mincho early on, and brings conflict earlier than ordinary raids. If you decline the storyline, it cannot be restarted this run; other content is unaffected. -->
+  <MCW_Event_QS1_StartStory.desc>作者的话：这是「珉巧扩展-糖果大作战」的引导窗口。看到此窗口代表Mod已经加载。糖果大作战有一条独立主线，你可以根据自身的选择决定是否开启主线。\n\n主线会让你在前期就获得新的珉巧，也会带来早于常规袭击的冲突。如果放弃主线，则本局不再有机会重新开启，其它内容不受影响。</MCW_Event_QS1_StartStory.desc>
+  <!-- EN: Mincho Alliance main story -->
+  <MCW_Event_QS1_StartStory.label>珉巧同盟主线</MCW_Event_QS1_StartStory.label>
+  <!-- EN: Start the storyline at once: a hunted Mincho will arrive at your colony today. -->
+  <MCW_Event_QS1_StartStory.options.0.desc>立刻开始主线：一位被追捕的珉巧当天就会来到你的殖民地。</MCW_Event_QS1_StartStory.options.0.desc>
+  <!-- EN: Yes -->
+  <MCW_Event_QS1_StartStory.options.0.label>是的</MCW_Event_QS1_StartStory.options.0.label>
+  <!-- EN: You will not be asked again this run, and the Mincho Alliance storyline will not start; other content is unaffected. -->
+  <MCW_Event_QS1_StartStory.options.1.desc>本局不再询问，也不会启动珉巧同盟主线；其它内容不受影响。</MCW_Event_QS1_StartStory.options.1.desc>
+  <!-- EN: No, not playing the storyline this run -->
+  <MCW_Event_QS1_StartStory.options.1.label>不，这局不玩主线内容</MCW_Event_QS1_StartStory.options.1.label>
+  <!-- EN: Qinxintang -->
+  <MCW_Event_QS1_StartStory.title>沁心糖</MCW_Event_QS1_StartStory.title>
+
 </LanguageData>

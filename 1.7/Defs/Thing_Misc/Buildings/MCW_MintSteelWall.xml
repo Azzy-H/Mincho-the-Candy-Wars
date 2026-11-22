@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Inherit the original wall, including its rendering, components and damage behavior. -->
+  <ThingDef ParentName="MCW_OriginalMintWall">
+    <defName>MCW_MintSteelWall</defName>
+    <label>mint chocolate steel wall</label>
+    <description>Steel rests beneath a familiar coat of mint chocolate. The wall bears its wounds a little longer, then slowly knits them closed, leaving only a sweet chill in the air.</description>
+    <statBases><MaxHitPoints>500</MaxHitPoints></statBases>
+    <costList Inherit="False"><MCW_MintChocolateSteel>6</MCW_MintChocolateSteel></costList>
+  </ThingDef>
+</Defs>

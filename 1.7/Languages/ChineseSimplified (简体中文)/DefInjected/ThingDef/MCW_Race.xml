@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: 次级珉巧子个体-战斗型 -->
-  <MCW_Mech_Battle.label>次级珉巧子个体-战斗型</MCW_Mech_Battle.label>
-  <!-- EN: 小小冰淇淋骑士，用薄荷钉头锤修理姐姐们的敌人！ -->
+
+  <!-- EN: A tiny ice cream knight who fixes her sisters enemies with a mint mace! -->
   <MCW_Mech_Battle.description>小小冰淇淋骑士，用薄荷钉头锤修理姐姐们的敌人！</MCW_Mech_Battle.description>
+  <!-- EN: Mincho sub-unit - Battle -->
+  <MCW_Mech_Battle.label>次级珉巧子个体-战斗型</MCW_Mech_Battle.label>
   <!-- EN: head -->
   <MCW_Mech_Battle.tools.head.label>头部</MCW_Mech_Battle.tools.head.label>
-  
-  <!-- EN: 次级珉巧子个体-防卫型 -->
-  <MCW_Mech_Defender.label>次级珉巧子个体-防卫型</MCW_Mech_Defender.label>
-  <!-- EN: 小小冰淇淋骑士，手持大盾保护姐姐们 -->
+  <!-- EN: A tiny ice cream knight who protects her sisters with a flail. -->
+  <MCW_Mech_Defender_II.description>小小冰淇淋骑士，手持流星锤保护姐姐们。</MCW_Mech_Defender_II.description>
+  <!-- EN: Mincho sub-unit - Defender II -->
+  <MCW_Mech_Defender_II.label>次级珉巧子个体-防卫II型</MCW_Mech_Defender_II.label>
+  <!-- EN: head -->
+  <MCW_Mech_Defender_II.tools.head.label>头部</MCW_Mech_Defender_II.tools.head.label>
+  <!-- EN: A tiny ice cream knight who protects her sisters behind a great shield. -->
   <MCW_Mech_Defender.description>小小冰淇淋骑士，手持大盾保护姐姐们</MCW_Mech_Defender.description>
+  <!-- EN: Mincho sub-unit - Defender -->
+  <MCW_Mech_Defender.label>次级珉巧子个体-防卫型</MCW_Mech_Defender.label>
   <!-- EN: head -->
   <MCW_Mech_Defender.tools.head.label>头部</MCW_Mech_Defender.tools.head.label>
-  
-  <!-- EN: 次级珉巧子个体-攻击型 -->
+  <!-- EN: A tiny ice cream gunner who diligently guards her sisters backs. The lollipops she prepares are usually not delivered to guests gently. -->
+  <MCW_Mech_Gunner.description>小小的冰淇淋枪手，认真守着姐姐们的身后。她准备的棒棒糖，通常不会以温柔的方式送到客人手中。</MCW_Mech_Gunner.description>
+  <!-- EN: Mincho sub-unit - Gunner -->
   <MCW_Mech_Gunner.label>次级珉巧子个体-攻击型</MCW_Mech_Gunner.label>
-  <!-- EN: 小小冰淇淋枪手，使用无情的棒棒糖夺走坏人的生命 -->
-  <MCW_Mech_Gunner.description>小小冰淇淋枪手，使用无情的棒棒糖夺走坏人的生命</MCW_Mech_Gunner.description>
   <!-- EN: head -->
   <MCW_Mech_Gunner.tools.head.label>头部</MCW_Mech_Gunner.tools.head.label>
-  
-  <!-- EN: 次级珉巧子个体-女仆I型 -->
-  <MCW_Mech_I_Maid.label>次级珉巧子个体-女仆I型</MCW_Mech_I_Maid.label>
-  <!-- EN: 小小冰淇淋女仆，在内照顾姐姐们起居。 -->
+  <!-- EN: A tiny ice cream maid who tends to her elder sisters needs indoors. -->
   <MCW_Mech_I_Maid.description>小小冰淇淋女仆，在内照顾姐姐们起居。</MCW_Mech_I_Maid.description>
+  <!-- EN: Mincho sub-unit - Maid I -->
+  <MCW_Mech_I_Maid.label>次级珉巧子个体-女仆I型</MCW_Mech_I_Maid.label>
   <!-- EN: head -->
   <MCW_Mech_I_Maid.tools.head.label>头部</MCW_Mech_I_Maid.tools.head.label>
-  
-  <!-- EN: 次级珉巧子个体-女仆Ⅱ型 -->
-  <MCW_Mech_II_Maid.label>次级珉巧子个体-女仆Ⅱ型</MCW_Mech_II_Maid.label>
-  <!-- EN: 小小冰淇淋女仆，在外为姐姐们分忧。 -->
+  <!-- EN: A tiny ice cream maid who takes care of her elder sisters troubles outdoors. -->
   <MCW_Mech_II_Maid.description>小小冰淇淋女仆，在外为姐姐们分忧。</MCW_Mech_II_Maid.description>
+  <!-- EN: Mincho sub-unit - Maid II -->
+  <MCW_Mech_II_Maid.label>次级珉巧子个体-女仆Ⅱ型</MCW_Mech_II_Maid.label>
   <!-- EN: head -->
   <MCW_Mech_II_Maid.tools.head.label>头部</MCW_Mech_II_Maid.tools.head.label>
-  
-  <!-- EN: 珉巧史莱姆 -->
+  <!-- EN: A small wobbly blob of mint ice cream. It seems to have few worries; its main concern is where the next mouthful of something sweet will come from. -->
+  <MCW_MinchoSlime.description>一小团晃晃悠悠的薄荷冰淇淋。它似乎没有多少烦恼，最关心的事只是下一口甜食在哪里。</MCW_MinchoSlime.description>
+  <!-- EN: Mincho slime -->
   <MCW_MinchoSlime.label>珉巧史莱姆</MCW_MinchoSlime.label>
-  <!-- EN: 珉巧史莱姆 -->
-  <MCW_MinchoSlime.description>一只黏糊糊的珉巧史莱姆。成年个体死亡后会分裂成两只幼体，幼体继续成长；未成年个体死亡则不会分裂。</MCW_MinchoSlime.description>
-  <!-- EN: 拳头 -->
+  <!-- EN: Fist -->
   <MCW_MinchoSlime.tools.0.label>拳头</MCW_MinchoSlime.tools.0.label>
-  
+
 </LanguageData>

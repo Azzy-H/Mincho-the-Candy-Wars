@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <TraderKindDef>
     <defName>MCW_NanoAnimalSeller086</defName>
-    <label>珉巧动物商人</label>
+    <label>Mincho animal trader</label>
     <commonality>0.05</commonality>
     <stockGenerators>
       <li Class="StockGenerator_SingleDef">

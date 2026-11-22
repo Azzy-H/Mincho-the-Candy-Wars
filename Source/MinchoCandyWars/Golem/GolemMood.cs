@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MinchoCandyWars;
 using RimWorld;
 using Verse;
@@ -38,7 +38,7 @@ namespace MinchoCandyWars.Golem
                 return ThoughtState.Inactive;
             }
 
-            return ThoughtState.ActiveAtStage(pawn.def == MCW_DefOf.MinchoWitch ? WitchStage : DefaultStage);
+            return ThoughtState.ActiveAtStage(pawn.def == MCW_ThingDefOf.MinchoWitch ? WitchStage : DefaultStage);
         }
 
         private static bool HasStableGolem(Map map)
@@ -62,7 +62,7 @@ namespace MinchoCandyWars.Golem
             for (int i = 0; i < pawns.Count; i++)
             {
                 Pawn golem = pawns[i];
-                if (golem.def == MCW_DefOf.MCW_Mech_Golem
+                if (golem.def == MCW_ThingDefOf.MCW_Mech_Golem
                     && !golem.Dead
                     && !golem.InMentalState)
                 {

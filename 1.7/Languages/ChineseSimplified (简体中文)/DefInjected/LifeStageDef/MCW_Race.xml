@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: 第一阶体型 -->
+
+  <!-- EN: Body type I -->
   <MCW_Slime_LifeStage_I.label>第一阶体型</MCW_Slime_LifeStage_I.label>
-  
-  <!-- EN: 第二阶体型 -->
+  <!-- EN: Body type II -->
   <MCW_Slime_LifeStage_II.label>第二阶体型</MCW_Slime_LifeStage_II.label>
-  
-  <!-- EN: 第三阶体型 -->
+  <!-- EN: Body type III -->
   <MCW_Slime_LifeStage_III.label>第三阶体型</MCW_Slime_LifeStage_III.label>
-  
-  <!-- EN: 第四阶体型 -->
+  <!-- EN: adult -->
   <MCW_Slime_LifeStage_IV.label>第四阶体型</MCW_Slime_LifeStage_IV.label>
-  
+
 </LanguageData>

@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_NurseOutfit"]/apparel</xpath>
+    <value>
+      <tags Inherit="False">
+        <li>Mincho_Colonist</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_NurseCap"]/apparel</xpath>
+    <value>
+      <tags Inherit="False">
+        <li>Mincho_Colonist</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_Bikini"]/apparel</xpath>
+    <value>
+      <tags Inherit="False">
+        <li>Mincho_Colonist</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_BikiniBW"]/apparel</xpath>
+    <value>
+      <tags Inherit="False">
+        <li>Mincho_Colonist</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_Qipao"]/apparel</xpath>
+    <value>
+      <tags Inherit="False">
+        <li>Mincho_Colonist</li>
+        <li>Mincho_Royal</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_GorgeousDress"]/apparel</xpath>
+    <value>
+      <tags Inherit="False">
+        <li>Mincho_Royal</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_BrownDress"]/apparel</xpath>
+    <value>
+      <tags Inherit="False">
+        <li>Mincho_Royal</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_QinxinCrown"]</xpath>
+    <value>
+      <generateCommonality>0</generateCommonality>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_QinxinCrown"]/apparel</xpath>
+    <value>
+      <tags Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MechaArmor"]</xpath>
+    <value>
+      <generateCommonality>0</generateCommonality>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MechaArmor"]/apparel</xpath>
+    <value>
+      <tags Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_HoloVisor"]</xpath>
+    <value>
+      <generateCommonality>0</generateCommonality>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_HoloVisor"]/apparel</xpath>
+    <value>
+      <tags Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="MCW_MechaWings"]/apparel/tags</xpath>
+    <value>
+      <tags Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Colonist"]/apparelRequired</xpath>
+    <value>
+      <apparelRequired Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Colonist"]</xpath>
+    <value>
+      <apparelMoney>200~800</apparelMoney>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="MCW_SmartMincho"]/apparelRequired</xpath>
+    <value>
+      <apparelRequired Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="MCW_SmartMincho"]</xpath>
+    <value>
+      <apparelMoney>200~800</apparelMoney>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="Mincho_SpaceRefugee"]/apparelRequired</xpath>
+    <value>
+      <apparelRequired Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_SpaceRefugee"]</xpath>
+    <value>
+      <apparelMoney>200~800</apparelMoney>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="MCW_HuntedMincho_QS1"]/apparelRequired</xpath>
+    <value>
+      <apparelRequired Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="MCW_HuntedMincho_QS1"]</xpath>
+    <value>
+      <apparelMoney>200~800</apparelMoney>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Broker"]/apparelRequired</xpath>
+    <value>
+      <apparelRequired Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Broker"]</xpath>
+    <value>
+      <apparelMoney>1200~3500</apparelMoney>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Royal"]/apparelRequired</xpath>
+    <value>
+      <apparelRequired Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Royal"]</xpath>
+    <value>
+      <apparelMoney>2000~5000</apparelMoney>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Elder"]/apparelRequired</xpath>
+    <value>
+      <apparelRequired Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Elder"]</xpath>
+    <value>
+      <apparelMoney>2000~5000</apparelMoney>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_TowerShield"]/apparel</xpath>
+    <value>
+      <tags Inherit="False">
+        <li>Mincho_Knight</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_CookiesShield"]/apparel</xpath>
+    <value>
+      <tags Inherit="False">
+        <li>Mincho_Knight</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Colonist"]</xpath>
+    <value>
+      <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="MCW_SmartMincho"]</xpath>
+    <value>
+      <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_SpaceRefugee"]</xpath>
+    <value>
+      <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="MCW_HuntedMincho_QS1"]</xpath>
+    <value>
+      <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Broker"]</xpath>
+    <value>
+      <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Royal"]</xpath>
+    <value>
+      <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_Elder"]</xpath>
+    <value>
+      <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="MCW_NurseOutfit"]/generateCommonality</xpath>
+    <value>
+      <generateCommonality>0.4</generateCommonality>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="MCW_NurseCap"]/generateCommonality</xpath>
+    <value>
+      <generateCommonality>0.4</generateCommonality>
+    </value>
+  </Operation>
+</Patch>

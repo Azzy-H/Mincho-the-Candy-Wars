@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -26,6 +26,8 @@ namespace MinchoCandyWars
         public override void Generate(Map map, GenStepParams parms)
         {
             // ── 1. 据点里的珉巧居民（从 part.things 取出并放上地图） ──
+            var objective = QuestStory.MissionObjective.For(map);
+            if (objective?.Kind == 5) objective.OutpostResidentsRecorded = true;
             if (parms.sitePart?.things != null)
             {
                 while (parms.sitePart.things.Count > 0)
@@ -35,13 +37,14 @@ namespace MinchoCandyWars
                     if (thing is Pawn pawn)
                     {
                         IntVec3 cell = CellFinder.RandomClosewalkCellNear(map.Center, map, 15);
+                        objective?.OutpostResidents.Add(pawn);
                         GenSpawn.Spawn(pawn, cell, map);
                     }
                 }
             }
 
             // ── 2. 地图边缘的回收部队 ──
-            FactionDef recycleDef = DefDatabase<FactionDef>.GetNamed(RecycleFactionDefName, errorOnFail: false);
+            FactionDef recycleDef = MCW_DefOf.MCW_RecycleCorp_Faction;
             Faction recycleFaction = recycleDef == null ? null : Find.FactionManager.FirstFactionOfDef(recycleDef);
             if (recycleFaction == null)
             {
@@ -49,8 +52,8 @@ namespace MinchoCandyWars
                 return;
             }
 
-            PawnKindDef memberKind = DefDatabase<PawnKindDef>.GetNamed(MemberKindDefName, errorOnFail: false);
-            PawnKindDef leaderKind = DefDatabase<PawnKindDef>.GetNamed(LeaderKindDefName, errorOnFail: false);
+            PawnKindDef memberKind = MCW_DefOf.MCW_RecycleCorp_Member;
+            PawnKindDef leaderKind = MCW_DefOf.MCW_RecycleCorp_Leader;
 
             if (memberKind != null)
             {

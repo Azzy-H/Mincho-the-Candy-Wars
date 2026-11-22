@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="Mincho_ApparelBase_Body">
+    <defName>MCW_BrownDress</defName>
+    <label>Mincho gown</label>
+    <description>A Mincho gown trimmed in chocolate and gold that enhances the wearer psychic ability.</description>
+    <graphicData>
+      <texPath>Things/Apparel/MCW_BrownDress/MCW_BrownDress</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>40</costStuffCount>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToMake>4000</WorkToMake>
+      <Mass>1</Mass>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.1</ArmorRating_Heat>
+      <Insulation_Cold>0.0</Insulation_Cold>
+      <Insulation_Heat>20</Insulation_Heat>
+      <EquipDelay>3</EquipDelay>
+      <Beauty>2</Beauty>
+      <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor>
+    </statBases>
+    <equippedStatOffsets>
+      <PsychicSensitivity>0.2</PsychicSensitivity>
+      <PsychicEntropyRecoveryRate>0.2</PsychicEntropyRecoveryRate>
+      <SocialImpact>1</SocialImpact>
+    </equippedStatOffsets>
+    <apparel>
+      <wornGraphicPath>Things/Apparel/MCW_BrownDress/MCW_BrownDress</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+    <uiIconPath>Things/Apparel/MCW_BrownDress/MCW_BrownDress</uiIconPath>
+    <costList Inherit="False">
+      <Mincho_ChocoStick>200</Mincho_ChocoStick>
+      <Gold>100</Gold>
+    </costList>
+  </ThingDef>
+</Defs>

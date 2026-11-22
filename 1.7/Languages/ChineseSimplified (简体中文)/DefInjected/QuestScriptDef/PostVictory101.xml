@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: <li>questDescription->沁心糖：接下来的安置需要一些用品。不是出征，这次能不能帮我们凑一批巧克力棒？我们会另留一批物资作交换。\n\n接受后5天内交付。通过联络同盟的交付入口完成，物品不足不扣物。成功增加同盟友好度5，不增加终局进度。</li> -->
+  <MCWQ101_Delivery7.questDescriptionRules.rulesStrings><li>questDescription->沁心糖：接下来的安置需要一些用品。不是出征，这次能不能帮我们凑一批巧克力棒？我们会另留一批物资作交换。\n\n接受后5天内交付。通过联络同盟的交付入口完成，物品不足不扣物。成功增加同盟友好度5，不增加终局进度。</li></MCWQ101_Delivery7.questDescriptionRules.rulesStrings>
+  <!-- EN: <li>questName->物资安置</li> -->
+  <MCWQ101_Delivery7.questNameRules.rulesStrings><li>questName->物资安置</li></MCWQ101_Delivery7.questNameRules.rulesStrings>
+  <!-- EN: <li>questDescription->玲珑糖：这次不打架，来帮我们办个小小的口味会？先凑一批美味曲奇饼。名字我来想，数目你可得帮我看准。\n\n接受后5天内交付。通过联络同盟的交付入口完成，物品不足不扣物。成功增加同盟友好度5，不增加终局进度。</li> -->
+  <MCWQ101_Delivery8.questDescriptionRules.rulesStrings><li>questDescription->玲珑糖：这次不打架，来帮我们办个小小的口味会？先凑一批美味曲奇饼。名字我来想，数目你可得帮我看准。\n\n接受后5天内交付。通过联络同盟的交付入口完成，物品不足不扣物。成功增加同盟友好度5，不增加终局进度。</li></MCWQ101_Delivery8.questDescriptionRules.rulesStrings>
+  <!-- EN: <li>questName->日常协助</li> -->
+  <MCWQ101_Delivery8.questNameRules.rulesStrings><li>questName->日常协助</li></MCWQ101_Delivery8.questNameRules.rulesStrings>
+  <!-- EN: <li>questDescription->清除此地仍能战斗的有限残留守军。不要求处决倒地者，没有传送点或无限增援。接受后8天期限；公司主动袭击仍停用。</li> -->
+  <MCWQ101_Remnant.questDescriptionRules.rulesStrings><li>questDescription->清除此地仍能战斗的有限残留守军。不要求处决倒地者，没有传送点或无限增援。接受后8天期限；公司主动袭击仍停用。</li></MCWQ101_Remnant.questDescriptionRules.rulesStrings>
+  <!-- EN: <li>questName->清缴残党</li> -->
+  <MCWQ101_Remnant.questNameRules.rulesStrings><li>questName->清缴残党</li></MCWQ101_Remnant.questNameRules.rulesStrings>
+  <!-- EN: <li>questDescription->为新安置的同伴筹备口味会，交付50份美味曲奇饼。请在5天内通过同盟联络菜单交付。</li> -->
+  <MCWQ103_Delivery10.questDescriptionRules.rulesStrings><li>questDescription->为新安置的同伴筹备口味会，交付50份美味曲奇饼。请在5天内通过同盟联络菜单交付。</li></MCWQ103_Delivery10.questDescriptionRules.rulesStrings>
+  <!-- EN: <li>questName->同伴口味会</li> -->
+  <MCWQ103_Delivery10.questNameRules.rulesStrings><li>questName->同伴口味会</li></MCWQ103_Delivery10.questNameRules.rulesStrings>
+  <!-- EN: <li>questDescription->为千机糖的机械装配计划交付12个零部件；装配与测试由同盟负责。请在5天内通过同盟联络菜单交付。</li> -->
+  <MCWQ103_Delivery11.questDescriptionRules.rulesStrings><li>questDescription->为千机糖的机械装配计划交付12个零部件；装配与测试由同盟负责。请在5天内通过同盟联络菜单交付。</li></MCWQ103_Delivery11.questDescriptionRules.rulesStrings>
+  <!-- EN: <li>questName->机械装配支援</li> -->
+  <MCWQ103_Delivery11.questNameRules.rulesStrings><li>questName->机械装配支援</li></MCWQ103_Delivery11.questNameRules.rulesStrings>
+</LanguageData>

@@ -78,6 +78,23 @@
 	    <HintPath>$(WorkshopDir)\2477501851\1.7\Assemblies\Mincho_HPF.dll</HintPath>
 	    <Private>false</Private>
 	  </Reference>
+	  <!--
+	    前置 mod「Mincho, The Mint Choco Slime ~ HAR ver.」的本体程序集。
+	    BoostGolemJump.cs 用到其中的 Verb_JumpAttack / PawnJumpAttack。
+	  -->
+	  <Reference Include="Mincho_The_Mint_Choco_Slime">
+	    <HintPath>$(WorkshopDir)\2477501851\1.7\Assemblies\Mincho_The_Mint_Choco_Slime.dll</HintPath>
+	    <Private>false</Private>
+	  </Reference>
+	  <!--
+	    前置 mod「Humanoid Alien Races」（workshop 839005762）的程序集。
+	    HAR 是本 mod 的硬依赖（见 About.xml 的 modDependencies）。
+	    直接引用后，身体附加节点的过滤不再依赖反射，签名变化会在编译期暴露。
+	  -->
+	  <Reference Include="AlienRace">
+	    <HintPath>$(WorkshopDir)\839005762\1.7\Assemblies\AlienRace.dll</HintPath>
+	    <Private>false</Private>
+	  </Reference>
 	</ItemGroup>
 
 </Project>

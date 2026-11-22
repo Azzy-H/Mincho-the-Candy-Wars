@@ -1,4 +1,4 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using Verse;
 
@@ -17,7 +17,7 @@ namespace MinchoCandyWars.Patch
         public static void Postfix(CompProjectileInterceptor __instance, Projectile projectile, ref bool __result)
         {
             if (!__result) return;
-            if (__instance.parent?.def != MCW_DefOf.MCW_AmberonPositionShield) return;
+            if (__instance.parent?.def != MCW_ThingDefOf.MCW_AmberonPositionShield) return;
             if (projectile?.Launcher == null) return;
             if (!Rand.Chance(ConvertChance)) return;
 
@@ -40,11 +40,11 @@ namespace MinchoCandyWars.Patch
         {
             ThingDef pick = Rand.Range(0, 3) switch
             {
-                1 => MCW_DefOf.Mincho_BluePolarBear,
-                2 => MCW_DefOf.Mincho_PinkFallInLove,
-                _ => MCW_DefOf.Mincho_Mintchoco,
+                1 => MCW_ThingDefOf.Mincho_BluePolarBear,
+                2 => MCW_ThingDefOf.Mincho_PinkFallInLove,
+                _ => MCW_ThingDefOf.Mincho_Mintchoco,
             };
-            return pick ?? MCW_DefOf.Mincho_Mintchoco;
+            return pick ?? MCW_ThingDefOf.Mincho_Mintchoco;
         }
     }
 }

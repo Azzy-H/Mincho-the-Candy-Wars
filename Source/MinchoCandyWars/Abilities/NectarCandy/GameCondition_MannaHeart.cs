@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
@@ -29,7 +29,7 @@ namespace MinchoCandyWars.Abilities.NectarCandy
                     return true;
                 if (h.pawn.Map != SingleMap)
                     return true;
-                if (h.pawn.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_MannaHeart) != h)
+                if (h.pawn.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MannaHeart) != h)
                     return true;
                 return false;
             });

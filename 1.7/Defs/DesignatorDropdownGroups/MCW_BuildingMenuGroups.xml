@@ -2,30 +2,32 @@
 <Defs>
   <DesignatorDropdownGroupDef>
     <defName>MCW_SingleBeds</defName>
-    <label>珉巧单人床</label>
+    <label>Mincho single beds</label>
   </DesignatorDropdownGroupDef>
   <DesignatorDropdownGroupDef>
     <defName>MCW_DoubleBeds</defName>
-    <label>珉巧双人床</label>
+    <label>Mincho double beds</label>
   </DesignatorDropdownGroupDef>
   <DesignatorDropdownGroupDef>
     <defName>MCW_Seats</defName>
-    <label>珉巧椅子</label>
+    <label>Mincho chairs</label>
   </DesignatorDropdownGroupDef>
   <DesignatorDropdownGroupDef>
     <defName>MCW_Tables</defName>
-    <label>珉巧餐桌</label>
+    <label>Mincho tables</label>
   </DesignatorDropdownGroupDef>
   <DesignatorDropdownGroupDef>
     <defName>MCW_ColdCabinets</defName>
-    <label>薄荷冰淇淋柜</label>
+    <label>Mint ice cream cabinets</label>
   </DesignatorDropdownGroupDef>
   <DesignatorDropdownGroupDef>
     <defName>MCW_Candles</defName>
-    <label>珉巧烛台</label>
+    <label>Mincho candlesticks</label>
   </DesignatorDropdownGroupDef>
   <DesignatorDropdownGroupDef>
     <defName>MCW_LargeCandles</defName>
-    <label>珉巧超大烛台</label>
+    <label>Mincho large candlesticks</label>
   </DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef><defName>MCW_PlantMolds</defName><label>Mincho plant molds</label></DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef><defName>MCW_Floors</defName><label>Mincho floors</label></DesignatorDropdownGroupDef>
 </Defs>

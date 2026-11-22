@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -32,7 +32,7 @@ public static class RoboticArmMenu
     {
         foreach (Command command in commands)
         {
-            if (command is not Designator_Build build || build.PlacingDef != MCW_DefOf.MCW_RoboticArm)
+            if (command is not Designator_Build build || build.PlacingDef != MCW_ThingDefOf.MCW_RoboticArm)
             {
                 yield return command;
             }

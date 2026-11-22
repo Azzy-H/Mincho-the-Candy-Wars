@@ -1,4 +1,4 @@
-using MinchoCandyWars.Abilities;
+﻿using MinchoCandyWars.Abilities;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
@@ -91,7 +91,8 @@ namespace MinchoCandyWars.Render
             if (shield != null)
             {
                 float alpha = Mathf.Lerp(0.3f, 0.6f, shield.Energy / Mathf.Max(shield.EnergyMax, 1f));
-                mpb.SetColor(ShaderPropertyIDs.Color, new Color(1f, 1f, 1f, alpha));
+                bool heart = parms.pawn.health.hediffSet.hediffs.Any(h => h.def == MCW_HediffDefOf.MCW_AmberonHeart);
+                mpb.SetColor(ShaderPropertyIDs.Color, heart ? new Color(1f, 0.7f, 0.2f, alpha) : new Color(1f, 1f, 1f, alpha));
             }
             return mpb;
         }

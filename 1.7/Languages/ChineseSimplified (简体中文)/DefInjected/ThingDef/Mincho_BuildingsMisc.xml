@@ -1,48 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: 巧克力矮柜 -->
-  <MCW_Cabinet.label>巧克力矮柜</MCW_Cabinet.label>
-  <!-- EN: 听说有一位珉巧被称为糖果女巫，而她的家，都是巧克力做的！ -->
+
+  <!-- EN: They say one Mincho is called the candy witch, and her home is made entirely of chocolate! -->
   <MCW_Cabinet.description>听说有一位珉巧被称为糖果女巫，而她的家，都是巧克力做的！</MCW_Cabinet.description>
-  
-  <!-- EN: 薄荷冰淇淋通讯台 -->
-  <MCW_Chocolate_Console.label>薄荷冰淇淋通讯台</MCW_Chocolate_Console.label>
-  <!-- EN: 只有珉巧才能使用的通讯台，拥有通讯台的全部功能，同时，也有交易信标的功能！而且！还很好吃！ -->
-  <MCW_Chocolate_Console.description>只有珉巧才能使用的通讯台，拥有通讯台的全部功能，同时，也有交易信标的功能！而且！还很好吃！</MCW_Chocolate_Console.description>
+  <!-- EN: Chocolate low cabinet -->
+  <MCW_Cabinet.label>巧克力矮柜</MCW_Cabinet.label>
+  <!-- EN: MinchoCandyWars.AllianceContact.ConsoleTooltip -->
+  <MCW_Chocolate_Console.comps.Comp_StellarisEventGizmo.gizmos.0.desc>MinchoCandyWars.AllianceContact.ConsoleTooltip</MCW_Chocolate_Console.comps.Comp_StellarisEventGizmo.gizmos.0.desc>
+  <!-- EN: MinchoCandyWars.AllianceContact.Description -->
+  <MCW_Chocolate_Console.comps.Comp_StellarisEventGizmo.gizmos.0.label>MinchoCandyWars.AllianceContact.Description</MCW_Chocolate_Console.comps.Comp_StellarisEventGizmo.gizmos.0.label>
   <!-- EN: Summon diabolus threat -->
   <MCW_Chocolate_Console.comps.CompUsable.useLabel>召唤魔王威胁</MCW_Chocolate_Console.comps.CompUsable.useLabel>
-  
-  <!-- EN: 薄荷冰淇淋床头柜 -->
-  <MCW_EndTable.label>薄荷冰淇淋床头柜</MCW_EndTable.label>
-  <!-- EN: 睁眼就能见到美味的薄荷冰淇淋，天下还有比这更幸福的事情吗？ -->
+  <!-- EN: A comms console of mint ice cream and chocolate, its screen showing the familiar Alliance mark. A distant friend voice always makes a quiet room feel busy again. -->
+  <MCW_Chocolate_Console.description>薄荷冰淇淋与巧克力组成的通讯台，屏幕上映着熟悉的同盟标记。远方朋友的声音，总能让冷清的房间热闹起来。</MCW_Chocolate_Console.description>
+  <!-- EN: Mint ice cream comms console -->
+  <MCW_Chocolate_Console.label>薄荷冰淇通讯台</MCW_Chocolate_Console.label>
+  <!-- EN: Open your eyes and there is delicious mint ice cream. Is there anything happier in the world? -->
   <MCW_EndTable.description>睁眼就能见到美味的薄荷冰淇淋，天下还有比这更幸福的事情吗？</MCW_EndTable.description>
-  
-  <!-- EN: 薄荷巧克力复用型号灭火单元 -->
-  <MCW_FirefoamPopper.label>薄荷巧克力复用型号灭火单元</MCW_FirefoamPopper.label>
-  <!-- EN: 薄荷巧克力复用型号灭火单元 -->
-  <MCW_FirefoamPopper.description>薄荷巧克力复用型号灭火单元</MCW_FirefoamPopper.description>
+  <!-- EN: Mint ice cream end table -->
+  <MCW_EndTable.label>薄荷冰淇淋床头柜</MCW_EndTable.label>
+  <!-- EN: Firefoam charge -->
+  <MCW_FirefoamPopper.comps.4.fuelGizmoLabel>灭火剂储量</MCW_FirefoamPopper.comps.4.fuelGizmoLabel>
+  <!-- EN: Mint ice cream -->
+  <MCW_FirefoamPopper.comps.4.fuelLabel>薄荷冰淇淋</MCW_FirefoamPopper.comps.4.fuelLabel>
+  <!-- EN: Requires 50 mint ice cream to refill -->
+  <MCW_FirefoamPopper.comps.4.outOfFuelMessage>需要补充50份薄荷冰淇淋</MCW_FirefoamPopper.comps.4.outOfFuelMessage>
+  <!-- EN: 灭火剂储量 -->
+  <MCW_FirefoamPopper.comps.CompRefuelable.fuelGizmoLabel>灭火剂储量</MCW_FirefoamPopper.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: 薄荷冰淇淋 -->
+  <MCW_FirefoamPopper.comps.CompRefuelable.fuelLabel>薄荷冰淇淋</MCW_FirefoamPopper.comps.CompRefuelable.fuelLabel>
+  <!-- EN: 需要补充50份薄荷冰淇淋 -->
+  <MCW_FirefoamPopper.comps.CompRefuelable.outOfFuelMessage>需要补充50份薄荷冰淇淋</MCW_FirefoamPopper.comps.CompRefuelable.outOfFuelMessage>
   <!-- EN: Trigger {0_label} -->
   <MCW_FirefoamPopper.comps.CompUsable.useLabel>触发 {0_label}</MCW_FirefoamPopper.comps.CompUsable.useLabel>
-  
+  <!-- EN: A firefoam device clad in a mint chocolate shell. Idle, it looks like an unremarkable dessert ornament; when flame draws near it floods the area with foam without hesitation. -->
+  <MCW_FirefoamPopper.description>披着薄荷巧克力外壳的灭火装置。安静时像一件不起眼的甜品摆设，火焰逼近时却会毫不犹豫地喷出大片泡沫。</MCW_FirefoamPopper.description>
+  <!-- EN: Mint chocolate reusable firefoam popper -->
+  <MCW_FirefoamPopper.label>薄荷巧克力复用型号灭火单元</MCW_FirefoamPopper.label>
+  <!-- EN: A comfortable seat styled for Mincho settlements. -->
+  <MCW_MinchoCouch.description>用巧克力制成的宽长沙发，柔和曲线像刚抹平的奶油。珉巧们常挤在一起，一坐下就不愿意散开。</MCW_MinchoCouch.description>
   <!-- EN: mincho couch -->
   <MCW_MinchoCouch.label>珉巧长沙发</MCW_MinchoCouch.label>
-  <!-- EN: A comfortable seat styled for Mincho settlements. -->
-  <MCW_MinchoCouch.description>为珉巧聚落设计的舒适长椅。</MCW_MinchoCouch.description>
-  
+  <!-- EN: A compact stool styled for Mincho settlements. -->
+  <MCW_MinchoStool.description>小巧的珉巧凳子，稳稳托住歇脚的身影。拖到朋友身边，就能凑出一个热闹的下午。</MCW_MinchoStool.description>
   <!-- EN: mincho stool -->
   <MCW_MinchoStool.label>珉巧凳子</MCW_MinchoStool.label>
-  <!-- EN: A compact stool styled for Mincho settlements. -->
-  <MCW_MinchoStool.description>为珉巧聚落设计的小巧坐凳。</MCW_MinchoStool.description>
-  
-  <!-- EN: mincho table (2x2) -->
-  <MCW_MinchoTable2x2c.label>珉巧桌 (2x2)</MCW_MinchoTable2x2c.label>
   <!-- EN: A sturdy 2x2 table styled for Mincho settlements. -->
-  <MCW_MinchoTable2x2c.description>为珉巧聚落设计的结实 2x2 桌子。</MCW_MinchoTable2x2c.description>
-  
-  <!-- EN: 大块巧克力饼干桌 (2x4) -->
-  <MCW_Table2x4c.label>大块巧克力饼干桌 (2x4)</MCW_Table2x4c.label>
-  <!-- EN: 请各位不要在吃饭的时候吃桌子！ -->
+  <MCW_MinchoTable2x2c.description>一张方方正正的巧克力桌子，边角带着细致的甜点纹样。围坐在它旁边时，聊天总比收拾餐具更有吸引力。</MCW_MinchoTable2x2c.description>
+  <!-- EN: mincho table (2x2) -->
+  <MCW_MinchoTable2x2c.label>珉巧巧克力桌（2×2）</MCW_MinchoTable2x2c.label>
+  <!-- EN: A delicate manipulator arm built from cookie. Its joints click faintly as they turn. Even in biting cold it keeps work at the bench unhurried. -->
+  <MCW_RoboticArm.description>由曲奇饼构成的精巧操作臂，关节转动时带着轻微的咔哒声。即使周围寒风刺骨，它也能让工作台上的动作保持从容。</MCW_RoboticArm.description>
+  <!-- EN: Cookie manipulator arm -->
+  <MCW_RoboticArm.label>饼干操作臂</MCW_RoboticArm.label>
+  <!-- EN: Please do not eat the table while dining! -->
   <MCW_Table2x4c.description>请各位不要在吃饭的时候吃桌子！</MCW_Table2x4c.description>
-  
+  <!-- EN: Large chocolate cookie table (2x4) -->
+  <MCW_Table2x4c.label>大块巧克力饼干桌 (2x4)</MCW_Table2x4c.label>
+
 </LanguageData>

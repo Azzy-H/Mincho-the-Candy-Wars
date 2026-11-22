@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: A smart Mincho is held here by the reclamation company and may be reclaimed at any moment. Free her and she will join you. -->
+  <MCW_SmartMinchoRescue.description>一位智慧珉巧被回收公司关押在这里，随时可能被回收。解救她，她就会加入你。</MCW_SmartMinchoRescue.description>
+  <!-- EN: Smart Mincho holding site -->
+  <MCW_SmartMinchoRescue.label>智慧珉巧囚禁点</MCW_SmartMinchoRescue.label>
+
+</LanguageData>

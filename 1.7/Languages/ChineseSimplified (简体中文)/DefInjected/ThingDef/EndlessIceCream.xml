@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: That irresistible urge has dispersed, while the sweet mint scent inside is as it always was. Now it is just a dessert you can never finish, and which never quite fills you up. -->
+  <MCW_EndlessIceCream_Released.description>那股令人无法抗拒的念头已经散去，桶里的薄荷甜香却一如往常。如今，它只是一份永远吃不完、也不太顶饱的甜点。</MCW_EndlessIceCream_Released.description>
+  <!-- EN: Endless mint ice cream bucket (influence removed) -->
+  <MCW_EndlessIceCream_Released.label>无尽薄荷冰淇淋桶（已解除影响）</MCW_EndlessIceCream_Released.label>
+  <!-- EN: Endless ice cream bucket: research progress -->
+  <MCW_EndlessIceCream.comps.3.studyNotes.0.label>无尽冰淇淋桶：研究进展</MCW_EndlessIceCream.comps.3.studyNotes.0.label>
+  <!-- EN: {PAWN_nameDef} has found that ice cream taken from the bucket reappears. The bucket also changes how those who eat from it feel about food. The affected soon crave mint ice cream again and begin to dislike other food. Mincho seem able to resist this effect. -->
+  <MCW_EndlessIceCream.comps.3.studyNotes.0.text>{PAWN_nameDef}发现，被取走的冰淇淋会重新出现。这桶冰淇淋还会改变食用者对食物的感受。受影响的人很快就会渴望再次吃到薄荷冰淇淋，并开始厌恶其他食物。珉巧似乎能够抵抗这种影响。</MCW_EndlessIceCream.comps.3.studyNotes.0.text>
+  <!-- EN: Endless ice cream bucket: research complete -->
+  <MCW_EndlessIceCream.comps.3.studyNotes.1.label>无尽冰淇淋桶：研究完成</MCW_EndlessIceCream.comps.3.studyNotes.1.label>
+  <!-- EN: {PAWN_nameDef} has found a way to sever the psychic influence. A single archotech shard is enough to break the dependence this bucket causes. The ice cream still regenerates, but each serving now provides only one fifth of its former nutrition.\n\nSelect the ice cream bucket to remove the influence. -->
+  <MCW_EndlessIceCream.comps.3.studyNotes.1.text>{PAWN_nameDef}找到了切断精神影响的方法。一个超凡碎片足以解除这桶冰淇淋造成的依赖。冰淇淋仍会再生，但每次食用只能获得原先五分之一的营养。\n\n选中冰淇淋桶即可解除影响。</MCW_EndlessIceCream.comps.3.studyNotes.1.text>
+  <!-- EN: Consume 1 shard to break the dependence caused by this bucket. The ice cream remains edible and provides 0.2 nutrition per serving. -->
+  <MCW_EndlessIceCream.comps.4.activateDescString>消耗1个碎片，解除这桶冰淇淋造成的依赖。冰淇淋仍可食用，每次提供0.2营养。</MCW_EndlessIceCream.comps.4.activateDescString>
+  <!-- EN: Remove psychic influence -->
+  <MCW_EndlessIceCream.comps.4.activateLabelString>解除精神影响</MCW_EndlessIceCream.comps.4.activateLabelString>
+  <!-- EN: Removing the influence on {0}: {1}s -->
+  <MCW_EndlessIceCream.comps.4.activatingString>正在解除{0}的影响：{1}秒</MCW_EndlessIceCream.comps.4.activatingString>
+  <!-- EN: Removing the influence on {0} -->
+  <MCW_EndlessIceCream.comps.4.activatingStringPending>正在解除{0}的影响</MCW_EndlessIceCream.comps.4.activatingStringPending>
+  <!-- EN: Select a worker -->
+  <MCW_EndlessIceCream.comps.4.guiLabelString>选择执行者</MCW_EndlessIceCream.comps.4.guiLabelString>
+  <!-- EN: Remove psychic influence -->
+  <MCW_EndlessIceCream.comps.4.jobString>解除精神影响</MCW_EndlessIceCream.comps.4.jobString>
+  <!-- EN: 消耗1个碎片，解除这桶冰淇淋造成的依赖。冰淇淋仍可食用，每次提供0.2营养。 -->
+  <MCW_EndlessIceCream.comps.BucketRelease.activateDescString>消耗1个碎片，解除这桶冰淇淋造成的依赖。冰淇淋仍可食用，每次提供0.2营养。</MCW_EndlessIceCream.comps.BucketRelease.activateDescString>
+  <!-- EN: 解除精神影响 -->
+  <MCW_EndlessIceCream.comps.BucketRelease.activateLabelString>解除精神影响</MCW_EndlessIceCream.comps.BucketRelease.activateLabelString>
+  <!-- EN: 正在解除{0}的影响：{1}秒 -->
+  <MCW_EndlessIceCream.comps.BucketRelease.activatingString>正在解除{0}的影响：{1}秒</MCW_EndlessIceCream.comps.BucketRelease.activatingString>
+  <!-- EN: 正在解除{0}的影响 -->
+  <MCW_EndlessIceCream.comps.BucketRelease.activatingStringPending>正在解除{0}的影响</MCW_EndlessIceCream.comps.BucketRelease.activatingStringPending>
+  <!-- EN: 选择执行者 -->
+  <MCW_EndlessIceCream.comps.BucketRelease.guiLabelString>选择执行者</MCW_EndlessIceCream.comps.BucketRelease.guiLabelString>
+  <!-- EN: 解除精神影响 -->
+  <MCW_EndlessIceCream.comps.BucketRelease.jobString>解除精神影响</MCW_EndlessIceCream.comps.BucketRelease.jobString>
+  <!-- EN: 无尽冰淇淋桶：研究进展 -->
+  <MCW_EndlessIceCream.comps.CompStudyUnlocks.studyNotes.0.label>无尽冰淇淋桶：研究进展</MCW_EndlessIceCream.comps.CompStudyUnlocks.studyNotes.0.label>
+  <!-- EN: {PAWN_nameDef}发现，被取走的冰淇淋会重新出现。这桶冰淇淋还会改变食用者对食物的感受。受影响的人很快就会渴望再次吃到薄荷冰淇淋，并开始厌恶其他食物。珉巧似乎能够抵抗这种影响。 -->
+  <MCW_EndlessIceCream.comps.CompStudyUnlocks.studyNotes.0.text>{PAWN_nameDef}发现，被取走的冰淇淋会重新出现。这桶冰淇淋还会改变食用者对食物的感受。受影响的人很快就会渴望再次吃到薄荷冰淇淋，并开始厌恶其他食物。珉巧似乎能够抵抗这种影响。</MCW_EndlessIceCream.comps.CompStudyUnlocks.studyNotes.0.text>
+  <!-- EN: 无尽冰淇淋桶：研究完成 -->
+  <MCW_EndlessIceCream.comps.CompStudyUnlocks.studyNotes.1.label>无尽冰淇淋桶：研究完成</MCW_EndlessIceCream.comps.CompStudyUnlocks.studyNotes.1.label>
+  <!-- EN: {PAWN_nameDef}找到了切断精神影响的方法。一个超凡碎片足以解除这桶冰淇淋造成的依赖。冰淇淋仍会再生，但每次食用只能获得原先五分之一的营养。\n\n选中冰淇淋桶即可解除影响。 -->
+  <MCW_EndlessIceCream.comps.CompStudyUnlocks.studyNotes.1.text>{PAWN_nameDef}找到了切断精神影响的方法。一个超凡碎片足以解除这桶冰淇淋造成的依赖。冰淇淋仍会再生，但每次食用只能获得原先五分之一的营养。\n\n选中冰淇淋桶即可解除影响。</MCW_EndlessIceCream.comps.CompStudyUnlocks.studyNotes.1.text>
+  <!-- EN: A bucket of ice cream giving off a sweet mint scent. The barrel bears no production mark, and no sign of how it was sealed. -->
+  <MCW_EndlessIceCream.description>一桶散发着薄荷甜香的冰淇淋。桶身没有生产标识，也找不到封口的痕迹。</MCW_EndlessIceCream.description>
+  <!-- EN: Endless mint ice cream bucket -->
+  <MCW_EndlessIceCream.label>无尽薄荷冰淇淋桶</MCW_EndlessIceCream.label>
+
+</LanguageData>

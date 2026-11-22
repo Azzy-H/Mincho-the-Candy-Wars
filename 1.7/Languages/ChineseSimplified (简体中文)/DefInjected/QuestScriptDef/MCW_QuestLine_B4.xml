@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: questDescription->The Mincho Alliance gave us the coordinates of a ruin; it may hold important information about researching the Mincho themselves.
+
+Go to the ruin and look for beta nano-shaping fluid. -->
+  <MCW_QuestB4_BetaFluidRuin.questDescriptionRules.rulesStrings.0>questDescription->珉巧同盟给予了我们一个遗迹坐标，这里面或许有研究珉巧自身的重要信息。\n\n前往遗迹，寻找β型纳米塑形液。</MCW_QuestB4_BetaFluidRuin.questDescriptionRules.rulesStrings.0>
+  <!-- EN: questName->Obtain beta nano-shaping fluid -->
+  <MCW_QuestB4_BetaFluidRuin.questNameRules.rulesStrings.0>questName->获取β型纳米塑形液</MCW_QuestB4_BetaFluidRuin.questNameRules.rulesStrings.0>
+
+</LanguageData>

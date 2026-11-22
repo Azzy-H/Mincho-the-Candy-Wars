@@ -1,4 +1,4 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using Verse;
 using Verse.AI;
 
@@ -13,7 +13,7 @@ namespace MinchoCandyWars.Patch.Pathing
     {
         public static bool Prefix(Pawn pawn, IntVec3 c, ref int? __result)
         {
-            if (pawn?.health?.hediffSet?.HasHediff(MCW_DefOf.MCW_PrismTerrainIgnore) == true)
+            if (pawn?.health?.hediffSet?.HasHediff(MCW_HediffDefOf.MCW_PrismTerrainIgnore) == true)
             {
                 __result = 0;
                 return false;

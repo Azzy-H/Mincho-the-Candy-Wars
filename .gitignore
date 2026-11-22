@@ -20,3 +20,12 @@ _acl-recovery/
 
 # rider
 .idea/
+
+# 源码交接包解压的临时目录（不入库）
+_handover_tmp/
+
+# 本地补丁工程（Source/Local）的构建输出
+artifacts/
+Source/Local/**/bin/
+Source/Local/**/obj/
+*.7z

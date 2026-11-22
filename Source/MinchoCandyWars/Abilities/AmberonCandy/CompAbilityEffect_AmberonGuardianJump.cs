@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -99,7 +99,7 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
             Map map = caster.Map;
             if (map == null) return;
 
-            ThingDef wall = MCW_DefOf.Mincho_MintchocoWall;
+            ThingDef wall = MCW_ThingDefOf.Mincho_MintchocoWall;
 
             IntVec3 center = target.IsValid ? target.Cell : caster.Position;
             for (int dx = -WallRadius; dx <= WallRadius; dx++)
@@ -116,7 +116,7 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
                         continue;
                     }
 
-                    GenSpawn.Spawn(wall, cell, map, Rot4.North);
+                    map.GetComponent<GuardianWalls>().Register(GenSpawn.Spawn(wall, cell, map, Rot4.North));
                 }
             }
         }
@@ -140,3 +140,4 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
         }
     }
 }
+

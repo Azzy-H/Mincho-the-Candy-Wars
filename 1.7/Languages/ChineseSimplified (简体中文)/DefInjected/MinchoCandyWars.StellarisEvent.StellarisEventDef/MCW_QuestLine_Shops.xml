@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: MinchoCandyWars.AllianceShop.ShopBody -->
+  <MCW_Event_AllianceBoosterShop.desc>MinchoCandyWars.AllianceShop.ShopBody</MCW_Event_AllianceBoosterShop.desc>
+  <!-- EN: Booster research blueprint -->
+  <MCW_Event_AllianceBoosterShop.label>改造包研究图纸</MCW_Event_AllianceBoosterShop.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.IntelKit -->
+  <MCW_Event_AllianceBoosterShop.options.0.label>MinchoCandyWars.AllianceShop.IntelKit</MCW_Event_AllianceBoosterShop.options.0.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.BasicCoreKit -->
+  <MCW_Event_AllianceBoosterShop.options.1.label>MinchoCandyWars.AllianceShop.BasicCoreKit</MCW_Event_AllianceBoosterShop.options.1.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.AdvancedCoreKit -->
+  <MCW_Event_AllianceBoosterShop.options.2.label>MinchoCandyWars.AllianceShop.AdvancedCoreKit</MCW_Event_AllianceBoosterShop.options.2.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.BodyKit -->
+  <MCW_Event_AllianceBoosterShop.options.3.label>MinchoCandyWars.AllianceShop.BodyKit</MCW_Event_AllianceBoosterShop.options.3.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.BrowseOnly -->
+  <MCW_Event_AllianceBoosterShop.options.4.label>MinchoCandyWars.AllianceShop.BrowseOnly</MCW_Event_AllianceBoosterShop.options.4.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.Speaker -->
+  <MCW_Event_AllianceBoosterShop.title>MinchoCandyWars.AllianceShop.Speaker</MCW_Event_AllianceBoosterShop.title>
+  <!-- EN: MinchoCandyWars.AllianceShop.ShopBody -->
+  <MCW_Event_AllianceCandyShop.desc>MinchoCandyWars.AllianceShop.ShopBody</MCW_Event_AllianceCandyShop.desc>
+  <!-- EN: Candy research blueprint -->
+  <MCW_Event_AllianceCandyShop.label>糖饰研究图纸</MCW_Event_AllianceCandyShop.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.Qianji -->
+  <MCW_Event_AllianceCandyShop.options.0.label>MinchoCandyWars.AllianceShop.Qianji</MCW_Event_AllianceCandyShop.options.0.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.Manna -->
+  <MCW_Event_AllianceCandyShop.options.1.label>MinchoCandyWars.AllianceShop.Manna</MCW_Event_AllianceCandyShop.options.1.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.Amberon -->
+  <MCW_Event_AllianceCandyShop.options.2.label>MinchoCandyWars.AllianceShop.Amberon</MCW_Event_AllianceCandyShop.options.2.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.Liuli -->
+  <MCW_Event_AllianceCandyShop.options.3.label>MinchoCandyWars.AllianceShop.Liuli</MCW_Event_AllianceCandyShop.options.3.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.Linglon -->
+  <MCW_Event_AllianceCandyShop.options.4.label>MinchoCandyWars.AllianceShop.Linglon</MCW_Event_AllianceCandyShop.options.4.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.BrowseOnly -->
+  <MCW_Event_AllianceCandyShop.options.5.label>MinchoCandyWars.AllianceShop.BrowseOnly</MCW_Event_AllianceCandyShop.options.5.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.Speaker -->
+  <MCW_Event_AllianceCandyShop.title>MinchoCandyWars.AllianceShop.Speaker</MCW_Event_AllianceCandyShop.title>
+  <!-- EN: MinchoCandyWars.AllianceShop.AidBody -->
+  <MCW_Event_AllianceSubsidy.desc>MinchoCandyWars.AllianceShop.AidBody</MCW_Event_AllianceSubsidy.desc>
+  <!-- EN: Claim subsidy -->
+  <MCW_Event_AllianceSubsidy.label>领取资助</MCW_Event_AllianceSubsidy.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.AidTerms -->
+  <MCW_Event_AllianceSubsidy.options.0.desc>MinchoCandyWars.AllianceShop.AidTerms</MCW_Event_AllianceSubsidy.options.0.desc>
+  <!-- EN: MinchoCandyWars.AllianceShop.AidAccept -->
+  <MCW_Event_AllianceSubsidy.options.0.label>MinchoCandyWars.AllianceShop.AidAccept</MCW_Event_AllianceSubsidy.options.0.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.EndCall -->
+  <MCW_Event_AllianceSubsidy.options.1.desc>MinchoCandyWars.AllianceShop.EndCall</MCW_Event_AllianceSubsidy.options.1.desc>
+  <!-- EN: MinchoCandyWars.AllianceShop.AidDecline -->
+  <MCW_Event_AllianceSubsidy.options.1.label>MinchoCandyWars.AllianceShop.AidDecline</MCW_Event_AllianceSubsidy.options.1.label>
+  <!-- EN: MinchoCandyWars.AllianceShop.Speaker -->
+  <MCW_Event_AllianceSubsidy.title>MinchoCandyWars.AllianceShop.Speaker</MCW_Event_AllianceSubsidy.title>
+</LanguageData>

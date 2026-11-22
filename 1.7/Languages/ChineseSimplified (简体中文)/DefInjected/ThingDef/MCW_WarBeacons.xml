@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: A Mincho Alliance signal device that keeps delivering reinforcements to the battlefield. -->
+  <MCW_MinchoBeacon.description>珉巧同盟的信号装置，会持续把援军送到战场。</MCW_MinchoBeacon.description>
+  <!-- EN: Mincho reinforcement beacon -->
+  <MCW_MinchoBeacon.label>珉巧援军信标</MCW_MinchoBeacon.label>
+  <!-- EN: A reclamation force teleporter that keeps sending reinforcements. -->
+  <MCW_RecyclePortal.description>回收部队的传送装置，会源源不断地送来援军。</MCW_RecyclePortal.description>
+  <!-- EN: Reclamation force teleporter -->
+  <MCW_RecyclePortal.label>回收部队传送点</MCW_RecyclePortal.label>
+</LanguageData>

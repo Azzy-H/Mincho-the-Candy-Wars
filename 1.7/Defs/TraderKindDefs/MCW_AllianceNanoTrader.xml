@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TraderKindDef>
+    <defName>MCW_AllianceNanoTrader</defName>
+    <label>Mincho Alliance shaping fluid trader</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>800~1500</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MCW_Alpha_NanoShapingFluid</thingDef>
+        <countRange>0~3</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MCW_Beta_NanoShapingFluid</thingDef>
+        <countRange>0~2</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Steel</thingDef>
+        <countRange>100~300</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentIndustrial</thingDef>
+        <countRange>10~30</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MedicineIndustrial</thingDef>
+        <countRange>5~15</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Mincho_BlocksMintchoco</thingDef>
+        <countRange>40~120</countRange>
+      </li>
+    </stockGenerators>
+  </TraderKindDef>
+</Defs>

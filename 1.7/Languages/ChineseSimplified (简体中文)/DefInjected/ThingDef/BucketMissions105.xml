@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: 失去平衡的冰淇淋桶正拖着残烟坠向地面，变形的外壳仍在护住舱内的乘员。 -->
+  <MCWQ105_BucketCrashing.description>失去平衡的冰淇淋桶正拖着残烟坠向地面，变形的外壳仍在护住舱内的乘员。</MCWQ105_BucketCrashing.description>
+  <!-- EN: 迫降中的冰淇淋桶飞行器 -->
+  <MCWQ105_BucketCrashing.label>迫降中的冰淇淋桶飞行器</MCWQ105_BucketCrashing.label>
+  <!-- EN: 扭曲的桶身和凝固的冰淇淋留在撞击处。舱门仍然敞着，像是在等最后一位乘员平安归来。 -->
+  <MCWQ105_BucketWreck.description>扭曲的桶身和凝固的冰淇淋留在撞击处。舱门仍然敞着，像是在等最后一位乘员平安归来。</MCWQ105_BucketWreck.description>
+  <!-- EN: 迫降的冰淇淋桶飞行器残骸 -->
+  <MCWQ105_BucketWreck.label>迫降的冰淇淋桶飞行器残骸</MCWQ105_BucketWreck.label>
+</LanguageData>

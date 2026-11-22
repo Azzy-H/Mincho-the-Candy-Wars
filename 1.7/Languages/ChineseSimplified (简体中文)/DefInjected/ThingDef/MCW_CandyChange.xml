@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: Amberon Candy unlock item -->
-  <MCW_AmberonCandyChangeItem.label>琥珀糖糖饰</MCW_AmberonCandyChangeItem.label>
-  <!-- EN: 植入后解锁琥珀糖糖饰的使用权。 -->
-  <MCW_AmberonCandyChangeItem.description>植入后解锁琥珀糖糖饰的使用权。</MCW_AmberonCandyChangeItem.description>
+
   <!-- EN: Implant {0_label} -->
   <MCW_AmberonCandyChangeItem.comps.CompUsable.useLabel>植入 {0_label}</MCW_AmberonCandyChangeItem.comps.CompUsable.useLabel>
-  
-  <!-- EN: Linglon Candy unlock item -->
-  <MCW_LinglonCandyChangeItem.label>玲珑糖糖饰</MCW_LinglonCandyChangeItem.label>
-  <!-- EN: 植入后解锁玲珑糖糖饰的使用权。 -->
-  <MCW_LinglonCandyChangeItem.description>植入后解锁玲珑糖糖饰的使用权。</MCW_LinglonCandyChangeItem.description>
+  <!-- EN: The amber ornament shows a warm sheen in the light. Its steady weight is like a promise of protection never once broken. -->
+  <MCW_AmberonCandyChangeItem.description>琥珀色的糖饰在光下透出温润的亮泽。那份沉稳的重量，像一句从未落空的保护承诺。</MCW_AmberonCandyChangeItem.description>
+  <!-- EN: Amberon Candy unlock item -->
+  <MCW_AmberonCandyChangeItem.label>琥珀糖糖饰</MCW_AmberonCandyChangeItem.label>
   <!-- EN: Implant {0_label} -->
   <MCW_LinglonCandyChangeItem.comps.CompUsable.useLabel>植入 {0_label}</MCW_LinglonCandyChangeItem.comps.CompUsable.useLabel>
-  
-  <!-- EN: Mecha Candy unlock item -->
-  <MCW_MechaCandyChangeItem.label>千机糖糖饰</MCW_MechaCandyChangeItem.label>
-  <!-- EN: 植入后解锁千机糖糖饰的使用权。 -->
-  <MCW_MechaCandyChangeItem.description>植入后解锁千机糖糖饰的使用权。</MCW_MechaCandyChangeItem.description>
+  <!-- EN: A translucent linglon ornament; faint light drifts along its fine patterns. Stare long enough and you almost hear distant whispers. -->
+  <MCW_LinglonCandyChangeItem.description>玲珑剔透的糖饰，微光沿着精细花纹缓缓流动。凝视得久了，仿佛能听见远处细碎的低语。</MCW_LinglonCandyChangeItem.description>
+  <!-- EN: Linglon Candy unlock item -->
+  <MCW_LinglonCandyChangeItem.label>玲珑糖糖饰</MCW_LinglonCandyChangeItem.label>
   <!-- EN: Implant {0_label} -->
   <MCW_MechaCandyChangeItem.comps.CompUsable.useLabel>植入 {0_label}</MCW_MechaCandyChangeItem.comps.CompUsable.useLabel>
-  
-  <!-- EN: Nectar Candy unlock item -->
-  <MCW_NectarCandyChangeItem.label>甘露糖糖饰</MCW_NectarCandyChangeItem.label>
-  <!-- EN: 植入后解锁甘露糖糖饰的使用权。 -->
-  <MCW_NectarCandyChangeItem.description>植入后解锁甘露糖糖饰的使用权。</MCW_NectarCandyChangeItem.description>
+  <!-- EN: The delicate ornament left by the mecha candy; countless tiny gears seem to hide in its cool patterns. The low hum of machinery is the melody she knows best. -->
+  <MCW_MechaCandyChangeItem.description>千机糖留下的精巧糖饰，冰凉的纹路间仿佛藏着无数细小齿轮。机械运转的低鸣，是她最熟悉的旋律。</MCW_MechaCandyChangeItem.description>
+  <!-- EN: Mecha Candy unlock item -->
+  <MCW_MechaCandyChangeItem.label>千机糖糖饰</MCW_MechaCandyChangeItem.label>
   <!-- EN: Implant {0_label} -->
   <MCW_NectarCandyChangeItem.comps.CompUsable.useLabel>植入 {0_label}</MCW_NectarCandyChangeItem.comps.CompUsable.useLabel>
-  
-  <!-- EN: Prism Candy unlock item -->
-  <MCW_PrismCandyChangeItem.label>琉璃糖糖饰</MCW_PrismCandyChangeItem.label>
-  <!-- EN: 植入后解锁琉璃糖糖饰的使用权。 -->
-  <MCW_PrismCandyChangeItem.description>植入后解锁琉璃糖糖饰的使用权。</MCW_PrismCandyChangeItem.description>
+  <!-- EN: A nectar candy ornament giving off a soft sweetness. Held in the palm, even scattered thoughts slowly settle. -->
+  <MCW_NectarCandyChangeItem.description>一枚散发柔和甜香的甘露糖饰。握在掌心时，连纷乱的思绪也会慢慢安静下来。</MCW_NectarCandyChangeItem.description>
+  <!-- EN: Nectar Candy unlock item -->
+  <MCW_NectarCandyChangeItem.label>甘露糖糖饰</MCW_NectarCandyChangeItem.label>
   <!-- EN: Implant {0_label} -->
   <MCW_PrismCandyChangeItem.comps.CompUsable.useLabel>植入 {0_label}</MCW_PrismCandyChangeItem.comps.CompUsable.useLabel>
-  
+  <!-- EN: A clear prism candy ornament refracting sharp, bright light. Beneath the elegant surface hides a will that will not yield. -->
+  <MCW_PrismCandyChangeItem.description>清透的琉璃糖饰，折射出锋利而明亮的光。优雅的外表下，藏着不肯退让的意志。</MCW_PrismCandyChangeItem.description>
+  <!-- EN: Prism Candy unlock item -->
+  <MCW_PrismCandyChangeItem.label>琉璃糖糖饰</MCW_PrismCandyChangeItem.label>
+
 </LanguageData>

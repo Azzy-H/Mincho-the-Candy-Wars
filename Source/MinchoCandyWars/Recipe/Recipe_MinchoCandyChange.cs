@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using System.Collections.Generic;
 using Verse;
 
@@ -33,18 +33,14 @@ namespace MinchoCandyWars
             {
                 return false;
             }
-            return !pawn.health.hediffSet.HasHediff(MCW_DefOf.MCW_CandyChangeExhaustion);
+            return !pawn.health.hediffSet.HasHediff(MCW_HediffDefOf.MCW_CandyChangeExhaustion);
         }
 
-        protected override void OnSurgerySuccess(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
+        public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            if (billDoer != null && CheckSurgeryFail(billDoer, pawn, ingredients, part, bill))
-            {
-                return;
-            }
             CompMinchoCore core = pawn.GetComp<CompMinchoCore>();
             core.CurrentCandyType = Ext.candyType;
-            pawn.health.AddHediff(MCW_DefOf.MCW_CandyChangeExhaustion);
+            pawn.health.AddHediff(MCW_HediffDefOf.MCW_CandyChangeExhaustion);
         }
     }
 }

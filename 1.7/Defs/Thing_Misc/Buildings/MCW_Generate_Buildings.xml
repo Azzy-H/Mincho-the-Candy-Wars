@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <!-- ===== 位置护盾（站在我身后生成） ===== -->
   <ThingDef ParentName="BuildingBase">
     <defName>MCW_AmberonPositionShield</defName>
     <label>Amberon position shield</label>
-    <description>TODO</description>
+    <description>A standing amber shield that intercepts projectiles aimed at those sheltering behind it.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
       <texPath>Other/ShieldBubble</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(255, 190, 80)</color>
-      <drawSize>8</drawSize>
+      <shaderType>Transparent</shaderType>
+      <color>(255, 190, 80, 185)</color>
+      <drawSize>(8,8)</drawSize>
     </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
     <passability>Standable</passability>
     <statBases>
       <MaxHitPoints>200</MaxHitPoints>
       <Flammability>0</Flammability>
     </statBases>
-    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawerType>RealtimeOnly</drawerType>
     <tickerType>Rare</tickerType>
     <comps>
       <li Class="CompProperties_Lifespan">
-        <lifespanTicks>10000</lifespanTicks><!-- 4 hours -->
+        <lifespanTicks>10000</lifespanTicks>
+        <!-- 4 hours -->
       </li>
       <li Class="CompProperties_ProjectileInterceptor">
         <radius>4</radius>
@@ -36,14 +37,13 @@
         <drawWithNoSelection>true</drawWithNoSelection>
         <chargeIntervalTicks>0</chargeIntervalTicks>
         <chargeDurationTicks>0</chargeDurationTicks>
-        <hitPoints>200</hitPoints>
+        <hitPoints>-1</hitPoints>
         <hitPointsRestoreInstantlyAfterCharge>false</hitPointsRestoreInstantlyAfterCharge>
         <startWithMaxHitPoints>true</startWithMaxHitPoints>
-        <alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo>
+        <alwaysShowHitpointsGizmo>false</alwaysShowHitpointsGizmo>
         <activated>true</activated>
         <color>(255, 190, 80, 180)</color>
       </li>
     </comps>
   </ThingDef>
-
 </Defs>

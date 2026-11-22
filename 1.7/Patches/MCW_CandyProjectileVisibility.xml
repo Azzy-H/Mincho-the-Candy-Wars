@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="MCW_VrocanGatling_Bullet"]/graphicData/drawSize</xpath>
+    <value><drawSize>(0.50,0.50)</drawSize></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/FleckDef[defName="MCW_CandyTrail047"]/fadeOutTime</xpath>
+    <value><fadeOutTime>0.11</fadeOutTime></value>
+  </Operation>
+</Patch>

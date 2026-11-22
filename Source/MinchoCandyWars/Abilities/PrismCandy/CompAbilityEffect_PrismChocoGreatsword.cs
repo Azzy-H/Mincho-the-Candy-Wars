@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -61,16 +61,16 @@ namespace MinchoCandyWars.Abilities.PrismCandy
                 start, map, parent.verb.verbProps.range / 2f, Props.damageDef, caster,
                 damAmount: damage,
                 overrideCells: cells,
-                ignoredThings: new List<Thing> { caster },
+                ignoredThings: PrismCandyAbilityUtility.NonHostilePawns(caster, map),
                 doVisualEffects: false,
                 propagationSpeed: float.MaxValue);
 
             // 生成减速区域（透明物体，每 tick 遍历 pawn）
-            Thing zone = ThingMaker.MakeThing(MCW_DefOf.MCW_PrismSwordSlowZone);
+            Thing zone = ThingMaker.MakeThing(MCW_ThingDefOf.MCW_PrismSwordSlowZone);
             Comp_PrismSwordSlowZone? slowComp = zone.TryGetComp<Comp_PrismSwordSlowZone>();
             if (slowComp != null)
             {
-                slowComp.Setup(start, end, halfWidth);
+                slowComp.Setup(start, end, halfWidth, caster.Faction);
             }
             GenSpawn.Spawn(zone, start, map);
         }

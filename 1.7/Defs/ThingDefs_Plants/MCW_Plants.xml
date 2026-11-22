@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef ParentName="PlantBase">
     <defName>MCW_Chocolate_Bush_Plant</defName>
-    <label>巧克力灌木</label>
-    <description>慧珉巧发明的神奇作物，用于快速产出巧克力，巧克力灌木只能在0度以下生长。</description>
+    <label>Chocolate bush</label>
+    <description>A chocolate bush cultivated by smart Mincho, its branches heavy with dark brown sweet fruit. It favors biting cold; warm air makes its leaves droop.</description>
     <thingClass>Plant</thingClass>
     <statBases>
       <MaxHitPoints>85</MaxHitPoints>
@@ -41,8 +41,8 @@
   </ThingDef>
   <ThingDef ParentName="PlantBase">
     <defName>MCW_Frozen_Rice_Plant</defName>
-    <label>冷冻水稻</label>
-    <description>智慧珉巧发明的神奇作物，可以在极寒地区种植出水稻。冷冻水稻生长缓慢，并且只能在0℃以下生长。</description>
+    <label>Frozen rice</label>
+    <description>Rice stalks hang over frozen soil, slender leaves rimed with frost. At long last the Mincho can look forward to a familiar bowl of rice in the endless winter.</description>
     <statBases>
       <MaxHitPoints>85</MaxHitPoints>
       <Nutrition>0.175</Nutrition>
@@ -77,8 +77,8 @@
   </ThingDef>
   <ThingDef ParentName="PlantBase">
     <defName>MCW_Frozen_Devilstrand_Plant</defName>
-    <label>超低温恶魔菇</label>
-    <description>智慧珉巧发明的神奇作物，能够在极寒地区种植出蘑菇布，生长周期比普通蘑菇布更短，但是产量也更低。</description>
+    <label>Cryo devilstrand mushroom</label>
+    <description>Dark red mushrooms that grow pressed against the frozen soil, their fine mycelium weaving tough fiber in the bitter cold. The Mincho say winter, too, calls for a warm coat.</description>
     <statBases>
       <MaxHitPoints>85</MaxHitPoints>
       <Nutrition>0.175</Nutrition>
@@ -94,7 +94,6 @@
       <dieIfLeafless>true</dieIfLeafless>
       <harvestTag>Standard</harvestTag>
       <harvestedThingDef>DevilstrandCloth</harvestedThingDef>
-
       <sowTags>
         <li>Mincho_MinchoshroomPlant</li>
       </sowTags>
@@ -110,6 +109,7 @@
       <minOptimalGrowthTemperature>-272</minOptimalGrowthTemperature>
       <maxOptimalGrowthTemperature>-5</maxOptimalGrowthTemperature>
       <maxGrowthTemperature>0</maxGrowthTemperature>
+      <harvestYield>3</harvestYield>
     </plant>
   </ThingDef>
 </Defs>

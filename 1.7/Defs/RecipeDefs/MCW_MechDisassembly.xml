@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <RecipeDef ParentName="ButcherCorpseMechanoidBase" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>MCW_ShredMinchoMechs</defName>
-    <label>拆解珉巧子个体／魔像</label>
-    <description>拆解一个珉巧机械子个体或珉巧魔像的残骸，回收原有定义中的材料。允许友方残骸；拆解会消耗尸体，之后无法复活。</description>
-    <jobString>正在拆解珉巧机械体。</jobString>
+    <label>Shred Mincho sub-unit / golem</label>
+    <description>Shred the remains of a Mincho mechanoid sub-unit or Mincho golem and recover the materials in its original definition. Friendly remains are allowed; shredding consumes the corpse, so it can no longer be resurrected.</description>
+    <jobString>Shredding a Mincho mechanoid.</jobString>
     <workAmount>300</workAmount>
     <soundWorking>Recipe_ButcherCorpseMechanoid</soundWorking>
     <recipeUsers>
@@ -63,9 +63,9 @@
   </RecipeDef>
   <RecipeDef ParentName="ButcherCorpseMechanoidBase" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>MCW_SmashMinchoMechs</defName>
-    <label>粉碎珉巧子个体／魔像</label>
-    <description>拆解一个珉巧机械子个体或珉巧魔像的残骸，回收原有定义中的材料。允许友方残骸；拆解会消耗尸体，之后无法复活。</description>
-    <jobString>正在拆解珉巧机械体。</jobString>
+    <label>Smash Mincho sub-unit / golem</label>
+    <description>Shred the remains of a Mincho mechanoid sub-unit or Mincho golem and recover the materials in its original definition. Friendly remains are allowed; shredding consumes the corpse, so it can no longer be resurrected.</description>
+    <jobString>Shredding a Mincho mechanoid.</jobString>
     <workAmount>450</workAmount>
     <soundWorking>Recipe_SmashCorpseMechanoid</soundWorking>
     <recipeUsers>

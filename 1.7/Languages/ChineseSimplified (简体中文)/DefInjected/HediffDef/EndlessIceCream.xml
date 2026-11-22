@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: This bucket changed the eater taste. Going without mint ice cream soon brings severe discomfort. Studying the bucket may reveal a way to break the influence. -->
+  <MCW_MintAddiction.description>这桶冰淇淋改变了食用者的口味。不再吃薄荷冰淇淋，很快就会感到强烈的不适。研究冰淇淋桶可以找到解除影响的方法。</MCW_MintAddiction.description>
+  <!-- EN: Mint ice cream dependence -->
+  <MCW_MintAddiction.label>薄荷冰淇淋依赖</MCW_MintAddiction.label>
+  <!-- EN: Withdrawal -->
+  <MCW_MintAddiction.stages.1.label>戒断</MCW_MintAddiction.stages.1.label>
+  <!-- EN: Thoughts are occupied by a cold, sweet contentment. -->
+  <MCW_MintDaze.description>思绪被冰凉而甜蜜的满足感占据。</MCW_MintDaze.description>
+  <!-- EN: Ice cream daze -->
+  <MCW_MintDaze.label>冰淇淋恍惚</MCW_MintDaze.label>
+  <!-- EN: Free of the psychic influence of the endless ice cream bucket. -->
+  <MCW_MintFreedom.description>已经摆脱了无尽冰淇淋桶的精神影响。</MCW_MintFreedom.description>
+  <!-- EN: Ice cream influence removed -->
+  <MCW_MintFreedom.label>冰淇淋影响已解除</MCW_MintFreedom.label>
+
+</LanguageData>

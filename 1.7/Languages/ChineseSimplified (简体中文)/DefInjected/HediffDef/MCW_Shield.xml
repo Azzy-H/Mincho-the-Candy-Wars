@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: 举盾防御 -->
+
+  <!-- EN: While the shield is raised you gain its protection, but shooting accuracy drops 80%; melee accuracy is unaffected. Stowing the shield removes both the protection and the penalty. Aiming while the shield is raised with a ranged weapon in the main hand takes twice as long (+100%). -->
+  <MCW_CookiesShield_DraftedHediff.description>举盾时获得盾牌防护，同时射击精度降低80%；近战命中不受影响。背盾后移除此防护和射击惩罚。 举盾并使用主手远程武器时，瞄准耗时为原来的2 倍（增加 100%）。</MCW_CookiesShield_DraftedHediff.description>
+  <!-- EN: Shield raised -->
   <MCW_CookiesShield_DraftedHediff.label>举盾防御</MCW_CookiesShield_DraftedHediff.label>
-  <!-- EN: 该士兵举起曲奇盾牌，严阵以待敌人的冲击。举盾状态下获得额外的防护能力。 -->
-  <MCW_CookiesShield_DraftedHediff.description>该士兵举起曲奇盾牌，严阵以待敌人的冲击。举盾状态下获得额外的防护能力。</MCW_CookiesShield_DraftedHediff.description>
-  
-  <!-- EN: 背盾 -->
-  <MCW_CookiesShield_UndraftedHediff.label>背盾</MCW_CookiesShield_UndraftedHediff.label>
-  <!-- EN: 该士兵将曲奇盾牌背至身后，行动自如。 -->
+  <!-- EN: This soldier has slung the cookie shield on her back and moves freely. -->
   <MCW_CookiesShield_UndraftedHediff.description>该士兵将曲奇盾牌背至身后，行动自如。</MCW_CookiesShield_UndraftedHediff.description>
-  
-  <!-- EN: 举盾防御 -->
+  <!-- EN: Shield stowed -->
+  <MCW_CookiesShield_UndraftedHediff.label>背盾</MCW_CookiesShield_UndraftedHediff.label>
+  <!-- EN: While the shield is raised you gain its protection, but shooting accuracy drops 80%; melee accuracy is unaffected. Stowing the shield removes both the protection and the penalty. Aiming while the shield is raised with a ranged weapon in the main hand takes four times as long (+300%). -->
+  <MCW_TowerShield_DraftedHediff.description>举盾时获得盾牌防护，同时射击精度降低80%；近战命中不受影响。背盾后移除此防护和射击惩罚。 举盾并使用主手远程武器时，瞄准耗时为原来的4 倍（增加 300%）。</MCW_TowerShield_DraftedHediff.description>
+  <!-- EN: Shield raised -->
   <MCW_TowerShield_DraftedHediff.label>举盾防御</MCW_TowerShield_DraftedHediff.label>
-  <!-- EN: 该士兵举起塔盾，严阵以待敌人的冲击。举盾状态下获得额外的防护能力。 -->
-  <MCW_TowerShield_DraftedHediff.description>该士兵举起塔盾，严阵以待敌人的冲击。举盾状态下获得额外的防护能力。</MCW_TowerShield_DraftedHediff.description>
-  
-  <!-- EN: 背盾 -->
-  <MCW_TowerShield_UndraftedHediff.label>背盾</MCW_TowerShield_UndraftedHediff.label>
-  <!-- EN: 该士兵将塔盾背至身后，行动自如。 -->
+  <!-- EN: This soldier has slung the tower shield on her back and moves freely. -->
   <MCW_TowerShield_UndraftedHediff.description>该士兵将塔盾背至身后，行动自如。</MCW_TowerShield_UndraftedHediff.description>
-  
+  <!-- EN: Shield stowed -->
+  <MCW_TowerShield_UndraftedHediff.label>背盾</MCW_TowerShield_UndraftedHediff.label>
+
 </LanguageData>

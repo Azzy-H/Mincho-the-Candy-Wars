@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================================
@@ -36,8 +36,8 @@
     </nullifyingHediffs>
     <stages>
       <li>
-        <label>被撒娇了</label>
-        <description>小小的冰淇淋机械体凑过来蹭了蹭我，心情好了一点。</description>
+        <label>Got nuzzled</label>
+        <description>The little ice cream mechanoid came over and nuzzled me; my mood improved a little.</description>
         <baseMoodEffect>4</baseMoodEffect>
       </li>
     </stages>
@@ -47,7 +47,7 @@
   <JobDef>
     <defName>MCW_Nuzzle</defName>
     <driverClass>MinchoCandyWars.Nuzzle.JobDriver_MCWNuzzle</driverClass>
-    <reportString>正在向 TargetA 撒娇。</reportString>
+    <reportString>Nuzzling TargetA.</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
 
@@ -55,11 +55,11 @@
        只对机械体生效（WorkGiver 内部判定），人类即使开着基础工作也接不到。 -->
   <WorkGiverDef>
     <defName>MCW_Nuzzle_Basic</defName>
-    <label>撒娇</label>
+    <label>Nuzzle</label>
     <giverClass>MinchoCandyWars.Nuzzle.WorkGiver_MCWNuzzle</giverClass>
     <workType>BasicWorker</workType>
-    <verb>撒娇</verb>
-    <gerund>撒娇</gerund>
+    <verb>nuzzle</verb>
+    <gerund>nuzzling</gerund>
     <priorityInType>-100</priorityInType>
   </WorkGiverDef>
 

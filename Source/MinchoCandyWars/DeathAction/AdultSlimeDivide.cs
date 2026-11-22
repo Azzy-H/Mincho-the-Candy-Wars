@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 using Verse.AI.Group;
 
@@ -28,8 +28,8 @@ public class DeathActionWorker_AdultSlimeDivide : DeathActionWorker_RevertDivide
 
         // Juveniles keep upstream death drops and cleanup, without creating offspring.
         IntVec3 position = corpse.PositionHeld;
-        FilthMaker.TryMakeFilth(position, map, MCW_DefOf.Mincho_Filth_BloodDef, 5, FilthSourceFlags.None);
-        Thing iceCream = ThingMaker.MakeThing(MCW_DefOf.Mincho_Mintchoco);
+        FilthMaker.TryMakeFilth(position, map, MCW_ThingDefOf.Mincho_Filth_BloodDef, 5, FilthSourceFlags.None);
+        Thing iceCream = ThingMaker.MakeThing(MCW_ThingDefOf.Mincho_Mintchoco);
         iceCream.stackCount = (int)(40 * pawn.BodySize);
         GenPlace.TryPlaceThing(iceCream, position, map, ThingPlaceMode.Near);
         pawn.DropAndForbidEverything();

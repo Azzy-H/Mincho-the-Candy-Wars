@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 
 namespace MinchoCandyWars
@@ -55,7 +55,7 @@ namespace MinchoCandyWars
             {
                 return new AcceptanceReport("MCW_MinchoCoreNotActive".Translate());
             }
-            if (p.health.hediffSet.HasHediff(MCW_DefOf.MCW_CandyChangeExhaustion))
+            if (p.health.hediffSet.HasHediff(MCW_HediffDefOf.MCW_CandyChangeExhaustion))
             {
                 return new AcceptanceReport("MCW_CandyChangeExhaustion".Translate());
             }
@@ -80,7 +80,7 @@ namespace MinchoCandyWars
             }
 
             core.CurrentCandyType = target;
-            usedBy.health.AddHediff(MCW_DefOf.MCW_CandyChangeExhaustion);
+            usedBy.health.AddHediff(MCW_HediffDefOf.MCW_CandyChangeExhaustion);
         }
     }
 }

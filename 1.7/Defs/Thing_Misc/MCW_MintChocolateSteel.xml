@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>MCW_MintChocolateSteel</defName>
+    <label>Mint chocolate steel</label>
+    <description>Set mint chocolate cools along the grain of the steel in a pale green layer. Its cut is a little harder than plain steel, and sparks striking it raise a wisp of sweet smoke.</description>
+    <graphicData>
+      <texPath>Things/Item/MCW_MintChocolateSteel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(255,255,255)</color>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+    <statBases>
+      <MarketValue>2.6</MarketValue>
+      <Mass>0.5</Mass>
+      <StuffPower_Armor_Sharp>0.95</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.47</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>0.60</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>3</StuffPower_Insulation_Cold>
+      <SharpDamageMultiplier>1</SharpDamageMultiplier>
+      <BluntDamageMultiplier>1</BluntDamageMultiplier>
+    </statBases>
+    <stuffProps>
+      <categories><li>Metallic</li></categories>
+      <appearance>Metal</appearance>
+      <commonality>0</commonality>
+      <constructEffect>ConstructMetal</constructEffect>
+      <isAirtight>true</isAirtight>
+      <color>(155,203,206)</color>
+      <soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
+      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Metal</soundImpactMelee>
+      <statFactors>
+        <MaxHitPoints>1.06</MaxHitPoints>
+        <Flammability>0.6</Flammability>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+  <RecipeDef>
+    <defName>MCW_MakeMintChocolateSteel</defName>
+    <label>Make mint chocolate steel</label>
+    <description>Combine equal parts steel and mint chocolate brick into mint chocolate steel.</description>
+    <jobString>Making mint chocolate steel.</jobString>
+    <workAmount>1200</workAmount>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers><li>Mincho_MinchoBench</li></recipeUsers>
+    <ingredients>
+      <li><filter><thingDefs><li>Steel</li></thingDefs></filter><count>20</count></li>
+      <li><filter><thingDefs><li>Mincho_BlocksMintchoco</li></thingDefs></filter><count>20</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Steel</li><li>Mincho_BlocksMintchoco</li></thingDefs></fixedIngredientFilter>
+    <products><MCW_MintChocolateSteel>40</MCW_MintChocolateSteel></products>
+  </RecipeDef>
+</Defs>

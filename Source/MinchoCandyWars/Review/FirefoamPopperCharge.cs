@@ -1,4 +1,4 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using Verse;
 
@@ -18,7 +18,7 @@ namespace MinchoCandyWars.Misc;
 public static class FirefoamChargeGate
 {
     private static bool IsPopper(CompExplosive comp) =>
-        comp.parent.def == MCW_DefOf.MCW_FirefoamPopper;
+        comp.parent.def == MCW_ThingDefOf.MCW_FirefoamPopper;
 
     /// <summary>HasFuel 的定义就是 fuel ≥ Props.minimumFueledThreshold（Def 里为 50）。</summary>
     private static bool HasCharge(CompExplosive comp) =>

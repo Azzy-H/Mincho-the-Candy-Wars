@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -27,7 +27,7 @@
   <IncidentDef>
     <defName>MCW_GiveQuest_QuestB3</defName>
     <category>GiveQuest</category>
-    <label>袭击回收部队前哨站</label>
+    <label>Raid the reclamation force outpost</label>
     <questScriptDef>MCW_QuestB3_RecycleOutpost</questScriptDef>
     <workerClass>IncidentWorker_GiveQuest</workerClass>
     <baseChance>0</baseChance>
@@ -49,12 +49,14 @@
 
     <questNameRules>
       <rulesStrings>
-        <li>questName-&gt;袭击回收部队前哨站</li>
+        <li>questName-&gt;Raid the reclamation force outpost</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription-&gt;珉巧同盟正在准备突袭一个回收部队的据点，我们需要在合适的时机去帮助她们。\n\n前往标记的据点，击溃那里的回收部队守军。</li>
+        <li>questDescription-&gt;The Mincho Alliance is preparing to raid a reclamation force site; we must help them at the right moment.
+
+Go to the marked site and defeat the reclamation force garrison there.</li>
       </rulesStrings>
     </questDescriptionRules>
 

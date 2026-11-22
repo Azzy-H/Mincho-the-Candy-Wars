@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using RimWorld.Planet;
@@ -101,7 +101,7 @@ namespace MinchoCandyWars.StellarisEvent
 
             PawnGenerationRequest request = new PawnGenerationRequest(
                 value, value2, PawnGenerationContext.NonPlayer, null, 
-                forceGenerateNewPawn: false, allowDead: false, allowDowned: false, 
+                forceGenerateNewPawn: value2?.def == MCW_DefOf.MCW_Alliance_Faction, allowDead: false, allowDowned: false, 
                 canGeneratePawnRelations: true, value7, 1f, forceAddFreeWarmLayerIfNeeded: false, 
                 allowGay: true, value3, allowFood: true, flag, inhabitant: false, 
                 certainlyBeenInCryptosleep: false, forceRedressWorldPawnIfFormerColonist: false, 
@@ -146,7 +146,9 @@ namespace MinchoCandyWars.StellarisEvent
             }
 
             // 与玩家主文化同步
-            if (syncWithPlayerIdeo.GetValue(slate) && ModsConfig.IdeologyActive && pawn.ideo != null)
+            if (value2?.def == MCW_DefOf.MCW_Alliance_Faction)
+                MinchoCandyWars.QuestStory.AllianceBelief.Apply(pawn);
+            else if (syncWithPlayerIdeo.GetValue(slate) && ModsConfig.IdeologyActive && pawn.ideo != null)
             {
                 Ideo? playerPrimaryIdeo = Faction.OfPlayer.ideos?.PrimaryIdeo;
                 if (playerPrimaryIdeo != null)

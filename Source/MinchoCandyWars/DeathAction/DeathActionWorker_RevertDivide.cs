@@ -1,4 +1,4 @@
-using MinchoCandyWars.Patch;
+﻿using MinchoCandyWars.Patch;
 using RimWorld;
 using Verse;
 using Verse.AI.Group;
@@ -47,8 +47,8 @@ namespace MinchoCandyWars
             // 尸体存在时才做尸体相关操作
             if (corpse != null)
             {
-                FilthMaker.TryMakeFilth(position, map, MCW_DefOf.Mincho_Filth_BloodDef, 5, FilthSourceFlags.None);
-                Thing thing = ThingMaker.MakeThing(MCW_DefOf.Mincho_Mintchoco, null);
+                FilthMaker.TryMakeFilth(position, map, MCW_ThingDefOf.Mincho_Filth_BloodDef, 5, FilthSourceFlags.None);
+                Thing thing = ThingMaker.MakeThing(MCW_ThingDefOf.Mincho_Mintchoco, null);
                 thing.stackCount = (int)(40 * innerPawn.BodySize);
                 GenPlace.TryPlaceThing(thing, position, map, ThingPlaceMode.Near, null, null, default);
                 innerPawn.DropAndForbidEverything();

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: The mint-colored exhaust gradually draws in as the round ice cream bucket slowly descends. -->
+  <MCW_BucketShuttle_Incoming.description>薄荷色的尾焰渐渐收拢，圆滚滚的冰淇淋桶正缓缓落向地面。</MCW_BucketShuttle_Incoming.description>
+  <!-- EN: Ice cream bucket (landing) -->
+  <MCW_BucketShuttle_Incoming.label>冰淇淋桶（降落中）</MCW_BucketShuttle_Incoming.label>
+  <!-- EN: The engines lift the barrel body full of sweetness. The ground falls away and another journey begins. -->
+  <MCW_BucketShuttle_Leaving.description>引擎托起装满甜香的桶身。地面的景物逐渐远去，又一段旅程开始了。</MCW_BucketShuttle_Leaving.description>
+  <!-- EN: Ice cream bucket (taking off) -->
+  <MCW_BucketShuttle_Leaving.label>冰淇淋桶（起飞中）</MCW_BucketShuttle_Leaving.label>
+  <!-- EN: {0} is ready to take off again. -->
+  <MCW_BucketShuttle.comps.1.cooldownEndedMessage>{0}已准备好再次起飞。</MCW_BucketShuttle.comps.1.cooldownEndedMessage>
+  <!-- EN: Ice cream -->
+  <MCW_BucketShuttle.comps.3.fuelGizmoLabel>冰淇淋</MCW_BucketShuttle.comps.3.fuelGizmoLabel>
+  <!-- EN: Ice cream reserve -->
+  <MCW_BucketShuttle.comps.3.fuelLabel>冰淇淋储备</MCW_BucketShuttle.comps.3.fuelLabel>
+  <!-- EN: {0}已准备好再次起飞。 -->
+  <MCW_BucketShuttle.comps.CompLaunchable.cooldownEndedMessage>{0}已准备好再次起飞。</MCW_BucketShuttle.comps.CompLaunchable.cooldownEndedMessage>
+  <!-- EN: 冰淇淋 -->
+  <MCW_BucketShuttle.comps.CompRefuelable.fuelGizmoLabel>冰淇淋</MCW_BucketShuttle.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: 冰淇淋储备 -->
+  <MCW_BucketShuttle.comps.CompRefuelable.fuelLabel>冰淇淋储备</MCW_BucketShuttle.comps.CompRefuelable.fuelLabel>
+  <!-- EN: A giant flying craft that is one bucket full of colorful ice cream. Mint-colored exhaust lifts the round barrel body, carrying passengers, luggage and a sweet trail far away. -->
+  <MCW_BucketShuttle.description>一桶装着缤纷冰淇淋的巨型飞行器。薄荷色尾焰托起圆滚滚的桶身，把乘员、行李和一路甜香送往远方。</MCW_BucketShuttle.description>
+  <!-- EN: Mincho ice cream bucket shuttle -->
+  <MCW_BucketShuttle.label>珉巧冰淇淋桶飞行器</MCW_BucketShuttle.label>
+
+</LanguageData>

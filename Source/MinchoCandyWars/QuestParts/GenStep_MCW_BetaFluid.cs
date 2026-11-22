@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 
 namespace MinchoCandyWars
@@ -26,7 +26,7 @@ namespace MinchoCandyWars
 
         public override void Generate(Map map, GenStepParams parms)
         {
-            ThingDef def = thingDef ?? DefDatabase<ThingDef>.GetNamed(BetaFluidDefName, errorOnFail: false);
+            ThingDef def = thingDef ?? MCW_ThingDefOf.MCW_Beta_NanoShapingFluid;
             if (def == null)
             {
                 Log.Warning("[MCW] GenStep_MCW_BetaFluid: 找不到 ThingDef " + BetaFluidDefName);

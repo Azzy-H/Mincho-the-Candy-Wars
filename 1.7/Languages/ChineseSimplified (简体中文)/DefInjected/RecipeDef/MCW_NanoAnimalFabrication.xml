@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Use ice cream and nano-shaping fluid to create a Mincho latte horse. -->
+  <MCW_Make_NanoShapedMinchoLatteHorse085.description>用冰淇淋和纳米塑形液生成一匹珉巧拿铁马。</MCW_Make_NanoShapedMinchoLatteHorse085.description>
+  <!-- EN: Shaping a Mincho latte horse. -->
+  <MCW_Make_NanoShapedMinchoLatteHorse085.jobString>正在塑形珉巧拿铁马。</MCW_Make_NanoShapedMinchoLatteHorse085.jobString>
+  <!-- EN: Shape Mincho latte horse -->
+  <MCW_Make_NanoShapedMinchoLatteHorse085.label>塑形珉巧拿铁马</MCW_Make_NanoShapedMinchoLatteHorse085.label>
+  <!-- EN: Use ice cream and nano-shaping fluid to create a Mincho cat. -->
+  <MCW_Make_NanoShapedMinchonyang085.description>用冰淇淋和纳米塑形液生成一只珉巧猫。</MCW_Make_NanoShapedMinchonyang085.description>
+  <!-- EN: Shaping a Mincho cat. -->
+  <MCW_Make_NanoShapedMinchonyang085.jobString>正在塑形珉巧猫。</MCW_Make_NanoShapedMinchonyang085.jobString>
+  <!-- EN: Shape Mincho cat -->
+  <MCW_Make_NanoShapedMinchonyang085.label>塑形珉巧猫</MCW_Make_NanoShapedMinchonyang085.label>
+  <!-- EN: Use ice cream and nano-shaping fluid to create a Mincho slime. -->
+  <MCW_Make_NanoShapedMinchoSlime085.description>用冰淇淋和纳米塑形液生成一只珉巧史莱姆。</MCW_Make_NanoShapedMinchoSlime085.description>
+  <!-- EN: Shaping a Mincho slime. -->
+  <MCW_Make_NanoShapedMinchoSlime085.jobString>正在塑形珉巧史莱姆。</MCW_Make_NanoShapedMinchoSlime085.jobString>
+  <!-- EN: Shape Mincho slime -->
+  <MCW_Make_NanoShapedMinchoSlime085.label>塑形珉巧史莱姆</MCW_Make_NanoShapedMinchoSlime085.label>
+  <!-- EN: Use ice cream and nano-shaping fluid to create a Mincho pup. -->
+  <MCW_Make_NanoShapedMinmoong085.description>用冰淇淋和纳米塑形液生成一只珉巧汪。</MCW_Make_NanoShapedMinmoong085.description>
+  <!-- EN: Shaping a Mincho pup. -->
+  <MCW_Make_NanoShapedMinmoong085.jobString>正在塑形珉巧汪。</MCW_Make_NanoShapedMinmoong085.jobString>
+  <!-- EN: Shape Mincho pup -->
+  <MCW_Make_NanoShapedMinmoong085.label>塑形珉巧汪</MCW_Make_NanoShapedMinmoong085.label>
+
+</LanguageData>

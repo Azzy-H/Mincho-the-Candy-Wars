@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using MinchoCandyWars.Golem;
@@ -71,7 +71,7 @@ namespace MinchoCandyWars.DeathAction
 
         private static void ApplyStability(Pawn feral)
         {
-            HediffDef def = MCW_DefOf.MinchoWitch_MinchoGolem_NoPain;
+            HediffDef def = MCW_HediffDefOf.MinchoWitch_MinchoGolem_NoPain;
             Hediff stability = feral.health.hediffSet.GetFirstHediffOfDef(def);
             if (stability == null)
             {
@@ -99,7 +99,7 @@ namespace MinchoCandyWars.DeathAction
 
             foreach (BodyPartRecord part in limbs)
             {
-                Hediff injury = HediffMaker.MakeHediff(MCW_DefOf.Crush, pawn, part);
+                Hediff injury = HediffMaker.MakeHediff(MCW_HediffDefOf.Crush, pawn, part);
                 injury.Severity = part.def.GetMaxHealth(pawn) * Rand.Range(MinInjuryFraction, MaxInjuryFraction);
                 if (!pawn.health.WouldDieAfterAddingHediff(injury)) pawn.health.AddHediff(injury);
             }

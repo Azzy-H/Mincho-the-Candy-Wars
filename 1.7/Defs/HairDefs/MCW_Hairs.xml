@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<HairDef>
 		<defName>MCW_Hair_Upper_A</defName>
@@ -30,4 +30,12 @@
 		</styleTags>
 		<texPath>Hairs/MCW_Hair_Upper_C</texPath>
 	</HairDef>
+  <HairDef>
+    <defName>MCW_Hair_Linglon174</defName>
+    <label>Mincho linglon curled twin tails</label>
+    <styleGender>Any</styleGender>
+    <category>Mincho</category>
+    <styleTags><li>Mincho_Large_HairTag</li></styleTags>
+    <texPath>Hairs/MCW_Hair_Linglon174</texPath>
+  </HairDef>
 </Defs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: An intense craving for mint ice cream. Suffering follows if mint ice cream or related products are not eaten regularly. -->
+  <Chemical_MCW_Mint.description>对薄荷冰淇淋的强烈渴望。不定期食用薄荷冰淇淋或相关制品就会感到痛苦。</Chemical_MCW_Mint.description>
+  <!-- EN: Mint ice cream -->
+  <Chemical_MCW_Mint.label>薄荷冰淇淋</Chemical_MCW_Mint.label>
+
+</LanguageData>

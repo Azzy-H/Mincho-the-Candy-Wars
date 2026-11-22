@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Available while a mecha candy pilot is aboard. Leap at the target and raise an ice cream wall where you land. -->
+  <MCW_BoostGolemJump.description>千机糖入驻时可用。跃向目标，并在落点升起冰淇淋围墙。</MCW_BoostGolemJump.description>
+  <!-- EN: Golem leap attack -->
+  <MCW_BoostGolemJump.label>魔像跃击</MCW_BoostGolemJump.label>
+  <!-- EN: jump -->
+  <MCW_BoostGolemJump.verbProperties.label>跳跃</MCW_BoostGolemJump.verbProperties.label>
+</LanguageData>

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using Verse;
 using RimWorld;
 
@@ -55,7 +55,7 @@ namespace MinchoCandyWars.Abilities.NectarCandy
             if (pawn.ageTracker.Adult && Rand.Chance(TentacleChance))
             {
                 // Use Mincho tentacle instead of flesh tentacle
-                if (FleshbeastUtility.TryGiveMutation(pawn, MCW_DefOf.MCW_MinchoTentacle))
+                if (FleshbeastUtility.TryGiveMutation(pawn, MCW_HediffDefOf.MCW_MinchoTentacle))
                 {
                     stringBuilder.Append("\n" + "IceCreamReshapeTentacle".Translate(pawn.Named("PAWN")));
                     tentacleGrown = true;

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
@@ -28,7 +28,7 @@ namespace MinchoCandyWars.Abilities.LinglonCandy
             {
                 if (h == null || h.pawn == null || h.pawn.Dead || h.pawn.Destroyed) return true;
                 if (h.pawn.Map != SingleMap) return true;
-                if (h.pawn.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_LinglonAura) != h) return true;
+                if (h.pawn.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_LinglonAura) != h) return true;
                 return false;
             });
 
@@ -55,10 +55,10 @@ namespace MinchoCandyWars.Abilities.LinglonCandy
                     continue;
                 }
 
-                Hediff? debuff = pawn.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_LinglonAuraDebuff);
+                Hediff? debuff = pawn.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_LinglonAuraDebuff);
                 if (debuff == null)
                 {
-                    pawn.health.AddHediff(HediffMaker.MakeHediff(MCW_DefOf.MCW_LinglonAuraDebuff, pawn));
+                    pawn.health.AddHediff(HediffMaker.MakeHediff(MCW_HediffDefOf.MCW_LinglonAuraDebuff, pawn));
                 }
                 else
                 {

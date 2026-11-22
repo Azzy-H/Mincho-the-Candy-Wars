@@ -1,0 +1,342 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoBed" or defName="MCW_MinchoLuxuryBed" or defName="Mincho_Single_Size_Cake_Bed"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_MinchoBed" or defName="MCW_MinchoLuxuryBed" or defName="Mincho_Single_Size_Cake_Bed"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoBed" or defName="MCW_MinchoLuxuryBed" or defName="Mincho_Single_Size_Cake_Bed"]</xpath>
+    <value>
+      <uiOrder>1000</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoBed" or defName="MCW_MinchoLuxuryBed" or defName="Mincho_Single_Size_Cake_Bed"]/designatorDropdown</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_MinchoBed" or defName="MCW_MinchoLuxuryBed" or defName="Mincho_Single_Size_Cake_Bed"]/designatorDropdown</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoBed" or defName="MCW_MinchoLuxuryBed" or defName="Mincho_Single_Size_Cake_Bed"]</xpath>
+    <value>
+      <designatorDropdown>MCW_SingleBeds</designatorDropdown>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoDoubleBed" or defName="MCW_MinchoLuxuryDoubleBed" or defName="Mincho_Full_Size_Cake_Bed"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_MinchoDoubleBed" or defName="MCW_MinchoLuxuryDoubleBed" or defName="Mincho_Full_Size_Cake_Bed"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoDoubleBed" or defName="MCW_MinchoLuxuryDoubleBed" or defName="Mincho_Full_Size_Cake_Bed"]</xpath>
+    <value>
+      <uiOrder>1010</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoDoubleBed" or defName="MCW_MinchoLuxuryDoubleBed" or defName="Mincho_Full_Size_Cake_Bed"]/designatorDropdown</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_MinchoDoubleBed" or defName="MCW_MinchoLuxuryDoubleBed" or defName="Mincho_Full_Size_Cake_Bed"]/designatorDropdown</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoDoubleBed" or defName="MCW_MinchoLuxuryDoubleBed" or defName="Mincho_Full_Size_Cake_Bed"]</xpath>
+    <value>
+      <designatorDropdown>MCW_DoubleBeds</designatorDropdown>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_Crepe_Bedroll"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="Mincho_Crepe_Bedroll"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_Crepe_Bedroll"]</xpath>
+    <value>
+      <uiOrder>1020</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_EndTable"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_EndTable"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_EndTable"]</xpath>
+    <value>
+      <uiOrder>1100</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_Cabinet"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_Cabinet"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_Cabinet"]</xpath>
+    <value>
+      <uiOrder>1110</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoTable2x2c" or defName="MCW_Table2x4c"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_MinchoTable2x2c" or defName="MCW_Table2x4c"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoTable2x2c" or defName="MCW_Table2x4c"]</xpath>
+    <value>
+      <uiOrder>2000</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoTable2x2c" or defName="MCW_Table2x4c"]/designatorDropdown</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_MinchoTable2x2c" or defName="MCW_Table2x4c"]/designatorDropdown</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoTable2x2c" or defName="MCW_Table2x4c"]</xpath>
+    <value>
+      <designatorDropdown>MCW_Tables</designatorDropdown>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoStool" or defName="MCW_MinchoCouch" or defName="Mincho_Armchair" or defName="Mincho_Macaron_Backrest_Chair" or defName="Mincho_Macaron_Chair"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_MinchoStool" or defName="MCW_MinchoCouch" or defName="Mincho_Armchair" or defName="Mincho_Macaron_Backrest_Chair" or defName="Mincho_Macaron_Chair"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoStool" or defName="MCW_MinchoCouch" or defName="Mincho_Armchair" or defName="Mincho_Macaron_Backrest_Chair" or defName="Mincho_Macaron_Chair"]</xpath>
+    <value>
+      <uiOrder>2100</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoStool" or defName="MCW_MinchoCouch" or defName="Mincho_Armchair" or defName="Mincho_Macaron_Backrest_Chair" or defName="Mincho_Macaron_Chair"]/designatorDropdown</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_MinchoStool" or defName="MCW_MinchoCouch" or defName="Mincho_Armchair" or defName="Mincho_Macaron_Backrest_Chair" or defName="Mincho_Macaron_Chair"]/designatorDropdown</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoStool" or defName="MCW_MinchoCouch" or defName="Mincho_Armchair" or defName="Mincho_Macaron_Backrest_Chair" or defName="Mincho_Macaron_Chair"]</xpath>
+    <value>
+      <designatorDropdown>MCW_Seats</designatorDropdown>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_Dessert_Throne"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="Mincho_Dessert_Throne"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_Dessert_Throne"]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Mincho_Dessert_Throne"]</xpath>
+      <value>
+        <uiOrder>2200</uiOrder>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_IceCreamCabinetElectric" or defName="MCW_IceCreamCabinetFueled"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_IceCreamCabinetElectric" or defName="MCW_IceCreamCabinetFueled"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_IceCreamCabinetElectric" or defName="MCW_IceCreamCabinetFueled"]</xpath>
+    <value>
+      <uiOrder>4000</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_IceCreamCabinetElectric" or defName="MCW_IceCreamCabinetFueled"]/designatorDropdown</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_IceCreamCabinetElectric" or defName="MCW_IceCreamCabinetFueled"]/designatorDropdown</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_IceCreamCabinetElectric" or defName="MCW_IceCreamCabinetFueled"]</xpath>
+    <value>
+      <designatorDropdown>MCW_ColdCabinets</designatorDropdown>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoBench"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="Mincho_MinchoBench"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoBench"]</xpath>
+    <value>
+      <uiOrder>5000</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_RoboticArm"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_RoboticArm"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_RoboticArm"]</xpath>
+    <value>
+      <uiOrder>5010</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoshroomPlantMold" or defName="Mincho_MinchoshroomPlantMold_Long"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="Mincho_MinchoshroomPlantMold" or defName="Mincho_MinchoshroomPlantMold_Long"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoshroomPlantMold" or defName="Mincho_MinchoshroomPlantMold_Long"]</xpath>
+    <value>
+      <uiOrder>5100</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoshroomPlantMold" or defName="Mincho_MinchoshroomPlantMold_Long"]/designatorDropdown</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="Mincho_MinchoshroomPlantMold" or defName="Mincho_MinchoshroomPlantMold_Long"]/designatorDropdown</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoshroomPlantMold" or defName="Mincho_MinchoshroomPlantMold_Long"]</xpath>
+    <value>
+      <designatorDropdown>MCW_PlantMolds</designatorDropdown>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_Chocolate_Console"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_Chocolate_Console"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_Chocolate_Console"]</xpath>
+    <value>
+      <uiOrder>6000</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_BucketShuttle"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_BucketShuttle"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_BucketShuttle"]</xpath>
+    <value>
+      <uiOrder>6010</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MCW_FirefoamPopper"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="MCW_FirefoamPopper"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_FirefoamPopper"]</xpath>
+    <value>
+      <uiOrder>6100</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_MintchocoWall"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="Mincho_MintchocoWall"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_MintchocoWall"]</xpath>
+    <value>
+      <uiOrder>7000</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoCandle_Upper" or defName="Mincho_Electric_MinchoCandle_Upper" or defName="Mincho_MinchoCandle_Middle" or defName="Mincho_Electric_MinchoCandle_Middle" or defName="Mincho_MinchoCandle_Lower" or defName="Mincho_Electric_MinchoCandle_Lower" or defName="Mincho_MinchoCandle_Right" or defName="Mincho_Electric_MinchoCandle_Right" or defName="Mincho_MinchoCandle_Left" or defName="Mincho_Electric_MinchoCandle_Left"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="Mincho_MinchoCandle_Upper" or defName="Mincho_Electric_MinchoCandle_Upper" or defName="Mincho_MinchoCandle_Middle" or defName="Mincho_Electric_MinchoCandle_Middle" or defName="Mincho_MinchoCandle_Lower" or defName="Mincho_Electric_MinchoCandle_Lower" or defName="Mincho_MinchoCandle_Right" or defName="Mincho_Electric_MinchoCandle_Right" or defName="Mincho_MinchoCandle_Left" or defName="Mincho_Electric_MinchoCandle_Left"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoCandle_Upper" or defName="Mincho_Electric_MinchoCandle_Upper" or defName="Mincho_MinchoCandle_Middle" or defName="Mincho_Electric_MinchoCandle_Middle" or defName="Mincho_MinchoCandle_Lower" or defName="Mincho_Electric_MinchoCandle_Lower" or defName="Mincho_MinchoCandle_Right" or defName="Mincho_Electric_MinchoCandle_Right" or defName="Mincho_MinchoCandle_Left" or defName="Mincho_Electric_MinchoCandle_Left"]</xpath>
+    <value>
+      <uiOrder>3000</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoCandle_Upper" or defName="Mincho_Electric_MinchoCandle_Upper" or defName="Mincho_MinchoCandle_Middle" or defName="Mincho_Electric_MinchoCandle_Middle" or defName="Mincho_MinchoCandle_Lower" or defName="Mincho_Electric_MinchoCandle_Lower" or defName="Mincho_MinchoCandle_Right" or defName="Mincho_Electric_MinchoCandle_Right" or defName="Mincho_MinchoCandle_Left" or defName="Mincho_Electric_MinchoCandle_Left"]/designatorDropdown</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="Mincho_MinchoCandle_Upper" or defName="Mincho_Electric_MinchoCandle_Upper" or defName="Mincho_MinchoCandle_Middle" or defName="Mincho_Electric_MinchoCandle_Middle" or defName="Mincho_MinchoCandle_Lower" or defName="Mincho_Electric_MinchoCandle_Lower" or defName="Mincho_MinchoCandle_Right" or defName="Mincho_Electric_MinchoCandle_Right" or defName="Mincho_MinchoCandle_Left" or defName="Mincho_Electric_MinchoCandle_Left"]/designatorDropdown</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_MinchoCandle_Upper" or defName="Mincho_Electric_MinchoCandle_Upper" or defName="Mincho_MinchoCandle_Middle" or defName="Mincho_Electric_MinchoCandle_Middle" or defName="Mincho_MinchoCandle_Lower" or defName="Mincho_Electric_MinchoCandle_Lower" or defName="Mincho_MinchoCandle_Right" or defName="Mincho_Electric_MinchoCandle_Right" or defName="Mincho_MinchoCandle_Left" or defName="Mincho_Electric_MinchoCandle_Left"]</xpath>
+    <value>
+      <designatorDropdown>MCW_Candles</designatorDropdown>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_Super_MinchoCandle" or defName="Mincho_Super_Electric_MinchoCandle"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="Mincho_Super_MinchoCandle" or defName="Mincho_Super_Electric_MinchoCandle"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_Super_MinchoCandle" or defName="Mincho_Super_Electric_MinchoCandle"]</xpath>
+    <value>
+      <uiOrder>3010</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_Super_MinchoCandle" or defName="Mincho_Super_Electric_MinchoCandle"]/designatorDropdown</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="Mincho_Super_MinchoCandle" or defName="Mincho_Super_Electric_MinchoCandle"]/designatorDropdown</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_Super_MinchoCandle" or defName="Mincho_Super_Electric_MinchoCandle"]</xpath>
+    <value>
+      <designatorDropdown>MCW_LargeCandles</designatorDropdown>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/TerrainDef[defName="FineTileMintchoco" or defName="TileMintchoco" or defName="FlagstoneMintchoco" or defName="Mincho_ChocoStickFloor" or defName="MCW_ChocoBoard_C33_Floor" or defName="MCW_MinchoFloorA" or defName="MCW_MinchoFloorB" or defName="MCW_MinchoFloorC"]/uiOrder</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/TerrainDef[defName="FineTileMintchoco" or defName="TileMintchoco" or defName="FlagstoneMintchoco" or defName="Mincho_ChocoStickFloor" or defName="MCW_ChocoBoard_C33_Floor" or defName="MCW_MinchoFloorA" or defName="MCW_MinchoFloorB" or defName="MCW_MinchoFloorC"]/uiOrder</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TerrainDef[defName="FineTileMintchoco" or defName="TileMintchoco" or defName="FlagstoneMintchoco" or defName="Mincho_ChocoStickFloor" or defName="MCW_ChocoBoard_C33_Floor" or defName="MCW_MinchoFloorA" or defName="MCW_MinchoFloorB" or defName="MCW_MinchoFloorC"]</xpath>
+    <value>
+      <uiOrder>7100</uiOrder>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/TerrainDef[defName="FineTileMintchoco" or defName="TileMintchoco" or defName="FlagstoneMintchoco" or defName="Mincho_ChocoStickFloor" or defName="MCW_ChocoBoard_C33_Floor" or defName="MCW_MinchoFloorA" or defName="MCW_MinchoFloorB" or defName="MCW_MinchoFloorC"]/designatorDropdown</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/TerrainDef[defName="FineTileMintchoco" or defName="TileMintchoco" or defName="FlagstoneMintchoco" or defName="Mincho_ChocoStickFloor" or defName="MCW_ChocoBoard_C33_Floor" or defName="MCW_MinchoFloorA" or defName="MCW_MinchoFloorB" or defName="MCW_MinchoFloorC"]/designatorDropdown</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TerrainDef[defName="FineTileMintchoco" or defName="TileMintchoco" or defName="FlagstoneMintchoco" or defName="Mincho_ChocoStickFloor" or defName="MCW_ChocoBoard_C33_Floor" or defName="MCW_MinchoFloorA" or defName="MCW_MinchoFloorB" or defName="MCW_MinchoFloorC"]</xpath>
+    <value>
+      <designatorDropdown>MCW_Floors</designatorDropdown>
+    </value>
+  </Operation>
+</Patch>

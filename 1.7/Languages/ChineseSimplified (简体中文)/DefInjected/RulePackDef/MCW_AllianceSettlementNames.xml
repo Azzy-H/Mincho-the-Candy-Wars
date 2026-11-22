@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: <li>r_name->[candy] Mincho Alliance branch</li>
+    <li>r_name->[candy] Mincho Alliance liaison office</li>
+    <li>candy->Mint candy</li>
+    <li>candy->Milk candy</li>
+    <li>candy->Fruit candy</li>
+    <li>candy->Marshmallow</li>
+    <li>candy->Popping candy</li>
+    <li>candy->Bubblegum</li>
+    <li>candy->Lollipop</li>
+    <li>candy->Toffee</li>
+    <li>candy->Nougat</li>
+    <li>candy->Amber candy</li>
+    <li>candy->Konpeito</li>
+    <li>candy->Rock candy</li>
+    <li>candy->Crispy candy</li>
+    <li>candy->Gummy candy</li>
+    <li>candy->Hard candy</li>
+    <li>candy->Filled candy</li>
+    <li>candy->Malt candy</li>
+    <li>candy->Peanut brittle</li>
+    <li>candy->Sesame candy</li>
+    <li>candy->Coconut candy</li>
+    <li>candy->Coffee candy</li>
+    <li>candy->Chocolate candy</li> -->
+  <MCW_AllianceSettlementNames.rulePack.rulesStrings>
+    <li>r_name-&gt;[candy]珉巧同盟分部</li>
+    <li>r_name-&gt;[candy]珉巧同盟联络处</li>
+    <li>candy-&gt;薄荷糖</li>
+    <li>candy-&gt;奶糖</li>
+    <li>candy-&gt;水果糖</li>
+    <li>candy-&gt;棉花糖</li>
+    <li>candy-&gt;跳跳糖</li>
+    <li>candy-&gt;泡泡糖</li>
+    <li>candy-&gt;棒棒糖</li>
+    <li>candy-&gt;太妃糖</li>
+    <li>candy-&gt;牛轧糖</li>
+    <li>candy-&gt;琥珀糖</li>
+    <li>candy-&gt;金平糖</li>
+    <li>candy-&gt;砂板糖</li>
+    <li>candy-&gt;酥糖</li>
+    <li>candy-&gt;软糖</li>
+    <li>candy-&gt;硬糖</li>
+    <li>candy-&gt;夹心糖</li>
+    <li>candy-&gt;麦芽糖</li>
+    <li>candy-&gt;花生糖</li>
+    <li>candy-&gt;芝麻糖</li>
+    <li>candy-&gt;椰子糖</li>
+    <li>candy-&gt;咖啡糖</li>
+    <li>candy-&gt;巧克力糖</li>
+  </MCW_AllianceSettlementNames.rulePack.rulesStrings>
+</LanguageData>

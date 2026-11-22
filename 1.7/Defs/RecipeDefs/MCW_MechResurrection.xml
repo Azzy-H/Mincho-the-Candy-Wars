@@ -2,8 +2,8 @@
 <Defs>
   <RecipeDef ParentName="BaseMechanoidResurrectionRecipe">
     <defName>MCW_ResurrectMinchoMech</defName>
-    <label>复活珉巧机械体</label>
-    <description>复活一台被摧毁的珉巧子个体机械。</description>
+    <label>Resurrect Mincho mechanoid</label>
+    <description>Resurrect a destroyed Mincho sub-unit mechanoid.</description>
     <ingredients>
       <li>
         <filter>

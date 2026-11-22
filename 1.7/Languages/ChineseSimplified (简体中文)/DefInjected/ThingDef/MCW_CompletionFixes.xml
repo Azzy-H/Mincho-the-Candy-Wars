@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: charge -->
+  <MCW_Paralyzer.comps.CompApparelReloadable.chargeNoun>充能次数</MCW_Paralyzer.comps.CompApparelReloadable.chargeNoun>
+  <!-- EN: on cooldown -->
+  <MCW_Paralyzer.comps.CompApparelReloadable.cooldownGerund>冷却中</MCW_Paralyzer.comps.CompApparelReloadable.cooldownGerund>
+  <!-- EN: A reclamation tool of the Glitterworld Dessert Company. Its cold light swiftly drains the strength of any Mincho not hardened by ornament; in the company ledger this counts as nothing more than ordinary asset recovery. -->
+  <MCW_Paralyzer.description>闪耀世界甜品公司的回收工具。它发出的冷光能让未经糖饰强化的珉巧迅速失去力气；在公司账册里，这只算一次普通的资产回收。</MCW_Paralyzer.description>
+  <!-- EN: Mincho paralyzer -->
+  <MCW_Paralyzer.label>珉巧瘫痪器</MCW_Paralyzer.label>
+  <!-- EN: Can only be used on Mincho without ornament -->
+  <MCW_Paralyzer.verbs.0.invalidTargetPawn>只能对没有糖饰的珉巧使用</MCW_Paralyzer.verbs.0.invalidTargetPawn>
+  <!-- EN: Paralyze Mincho -->
+  <MCW_Paralyzer.verbs.0.label>瘫痪珉巧</MCW_Paralyzer.verbs.0.label>
+  <!-- EN: Can only be used on Mincho without ornament -->
+  <MCW_Paralyzer.verbs.Paralyze_Mincho.invalidTargetPawn>只能对没有糖饰的珉巧使用</MCW_Paralyzer.verbs.Paralyze_Mincho.invalidTargetPawn>
+  <!-- EN: Paralyze Mincho -->
+  <MCW_Paralyzer.verbs.Paralyze_Mincho.label>瘫痪珉巧</MCW_Paralyzer.verbs.Paralyze_Mincho.label>
+</LanguageData>

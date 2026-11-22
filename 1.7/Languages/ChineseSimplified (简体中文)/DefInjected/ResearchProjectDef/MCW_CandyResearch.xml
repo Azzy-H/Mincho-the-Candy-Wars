@@ -1,35 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: Amberon Candy -->
-  <MCW_Research_AmberonCandy.label>琥珀糖</MCW_Research_AmberonCandy.label>
   <!-- EN: 研究琥珀糖糖饰，解锁对应糖饰解锁物品的制作配方。 -->
   <MCW_Research_AmberonCandy.description>研究琥珀糖糖饰，解锁对应糖饰解锁物品的制作配方。</MCW_Research_AmberonCandy.description>
-  
-  <!-- EN: Linglon Candy -->
-  <MCW_Research_LinglonCandy.label>玲珑糖</MCW_Research_LinglonCandy.label>
+  <!-- EN: Amberon Candy -->
+  <MCW_Research_AmberonCandy.label>琥珀糖</MCW_Research_AmberonCandy.label>
   <!-- EN: 研究玲珑糖糖饰，解锁对应糖饰解锁物品的制作配方。 -->
   <MCW_Research_LinglonCandy.description>研究玲珑糖糖饰，解锁对应糖饰解锁物品的制作配方。</MCW_Research_LinglonCandy.description>
-  
-  <!-- EN: Mecha Candy -->
-  <MCW_Research_MechaCandy.label>千机糖</MCW_Research_MechaCandy.label>
+  <!-- EN: Linglon Candy -->
+  <MCW_Research_LinglonCandy.label>玲珑糖</MCW_Research_LinglonCandy.label>
   <!-- EN: 研究千机糖糖饰，解锁对应糖饰解锁物品的制作配方。 -->
   <MCW_Research_MechaCandy.description>研究千机糖糖饰，解锁对应糖饰解锁物品的制作配方。</MCW_Research_MechaCandy.description>
-  
-  <!-- EN: Nectar Candy -->
-  <MCW_Research_NectarCandy.label>甘露糖</MCW_Research_NectarCandy.label>
+  <!-- EN: Mecha Candy -->
+  <MCW_Research_MechaCandy.label>千机糖</MCW_Research_MechaCandy.label>
   <!-- EN: 研究甘露糖糖饰，解锁对应糖饰解锁物品的制作配方。 -->
   <MCW_Research_NectarCandy.description>研究甘露糖糖饰，解锁对应糖饰解锁物品的制作配方。</MCW_Research_NectarCandy.description>
-  
-  <!-- EN: Prism Candy -->
-  <MCW_Research_PrismCandy.label>琉璃糖</MCW_Research_PrismCandy.label>
+  <!-- EN: Nectar Candy -->
+  <MCW_Research_NectarCandy.label>甘露糖</MCW_Research_NectarCandy.label>
   <!-- EN: 研究琉璃糖糖饰，解锁对应糖饰解锁物品的制作配方。 -->
   <MCW_Research_PrismCandy.description>研究琉璃糖糖饰，解锁对应糖饰解锁物品的制作配方。</MCW_Research_PrismCandy.description>
-  
-  <!-- 改造包研究-->
-  <MCW_Research_BoosterIntel.label>智慧珉巧改造包</MCW_Research_BoosterIntel.label>
-  <MCW_Research_BoosterCoreBasic.label>初级核心改造包</MCW_Research_BoosterCoreBasic.label>
-  <MCW_Research_BoosterCoreAdvanced.label>高级核心改造包</MCW_Research_BoosterCoreAdvanced.label>
-  <MCW_Research_BoosterBody.label>躯体改造包</MCW_Research_BoosterBody.label>
-  
+  <!-- EN: Prism Candy -->
+  <MCW_Research_PrismCandy.label>琉璃糖</MCW_Research_PrismCandy.label>
 </LanguageData>

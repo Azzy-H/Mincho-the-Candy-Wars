@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: questDescription->The Mincho Alliance is preparing to raid a reclamation force site; we must help them at the right moment.
+
+Go to the marked site and defeat the reclamation force garrison there. -->
+  <MCW_QuestB3_RecycleOutpost.questDescriptionRules.rulesStrings.0>questDescription->珉巧同盟正在准备突袭一个回收部队的据点，我们需要在合适的时机去帮助她们。\n\n前往标记的据点，击溃那里的回收部队守军。</MCW_QuestB3_RecycleOutpost.questDescriptionRules.rulesStrings.0>
+  <!-- EN: questName->Raid the reclamation force outpost -->
+  <MCW_QuestB3_RecycleOutpost.questNameRules.rulesStrings.0>questName->袭击回收部队前哨站</MCW_QuestB3_RecycleOutpost.questNameRules.rulesStrings.0>
+
+</LanguageData>

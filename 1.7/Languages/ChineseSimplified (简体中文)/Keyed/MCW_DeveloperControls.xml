@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Developer mode -->
+  <MinchoCandyWars.Dev.Mode>开发者模式</MinchoCandyWars.Dev.Mode>
+  <!-- EN: DEV: Reset cooldown -->
+  <MinchoCandyWars.Dev.ResetCooldown>开发：重置冷却</MinchoCandyWars.Dev.ResetCooldown>
+</LanguageData>

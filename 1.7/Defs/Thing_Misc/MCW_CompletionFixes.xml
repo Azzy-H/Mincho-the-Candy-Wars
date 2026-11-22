@@ -2,8 +2,8 @@
 <Defs>
   <ThingDef ParentName="ApparelNoQualityBase">
     <defName>MCW_Paralyzer</defName>
-    <label>珉巧瘫痪器</label>
-    <description>闪耀世界甜品公司的回收装备。仅对没有糖饰的珉巧有效：意识上限降至10%，持续一天。可使用两次，用尽后销毁。回收队员可能携带；太空级及以上据点低概率出售。</description>
+    <label>Mincho paralyzer</label>
+    <description>A reclamation tool of the Glitterworld Dessert Company. Its cold light swiftly drains the strength of any Mincho not hardened by ornament; in the company ledger this counts as nothing more than ordinary asset recovery.</description>
     <graphicData>
       <texPath>Things/Item/Paralyzer</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -85,13 +85,13 @@
     <verbs>
       <li>
         <verbClass>MinchoCandyWars.Review.Verb_Paralyzer</verbClass>
-        <label>瘫痪珉巧</label>
+        <label>Paralyze Mincho</label>
         <hasStandardCommand>true</hasStandardCommand>
         <targetable>true</targetable>
         <onlyManualCast>True</onlyManualCast>
         <range>41.9</range>
         <warmupTime>2.2</warmupTime>
-        <invalidTargetPawn>只能对没有糖饰的珉巧使用</invalidTargetPawn>
+        <invalidTargetPawn>Can only be used on Mincho without ornament</invalidTargetPawn>
         <targetParams>
           <canTargetBuildings>false</canTargetBuildings>
           <neverTargetIncapacitated>true</neverTargetIncapacitated>
@@ -129,8 +129,8 @@
   </ThingDef>
   <HediffDef>
     <defName>MCW_Paralyzed047</defName>
-    <label>珉巧瘫痪</label>
-    <description>回收用瘫痪器抑制了珉巧的意识。一日后解除。</description>
+    <label>Mincho paralysis</label>
+    <description>The reclamation paralyzer has suppressed the Mincho consciousness. It wears off after one day.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>true</isBad>
     <comps>

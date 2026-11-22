@@ -5,8 +5,8 @@
   <AbilityDef ParentName="AbilityTouchBase">
     <defName>MCW_LinglonCandyAbility_MinchoInfection</defName>
     <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
-    <label>Mincho Infection</label>
-    <description>Infects a living creature with Mincho infection.</description>
+    <label>Mincho infection</label>
+    <description>Infects a living target with Mincho disease.</description>
     <iconPath>UI/Gizmos/Abilities/Linglon/MCW_MinchoInfection</iconPath>
     <hostile>true</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>

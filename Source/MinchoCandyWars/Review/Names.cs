@@ -1,4 +1,4 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using Verse;
 
@@ -29,7 +29,7 @@ public static class AllianceCandyNames
     private static bool ShouldUsePool(Pawn pawn, NameStyle style, string forcedLastName)
         => pawn != null
            && pawn.Name == null
-           && pawn.def == MCW_DefOf.Mincho_ThingDef
+           && pawn.def == MCW_ThingDefOf.Mincho_ThingDef
            && pawn.Faction?.def == MCW_DefOf.MCW_Alliance_Faction
            && style == NameStyle.Full
            && forcedLastName == null

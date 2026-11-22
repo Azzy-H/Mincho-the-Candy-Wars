@@ -12,6 +12,7 @@ namespace MinchoCandyWars.Abilities
     /// </summary>
     public abstract class HediffComp_EnergyShield : HediffComp
     {
+        protected virtual bool BreaksOnEmp => true;
         protected float energy;
         public int ticksToReset = -1;
         protected int lastKeepDisplayTick = -9999;
@@ -94,6 +95,7 @@ namespace MinchoCandyWars.Abilities
 
             if (dinfo.Def == DamageDefOf.EMP)
             {
+                if (!BreaksOnEmp) return false;
                 energy = 0f;
                 Break();
                 return true;
@@ -216,6 +218,10 @@ namespace MinchoCandyWars.Abilities
     {
         public HediffComp_EnergyShield shield = null!;
 
+        public string StatusTooltip => (shield is NectarCandy.HediffComp_MannaFairyShield fairy ? fairy.CompDescriptionExtra : null)
+            ?? shield.parent.GetComp<AmberonCandy.ShieldInfo>()?.CompDescriptionExtra
+            ?? "ShieldPersonalTip".Translate().RawText;
+
         private static readonly Texture2D FullBarTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.2f, 0.2f, 0.24f));
         private static readonly Texture2D EmptyBarTex = SolidColorMaterials.NewSolidColorTexture(Color.clear);
 
@@ -260,7 +266,7 @@ namespace MinchoCandyWars.Abilities
             Widgets.Label(barRect, valueText);
             Text.Anchor = TextAnchor.UpperLeft;
 
-            TooltipHandler.TipRegion(inner, "ShieldPersonalTip".Translate());
+            TooltipHandler.TipRegion(inner, StatusTooltip);
             return new GizmoResult(GizmoState.Clear);
         }
     }

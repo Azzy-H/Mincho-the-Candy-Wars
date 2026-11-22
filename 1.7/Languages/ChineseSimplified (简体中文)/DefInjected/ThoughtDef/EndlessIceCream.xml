@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Cold and sweet. Delicious. -->
+  <MCW_MintDelight.stages.0.description>冰凉，香甜。真好吃。</MCW_MintDelight.stages.0.description>
+  <!-- EN: The taste of mint ice cream -->
+  <MCW_MintDelight.stages.0.label>薄荷冰淇淋的滋味</MCW_MintDelight.stages.0.label>
+  <!-- EN: This is not what I want. I only want mint ice cream. -->
+  <MCW_MintDisgust.stages.0.description>这不是我想吃的。我只想要薄荷冰淇淋。</MCW_MintDisgust.stages.0.description>
+  <!-- EN: Hard to swallow -->
+  <MCW_MintDisgust.stages.0.label>难以下咽</MCW_MintDisgust.stages.0.label>
+  <!-- EN: I want mint ice cream. Nothing else tastes right. -->
+  <MCW_MintWithdrawal.stages.0.description>我想吃薄荷冰淇淋。其他东西都不对味。</MCW_MintWithdrawal.stages.0.description>
+  <!-- EN: Craving mint ice cream -->
+  <MCW_MintWithdrawal.stages.0.label>想吃薄荷冰淇淋</MCW_MintWithdrawal.stages.0.label>
+  <!-- EN: I cannot stand it. I need mint ice cream, now. -->
+  <MCW_MintWithdrawal.stages.1.description>我受不了了。我需要薄荷冰淇淋，现在就要。</MCW_MintWithdrawal.stages.1.description>
+  <!-- EN: Mint ice cream withdrawal -->
+  <MCW_MintWithdrawal.stages.1.label>薄荷冰淇淋戒断</MCW_MintWithdrawal.stages.1.label>
+
+</LanguageData>

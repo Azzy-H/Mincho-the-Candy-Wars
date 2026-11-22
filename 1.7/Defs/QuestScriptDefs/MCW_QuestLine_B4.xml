@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -32,7 +32,7 @@
   <IncidentDef>
     <defName>MCW_GiveQuest_QuestB4</defName>
     <category>GiveQuest</category>
-    <label>获取β型纳米塑形液</label>
+    <label>Obtain beta nano-shaping fluid</label>
     <questScriptDef>MCW_QuestB4_BetaFluidRuin</questScriptDef>
     <workerClass>IncidentWorker_GiveQuest</workerClass>
     <baseChance>0</baseChance>
@@ -54,12 +54,14 @@
 
     <questNameRules>
       <rulesStrings>
-        <li>questName-&gt;获取β型纳米塑形液</li>
+        <li>questName-&gt;Obtain beta nano-shaping fluid</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription-&gt;珉巧同盟给予了我们一个遗迹坐标，这里面或许有研究珉巧自身的重要信息。\n\n前往遗迹，寻找β型纳米塑形液。</li>
+        <li>questDescription-&gt;The Mincho Alliance gave us the coordinates of a ruin; it may hold important information about researching the Mincho themselves.
+
+Go to the ruin and look for beta nano-shaping fluid.</li>
       </rulesStrings>
     </questDescriptionRules>
 

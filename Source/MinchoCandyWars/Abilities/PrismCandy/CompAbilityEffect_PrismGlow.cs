@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -18,16 +18,16 @@ namespace MinchoCandyWars.Abilities.PrismCandy
         {
             Pawn caster = parent.pawn;
 
-            if (target.Pawn is Pawn victim && !victim.Dead && victim.Spawned && victim.Map == caster.Map)
+            if (target.Pawn is Pawn victim && !victim.Dead && victim.Spawned && victim.Map == caster.Map && victim.HostileTo(caster))
             {
                 int damage = Mathf.RoundToInt(DamageRatio * PrismCandyAbilityUtility.GetMaxCandyValue(caster));
                 DamageInfo dinfo = new DamageInfo(DamageDefOf.Cut, damage, instigator: caster);
                 victim.TakeDamage(dinfo);
             }
 
-            if (!caster.health.hediffSet.HasHediff(MCW_DefOf.MCW_PrismGlowMoveSpeed))
+            if (!caster.health.hediffSet.HasHediff(MCW_HediffDefOf.MCW_PrismGlowMoveSpeed))
             {
-                caster.health.AddHediff(MCW_DefOf.MCW_PrismGlowMoveSpeed);
+                caster.health.AddHediff(MCW_HediffDefOf.MCW_PrismGlowMoveSpeed);
             }
 
             // 冲击波打在「被突刺的目标」身上，而不是施法者脚下，视觉上才对应这次命中。

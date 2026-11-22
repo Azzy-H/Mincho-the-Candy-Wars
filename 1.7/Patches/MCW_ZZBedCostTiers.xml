@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoBed"]</xpath>
+    <value>
+      <costStuffCount>0</costStuffCount>
+      <stuffCategories Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoBed"]</xpath>
+    <value>
+      <costList Inherit="False">
+        <Mincho_ChocoStick>50</Mincho_ChocoStick>
+        <Mincho_BlocksMintchoco>5</Mincho_BlocksMintchoco>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoDoubleBed"]</xpath>
+    <value>
+      <costStuffCount>0</costStuffCount>
+      <stuffCategories Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoDoubleBed"]</xpath>
+    <value>
+      <costList Inherit="False">
+        <Mincho_ChocoStick>85</Mincho_ChocoStick>
+        <Mincho_BlocksMintchoco>10</Mincho_BlocksMintchoco>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoLuxuryBed"]</xpath>
+    <value>
+      <costStuffCount>0</costStuffCount>
+      <stuffCategories Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoLuxuryBed"]</xpath>
+    <value>
+      <costList Inherit="False">
+        <Mincho_ChocoStick>70</Mincho_ChocoStick>
+        <Mincho_BlocksMintchoco>20</Mincho_BlocksMintchoco>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoLuxuryDoubleBed"]</xpath>
+    <value>
+      <costStuffCount>0</costStuffCount>
+      <stuffCategories Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_MinchoLuxuryDoubleBed"]</xpath>
+    <value>
+      <costList Inherit="False">
+        <Mincho_ChocoStick>120</Mincho_ChocoStick>
+        <Mincho_BlocksMintchoco>40</Mincho_BlocksMintchoco>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Mincho_Single_Size_Cake_Bed"]/costList</xpath>
+    <value>
+      <costList Inherit="False">
+        <Mincho_ChocoStick>80</Mincho_ChocoStick>
+        <Mincho_BlocksMintchoco>25</Mincho_BlocksMintchoco>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Mincho_Full_Size_Cake_Bed"]/costList</xpath>
+    <value>
+      <costList Inherit="False">
+        <Mincho_ChocoStick>140</Mincho_ChocoStick>
+        <Mincho_BlocksMintchoco>50</Mincho_BlocksMintchoco>
+      </costList>
+    </value>
+  </Operation>
+</Patch>

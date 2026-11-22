@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: questDescription->A smart Mincho is held by the reclamation company nearby and may be reclaimed at any moment. Go and free her at once!
+
+Once rescued, she will join your colony. -->
+  <MCW_QuestB2_SmartMinchoRescue.questDescriptionRules.rulesStrings.0>questDescription->一位智慧珉巧被回收公司关押在附近，随时可能被回收。请立刻前往解救她！\n\n解救成功后，她会加入你的殖民地。</MCW_QuestB2_SmartMinchoRescue.questDescriptionRules.rulesStrings.0>
+  <!-- EN: questName->Rescue the smart Mincho -->
+  <MCW_QuestB2_SmartMinchoRescue.questNameRules.rulesStrings.0>questName->解救智慧珉巧</MCW_QuestB2_SmartMinchoRescue.questNameRules.rulesStrings.0>
+
+</LanguageData>

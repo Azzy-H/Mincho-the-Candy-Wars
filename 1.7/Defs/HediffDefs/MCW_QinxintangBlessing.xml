@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     沁心糖的「超凡赐福」：
@@ -10,8 +10,8 @@
   -->
   <HediffDef>
     <defName>MCW_QinxintangBlessing</defName>
-    <label>超凡赐福</label>
-    <description>被超凡科技祝福过的躯体，学习与工作速度极快，且极难受伤。</description>
+    <label>Archotech blessing</label>
+    <description>A body blessed by archotechnology: it learns and works extremely fast and is very hard to injure.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <scenarioCanAdd>false</scenarioCanAdd>

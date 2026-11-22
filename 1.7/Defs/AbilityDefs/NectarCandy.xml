@@ -1,184 +1,176 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-    <!-- ===== 甘露连接 ===== -->
-    <AbilityDef ParentName="AbilityTouchBase">
-        <defName>MCW_NectarCandyAbility_MannaConnection</defName>
-        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
-        <label>Manna Connection</label>
-        <description>TODO</description>
-        <iconPath>UI/Gizmos/Abilities/Nectar/MCW_MannaConnection</iconPath>
-        <warmupStartSound>Coagulate_Cast</warmupStartSound>
-        <jobDef>CastAbilityOnThingMelee</jobDef>
-        <displayOrder>400</displayOrder>
-        <hostile>false</hostile>
-        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-        <cooldownTicksRange>300000</cooldownTicksRange><!-- 5 days -->
-        <verbProperties>
-            <verbClass>Verb_CastAbilityTouch</verbClass>
-            <drawAimPie>true</drawAimPie>
-            <range>-1</range>
-            <warmupTime>30</warmupTime>
-            <targetParams>
-                <canTargetLocations>false</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>false</canTargetBuildings>
-                <canTargetItems>false</canTargetItems>
-                <canTargetAnimals>false</canTargetAnimals>
-                <canTargetHumans>true</canTargetHumans>
-                <canTargetMechs>false</canTargetMechs>
-                <canTargetSelf>false</canTargetSelf>
-                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
-            </targetParams>
-        </verbProperties>
-        <comps>
-            <li Class="CompProperties_AbilityEffect">
-                <compClass>MinchoCandyWars.Abilities.NectarCandy.CompAbilityEffect_MannaConnection</compClass>
-            </li>
-        </comps>
-        <modExtensions>
-            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>NectarCandy</candyType>
-                <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
-                <requiredMinchoBodyGrade>0</requiredMinchoBodyGrade>
-                <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
-            </li>
-        </modExtensions>
-    </AbilityDef>
-
-    <!-- ===== 珉巧敷药 ===== -->
-    <AbilityDef ParentName="AbilityTouchBase">
-        <defName>MCW_NectarCandyAbility_MinchoBandage</defName>
-        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
-        <label>Mincho Bandage</label>
-        <description>TODO</description>
-        <iconPath>UI/Gizmos/Abilities/Nectar/MCW_MinchoBandage</iconPath>
-        <warmupStartSound>Coagulate_Cast</warmupStartSound>
-        <jobDef>CastAbilityOnThingMelee</jobDef>
-        <displayOrder>300</displayOrder>
-        <hostile>false</hostile>
-        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-        <cooldownTicksRange>600</cooldownTicksRange><!-- 10 seconds -->
-        <verbProperties>
-            <verbClass>Verb_CastAbilityTouch</verbClass>
-            <drawAimPie>false</drawAimPie>
-            <range>-1</range>
-            <warmupTime>1</warmupTime>
-            <targetParams>
-                <canTargetLocations>false</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>false</canTargetBuildings>
-                <canTargetItems>false</canTargetItems>
-                <canTargetAnimals>true</canTargetAnimals>
-                <canTargetHumans>true</canTargetHumans>
-                <canTargetMechs>false</canTargetMechs>
-                <canTargetSelf>true</canTargetSelf>
-                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
-            </targetParams>
-        </verbProperties>
-        <comps>
-            <li Class="MinchoCandyWars.Abilities.NectarCandy.CompProperties_AbilityMinchoBandage">
-                <tendQualityRange>0.7~1.0</tendQualityRange>
-            </li>
-        </comps>
-        <modExtensions>
-            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>NectarCandy</candyType>
-                <requiredMinchoCoreGrade>2</requiredMinchoCoreGrade>
-                <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
-                <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
-            </li>
-        </modExtensions>
-    </AbilityDef>
-
-    <!-- ===== 冰淇淋重塑 ===== -->
-    <AbilityDef ParentName="AbilityTouchBase">
-        <defName>MCW_NectarCandyAbility_IceCreamReshape</defName>
-        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
-        <label>Ice Cream Reshape</label>
-        <description>TODO</description>
-        <iconPath>UI/Gizmos/Abilities/Nectar/MCW_IceCreamReshape</iconPath>
-        <warmupStartSound>Coagulate_Cast</warmupStartSound>
-        <jobDef>CastAbilityOnThingMelee</jobDef>
-        <displayOrder>200</displayOrder>
-        <hostile>false</hostile>
-        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-        <cooldownTicksRange>300000</cooldownTicksRange><!-- 5 days -->
-        <verbProperties>
-            <verbClass>Verb_CastAbilityTouch</verbClass>
-            <drawAimPie>false</drawAimPie>
-            <range>-1</range>
-            <warmupTime>30</warmupTime>
-            <targetParams>
-                <canTargetLocations>false</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>false</canTargetBuildings>
-                <canTargetItems>false</canTargetItems>
-                <canTargetAnimals>true</canTargetAnimals>
-                <canTargetHumans>true</canTargetHumans>
-                <canTargetMechs>false</canTargetMechs>
-                <canTargetSelf>true</canTargetSelf>
-                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
-            </targetParams>
-        </verbProperties>
-        <comps>
-            <li Class="CompProperties_AbilityEffect">
-                <compClass>MinchoCandyWars.Abilities.NectarCandy.CompAbilityEffect_IceCreamReshape</compClass>
-            </li>
-        </comps>
-        <modExtensions>
-            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>NectarCandy</candyType>
-                <requiredMinchoCoreGrade>5</requiredMinchoCoreGrade>
-                <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
-                <requiredMinchoCandyValue>300</requiredMinchoCandyValue>
-            </li>
-        </modExtensions>
-    </AbilityDef>
-
-    <!-- ===== 甘露妖精 ===== -->
-    <AbilityDef ParentName="AbilityTouchBase">
-        <defName>MCW_NectarCandyAbility_MannaFairy</defName>
-        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
-        <label>Manna Fairy</label>
-        <description>TODO</description>
-        <iconPath>UI/Gizmos/Abilities/Nectar/MCW_MannaFairy</iconPath>
-        <warmupStartSound>Coagulate_Cast</warmupStartSound>
-        <jobDef>CastAbilityOnThingMelee</jobDef>
-        <displayOrder>100</displayOrder>
-        <hostile>false</hostile>
-        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-        <cooldownTicksRange>6000</cooldownTicksRange><!-- 1 hour -->
-        <verbProperties>
-            <verbClass>Verb_CastAbilityTouch</verbClass>
-            <drawAimPie>false</drawAimPie>
-            <range>-1</range>
-            <warmupTime>10</warmupTime>
-            <targetParams>
-                <canTargetLocations>false</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>false</canTargetBuildings>
-                <canTargetItems>false</canTargetItems>
-                <canTargetAnimals>false</canTargetAnimals>
-                <canTargetHumans>true</canTargetHumans>
-                <canTargetMechs>false</canTargetMechs>
-                <canTargetSelf>false</canTargetSelf>
-                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
-            </targetParams>
-        </verbProperties>
-        <comps>
-            <li Class="CompProperties_AbilityEffect">
-                <compClass>MinchoCandyWars.Abilities.NectarCandy.CompAbilityEffect_MannaFairy</compClass>
-            </li>
-        </comps>
-        <modExtensions>
-            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>NectarCandy</candyType>
-                <requiredMinchoCoreGrade>3</requiredMinchoCoreGrade>
-                <requiredMinchoBodyGrade>5</requiredMinchoBodyGrade>
-                <requiredMinchoCandyValue>200</requiredMinchoCandyValue>
-            </li>
-        </modExtensions>
-    </AbilityDef>
-
+  <!-- ===== 甘露连接 ===== -->
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>MCW_NectarCandyAbility_MannaConnection</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>Manna Connection</label>
+    <description>Binds another mincho to the caster. While both are on the same map, both gain +20% consciousness and +12 mood. Can be re-bound, but only after a long cooldown.</description>
+    <iconPath>UI/Gizmos/Abilities/Nectar/MCW_MannaConnection</iconPath>
+    <warmupStartSound>Coagulate_Cast</warmupStartSound>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <displayOrder>400</displayOrder>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>300000</cooldownTicksRange>
+    <!-- 5 days -->
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>true</drawAimPie>
+      <range>-1</range>
+      <warmupTime>30</warmupTime>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetSelf>false</canTargetSelf>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffect">
+        <compClass>MinchoCandyWars.Abilities.NectarCandy.CompAbilityEffect_MannaConnection</compClass>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>NectarCandy</candyType>
+        <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>0</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+  <!-- ===== 珉巧敷药 ===== -->
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>MCW_NectarCandyAbility_MinchoBandage</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>Mincho Bandage</label>
+    <description>Immediately tends to every wound on the target.</description>
+    <iconPath>UI/Gizmos/Abilities/Nectar/MCW_MinchoBandage</iconPath>
+    <warmupStartSound>Coagulate_Cast</warmupStartSound>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <displayOrder>300</displayOrder>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <!-- 10 seconds -->
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>1</warmupTime>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetSelf>true</canTargetSelf>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="MinchoCandyWars.Abilities.NectarCandy.CompProperties_AbilityMinchoBandage">
+        <tendQualityRange>0.7~1.0</tendQualityRange>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>NectarCandy</candyType>
+        <requiredMinchoCoreGrade>2</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+  <!-- ===== 冰淇淋重塑 ===== -->
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>MCW_NectarCandyAbility_IceCreamReshape</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>Ice Cream Reshape</label>
+    <description>Reshapes the target's ice cream flesh to heal its wounds, at the risk of failure. A failed reshaping grows a mincho tentacle instead of a flesh tentacle.</description>
+    <iconPath>UI/Gizmos/Abilities/Nectar/MCW_IceCreamReshape</iconPath>
+    <warmupStartSound>Coagulate_Cast</warmupStartSound>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <displayOrder>200</displayOrder>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>300000</cooldownTicksRange>
+    <!-- 5 days -->
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>30</warmupTime>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetSelf>true</canTargetSelf>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffect">
+        <compClass>MinchoCandyWars.Abilities.NectarCandy.CompAbilityEffect_IceCreamReshape</compClass>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>NectarCandy</candyType>
+        <requiredMinchoCoreGrade>5</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>300</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+  <!-- ===== 甘露妖精 ===== -->
+  <AbilityDef>
+    <defName>MCW_NectarCandyAbility_MannaFairy</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>Manna Fairy</label>
+    <description>Dispatches your fairy to your lover, granting them greatly increased healing, +10 dodge chance and a personal shield. While the fairy is not dispatched it grants the same benefits to you instead.</description>
+    <iconPath>UI/Gizmos/Abilities/Nectar/MCW_MannaFairy</iconPath>
+    <warmupStartSound>Coagulate_Cast</warmupStartSound>
+    <jobDef>CastAbilityOnThingWithoutWeapon</jobDef>
+    <displayOrder>100</displayOrder>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>6000</cooldownTicksRange>
+    <!-- 1 hour -->
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>10</warmupTime>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffect">
+        <compClass>MinchoCandyWars.Abilities.NectarCandy.CompAbilityEffect_MannaFairy</compClass>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>NectarCandy</candyType>
+        <requiredMinchoCoreGrade>3</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>5</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>200</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
 </Defs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/FactionDef[defName="MCW_Alliance_Faction"]</xpath>
+    <value>
+      <baseTraderKinds Inherit="False"><li>MCW_AllianceNanoTrader</li></baseTraderKinds>
+    </value>
+  </Operation>
+</Patch>

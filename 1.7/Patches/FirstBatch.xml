@@ -1,0 +1,1874 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Patch>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/MinchoCandyWars.StellarisEvent.StellarisEventDef[defName="MCW_Event_QS1_StartStory"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/MinchoCandyWars.StellarisEvent.OnActionDef[defName="MCW_OnAction_GameStart"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/QuestScriptDef[defName="MCW_QS1_HuntedMincho"]</xpath>
+    <value>
+      <QuestScriptDef>
+        <defName>MCW_QS1_HuntedMincho</defName>
+        <rootSelectionWeight>0</rootSelectionWeight>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <isRootSpecial>true</isRootSpecial>
+        <defaultCharity>false</defaultCharity>
+        <autoAccept>true</autoAccept>
+        <sendAvailableLetter>false</sendAvailableLetter>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName-&gt;遭到追捕的珉巧</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+            <li>questDescription-&gt;一位珉巧跌跌撞撞地来到殖民地。她回头看了好几次，才问这里能不能让她躲一会儿。回收公司正在追捕她，她已经没有别处可去。</li>
+          </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="QuestNode_SubScript">
+              <def>Util_RandomizePointsChallengeRating</def>
+            </li>
+            <li Class="QuestNode_GetMap" />
+            <li Class="QuestNode_GetWalkInSpot" />
+            <li Class="MinchoCandyWars.StellarisEvent.QuestNode_Hyperlinks">
+              <factionDefs>
+                <li>MCW_Alliance_Faction</li>
+              </factionDefs>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.QuestNode_GeneratePawnWithCustomization">
+              <kindDef>MCW_HuntedMincho_QS1</kindDef>
+              <storeAs>asker</storeAs>
+              <addToList>huntedMincho</addToList>
+              <faction>MCW_Alliance_Faction</faction>
+              <allowPregnant>false</allowPregnant>
+              <forcedTraits>
+                <li>Tough</li>
+                <li MayRequire="Ludeon.RimWorld.Anomaly">Joyous</li>
+              </forcedTraits>
+              <mustBeCapableOfViolence>true</mustBeCapableOfViolence>
+              <skillCustomizations>
+                <li>
+                  <skillDef>Melee</skillDef>
+                  <passion>Major</passion>
+                  <extraXP>450000</extraXP>
+                </li>
+                <li>
+                  <skillDef>Cooking</skillDef>
+                  <passion>Major</passion>
+                  <extraXP>450000</extraXP>
+                </li>
+                <li>
+                  <skillDef>Social</skillDef>
+                  <passion>Major</passion>
+                  <extraXP>450000</extraXP>
+                </li>
+              </skillCustomizations>
+              <syncWithPlayerIdeo>true</syncWithPlayerIdeo>
+            </li>
+            <li Class="MinchoCandyWars.StellarisEvent.QuestNode_SetFlag">
+              <flagName>MCW_QS1_HuntedMincho</flagName>
+              <flagType>Thing</flagType>
+              <thingValue>$asker</thingValue>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.HuntedArrivalText" />
+            <li Class="QuestNode_PawnsArrive">
+              <pawns>$asker</pawns>
+              <joinPlayer>true</joinPlayer>
+              <customLetterLabel>$mcwArrivalTitle</customLetterLabel>
+              <customLetterText>$mcwArrivalBody</customLetterText>
+            </li>
+            <li Class="QuestNode_Delay">
+              <delayTicks>60000</delayTicks>
+              <node Class="QuestNode_Sequence">
+                <nodes>
+                  <li Class="QuestNode_SendSignals">
+                    <outSignals>MCW_QS1_CheckHuntedAlive</outSignals>
+                  </li>
+                  <li Class="QuestNode_AnyPawnAlive">
+                    <inSignal>MCW_QS1_CheckHuntedAlive</inSignal>
+                    <pawns>$huntedMincho</pawns>
+                    <node Class="QuestNode_Sequence">
+                      <nodes>
+                        <li Class="QuestNode_SendSignals">
+                          <outSignals>MCW_QS1_AllianceContact</outSignals>
+                        </li>
+                        <li Class="MinchoCandyWars.StellarisEvent.QuestNode_StellarisEvent">
+                          <inSignal>MCW_QS1_AllianceContact</inSignal>
+                          <eventDef>MCW_Event_QS1_AllianceContact</eventDef>
+                        </li>
+                      </nodes>
+                    </node>
+                  </li>
+                </nodes>
+              </node>
+            </li>
+            <li Class="QuestNode_Delay">
+              <delayTicks>120000</delayTicks>
+              <node Class="QuestNode_Sequence">
+                <nodes>
+                  <li Class="QuestNode_SendSignals">
+                    <outSignals>MCW_QS1_CorpContact</outSignals>
+                  </li>
+                  <li Class="MinchoCandyWars.StellarisEvent.QuestNode_StellarisEvent">
+                    <inSignal>MCW_QS1_CorpContact</inSignal>
+                    <eventDef>MCW_Event_QS1_CorpContact</eventDef>
+                  </li>
+                </nodes>
+              </node>
+            </li>
+            <li Class="QuestNode_Signal">
+              <inSignal>MCW_QS1_CorpResolved</inSignal>
+              <node Class="QuestNode_End">
+                <outcome>Success</outcome>
+              </node>
+            </li>
+          </nodes>
+        </root>
+      </QuestScriptDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/MinchoCandyWars.StellarisEvent.StellarisEventDef[defName="MCW_Event_QS1_AllianceContact"]</xpath>
+    <value>
+      <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+        <defName>MCW_Event_QS1_AllianceContact</defName>
+        <label>珉巧同盟联络</label>
+        <title>MinchoCandyWars.FirstAlliance.Title</title>
+        <desc>MinchoCandyWars.FirstAlliance.Body</desc>
+        <backgroundPath>Events/tile_large_bg</backgroundPath>
+        <pictures>
+          <li>
+            <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+          </li>
+        </pictures>
+        <immediate>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+            </li>
+          </effects>
+        </immediate>
+        <options>
+          <li>
+            <label>MinchoCandyWars.FirstAlliance.Accept</label>
+            <desc>MinchoCandyWars.FirstAlliance.AcceptDesc</desc>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFactionRelation">
+                  <factionDef>MCW_Alliance_Faction</factionDef>
+                  <relation>Ally</relation>
+                </li>
+                <li Class="MinchoCandyWars.QuestStory.PodSupply">
+                  <thingDef>Mincho_Mintchoco</thingDef>
+                  <num>200</num>
+                </li>
+                <li Class="MinchoCandyWars.QuestStory.PodSupply">
+                  <thingDef>Mincho_BlocksMintchoco</thingDef>
+                  <num>400</num>
+                </li>
+                <li Class="MinchoCandyWars.QuestStory.PodSupply">
+                  <thingDef>Mincho_ChocoStick</thingDef>
+                  <num>200</num>
+                </li>
+                <li Class="MinchoCandyWars.QuestStory.PodSupply">
+                  <thingDef>RawRice</thingDef>
+                  <num>300</num>
+                </li>
+                <li Class="MinchoCandyWars.QuestStory.PodSupply">
+                  <thingDef>MCW_MinchoIntelBooster</thingDef>
+                  <num>1</num>
+                </li>
+                <li Class="MinchoCandyWars.QuestStory.PodSupply">
+                  <thingDef>MCW_Chocolate_Console</thingDef>
+                  <num>1</num>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+                  <flagName>MCW_QS1_AllianceJoined</flagName>
+                  <valueType>Bool</valueType>
+                  <boolValue>true</boolValue>
+                  <setMode>Override</setMode>
+                  <local>false</local>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+                  <flagName>MCW_QS1_AllianceDecided</flagName>
+                  <valueType>Bool</valueType>
+                  <boolValue>true</boolValue>
+                  <setMode>Override</setMode>
+                  <local>false</local>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.FirstAlliance.Decline</label>
+            <desc>MinchoCandyWars.FirstAlliance.DeclineDesc</desc>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+                  <flagName>MCW_QS1_AllianceDecided</flagName>
+                  <valueType>Bool</valueType>
+                  <boolValue>true</boolValue>
+                  <setMode>Override</setMode>
+                  <local>false</local>
+                </li>
+                <li Class="MinchoCandyWars.QuestStory.StoryEffect">
+                  <operation>allianceDeclined</operation>
+                </li>
+              </effects>
+            </action>
+          </li>
+        </options>
+        <triggers>
+          <li Class="MinchoCandyWars.QuestStory.UndecidedTrigger">
+            <flag>MCW_QS1_AllianceDecided</flag>
+          </li>
+        </triggers>
+      </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/MinchoCandyWars.StellarisEvent.StellarisEventDef[defName="MCW_Event_QS1_CorpContact"]</xpath>
+    <value>
+      <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+        <defName>MCW_Event_QS1_CorpContact</defName>
+        <label>回收公司联络</label>
+        <title>回收公司领队</title>
+        <desc>领队：您好。我们正在寻找一批流失的冰淇淋机器人，其中一台疑似进入了您的殖民地。请配合移交，我们会支付报酬。
+
+如果拒绝，我们将采取强制措施。希望您不必为公司的产品承担损失。</desc>
+        <backgroundPath>Events/tile_large_bg</backgroundPath>
+        <forceChoose>true</forceChoose>
+        <immediate>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OnceEffects">
+              <flag>MCWQ097_CorpArrived</flag>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+                  <factionDef>MCW_RecycleCorp_Faction</factionDef>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SpawnPawnFromFlag">
+                  <pawnKindDefName>MCW_RecycleCorp_Leader</pawnKindDefName>
+                  <arrivalMode>EdgeWalkIn</arrivalMode>
+                  <factionDef>MCW_RecycleCorp_Faction</factionDef>
+                  <trackFlagName>MCW_QS1_CorpDelegation_0</trackFlagName>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SpawnPawnFromFlag">
+                  <pawnKindDefName>MCW_RecycleCorp_Member</pawnKindDefName>
+                  <arrivalMode>EdgeWalkIn</arrivalMode>
+                  <factionDef>MCW_RecycleCorp_Faction</factionDef>
+                  <trackFlagName>MCW_QS1_CorpDelegation_1</trackFlagName>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SpawnPawnFromFlag">
+                  <pawnKindDefName>MCW_RecycleCorp_Member</pawnKindDefName>
+                  <arrivalMode>EdgeWalkIn</arrivalMode>
+                  <factionDef>MCW_RecycleCorp_Faction</factionDef>
+                  <trackFlagName>MCW_QS1_CorpDelegation_2</trackFlagName>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SendLetter">
+                  <label>MinchoCandyWars.CorpContact.ArrivalTitle</label>
+                  <text>MinchoCandyWars.CorpContact.ArrivalBody</text>
+                  <letterDef>ThreatSmall</letterDef>
+                </li>
+              </effects>
+            </li>
+          </effects>
+        </immediate>
+        <options>
+          <li>
+            <label>MinchoCandyWars.CorpContact.Accept</label>
+            <desc>MinchoCandyWars.CorpContact.AcceptHint</desc>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFactionRelation">
+                  <factionDef>MCW_Alliance_Faction</factionDef>
+                  <relation>Hostile</relation>
+                  <permanent>true</permanent>
+                </li>
+                <li Class="MinchoCandyWars.QuestStory.PodSupply">
+                  <thingDef>Apparel_PowerArmor</thingDef>
+                  <num>2</num>
+                  <quality>Masterwork</quality>
+                </li>
+                <li Class="MinchoCandyWars.QuestStory.PodSupply">
+                  <thingDef>Gun_ChargeLance</thingDef>
+                  <num>2</num>
+                  <quality>Excellent</quality>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_TrackedPawnsAction">
+                  <flagNames>
+                    <li>MCW_QS1_HuntedMincho</li>
+                    <li>MCW_QS1_CorpDelegation_0</li>
+                    <li>MCW_QS1_CorpDelegation_1</li>
+                    <li>MCW_QS1_CorpDelegation_2</li>
+                  </flagNames>
+                  <action>Despawn</action>
+                  <toFactionDef>MCW_RecycleCorp_Faction</toFactionDef>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+                  <flagName>MCW_QS1_CorpDecided</flagName>
+                  <valueType>Bool</valueType>
+                  <boolValue>true</boolValue>
+                  <setMode>Override</setMode>
+                  <local>false</local>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+                  <flagName>MCW_QuestBranch_Corp</flagName>
+                  <valueType>Bool</valueType>
+                  <boolValue>true</boolValue>
+                  <setMode>Override</setMode>
+                  <local>false</local>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SendQuestSignal">
+                  <signalName>MCW_QS1_CorpResolved</signalName>
+                  <questDefName>MCW_QS1_HuntedMincho</questDefName>
+                </li>
+                <li Class="MinchoCandyWars.QuestStory.StoryEffect">
+                  <operation>corp</operation>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.CorpContact.Refuse</label>
+            <desc>MinchoCandyWars.CorpContact.RefuseHint</desc>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFactionRelation">
+                  <factionDef>MCW_RecycleCorp_Faction</factionDef>
+                  <relation>Hostile</relation>
+                  <permanent>true</permanent>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_TrackedPawnsAction">
+                  <flagNames>
+                    <li>MCW_QS1_CorpDelegation_0</li>
+                    <li>MCW_QS1_CorpDelegation_1</li>
+                    <li>MCW_QS1_CorpDelegation_2</li>
+                  </flagNames>
+                  <action>Assault</action>
+                  <canTimeoutOrFlee>false</canTimeoutOrFlee>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+                  <flagName>MCW_QS1_CorpDecided</flagName>
+                  <valueType>Bool</valueType>
+                  <boolValue>true</boolValue>
+                  <setMode>Override</setMode>
+                  <local>false</local>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
+                  <flagName>MCW_QuestBranch_Mincho</flagName>
+                  <valueType>Bool</valueType>
+                  <boolValue>true</boolValue>
+                  <setMode>Override</setMode>
+                  <local>false</local>
+                </li>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_SendQuestSignal">
+                  <signalName>MCW_QS1_CorpResolved</signalName>
+                  <questDefName>MCW_QS1_HuntedMincho</questDefName>
+                </li>
+                <li Class="MinchoCandyWars.QuestStory.StoryEffect">
+                  <operation>mincho</operation>
+                </li>
+              </effects>
+            </action>
+          </li>
+        </options>
+        <triggers>
+          <li Class="MinchoCandyWars.QuestStory.UndecidedTrigger">
+            <flag>MCW_QS1_CorpDecided</flag>
+          </li>
+        </triggers>
+      </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/MinchoCandyWars.StellarisEvent.StellarisEventDef[defName="MCW_Event_QuestA1_AllianceContact"]</xpath>
+    <value>
+      <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+        <defName>MCW_Event_QuestA1_AllianceContact</defName>
+        <label>收留珉巧请求</label>
+        <title>MinchoCandyWars.Alliance.Name.0</title>
+        <desc>MinchoCandyWars.OperationFallback.1</desc>
+        <backgroundPath>Events/tile_large_bg</backgroundPath>
+        <pictures>
+          <li>
+            <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+          </li>
+        </pictures>
+        <immediate>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+            </li>
+          </effects>
+        </immediate>
+        <options>
+          <li>
+            <label>MinchoCandyWars.HospitalityChoice.Accept</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.StoryEffect">
+                  <operation>accept</operation>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.HospitalityChoice.Decline</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.StoryEffect">
+                  <operation>reject</operation>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.HospitalityChoice.Defer</label>
+            <desc>MinchoCandyWars.HospitalityChoice.DeferDesc</desc>
+            <action>
+              <effects />
+            </action>
+          </li>
+        </options>
+        <triggers>
+          <li Class="MinchoCandyWars.QuestStory.ReadyTrigger" />
+        </triggers>
+      </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/MinchoCandyWars.StellarisEvent.StellarisEventDef[defName="MCW_Event_AllianceGreeting"]</xpath>
+    <value>
+      <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+        <defName>MCW_Event_AllianceGreeting</defName>
+        <label>联络珉巧同盟</label>
+        <title>MinchoCandyWars.Alliance.Name.0</title>
+        <desc>你好呀，我亲爱的盟友！这里是珉巧同盟的频道，我是沁心糖。\n\n最近过得怎么样？你们的殖民地还缺些什么吗？</desc>
+        <backgroundPath>Events/tile_large_bg</backgroundPath>
+        <pictures>
+          <li>
+            <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+          </li>
+        </pictures>
+        <immediate>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+            </li>
+          </effects>
+        </immediate>
+        <options>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option0</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>1</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCW_Event_QuestA1_AllianceContact</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option1</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>2</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCW_Event_QuestA2_AllianceContact</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option2</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>3</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCW_Event_QuestA3_AllianceContact</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option3</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>4</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCW_Event_QuestA4_AllianceContact</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option4</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>5</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCW_Event_QuestA5_AllianceContact</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option5</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>6</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCW_Event_QuestF1_AllianceContact</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option6</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>7</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCWQ101_Event7</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option7</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>8</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCWQ101_Event8</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option8</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>9</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCWQ101_Event9</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option9</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.StoryEffect">
+                  <operation>status</operation>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option10</label>
+            <desc>MinchoCandyWars.AllianceMenu.Option22</desc>
+            <triggers>
+              <li Class="MinchoCandyWars.StellarisEvent.Trigger_FactionGoodwill">
+                <factionDef>MCW_Alliance_Faction</factionDef>
+                <minGoodwill>30</minGoodwill>
+              </li>
+              <li Class="MinchoCandyWars.StellarisEvent.Trigger_FlagExist">
+                <flagName>MCW_AllianceSubsidyCooldown</flagName>
+                <idGroup>MCW_SubsidyReady</idGroup>
+                <logic>NOT</logic>
+              </li>
+            </triggers>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCW_Event_AllianceSubsidy</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option11</label>
+            <desc>MinchoCandyWars.AllianceMenu.Option23</desc>
+            <triggers>
+              <li Class="MinchoCandyWars.StellarisEvent.Trigger_FactionGoodwill">
+                <factionDef>MCW_Alliance_Faction</factionDef>
+                <minGoodwill>50</minGoodwill>
+              </li>
+            </triggers>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCW_Event_AllianceCandyShop</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option12</label>
+            <desc>MinchoCandyWars.AllianceMenu.Option24</desc>
+            <triggers>
+              <li Class="MinchoCandyWars.StellarisEvent.Trigger_FactionGoodwill">
+                <factionDef>MCW_Alliance_Faction</factionDef>
+                <minGoodwill>50</minGoodwill>
+              </li>
+            </triggers>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCW_Event_AllianceBoosterShop</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option13</label>
+            <desc>MinchoCandyWars.AllianceMenu.Option25</desc>
+            <action>
+              <effects />
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option14</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+                  <operation>hub</operation>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option15</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <trigger Class="MinchoCandyWars.QuestStory.ContactAvailable"><operation>invite</operation></trigger>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+                  <operation>invite</operation>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option16</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <trigger Class="MinchoCandyWars.QuestStory.ContactAvailable"><operation>gift</operation></trigger>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+                  <operation>gift</operation>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option17</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <trigger Class="MinchoCandyWars.QuestStory.DeliveryAvailable" />
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.ConversationEffect">
+                  <operation>deliver</operation>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option18</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>10</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCWQ101_Event10</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option19</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>11</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCWQ101_Event11</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option20</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>12</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCWQ101_Event12</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.AllianceMenu.Option21</label>
+            <hideWhenDisabled>true</hideWhenDisabled>
+            <triggers>
+              <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+                <kind>13</kind>
+              </li>
+            </triggers>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.StellarisEvent.Effect_FireEvent">
+                  <defName>MCWQ101_Event13</defName>
+                </li>
+              </effects>
+            </action>
+          </li>
+        </options>
+      </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/QuestScriptDef[defName="MCW_QuestB2_SmartMinchoRescue"]</xpath>
+    <value>
+      <QuestScriptDef>
+        <defName>MCW_QuestB2_SmartMinchoRescue</defName>
+        <rootSelectionWeight>0</rootSelectionWeight>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <isRootSpecial>true</isRootSpecial>
+        <defaultCharity>false</defaultCharity>
+        <autoAccept>true</autoAccept>
+        <sendAvailableLetter>false</sendAvailableLetter>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName-&gt;解救智慧珉巧</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+            <li>questDescription-&gt;一位智慧珉巧被回收公司关押在附近，随时可能被回收。请立刻前往解救她！\n\n解救成功后，她会加入你的殖民地。</li>
+          </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="MinchoCandyWars.QuestStory.QuestNode_AllianceReward">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <goodwillChange>20</goodwillChange>
+              <endgameProgress>1</endgameProgress>
+              <kind>2</kind>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_RandomizePointsChallengeRating</def>
+            </li>
+            <li Class="QuestNode_GetMap" />
+            <li Class="QuestNode_GetSiteTile">
+              <storeAs>siteTile</storeAs>
+              <preferCloserTiles>true</preferCloserTiles>
+            </li>
+            <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+              <storeAs>sitePartDefs</storeAs>
+              <storeFactionAs>siteFaction</storeFactionAs>
+              <sitePartsTags>
+                <li>
+                  <tag>MCW_SmartMinchoRescue</tag>
+                </li>
+              </sitePartsTags>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionFactionNode">
+              <kind>2</kind>
+            </li>
+            <li Class="QuestNode_GetDefaultSitePartsParams">
+              <tile>$siteTile</tile>
+              <faction>$siteFaction</faction>
+              <sitePartDefs>$sitePartDefs</sitePartDefs>
+              <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_GenerateSite</def>
+              <parms>
+                <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+              </parms>
+            </li>
+            <li Class="QuestNode_SpawnWorldObjects">
+              <worldObjects>$site</worldObjects>
+              <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+            </li>
+            <li Class="QuestNode_WorldObjectTimeout">
+              <worldObject>$site</worldObject>
+              <isQuestTimeout>true</isQuestTimeout>
+              <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+              <inSignalDisable>site.MapGenerated</inSignalDisable>
+              <node Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </node>
+            </li>
+            <li Class="QuestNode_AddPawnReward">
+              <pawn>$prisoner</pawn>
+              <inSignalChoiceUsed>site.MapGenerated</inSignalChoiceUsed>
+              <rewardDetailsHidden>true</rewardDetailsHidden>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionNode">
+              <kind>2</kind>
+            </li>
+          </nodes>
+        </root>
+      </QuestScriptDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/QuestScriptDef[defName="MCW_QuestB3_RecycleOutpost"]</xpath>
+    <value>
+      <QuestScriptDef>
+        <defName>MCW_QuestB3_RecycleOutpost</defName>
+        <rootSelectionWeight>0</rootSelectionWeight>
+        <defaultChallengeRating>2</defaultChallengeRating>
+        <isRootSpecial>true</isRootSpecial>
+        <defaultCharity>false</defaultCharity>
+        <autoAccept>true</autoAccept>
+        <sendAvailableLetter>false</sendAvailableLetter>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName-&gt;袭击回收部队前哨站</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+            <li>questDescription-&gt;珉巧同盟正在准备突袭一个回收部队的据点，我们需要在合适的时机去帮助她们。\n\n前往标记的据点，击溃那里的回收部队守军。</li>
+          </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="MinchoCandyWars.QuestStory.QuestNode_AllianceReward">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <goodwillChange>10</goodwillChange>
+              <endgameProgress>1</endgameProgress>
+              <kind>3</kind>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_RandomizePointsChallengeRating</def>
+            </li>
+            <li Class="QuestNode_GetMap" />
+            <li Class="QuestNode_GetSiteTile">
+              <storeAs>siteTile</storeAs>
+              <preferCloserTiles>true</preferCloserTiles>
+            </li>
+            <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+              <storeAs>sitePartDefs</storeAs>
+              <storeFactionAs>siteFaction</storeFactionAs>
+              <sitePartsTags>
+                <li>
+                  <tag>MCWQ101_RecycleOutpost</tag>
+                </li>
+              </sitePartsTags>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionFactionNode">
+              <kind>3</kind>
+            </li>
+            <li Class="QuestNode_GetDefaultSitePartsParams">
+              <tile>$siteTile</tile>
+              <faction>$siteFaction</faction>
+              <sitePartDefs>$sitePartDefs</sitePartDefs>
+              <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_GenerateSite</def>
+              <parms>
+                <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+              </parms>
+            </li>
+            <li Class="QuestNode_SpawnWorldObjects">
+              <worldObjects>$site</worldObjects>
+              <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+            </li>
+            <li Class="QuestNode_WorldObjectTimeout">
+              <worldObject>$site</worldObject>
+              <isQuestTimeout>true</isQuestTimeout>
+              <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+              <inSignalDisable>site.MapGenerated</inSignalDisable>
+              <node Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </node>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionNode">
+              <kind>3</kind>
+            </li>
+          </nodes>
+        </root>
+      </QuestScriptDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/QuestScriptDef[defName="MCW_QuestB4_BetaFluidRuin"]</xpath>
+    <value>
+      <QuestScriptDef>
+        <defName>MCW_QuestB4_BetaFluidRuin</defName>
+        <rootSelectionWeight>0</rootSelectionWeight>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <isRootSpecial>true</isRootSpecial>
+        <defaultCharity>false</defaultCharity>
+        <autoAccept>true</autoAccept>
+        <sendAvailableLetter>false</sendAvailableLetter>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName-&gt;获取β型纳米塑形液</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+            <li>questDescription-&gt;珉巧同盟给予了我们一个遗迹坐标，这里面或许有研究珉巧自身的重要信息。\n\n前往遗迹，寻找β型纳米塑形液。</li>
+          </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="MinchoCandyWars.QuestStory.QuestNode_AllianceReward">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <goodwillChange>30</goodwillChange>
+              <endgameProgress>1</endgameProgress>
+              <kind>4</kind>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_RandomizePointsChallengeRating</def>
+            </li>
+            <li Class="QuestNode_GetMap" />
+            <li Class="QuestNode_GetSiteTile">
+              <storeAs>siteTile</storeAs>
+              <preferCloserTiles>true</preferCloserTiles>
+            </li>
+            <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+              <storeAs>sitePartDefs</storeAs>
+              <storeFactionAs>siteFaction</storeFactionAs>
+              <sitePartsTags>
+                <li>
+                  <tag>AncientComplex</tag>
+                </li>
+              </sitePartsTags>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionFactionNode">
+              <kind>4</kind>
+            </li>
+            <li Class="QuestNode_GetDefaultSitePartsParams">
+              <tile>$siteTile</tile>
+              <faction>$siteFaction</faction>
+              <sitePartDefs>$sitePartDefs</sitePartDefs>
+              <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_GenerateSite</def>
+              <parms>
+                <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+              </parms>
+            </li>
+            <li Class="QuestNode_SpawnWorldObjects">
+              <worldObjects>$site</worldObjects>
+              <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+            </li>
+            <li Class="QuestNode_WorldObjectTimeout">
+              <worldObject>$site</worldObject>
+              <isQuestTimeout>true</isQuestTimeout>
+              <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+              <inSignalDisable>site.MapGenerated</inSignalDisable>
+              <node Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </node>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionNode">
+              <kind>4</kind>
+            </li>
+          </nodes>
+        </root>
+      </QuestScriptDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/QuestScriptDef[defName="MCW_QuestB5_AllianceOutpostDefense"]</xpath>
+    <value>
+      <QuestScriptDef>
+        <defName>MCW_QuestB5_AllianceOutpostDefense</defName>
+        <rootSelectionWeight>0</rootSelectionWeight>
+        <defaultChallengeRating>3</defaultChallengeRating>
+        <isRootSpecial>true</isRootSpecial>
+        <defaultCharity>false</defaultCharity>
+        <autoAccept>true</autoAccept>
+        <sendAvailableLetter>false</sendAvailableLetter>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName-&gt;珉巧据点增援</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+            <li>questDescription-&gt;珉巧同盟的一个据点正在被回收部队袭击，我们必须立刻前往援助！\n\n据点距离你的殖民地很近，但留给我们的时间只有 2 天。</li>
+          </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="MinchoCandyWars.QuestStory.QuestNode_AllianceReward">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <goodwillChange>50</goodwillChange>
+              <endgameProgress>1</endgameProgress>
+              <kind>5</kind>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_RandomizePointsChallengeRating</def>
+            </li>
+            <li Class="QuestNode_GetMap" />
+            <li Class="MinchoCandyWars.QuestStory.NearSiteTile">
+              <storeAs>siteTile</storeAs>
+              <preferCloserTiles>true</preferCloserTiles>
+            </li>
+            <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+              <storeAs>sitePartDefs</storeAs>
+              <storeFactionAs>siteFaction</storeFactionAs>
+              <sitePartsTags>
+                <li>
+                  <tag>MCW_AllianceOutpost</tag>
+                </li>
+              </sitePartsTags>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionFactionNode">
+              <kind>5</kind>
+            </li>
+            <li Class="QuestNode_GetDefaultSitePartsParams">
+              <tile>$siteTile</tile>
+              <faction>$siteFaction</faction>
+              <sitePartDefs>$sitePartDefs</sitePartDefs>
+              <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_GenerateSite</def>
+              <parms>
+                <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+              </parms>
+            </li>
+            <li Class="QuestNode_SpawnWorldObjects">
+              <worldObjects>$site</worldObjects>
+              <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+            </li>
+            <li Class="QuestNode_WorldObjectTimeout">
+              <worldObject>$site</worldObject>
+              <isQuestTimeout>true</isQuestTimeout>
+              <delayTicks>120000</delayTicks>
+              <inSignalDisable>site.MapGenerated</inSignalDisable>
+              <node Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </node>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionNode">
+              <kind>5</kind>
+            </li>
+          </nodes>
+        </root>
+      </QuestScriptDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_NurseOutfit"]</xpath>
+    <value>
+      <generateCommonality>0.05</generateCommonality>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_NurseCap"]</xpath>
+    <value>
+      <generateCommonality>0.05</generateCommonality>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="Mincho_SpaceRefugee"]</xpath>
+    <value>
+      <apparelRequired Inherit="False">
+        <li>Mincho_Knitwear</li>
+      </apparelRequired>
+      <apparelTags Inherit="False">
+        <li>Mincho_Colonist</li>
+      </apparelTags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="MCW_HuntedMincho_QS1"]</xpath>
+    <value>
+      <apparelRequired Inherit="False">
+        <li>Mincho_Knitwear</li>
+      </apparelRequired>
+      <apparelTags Inherit="False">
+        <li>Mincho_Colonist</li>
+      </apparelTags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/*[defName="MCW_Event_QuestA2_AllianceContact"]</xpath>
+    <value>
+      <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+        <defName>MCW_Event_QuestA2_AllianceContact</defName>
+        <label>智慧珉巧救援</label>
+        <title>MinchoCandyWars.Alliance.Name.1</title>
+        <desc>MinchoCandyWars.OperationFallback.2</desc>
+        <backgroundPath>Events/tile_large_bg</backgroundPath>
+        <pictures>
+          <li>
+            <path>Events/Portraits/MCW_AmberonCandy</path>
+          </li>
+        </pictures>
+        <immediate>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+            </li>
+          </effects>
+        </immediate>
+        <options>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Rescue</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+                  <kind>2</kind>
+                  <reject>false</reject>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Decline10</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+                  <kind>2</kind>
+                  <reject>true</reject>
+                </li>
+              </effects>
+            </action>
+          </li>
+        </options>
+        <triggers>
+          <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+            <kind>2</kind>
+          </li>
+        </triggers>
+      </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/*[defName="MCW_Event_QuestA3_AllianceContact"]</xpath>
+    <value>
+      <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+        <defName>MCW_Event_QuestA3_AllianceContact</defName>
+        <label>袭击协助</label>
+        <title>MinchoCandyWars.Alliance.Name.4</title>
+        <desc>MinchoCandyWars.OperationFallback.3</desc>
+        <backgroundPath>Events/tile_large_bg</backgroundPath>
+        <pictures>
+          <li>
+            <path>MCWQ/Portraits/Prism101</path>
+          </li>
+        </pictures>
+        <immediate>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+            </li>
+          </effects>
+        </immediate>
+        <options>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Raid</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+                  <kind>3</kind>
+                  <reject>false</reject>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Decline10</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+                  <kind>3</kind>
+                  <reject>true</reject>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Defer</label>
+            <action>
+              <effects />
+            </action>
+          </li>
+        </options>
+        <triggers>
+          <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+            <kind>3</kind>
+          </li>
+        </triggers>
+      </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/*[defName="MCW_Event_QuestA4_AllianceContact"]</xpath>
+    <value>
+      <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+        <defName>MCW_Event_QuestA4_AllianceContact</defName>
+        <label>遗迹探索</label>
+        <title>MinchoCandyWars.Alliance.Name.3</title>
+        <desc>MinchoCandyWars.OperationFallback.4</desc>
+        <backgroundPath>Events/tile_large_bg</backgroundPath>
+        <pictures>
+          <li>
+            <path>Events/Portraits/MCW_MechaCandy</path>
+          </li>
+        </pictures>
+        <immediate>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+            </li>
+          </effects>
+        </immediate>
+        <options>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Explore</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+                  <kind>4</kind>
+                  <reject>false</reject>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Decline10</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+                  <kind>4</kind>
+                  <reject>true</reject>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Defer</label>
+            <action>
+              <effects />
+            </action>
+          </li>
+        </options>
+        <triggers>
+          <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+            <kind>4</kind>
+          </li>
+        </triggers>
+      </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/*[defName="MCW_Event_QuestA5_AllianceContact"]</xpath>
+    <value>
+      <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+        <defName>MCW_Event_QuestA5_AllianceContact</defName>
+        <label>拯救珉巧据点</label>
+        <title>MinchoCandyWars.Alliance.Name.1</title>
+        <desc>MinchoCandyWars.OperationFallback.5</desc>
+        <backgroundPath>Events/tile_large_bg</backgroundPath>
+        <pictures>
+          <li>
+            <path>Events/Portraits/MCW_AmberonCandy</path>
+          </li>
+        </pictures>
+        <immediate>
+          <effects>
+            <li Class="MinchoCandyWars.StellarisEvent.Effect_EnsureFactionExists">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+            </li>
+          </effects>
+        </immediate>
+        <options>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Reinforce</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+                  <kind>5</kind>
+                  <reject>false</reject>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Decline30</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+                  <kind>5</kind>
+                  <reject>true</reject>
+                </li>
+              </effects>
+            </action>
+          </li>
+        </options>
+        <triggers>
+          <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+            <kind>5</kind>
+          </li>
+        </triggers>
+      </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/*[defName="MCW_Event_QuestF1_AllianceContact"]</xpath>
+    <value>
+      <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+        <defName>MCW_Event_QuestF1_AllianceContact</defName>
+        <label>终局行动</label>
+        <title>MinchoCandyWars.Alliance.Name.0</title>
+        <desc>MinchoCandyWars.OperationFallback.6</desc>
+        <backgroundPath>Events/tile_large_bg</backgroundPath>
+        <pictures>
+          <li>
+            <path>Events/Portraits/MCW_Qinxintang_Smile</path>
+          </li>
+        </pictures>
+        <options>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Finale</label>
+            <action>
+              <effects>
+                <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+                  <kind>6</kind>
+                  <reject>false</reject>
+                </li>
+              </effects>
+            </action>
+          </li>
+          <li>
+            <label>MinchoCandyWars.OperationChoice.Defer</label>
+            <action>
+              <effects />
+            </action>
+          </li>
+        </options>
+        <triggers>
+          <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+            <kind>6</kind>
+          </li>
+        </triggers>
+      </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/*[defName="MCW_QuestB2_SmartMinchoRescue"]</xpath>
+    <value>
+      <QuestScriptDef>
+        <defName>MCW_QuestB2_SmartMinchoRescue</defName>
+        <rootSelectionWeight>0</rootSelectionWeight>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <isRootSpecial>true</isRootSpecial>
+        <defaultCharity>false</defaultCharity>
+        <autoAccept>true</autoAccept>
+        <sendAvailableLetter>false</sendAvailableLetter>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName-&gt;解救智慧珉巧</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+            <li>questDescription-&gt;一位智慧珉巧被回收公司关押在附近，随时可能被回收。请立刻前往解救她！\n\n解救成功后，她会加入你的殖民地。</li>
+          </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="MinchoCandyWars.QuestStory.QuestNode_AllianceReward">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <goodwillChange>20</goodwillChange>
+              <endgameProgress>1</endgameProgress>
+              <kind>2</kind>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_RandomizePointsChallengeRating</def>
+            </li>
+            <li Class="QuestNode_GetMap" />
+            <li Class="QuestNode_GetSiteTile">
+              <storeAs>siteTile</storeAs>
+              <preferCloserTiles>true</preferCloserTiles>
+            </li>
+            <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+              <storeAs>sitePartDefs</storeAs>
+              <storeFactionAs>siteFaction</storeFactionAs>
+              <sitePartsTags>
+                <li>
+                  <tag>MCW_SmartMinchoRescue</tag>
+                </li>
+              </sitePartsTags>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionFactionNode">
+              <kind>2</kind>
+            </li>
+            <li Class="QuestNode_GetDefaultSitePartsParams">
+              <tile>$siteTile</tile>
+              <faction>$siteFaction</faction>
+              <sitePartDefs>$sitePartDefs</sitePartDefs>
+              <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_GenerateSite</def>
+              <parms>
+                <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+              </parms>
+            </li>
+            <li Class="QuestNode_SpawnWorldObjects">
+              <worldObjects>$site</worldObjects>
+              <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+            </li>
+            <li Class="QuestNode_WorldObjectTimeout">
+              <worldObject>$site</worldObject>
+              <isQuestTimeout>true</isQuestTimeout>
+              <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+              <inSignalDisable>site.MapGenerated</inSignalDisable>
+              <node Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </node>
+            </li>
+            <li Class="QuestNode_AddPawnReward">
+              <pawn>$prisoner</pawn>
+              <inSignalChoiceUsed>site.MapGenerated</inSignalChoiceUsed>
+              <rewardDetailsHidden>true</rewardDetailsHidden>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionNode">
+              <kind>2</kind>
+            </li>
+          </nodes>
+        </root>
+      </QuestScriptDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/*[defName="MCW_QuestB3_RecycleOutpost"]</xpath>
+    <value>
+      <QuestScriptDef>
+        <defName>MCW_QuestB3_RecycleOutpost</defName>
+        <rootSelectionWeight>0</rootSelectionWeight>
+        <defaultChallengeRating>2</defaultChallengeRating>
+        <isRootSpecial>true</isRootSpecial>
+        <defaultCharity>false</defaultCharity>
+        <autoAccept>true</autoAccept>
+        <sendAvailableLetter>false</sendAvailableLetter>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName-&gt;袭击回收部队前哨站</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+            <li>questDescription-&gt;珉巧同盟正在准备突袭一个回收部队的据点，我们需要在合适的时机去帮助她们。\n\n前往标记的据点，击溃那里的回收部队守军。</li>
+          </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="MinchoCandyWars.QuestStory.QuestNode_AllianceReward">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <goodwillChange>10</goodwillChange>
+              <endgameProgress>1</endgameProgress>
+              <kind>3</kind>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_RandomizePointsChallengeRating</def>
+            </li>
+            <li Class="QuestNode_GetMap" />
+            <li Class="QuestNode_GetSiteTile">
+              <storeAs>siteTile</storeAs>
+              <preferCloserTiles>true</preferCloserTiles>
+            </li>
+            <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+              <storeAs>sitePartDefs</storeAs>
+              <storeFactionAs>siteFaction</storeFactionAs>
+              <sitePartsTags>
+                <li>
+                  <tag>MCWQ101_RecycleOutpost</tag>
+                </li>
+              </sitePartsTags>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionFactionNode">
+              <kind>3</kind>
+            </li>
+            <li Class="QuestNode_GetDefaultSitePartsParams">
+              <tile>$siteTile</tile>
+              <faction>$siteFaction</faction>
+              <sitePartDefs>$sitePartDefs</sitePartDefs>
+              <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_GenerateSite</def>
+              <parms>
+                <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+              </parms>
+            </li>
+            <li Class="QuestNode_SpawnWorldObjects">
+              <worldObjects>$site</worldObjects>
+              <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+            </li>
+            <li Class="QuestNode_WorldObjectTimeout">
+              <worldObject>$site</worldObject>
+              <isQuestTimeout>true</isQuestTimeout>
+              <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+              <inSignalDisable>site.MapGenerated</inSignalDisable>
+              <node Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </node>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionNode">
+              <kind>3</kind>
+            </li>
+          </nodes>
+        </root>
+      </QuestScriptDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/*[defName="MCW_QuestB4_BetaFluidRuin"]</xpath>
+    <value>
+      <QuestScriptDef>
+        <defName>MCW_QuestB4_BetaFluidRuin</defName>
+        <rootSelectionWeight>0</rootSelectionWeight>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <isRootSpecial>true</isRootSpecial>
+        <defaultCharity>false</defaultCharity>
+        <autoAccept>true</autoAccept>
+        <sendAvailableLetter>false</sendAvailableLetter>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName-&gt;获取β型纳米塑形液</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+            <li>questDescription-&gt;珉巧同盟给予了我们一个遗迹坐标，这里面或许有研究珉巧自身的重要信息。\n\n前往遗迹，寻找β型纳米塑形液。</li>
+          </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="MinchoCandyWars.QuestStory.QuestNode_AllianceReward">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <goodwillChange>30</goodwillChange>
+              <endgameProgress>1</endgameProgress>
+              <kind>4</kind>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_RandomizePointsChallengeRating</def>
+            </li>
+            <li Class="QuestNode_GetMap" />
+            <li Class="QuestNode_GetSiteTile">
+              <storeAs>siteTile</storeAs>
+              <preferCloserTiles>true</preferCloserTiles>
+            </li>
+            <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+              <storeAs>sitePartDefs</storeAs>
+              <storeFactionAs>siteFaction</storeFactionAs>
+              <sitePartsTags>
+                <li>
+                  <tag>AncientComplex</tag>
+                </li>
+              </sitePartsTags>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionFactionNode">
+              <kind>4</kind>
+            </li>
+            <li Class="QuestNode_GetDefaultSitePartsParams">
+              <tile>$siteTile</tile>
+              <faction>$siteFaction</faction>
+              <sitePartDefs>$sitePartDefs</sitePartDefs>
+              <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_GenerateSite</def>
+              <parms>
+                <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+              </parms>
+            </li>
+            <li Class="QuestNode_SpawnWorldObjects">
+              <worldObjects>$site</worldObjects>
+              <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+            </li>
+            <li Class="QuestNode_WorldObjectTimeout">
+              <worldObject>$site</worldObject>
+              <isQuestTimeout>true</isQuestTimeout>
+              <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+              <inSignalDisable>site.MapGenerated</inSignalDisable>
+              <node Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </node>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionNode">
+              <kind>4</kind>
+            </li>
+          </nodes>
+        </root>
+      </QuestScriptDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/*[defName="MCW_QuestB5_AllianceOutpostDefense"]</xpath>
+    <value>
+      <QuestScriptDef>
+        <defName>MCW_QuestB5_AllianceOutpostDefense</defName>
+        <rootSelectionWeight>0</rootSelectionWeight>
+        <defaultChallengeRating>3</defaultChallengeRating>
+        <isRootSpecial>true</isRootSpecial>
+        <defaultCharity>false</defaultCharity>
+        <autoAccept>true</autoAccept>
+        <sendAvailableLetter>false</sendAvailableLetter>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName-&gt;珉巧据点增援</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+            <li>questDescription-&gt;珉巧同盟的一个据点正在被回收部队袭击，我们必须立刻前往援助！\n\n据点距离你的殖民地很近，但留给我们的时间只有 2 天。</li>
+          </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="MinchoCandyWars.QuestStory.QuestNode_AllianceReward">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <goodwillChange>50</goodwillChange>
+              <endgameProgress>1</endgameProgress>
+              <kind>5</kind>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_RandomizePointsChallengeRating</def>
+            </li>
+            <li Class="QuestNode_GetMap" />
+            <li Class="MinchoCandyWars.QuestStory.NearSiteTile">
+              <storeAs>siteTile</storeAs>
+              <preferCloserTiles>true</preferCloserTiles>
+            </li>
+            <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+              <storeAs>sitePartDefs</storeAs>
+              <storeFactionAs>siteFaction</storeFactionAs>
+              <sitePartsTags>
+                <li>
+                  <tag>MCW_AllianceOutpost</tag>
+                </li>
+              </sitePartsTags>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionFactionNode">
+              <kind>5</kind>
+            </li>
+            <li Class="QuestNode_GetDefaultSitePartsParams">
+              <tile>$siteTile</tile>
+              <faction>$siteFaction</faction>
+              <sitePartDefs>$sitePartDefs</sitePartDefs>
+              <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_GenerateSite</def>
+              <parms>
+                <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+              </parms>
+            </li>
+            <li Class="QuestNode_SpawnWorldObjects">
+              <worldObjects>$site</worldObjects>
+              <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+            </li>
+            <li Class="QuestNode_WorldObjectTimeout">
+              <worldObject>$site</worldObject>
+              <isQuestTimeout>true</isQuestTimeout>
+              <delayTicks>120000</delayTicks>
+              <inSignalDisable>site.MapGenerated</inSignalDisable>
+              <node Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </node>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionNode">
+              <kind>5</kind>
+            </li>
+          </nodes>
+        </root>
+      </QuestScriptDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/*[defName="MCW_QuestFF1_RecycleHQ"]</xpath>
+    <value>
+      <QuestScriptDef>
+        <defName>MCW_QuestFF1_RecycleHQ</defName>
+        <rootSelectionWeight>0</rootSelectionWeight>
+        <defaultChallengeRating>5</defaultChallengeRating>
+        <isRootSpecial>true</isRootSpecial>
+        <defaultCharity>false</defaultCharity>
+        <autoAccept>true</autoAccept>
+        <sendAvailableLetter>false</sendAvailableLetter>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName-&gt;击溃回收部队总部</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+            <li>questDescription-&gt;珉巧们会为我们争取时间，我们需要摧毁回收公司的联络电脑。\n\n这是一场决定这颗星球命运的决战。</li>
+          </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="MinchoCandyWars.QuestStory.QuestNode_AllianceReward">
+              <factionDef>MCW_Alliance_Faction</factionDef>
+              <goodwillChange>100</goodwillChange>
+              <endgameProgress>1</endgameProgress>
+              <kind>6</kind>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_RandomizePointsChallengeRating</def>
+            </li>
+            <li Class="QuestNode_GetMap" />
+            <li Class="QuestNode_GetSiteTile">
+              <storeAs>siteTile</storeAs>
+            </li>
+            <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+              <storeAs>sitePartDefs</storeAs>
+              <storeFactionAs>siteFaction</storeFactionAs>
+              <sitePartsTags>
+                <li>
+                  <tag>MCW_RecycleHQ</tag>
+                </li>
+              </sitePartsTags>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionFactionNode">
+              <kind>6</kind>
+            </li>
+            <li Class="QuestNode_GetDefaultSitePartsParams">
+              <tile>$siteTile</tile>
+              <faction>$siteFaction</faction>
+              <sitePartDefs>$sitePartDefs</sitePartDefs>
+              <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+            </li>
+            <li Class="QuestNode_SubScript">
+              <def>Util_GenerateSite</def>
+              <parms>
+                <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+              </parms>
+            </li>
+            <li Class="QuestNode_SpawnWorldObjects">
+              <worldObjects>$site</worldObjects>
+              <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+            </li>
+            <li Class="QuestNode_WorldObjectTimeout">
+              <worldObject>$site</worldObject>
+              <isQuestTimeout>true</isQuestTimeout>
+              <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+              <inSignalDisable>site.MapGenerated</inSignalDisable>
+              <node Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </node>
+            </li>
+            <li Class="MinchoCandyWars.QuestStory.MissionNode">
+              <kind>6</kind>
+            </li>
+          </nodes>
+        </root>
+      </QuestScriptDef>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/GenStepDef[defName="MCW_BetaFluidOnAncientComplex"]/genStep</xpath>
+    <value>
+      <genStep Class="MinchoCandyWars.QuestStory.BetaSampleStep" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/GenStepDef[defName="MCW_RecycleHQ_Buildings"]/genStep</xpath>
+    <value>
+      <genStep Class="MinchoCandyWars.QuestStory.MissionBuildings">
+        <kind>6</kind>
+      </genStep>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AbilityDef[defName="MCW_AmberonCandyAbility_HardCandy"]/comps/li[@Class="CompProperties_AbilityGiveHediff"]</xpath>
+    <value>
+      <compClass>RimWorld.CompAbilityEffect_GiveHediff</compClass>
+    </value>
+  </Operation>
+</Patch>

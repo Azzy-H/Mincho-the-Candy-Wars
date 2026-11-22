@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RecipeDef[defName="Mincho_SupplementaryCoreAddSurgery"]</xpath>
+    <value><surgeryOutcomeEffect IsNull="True" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mincho_WeddingKnightlyCloak"]</xpath>
+    <value><equippedStatOffsets><Flammability>-0.75</Flammability></equippedStatOffsets></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MCW_RW_VrocanGatling_Formech"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="MinchoCandyWars.Review.ChildMechWeaponExtension">
+          <offsetNorth>(0,-0.16)</offsetNorth>
+          <offsetEast>(0,-0.16)</offsetEast>
+          <offsetSouth>(0,-0.16)</offsetSouth>
+          <offsetWest>(0,-0.16)</offsetWest>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+</Patch>

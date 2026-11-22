@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -23,8 +23,8 @@
   <!-- 站点部件：珉巧同盟据点 -->
   <SitePartDef>
     <defName>MCW_AllianceOutpost</defName>
-    <label>珉巧同盟据点</label>
-    <description>珉巧同盟的一个据点，正在遭到回收部队的袭击。</description>
+    <label>Mincho Alliance outpost</label>
+    <description>A Mincho Alliance outpost under attack by the reclamation force.</description>
     <workerClass>MinchoCandyWars.SitePartWorker_MCWAllianceOutpost</workerClass>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
     <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
@@ -50,7 +50,7 @@
   <IncidentDef>
     <defName>MCW_GiveQuest_QuestB5</defName>
     <category>GiveQuest</category>
-    <label>珉巧据点增援</label>
+    <label>Reinforce the Mincho outpost</label>
     <questScriptDef>MCW_QuestB5_AllianceOutpostDefense</questScriptDef>
     <workerClass>IncidentWorker_GiveQuest</workerClass>
     <baseChance>0</baseChance>
@@ -72,12 +72,14 @@
 
     <questNameRules>
       <rulesStrings>
-        <li>questName-&gt;珉巧据点增援</li>
+        <li>questName-&gt;Reinforce the Mincho outpost</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription-&gt;珉巧同盟的一个据点正在被回收部队袭击，我们必须立刻前往援助！\n\n据点距离你的殖民地很近，但留给我们的时间只有 2 天。</li>
+        <li>questDescription-&gt;A Mincho Alliance outpost is under attack by the reclamation force and we must help at once!
+
+The outpost is close to your colony, but we have only 2 days.</li>
       </rulesStrings>
     </questDescriptionRules>
 

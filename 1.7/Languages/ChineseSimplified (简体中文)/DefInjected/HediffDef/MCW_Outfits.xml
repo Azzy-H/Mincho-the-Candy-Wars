@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: 机械师装甲附加件 -->
-  <MCW_MechaArmor_AddonHediff.label>机械师装甲附加件</MCW_MechaArmor_AddonHediff.label>
-  <!-- EN: 机械师装甲的头部附加物与翅膀部件。 -->
+
+  <!-- EN: The head attachment and wing components of the mechanitor armor. -->
   <MCW_MechaArmor_AddonHediff.description>机械师装甲的头部附加物与翅膀部件。</MCW_MechaArmor_AddonHediff.description>
-  
+  <!-- EN: Mechanitor armor add-on -->
+  <MCW_MechaArmor_AddonHediff.label>机械师装甲附加件</MCW_MechaArmor_AddonHediff.label>
+
 </LanguageData>

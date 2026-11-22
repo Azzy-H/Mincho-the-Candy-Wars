@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -26,6 +26,7 @@ namespace MinchoCandyWars.Abilities.PrismCandy
         private IntVec3 end;
         private float radius;
         private int ticksRemaining;
+        private Faction? casterFaction;
 
         /// <summary>剑痕起点（施法者位置）。</summary>
         public IntVec3 StartPos => start;
@@ -49,11 +50,12 @@ namespace MinchoCandyWars.Abilities.PrismCandy
         /// <summary>是否已具备有效几何（未 Setup 时为 false，绘制应直接跳过）。</summary>
         public bool HasGeometry => start != end || radius > 0f;
 
-        public void Setup(IntVec3 start, IntVec3 end, float radius)
+        public void Setup(IntVec3 start, IntVec3 end, float radius, Faction casterFaction)
         {
             this.start = start;
             this.end = end;
             this.radius = radius;
+            this.casterFaction = casterFaction;
             this.ticksRemaining = Props.durationTicks;
         }
 
@@ -82,15 +84,15 @@ namespace MinchoCandyWars.Abilities.PrismCandy
 
             foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned)
             {
-                if (pawn.Dead || !PrismCandyAbilityUtility.IsPointInRange(pawn.Position, start, end, radius))
+                if (pawn.Dead || !pawn.HostileTo(casterFaction) || !PrismCandyAbilityUtility.IsPointInRange(pawn.Position, start, end, radius))
                 {
                     continue;
                 }
 
-                Hediff? hediff = pawn.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_PrismSwordSlowHediff);
+                Hediff? hediff = pawn.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_PrismSwordSlowHediff);
                 if (hediff == null)
                 {
-                    pawn.health.AddHediff(HediffMaker.MakeHediff(MCW_DefOf.MCW_PrismSwordSlowHediff, pawn));
+                    pawn.health.AddHediff(HediffMaker.MakeHediff(MCW_HediffDefOf.MCW_PrismSwordSlowHediff, pawn));
                 }
                 else
                 {
@@ -106,6 +108,7 @@ namespace MinchoCandyWars.Abilities.PrismCandy
             Scribe_Values.Look(ref end, "end");
             Scribe_Values.Look(ref radius, "radius", 0f);
             Scribe_Values.Look(ref ticksRemaining, "ticksRemaining", 0);
+            Scribe_References.Look(ref casterFaction, "casterFaction");
         }
     }
 }

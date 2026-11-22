@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Hello, my dear ally! This is the Mincho Alliance channel, and I am Qinxintang.\n\nHow have you been lately? Is your colony short of anything? -->
+  <MCW_Event_AllianceGreeting.desc>你好呀，我亲爱的盟友！这里是珉巧同盟的频道，我是沁心糖。\n\n最近过得怎么样？你们的殖民地还缺些什么吗？</MCW_Event_AllianceGreeting.desc>
+  <!-- EN: Contact the Mincho Alliance -->
+  <MCW_Event_AllianceGreeting.label>联络珉巧同盟</MCW_Event_AllianceGreeting.label>
+  <!-- EN: Ask whether the Mincho Alliance has anything for you to do. -->
+  <MCW_Event_AllianceGreeting.options.0.desc>询问珉巧同盟这边有什么需要你出手的事情。</MCW_Event_AllianceGreeting.options.0.desc>
+  <!-- EN: Is there anything I can help with? -->
+  <MCW_Event_AllianceGreeting.options.0.label>有什么可以帮忙的吗？</MCW_Event_AllianceGreeting.options.0.label>
+  <!-- EN: Ask whether the Mincho Alliance has anything needing urgent help. -->
+  <MCW_Event_AllianceGreeting.options.1.desc>询问珉巧同盟最近有没有需要紧急协助的事情。</MCW_Event_AllianceGreeting.options.1.desc>
+  <!-- EN: Any emergencies lately? -->
+  <MCW_Event_AllianceGreeting.options.1.label>最近有什么紧急情况吗？</MCW_Event_AllianceGreeting.options.1.label>
+  <!-- EN: End the call. -->
+  <MCW_Event_AllianceGreeting.options.10.desc>结束通话。</MCW_Event_AllianceGreeting.options.10.desc>
+  <!-- EN: Just saying hello; that is all for now. -->
+  <MCW_Event_AllianceGreeting.options.10.label>只是问候一下，先这样吧。</MCW_Event_AllianceGreeting.options.10.label>
+  <!-- EN: Ask about the Mincho Alliance next battle plan. -->
+  <MCW_Event_AllianceGreeting.options.2.desc>询问珉巧同盟接下来的作战计划。</MCW_Event_AllianceGreeting.options.2.desc>
+  <!-- EN: Let us deal with the reclamation company together! -->
+  <MCW_Event_AllianceGreeting.options.2.label>我们一起收拾回收公司吧！</MCW_Event_AllianceGreeting.options.2.label>
+  <!-- EN: Ask whether the Mincho Alliance knows anywhere worth visiting. -->
+  <MCW_Event_AllianceGreeting.options.3.desc>询问珉巧同盟有没有值得一去的地方。</MCW_Event_AllianceGreeting.options.3.desc>
+  <!-- EN: Is there anywhere worth exploring? -->
+  <MCW_Event_AllianceGreeting.options.3.label>有什么需要探索的地方吗？</MCW_Event_AllianceGreeting.options.3.label>
+  <!-- EN: A Mincho Alliance outpost is under attack; reinforce immediately. -->
+  <MCW_Event_AllianceGreeting.options.4.desc>珉巧同盟的据点正在遭到袭击，立刻增援。</MCW_Event_AllianceGreeting.options.4.desc>
+  <!-- EN: An emergency?! We are leaving at once! -->
+  <MCW_Event_AllianceGreeting.options.4.label>紧急情况？！我们立刻出发！</MCW_Event_AllianceGreeting.options.4.label>
+  <!-- EN: A subsidy you can claim at 30 goodwill, once every 10 days. -->
+  <MCW_Event_AllianceGreeting.options.5.desc>好感度达到 30 后可领取的资助，每 10 天一次。</MCW_Event_AllianceGreeting.options.5.desc>
+  <!-- EN: Claim the Mincho Alliance subsidy -->
+  <MCW_Event_AllianceGreeting.options.5.label>领取珉巧同盟的资助</MCW_Event_AllianceGreeting.options.5.label>
+  <!-- EN: At 50 goodwill you can buy candy ornament research blueprints with silver. -->
+  <MCW_Event_AllianceGreeting.options.6.desc>友好度达到50后，可用白银购买糖饰研究图纸。</MCW_Event_AllianceGreeting.options.6.desc>
+  <!-- EN: Look at the candy ornament research blueprints. -->
+  <MCW_Event_AllianceGreeting.options.6.label>看看糖饰研究图纸。</MCW_Event_AllianceGreeting.options.6.label>
+  <!-- EN: At 50 goodwill you can buy booster research blueprints with silver. -->
+  <MCW_Event_AllianceGreeting.options.7.desc>友好度达到50后，可用白银购买改造包研究图纸。</MCW_Event_AllianceGreeting.options.7.desc>
+  <!-- EN: Look at the booster research blueprints. -->
+  <MCW_Event_AllianceGreeting.options.7.label>看看改造包研究图纸。</MCW_Event_AllianceGreeting.options.7.label>
+  <!-- EN: At endgame progress 10 you can contact the Mincho Alliance to launch the decisive attack on the reclamation force headquarters. -->
+  <MCW_Event_AllianceGreeting.options.8.desc>终局进度达到 10 后，可以联络珉巧同盟发起对回收部队总部的决战。</MCW_Event_AllianceGreeting.options.8.desc>
+  <!-- EN: We are ready - begin the final operation! -->
+  <MCW_Event_AllianceGreeting.options.8.label>我们准备好了，开始终局行动吧！</MCW_Event_AllianceGreeting.options.8.label>
+  <!-- EN: After the reclamation force headquarters falls, Qinxintang wants to visit you in person. -->
+  <MCW_Event_AllianceGreeting.options.9.desc>击溃回收部队总部后，沁心糖想亲自来拜访你。</MCW_Event_AllianceGreeting.options.9.desc>
+  <!-- EN: You are welcome to visit any time! -->
+  <MCW_Event_AllianceGreeting.options.9.label>随时欢迎你来做客！</MCW_Event_AllianceGreeting.options.9.label>
+  <!-- EN: Qinxintang -->
+  <MCW_Event_AllianceGreeting.title>沁心糖</MCW_Event_AllianceGreeting.title>
+
+</LanguageData>

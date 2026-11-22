@@ -88,7 +88,7 @@ namespace MinchoCandyWars.Buildings
             if (!CanUseCommsNow)
             {
                 Log.Error(myPawn?.ToString() + " could not use comm console for unknown reason.");
-                return new FloatMenuOption("Cannot use now", null);
+                return new FloatMenuOption("MinchoCandyWars.Comms.UnavailableNow".Translate(), null);
             }
             return null!;
         }

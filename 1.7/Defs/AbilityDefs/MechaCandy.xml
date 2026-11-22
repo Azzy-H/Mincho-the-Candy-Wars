@@ -1,212 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <AbilityDef ParentName="AbilityTouchBase">
-        <defName>MCW_MechaCandyAbility_MechGestatorAcceleration</defName>
-        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
-        <label>mech gestator acceleration</label>
-        <description>TODO</description>
-        <iconPath>UI/Gizmos/Abilities/Mecha/MCW_MechGestatorAcceleration</iconPath>        <!-- TODO -->
-        <warmupStartSound>Coagulate_Cast</warmupStartSound>
-        <jobDef>CastAbilityOnThingMelee</jobDef>
-        <!--<category></category> TODO-->
-        <displayOrder>400</displayOrder>
-        <hostile>false</hostile>
-        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-        <cooldownTicksRange>30000</cooldownTicksRange>
-        <verbProperties>
-            <verbClass>Verb_CastAbilityTouch</verbClass>
-            <drawAimPie>false</drawAimPie>
-            <range>-1</range>
-            <warmupTime>1</warmupTime>
-            <targetParams>
-                <canTargetLocations>false</canTargetLocations>
-                <canTargetPawns>false</canTargetPawns>
-                <canTargetBuildings>true</canTargetBuildings>
-                <canTargetItems>false</canTargetItems>
-                <canTargetAnimals>false</canTargetAnimals>
-                <canTargetHumans>false</canTargetHumans>
-                <canTargetMechs>false</canTargetMechs>
-                <canTargetSelf>false</canTargetSelf>
-                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
-            </targetParams>
-        </verbProperties>
-        <comps>
-            <li>
-                <compClass>MinchoCandyWars.Abilities.MechaCandy.CompAbilityEffect_MechGestatorAcceleration</compClass>
-            </li>
-            <li Class="CompProperties_AbilityRequiresCapacity">                <!-- 需要操作能力 -->
-                <capacity>Manipulation</capacity>
-            </li>
-        </comps>
-        <modExtensions>
-            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>MechaCandy</candyType>
-                <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
-                <requiredMinchoBodyGrade>1</requiredMinchoBodyGrade>
-                <requiredMinchoCandyValue>30</requiredMinchoCandyValue>
-            </li>
-        </modExtensions>
-    </AbilityDef>
-
-    <AbilityDef>
-        <defName>MCW_MechaCandyAbility_EMPBolt</defName>
-        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
-        <label>EMP bolt</label>
-        <description>TODO</description>
-        
-        <comps>
-            <li Class="CompProperties_AbilityLaunchProjectile">
-                <projectileDef>MCW_MechaCandyAbility_EMPBolt</projectileDef>
-            </li>
-        </comps>
-        <iconPath>UI/Gizmos/Abilities/Mecha/MCW_EMPBolt</iconPath>
-        <cooldownTicksRange>5000</cooldownTicksRange>
-        <aiCanUse>true</aiCanUse>
-        <displayOrder>300</displayOrder>
-        <category>Sanguophage</category>
-        <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
-        <verbProperties>
-            <verbClass>Verb_CastAbility</verbClass>
-            <range>12</range>
-            <warmupTime>1</warmupTime>
-            <targetParams>
-                <canTargetLocations>true</canTargetLocations>
-            </targetParams>
-        </verbProperties>
-        <modExtensions>
-            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>MechaCandy</candyType>
-                <requiredMinchoCoreGrade>2</requiredMinchoCoreGrade>
-                <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
-                <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
-            </li>
-        </modExtensions>
-    </AbilityDef>
-
-    <ThingDef ParentName="BaseBullet">
-        <defName>MCW_MechaCandyAbility_EMPBolt</defName>
-        <label>EMPBolt</label>
-        <graphicData>
-            <texPath>Things/Projectile/Bullet_Big</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <shaderType>TransparentPostLight</shaderType>
-            <drawSize>2</drawSize>
-        </graphicData>
-        <thingClass>MinchoCandyWars.Projectiles.Projectile_Explosive_NoFriendlyFire</thingClass>
-        <projectile>
-            <speed>70</speed>
-            <damageDef>EMP</damageDef>
-            <damageAmountBase>25</damageAmountBase>
-            <armorPenetrationBase>0.4</armorPenetrationBase>
-            <explosionRadius>3</explosionRadius>
-            <ai_IsIncendiary>true</ai_IsIncendiary>
-            <arcHeightFactor>0.2</arcHeightFactor>
-            <shadowSize>0.6</shadowSize>
-        </projectile>
-    </ThingDef>
-
-    <AbilityDef>
-        <defName>MCW_MechaCandyAbility_MechHack</defName>
-        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
-        <label>MechHack</label>
-        <description>TODO</description>
-        <comps>
-            <li>
-                <compClass>MinchoCandyWars.Abilities.MechaCandy.CompAbilityEffect_MechHack</compClass>
-            </li>
-        </comps>
-        <iconPath>UI/Gizmos/Abilities/Mecha/MCW_MechHack</iconPath>
-        <cooldownTicksRange>60000</cooldownTicksRange>
-        <aiCanUse>true</aiCanUse>
-        <displayOrder>300</displayOrder>
-        <category>Sanguophage</category>
-        <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
-        <verbProperties>
-            <verbClass>Verb_CastAbility</verbClass>
-            <range>7</range>
-            <warmupTime>5</warmupTime>
-            <targetParams>
-                <canTargetLocations>false</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>false</canTargetBuildings>
-                <canTargetItems>false</canTargetItems>
-                <canTargetAnimals>false</canTargetAnimals>
-                <canTargetHumans>false</canTargetHumans>
-                <canTargetMechs>true</canTargetMechs>
-                <canTargetSelf>false</canTargetSelf>
-                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
-            </targetParams>
-        </verbProperties>
-        <modExtensions>
-            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>MechaCandy</candyType>
-                <requiredMinchoCoreGrade>4</requiredMinchoCoreGrade>
-                <requiredMinchoBodyGrade>2</requiredMinchoBodyGrade>
-                <requiredMinchoCandyValue>250</requiredMinchoCandyValue>
-            </li>
-        </modExtensions>
-    </AbilityDef>
-
-    <AbilityDef>
-        <defName>MCW_MechaCandyAbility_MechBoost</defName>
-        <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
-        <label>MechBoost</label>
-        <description>TODO</description>
-        <jobDef>CastAbilityOnThingMelee</jobDef>
-        <comps>
-            <li>
-                <compClass>MinchoCandyWars.Abilities.MechaCandy.CompAbilityEffect_MechBoost</compClass>
-            </li>
-        </comps>
-        <iconPath>UI/Gizmos/Abilities/Mecha/MCW_MechBoost</iconPath>
-        <cooldownTicksRange>2500</cooldownTicksRange>
-        <aiCanUse>true</aiCanUse>
-        <displayOrder>300</displayOrder>
-        <category>Sanguophage</category>
-        <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
-        <verbProperties>
-            <verbClass>Verb_CastAbilityTouch</verbClass>
-            <drawAimPie>false</drawAimPie>
-            <range>-1</range>
-            <warmupTime>1</warmupTime>
-            <targetParams>
-                <canTargetLocations>false</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>false</canTargetBuildings>
-                <canTargetItems>false</canTargetItems>
-                <canTargetAnimals>false</canTargetAnimals>
-                <canTargetHumans>false</canTargetHumans>
-                <canTargetMechs>true</canTargetMechs>
-                <canTargetSelf>false</canTargetSelf>
-                <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
-            </targetParams>
-        </verbProperties>
-        <modExtensions>
-            <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
-                <candyType>MechaCandy</candyType>
-                <requiredMinchoCoreGrade>4</requiredMinchoCoreGrade>
-                <requiredMinchoBodyGrade>5</requiredMinchoBodyGrade>
-                <requiredMinchoCandyValue>400</requiredMinchoCandyValue>
-            </li>
-        </modExtensions>
-    </AbilityDef>
-
-<HediffDef>
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>MCW_MechaCandyAbility_MechGestatorAcceleration</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>mech gestator acceleration</label>
+    <description>Instantly completes the mechanoid currently being formed in a mech gestator.</description>
+    <iconPath>UI/Gizmos/Abilities/Mecha/MCW_MechGestatorAcceleration</iconPath>
+    <!-- TODO -->
+    <warmupStartSound>Coagulate_Cast</warmupStartSound>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <!--<category></category> TODO-->
+    <displayOrder>400</displayOrder>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>1</warmupTime>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetSelf>false</canTargetSelf>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li>
+        <compClass>MinchoCandyWars.Abilities.MechaCandy.CompAbilityEffect_MechGestatorAcceleration</compClass>
+      </li>
+      <li Class="CompProperties_AbilityRequiresCapacity">
+        <!-- 需要操作能力 -->
+        <capacity>Manipulation</capacity>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>MechaCandy</candyType>
+        <requiredMinchoCoreGrade>1</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>1</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>30</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+  <AbilityDef>
+    <defName>MCW_MechaCandyAbility_EMPBolt</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>EMPBolt</label>
+    <description>Lobs an EMP bolt at an area, stunning hostile mechanoids inside it. The stun lasts longer at higher total grade.</description>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>MCW_MechaCandyAbility_EMPBolt</projectileDef>
+      </li>
+    </comps>
+    <iconPath>UI/Gizmos/Abilities/Mecha/MCW_EMPBolt</iconPath>
+    <cooldownTicksRange>5000</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <displayOrder>300</displayOrder>
+    <category>Sanguophage</category>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>12</range>
+      <warmupTime>1</warmupTime>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>MechaCandy</candyType>
+        <requiredMinchoCoreGrade>2</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>3</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>50</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>MCW_MechaCandyAbility_EMPBolt</defName>
+    <label>EMPBolt</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <thingClass>MinchoCandyWars.Projectiles.Projectile_Explosive_NoFriendlyFire</thingClass>
+    <projectile>
+      <speed>70</speed>
+      <damageDef>EMP</damageDef>
+      <damageAmountBase>25</damageAmountBase>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+      <explosionRadius>3</explosionRadius>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+    <description>Lobs an EMP bolt at an area, stunning hostile mechanoids inside it. The stun lasts longer at higher total grade.</description>
+  </ThingDef>
+  <AbilityDef>
+    <defName>MCW_MechaCandyAbility_MechHack</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>MechHack</label>
+    <description>Severs an enemy mechanoid's link. A friendly mechanitor can then take control of it.</description>
+    <comps>
+      <li>
+        <compClass>MinchoCandyWars.Abilities.MechaCandy.CompAbilityEffect_MechHack</compClass>
+      </li>
+    </comps>
+    <iconPath>UI/Gizmos/Abilities/Mecha/MCW_MechHack</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <displayOrder>300</displayOrder>
+    <category>Sanguophage</category>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>7</range>
+      <warmupTime>5</warmupTime>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetSelf>false</canTargetSelf>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>MechaCandy</candyType>
+        <requiredMinchoCoreGrade>4</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>2</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>250</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+  <AbilityDef>
+    <defName>MCW_MechaCandyAbility_MechBoost</defName>
+    <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
+    <label>MechBoost</label>
+    <description>Merges the caster into a friendly mechanoid, greatly boosting its performance. Can be exited at will, or ends when the mechanoid goes down or dies.</description>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <comps>
+      <li>
+        <compClass>MinchoCandyWars.Abilities.MechaCandy.CompAbilityEffect_MechBoost</compClass>
+      </li>
+    </comps>
+    <iconPath>UI/Gizmos/Abilities/Mecha/MCW_MechBoost</iconPath>
+    <cooldownTicksRange>2500</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <displayOrder>300</displayOrder>
+    <category>Sanguophage</category>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>1</warmupTime>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetSelf>false</canTargetSelf>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="MinchoCandyWars.Abilities.MinchoAbilityDefModExtension">
+        <candyType>MechaCandy</candyType>
+        <requiredMinchoCoreGrade>4</requiredMinchoCoreGrade>
+        <requiredMinchoBodyGrade>5</requiredMinchoBodyGrade>
+        <requiredMinchoCandyValue>400</requiredMinchoCandyValue>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+  <HediffDef>
     <defName>MCW_MechBoost</defName>
     <label>MechBoost</label>
     <description>MechBoost</description>
     <stages>
       <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.8</offset>
+          </li>
+        </capMods>
         <statFactors>
           <Flammability>0</Flammability>
+          <MoveSpeed>1.8</MoveSpeed>
+          <MeleeDodgeChance>1.8</MeleeDodgeChance>
+          <AimingDelayFactor>0.5555556</AimingDelayFactor>
         </statFactors>
       </li>
     </stages>
     <isBad>false</isBad>
     <hediffClass>MinchoCandyWars.Abilities.MechaCandy.Hediff_MechBoost</hediffClass>
   </HediffDef>
-
-    <!--    <!~~ 工作台加速 ~~>
+  <!--    <!~~ 工作台加速 ~~>
     <AbilityDef ParentName="AbilityTouchBase">
         <defName>MCW_MechaCandyAbility_WorkbenchAcceleration</defName>
         <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
@@ -256,5 +261,4 @@
             </li>
         </modExtensions>
     </AbilityDef>-->
-
 </Defs>

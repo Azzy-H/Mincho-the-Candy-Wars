@@ -1,24 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+  <!-- EN: A cozy bed tailored for Mincho. -->
+  <MCW_MinchoBed.description>柔软床褥藏在甜点般的床架里。忙碌一天后，珉巧终于可以把自己摊成最舒服的样子。</MCW_MinchoBed.description>
   <!-- EN: mincho bed -->
   <MCW_MinchoBed.label>珉巧床</MCW_MinchoBed.label>
-  <!-- EN: A cozy bed tailored for Mincho. -->
-  <MCW_MinchoBed.description>为珉巧量身定做的舒适小床。</MCW_MinchoBed.description>
-  
+  <!-- EN: A cozy double bed tailored for Mincho. -->
+  <MCW_MinchoDoubleBed.description>为两位珉巧准备的柔软大床。薄荷甜香萦绕枕边，连梦里也不必独自度过漫长的寒夜。</MCW_MinchoDoubleBed.description>
   <!-- EN: mincho double bed -->
   <MCW_MinchoDoubleBed.label>珉巧双人床</MCW_MinchoDoubleBed.label>
-  <!-- EN: A cozy double bed tailored for Mincho. -->
-  <MCW_MinchoDoubleBed.description>为珉巧量身定做的舒适双人床。</MCW_MinchoDoubleBed.description>
-  
+  <!-- EN: A luxurious bed tailored for Mincho. -->
+  <MCW_MinchoLuxuryBed.description>精致饰边围着蓬松床褥，像一份认真装点过的甜点。珉巧躺下时，常常舍不得立刻闭上眼睛。</MCW_MinchoLuxuryBed.description>
   <!-- EN: luxury mincho bed -->
   <MCW_MinchoLuxuryBed.label>豪华珉巧床</MCW_MinchoLuxuryBed.label>
-  <!-- EN: A luxurious bed tailored for Mincho. -->
-  <MCW_MinchoLuxuryBed.description>为珉巧量身定做的豪华小床。</MCW_MinchoLuxuryBed.description>
-  
+  <!-- EN: A luxurious double bed tailored for Mincho. -->
+  <MCW_MinchoLuxuryDoubleBed.description>宽大的床褥与细致饰边相互映衬。这里容得下两位珉巧，也容得下一整夜说不完的悄悄话。</MCW_MinchoLuxuryDoubleBed.description>
   <!-- EN: luxury mincho double bed -->
   <MCW_MinchoLuxuryDoubleBed.label>豪华珉巧双人床</MCW_MinchoLuxuryDoubleBed.label>
-  <!-- EN: A luxurious double bed tailored for Mincho. -->
-  <MCW_MinchoLuxuryDoubleBed.description>为珉巧量身定做的豪华双人床。</MCW_MinchoLuxuryDoubleBed.description>
-  
 </LanguageData>

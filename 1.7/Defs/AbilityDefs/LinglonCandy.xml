@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 
@@ -6,8 +6,8 @@
   <AbilityDef>
     <defName>MCW_LinglonCandyAbility_AmoebaBoon</defName>
     <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
-    <label>Amoeba Boon</label>
-    <description>Toggles an aura that grants +20% consciousness to all Mincho on the map, draining candy value every hour.</description>
+    <label>Nanoamoeba boon</label>
+    <description>While active, grants +20% consciousness to all Mincho on the map and consumes cooling reserve each in-game hour.</description>
     <iconPath>UI/Gizmos/Abilities/Linglon/MCW_AmoebaBoon</iconPath>
     <hostile>false</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -42,8 +42,8 @@
   <AbilityDef>
     <defName>MCW_LinglonCandyAbility_AmoebaMutation</defName>
     <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
-    <label>Amoeba Mutation</label>
-    <description>Learns a random available psycast.</description>
+    <label>Nanoamoeba mutation</label>
+    <description>Learn a random available psycast.</description>
     <iconPath>UI/Gizmos/Abilities/Linglon/MCW_AmoebaMutation</iconPath>
     <hostile>false</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>

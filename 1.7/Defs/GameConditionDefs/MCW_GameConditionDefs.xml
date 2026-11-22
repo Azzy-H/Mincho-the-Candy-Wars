@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <GameConditionDef>
     <defName>MCW_MannaHeartCondition</defName>
@@ -6,6 +6,7 @@
     <description>The soothing presence of a Manna Candy brings peace to everyone on the map.</description>
     <conditionClass>MinchoCandyWars.Abilities.NectarCandy.GameCondition_MannaHeart</conditionClass>
     <canBePermanent>true</canBePermanent>
+    <displayOnUI>false</displayOnUI>
   </GameConditionDef>
   <GameConditionDef>
     <defName>MCW_LinglonAuraCondition</defName>
@@ -13,5 +14,6 @@
     <description>A Linglon Candy suppresses the minds of nearby enemies.</description>
     <conditionClass>MinchoCandyWars.Abilities.LinglonCandy.GameCondition_LinglonAura</conditionClass>
     <canBePermanent>true</canBePermanent>
+    <displayOnUI>false</displayOnUI>
   </GameConditionDef>
 </Defs>

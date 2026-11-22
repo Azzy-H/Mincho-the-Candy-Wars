@@ -1,4 +1,4 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using UnityEngine;
 using Verse;
 
@@ -10,6 +10,6 @@ public static class CandyCaneColor
 {
     public static void Postfix(BuildableDef __instance, ref Color __result)
     {
-        if (__instance == MCW_DefOf.MCW_MW_CandyCane) __result = Color.white;
+        if (__instance == MCW_ThingDefOf.MCW_MW_CandyCane) __result = Color.white;
     }
 }

@@ -13,7 +13,7 @@ namespace MinchoCandyWars.Abilities.LinglonCandy
     {
         public override bool GizmoDisabled(out string reason)
         {
-            if (!TryFindAvailablePsycast(parent.pawn, out _))
+            if (!AvailablePsycasts(parent.pawn).Any())
             {
                 reason = "MinchoCandyWars.Abilities.AmoebaMutationNoAvailable".Translate();
                 return true;
@@ -26,27 +26,21 @@ namespace MinchoCandyWars.Abilities.LinglonCandy
         {
             base.Apply(target, dest);
 
-            if (TryFindAvailablePsycast(parent.pawn, out AbilityDef psycastDef))
+            if (AvailablePsycasts(parent.pawn).TryRandomElement(out AbilityDef psycastDef))
             {
                 parent.pawn.abilities.GainAbility(psycastDef);
             }
         }
 
-        private bool TryFindAvailablePsycast(Pawn pawn, out AbilityDef psycastDef)
+        private static IEnumerable<AbilityDef> AvailablePsycasts(Pawn pawn)
         {
             int psylinkLevel = pawn.GetPsylinkLevel();
-            List<AbilityDef> candidates = DefDatabase<AbilityDef>.AllDefsListForReading
-                .Where(a => a.IsPsycast && a.level <= psylinkLevel && !pawn.abilities.abilities.Any(x => x.def == a))
-                .ToList();
+            if (psylinkLevel <= 0 || pawn.abilities == null)
+                return Enumerable.Empty<AbilityDef>();
 
-            if (candidates.Count == 0)
-            {
-                psycastDef = null!;
-                return false;
-            }
-
-            psycastDef = candidates.RandomElement();
-            return true;
+            return DefDatabase<AbilityDef>.AllDefsListForReading.Where(def =>
+                def.IsPsycast && def.level > 0 && def.level <= psylinkLevel &&
+                !pawn.abilities.abilities.Any(ability => ability.def == def));
         }
     }
 }

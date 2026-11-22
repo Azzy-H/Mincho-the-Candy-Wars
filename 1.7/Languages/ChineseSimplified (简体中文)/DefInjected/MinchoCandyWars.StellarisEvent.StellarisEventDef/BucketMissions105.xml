@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: 珉巧冰淇淋桶飞行器受损迫降。保护2—4名乘员，约4小时后追兵抵达、8小时后接应飞行器抵达。请在其12小时等候期内护送所有乘员登机；接应飞行器实际载齐离开才算成功。乘员死亡、漏载、接应飞行器被毁或遗弃、放弃地图均失败。迫降残骸不能直接飞走。 -->
+  <MCWQ101_Event12.desc>珉巧冰淇淋桶飞行器受损迫降。保护2—4名乘员，约4小时后追兵抵达、8小时后接应飞行器抵达。请在其12小时等候期内护送所有乘员登机；接应飞行器实际载齐离开才算成功。乘员死亡、漏载、接应飞行器被毁或遗弃、放弃地图均失败。迫降残骸不能直接飞走。</MCWQ101_Event12.desc>
+  <!-- EN: 冰淇淋桶飞行器迫降 -->
+  <MCWQ101_Event12.label>冰淇淋桶飞行器迫降</MCWQ101_Event12.label>
+  <!-- EN: 我们来接应。 -->
+  <MCWQ101_Event12.options.0.label>我们来接应。</MCWQ101_Event12.options.0.label>
+  <!-- EN: 这次无法安排。 -->
+  <MCWQ101_Event12.options.1.label>这次无法安排。</MCWQ101_Event12.options.1.label>
+  <!-- EN: 先等我们准备一下。 -->
+  <MCWQ101_Event12.options.2.label>先等我们准备一下。</MCWQ101_Event12.options.2.label>
+  <!-- EN: 琥珀糖 -->
+  <MCWQ101_Event12.title>琥珀糖</MCWQ101_Event12.title>
+  <!-- EN: 同盟有一桶来历不明的薄荷冰淇淋，希望交给你们保管。接受后，货物将通过空投舱送达。请妥善接收，等待同盟确认。 -->
+  <MCWQ101_Event13.desc>同盟有一桶来历不明的薄荷冰淇淋，希望交给你们保管。接受后，货物将通过空投舱送达。请妥善接收，等待同盟确认。</MCWQ101_Event13.desc>
+  <!-- EN: 神秘冰淇淋货物 -->
+  <MCWQ101_Event13.label>神秘冰淇淋货物</MCWQ101_Event13.label>
+  <!-- EN: 我们愿意接收，知道它有风险。 -->
+  <MCWQ101_Event13.options.0.label>我们愿意接收，知道它有风险。</MCWQ101_Event13.options.0.label>
+  <!-- EN: 这次无法安排。 -->
+  <MCWQ101_Event13.options.1.label>这次无法安排。</MCWQ101_Event13.options.1.label>
+  <!-- EN: 先等我们准备一下。 -->
+  <MCWQ101_Event13.options.2.label>先等我们准备一下。</MCWQ101_Event13.options.2.label>
+  <!-- EN: 甘露糖 -->
+  <MCWQ101_Event13.title>甘露糖</MCWQ101_Event13.title>
+</LanguageData>

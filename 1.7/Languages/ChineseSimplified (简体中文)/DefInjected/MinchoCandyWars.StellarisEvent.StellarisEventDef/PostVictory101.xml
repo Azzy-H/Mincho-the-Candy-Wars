@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: 同伴口味会 -->
+  <MCWQ101_Event10.desc>同伴口味会</MCWQ101_Event10.desc>
+  <!-- EN: 同伴口味会 -->
+  <MCWQ101_Event10.label>同伴口味会</MCWQ101_Event10.label>
+  <!-- EN: 我们来准备。 -->
+  <MCWQ101_Event10.options.0.label>我们来准备。</MCWQ101_Event10.options.0.label>
+  <!-- EN: 这次无法安排。（同盟友好度-10） -->
+  <MCWQ101_Event10.options.1.label>这次无法安排。（同盟友好度-10）</MCWQ101_Event10.options.1.label>
+  <!-- EN: 先等我们检查一下。 -->
+  <MCWQ101_Event10.options.2.label>先等我们检查一下。</MCWQ101_Event10.options.2.label>
+  <!-- EN: 玲珑糖 -->
+  <MCWQ101_Event10.title>玲珑糖</MCWQ101_Event10.title>
+  <!-- EN: 机械装配支援 -->
+  <MCWQ101_Event11.desc>机械装配支援</MCWQ101_Event11.desc>
+  <!-- EN: 机械装配支援 -->
+  <MCWQ101_Event11.label>机械装配支援</MCWQ101_Event11.label>
+  <!-- EN: 我们来准备。 -->
+  <MCWQ101_Event11.options.0.label>我们来准备。</MCWQ101_Event11.options.0.label>
+  <!-- EN: 这次无法安排。（同盟友好度-10） -->
+  <MCWQ101_Event11.options.1.label>这次无法安排。（同盟友好度-10）</MCWQ101_Event11.options.1.label>
+  <!-- EN: 先等我们检查一下。 -->
+  <MCWQ101_Event11.options.2.label>先等我们检查一下。</MCWQ101_Event11.options.2.label>
+  <!-- EN: 千机糖 -->
+  <MCWQ101_Event11.title>千机糖</MCWQ101_Event11.title>
+  <!-- EN: 沁心糖：接下来的安置需要一些用品。不是出征，这次能不能帮我们凑一批巧克力棒？我们会另留一批物资作交换。 -->
+  <MCWQ101_Event7.desc>沁心糖：接下来的安置需要一些用品。不是出征，这次能不能帮我们凑一批巧克力棒？我们会另留一批物资作交换。</MCWQ101_Event7.desc>
+  <!-- EN: 物资安置 -->
+  <MCWQ101_Event7.label>物资安置</MCWQ101_Event7.label>
+  <!-- EN: 我们来准备。 -->
+  <MCWQ101_Event7.options.0.label>我们来准备。</MCWQ101_Event7.options.0.label>
+  <!-- EN: 这次无法安排。 -->
+  <MCWQ101_Event7.options.1.label>这次无法安排。</MCWQ101_Event7.options.1.label>
+  <!-- EN: 先等我们检查一下。 -->
+  <MCWQ101_Event7.options.2.label>先等我们检查一下。</MCWQ101_Event7.options.2.label>
+  <!-- EN: 沁心糖 -->
+  <MCWQ101_Event7.title>沁心糖</MCWQ101_Event7.title>
+  <!-- EN: 玲珑糖：这次不打架，来帮我们办个小小的口味会？先凑一批美味曲奇饼。名字我来想，数目你可得帮我看准。 -->
+  <MCWQ101_Event8.desc>玲珑糖：这次不打架，来帮我们办个小小的口味会？先凑一批美味曲奇饼。名字我来想，数目你可得帮我看准。</MCWQ101_Event8.desc>
+  <!-- EN: 日常协助 -->
+  <MCWQ101_Event8.label>日常协助</MCWQ101_Event8.label>
+  <!-- EN: 我们来准备。 -->
+  <MCWQ101_Event8.options.0.label>我们来准备。</MCWQ101_Event8.options.0.label>
+  <!-- EN: 这次无法安排。 -->
+  <MCWQ101_Event8.options.1.label>这次无法安排。</MCWQ101_Event8.options.1.label>
+  <!-- EN: 先等我们检查一下。 -->
+  <MCWQ101_Event8.options.2.label>先等我们检查一下。</MCWQ101_Event8.options.2.label>
+  <!-- EN: 玲珑糖 -->
+  <MCWQ101_Event8.title>玲珑糖</MCWQ101_Event8.title>
+  <!-- EN: 琉璃糖：找到一处残留据点。总部断了联络，这支小队还没有散。守军有限，我把位置发来。愿意一起清掉吗？ -->
+  <MCWQ101_Event9.desc>琉璃糖：找到一处残留据点。总部断了联络，这支小队还没有散。守军有限，我把位置发来。愿意一起清掉吗？</MCWQ101_Event9.desc>
+  <!-- EN: 清缴残党 -->
+  <MCWQ101_Event9.label>清缴残党</MCWQ101_Event9.label>
+  <!-- EN: 把坐标发来，我们出发。 -->
+  <MCWQ101_Event9.options.0.label>把坐标发来，我们出发。</MCWQ101_Event9.options.0.label>
+  <!-- EN: 这次无法安排。 -->
+  <MCWQ101_Event9.options.1.label>这次无法安排。</MCWQ101_Event9.options.1.label>
+  <!-- EN: 先等我们检查一下。 -->
+  <MCWQ101_Event9.options.2.label>先等我们检查一下。</MCWQ101_Event9.options.2.label>
+  <!-- EN: 琉璃糖 -->
+  <MCWQ101_Event9.title>琉璃糖</MCWQ101_Event9.title>
+</LanguageData>

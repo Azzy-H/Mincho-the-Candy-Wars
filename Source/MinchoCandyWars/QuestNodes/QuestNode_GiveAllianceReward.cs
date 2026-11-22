@@ -36,9 +36,9 @@ namespace MinchoCandyWars.QuestNodes
         public SlateRef<int> pickCount = 4;
 
         /// <summary>财富换算系数：rewardValue = wealth * this（夹在 minValue~maxValue）。</summary>
-        public SlateRef<float> wealthFactor = 0.015f;
-        public SlateRef<float> minValue = 300f;
-        public SlateRef<float> maxValue = 3000f;
+        public SlateRef<float> wealthFactor = 0.006f;
+        public SlateRef<float> minValue = 150f;
+        public SlateRef<float> maxValue = 1200f;
 
         private const string MintchocoDefName = "Mincho_Mintchoco";
         private const string MintchocoBlocksDefName = "Mincho_BlocksMintchoco";

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Incubate a Mincho golem mechanoid. -->
+  <MCW_Mech_Golem_Recipe.description>培育一个珉巧魔像机械体。</MCW_Mech_Golem_Recipe.description>
+  <!-- EN: Gestating mech. -->
+  <MCW_Mech_Golem_Recipe.jobString>正在培育机械体。</MCW_Mech_Golem_Recipe.jobString>
+  <!-- EN: Incubate Mincho golem -->
+  <MCW_Mech_Golem_Recipe.label>培育珉巧魔像</MCW_Mech_Golem_Recipe.label>
+  <!-- EN: Resurrect a friendly Mincho golem, provided its remains have not been completely destroyed. -->
+  <MCW_ResurrectGolem.description>复活一个友方珉巧魔像。前提是机械体的残骸未被完全摧毁。</MCW_ResurrectGolem.description>
+  <!-- EN: Resurrecting mech. -->
+  <MCW_ResurrectGolem.jobString>正在复活机械体。</MCW_ResurrectGolem.jobString>
+  <!-- EN: Resurrect Mincho golem -->
+  <MCW_ResurrectGolem.label>复活珉巧魔像</MCW_ResurrectGolem.label>
+
+</LanguageData>

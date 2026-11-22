@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
@@ -31,7 +31,7 @@ namespace MinchoCandyWars
         {
             base.Notify_GeneratedByQuestGen(part, slate, outExtraDescriptionRules, outExtraDescriptionConstants);
 
-            PawnKindDef kind = DefDatabase<PawnKindDef>.GetNamed(SmartMinchoKindDefName, errorOnFail: false);
+            PawnKindDef kind = MCW_DefOf.MCW_SmartMincho;
             if (kind == null)
             {
                 Log.Warning("[MCW] SitePartWorker_SmartMinchoRescue: 找不到 PawnKindDef " + SmartMinchoKindDefName);

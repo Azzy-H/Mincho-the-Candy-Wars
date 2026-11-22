@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 using System.Linq;
 
@@ -29,7 +29,7 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
 
         private static bool IsMinchoPawn(Pawn p)
         {
-            return p.def == MCW_DefOf.Mincho_ThingDef || p.kindDef == MCW_DefOf.MCW_MinchoSlime;
+            return p.def == MCW_ThingDefOf.Mincho_ThingDef || p.def == MCW_ThingDefOf.MCW_MinchoSlime;
         }
     }
 }

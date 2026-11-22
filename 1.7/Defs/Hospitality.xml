@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <QuestScriptDef>
+    <defName>MCWQ097_Hospitality</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <hideInvolvedFactionsInfo>true</hideInvolvedFactionsInfo>
+    <isRootSpecial>true</isRootSpecial>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName-&gt;Take in the Mincho</li>
+      </rulesStrings>
+    </questNameRules>
+    <root Class="MinchoCandyWars.QuestStory.RefugeeRoot" />
+    <epicParent>MCWQ100_AllianceSeries</epicParent>
+  </QuestScriptDef>
+  <QuestScriptDef>
+    <defName>MCWQ100_AllianceSeries</defName>
+    <epic>true</epic>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName-&gt;Mincho Alliance</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-&gt;The Mincho Alliance quest series. Contact the alliance, shelter companions, rescue and explore, advancing the headquarters operations step by step; after victory, continue settling, researching and helping day to day.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes />
+    </root>
+  </QuestScriptDef>
+  <LetterDef>
+    <defName>MCWQ097_ContactLetter</defName>
+    <letterClass>MinchoCandyWars.QuestStory.ContactLetter</letterClass>
+    <color>(175, 210, 200)</color>
+    <flashColor>(160, 220, 210)</flashColor>
+    <flashInterval>90</flashInterval>
+    <arriveSound>LetterArrive</arriveSound>
+  </LetterDef>
+</Defs>

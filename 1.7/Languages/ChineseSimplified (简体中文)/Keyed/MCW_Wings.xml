@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Requires humanlike Mincho wearing mechanitor armor or a Mincho space suit. -->
+  <MCW_Wings_CantWear>TODO</MCW_Wings_CantWear>
+  <!-- EN: The wings were removed because their wear requirements are no longer met. -->
+  <MCW_Wings_ForceDrop>TODO</MCW_Wings_ForceDrop>
+</LanguageData>

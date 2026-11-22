@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -29,7 +29,7 @@ public static class FrozenDevilstrandGrowth
 
     public static void Postfix(Plant __instance, ref float __result)
     {
-        if (__instance.def == MCW_DefOf.MCW_Frozen_Devilstrand_Plant && __instance.Spawned)
+        if (__instance.def == MCW_ThingDefOf.MCW_Frozen_Devilstrand_Plant && __instance.Spawned)
         {
             __result *= ColdBoost(__instance.AmbientTemperature);
         }

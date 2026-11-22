@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Blend chocolate and Mincho ice cream into a rich cup of cocoa chocolate milk tea. -->
+  <MCW_MakeCocoaMilkTea.description>将巧克力与珉巧冰淇淋调制成一杯浓郁的可可巧克力奶茶。</MCW_MakeCocoaMilkTea.description>
+  <!-- EN: Making cocoa chocolate milk tea. -->
+  <MCW_MakeCocoaMilkTea.jobString>正在制作可可巧克力奶茶。</MCW_MakeCocoaMilkTea.jobString>
+  <!-- EN: Make cocoa chocolate milk tea -->
+  <MCW_MakeCocoaMilkTea.label>制作可可巧克力奶茶</MCW_MakeCocoaMilkTea.label>
+</LanguageData>

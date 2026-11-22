@@ -86,6 +86,14 @@ namespace MinchoCandyWars
             }
         }
 
+        internal void NotifyDraftChanged(Pawn pawn)
+        {
+            wearer = pawn;
+            wasDraftedLastCheck = pawn.Drafted;
+            shieldRaised = true;
+            UpdateShieldState();
+        }
+
         /// <summary>确保同一时间只持有一个本系统的盾牌（服装或武器）。</summary>
         private void TryUnequipExistingShield(Pawn pawn)
         {

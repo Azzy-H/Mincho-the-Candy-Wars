@@ -1,0 +1,33 @@
+<Defs><AbilityDef>
+		<defName>MCW_BoostGolemJump</defName>
+		<abilityClass>MinchoCandyWars.Abilities.MechaCandy.BoostGolemAbility</abilityClass><label>Golem leap attack</label>
+		<description>Available while a mecha candy pilot is aboard. Leap at the target and raise an ice cream wall where you land.</description>
+		<cooldownTicksRange>10000</cooldownTicksRange>
+		<iconPath>UI/Gizmos/Abilities/Mecha/MCW_BoostGolemJump</iconPath>
+		<aiCanUse>false</aiCanUse>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		<verbProperties Class="Mincho_The_Mint_Choco_Slime.VerbProperties_JumpAttack">
+			<verbClass>MinchoCandyWars.Abilities.MechaCandy.Verb_BoostGolemJump</verbClass>
+			<label>jump</label>
+			<violent>true</violent>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0.5</warmupTime>
+			<range>9.9</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>Longjump_Jump</soundCast>
+			<soundLanding>Longjump_Land</soundLanding>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+			<abilityDef>MCW_BoostGolemJump</abilityDef>
+			<pawnFlyerOverrideDef>Mincho_PawnJumpAttack</pawnFlyerOverrideDef>
+			<radius>4</radius>
+			<wallDef>Mincho_DummyWallBlocker</wallDef>
+			<landingPositionSpawnThingDef>Mincho_DummyForWall</landingPositionSpawnThingDef>
+		</verbProperties>
+		<jobDef>CastJump</jobDef>
+	<charges>3</charges><cooldownPerCharge>true</cooldownPerCharge><comps><li Class="CompProperties_AbilityEffect"><compClass>MinchoCandyWars.Abilities.MechaCandy.BoostGolemJumpCheck</compClass></li></comps></AbilityDef>
+	</Defs>

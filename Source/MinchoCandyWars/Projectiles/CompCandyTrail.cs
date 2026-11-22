@@ -23,7 +23,7 @@ public class CompProperties_CandyTrail : CompProperties
 /// </summary>
 public class CompCandyTrail : ThingComp
 {
-    private const float TrailWidth = 0.035f;
+    private const float TrailWidth = 0.055f;
 
     private Vector3 lastPosition;
     private int lastDrawnTick = -1;
@@ -32,8 +32,7 @@ public class CompCandyTrail : ThingComp
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
         base.PostSpawnSetup(respawningAfterLoad);
-        lastPosition = parent.DrawPos;
-        started = true;
+        started = false;
     }
 
     public override void CompTick() => DrawTrail();
@@ -53,7 +52,9 @@ public class CompCandyTrail : ThingComp
         if (!parent.Spawned || parent.Map == null) return;
 
         Vector3 current = parent.DrawPos;
-        if (started && current != lastPosition)
+        // A missed update or a position reset must not draw a line across the map.
+        float distance = (current - lastPosition).magnitude;
+        if (started && distance > 0f && distance <= 2.5f)
         {
             FleckMaker.ConnectingLine(lastPosition, current, MCW_DefOf.MCW_CandyTrail047, parent.Map, TrailWidth);
         }

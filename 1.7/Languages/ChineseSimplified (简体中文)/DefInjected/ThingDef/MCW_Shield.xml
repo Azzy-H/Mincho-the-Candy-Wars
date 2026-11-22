@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: 曲奇盾牌 -->
+
+  <!-- EN: A huge, tooth-achingly solid cookie. The amber candy raises it before her companions, and always has to remind people: this one really is not for eating. -->
+  <MCW_CookiesShield.description>一块巨大、结实得令人牙疼的曲奇饼。琥珀糖把它举在同伴身前，也总要提醒别人：这块真的不能吃。</MCW_CookiesShield.description>
+  <!-- EN: Cookie shield -->
   <MCW_CookiesShield.label>曲奇盾牌</MCW_CookiesShield.label>
-  <!-- EN: 当你看到一个巨大的且咬不动的美味曲奇饼时，很不幸，其实它是一个盾牌。\n\n装备后会在征召时自动举起盾牌以获得防护加成，平时则背在身后。 -->
-  <MCW_CookiesShield.description>当你看到一个巨大的且咬不动的美味曲奇饼时，很不幸，其实它是一个盾牌。\n\n装备后会在征召时自动举起盾牌以获得防护加成，平时则背在身后。</MCW_CookiesShield.description>
-  
-  <!-- EN: 薄荷冰淇淋巧克力塔盾 -->
+  <!-- EN: Thick chocolate wraps a cool mint core into a steady great shield. Behind it, even the smoke blowing past seems a little thinner. -->
+  <MCW_TowerShield.description>厚实的巧克力围住清凉的薄荷内芯，凝成一面沉稳的大盾。躲在它后面时，连扑面而来的硝烟都似乎淡了一些。</MCW_TowerShield.description>
+  <!-- EN: Mint ice cream chocolate tower shield -->
   <MCW_TowerShield.label>薄荷冰淇淋巧克力塔盾</MCW_TowerShield.label>
-  <!-- EN: 坚硬的巧克力！可以保护所有人！\n\n装备后会在征召时自动举起盾牌以获得防护加成，平时则背在身后。 -->
-  <MCW_TowerShield.description>坚硬的巧克力！可以保护所有人！\n\n装备后会在征召时自动举起盾牌以获得防护加成，平时则背在身后。</MCW_TowerShield.description>
-  
+
 </LanguageData>

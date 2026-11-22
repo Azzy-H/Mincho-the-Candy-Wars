@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: 消耗飞翼储能，跳跃至指定地点。 -->
+  <MCW_MechaWingsJump.description>消耗飞翼储能，跳跃至指定地点。</MCW_MechaWingsJump.description>
+  <!-- EN: 机械飞翼跳跃 -->
+  <MCW_MechaWingsJump.label>机械飞翼跳跃</MCW_MechaWingsJump.label>
+  <!-- EN: avoidance_leap_keep_rotation -->
+  <MCW_MechaWingsJump.verbProperties.label>avoidance_leap_keep_rotation</MCW_MechaWingsJump.verbProperties.label>
+</LanguageData>

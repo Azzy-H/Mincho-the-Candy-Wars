@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================
@@ -29,10 +29,10 @@
        ============================================================ -->
   <ScenarioDef ParentName="ScenarioBase" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>MCW_Scenarios</defName>
-    <label>智慧珉巧</label>
-    <description>出于某种原因，离开人类身边的珉巧们聚到了一起，组成了一个小小的聚落。她们用从人类那里学来的本领共同生活。\n\n而这一群珉巧之中，有一位觉醒了智慧核心——她将带领同伴们走得更远。</description>
+    <label>Smart Mincho</label>
+    <description>For reasons of their own, Mincho who had left human company gathered together and formed a small settlement. They live together using the skills they learned from humans.\n\nAmong this group, one has awakened a smart core - she will lead her companions further.</description>
     <scenario>
-      <summary>4位珉巧共同生活的开局，其中一人是智慧珉巧。</summary>
+      <summary>A start where four Mincho live together, one of them a smart Mincho.</summary>
 
       <playerFaction>
         <def>PlayerFaction</def>
@@ -147,7 +147,7 @@
         </li>
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>每天聊聊薄荷巧克力是很好，但光靠这些，生活里还缺很多很多东西……</text>
+          <text>Chatting about mint chocolate every day is nice, but there is a lot more missing from life than that...</text>
           <textKey>MCW_GameStartDialog</textKey>
           <closeSound>GameStartSting</closeSound>
         </li>

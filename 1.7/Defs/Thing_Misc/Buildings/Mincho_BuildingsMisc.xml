@@ -3,8 +3,8 @@
   <!-- 灭火器 -->
   <ThingDef ParentName="BuildingBase">
     <defName>MCW_FirefoamPopper</defName>
-    <label>薄荷巧克力复用型号灭火单元</label>
-    <description>可重复使用的薄荷巧克力灭火单元。喷洒灭火泡沫后保留建筑，每次需补充50份薄荷冰淇淋；空仓时不触发。</description>
+    <label>Mint chocolate reusable firefoam popper</label>
+    <description>A firefoam device clad in a mint chocolate shell. Idle, it looks like an unremarkable dessert ornament; when flame draws near it floods the area with foam without hesitation.</description>
     <thingClass>Building</thingClass>
     <graphicData>
       <texPath>Things/Building/Misc/MCW_FirefoamPopper</texPath>
@@ -45,7 +45,9 @@
     <rotatable>true</rotatable>
     <designationHotKey>Misc7</designationHotKey>
     <!-- <researchPrerequisites>
+
       <li>Firefoam</li>
+
     </researchPrerequisites> -->
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
     <comps>
@@ -85,9 +87,9 @@
         <allowRefuelIfNotEmpty>false</allowRefuelIfNotEmpty>
         <minimumFueledThreshold>50</minimumFueledThreshold>
         <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-        <fuelLabel>薄荷冰淇淋</fuelLabel>
-        <fuelGizmoLabel>灭火剂储量</fuelGizmoLabel>
-        <outOfFuelMessage>需要补充50份薄荷冰淇淋</outOfFuelMessage>
+        <fuelLabel>Mint ice cream</fuelLabel>
+        <fuelGizmoLabel>Firefoam charge</fuelGizmoLabel>
+        <outOfFuelMessage>Requires 50 mint ice cream to refill</outOfFuelMessage>
         <fuelFilter>
           <thingDefs>
             <li>Mincho_Mintchoco</li>
@@ -96,13 +98,12 @@
       </li>
     </comps>
   </ThingDef>
-
   <!-- 床头柜 -->
   <ThingDef ParentName="TableBase">
     <defName>MCW_EndTable</defName>
     <designationCategory>Mincho_Furniture</designationCategory>
-    <label>薄荷冰淇淋床头柜</label>
-    <description>睁眼就能见到美味的薄荷冰淇淋，天下还有比这更幸福的事情吗？</description>
+    <label>Mint ice cream end table</label>
+    <description>Open your eyes and there is delicious mint ice cream. Is there anything happier in the world?</description>
     <surfaceType>Item</surfaceType>
     <uiOrder>2060</uiOrder>
     <graphicData>
@@ -128,7 +129,9 @@
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
     <!-- <researchPrerequisites>
+
       <li>ComplexFurniture</li>
+
     </researchPrerequisites> -->
     <costList>
       <Mincho_BlocksMintchoco>40</Mincho_BlocksMintchoco>
@@ -148,8 +151,8 @@
   <ThingDef ParentName="TableBase">
     <defName>MCW_Cabinet</defName>
     <designationCategory>Mincho_Furniture</designationCategory>
-    <label>巧克力矮柜</label>
-    <description>听说有一位珉巧被称为糖果女巫，而她的家，都是巧克力做的！</description>
+    <label>Chocolate low cabinet</label>
+    <description>They say one Mincho is called the candy witch, and her home is made entirely of chocolate!</description>
     <surfaceType>Item</surfaceType>
     <uiOrder>2060</uiOrder>
     <graphicData>
@@ -176,7 +179,9 @@
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
     <!-- <researchPrerequisites>
+
       <li>ComplexFurniture</li>
+
     </researchPrerequisites> -->
     <costList>
       <Mincho_ChocoStick>40</Mincho_ChocoStick>
@@ -193,12 +198,11 @@
       </li>
     </comps>
   </ThingDef>
-
   <!-- 桌子 -->
   <ThingDef ParentName="TableGatherSpotBase">
     <defName>MCW_Table2x4c</defName>
-    <label>大块巧克力饼干桌 (2x4)</label>
-    <description>请各位不要在吃饭的时候吃桌子！</description>
+    <label>Large chocolate cookie table (2x4)</label>
+    <description>Please do not eat the table while dining!</description>
     <graphicData>
       <texPath>Things/Building/Misc/MCW_Table2x4c</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -229,7 +233,6 @@
     <designationCategory>Mincho_Furniture</designationCategory>
     <designatorDropdown>MCW_Tables</designatorDropdown>
   </ThingDef>
-
   <!-- 桌椅 -->
   <ThingDef ParentName="TableGatherSpotBase">
     <defName>MCW_MinchoTable2x2c</defName>
@@ -237,9 +240,10 @@
     <label>mincho table (2x2)</label>
     <description>A sturdy 2x2 table styled for Mincho settlements.</description>
     <graphicData>
-      <texPath>Things/Building/Furniture/Table2x2</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(4,4)</drawSize>
+      <texPath>Things/Building/Furniture/MCW_MintBrickTable2x2</texPath>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.85,2.85)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
@@ -257,15 +261,12 @@
       <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">10</StyleDominance>
     </statBases>
     <size>(2,2)</size>
-    <costStuffCount>50</costStuffCount>
+    <stuffCategories Inherit="False" />
+    <costStuffCount>0</costStuffCount>
+    <costList>
+      <Mincho_BlocksMintchoco>50</Mincho_BlocksMintchoco>
+    </costList>
     <rotatable>false</rotatable>
-    <!-- TODO: set custom table texture
-		<graphicData>
-			<texPath>Things/Building/Furniture/Table/TODO_MCW_MinchoTable2x2</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<shaderType>CutoutComplex</shaderType>
-		</graphicData>
-		-->
   </ThingDef>
   <ThingDef ParentName="FurnitureWithQualityBase">
     <defName>MCW_MinchoStool</defName>
@@ -305,23 +306,24 @@
       <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
     </statBases>
     <socialPropernessMatters>true</socialPropernessMatters>
-    <stuffCategories>
-      <li>Metallic</li>
-      <li>Woody</li>
-      <li>Stony</li>
-    </stuffCategories>
-    <costStuffCount>25</costStuffCount>
+    <stuffCategories Inherit="False" />
+    <costStuffCount>0</costStuffCount>
+    <costList>
+      <Chocolate>10</Chocolate>
+      <Mincho_BlocksMintchoco>15</Mincho_BlocksMintchoco>
+    </costList>
     <pathCost>30</pathCost>
     <designationHotKey>Misc6</designationHotKey>
     <uiOrder>2400</uiOrder>
     <fillPercent>0.2</fillPercent>
     <building>
       <isSittable>true</isSittable>
-      <paintable>true</paintable>
+      <paintable>false</paintable>
     </building>
     <uiIconOffset>(0, -0.05)</uiIconOffset>
     <comps>
-      <li Class="CompProperties_Styleable"></li>
+      <li Class="CompProperties_Styleable">
+      </li>
     </comps>
   </ThingDef>
   <ThingDef ParentName="FurnitureWithQualityBase">
@@ -335,7 +337,8 @@
     <graphicData>
       <texPath>Things/Building/Furniture/MCW_MinchoCouch</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(2.25,1.2)</drawSize>
+      <drawSize>(3,3)</drawSize>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
@@ -357,14 +360,12 @@
       <Comfort>0.85</Comfort>
     </statBases>
     <socialPropernessMatters>true</socialPropernessMatters>
-    <stuffCategories>
-      <li>Fabric</li>
-      <li>Leathery</li>
+    <stuffCategories Inherit="False">
     </stuffCategories>
     <researchPrerequisites>
       <li>ComplexFurniture</li>
     </researchPrerequisites>
-    <costStuffCount>200</costStuffCount>
+    <costStuffCount>0</costStuffCount>
     <pathCost>30</pathCost>
     <fillPercent>0.4</fillPercent>
     <size>(2,1)</size>
@@ -378,14 +379,22 @@
       <destroySound>BuildingDestroyed_Soft_Small</destroySound>
     </building>
     <!-- TODO: set custom couch texture
-		<graphicData>
-			<texPath>Things/Building/Furniture/Chair/TODO_MCW_MinchoCouch</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shaderType>CutoutComplex</shaderType>
-		</graphicData>
-		-->
-  </ThingDef>
 
+		<graphicData>
+
+			<texPath>Things/Building/Furniture/Chair/TODO_MCW_MinchoCouch</texPath>
+
+			<graphicClass>Graphic_Single</graphicClass>
+
+			<shaderType>CutoutComplex</shaderType>
+
+		</graphicData>
+
+		-->
+    <costList Inherit="False">
+      <Mincho_ChocoStick>200</Mincho_ChocoStick>
+    </costList>
+  </ThingDef>
   <!-- 地板 -->
   <TerrainDef ParentName="FloorBase">
     <defName>MCW_MinchoFloorA</defName>
@@ -394,6 +403,7 @@
     <description>A durable floor pattern for Mincho settlements.</description>
     <renderPrecedence>230</renderPrecedence>
     <!-- 棕白菱形瓷砖（源图 16.jpg，已转成 512x512 PNG）
+
 		     原来的 <color>(140,140,140)</color> 是占位期的灰色叠加，会乘暗原图，已移除 -->
     <texturePath>Terrain/Surfaces/MCW_MinchoFloorA</texturePath>
     <isPaintable>true</isPaintable>
@@ -417,6 +427,7 @@
     <description>A durable floor pattern for Mincho settlements.</description>
     <renderPrecedence>230</renderPrecedence>
     <!-- 金色链条大理石（源图 20.jpg，已转成 512x512 PNG）
+
 		     同样移除了占位期的灰色叠加 -->
     <texturePath>Terrain/Surfaces/MCW_MinchoFloorB</texturePath>
     <isPaintable>true</isPaintable>
@@ -455,17 +466,20 @@
     </researchPrerequisites>
     <uiOrder>2030</uiOrder>
     <!-- TODO: set custom floor texture
+
 		<texturePath>Terrain/Surfaces/TODO_MCW_MinchoFloorC</texturePath>
+
 		-->
   </TerrainDef>
-
   <!-- ============================================================
+
        饼干操作臂
+
        ============================================================ -->
   <ThingDef ParentName="BuildingBase">
     <defName>MCW_RoboticArm</defName>
-    <label>饼干操作臂</label>
-    <description>用美味的曲奇饼凑成一个机械臂的形状，可以连接附近的生产设施和研究台，使它们不受温度不适宜的影响。连接距离不超过8格，且不能被墙壁阻挡。每座工作台同时使用一个操作臂。</description>
+    <label>Cookie manipulator arm</label>
+    <description>A delicate manipulator arm built from cookie. Its joints click faintly as they turn. Even in biting cold it keeps work at the bench unhurried.</description>
     <thingClass>Building</thingClass>
     <!--========== Graphic Data ==========-->
     <graphicData>
@@ -512,11 +526,10 @@
       </li>
     </comps>
   </ThingDef>
-
   <ThingDef ParentName="BuildingBase">
     <defName>MCW_Chocolate_Console</defName>
-    <label>薄荷冰淇通讯台</label>
-    <description>只有珉巧才能使用的通讯台，拥有通讯台的全部功能，同时，也有交易信标的功能！而且！还很好吃！</description>
+    <label>Mint ice cream comms console</label>
+    <description>A comms console of mint ice cream and chocolate, its screen showing the familiar Alliance mark. A distant friend voice always makes a quiet room feel busy again.</description>
     <thingClass>MinchoCandyWars.Buildings.Building_MintIceCreamCommsConsole</thingClass>
     <graphicData>
       <texPath>Things/Building/Misc/MCW_Chocolate_Console</texPath>
@@ -553,8 +566,8 @@
       <destroySound>BuildingDestroyed_Metal_Big</destroySound>
     </building>
     <costList>
-      <Steel>120</Steel>
-      <ComponentIndustrial>4</ComponentIndustrial>
+      <Mincho_Mintchoco>100</Mincho_Mintchoco>
+      <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
     <defaultPlacingRot>South</defaultPlacingRot>
     <interactionCellOffset>(0,0,1)</interactionCellOffset>
@@ -590,8 +603,8 @@
           <li>
             <eventDef>MCW_Event_AllianceGreeting</eventDef>
             <iconPath>UI/Factions/MCW_Alliance_Faction</iconPath>
-            <label>联络珉巧同盟</label>
-            <desc>呼叫珉巧同盟，和沁心糖通话。</desc>
+            <label>MinchoCandyWars.AllianceContact.Description</label>
+            <desc>MinchoCandyWars.AllianceContact.ConsoleTooltip</desc>
             <existFlag>MCW_QS1_CorpDecided</existFlag>
             <existFlagValue>true</existFlagValue>
           </li>
@@ -604,7 +617,8 @@
     </placeWorkers>
     <researchPrerequisites Inherit="False" />
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-    <tickerType MayRequire="Ludeon.RimWorld.Biotech">Normal</tickerType>    <!-- used by call bossgroup -->
+    <tickerType MayRequire="Ludeon.RimWorld.Biotech">Normal</tickerType>
+    <!-- used by call bossgroup -->
   </ThingDef>
   <JobDef>
     <defName>MCW_UseCommsConsole</defName>

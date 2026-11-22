@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -25,7 +25,7 @@ public class JobGiver_UseParalyzer : ThinkNode_JobGiver
         if (target is Pawn victim && victim.Downed) return null;
         if (!target.HostileTo(pawn)) return null;
 
-        Apparel? item = pawn.apparel?.WornApparel.FirstOrDefault(a => a.def == MCW_DefOf.MCW_Paralyzer);
+        Apparel? item = pawn.apparel?.WornApparel.FirstOrDefault(a => a.def == MCW_ThingDefOf.MCW_Paralyzer);
         Verb? verb = item?.GetComp<CompApparelReloadable>()?.VerbTracker.PrimaryVerb;
         if (verb == null || !verb.Available() || !verb.CanHitTarget(target) || !verb.ValidateTarget(target, false))
         {

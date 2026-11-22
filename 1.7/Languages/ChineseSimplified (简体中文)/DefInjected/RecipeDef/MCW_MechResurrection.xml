@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Resurrect a destroyed Mincho sub-unit mechanoid. -->
+  <MCW_ResurrectMinchoMech.description>复活一台被摧毁的珉巧子个体机械。</MCW_ResurrectMinchoMech.description>
+  <!-- EN: Resurrecting mech. -->
+  <MCW_ResurrectMinchoMech.jobString>正在复活机械体。</MCW_ResurrectMinchoMech.jobString>
+  <!-- EN: Resurrect Mincho mechanoid -->
+  <MCW_ResurrectMinchoMech.label>复活珉巧机械体</MCW_ResurrectMinchoMech.label>
+</LanguageData>

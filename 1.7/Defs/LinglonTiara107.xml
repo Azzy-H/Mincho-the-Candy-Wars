@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="Mincho_ApparelBase_Hat">
+    <defName>MCW_LinglonTiara</defName>
+    <label>Mincho chocolate tiara</label>
+    <description>Fine chocolate patterns form a tiara, pairing well with the Linglon candy ornaments. To her, solemnity and sweetness were never in conflict.</description>
+    <graphicData>
+      <texPath>MCWQ/Apparel/LinglonTiara/LinglonTiara</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>2.2</uiIconScale>
+    <uiIconOffset>(0,-0.35)</uiIconOffset>
+    <costList>
+      <Mincho_BlocksMintchoco>20</Mincho_BlocksMintchoco>
+      <Cloth>10</Cloth>
+    </costList>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToMake>1200</WorkToMake>
+      <Mass>0.2</Mass>
+      <Beauty>2</Beauty>
+    </statBases>
+    <equippedStatOffsets><PsychicSensitivity>0.10</PsychicSensitivity></equippedStatOffsets>
+    <apparel>
+      <wornGraphicPath>MCWQ/Apparel/LinglonTiara/LinglonTiara</wornGraphicPath>
+      <bodyPartGroups Inherit="False">
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <renderSkipFlags Inherit="False" />
+      <tags Inherit="False">
+        <li>Mincho_Royal</li>
+      </tags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Single">
+      <color>(1,1,1,1)</color>
+    </colorGenerator>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

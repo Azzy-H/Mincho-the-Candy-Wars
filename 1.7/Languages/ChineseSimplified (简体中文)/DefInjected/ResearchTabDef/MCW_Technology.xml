@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Research Mincho technologies: furniture, facilities and smart Mincho boosters. -->
+  <MCW_Technology.generalDescription>研究珉巧相关的科技：家具、设施与智慧珉巧改造包。</MCW_Technology.generalDescription>
+  <!-- EN: Mincho technology research projects -->
+  <MCW_Technology.generalTitle>珉巧科技研究项目</MCW_Technology.generalTitle>
+  <!-- EN: mincho technology -->
+  <MCW_Technology.label>珉巧科技</MCW_Technology.label>
+
+</LanguageData>

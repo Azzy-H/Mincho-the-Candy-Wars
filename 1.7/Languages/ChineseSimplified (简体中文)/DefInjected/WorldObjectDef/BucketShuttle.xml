@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: A giant ice cream bucket carrying passengers and cargo through the air. -->
+  <MCW_BucketShuttle_World.description>载着乘员和货物飞行的巨大冰淇淋桶。</MCW_BucketShuttle_World.description>
+  <!-- EN: Ice cream bucket shuttle -->
+  <MCW_BucketShuttle_World.label>冰淇淋桶飞行器</MCW_BucketShuttle_World.label>
+
+</LanguageData>

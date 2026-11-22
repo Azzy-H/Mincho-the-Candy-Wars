@@ -2,8 +2,8 @@
 <Defs>
   <ThingDef ParentName="PlantBase">
     <defName>MCW_IceMintPlant</defName>
-    <label>冰薄荷</label>
-    <description>智慧珉巧培育的蓝色薄荷，在蘑菇模具中种植，收获珉巧薄荷叶。适应极寒环境，只能在0℃以下生长；升至0℃及以上后停止生长并逐步枯萎。</description>
+    <label>Ice mint</label>
+    <description>A blue mint cultivated by smart Mincho, grown in mushroom molds and harvested for Mincho mint leaves. Adapted to extreme cold, it only grows below 0C; at 0C or above it stops growing and gradually withers.</description>
     <thingClass>MinchoCandyWars.Misc.IceMintPlant</thingClass>
     <statBases>
       <Flammability>1</Flammability>
@@ -25,7 +25,9 @@
       <harvestTag>Standard</harvestTag>
       <harvestedThingDef>Mincho_MintLeaves</harvestedThingDef>
       <harvestYield>6</harvestYield>
-      <sowTags><li>Mincho_MinchoshroomPlant</li></sowTags>
+      <sowTags>
+        <li>Mincho_MinchoshroomPlant</li>
+      </sowTags>
       <topWindExposure>0.1</topWindExposure>
       <growDays>3</growDays>
       <visualSizeRange>0.4~0.8</visualSizeRange>

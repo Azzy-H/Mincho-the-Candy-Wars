@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 
 namespace MinchoCandyWars.Abilities.AmberonCandy
@@ -17,7 +17,7 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
             }
             Map map = parent.pawn.Map;
             if (map == null) return false;
-            if (!GenConstruct.CanPlaceBlueprintAt(MCW_DefOf.MCW_AmberonPositionShield, target.Cell, Rot4.North, map, godMode: false).Accepted)
+            if (!GenConstruct.CanPlaceBlueprintAt(MCW_ThingDefOf.MCW_AmberonPositionShield, target.Cell, Rot4.North, map, godMode: false).Accepted)
             {
                 if (throwMessages)
                 {
@@ -33,7 +33,9 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
             base.Apply(target, dest);
             Map map = parent.pawn.Map;
             if (map == null) return;
-            GenSpawn.Spawn(MCW_DefOf.MCW_AmberonPositionShield, target.Cell, map, Rot4.North);
+            var shield = ThingMaker.MakeThing(MCW_ThingDefOf.MCW_AmberonPositionShield);
+            shield.SetFaction(parent.pawn.Faction);
+            GenSpawn.Spawn(shield, target.Cell, map, Rot4.North);
         }
     }
 }

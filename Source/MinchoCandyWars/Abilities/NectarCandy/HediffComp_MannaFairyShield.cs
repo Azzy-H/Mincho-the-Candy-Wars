@@ -35,6 +35,10 @@ namespace MinchoCandyWars.Abilities.NectarCandy
             }
         }
 
+        public override string CompDescriptionExtra =>
+            "MinchoCandyWars.UI.HealthTips.MannaShield".Translate(
+                Energy.ToString("0.#"), EnergyMax.ToString("0.#"), StartingTicksToReset.ToStringTicksToPeriod());
+
         protected override float EnergyGainPerTick => EnergyMax / Props.startingTicksToReset;
         public override int StartingTicksToReset => Props.startingTicksToReset;
         protected override float EnergyOnReset => Props.hitpointsOnReset > 0 ? Props.hitpointsOnReset : EnergyMax * 0.2f;

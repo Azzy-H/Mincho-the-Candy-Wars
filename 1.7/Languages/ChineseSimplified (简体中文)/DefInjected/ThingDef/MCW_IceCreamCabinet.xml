@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: 用薄荷冰淇淋砖块砌成的冷藏柜。压缩机轻轻嗡鸣，把珍贵的食材和甜点留在适宜的寒意里。 -->
+  <MCW_IceCreamCabinetElectric.description>用薄荷冰淇淋砖块砌成的冷藏柜。压缩机轻轻嗡鸣，把珍贵的食材和甜点留在适宜的寒意里。</MCW_IceCreamCabinetElectric.description>
+  <!-- EN: 薄荷冰淇淋柜（电力） -->
+  <MCW_IceCreamCabinetElectric.label>薄荷冰淇淋柜（电力）</MCW_IceCreamCabinetElectric.label>
+  <!-- EN: 薄荷冰淇淋 -->
+  <MCW_IceCreamCabinetFueled.comps.CompRefuelable.fuelGizmoLabel>薄荷冰淇淋</MCW_IceCreamCabinetFueled.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: 薄荷冰淇淋 -->
+  <MCW_IceCreamCabinetFueled.comps.CompRefuelable.fuelLabel>薄荷冰淇淋</MCW_IceCreamCabinetFueled.comps.CompRefuelable.fuelLabel>
+  <!-- EN: 需要补充薄荷冰淇淋 -->
+  <MCW_IceCreamCabinetFueled.comps.CompRefuelable.outOfFuelMessage>需要补充薄荷冰淇淋</MCW_IceCreamCabinetFueled.comps.CompRefuelable.outOfFuelMessage>
+  <!-- EN: 用薄荷冰淇淋砖块砌成的冷藏柜。柜体深处的冰淇淋缓缓消融，换来储藏间一阵又一阵安静的凉意。 -->
+  <MCW_IceCreamCabinetFueled.description>用薄荷冰淇淋砖块砌成的冷藏柜。柜体深处的冰淇淋缓缓消融，换来储藏间一阵又一阵安静的凉意。</MCW_IceCreamCabinetFueled.description>
+  <!-- EN: 薄荷冰淇淋柜（冰淇淋） -->
+  <MCW_IceCreamCabinetFueled.label>薄荷冰淇淋柜（冰淇淋）</MCW_IceCreamCabinetFueled.label>
+</LanguageData>

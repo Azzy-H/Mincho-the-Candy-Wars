@@ -2,7 +2,7 @@
 <Defs>
 	<PawnKindDef ParentName="AnimalKindBase">
 		<defName>MCW_MinchoSlime</defName>
-		<label>珉巧史莱姆</label>
+		<label>Mincho slime</label>
 		<race>MCW_MinchoSlime</race>
 		<!-- <defaultFactionType>PlayerColony</defaultFactionType> -->
 		<canArriveManhunter>false</canArriveManhunter>
@@ -71,8 +71,8 @@
 
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_I_Maid_Recipe</defName>
-    <label>培育次级珉巧子个体-女仆I型</label>
-    <description>培育次级珉巧子个体-女仆I型.</description>
+    <label>Incubate Mincho sub-unit - Maid I</label>
+    <description>Incubate Mincho sub-unit - Maid I.</description>
     <products>
       <MCW_Mech_I_Maid>1</MCW_Mech_I_Maid>
     </products>
@@ -122,7 +122,7 @@
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_I_Maid</defName>
-    <label>次级珉巧子个体-女仆I型</label>
+    <label>Mincho sub-unit - Maid I</label>
     <race>MCW_Mech_I_Maid</race>
     <combatPower>45</combatPower>
     <allowInMechClusters>false</allowInMechClusters>
@@ -145,8 +145,8 @@
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_II_Maid_Recipe</defName>
-    <label>培育次级珉巧子个体-女仆Ⅱ型</label>
-    <description>培育次级珉巧子个体-女仆Ⅱ型.</description>
+    <label>Incubate Mincho sub-unit - Maid II</label>
+    <description>Incubate Mincho sub-unit - Maid II.</description>
     <products>
       <MCW_Mech_II_Maid>1</MCW_Mech_II_Maid>
     </products>
@@ -196,7 +196,7 @@
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_II_Maid</defName>
-    <label>次级珉巧子个体-女仆Ⅱ型</label>
+    <label>Mincho sub-unit - Maid II</label>
     <race>MCW_Mech_II_Maid</race>
     <combatPower>45</combatPower>
     <allowInMechClusters>false</allowInMechClusters>
@@ -219,8 +219,8 @@
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_Battle_Recipe</defName>
-    <label>培育次级珉巧子个体-战斗型</label>
-    <description>培育次级珉巧子个体-战斗型.</description>
+    <label>Incubate Mincho sub-unit - Battle</label>
+    <description>Incubate Mincho sub-unit - Battle.</description>
     <products>
       <MCW_Mech_Battle>1</MCW_Mech_Battle>
     </products>
@@ -278,7 +278,7 @@
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Battle</defName>
-    <label>次级珉巧子个体-战斗型</label>
+    <label>Mincho sub-unit - Battle</label>
     <race>MCW_Mech_Battle</race>
     <combatPower>45</combatPower>
     <allowInMechClusters>false</allowInMechClusters>
@@ -301,8 +301,8 @@
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_Defender_Recipe</defName>
-    <label>培育次级珉巧子个体-防卫型</label>
-    <description>培育次级珉巧子个体-防卫型.</description>
+    <label>Incubate Mincho sub-unit - Defender</label>
+    <description>Incubate Mincho sub-unit - Defender.</description>
     <products>
       <MCW_Mech_Defender>1</MCW_Mech_Defender>
     </products>
@@ -361,7 +361,7 @@
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Defender</defName>
-    <label>次级珉巧子个体-防卫型</label>
+    <label>Mincho sub-unit - Defender</label>
     <race>MCW_Mech_Defender</race>
     <combatPower>45</combatPower>
     <allowInMechClusters>false</allowInMechClusters>
@@ -385,8 +385,8 @@
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_Gunner_Recipe</defName>
-    <label>培育次级珉巧子个体-攻击型</label>
-    <description>培育次级珉巧子个体-攻击型.</description>
+    <label>Incubate Mincho sub-unit - Gunner</label>
+    <description>Incubate Mincho sub-unit - Gunner.</description>
     <products>
       <MCW_Mech_Gunner>1</MCW_Mech_Gunner>
     </products>
@@ -445,7 +445,7 @@
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Gunner</defName>
-    <label>次级珉巧子个体-攻击型</label>
+    <label>Mincho sub-unit - Gunner</label>
     <race>MCW_Mech_Gunner</race>
     <!-- <apparelMoney>300~500</apparelMoney> -->
     <weaponMoney>99999~99999</weaponMoney>
@@ -471,8 +471,8 @@
   </PawnKindDef>
   <RecipeDef ParentName="LightMechanoidRecipe">
     <defName>MCW_Mech_Defender_II_Recipe</defName>
-    <label>培育次级珉巧子个体-防卫II型</label>
-    <description>培育次级珉巧子个体-防卫II型.</description>
+    <label>Incubate Mincho sub-unit - Defender II</label>
+    <description>Incubate Mincho sub-unit - Defender II.</description>
     <products>
       <MCW_Mech_Defender_II>1</MCW_Mech_Defender_II>
     </products>
@@ -530,7 +530,7 @@
   </RecipeDef>
   <PawnKindDef ParentName="LightMechanoidKind">
     <defName>MCW_Mech_Defender_II</defName>
-    <label>次级珉巧子个体-防卫II型</label>
+    <label>Mincho sub-unit - Defender II</label>
     <race>MCW_Mech_Defender_II</race>
     <allowInMechClusters>false</allowInMechClusters>
     <lifeStages>

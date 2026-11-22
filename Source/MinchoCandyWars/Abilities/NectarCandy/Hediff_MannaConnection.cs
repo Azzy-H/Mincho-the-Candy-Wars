@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 
 namespace MinchoCandyWars.Abilities.NectarCandy
@@ -37,7 +37,7 @@ namespace MinchoCandyWars.Abilities.NectarCandy
         {
             if (pairedPawn != null)
             {
-                Hediff_MannaConnection? otherConn = (Hediff_MannaConnection?)pairedPawn.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_MannaConnection);
+                Hediff_MannaConnection? otherConn = (Hediff_MannaConnection?)pairedPawn.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MannaConnection);
                 if (otherConn != null)
                 {
                     pairedPawn.health.RemoveHediff(otherConn);

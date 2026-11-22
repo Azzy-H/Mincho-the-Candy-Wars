@@ -5,7 +5,7 @@
   <HediffDef>
     <defName>MCW_AmberonShield</defName>
     <label>Amberon shield</label>
-    <description>TODO</description>
+    <description>An amber barrier that absorbs incoming damage before it reaches the body.</description>
     <hediffClass>MinchoCandyWars.Buff.Hediff_Buff</hediffClass>
     <isBad>false</isBad>
     <defaultLabelColor>(0.9, 0.7, 0.2)</defaultLabelColor>
@@ -21,12 +21,6 @@
     </renderNodeProperties>
     <stages>
       <li>
-        <statOffsets>
-          <StaggerDurationFactor>0</StaggerDurationFactor>
-        </statOffsets>
-        <statFactors>
-          <IncomingDamageFactor>0</IncomingDamageFactor>
-        </statFactors>
         <becomeVisible>true</becomeVisible>
       </li>
     </stages>
@@ -44,7 +38,7 @@
   <HediffDef>
     <defName>MCW_HardCandy</defName>
     <label>hard candy</label>
-    <description>TODO</description>
+    <description>The body has hardened into candy, greatly reducing incoming damage at the cost of mobility.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <defaultLabelColor>(0.9, 0.7, 0.2)</defaultLabelColor>
@@ -76,7 +70,7 @@
   <HediffDef>
     <defName>MCW_SplashedIceCream</defName>
     <label>splashed ice cream</label>
-    <description>TODO</description>
+    <description>Ice cream splattered over the eyes, severely impairing sight.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>true</isBad>
     <initialSeverity>1</initialSeverity>
@@ -104,8 +98,8 @@
   <HediffDef>
     <defName>MCW_AmberonHeart</defName>
     <label>Amberon heart</label>
-    <description>TODO</description>
-    <hediffClass>MinchoCandyWars.Buff.Hediff_Buff</hediffClass>
+    <description>An amber heart of light that slows nearby enemies and soothes nearby allies.</description>
+    <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <defaultLabelColor>(0.9, 0.7, 0.2)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
@@ -114,6 +108,7 @@
     <renderNodeProperties>
       <li>
         <debugLabel>MCW Amberon heart aura</debugLabel>
+          <color>(1, 0.7, 0.2, 1)</color>
         <nodeClass>PawnRenderNode</nodeClass>
         <workerClass>MinchoCandyWars.Render.PawnRenderNodeWorker_AmberonHeart</workerClass>
         <texPath>Effects/Amberon/MCW_AmberonHeart</texPath>
@@ -145,6 +140,7 @@
         <statOffsets>
           <StaggerDurationFactor>0</StaggerDurationFactor>
         </statOffsets>
+        <statFactors><IncomingDamageFactor>0</IncomingDamageFactor></statFactors>
         <becomeVisible>true</becomeVisible>
       </li>
     </stages>
@@ -170,7 +166,7 @@
   <HediffDef>
     <defName>MCW_AmberonSlow</defName>
     <label>Amberon slow</label>
-    <description>TODO</description>
+    <description>Held fast by amber light, movement speed is halved.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>true</isBad>
     <initialSeverity>1</initialSeverity>
@@ -194,8 +190,8 @@
   <!-- ===== 琥珀糖心心情（核心5被动） ===== -->
   <HediffDef>
     <defName>MCW_AmberonHeartMood</defName>
-    <label>Amberon heart mood</label>
-    <description>TODO</description>
+    <label>Amberon heart</label>
+    <description>The warmth of the amber heart lifts the spirits of those nearby.</description>
     <hediffClass>MinchoCandyWars.Buff.Hediff_Buff</hediffClass>
     <isBad>false</isBad>
     <defaultLabelColor>(0.9, 0.7, 0.2)</defaultLabelColor>
@@ -210,3 +206,4 @@
   </HediffDef>
 
 </Defs>
+

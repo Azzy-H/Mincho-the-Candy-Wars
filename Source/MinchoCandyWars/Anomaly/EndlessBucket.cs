@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using MinchoCandyWars;
 using RimWorld;
 using Verse;
@@ -16,6 +16,13 @@ public class EndlessBucket : ThingWithComps
 {
     /// <summary>恍惚持续时间：1 天。</summary>
     private const int DazeTicks = 60000;
+
+    public override void SpawnSetup(Map map, bool respawningAfterLoad)
+    {
+        base.SpawnSetup(map, respawningAfterLoad);
+        if (!respawningAfterLoad)
+            QuestStory.BucketReceipt.RecordArrival(this, map);
+    }
 
     /// <summary>
     /// 份量取自 Def 的 <c>statBases/Nutrition</c>（活跃 1.0 / 已解除 0.2），代码里不写数值。
@@ -48,7 +55,7 @@ public class EndlessBucket : ThingWithComps
     protected virtual bool ShouldIntoxicate(Pawn p) =>
         !MintAddiction.IsMincho(p)
         && p.RaceProps.Humanlike
-        && !p.health.hediffSet.HasHediff(MCW_DefOf.MCW_MintFreedom);
+        && !p.health.hediffSet.HasHediff(MCW_HediffDefOf.MCW_MintFreedom);
 
     /// <summary>
     /// 桶没了，依赖就该解除 —— 无论是玩家用碎片解除、被拆掉、还是被烧掉。
@@ -63,22 +70,22 @@ public class EndlessBucket : ThingWithComps
 
     private void EnsureAddiction(Pawn p)
     {
-        if (p.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_MintAddiction) is MintAddiction)
+        if (p.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MintAddiction) is MintAddiction)
         {
             return;
         }
 
-        var addiction = (MintAddiction)p.health.AddHediff(MCW_DefOf.MCW_MintAddiction);
+        var addiction = (MintAddiction)p.health.AddHediff(MCW_HediffDefOf.MCW_MintAddiction);
         addiction.source = this;
     }
 
     /// <summary>把"冰淇淋恍惚"续满 1 天。Def 没挂 Disappears comp 时安静跳过。</summary>
     private static void ApplyDaze(Pawn p)
     {
-        Hediff? daze = p.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_MintDaze);
+        Hediff? daze = p.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MintDaze);
         if (daze == null)
         {
-            daze = p.health.AddHediff(MCW_DefOf.MCW_MintDaze);
+            daze = p.health.AddHediff(MCW_HediffDefOf.MCW_MintDaze);
         }
 
         daze.TryGetComp<HediffComp_Disappears>()?.ticksToDisappear = DazeTicks;
@@ -92,7 +99,7 @@ public class EndlessBucket : ThingWithComps
     {
         foreach (Pawn p in PawnsFinder.AllMapsWorldAndTemporary_Alive)
         {
-            if (p.health?.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_MintAddiction) is MintAddiction addiction
+            if (p.health?.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MintAddiction) is MintAddiction addiction
                 && addiction.source == source)
             {
                 Cure(p);
@@ -104,7 +111,7 @@ public class EndlessBucket : ThingWithComps
     private static void Cure(Pawn p)
     {
         foreach (Hediff h in p.health.hediffSet.hediffs
-                     .Where(h => h.def == MCW_DefOf.MCW_MintAddiction || h.def == MCW_DefOf.MCW_MintDaze)
+                     .Where(h => h.def == MCW_HediffDefOf.MCW_MintAddiction || h.def == MCW_HediffDefOf.MCW_MintDaze)
                      .ToList())
         {
             p.health.RemoveHediff(h);
@@ -112,9 +119,9 @@ public class EndlessBucket : ThingWithComps
 
         p.needs?.mood?.thoughts.memories.RemoveMemoriesOfDef(MCW_DefOf.MCW_MintDisgust);
 
-        if (!MintAddiction.IsMincho(p) && !p.health.hediffSet.HasHediff(MCW_DefOf.MCW_MintFreedom))
+        if (!MintAddiction.IsMincho(p) && !p.health.hediffSet.HasHediff(MCW_HediffDefOf.MCW_MintFreedom))
         {
-            p.health.AddHediff(MCW_DefOf.MCW_MintFreedom);
+            p.health.AddHediff(MCW_HediffDefOf.MCW_MintFreedom);
         }
     }
 }

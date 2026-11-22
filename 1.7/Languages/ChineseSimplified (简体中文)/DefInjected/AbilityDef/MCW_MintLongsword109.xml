@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Leap at an enemy within 10 tiles. -->
+  <MCW_MintLongswordJump109.description>跳向10格内的一名敌人。</MCW_MintLongswordJump109.description>
+  <!-- EN: Charge attack -->
+  <MCW_MintLongswordJump109.label>突进攻击</MCW_MintLongswordJump109.label>
+</LanguageData>

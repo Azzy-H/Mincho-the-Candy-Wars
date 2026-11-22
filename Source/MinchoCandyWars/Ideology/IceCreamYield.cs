@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -23,7 +23,7 @@ namespace MinchoCandyWars.Ideology
         public static bool IsEligible(CompResourceHarvestable comp, ThingDef? product)
         {
             if (comp.parent is not Pawn producer) return false;
-            if (producer.def != MCW_DefOf.Mincho_ThingDef) return false;
+            if (producer.def != MCW_ThingDefOf.Mincho_ThingDef) return false;
             if (!IsIceCream(product)) return false;
 
             Ideo? ideo = producer.Ideo;

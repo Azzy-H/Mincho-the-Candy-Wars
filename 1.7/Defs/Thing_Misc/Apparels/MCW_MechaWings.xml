@@ -2,10 +2,10 @@
 <Defs>
   <ThingDef ParentName="Mincho_ApparelBase_Body">
     <defName>MCW_MechaWings</defName>
-    <description>独立机械师飞翼，提供8点机械带宽。人形珉巧穿着机械师装甲或珉巧太空服时可装备。消耗储能主动跳跃，以薄荷巧克力块补给。</description>
+    <description>Mechanical wings improved by the mecha candy, a light frame with a cold mint glow. When the engines hum, a familiar chocolate scent drifts through the air.</description>
     <descriptionHyperlinks>
-		</descriptionHyperlinks>
-    <label>珉巧机械师飞翼</label>
+    </descriptionHyperlinks>
+    <label>Mincho mechanitor wings</label>
     <graphicData>
       <texPath>Things/Apparel/Icons/MechaWings</texPath>
     </graphicData>
@@ -80,14 +80,14 @@
   </ThingDef>
   <Mincho_Booster.AbilityDef_Booster ParentName="Mincho_SpaceBoosterAbility_Base">
     <defName>MCW_MechaWingsJump</defName>
-    <label>机械飞翼跳跃</label>
-    <description>消耗飞翼储能，跳跃至指定地点。</description>
+    <label>Mechanical wing jump</label>
+    <description>Spend the wings stored energy to jump to a chosen spot.</description>
     <iconPath>Things/Apparel/Icons/MechaWings</iconPath>
   </Mincho_Booster.AbilityDef_Booster>
   <HediffDef>
     <defName>MCW_MechaWings_Visual</defName>
-    <label>机械飞翼</label>
-    <description>机械飞翼装甲展开时的视觉状态，用于在角色身上显示翼部外观。</description>
+    <label>Mechanical wings</label>
+    <description>Visual state while the mechanical wing armor is deployed; used to show the wings on the character.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <priceImpact>false</priceImpact>

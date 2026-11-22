@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: 拆解一个珉巧机械子个体或珉巧魔像的残骸，回收原有定义中的材料。允许友方残骸；拆解会消耗尸体，之后无法复活。 -->
+  <MCW_ShredMinchoMechs.description>拆解一个珉巧机械子个体或珉巧魔像的残骸，回收原有定义中的材料。允许友方残骸；拆解会消耗尸体，之后无法复活。</MCW_ShredMinchoMechs.description>
+  <!-- EN: 正在拆解珉巧机械体。 -->
+  <MCW_ShredMinchoMechs.jobString>正在拆解珉巧机械体。</MCW_ShredMinchoMechs.jobString>
+  <!-- EN: 拆解珉巧子个体／魔像 -->
+  <MCW_ShredMinchoMechs.label>拆解珉巧子个体／魔像</MCW_ShredMinchoMechs.label>
+  <!-- EN: 拆解一个珉巧机械子个体或珉巧魔像的残骸，回收原有定义中的材料。允许友方残骸；拆解会消耗尸体，之后无法复活。 -->
+  <MCW_SmashMinchoMechs.description>拆解一个珉巧机械子个体或珉巧魔像的残骸，回收原有定义中的材料。允许友方残骸；拆解会消耗尸体，之后无法复活。</MCW_SmashMinchoMechs.description>
+  <!-- EN: 正在拆解珉巧机械体。 -->
+  <MCW_SmashMinchoMechs.jobString>正在拆解珉巧机械体。</MCW_SmashMinchoMechs.jobString>
+  <!-- EN: 粉碎珉巧子个体／魔像 -->
+  <MCW_SmashMinchoMechs.label>粉碎珉巧子个体／魔像</MCW_SmashMinchoMechs.label>
+</LanguageData>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+
+  <!-- EN: Lobs an EMP bolt at an area, stunning hostile mechanoids inside it. The stun lasts longer at higher total grade. -->
+  <MCW_MechaCandyAbility_EMPBolt.description>一束跃动的电磁脉冲，沿途的空气里弥漫着细微的噼啪声。</MCW_MechaCandyAbility_EMPBolt.description>
   <!-- EN: EMPBolt -->
   <MCW_MechaCandyAbility_EMPBolt.label>电磁脉冲弹</MCW_MechaCandyAbility_EMPBolt.label>
-  
+
 </LanguageData>

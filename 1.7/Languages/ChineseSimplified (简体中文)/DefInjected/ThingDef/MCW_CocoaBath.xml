@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: A bathtub made from chocolate bars and mint ice cream. Fill it with warm cocoa, then settle into the dense bubbles to relax. Bathing restores recreation, and a long soak grants +3 mood for one day. -->
+  <MCW_CocoaBath.description>用巧克力棒和薄荷冰淇淋制成的浴缸。使用时先注入温暖的可可浴液，再躺入绵密的泡泡中放松。泡澡恢复娱乐，充分浸泡后获得持续一天的心情 +3。</MCW_CocoaBath.description>
+  <!-- EN: Cocoa bathtub -->
+  <MCW_CocoaBath.label>可可浴缸</MCW_CocoaBath.label>
+</LanguageData>

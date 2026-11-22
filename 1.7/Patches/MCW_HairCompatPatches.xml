@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <!--
-    把本 mod 的 3 个发型注册进「珉巧」的外观白名单。
+    把本 mod 的 4 个发型注册进「珉巧」的外观白名单。
   -->
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps/li[@Class="Mincho_The_Mint_Choco_Slime.CompProperties_CheckHairAndHead"]/hediffAndHairs/li[hediffDef="Mincho_Mintchoco_Hediff"]/hairDefs</xpath>
@@ -9,6 +9,7 @@
       <li>MCW_Hair_Upper_A</li>
       <li>MCW_Hair_Upper_B</li>
       <li>MCW_Hair_Upper_C</li>
+      <li>MCW_Hair_Linglon174</li>
     </value>
   </Operation>
 

@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ResearchProjectDef>
     <defName>MCW_Research_MechaCandy</defName>
     <label>Mecha Candy</label>
-    <description>研究千机糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
+    <description>Research the mecha candy ornament to unlock the recipe for its unlock item.</description>
     <techLevel>Industrial</techLevel>
     <baseCost>3000</baseCost>
     <tab>MCW_Technology</tab>
@@ -23,7 +23,7 @@
   <ResearchProjectDef>
     <defName>MCW_Research_NectarCandy</defName>
     <label>Nectar Candy</label>
-    <description>研究甘露糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
+    <description>Research the nectar candy ornament to unlock the recipe for its unlock item.</description>
     <techLevel>Industrial</techLevel>
     <baseCost>3000</baseCost>
     <tab>MCW_Technology</tab>
@@ -43,7 +43,7 @@
   <ResearchProjectDef>
     <defName>MCW_Research_AmberonCandy</defName>
     <label>Amberon Candy</label>
-    <description>研究琥珀糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
+    <description>Research the amber candy ornament to unlock the recipe for its unlock item.</description>
     <techLevel>Industrial</techLevel>
     <baseCost>3000</baseCost>
     <tab>MCW_Technology</tab>
@@ -63,7 +63,7 @@
   <ResearchProjectDef>
     <defName>MCW_Research_PrismCandy</defName>
     <label>Prism Candy</label>
-    <description>研究琉璃糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
+    <description>Research the prism candy ornament to unlock the recipe for its unlock item.</description>
     <techLevel>Industrial</techLevel>
     <baseCost>3000</baseCost>
     <tab>MCW_Technology</tab>
@@ -83,7 +83,7 @@
   <ResearchProjectDef>
     <defName>MCW_Research_LinglonCandy</defName>
     <label>Linglon Candy</label>
-    <description>研究玲珑糖糖饰，解锁对应糖饰解锁物品的制作配方。</description>
+    <description>Research the linglon candy ornament to unlock the recipe for its unlock item.</description>
     <techLevel>Industrial</techLevel>
     <baseCost>3000</baseCost>
     <tab>MCW_Technology</tab>

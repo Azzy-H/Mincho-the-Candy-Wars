@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><Patch><Operation Class="PatchOperationSequence"><operations>
+<li Class="PatchOperationAdd"><xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps/li[@Class="Mincho_The_Mint_Choco_Slime.CompProperties_CheckHairAndHead"]/hediffAndHairs/li[hediffDef="Mincho_Mintchoco_Hediff"]/hairDefs</xpath><value><li>MCW_Hair_Nectar109</li><li>MCW_Hair_Amber109</li></value></li>
+<li Class="PatchOperationAdd"><xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps/li[@Class="Mincho_The_Mint_Choco_Slime.CompProperties_CheckHairAndHead"]/hediffAndHairs/li[hediffDef="Mincho_BluePolarBear_Hediff"]/hairDefs</xpath><value><li>MCW_Hair_Prism109</li></value></li>
+<li Class="PatchOperationAdd"><xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/alienRace/raceRestriction/apparelList</xpath><value><li>MCW_QinxinCrown</li></value></li>
+</operations></Operation></Patch>

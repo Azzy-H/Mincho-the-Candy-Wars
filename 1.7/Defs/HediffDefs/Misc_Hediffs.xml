@@ -6,7 +6,7 @@
     <description>inteled.</description>
     <isBad>false</isBad>
     <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
-    <hediffClass>MinchoCandyWars.Buff.Hediff_Buff</hediffClass>
+    <hediffClass>MinchoCandyWars.Buff.Hediff_IntelSummary</hediffClass>
     <aptitudes>
       <Intellectual>12</Intellectual>
     </aptitudes>

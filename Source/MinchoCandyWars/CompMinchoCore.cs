@@ -58,6 +58,7 @@ namespace MinchoCandyWars
             }
         }
 
+        public bool GeneratedCandyRolled;
         private bool active = false;
         public bool Active
         {
@@ -92,6 +93,7 @@ namespace MinchoCandyWars
         {
             base.PostExposeData();
             Scribe_Values.Look(ref active, "active", false);
+            Scribe_Values.Look(ref GeneratedCandyRolled, "generatedCandyRolled", false);
             Scribe_Values.Look(ref minchoCoreGrade, "minchoCoreGrade", 0);
             Scribe_Values.Look(ref minchoBodyGrade, "minchoBodyGrade", 0);
             Scribe_Defs.Look(ref currentCandyType, "currentCandyType");
@@ -324,7 +326,7 @@ namespace MinchoCandyWars
             {
                 yield return new Command_Action
                 {
-                    defaultLabel = "Dev:切换糖饰",
+                    defaultLabel = "MinchoCandyWars.Dev.Core.ChangeOrnament".Translate(),
                     action = delegate
                     {
                         List<FloatMenuOption> options = new List<FloatMenuOption>();
@@ -335,7 +337,7 @@ namespace MinchoCandyWars
                             string label = candyTypeDef.defName;
                             if (candyTypeDef == CurrentCandyType)
                             {
-                                label += "(当前)";
+                                label += "MinchoCandyWars.Dev.Core.Current".Translate();
                             }
                             FloatMenuOption option = new FloatMenuOption(
                                 label,
@@ -356,7 +358,7 @@ namespace MinchoCandyWars
                 };
                 yield return new Command_Action
                 {
-                    defaultLabel = "Dev:核心等级+1",
+                    defaultLabel = "MinchoCandyWars.Dev.Core.CoreLevel".Translate(),
                     action = delegate
                     {
                         MinchoCoreGrade += 1;
@@ -364,7 +366,7 @@ namespace MinchoCandyWars
                 };
                 yield return new Command_Action
                 {
-                    defaultLabel = "Dev:躯体等级+1",
+                    defaultLabel = "MinchoCandyWars.Dev.Core.BodyLevel".Translate(),
                     action = delegate
                     {
                         MinchoBodyGrade += 1;
@@ -372,7 +374,7 @@ namespace MinchoCandyWars
                 };
                 yield return new Command_Action
                 {
-                    defaultLabel = "Dev:增加100清凉值",
+                    defaultLabel = "MinchoCandyWars.Dev.Core.AddChill".Translate(),
                     action = delegate
                     {
                         MinchoCandyValue += 100f;
@@ -381,7 +383,7 @@ namespace MinchoCandyWars
 
                 yield return new Command_Action
                 {
-                    defaultLabel = "Dev:全满",
+                    defaultLabel = "MinchoCandyWars.Dev.Core.MaxOut".Translate(),
                     action = delegate
                     {
                         Active = true;
@@ -392,7 +394,7 @@ namespace MinchoCandyWars
                 };
                 yield return new Command_Action
                 {
-                    defaultLabel = "Dev:清空",
+                    defaultLabel = "MinchoCandyWars.Dev.Core.Reset".Translate(),
                     action = delegate
                     {
                         Active = false;
@@ -403,7 +405,7 @@ namespace MinchoCandyWars
                 };
                 yield return new Command_Action
                 {
-                    defaultLabel = "Dev:切换激活状态",
+                    defaultLabel = "MinchoCandyWars.Dev.Core.ToggleActive".Translate(),
                     action = delegate
                     {
                         Active = !Active;

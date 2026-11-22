@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Mincho_ThingDef"]/comps</xpath>
     <value>
       <li Class="MinchoCandyWars.CompProperties_MinchoCore">
           <renderNodeProperties>
-            <li>
+            <li Class="MinchoCandyWars.Render.PawnRenderNodeProperties_CandyDecoration">
               <debugLabel>MCW candy decoration</debugLabel>
               <nodeClass>MinchoCandyWars.Render.PawnRenderNode_CandyDecoration</nodeClass>
               <workerClass>MinchoCandyWars.Render.PawnRenderNodeWorker_CandyDecoration</workerClass>
@@ -13,6 +13,10 @@
               <parentTagDef>Head</parentTagDef>
               <baseLayer>66</baseLayer>
               <drawSize>0.675,0.675</drawSize>
+              <!-- 佩戴带这些 tag 的服饰时隐藏糖饰；新增面罩类服饰只要打上同名 tag 即可。 -->
+              <hiddenUnderApparelTag>
+                <li>MCW_FaceCover</li>
+              </hiddenUnderApparelTag>
             </li>
           </renderNodeProperties>
         </li>

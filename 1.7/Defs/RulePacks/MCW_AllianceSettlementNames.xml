@@ -1,33 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <RulePackDef>
     <defName>MCW_AllianceSettlementNames</defName>
     <rulePack>
       <rulesStrings>
-        <li>r_name-&gt;[candy]珉巧同盟分部</li>
-        <li>r_name-&gt;[candy]珉巧同盟联络处</li>
-        <li>candy-&gt;薄荷糖</li>
-        <li>candy-&gt;奶糖</li>
-        <li>candy-&gt;水果糖</li>
-        <li>candy-&gt;棉花糖</li>
-        <li>candy-&gt;跳跳糖</li>
-        <li>candy-&gt;泡泡糖</li>
-        <li>candy-&gt;棒棒糖</li>
-        <li>candy-&gt;太妃糖</li>
-        <li>candy-&gt;牛轧糖</li>
-        <li>candy-&gt;琥珀糖</li>
-        <li>candy-&gt;金平糖</li>
-        <li>candy-&gt;砂板糖</li>
-        <li>candy-&gt;酥糖</li>
-        <li>candy-&gt;软糖</li>
-        <li>candy-&gt;硬糖</li>
-        <li>candy-&gt;夹心糖</li>
-        <li>candy-&gt;麦芽糖</li>
-        <li>candy-&gt;花生糖</li>
-        <li>candy-&gt;芝麻糖</li>
-        <li>candy-&gt;椰子糖</li>
-        <li>candy-&gt;咖啡糖</li>
-        <li>candy-&gt;巧克力糖</li>
+        <li>r_name-&gt;[candy] Mincho Alliance branch</li>
+        <li>r_name-&gt;[candy] Mincho Alliance liaison office</li>
+        <li>candy-&gt;Mint candy</li>
+        <li>candy-&gt;Milk candy</li>
+        <li>candy-&gt;Fruit candy</li>
+        <li>candy-&gt;Marshmallow</li>
+        <li>candy-&gt;Popping candy</li>
+        <li>candy-&gt;Bubblegum</li>
+        <li>candy-&gt;Lollipop</li>
+        <li>candy-&gt;Toffee</li>
+        <li>candy-&gt;Nougat</li>
+        <li>candy-&gt;Amber candy</li>
+        <li>candy-&gt;Konpeito</li>
+        <li>candy-&gt;Rock candy</li>
+        <li>candy-&gt;Crispy candy</li>
+        <li>candy-&gt;Gummy candy</li>
+        <li>candy-&gt;Hard candy</li>
+        <li>candy-&gt;Filled candy</li>
+        <li>candy-&gt;Malt candy</li>
+        <li>candy-&gt;Peanut brittle</li>
+        <li>candy-&gt;Sesame candy</li>
+        <li>candy-&gt;Coconut candy</li>
+        <li>candy-&gt;Coffee candy</li>
+        <li>candy-&gt;Chocolate candy</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>

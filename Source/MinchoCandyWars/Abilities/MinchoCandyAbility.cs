@@ -33,6 +33,14 @@ namespace MinchoCandyWars.Abilities
         {
         }
 
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            // 读档替换动词后，原版 Initialize 曾绑定的是被替换的旧实例。
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && verb is IAbilityVerb abilityVerb)
+                abilityVerb.Ability = this;
+        }
+
         //初始化数据
         void IInitalizable.Initialize()
         {
@@ -123,7 +131,7 @@ namespace MinchoCandyWars.Abilities
             {
                 yield return new Command_Action
                 {
-                    defaultLabel = "DEV: Reset cooldown",
+                    defaultLabel = "MinchoCandyWars.Dev.ResetCooldown".Translate(),
                     action = delegate
                     {
                         ResetCooldown();//重置冷却

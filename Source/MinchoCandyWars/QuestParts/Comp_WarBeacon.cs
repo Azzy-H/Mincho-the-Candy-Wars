@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RimWorld;
 using Verse;
 using Verse.AI.Group;
@@ -113,11 +113,13 @@ namespace MinchoCandyWars
 
             if (Props.spawnRecycle)
             {
-                FactionDef factionDef = DefDatabase<FactionDef>.GetNamed(RecycleFactionDefName, errorOnFail: false);
+                FactionDef factionDef = MCW_DefOf.MCW_RecycleCorp_Faction;
                 Faction faction = factionDef == null ? null : Find.FactionManager.FirstFactionOfDef(factionDef);
                 if (faction != null)
                 {
-                    SpawnPawns(map, faction, RecycleKinds, Props.count, attack: true);
+                    if (QuestStory.HeadquartersLifecycle.IsHeadquarters(map.Parent))
+                        QuestStory.HeadquartersCombat.DropCompany(map, faction, Props.count, parent.Position);
+                    else SpawnPawns(map, faction, RecycleKinds, Props.count, attack: true);
                 }
             }
 
@@ -141,7 +143,7 @@ namespace MinchoCandyWars
                 }
 
                 Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(
-                    kind, faction, PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true));
+                    kind, faction, PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true, canGeneratePawnRelations: !attack));
                 if (pawn == null)
                 {
                     continue;
@@ -180,3 +182,4 @@ namespace MinchoCandyWars
         }
     }
 }
+

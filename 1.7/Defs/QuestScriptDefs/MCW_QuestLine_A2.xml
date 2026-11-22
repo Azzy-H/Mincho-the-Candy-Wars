@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -16,9 +16,9 @@
   -->
   <MinchoCandyWars.StellarisEvent.StellarisEventDef>
     <defName>MCW_Event_QuestA2_AllianceContact</defName>
-    <label>智慧珉巧救援</label>
-    <title>沁心糖</title>
-    <desc>你好！有一位智慧珉巧被回收公司捕获了，现在非常危险，但是我们现在疲于应战很难解救她，希望你能够帮我们解救她！目标位置已经发送给了你们。</desc>
+    <label>Smart Mincho rescue</label>
+    <title>Qinxintang</title>
+    <desc>Hello! A smart Mincho has been captured by the reclamation company and is in great danger, but we are hard pressed and cannot easily free her. We hope you can help us rescue her! The target location has been sent to you.</desc>
     <backgroundPath>Events/tile_large_bg</backgroundPath>
     <pictures>
       <li>
@@ -36,8 +36,8 @@
 
     <options>
       <li>
-        <label>是-我们马上去救她！</label>
-        <desc>接受救援请求，立刻前往目标地点解救被囚禁的智慧珉巧。</desc>
+        <label>Yes - we will go and save her at once!</label>
+        <desc>Accept the rescue request and head at once to free the imprisoned smart Mincho.</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_FireIncident">
@@ -55,8 +55,8 @@
       </li>
 
       <li>
-        <label>否-抱歉，我们目前没法帮助你</label>
-        <desc>拒绝救援请求。沁心糖对你的好感度会下降。</desc>
+        <label>No - sorry, we cannot help you right now</label>
+        <desc>Decline the request. Qinxintang opinion of you will drop.</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_AdjustFactionGoodwill">

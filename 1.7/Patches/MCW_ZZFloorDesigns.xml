@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorA"]/label</xpath>
+    <value>
+      <label>巧克力格子地板</label>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorA"]/description</xpath>
+    <value>
+      <description>由巧克力棒铺成的棕、白、粉色格子地板。</description>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorA"]/costList</xpath>
+    <value>
+      <costList Inherit="False">
+        <Mincho_ChocoStick>4</Mincho_ChocoStick>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorB"]/label</xpath>
+    <value>
+      <label>薄荷星空地板</label>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorB"]/description</xpath>
+    <value>
+      <description>由薄荷冰淇淋砖铺成，点缀着星光的薄荷蓝色地板。</description>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorB"]/costList</xpath>
+    <value>
+      <costList Inherit="False">
+        <Mincho_BlocksMintchoco>4</Mincho_BlocksMintchoco>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorC"]/label</xpath>
+    <value>
+      <label>巧克力爱心地板</label>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorC"]/description</xpath>
+    <value>
+      <description>巧克力与少量薄荷冰淇淋砖组成的精美爱心地板。</description>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorC"]/costList</xpath>
+    <value>
+      <costList Inherit="False">
+        <Mincho_ChocoStick>8</Mincho_ChocoStick>
+        <Mincho_BlocksMintchoco>1</Mincho_BlocksMintchoco>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorC"]/texturePath</xpath>
+    <value>
+      <texturePath>Terrain/Surfaces/MCW_MinchoFloorC</texturePath>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorC"]/color</xpath>
+    <value>
+      <color>(255,255,255)</color>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TerrainDef[defName="MCW_MinchoFloorC"]/statBases</xpath>
+    <value>
+      <Beauty>4</Beauty>
+    </value>
+  </Operation>
+</Patch>

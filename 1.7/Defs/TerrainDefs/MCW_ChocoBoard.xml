@@ -2,8 +2,8 @@
 <Defs>
   <TerrainDef ParentName="TileStoneBase">
     <defName>MCW_ChocoBoard_C33_Floor</defName>
-    <label>巧克力板地板</label>
-    <description>如同星星般的地板，不需要仰望的天空！采用巧克力板铺成，施工与基础参数参照大理石地砖。</description>
+    <label>Chocolate plank floor</label>
+    <description>A floor like the stars, with no need to look up at the sky! Paved from chocolate planks; construction and baseline stats follow marble tiles.</description>
     <color>(74,32,7)</color>
     <designationCategory>Mincho_Furniture</designationCategory>
     <uiOrder>2090</uiOrder>

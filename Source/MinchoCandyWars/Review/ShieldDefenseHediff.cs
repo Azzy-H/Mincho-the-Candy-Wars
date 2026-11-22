@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using RimWorld;
@@ -26,8 +26,8 @@ public class Hediff_ShieldDefense : HediffWithComps
     /// <summary>举盾 Hediff → 提供防御的盾牌本体。用 DefOf 比较，代码里不出现 defName 字符串。</summary>
     private static ThingDef? ShieldDefFor(HediffDef hediff)
     {
-        if (hediff == MCW_DefOf.MCW_TowerShield_DraftedHediff) return MCW_DefOf.MCW_TowerShield;
-        if (hediff == MCW_DefOf.MCW_CookiesShield_DraftedHediff) return MCW_DefOf.MCW_CookiesShield;
+        if (hediff == MCW_HediffDefOf.MCW_TowerShield_DraftedHediff) return MCW_ThingDefOf.MCW_TowerShield;
+        if (hediff == MCW_HediffDefOf.MCW_CookiesShield_DraftedHediff) return MCW_ThingDefOf.MCW_CookiesShield;
         return null;
     }
 
@@ -59,9 +59,9 @@ public class Hediff_ShieldDefense : HediffWithComps
                          && s.stat != StatDefOf.ArmorRating_Heat)
                 .ToList() ?? new List<StatModifier>();
 
-            stage.statOffsets.Add(Modifier(shield, MCW_DefOf.MCW_ShieldArmor_Sharp, StatDefOf.ArmorRating_Sharp));
-            stage.statOffsets.Add(Modifier(shield, MCW_DefOf.MCW_ShieldArmor_Blunt, StatDefOf.ArmorRating_Blunt));
-            stage.statOffsets.Add(Modifier(shield, MCW_DefOf.MCW_ShieldArmor_Heat,  StatDefOf.ArmorRating_Heat));
+            stage.statOffsets.Add(Modifier(shield, MCW_StatDefOf.MCW_ShieldArmor_Sharp, StatDefOf.ArmorRating_Sharp));
+            stage.statOffsets.Add(Modifier(shield, MCW_StatDefOf.MCW_ShieldArmor_Blunt, StatDefOf.ArmorRating_Blunt));
+            stage.statOffsets.Add(Modifier(shield, MCW_StatDefOf.MCW_ShieldArmor_Heat,  StatDefOf.ArmorRating_Heat));
 
             return stage;
         }

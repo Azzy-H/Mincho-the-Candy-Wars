@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using RimWorld;
 using Verse;
@@ -26,7 +26,7 @@ public static class RoboticArmSetup
 {
     static RoboticArmSetup()
     {
-        ThingDef arm = MCW_DefOf.MCW_RoboticArm;
+        ThingDef arm = MCW_ThingDefOf.MCW_RoboticArm;
         if (arm == null)
         {
             return;

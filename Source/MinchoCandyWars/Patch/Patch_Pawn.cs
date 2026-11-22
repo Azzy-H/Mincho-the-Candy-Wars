@@ -1,20 +1,23 @@
-﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HarmonyLib;
 using Verse;
 
-namespace MinchoCandyWars.Patch
+namespace MinchoCandyWars.Patch;
+
+[HarmonyPatch(typeof(Pawn), nameof(Pawn.GetDisabledWorkTypes))]
+internal static class Patch_Pawn
 {
-    [HarmonyPatch(typeof(Pawn),nameof(Pawn.GetDisabledWorkTypes))]
-    internal class Patch_Pawn
+    [HarmonyPostfix]
+    public static void Postfix_GetDisabledWorkTypes(Pawn __instance)
+        => __instance.GetComp<CompMinchoCore>()?.TryRemoveDisabledWorkTypes();
+}
+
+// Research benches and techprints must see the same intellectual work capability.
+[HarmonyPatch(typeof(Pawn), nameof(Pawn.CombinedDisabledWorkTags), MethodType.Getter)]
+internal static class SmartMinchoResearchTag
+{
+    private static void Postfix(Pawn __instance, ref WorkTags __result)
     {
-        [HarmonyPostfix]
-        public static void Postfix_GetDisabledWorkTypes(Pawn __instance)
-        {
-            __instance.GetComp<CompMinchoCore>()?.TryRemoveDisabledWorkTypes();
-        }
+        if (__instance.GetComp<CompMinchoCore>()?.Active == true)
+            __result &= ~WorkTags.Intellectual;
     }
 }

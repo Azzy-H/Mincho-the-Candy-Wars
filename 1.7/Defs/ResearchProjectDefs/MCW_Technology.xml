@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============================================================ -->
@@ -13,14 +13,14 @@
     <defName>MCW_Technology</defName>
     <label>mincho technology</label>
     <generalTitle>Mincho technology research projects</generalTitle>
-    <generalDescription>研究珉巧相关的科技：家具、设施与智慧珉巧改造包。</generalDescription>
+    <generalDescription>Research Mincho technologies: furniture, facilities and smart Mincho boosters.</generalDescription>
   </ResearchTabDef>
 
   <!-- ═══════════ 改造包：4 个独立科技 ═══════════ -->
   <ResearchProjectDef>
     <defName>MCW_Research_BoosterIntel</defName>
     <label>Mincho Intelligence Booster</label>
-    <description>研究智慧珉巧改造包的制作方法。</description>
+    <description>Research how to make the smart Mincho booster.</description>
     <techLevel>Industrial</techLevel>
     <baseCost>2000</baseCost>
     <tab>MCW_Technology</tab>
@@ -40,7 +40,7 @@
   <ResearchProjectDef>
     <defName>MCW_Research_BoosterCoreBasic</defName>
     <label>Mincho Basic Core Booster</label>
-    <description>研究初级核心改造包的制作方法，用于把智慧珉巧的核心等级提升到 1~3 级。</description>
+    <description>Research how to make the basic core booster, which raises a smart Mincho core grade to 1-3.</description>
     <techLevel>Industrial</techLevel>
     <baseCost>2000</baseCost>
     <tab>MCW_Technology</tab>
@@ -60,7 +60,7 @@
   <ResearchProjectDef>
     <defName>MCW_Research_BoosterCoreAdvanced</defName>
     <label>Mincho Advanced Core Booster</label>
-    <description>研究高级核心改造包的制作方法，用于把智慧珉巧的核心等级提升到 3~5 级。</description>
+    <description>Research how to make the advanced core booster, which raises a smart Mincho core grade to 3-5.</description>
     <techLevel>Industrial</techLevel>
     <baseCost>3000</baseCost>
     <tab>MCW_Technology</tab>
@@ -80,7 +80,7 @@
   <ResearchProjectDef>
     <defName>MCW_Research_BoosterBody</defName>
     <label>Mincho Body Booster</label>
-    <description>研究躯体改造包的制作方法，用于提升智慧珉巧的躯体等级。</description>
+    <description>Research how to make the body booster, which raises a smart Mincho body grade.</description>
     <techLevel>Industrial</techLevel>
     <baseCost>2000</baseCost>
     <tab>MCW_Technology</tab>

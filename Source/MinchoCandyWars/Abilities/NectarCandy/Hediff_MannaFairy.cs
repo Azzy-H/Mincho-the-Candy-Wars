@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -21,7 +21,7 @@ namespace MinchoCandyWars.Abilities.NectarCandy
         private const int RequiredCore = 3;
         private const int RequiredBody = 5;
 
-        private static readonly Texture2D RecallCommand = ContentFinder<Texture2D>.Get("UI/Commands/SplitCaravan");
+        private static readonly Texture2D RecallCommand = ContentFinder<Texture2D>.Get("UI/Gizmos/Abilities/Nectar/MCW_MannaFairyRecall");
 
         private CompMinchoCore? _cachedCore;
 
@@ -53,7 +53,7 @@ namespace MinchoCandyWars.Abilities.NectarCandy
             get
             {
                 if (pawn.Dead) return false;
-                if (dispatchedTo != null) return true;
+                if (dispatchedTo != null) return LevelMet && !dispatchedTo.Dead && !dispatchedTo.Destroyed;
                 return LevelMet;
             }
         }
@@ -75,18 +75,19 @@ namespace MinchoCandyWars.Abilities.NectarCandy
                 ApplySelfBuff();
         }
 
-        public override void Tick()
+        public override void PostTickInterval(int delta)
         {
-            if (!IsValid) return;
+            base.PostTickInterval(delta);
 
-            base.Tick();
 
-            if (!pawn.IsHashIntervalTick(60))
+
+            if (!pawn.IsHashIntervalTick(60, delta))
                 return;
 
             if (dispatchedTo != null)
             {
-                if (dispatchedTo.Dead || dispatchedTo.Destroyed || dispatchedTo.Map != pawn.Map)
+                if (dispatchedTo.Dead || dispatchedTo.Destroyed || dispatchedTo.Map != pawn.Map ||
+                    (pawn.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MannaConnection) as Hediff_MannaConnection)?.pairedPawn != dispatchedTo)
                 {
                     Recall();
                 }
@@ -113,8 +114,8 @@ namespace MinchoCandyWars.Abilities.NectarCandy
             Pawn host = pawn;
             if (host == null || host.Dead || !LevelMet) return;
 
-            if (host.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_MannaFairyBuff) == null)
-                buffHediff = host.health.AddHediff(MCW_DefOf.MCW_MannaFairyBuff);
+            if (host.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MannaFairyBuff) == null)
+                buffHediff = host.health.AddHediff(MCW_HediffDefOf.MCW_MannaFairyBuff);
         }
 
         private void RemoveSelfBuff()
@@ -129,8 +130,9 @@ namespace MinchoCandyWars.Abilities.NectarCandy
             }
             else
             {
-                Hediff? existing = host.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_MannaFairyBuff);
-                if (existing != null) host.health.RemoveHediff(existing);
+                Hediff? existing = host.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MannaFairyBuff);
+                if (existing != null && !Hediff_MannaFairyBuff.HasIncomingProtection(host))
+                    host.health.RemoveHediff(existing);
             }
         }
 
@@ -138,15 +140,15 @@ namespace MinchoCandyWars.Abilities.NectarCandy
         {
             if (dispatchedTo == null || dispatchedTo.Dead) return;
 
-            if (dispatchedTo.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_MannaFairyBuff) == null)
-                dispatchedTo.health.AddHediff(MCW_DefOf.MCW_MannaFairyBuff);
+            if (dispatchedTo.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MannaFairyBuff) == null)
+                dispatchedTo.health.AddHediff(MCW_HediffDefOf.MCW_MannaFairyBuff);
         }
 
         private void RemoveTargetBuff()
         {
             if (dispatchedTo == null) return;
 
-            Hediff? existing = dispatchedTo.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_MannaFairyBuff);
+            Hediff? existing = dispatchedTo.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MannaFairyBuff);
             if (existing != null) dispatchedTo.health.RemoveHediff(existing);
         }
 
@@ -180,3 +182,4 @@ namespace MinchoCandyWars.Abilities.NectarCandy
         }
     }
 }
+

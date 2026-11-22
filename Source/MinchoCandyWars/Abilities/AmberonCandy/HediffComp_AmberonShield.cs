@@ -36,6 +36,7 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
         }
 
         protected override float EnergyGainPerTick => EnergyMax / Props.startingTicksToReset;
+        protected override bool BreaksOnEmp => false;
         public override int StartingTicksToReset => Props.startingTicksToReset;
         protected override float EnergyOnReset => Props.hitpointsOnReset > 0 ? Props.hitpointsOnReset : EnergyMax * 0.2f;
     }

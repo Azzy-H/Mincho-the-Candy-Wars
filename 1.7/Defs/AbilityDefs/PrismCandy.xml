@@ -1,16 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <!-- ===== 琉璃千刃 ===== -->
   <AbilityDef>
     <defName>MCW_PrismCandyAbility_ThousandBlades</defName>
     <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
     <label>Thousand Blades</label>
-    <description>Fires shattered prism candy in a large forward cone, dealing sharp damage.</description>
+    <description>Fires shattered prism candy in a large forward cone, dealing sharp damage. Does not harm the caster, allies or neutral pawns.</description>
     <iconPath>UI/Gizmos/Abilities/Prism/MCW_ThousandBlades</iconPath>
     <hostile>true</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <cooldownTicksRange>1800</cooldownTicksRange><!-- 30 seconds -->
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <!-- 30 seconds -->
     <displayOrder>400</displayOrder>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
@@ -42,17 +42,17 @@
       </li>
     </modExtensions>
   </AbilityDef>
-
   <!-- ===== 冰霜剑影 ===== -->
   <AbilityDef>
     <defName>MCW_PrismCandyAbility_FrostSwordShadow</defName>
     <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
     <label>Frost Sword Shadow</label>
-    <description>Slashes a crescent-shaped area ahead with a frost sword shadow, dealing high sharp damage.</description>
+    <description>Slashes a narrow forward cone with a frost sword shadow, dealing high sharp damage. Does not harm the caster, allies or neutral pawns.</description>
     <iconPath>UI/Gizmos/Abilities/Prism/MCW_FrostSwordShadow</iconPath>
     <hostile>true</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <cooldownTicksRange>2500</cooldownTicksRange><!-- 1 hour -->
+    <cooldownTicksRange>2500</cooldownTicksRange>
+    <!-- 1 hour -->
     <displayOrder>300</displayOrder>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
@@ -69,7 +69,9 @@
     </verbProperties>
     <comps>
       <li Class="MinchoCandyWars.Abilities.PrismCandy.CompProperties_AbilityPrismBlade">
-        <halfAngle>90</halfAngle>
+        <!-- 收窄判定；补偿宽度系数使特效保持原有13×26格画布尺寸。 -->
+        <halfAngle>22.5</halfAngle>
+        <effectWidthScale>2.613126</effectWidthScale>
         <damageRatio>0.5</damageRatio>
         <damageDef>MCW_PrismBladeBurst</damageDef>
         <effectDef>MCW_Fleck_FrostSwordShadowSlash</effectDef>
@@ -84,19 +86,19 @@
       </li>
     </modExtensions>
   </AbilityDef>
-
   <!-- ===== 琉璃霞 ===== -->
   <AbilityDef>
     <defName>MCW_PrismCandyAbility_PrismGlow</defName>
     <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
     <label>Prism Glow</label>
-    <description>Leaps at a target and thrusts, dealing high sharp damage to vitals, then briefly increases movement speed.</description>
+    <description>Leaps at a target and thrusts, dealing high sharp damage to vitals, then briefly increases movement speed. Only hostile pawns can be struck.</description>
     <iconPath>UI/Gizmos/Abilities/Prism/MCW_PrismGlow</iconPath>
     <warmupStartSound>Longjump_Jump</warmupStartSound>
     <jobDef>CastJump</jobDef>
     <hostile>true</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <cooldownTicksRange>15000</cooldownTicksRange><!-- 6 hours -->
+    <cooldownTicksRange>15000</cooldownTicksRange>
+    <!-- 6 hours -->
     <displayOrder>200</displayOrder>
     <verbProperties>
       <verbClass>MinchoCandyWars.Abilities.PrismCandy.Verb_CastAbilityPrismGlow</verbClass>
@@ -133,17 +135,17 @@
       </li>
     </modExtensions>
   </AbilityDef>
-
   <!-- ===== 巧克力冰淇淋巨剑 ===== -->
   <AbilityDef>
     <defName>MCW_PrismCandyAbility_ChocoGreatsword</defName>
     <abilityClass>MinchoCandyWars.Abilities.MinchoCandyAbility</abilityClass>
     <label>Chocolate Ice Cream Greatsword</label>
-    <description>Swings a massive chocolate ice cream greatsword at a target area, dealing high blunt damage and creating slowing terrain.</description>
+    <description>Swings a massive chocolate ice cream greatsword at a target area, dealing high blunt damage and creating slowing terrain. Damage and slowing do not affect the caster, allies or neutral pawns.</description>
     <iconPath>UI/Gizmos/Abilities/Prism/MCW_ChocoGreatsword</iconPath>
     <hostile>true</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <cooldownTicksRange>60000</cooldownTicksRange><!-- 1 day -->
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <!-- 1 day -->
     <displayOrder>100</displayOrder>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
@@ -174,7 +176,6 @@
       </li>
     </modExtensions>
   </AbilityDef>
-
   <!-- ===== 琉璃霞飞行器 ===== -->
   <ThingDef ParentName="PawnFlyerBase">
     <defName>MCW_PrismGlowFlyer</defName>
@@ -184,6 +185,6 @@
       <flightDurationMin>0.2</flightDurationMin>
       <flightSpeed>20</flightSpeed>
     </pawnFlyer>
+    <description>A prism-like streak of light sweeps through the air, leaving only a cool wisp of sweetness behind.</description>
   </ThingDef>
-
 </Defs>

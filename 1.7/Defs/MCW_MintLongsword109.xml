@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>MCW_MintChocolateLongsword</defName>
+    <label>Mint chocolate longsword</label>
+    <description>The chill of mint hides in a chocolate blade. The slender sword is astonishingly light; when it cuts the air it leaves only a thin line of cold, sweet light.</description>
+    <graphicData>
+      <texPath>MCW/Weapon/MintLongsword109</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.5</drawSize>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <statBases>
+      <WorkToMake>40000</WorkToMake>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>3</Mass>
+      <Beauty>0.5</Beauty>
+      <Flammability>0.5</Flammability>
+      <JumpRange>10</JumpRange>
+    </statBases>
+    <equipmentType>Primary</equipmentType>
+    <techLevel>Neolithic</techLevel>
+    <equippedAngleOffset>0</equippedAngleOffset>
+    <equippedDistanceOffset>0.5</equippedDistanceOffset>
+    <costList>
+      <Mincho_BlocksMintchoco>50</Mincho_BlocksMintchoco>
+      <Gold>30</Gold>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>1.4</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>18</power>
+        <cooldownTime>1.8</cooldownTime>
+        <armorPenetration>0.4</armorPenetration>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>18</power>
+        <cooldownTime>1.8</cooldownTime>
+        <armorPenetration>0.4</armorPenetration>
+      </li>
+    </tools>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <displayPriority>61</displayPriority>
+      <recipeUsers Inherit="False">
+        <li>Mincho_MinchoBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <weaponTags Inherit="False">
+      <li>Mincho_Tier4</li>
+    </weaponTags>
+    <tradeTags Inherit="False">
+      <li>WeaponMelee</li>
+    </tradeTags>
+    <comps>
+      <li Class="Mincho_The_Mint_Choco_Slime.CompProperties_GiveAbility">
+        <abilityDefs>
+          <li>MCW_MintLongswordJump109</li>
+        </abilityDefs>
+      </li>
+    </comps>
+  </ThingDef>
+  <AbilityDef>
+    <defName>MCW_MintLongswordJump109</defName>
+    <label>Charge attack</label>
+    <description>Leap at an enemy within 10 tiles.</description>
+    <iconPath>UI/Gizmos/Abilities/Prism/MCW_MintLunge</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <aiCanUse>false</aiCanUse>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>MinchoCandyWars.Abilities.MintLongswordJump</verbClass>
+      <warmupTime>0.5</warmupTime>
+      <range>10</range>
+      <violent>true</violent>
+      <requireLineOfSight>true</requireLineOfSight>
+      <soundCast>Longjump_Jump</soundCast>
+      <soundLanding>Longjump_Land</soundLanding>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetSelf>false</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <jobDef>CastJump</jobDef>
+  </AbilityDef>
+</Defs>

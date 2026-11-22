@@ -52,7 +52,7 @@ namespace MinchoCandyWars
             //开发者模式开关
             if (Prefs.DevMode)
             {
-                listing.CheckboxLabeled("DEV Mode", ref setting.isDevMode);
+                listing.CheckboxLabeled("MinchoCandyWars.Dev.Mode".Translate(), ref setting.isDevMode);
                 listing.Gap(12f);
             }
 

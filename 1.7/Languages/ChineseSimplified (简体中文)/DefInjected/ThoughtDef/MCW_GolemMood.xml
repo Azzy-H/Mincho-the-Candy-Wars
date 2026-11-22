@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: 殖民地里有一座可靠的珉巧魔像。有它在，我安心多了。 -->
+  <MCW_StableGolem.stages.0.description>殖民地里有一座可靠的珉巧魔像。有它在，我安心多了。</MCW_StableGolem.stages.0.description>
+  <!-- EN: 稳定的巨大冰淇淋！ -->
+  <MCW_StableGolem.stages.0.label>稳定的巨大冰淇淋！</MCW_StableGolem.stages.0.label>
+  <!-- EN: 一座不会消散的珉巧魔像！看到它守护着殖民地，真让人高兴。 -->
+  <MCW_StableGolem.stages.1.description>一座不会消散的珉巧魔像！看到它守护着殖民地，真让人高兴。</MCW_StableGolem.stages.1.description>
+  <!-- EN: 稳定的巨大冰淇淋！ -->
+  <MCW_StableGolem.stages.1.label>稳定的巨大冰淇淋！</MCW_StableGolem.stages.1.label>
+  <!-- EN: There is a reliable Mincho golem in the colony. With it around, I feel much safer. -->
+  <MCW_StableGolem.stages.A_stable_giant_ice_cream-0.description>殖民地里有一座可靠的珉巧魔像。有它在，我安心多了。</MCW_StableGolem.stages.A_stable_giant_ice_cream-0.description>
+  <!-- EN: A stable giant ice cream -->
+  <MCW_StableGolem.stages.A_stable_giant_ice_cream-0.label>稳定的巨大冰淇淋！</MCW_StableGolem.stages.A_stable_giant_ice_cream-0.label>
+  <!-- EN: A Mincho golem that will not fade away. Seeing it guard the colony is truly heartening. -->
+  <MCW_StableGolem.stages.A_stable_giant_ice_cream-1.description>一座不会消散的珉巧魔像！看到它守护着殖民地，真让人高兴。</MCW_StableGolem.stages.A_stable_giant_ice_cream-1.description>
+  <!-- EN: A stable giant ice cream -->
+  <MCW_StableGolem.stages.A_stable_giant_ice_cream-1.label>稳定的巨大冰淇淋！</MCW_StableGolem.stages.A_stable_giant_ice_cream-1.label>
+</LanguageData>

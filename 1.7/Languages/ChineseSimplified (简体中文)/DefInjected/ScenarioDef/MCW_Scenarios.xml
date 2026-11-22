@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: For reasons of their own, Mincho who had left human company gathered together and formed a small settlement. They live together using the skills they learned from humans.\n\nAmong this group, one has awakened a smart core - she will lead her companions further. -->
+  <MCW_Scenarios.description>出于某种原因，离开人类身边的珉巧们聚到了一起，组成了一个小小的聚落。她们用从人类那里学来的本领共同生活。\n\n而这一群珉巧之中，有一位觉醒了智慧核心——她将带领同伴们走得更远。</MCW_Scenarios.description>
+  <!-- EN: Smart Mincho -->
+  <MCW_Scenarios.label>智慧珉巧</MCW_Scenarios.label>
+  <!-- EN: For reasons of their own, Mincho who had left human company gathered together and formed a small settlement. They live together using the skills they learned from humans.\n\nAmong this group, one has awakened a smart core - she will lead her companions further. -->
+  <MCW_Scenarios.scenario.description>出于某种原因，离开人类身边的珉巧们聚到了一起，组成了一个小小的聚落。她们用从人类那里学来的本领共同生活。\n\n而这一群珉巧之中，有一位觉醒了智慧核心——她将带领同伴们走得更远。</MCW_Scenarios.scenario.description>
+  <!-- EN: Smart Mincho -->
+  <MCW_Scenarios.scenario.name>智慧珉巧</MCW_Scenarios.scenario.name>
+  <!-- EN: Chatting about mint chocolate every day is nice, but there is a lot more missing from life than that... -->
+  <MCW_Scenarios.scenario.parts.18.text>每天聊聊薄荷巧克力是很好，但光靠这些，生活里还缺很多很多东西……</MCW_Scenarios.scenario.parts.18.text>
+  <!-- EN: Chatting about mint chocolate every day is nice, but there is a lot more missing from life than that... -->
+  <MCW_Scenarios.scenario.parts.GameStartDialog.text>每天聊聊薄荷巧克力是很好，但光靠这些，生活里还缺很多很多东西……</MCW_Scenarios.scenario.parts.GameStartDialog.text>
+  <!-- EN: A start where four Mincho live together, one of them a smart Mincho. -->
+  <MCW_Scenarios.scenario.summary>4位珉巧共同生活的开局，其中一人是智慧珉巧。</MCW_Scenarios.scenario.summary>
+
+</LanguageData>

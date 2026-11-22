@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Infects a living target with Mincho disease. -->
+  <MCW_LinglonCandyAbility_MinchoInfection.description>使一个活体目标感染珉巧病。</MCW_LinglonCandyAbility_MinchoInfection.description>
+  <!-- EN: Mincho Infection -->
+  <MCW_LinglonCandyAbility_MinchoInfection.label>珉巧感染</MCW_LinglonCandyAbility_MinchoInfection.label>
+</LanguageData>

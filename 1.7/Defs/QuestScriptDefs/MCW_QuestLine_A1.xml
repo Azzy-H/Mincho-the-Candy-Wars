@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -17,9 +17,9 @@
   -->
   <MinchoCandyWars.StellarisEvent.StellarisEventDef>
     <defName>MCW_Event_QuestA1_AllianceContact</defName>
-    <label>收留珉巧请求</label>
-    <title>沁心糖</title>
-    <desc>你好！我亲爱的盟友~我们发您附近有一些游荡的，被迫害的珉巧。如果可以，我们会发送您的坐标给她们，她们会前往你那里避难，她们也会帮助你，比如，给你冰淇淋吃！</desc>
+    <label>Request to shelter Mincho</label>
+    <title>Qinxintang</title>
+    <desc>Hello, my dear ally! We have found some wandering, persecuted Mincho near you. If you agree, we will send them your coordinates; they will take refuge with you, and they will help you too - for instance, by giving you ice cream to eat!</desc>
     <backgroundPath>Events/tile_large_bg</backgroundPath>
     <pictures>
       <li>
@@ -38,8 +38,8 @@
 
     <options>
       <li>
-        <label>是-当然！没问题！</label>
-        <desc>接受珉巧们的避难请求，她们很快就会来到你的殖民地。</desc>
+        <label>Yes - of course! No problem!</label>
+        <desc>Accept the shelter request; the Mincho will soon arrive at your colony.</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_FireIncident">
@@ -57,8 +57,8 @@
       </li>
 
       <li>
-        <label>否-抱歉，我们目前没法帮助你</label>
-        <desc>拒绝这次请求。沁心糖对你的好感度会下降。</desc>
+        <label>No - sorry, we cannot help you right now</label>
+        <desc>Decline the request. Qinxintang opinion of you will drop.</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_AdjustFactionGoodwill">
@@ -77,8 +77,8 @@
       </li>
 
       <li>
-        <label>待定-麻烦稍等下，我们先收拾下房间！</label>
-        <desc>暂时不做决定，关闭窗口。之后可以重新联络珉巧同盟。</desc>
+        <label>Later - please hold on, let us tidy the room first!</label>
+        <desc>Decide later and close the window. You can contact the Mincho Alliance again afterwards.</desc>
         <action>
           <effects />
         </action>

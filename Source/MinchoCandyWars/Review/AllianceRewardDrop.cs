@@ -21,8 +21,6 @@ public static class AllianceDelivery
     [ThreadStatic] private static Batch current;
     public static IEnumerable<MethodBase> TargetMethods()
     {
-        yield return AccessTools.Method(typeof(MinchoCandyWars.Effect_GrantAllianceSubsidy),"Execute");
-        yield return AccessTools.Method(typeof(MinchoCandyWars.Effect_BuyAllianceItem),"Execute");
         yield return AccessTools.Method(typeof(MinchoCandyWars.QuestParts.QuestPart_GiveAllianceReward),"GiveItemRewards");
         yield return AccessTools.Method(typeof(MinchoCandyWars.IncidentWorker_RecruitMincho),"GiveReward");
     }
@@ -36,7 +34,7 @@ public static class AllianceDelivery
     public static void Postfix(Batch __state)
     {
         if(__state.Items.Count>0)
-            DropPodUtility.DropThingGroupsNear(__state.Center,__state.Map,Groups(__state.Items),openDelay:110,leaveSlag:false,canRoofPunch:false,forbid:false,allowFogged:false);
+            DropPodUtility.DropThingGroupsNear(__state.Center,__state.Map,Groups(__state.Items),openDelay:110,instaDrop:false,leaveSlag:false,canRoofPunch:false,forbid:false,allowFogged:false);
     }
     public static Exception Finalizer(Exception __exception,Batch __state)
     {
@@ -45,14 +43,23 @@ public static class AllianceDelivery
     }
     public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
-        var code=instructions.ToList();int hits=0;
-        foreach(var ins in code)
-            if(ins.operand is MethodInfo m && m.DeclaringType==typeof(GenPlace) && m.Name==nameof(GenPlace.TryPlaceThing))
-            {
-                if(m.GetParameters().Length!=8 || m.GetParameters()[0].ParameterType!=typeof(Thing))Log.Error("[MCW]AllianceDelivery unexpected placement overload");
-                ins.opcode=OpCodes.Call;ins.operand=AccessTools.Method(typeof(AllianceDelivery),nameof(Collect));hits++;
-            }
-        if(hits!=1) Log.Error("[MCW]AllianceDelivery expected one delivery call, got " + hits);
+        var code=instructions.ToList();
+        var collect=AccessTools.Method(typeof(AllianceDelivery),nameof(Collect));
+        var parameterTypes=collect.GetParameters().Select(p=>p.ParameterType).ToArray();
+        var placements=code.Where(ins=>ins.operand is MethodInfo m
+            && m.DeclaringType==typeof(GenPlace) && m.Name==nameof(GenPlace.TryPlaceThing)).ToList();
+        // Validate the entire replacement before changing IL. An incompatible overload
+        // must retain the original delivery rather than producing an invalid method.
+        if(placements.Count!=1 || placements[0].operand is not MethodInfo target
+            || !target.IsStatic || target.ReturnType!=collect.ReturnType
+            || !target.GetParameters().Select(p=>p.ParameterType).SequenceEqual(parameterTypes))
+        {
+            Log.Error("[MCW]AllianceDelivery placement signature changed; keeping original delivery");
+            return code;
+        }
+        placements[0].opcode=OpCodes.Call;
+        placements[0].operand=collect;
         return code;
     }
 }
+

@@ -1,4 +1,4 @@
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 
 namespace MinchoCandyWars.Abilities.PrismCandy
@@ -10,7 +10,7 @@ namespace MinchoCandyWars.Abilities.PrismCandy
     /// </summary>
     public class Verb_CastAbilityPrismGlow : Verb_CastAbilityJump
     {
-        public override ThingDef JumpFlyerDef => MCW_DefOf.MCW_PrismGlowFlyer;
+        public override ThingDef JumpFlyerDef => MCW_ThingDefOf.MCW_PrismGlowFlyer;
 
         /// <summary>
         /// 原版 Verb_CastAbilityJump.OrderForceTarget 会调用 JumpUtility.OrderJump，

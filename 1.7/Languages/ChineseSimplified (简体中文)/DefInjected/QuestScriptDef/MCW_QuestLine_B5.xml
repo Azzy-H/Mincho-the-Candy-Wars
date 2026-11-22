@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: questDescription->A Mincho Alliance outpost is under attack by the reclamation force and we must help at once!
+
+The outpost is close to your colony, but we have only 2 days. -->
+  <MCW_QuestB5_AllianceOutpostDefense.questDescriptionRules.rulesStrings.0>questDescription->珉巧同盟的一个据点正在被回收部队袭击，我们必须立刻前往援助！\n\n据点距离你的殖民地很近，但留给我们的时间只有 2 天。</MCW_QuestB5_AllianceOutpostDefense.questDescriptionRules.rulesStrings.0>
+  <!-- EN: questName->Reinforce the Mincho outpost -->
+  <MCW_QuestB5_AllianceOutpostDefense.questNameRules.rulesStrings.0>questName->珉巧据点增援</MCW_QuestB5_AllianceOutpostDefense.questNameRules.rulesStrings.0>
+
+</LanguageData>

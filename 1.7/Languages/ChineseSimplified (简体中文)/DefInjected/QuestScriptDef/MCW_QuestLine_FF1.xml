@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: questDescription->The Mincho will buy us time; we must destroy the reclamation company contact computer.
+
+This is the decisive battle that will decide the fate of this world. -->
+  <MCW_QuestFF1_RecycleHQ.questDescriptionRules.rulesStrings.0>questDescription->珉巧们会为我们争取时间，我们需要摧毁回收公司的联络电脑。\n\n这是一场决定这颗星球命运的决战。</MCW_QuestFF1_RecycleHQ.questDescriptionRules.rulesStrings.0>
+  <!-- EN: questName->Destroy the reclamation force headquarters -->
+  <MCW_QuestFF1_RecycleHQ.questNameRules.rulesStrings.0>questName->击溃回收部队总部</MCW_QuestFF1_RecycleHQ.questNameRules.rulesStrings.0>
+
+</LanguageData>

@@ -1,4 +1,4 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -38,7 +38,7 @@ public static class SlimeFacing
     public static void Postfix(PawnRenderNode __instance, PawnDrawParms parms, ref bool __result)
     {
         if (!(__instance is PawnRenderNode_AnimalPart) ||
-            __instance.tree?.pawn?.def?.defName != "MCW_MinchoSlime" || !parms.facing.IsHorizontal) return;
+            __instance.tree?.pawn?.def != MCW_ThingDefOf.MCW_MinchoSlime_Thing || !parms.facing.IsHorizontal) return;
         Graphic graphic = __instance.PrimaryGraphic;
         // Upstream supplies only a left-facing _west sprite. Pawn meshes mirror West,
         // while Graphic_Multi's EastFlipped flag is ignored by the pawn node path.

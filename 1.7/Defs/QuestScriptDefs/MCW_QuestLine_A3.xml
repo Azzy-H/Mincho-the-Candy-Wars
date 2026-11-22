@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -14,9 +14,9 @@
   -->
   <MinchoCandyWars.StellarisEvent.StellarisEventDef>
     <defName>MCW_Event_QuestA3_AllianceContact</defName>
-    <label>袭击协助</label>
-    <title>沁心糖</title>
-    <desc>感谢你的接听，我们计划袭击回收公司的据点，希望你们可以协助我们击溃他们。可以吗？</desc>
+    <label>Assist the raid</label>
+    <title>Qinxintang</title>
+    <desc>Thank you for answering. We plan to raid a reclamation company site and hope you can help us crush them. Will you?</desc>
     <backgroundPath>Events/tile_large_bg</backgroundPath>
     <pictures>
       <li>
@@ -34,8 +34,8 @@
 
     <options>
       <li>
-        <label>是-我们也打算狠狠收拾他们！</label>
-        <desc>接受协助请求，与珉巧同盟一起突袭回收部队的前哨站。</desc>
+        <label>Yes - we were planning to give them a beating too!</label>
+        <desc>Accept the request and join the Mincho Alliance in raiding the reclamation force outpost.</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_FireIncident">
@@ -53,8 +53,8 @@
       </li>
 
       <li>
-        <label>否-抱歉，我们目前没法帮助你</label>
-        <desc>拒绝协助请求。沁心糖对你的好感度会下降。</desc>
+        <label>No - sorry, we cannot help you right now</label>
+        <desc>Decline the request. Qinxintang opinion of you will drop.</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_AdjustFactionGoodwill">
@@ -73,8 +73,8 @@
       </li>
 
       <li>
-        <label>待定-马上！我们正在制作强大的武器！</label>
-        <desc>暂时不做决定，关闭窗口。准备好后可以重新联络珉巧同盟。</desc>
+        <label>Later - soon! We are making powerful weapons!</label>
+        <desc>Decide later and close the window. You can contact the Mincho Alliance again when ready.</desc>
         <action>
           <effects />
         </action>

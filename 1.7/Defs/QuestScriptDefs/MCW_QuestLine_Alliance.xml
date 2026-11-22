@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -28,9 +28,9 @@
   <!-- ─────────────── 开局询问：要不要玩主线 ─────────────── -->
   <MinchoCandyWars.StellarisEvent.StellarisEventDef>
     <defName>MCW_Event_QS1_StartStory</defName>
-    <label>珉巧同盟主线</label>
-    <title>沁心糖</title>
-    <desc>作者的话：这是「珉巧扩展-糖果大作战」的引导窗口。看到此窗口代表Mod已经加载。糖果大作战有一条独立主线，你可以根据自身的选择决定是否开启主线。\n\n主线会让你在前期就获得新的珉巧，也会带来早于常规袭击的冲突。如果放弃主线，则本局不再有机会重新开启，其它内容不受影响。</desc>
+    <label>Mincho Alliance main story</label>
+    <title>Qinxintang</title>
+    <desc>Author note: this is the introduction window for the Mincho expansion, Candy Wars. Seeing this window means the mod has loaded. Candy Wars has its own main storyline, and you may decide from your own choices whether to start it.\n\nThe storyline gives you new Mincho early on, and brings conflict earlier than ordinary raids. If you decline the storyline, it cannot be restarted this run; other content is unaffected.</desc>
     <backgroundPath>Events/tile_large_bg</backgroundPath>
     <pictures>
       <li>
@@ -63,8 +63,8 @@
 
     <options>
       <li>
-        <label>是的</label>
-        <desc>立刻开始主线：一位被追捕的珉巧当天就会来到你的殖民地。</desc>
+        <label>Yes</label>
+        <desc>Start the storyline at once: a hunted Mincho will arrive at your colony today.</desc>
         <action>
           <effects>
             <!-- 0 天直接开任务，不再等一天 -->
@@ -83,8 +83,8 @@
       </li>
 
       <li>
-        <label>不，这局不玩主线内容</label>
-        <desc>本局不再询问，也不会启动珉巧同盟主线；其它内容不受影响。</desc>
+        <label>No, not playing the storyline this run</label>
+        <desc>You will not be asked again this run, and the Mincho Alliance storyline will not start; other content is unaffected.</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
@@ -105,7 +105,7 @@
   <IncidentDef>
     <defName>MCW_GiveQuest_QS1_MinchoMincho</defName>
     <category>GiveQuest</category>
-    <label>遭到追捕的珉巧</label>
+    <label>Hunted Mincho</label>
     <targetTags>
       <li>Map_PlayerHome</li>
     </targetTags>
@@ -127,12 +127,12 @@
 
     <questNameRules>
       <rulesStrings>
-        <li>questName-&gt;遭到追捕的珉巧</li>
+        <li>questName-&gt;Hunted Mincho</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription-&gt;你的殖民地来了一位珉巧，[asker_nameDef]，她说正在被回收公司追捕，并且没有去处。她希望你可以收留她，并且她声称可以为你做任何事情，只要不将她交出去。</li>
+        <li>questDescription-&gt;A Mincho has come to your colony, [asker_nameDef]. She says the reclamation company is hunting her and she has nowhere to go. She asks you to take her in, and claims she will do anything for you as long as you do not hand her over.</li>
       </rulesStrings>
     </questDescriptionRules>
 
@@ -200,8 +200,8 @@
         <li Class="QuestNode_PawnsArrive">
           <pawns>$asker</pawns>
           <joinPlayer>true</joinPlayer>
-          <customLetterLabel>遭到追捕的珉巧</customLetterLabel>
-          <customLetterText>你的殖民地来了一位珉巧，她说正在被回收公司追捕，并且没有去处。她希望你可以收留她，并且她声称可以为你做任何事情，只要不将她交出去。</customLetterText>
+          <customLetterLabel>Hunted Mincho</customLetterLabel>
+          <customLetterText>A Mincho has come to your colony. She says the reclamation company is hunting her and she has nowhere to go. She asks you to take her in, and claims she will do anything for you as long as you do not hand her over.</customLetterText>
         </li>
 
         <!-- ── t+1 天：珉巧同盟联络（先决条件：她仍然存活） ──
@@ -271,9 +271,9 @@
   <!-- ─────────────────── 事件：珉巧同盟联络 ─────────────────── -->
   <MinchoCandyWars.StellarisEvent.StellarisEventDef>
     <defName>MCW_Event_QS1_AllianceContact</defName>
-    <label>珉巧同盟联络</label>
-    <title>沁心糖</title>
-    <desc>你好，这个殖民地的主人，我是沁心糖，感谢你接收这条讯息，我们是珉巧同盟，是一个为了保护珉巧免于被回收的组织。而我，是这个组织的领导者。\n\n希望您可以加入我们的珉巧同盟，这也是因为这位智慧珉巧认为您是可信的，同时，我们会给予您的殖民地一些帮助！</desc>
+    <label>Mincho Alliance contact</label>
+    <title>Qinxintang</title>
+    <desc>Hello, owner of this colony. I am Qinxintang. Thank you for receiving this message. We are the Mincho Alliance, an organization that protects Mincho from being reclaimed, and I am its leader.\n\nWe hope you will join our Mincho Alliance - partly because this smart Mincho believes you can be trusted - and in return we will give your colony some help!</desc>
     <backgroundPath>Events/tile_large_bg</backgroundPath>
     <!-- 沁心糖·睁眼微笑（正式联络） -->
     <pictures>
@@ -294,8 +294,8 @@
 
     <options>
       <li>
-        <label>当然我们愿意加入珉巧同盟！</label>
-        <desc>与珉巧同盟结盟，并接受他们空投的物资援助。</desc>
+        <label>Of course we will join the Mincho Alliance!</label>
+        <desc>Ally with the Mincho Alliance and accept their airdropped supply aid.</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFactionRelation">
@@ -362,8 +362,8 @@
       </li>
 
       <li>
-        <label>算了吧，这听起来很危险。</label>
-        <desc>拒绝加入珉巧同盟。他们不会因为这次拒绝而与你为敌。</desc>
+        <label>Forget it; that sounds dangerous.</label>
+        <desc>Decline to join the Mincho Alliance. They will not become your enemy over this refusal.</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFlag">
@@ -382,9 +382,9 @@
   <!-- ─────────────────── 事件：回收公司联络 ─────────────────── -->
   <MinchoCandyWars.StellarisEvent.StellarisEventDef>
     <defName>MCW_Event_QS1_CorpContact</defName>
-    <label>回收公司联络</label>
-    <title>回收公司领队</title>
-    <desc>您好，我们在搜索一些像是冰淇淋的机器人，她们中的一位疑似进入了您的殖民地，麻烦您配合我们将他交出，否则我们不得不采取强制措施。</desc>
+    <label>Reclamation company contact</label>
+    <title>Reclamation company leader</title>
+    <desc>Greetings. We are searching for some ice-cream-like robots, and one of them appears to have entered your colony. Please cooperate and hand her over, or we will be forced to take measures.</desc>
     <backgroundPath>Events/tile_large_bg</backgroundPath>
     <!-- 回收公司领队暂时没有立绘：窗口在没有 pictures 时会只画背景，不会报错。
          等美术给出该角色的立绘后，在这里补回：
@@ -424,8 +424,8 @@
         </li>
 
         <li Class="MinchoCandyWars.StellarisEvent.Effect_SendLetter">
-          <label>回收队员到访</label>
-          <text>三名回收公司成员来到了你的殖民地边缘。领队要求你把那位珉巧交出去。</text>
+          <label>Reclamation troopers visit</label>
+          <text>Three members of the reclamation company have come to the edge of your colony. Their leader demands that you hand over that Mincho.</text>
           <letterDef>ThreatSmall</letterDef>
         </li>
       </effects>
@@ -433,8 +433,8 @@
 
     <options>
       <li>
-        <label>好吧，她是你的了</label>
-        <desc>交出那位珉巧。与珉巧同盟决裂并永久敌对。回收公司支付报酬：两套大师级海军装甲、两把极佳电荷标枪。</desc>
+        <label>MinchoCandyWars.CorpContact.Accept</label>
+        <desc>MinchoCandyWars.CorpContact.AcceptHint</desc>
         <action>
           <effects>
             <li Class="MinchoCandyWars.StellarisEvent.Effect_SetFactionRelation">
@@ -489,8 +489,8 @@
       </li>
 
       <li>
-        <label>不可能！</label>
-        <desc>拒绝交出珉巧。与回收公司永久敌对，三名回收公司成员立即发起进攻。</desc>
+        <label>MinchoCandyWars.CorpContact.Refuse</label>
+        <desc>MinchoCandyWars.CorpContact.RefuseHint</desc>
         <action>
           <effects>
             <!-- 先转敌对，再让这三人进攻（顺序不能颠倒） -->

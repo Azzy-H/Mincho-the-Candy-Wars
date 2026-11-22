@@ -2,12 +2,13 @@
 <Defs>
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>MCW_MW_CandyCane</defName>
-    <label>薄荷拐杖糖</label>
-    <description>锐利的糖！锐利的拐!可以让小看这跟拐杖糖的人吃到足够的“甜头”。</description>
+    <label>Mint candy cane</label>
+    <description>A mint candy cane refined over and over: crisply sweet and startlingly hard. Those who underestimate it soon taste a different kind of sweetness.</description>
     <possessionCount>1</possessionCount>
     <graphicData>
       <texPath>Things/Item/CandyCane</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,1.4033333)</drawSize>
       <ignoreThingDrawColor>true</ignoreThingDrawColor>
     </graphicData>
     <techLevel>Medieval</techLevel>
@@ -65,11 +66,10 @@
     </costList>
     <uiIconPath>Things/Item/CandyCane</uiIconPath>
   </ThingDef>
-
   <ThingDef ParentName="BaseHumanMakeableGun" Name="MCW_RW_VrocanGatling">
     <defName>MCW_RW_VrocanGatling</defName>
-    <label>涡轮棒棒糖发射器</label>
-    <description>强大的高科技产物，千机糖模仿人类机枪制作的棒棒糖发射器，可以发射出美味的棒棒糖，不过听说容易让坏人患上急性棒棒糖中毒。</description>
+    <label>Turbine lollipop launcher</label>
+    <description>A powerful high-tech device: a lollipop launcher the mecha candy built in imitation of a human machine gun. It fires delicious lollipops, though they are said to give villains acute lollipop poisoning.</description>
     <graphicData>
       <texPath>Things/Weapon/MCW_VrocanGatling</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -141,7 +141,7 @@
   </ThingDef>
   <ThingDef ParentName="BaseBullet">
     <defName>MCW_VrocanGatling_Bullet</defName>
-    <label>棒棒糖</label>
+    <label>Lollipop</label>
     <graphicData>
       <texPath>Projectile/VrocanGatlingBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -156,6 +156,7 @@
     <comps>
       <li Class="MinchoCandyWars.Projectiles.CompProperties_CandyTrail" />
     </comps>
+    <description>A lollipop arriving at speed. Only the one who launched it is likely in the mood to appreciate its sweetness.</description>
   </ThingDef>
   <ThingDef ParentName="MCW_RW_VrocanGatling">
     <defName>MCW_RW_VrocanGatling_Formech</defName>
@@ -165,8 +166,8 @@
       <li>MCW_RW_VrocanGatling_Formech</li>
     </weaponTags>
     <recipeMaker Inherit="False" IsNull="True" />
+    <description>A lollipop launcher tuned for the tiny ice cream gunner. Once the spinning barrels speak, the desserts coming your way can hardly be called friendly.</description>
   </ThingDef>
-
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>MCW_CandyCane_ForMech</defName>
     <modExtensions>
@@ -234,8 +235,8 @@
         <offsetWest>(0,0.08)</offsetWest>
       </li>
     </modExtensions>
-    <label>薄荷巧克力流星锤</label>
-    <description>为珉巧子个体改制的薄荷巧克力流星锤。</description>
+    <label>Mint chocolate flail</label>
+    <description>A mint chocolate flail modified for Mincho sub-units.</description>
     <possessionCount>1</possessionCount>
     <destroyOnDrop>true</destroyOnDrop>
     <tradeability>None</tradeability>
@@ -281,7 +282,6 @@
     </weaponTags>
     <recipeMaker Inherit="False" IsNull="True" />
   </ThingDef>
-
   <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
     <defName>MCW_TowerShield_ForMech</defName>
     <modExtensions>
@@ -292,34 +292,28 @@
         <offsetWest>(0,0.18)</offsetWest>
       </li>
     </modExtensions>
-    <label>薄荷冰淇淋巧克力塔盾</label>
-    <description>为珉巧子个体改制的薄荷冰淇淋巧克力塔盾。</description>
-
+    <label>Mint ice cream chocolate tower shield</label>
+    <description>A mint ice cream chocolate tower shield modified for Mincho sub-units.</description>
     <possessionCount>1</possessionCount>
     <destroyOnDrop>true</destroyOnDrop>
     <tradeability>None</tradeability>
-
     <graphicData>
       <texPath>Things/Weapon/TowerShield</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1.6,1.6)</drawSize>
     </graphicData>
-
     <statBases>
       <WorkToMake>8000</WorkToMake>
       <MaxHitPoints>400</MaxHitPoints>
       <Mass>6</Mass>
       <Flammability>0</Flammability>
     </statBases>
-
     <techLevel>Industrial</techLevel>
-
     <costList>
       <Mincho_ChocoStick>80</Mincho_ChocoStick>
       <Steel>80</Steel>
       <Mincho_Mintchoco>200</Mincho_Mintchoco>
     </costList>
-
     <tools>
       <li>
         <label>shield</label>
@@ -330,11 +324,9 @@
         <cooldownTime>2.6</cooldownTime>
       </li>
     </tools>
-
     <weaponTags Inherit="false">
       <li>MCW_TowerShield_ForMech</li>
     </weaponTags>
-
     <!-- 不单独出制造配方：只能作为防卫型培育配方的材料 -->
     <recipeMaker Inherit="False" IsNull="True" />
   </ThingDef>

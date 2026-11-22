@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <!-- ===== 巧克力冰淇淋巨剑·减速区域 =====
        每 tick 遍历 pawn 并判定是否在巨剑范围内，是则施加减速 Hediff；
        同时由 Thing_PrismSwordSlowZone.DrawAt 按施法角度画出地面剑痕。
@@ -28,9 +27,9 @@
     </graphicData>
     <comps>
       <li Class="MinchoCandyWars.Abilities.PrismCandy.CompProperties_PrismSwordSlowZone">
-        <durationTicks>900</durationTicks><!-- 15 秒 -->
+        <durationTicks>900</durationTicks>
+        <!-- 15 秒 -->
       </li>
     </comps>
   </ThingDef>
-
 </Defs>

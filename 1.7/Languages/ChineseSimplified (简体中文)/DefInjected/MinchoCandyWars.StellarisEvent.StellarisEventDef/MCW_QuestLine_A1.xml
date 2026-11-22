@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Hello, my dear ally! We have found some wandering, persecuted Mincho near you. If you agree, we will send them your coordinates; they will take refuge with you, and they will help you too - for instance, by giving you ice cream to eat! -->
+  <MCW_Event_QuestA1_AllianceContact.desc>你好！我亲爱的盟友~我们发您附近有一些游荡的，被迫害的珉巧。如果可以，我们会发送您的坐标给她们，她们会前往你那里避难，她们也会帮助你，比如，给你冰淇淋吃！</MCW_Event_QuestA1_AllianceContact.desc>
+  <!-- EN: Request to shelter Mincho -->
+  <MCW_Event_QuestA1_AllianceContact.label>收留珉巧请求</MCW_Event_QuestA1_AllianceContact.label>
+  <!-- EN: Accept the shelter request; the Mincho will soon arrive at your colony. -->
+  <MCW_Event_QuestA1_AllianceContact.options.0.desc>接受珉巧们的避难请求，她们很快就会来到你的殖民地。</MCW_Event_QuestA1_AllianceContact.options.0.desc>
+  <!-- EN: Yes - of course! No problem! -->
+  <MCW_Event_QuestA1_AllianceContact.options.0.label>是-当然！没问题！</MCW_Event_QuestA1_AllianceContact.options.0.label>
+  <!-- EN: Decline the request. Qinxintang opinion of you will drop. -->
+  <MCW_Event_QuestA1_AllianceContact.options.1.desc>拒绝这次请求。沁心糖对你的好感度会下降。</MCW_Event_QuestA1_AllianceContact.options.1.desc>
+  <!-- EN: No - sorry, we cannot help you right now -->
+  <MCW_Event_QuestA1_AllianceContact.options.1.label>否-抱歉，我们目前没法帮助你</MCW_Event_QuestA1_AllianceContact.options.1.label>
+  <!-- EN: Decide later and close the window. You can contact the Mincho Alliance again afterwards. -->
+  <MCW_Event_QuestA1_AllianceContact.options.2.desc>暂时不做决定，关闭窗口。之后可以重新联络珉巧同盟。</MCW_Event_QuestA1_AllianceContact.options.2.desc>
+  <!-- EN: Later - please hold on, let us tidy the room first! -->
+  <MCW_Event_QuestA1_AllianceContact.options.2.label>待定-麻烦稍等下，我们先收拾下房间！</MCW_Event_QuestA1_AllianceContact.options.2.label>
+  <!-- EN: Qinxintang -->
+  <MCW_Event_QuestA1_AllianceContact.title>沁心糖</MCW_Event_QuestA1_AllianceContact.title>
+
+</LanguageData>

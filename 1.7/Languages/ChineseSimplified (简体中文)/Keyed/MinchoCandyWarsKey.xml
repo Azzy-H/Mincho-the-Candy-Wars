@@ -1,22 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  <!-- Thrumbo passes -->
+  
+  <!-- UNUSED -->
   <MCW_LetterLabelMinchoSlimePasses>游荡的珉巧史莱姆</MCW_LetterLabelMinchoSlimePasses>
   <MCW_LetterMinchoSlimePasses>一群四处游荡的珉巧史莱姆正在路过。\n\n珉巧史莱姆是闪耀世界甜品公司的产品，虽然智商较低，但是经过科学的养殖可以产出大量薄荷冰淇淋。它们在死亡时会自动分裂为较小的个体，这使得它们很难被完全击杀。\n\n珉巧史莱姆将会在几天后离开。</MCW_LetterMinchoSlimePasses>
-
   <MCW_NotMincho>不是珉巧</MCW_NotMincho>
   <MCW_MinchoCoreNotActive>珉巧核心未激活</MCW_MinchoCoreNotActive>
   <MCW_CandyChangeExhaustion>无法在虚弱状态下进行糖饰更换</MCW_CandyChangeExhaustion>
-
-  <!-- 场景 -->
   <MCW_ScenPart_StartWithSmartMincho>其中一名珉巧拥有智慧核心</MCW_ScenPart_StartWithSmartMincho>
   <MCW_GameStartDialog>每天聊聊薄荷巧克力是很好，但光靠这些，生活里还缺很多很多东西……</MCW_GameStartDialog>
-
-  <!-- StellarisEvent Gizmo -->
   <MCW_StellarisEventGizmo_CannotTrigger>条件不满足</MCW_StellarisEventGizmo_CannotTrigger>
   <MCW_StellarisEventGizmo_CooldownPermanent>冷却中（永久）</MCW_StellarisEventGizmo_CooldownPermanent>
   <MCW_StellarisEventGizmo_CooldownRemaining>冷却剩余 {HOURS} 小时</MCW_StellarisEventGizmo_CooldownRemaining>
-
-  <!-- 撒娇（机械体亲昵） -->
   <MCW_Nuzzle_Cooldown>撒娇冷却剩余 {HOURS} 小时</MCW_Nuzzle_Cooldown>
+  
 </LanguageData>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ShuttleBase" MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>MCWQ105_BucketWreck</defName>
+    <label>Crashed ice cream bucket shuttle wreck</label>
+    <graphicData Inherit="False">
+      <texPath>Things/Building/BucketShuttle/BucketWreck</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Cutout</shaderType>
+      <color>(1,1,1)</color>
+      <drawSize>(4,4)</drawSize>
+      <drawRotated>false</drawRotated>
+      <shadowData>
+        <volume>(2.2,0.25,1.5)</volume>
+        <offset>(0,0,-0.25)</offset>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>1</Flammability>
+      <WorkToBuild>800</WorkToBuild>
+    </statBases>
+    <comps Inherit="False" />
+    <killedLeavings Inherit="False">
+      <Steel>4</Steel>
+      <Plasteel>7</Plasteel>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </killedLeavings>
+    <costList>
+      <Steel>40</Steel>
+      <Plasteel>70</Plasteel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <ShuttleEngine MayRequire="Ludeon.RimWorld.Odyssey">1</ShuttleEngine>
+    </costList>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <building Inherit="False">
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <claimable>false</claimable>
+      <alwaysDeconstructible>true</alwaysDeconstructible>
+      <forcedCostLeavings>
+        <li MayRequire="Ludeon.RimWorld.Odyssey">ShuttleEngine</li>
+      </forcedCostLeavings>
+    </building>
+    <description>A twisted barrel and congealed ice cream remain at the impact site. The hatch still hangs open, as if waiting for the last crew member to return safely.</description>
+    <size>(4,4)</size>
+    <interactionCellOffset>(0,0,3)</interactionCellOffset>
+  </ThingDef>
+  <ThingDef ParentName="ShuttleSkyfallerBase" MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>MCWQ105_BucketCrashing</defName>
+    <label>Ice cream bucket shuttle going down</label>
+    <thingClass>ShuttleIncoming</thingClass>
+    <size>(5,3)</size>
+    <skyfaller>
+      <anticipationSound>Shuttle_CrashLanding</anticipationSound>
+      <anticipationSoundTicks>180</anticipationSoundTicks>
+      <impactSound>Shuttle_Impact</impactSound>
+      <ticksToImpactRange>150~200</ticksToImpactRange>
+      <movementType>ConstantSpeed</movementType>
+      <angleCurve>
+        <points>
+          <li>(0,-60)</li>
+          <li>(1,-90)</li>
+        </points>
+      </angleCurve>
+      <rotationCurve>
+        <points>
+          <li>(0,20)</li>
+          <li>(0.49,5)</li>
+          <li>(0.6,5)</li>
+          <li>(0.7,3)</li>
+          <li>(0.8,3)</li>
+          <li>(0.83,-4)</li>
+          <li>(0.9,3)</li>
+          <li>(0.95,-2)</li>
+          <li>(0.98,1)</li>
+          <li>(0.99,0)</li>
+        </points>
+      </rotationCurve>
+      <speed>0.8</speed>
+      <explosionRadius>3</explosionRadius>
+      <explosionDamage>Bomb</explosionDamage>
+      <cameraShake>1</cameraShake>
+      <metalShrapnelCountRange>
+        <min>6</min>
+        <max>10</max>
+      </metalShrapnelCountRange>
+      <rubbleShrapnelCountRange>
+        <min>300</min>
+        <max>400</max>
+      </rubbleShrapnelCountRange>
+      <shrapnelDistanceFactor>0.2</shrapnelDistanceFactor>
+    </skyfaller>
+    <graphicData>
+      <texPath>Things/Building/BucketShuttle/Bucket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <drawRotated>false</drawRotated>
+    </graphicData>
+    <description>The unbalanced ice cream bucket is falling toward the ground trailing smoke, its deformed shell still shielding the crew inside.</description>
+  </ThingDef>
+  <QuestScriptDef>
+    <defName>MCWQ105_Crash</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <isRootSpecial>true</isRootSpecial>
+    <epicParent>MCWQ100_AllianceSeries</epicParent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName-&gt;Ice cream bucket shuttle crash landing</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-&gt;A Mincho ice cream bucket shuttle has crash-landed. Protect its 2-4 crew. Pursuers arrive in about 4 hours and the pickup shuttle in about 8. Escort all crew aboard within its 12-hour wait; success requires the pickup shuttle actually departing with everyone aboard. Crew death, a crew member left behind, destruction or abandonment of the pickup shuttle, or abandoning the map all count as failure. The wreck cannot simply fly away.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="MinchoCandyWars.QuestStory.BucketCrashRoot" />
+  </QuestScriptDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Event12</defName>
+    <label>Ice cream bucket shuttle crash landing</label>
+    <title>Amber candy</title>
+    <desc>A Mincho ice cream bucket shuttle has crash-landed. Protect its 2-4 crew. Pursuers arrive in about 4 hours and the pickup shuttle in about 8. Escort all crew aboard within its 12-hour wait; success requires the pickup shuttle actually departing with everyone aboard. Crew death, a crew member left behind, destruction or abandonment of the pickup shuttle, or abandoning the map all count as failure. The wreck cannot simply fly away.</desc>
+    <pictures>
+      <li>
+        <path>Events/Portraits/MCW_AmberonCandy</path>
+      </li>
+    </pictures>
+    <triggers>
+      <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+        <kind>12</kind>
+      </li>
+    </triggers>
+    <options>
+      <li>
+        <label>We will pick them up.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>12</kind>
+              <reject>false</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>We cannot arrange it this time.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>12</kind>
+              <reject>true</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>Wait until we have prepared.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+  <QuestScriptDef>
+    <defName>MCWQ105_Cargo</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <isRootSpecial>true</isRootSpecial>
+    <epicParent>MCWQ100_AllianceSeries</epicParent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName-&gt;Mysterious ice cream cargo</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-&gt;The Alliance has a bucket of mint ice cream of unknown origin and would like you to keep it. Once accepted, the cargo will arrive by drop pod. Please receive it properly and await Alliance confirmation.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="MinchoCandyWars.QuestStory.BucketCargoRoot" />
+  </QuestScriptDef>
+  <MinchoCandyWars.StellarisEvent.StellarisEventDef>
+    <defName>MCWQ101_Event13</defName>
+    <label>Mysterious ice cream cargo</label>
+    <title>Nectar candy</title>
+    <desc>The Alliance has a bucket of mint ice cream of unknown origin and would like you to keep it. Once accepted, the cargo will arrive by drop pod. Please receive it properly and await Alliance confirmation.</desc>
+    <pictures>
+      <li>
+        <path>MCWQ/Portraits/NectarClean100</path>
+      </li>
+    </pictures>
+    <triggers>
+      <li Class="MinchoCandyWars.QuestStory.OfferTrigger">
+        <kind>13</kind>
+      </li>
+    </triggers>
+    <options>
+      <li>
+        <label>We will take it, knowing the risk.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>13</kind>
+              <reject>false</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>We cannot arrange it this time.</label>
+        <action>
+          <effects>
+            <li Class="MinchoCandyWars.QuestStory.OfferEffect">
+              <kind>13</kind>
+              <reject>true</reject>
+            </li>
+          </effects>
+        </action>
+      </li>
+      <li>
+        <label>Wait until we have prepared.</label>
+        <action>
+          <effects />
+        </action>
+      </li>
+    </options>
+  </MinchoCandyWars.StellarisEvent.StellarisEventDef>
+</Defs>

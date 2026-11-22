@@ -1,41 +1,30 @@
-using RimWorld;
-using Verse;
+﻿using Verse;
 
 namespace MinchoCandyWars.Abilities.NectarCandy
 {
-    /// <summary>
-    /// 甘露妖精增益 —— 再生 + 闪避 + 护盾。
-    /// 由 Hediff_MannaFairy 创建，Buff 自身检查父 Hediff 是否仍然合法。
-    /// </summary>
     public class Hediff_MannaFairyBuff : HediffWithComps
     {
+        internal static bool HasIncomingProtection(Pawn target)
+        {
+            if (target.Map == null) return false;
+
+            foreach (Pawn source in target.Map.mapPawns.AllPawns)
+            {
+                var fairy = source.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MannaFairy) as Hediff_MannaFairy;
+                if (source != target && fairy?.dispatchedTo == target && fairy.IsValid)
+                    return true;
+            }
+            return false;
+        }
+
         public override bool ShouldRemove
         {
             get
             {
                 if (pawn.Dead) return true;
-
-                // Find the parent fairy hediff on this pawn
-                Hediff_MannaFairy? fairy = pawn.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_MannaFairy) as Hediff_MannaFairy;
-                if (fairy == null)
-                {
-                    // Maybe dispatched from someone else — check all pawns on the map
-                    if (pawn.Map != null)
-                    {
-                        foreach (Pawn p in pawn.Map.mapPawns.AllPawns)
-                        {
-                            fairy = p.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_MannaFairy) as Hediff_MannaFairy;
-                            if (fairy != null && fairy.dispatchedTo == pawn)
-                                break;
-                            fairy = null;
-                        }
-                    }
-                }
-
-                if (fairy == null) return true;
-                if (!fairy.IsValid) return true;
-
-                return false;
+                var ownFairy = pawn.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_MannaFairy) as Hediff_MannaFairy;
+                if (ownFairy is { IsValid: true, dispatchedTo: null }) return false;
+                return !HasIncomingProtection(pawn);
             }
         }
     }

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: A blue mint cultivated by smart Mincho, grown in mushroom molds and harvested for Mincho mint leaves. Adapted to extreme cold, it only grows below 0C; at 0C or above it stops growing and gradually withers. -->
+  <MCW_IceMintPlant.description>智慧珉巧培育的蓝色薄荷，在蘑菇模具中种植，收获珉巧薄荷叶。适应极寒环境，只能在0℃以下生长；升至0℃及以上后停止生长并逐步枯萎。</MCW_IceMintPlant.description>
+  <!-- EN: Ice mint -->
+  <MCW_IceMintPlant.label>冰薄荷</MCW_IceMintPlant.label>
+</LanguageData>

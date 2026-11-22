@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!--
     ============================================================================
@@ -24,7 +24,7 @@
   <IncidentDef>
     <defName>MCW_GiveQuest_QuestFF1</defName>
     <category>GiveQuest</category>
-    <label>击溃回收部队总部</label>
+    <label>Destroy the reclamation force headquarters</label>
     <questScriptDef>MCW_QuestFF1_RecycleHQ</questScriptDef>
     <workerClass>IncidentWorker_GiveQuest</workerClass>
     <baseChance>0</baseChance>
@@ -34,12 +34,11 @@
     <requireColonistsPresent>true</requireColonistsPresent>
   </IncidentDef>
 
-  <!-- 决战据点：回收部队总部（Outpost 建筑 + 传送点/信标） -->
+  <!-- 决战据点：回收部队总部（Outpost 建筑；传送点与信标已退役，增援改走空投舱） -->
   <SitePartDef>
     <defName>MCW_RecycleHQ</defName>
-    <label>回收部队总部</label>
-    <description>回收部队在这颗星球上的总部，防御严密，并有传送装置不断送来援军。</description>
-    <workerClass>MinchoCandyWars.SitePartWorker_MCWRecycleHQ</workerClass>
+    <label>Reclamation force headquarters</label>
+    <description>The reclamation force's headquarters on this world. Heavily fortified, with drop pods constantly delivering reinforcements.</description>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
     <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
     <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
@@ -70,7 +69,7 @@
     <defName>MCW_RecycleHQ</defName>
     <linkWithSite>MCW_RecycleHQ</linkWithSite>
     <order>1700</order>
-    <genStep Class="MinchoCandyWars.GenStep_MCWRecycleHQ" />
+    <genStep Class="MinchoCandyWars.QuestStory.HeadquartersPortals" />
   </GenStepDef>
 
   <QuestScriptDef>
@@ -84,12 +83,14 @@
 
     <questNameRules>
       <rulesStrings>
-        <li>questName-&gt;击溃回收部队总部</li>
+        <li>questName-&gt;Destroy the reclamation force headquarters</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription-&gt;珉巧们会为我们争取时间，我们需要摧毁回收公司的联络电脑。\n\n这是一场决定这颗星球命运的决战。</li>
+        <li>questDescription-&gt;The Mincho will buy us time; we must destroy the reclamation company contact computer.
+
+This is the decisive battle that will decide the fate of this world.</li>
       </rulesStrings>
     </questDescriptionRules>
 

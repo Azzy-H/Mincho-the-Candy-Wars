@@ -22,8 +22,8 @@
   -->
   <StatDef>
     <defName>MCW_ShieldArmor_Sharp</defName>
-    <label>盾牌利器防御</label>
-    <description>当前举起的盾牌提供的利器伤害防护。</description>
+    <label>Shield sharp armor</label>
+    <description>Sharp damage protection provided by the currently raised shield.</description>
     <category>PawnCombat</category>
     <defaultBaseValue>0</defaultBaseValue>
     <minValue>0</minValue>
@@ -43,8 +43,8 @@
   </StatDef>
   <StatDef>
     <defName>MCW_ShieldArmor_Blunt</defName>
-    <label>盾牌钝器防御</label>
-    <description>当前举起的盾牌提供的钝器伤害防护。</description>
+    <label>Shield blunt armor</label>
+    <description>Blunt damage protection provided by the currently raised shield.</description>
     <category>PawnCombat</category>
     <defaultBaseValue>0</defaultBaseValue>
     <minValue>0</minValue>
@@ -64,8 +64,8 @@
   </StatDef>
   <StatDef>
     <defName>MCW_ShieldArmor_Heat</defName>
-    <label>盾牌热能防御</label>
-    <description>当前举起的盾牌提供的热能伤害防护。</description>
+    <label>Shield heat armor</label>
+    <description>Heat damage protection provided by the currently raised shield.</description>
     <category>PawnCombat</category>
     <defaultBaseValue>0</defaultBaseValue>
     <minValue>0</minValue>
@@ -90,16 +90,16 @@
   -->
   <StatDef>
     <defName>MCW_ShieldCoef_Sharp</defName>
-    <label>盾牌锐钝防护材质系数</label>
-    <description>盾牌材质对锐器与钝器防护的贡献系数。</description>
+    <label>Shield sharp/blunt material factor</label>
+    <description>How much the shield material contributes to sharp and blunt protection.</description>
     <category>PawnCombat</category>
     <defaultBaseValue>0</defaultBaseValue>
     <alwaysHide>true</alwaysHide>
   </StatDef>
   <StatDef>
     <defName>MCW_ShieldCoef_Heat</defName>
-    <label>盾牌热能防护材质系数</label>
-    <description>盾牌材质对热能防护的贡献系数。</description>
+    <label>Shield heat material factor</label>
+    <description>How much the shield material contributes to heat protection.</description>
     <category>PawnCombat</category>
     <defaultBaseValue>0</defaultBaseValue>
     <alwaysHide>true</alwaysHide>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Research how to make the body booster, which raises a smart Mincho body grade. -->
+  <MCW_Research_BoosterBody.description>研究躯体改造包的制作方法，用于提升智慧珉巧的躯体等级。</MCW_Research_BoosterBody.description>
+  <!-- EN: Mincho Body Booster -->
+  <MCW_Research_BoosterBody.label>躯体改造包</MCW_Research_BoosterBody.label>
+  <!-- EN: Research how to make the advanced core booster, which raises a smart Mincho core grade to 3-5. -->
+  <MCW_Research_BoosterCoreAdvanced.description>研究高级核心改造包的制作方法，用于把智慧珉巧的核心等级提升到 3~5 级。</MCW_Research_BoosterCoreAdvanced.description>
+  <!-- EN: Mincho Advanced Core Booster -->
+  <MCW_Research_BoosterCoreAdvanced.label>高级核心改造包</MCW_Research_BoosterCoreAdvanced.label>
+  <!-- EN: Research how to make the basic core booster, which raises a smart Mincho core grade to 1-3. -->
+  <MCW_Research_BoosterCoreBasic.description>研究初级核心改造包的制作方法，用于把智慧珉巧的核心等级提升到 1~3 级。</MCW_Research_BoosterCoreBasic.description>
+  <!-- EN: Mincho Basic Core Booster -->
+  <MCW_Research_BoosterCoreBasic.label>初级核心改造包</MCW_Research_BoosterCoreBasic.label>
+  <!-- EN: Research how to make the smart Mincho booster. -->
+  <MCW_Research_BoosterIntel.description>研究智慧珉巧改造包的制作方法。</MCW_Research_BoosterIntel.description>
+  <!-- EN: Mincho Intelligence Booster -->
+  <MCW_Research_BoosterIntel.label>智慧珉巧改造包</MCW_Research_BoosterIntel.label>
+
+</LanguageData>

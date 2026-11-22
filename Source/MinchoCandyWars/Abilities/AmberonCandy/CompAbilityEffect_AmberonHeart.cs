@@ -1,15 +1,10 @@
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 
 namespace MinchoCandyWars.Abilities.AmberonCandy
 {
     public class CompAbilityEffect_AmberonHeart : CompAbilityEffect
     {
-        public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
-        {
-            return base.Valid(target, throwMessages);
-        }
-
         public override bool CanApplyOn(LocalTargetInfo target, LocalTargetInfo dest)
         {
             return true;
@@ -19,10 +14,16 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
         {
             base.Apply(target, dest);
             Pawn self = parent.pawn;
-            if (self.health.hediffSet.GetFirstHediffOfDef(MCW_DefOf.MCW_AmberonHeart) == null)
+            if (self.health.hediffSet.GetFirstHediffOfDef(MCW_HediffDefOf.MCW_AmberonHeart) == null)
             {
-                self.health.AddHediff(MCW_DefOf.MCW_AmberonHeart);
+                self.health.AddHediff(MCW_HediffDefOf.MCW_AmberonHeart);
             }
+
+            if (self.Map is not Map map)
+                return;
+
+            foreach (Pawn colonist in map.mapPawns.FreeColonistsSpawned)
+                colonist.needs?.mood?.thoughts.memories.TryGainMemory(MCW_DefOf.MCW_AmberonHeartInspired);
         }
     }
 }

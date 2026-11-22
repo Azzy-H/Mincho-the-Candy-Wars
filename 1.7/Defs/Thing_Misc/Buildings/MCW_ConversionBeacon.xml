@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ShelfBase">
+    <defName>MCW_IceCreamConversionBeacon</defName>
+    <label>Psychic mint choco conversion beacon</label>
+    <description>A recycler patterned after the Mincho witch's beacon. Its gentle psychic glow washes over discarded clothes, weapons and remains, leaving fresh ice cream and a cool, sweet scent.</description>
+    <thingClass>MinchoCandyWars.Buildings.Building_IceCreamConversionBeacon</thingClass>
+    <designationCategory>Mincho_Furniture</designationCategory>
+    <stuffCategories Inherit="False" />
+    <costStuffCount>0</costStuffCount>
+    <costList Inherit="False">
+      <PsychicAmplifier>1</PsychicAmplifier>
+      <Mincho_BlocksMintchoco>100</Mincho_BlocksMintchoco>
+      <Steel>50</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <statBases><Mass>20</Mass></statBases>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <graphicData Inherit="False">
+      <texPath>MinchoWitch/MinchoFalloutBeacon/Texture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.5,1.5)</drawSize>
+      <drawRotated>false</drawRotated>
+    </graphicData>
+    <building>
+      <maxItemsInCell>6</maxItemsInCell>
+      <storageGroupTag>MCW_IceCreamConversionBeacon</storageGroupTag>
+      <fixedStorageSettings>
+        <filter>
+          <thingDefs>
+            <li>Mincho_Mintchoco</li>
+            <li>Mincho_BluePolarBear</li>
+            <li>Mincho_PinkFallInLove</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <thingDefs>
+            <li>Mincho_Mintchoco</li>
+            <li>Mincho_BluePolarBear</li>
+            <li>Mincho_PinkFallInLove</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <comps Inherit="False">
+      <li Class="CompProperties_Flickable" />
+    </comps>
+  </ThingDef>
+</Defs>

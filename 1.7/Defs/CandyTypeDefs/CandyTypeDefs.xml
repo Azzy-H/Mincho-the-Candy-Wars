@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <MinchoCandyWars.CandyTypeDef>
     <defName>MechaCandy</defName>
     <label>Mecha Candy</label>
-    <description>TODO</description>
+    <description>The mecha candy is built for machines. Its mincho gain mech bandwidth, work and crafting speed, and can accelerate, hijack and pilot mechanoids.</description>
     <!-- 糖饰（头部装饰）：graphicClass 用 Graphic_Multi，它会自行解析
          _north/_east/_south/_west，并在缺少 _west 时复用 _east 并镜像。
          shaderType 必须显式写 Mote，否则 GraphicData 默认用 Cutout，
@@ -101,7 +101,7 @@
   <MinchoCandyWars.CandyTypeDef>
     <defName>NectarCandy</defName>
     <label>Nectar Candy</label>
-    <description>TODO</description>
+    <description>The nectar candy heals and nourishes. Its mincho gain medical and cooking skill, ice cream output and beauty, and can tend wounds and reshape ice cream flesh.</description>
     <decorationGraphic>
       <texPath>Effects/CandyDecoration/MCW_CandyDeco_Nectar</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -198,7 +198,7 @@
   <MinchoCandyWars.CandyTypeDef>
     <defName>AmberonCandy</defName>
     <label>Amberon Candy</label>
-    <description>TODO</description>
+    <description>The amber candy hardens the body and raises a shield of light. Its mincho are tough, armored and slow to fall, and its heart soothes nearby allies.</description>
     <decorationGraphic>
       <texPath>Effects/CandyDecoration/MCW_CandyDeco_Amberon</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -302,7 +302,7 @@
   <MinchoCandyWars.CandyTypeDef>
     <defName>PrismCandy</defName>
     <label>Prism Candy</label>
-    <description>TODO</description>
+    <description>The prism candy is a blade. Its mincho gain melee damage, dodge chance and movement speed, ignore terrain, and fight with shattered prism blades.</description>
     <decorationGraphic>
       <texPath>Effects/CandyDecoration/MCW_CandyDeco_Prism</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -400,7 +400,7 @@
   <MinchoCandyWars.CandyTypeDef>
     <defName>LinglonCandy</defName>
     <label>Linglon Candy</label>
-    <description>TODO</description>
+    <description>The linglon candy opens the mind. Its mincho gain meditation focus, psychic sensitivity and entropy capacity, and can suppress the minds of enemies nearby.</description>
     <decorationGraphic>
       <texPath>Effects/CandyDecoration/MCW_CandyDeco_Linglon</texPath>
       <graphicClass>Graphic_Multi</graphicClass>

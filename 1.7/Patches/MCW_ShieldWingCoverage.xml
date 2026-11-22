@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationInsert">
+    <xpath>Defs/ThingDef[defName="MCW_MechaWings" or defName="Mincho_SpaceBooster"]/apparel/layers/li[text()="Shell"]</xpath>
+    <order>Prepend</order>
+    <value><li>MCW_Shield</li></value>
+  </Operation>
+</Patch>

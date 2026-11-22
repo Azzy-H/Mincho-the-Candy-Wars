@@ -2,8 +2,8 @@
 <Defs>
   <ThingDef>
     <defName>MCW_EndlessIceCream</defName>
-    <label>无尽薄荷冰淇淋桶</label>
-    <description>一桶始终装满的薄荷冰淇淋。吃掉的部分很快就会重新出现。它带来的满足感令人难以忘怀，其他食物却逐渐变得难以下咽。\n\n研究它或许能找到解除影响的方法。珉巧似乎不受这些影响。</description>
+    <label>Endless mint ice cream bucket</label>
+    <description>A bucket of ice cream giving off a sweet mint scent. The barrel bears no production mark, and no sign of how it was sealed.</description>
     <thingClass>MinchoCandyWars.Anomaly.EndlessBucket</thingClass>
     <category>Item</category>
     <genericMarketSellable>false</genericMarketSellable>
@@ -48,7 +48,8 @@
       <ingestSound>Meal_Eat</ingestSound>
     </ingestible>
     <comps>
-      <li Class="CompProperties_Forbiddable"/>
+      <li Class="MinchoCandyWars.Anomaly.BucketDiscoveryProperties" />
+      <li Class="CompProperties_Forbiddable" />
       <li Class="CompProperties_Studiable">
         <frequencyTicks>120000</frequencyTicks>
         <knowledgeCategory>Advanced</knowledgeCategory>
@@ -60,13 +61,13 @@
         <studyNotes>
           <li>
             <threshold>4</threshold>
-            <label>无尽冰淇淋桶：研究进展</label>
-            <text>{PAWN_nameDef}发现，这桶冰淇淋会改变食用者对食物的感受。受影响的人很快就会渴望再次吃到薄荷冰淇淋，并开始厌恶其他食物。珉巧似乎能够抵抗这种影响。</text>
+            <label>Endless ice cream bucket: research progress</label>
+            <text>{PAWN_nameDef} has found that ice cream taken from the bucket reappears. The bucket also changes how those who eat from it feel about food. The affected soon crave mint ice cream again and begin to dislike other food. Mincho seem able to resist this effect.</text>
           </li>
           <li>
             <thresholdRange>24~40</thresholdRange>
-            <label>无尽冰淇淋桶：研究完成</label>
-            <text>{PAWN_nameDef}找到了切断精神影响的方法。一个超凡碎片足以解除这桶冰淇淋造成的依赖。冰淇淋仍会再生，但每次食用只能获得原先五分之一的营养。\n\n选中冰淇淋桶即可解除影响。</text>
+            <label>Endless ice cream bucket: research complete</label>
+            <text>{PAWN_nameDef} has found a way to sever the psychic influence. A single archotech shard is enough to break the dependence this bucket causes. The ice cream still regenerates, but each serving now provides only one fifth of its former nutrition.\n\nSelect the ice cream bucket to remove the influence.</text>
           </li>
         </studyNotes>
       </li>
@@ -74,12 +75,12 @@
         <activeTicks>1</activeTicks>
         <ticksToActivate>540</ticksToActivate>
         <activateTexPath>Things/Item/Anomaly/DeactivateEndlessIceCream</activateTexPath>
-        <activateLabelString>解除精神影响</activateLabelString>
-        <activateDescString>消耗1个碎片，解除这桶冰淇淋造成的依赖。冰淇淋仍可食用，每次提供0.2营养。</activateDescString>
-        <guiLabelString>选择执行者</guiLabelString>
-        <jobString>解除精神影响</jobString>
-        <activatingStringPending>正在解除{0}的影响</activatingStringPending>
-        <activatingString>正在解除{0}的影响：{1}秒</activatingString>
+        <activateLabelString>Remove psychic influence</activateLabelString>
+        <activateDescString>Consume 1 shard to break the dependence caused by this bucket. The ice cream remains edible and provides 0.2 nutrition per serving.</activateDescString>
+        <guiLabelString>Select a worker</guiLabelString>
+        <jobString>Remove psychic influence</jobString>
+        <activatingStringPending>Removing the influence on {0}</activatingStringPending>
+        <activatingString>Removing the influence on {0}: {1}s</activatingString>
         <targetingParameters>
           <canTargetBuildings>false</canTargetBuildings>
           <canTargetAnimals>false</canTargetAnimals>
@@ -89,7 +90,6 @@
       </li>
     </comps>
   </ThingDef>
-
   <!--
     已解除精神影响的版本：独立 Def，营养固定为 0.2，不带研究组件、也不带解除交互。
     "解除影响"由 BucketRelease 把原桶销毁并换成这一版完成，
@@ -97,8 +97,8 @@
   -->
   <ThingDef>
     <defName>MCW_EndlessIceCream_Released</defName>
-    <label>无尽薄荷冰淇淋桶（已解除影响）</label>
-    <description>精神影响已经解除的无尽冰淇淋桶。它依然取之不尽，但每次食用只能提供五分之一的营养，也不再让人上瘾。</description>
+    <label>Endless mint ice cream bucket (influence removed)</label>
+    <description>That irresistible urge has dispersed, while the sweet mint scent inside is as it always was. Now it is just a dessert you can never finish, and which never quite fills you up.</description>
     <thingClass>MinchoCandyWars.Anomaly.ReleasedBucket</thingClass>
     <category>Item</category>
     <genericMarketSellable>false</genericMarketSellable>
@@ -139,41 +139,40 @@
       <ingestSound>Meal_Eat</ingestSound>
     </ingestible>
     <comps>
-      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Forbiddable" />
     </comps>
   </ThingDef>
-
   <ChemicalDef>
     <defName>MCW_Mint</defName>
-    <label>薄荷冰淇淋</label>
+    <label>Mint ice cream</label>
     <addictionHediff>MCW_MintAddiction</addictionHediff>
   </ChemicalDef>
   <NeedDef ParentName="DrugAddictionNeedBase">
     <defName>Chemical_MCW_Mint</defName>
     <needClass>Need_Chemical</needClass>
-    <label>薄荷冰淇淋</label>
-    <description>对薄荷冰淇淋的强烈渴望。不定期食用薄荷冰淇淋或相关制品就会感到痛苦。</description>
+    <label>Mint ice cream</label>
+    <description>An intense craving for mint ice cream. Suffering follows if mint ice cream or related products are not eaten regularly.</description>
     <listPriority>25</listPriority>
     <fallPerDay>1</fallPerDay>
   </NeedDef>
   <HediffDef ParentName="AddictionBase">
     <defName>MCW_MintAddiction</defName>
-    <label>薄荷冰淇淋依赖</label>
-    <description>这桶冰淇淋改变了食用者的口味。不再吃薄荷冰淇淋，很快就会感到强烈的不适。研究冰淇淋桶可以找到解除影响的方法。</description>
+    <label>Mint ice cream dependence</label>
+    <description>This bucket changed the eater taste. Going without mint ice cream soon brings severe discomfort. Studying the bucket may reveal a way to break the influence.</description>
     <hediffClass>MinchoCandyWars.Anomaly.MintAddiction</hediffClass>
     <chemicalNeed>Chemical_MCW_Mint</chemicalNeed>
     <scenarioCanAdd>false</scenarioCanAdd>
     <stages>
-      <li/>
+      <li />
       <li>
-        <label>戒断</label>
+        <label>Withdrawal</label>
       </li>
     </stages>
   </HediffDef>
   <HediffDef>
     <defName>MCW_MintDaze</defName>
-    <label>冰淇淋恍惚</label>
-    <description>思绪被冰凉而甜蜜的满足感占据。</description>
+    <label>Ice cream daze</label>
+    <description>Thoughts are occupied by a cold, sweet contentment.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <initialSeverity>1</initialSeverity>
     <maxSeverity>1</maxSeverity>
@@ -197,25 +196,28 @@
   </HediffDef>
   <HediffDef>
     <defName>MCW_MintFreedom</defName>
-    <label>冰淇淋影响已解除</label>
-    <description>已经摆脱了无尽冰淇淋桶的精神影响。</description>
+    <label>Ice cream influence removed</label>
+    <description>Free of the psychic influence of the endless ice cream bucket.</description>
     <hediffClass>Hediff</hediffClass>
     <initialSeverity>1</initialSeverity>
     <isBad>false</isBad>
+    <stages>
+      <li><becomeVisible>false</becomeVisible></li>
+    </stages>
   </HediffDef>
   <ThoughtDef>
     <defName>MCW_MintWithdrawal</defName>
-    <workerClass>MinchoCandyWars.Anomaly.MintWithdrawal</workerClass>
+    <workerClass>MinchoCandyWars.Anomaly.ThoughtWorker_MintWithdrawal</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
-        <label>想吃薄荷冰淇淋</label>
-        <description>我想吃薄荷冰淇淋。其他东西都不对味。</description>
+        <label>Craving mint ice cream</label>
+        <description>I want mint ice cream. Nothing else tastes right.</description>
         <baseMoodEffect>-20</baseMoodEffect>
       </li>
       <li>
-        <label>薄荷冰淇淋戒断</label>
-        <description>我受不了了。我需要薄荷冰淇淋，现在就要。</description>
+        <label>Mint ice cream withdrawal</label>
+        <description>I cannot stand it. I need mint ice cream, now.</description>
         <baseMoodEffect>-40</baseMoodEffect>
       </li>
     </stages>
@@ -227,8 +229,8 @@
     <stackLimit>1</stackLimit>
     <stages>
       <li>
-        <label>薄荷冰淇淋的滋味</label>
-        <description>冰凉，香甜。真好吃。</description>
+        <label>The taste of mint ice cream</label>
+        <description>Cold and sweet. Delicious.</description>
         <baseMoodEffect>15</baseMoodEffect>
       </li>
     </stages>
@@ -240,25 +242,25 @@
     <stackLimit>1</stackLimit>
     <stages>
       <li>
-        <label>难以下咽</label>
-        <description>这不是我想吃的。我只想要薄荷冰淇淋。</description>
+        <label>Hard to swallow</label>
+        <description>This is not what I want. I only want mint ice cream.</description>
         <baseMoodEffect>-40</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
   <QuestScriptDef ParentName="MysteriousCargoBase">
     <defName>MCW_MintCargo</defName>
-    <root Class="MinchoCandyWars.Anomaly.MintCargo"/>
+    <root Class="MinchoCandyWars.Anomaly.MintCargo" />
     <questContentRules>
       <rulesStrings>
-        <li>deliveredLetterLabel->神秘货物</li>
-        <li>deliveredLetterText->神秘货物已经送达。箱子里是一桶薄荷冰淇淋。它始终保持冰凉，被取走的部分也会悄然恢复。\n\n你可以研究它，查明其中的原因。</li>
+        <li>deliveredLetterLabel-&gt;Mysterious cargo</li>
+        <li>deliveredLetterText-&gt;The mysterious cargo has arrived. Inside the crate is a bucket of mint ice cream. It stays cold at all times, and whatever is taken from it quietly returns.\n\nYou can study it to find out why.</li>
       </rulesStrings>
     </questContentRules>
   </QuestScriptDef>
   <IncidentDef ParentName="MysteriousIncidentCargoBase">
     <defName>MCW_MintCargo</defName>
-    <label>神秘冰淇淋货物</label>
+    <label>Mysterious ice cream cargo</label>
     <questScriptDef>MCW_MintCargo</questScriptDef>
   </IncidentDef>
 </Defs>

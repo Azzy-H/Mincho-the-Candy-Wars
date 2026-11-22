@@ -62,8 +62,8 @@
   </ThingDef>
   <ThingDef ParentName="MCW_IceCreamCabinetBase">
     <defName>MCW_IceCreamCabinetElectric</defName>
-    <label>薄荷冰淇淋柜（电力）</label>
-    <description>用薄荷冰淇淋砖块制成的冷藏柜，可存放六堆珉巧食品或制作用的食材。需要供电才能保持低温。</description>
+    <label>Mint ice cream cabinet (electric)</label>
+    <description>A cold cabinet built from mint ice cream brick. The compressor hums softly, keeping precious ingredients and desserts at just the right chill.</description>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -75,8 +75,8 @@
   </ThingDef>
   <ThingDef ParentName="MCW_IceCreamCabinetBase">
     <defName>MCW_IceCreamCabinetFueled</defName>
-    <label>薄荷冰淇淋柜（冰淇淋）</label>
-    <description>用薄荷冰淇淋砖块制成的冷藏柜，可存放六堆珉巧食品或制作用的食材。每天消耗五份薄荷冰淇淋维持低温，最多可装入一百份。</description>
+    <label>Mint ice cream cabinet (ice cream)</label>
+    <description>A cold cabinet built from mint ice cream brick. Ice cream deep inside slowly melts away in exchange for steady, quiet chill.</description>
     <comps>
       <li Class="CompProperties_Refuelable">
         <fuelCapacity>100</fuelCapacity>
@@ -90,9 +90,9 @@
         <autoRefuelPercent>0.5</autoRefuelPercent>
         <showFuelGizmo>true</showFuelGizmo>
         <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-        <fuelLabel>薄荷冰淇淋</fuelLabel>
-        <fuelGizmoLabel>薄荷冰淇淋</fuelGizmoLabel>
-        <outOfFuelMessage>需要补充薄荷冰淇淋</outOfFuelMessage>
+        <fuelLabel>Mint ice cream</fuelLabel>
+        <fuelGizmoLabel>Mint ice cream</fuelGizmoLabel>
+        <outOfFuelMessage>Requires mint ice cream</outOfFuelMessage>
       </li>
     </comps>
   </ThingDef>

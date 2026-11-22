@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+
+  <!-- EN: A standing amber shield that intercepts projectiles aimed at those sheltering behind it. -->
+  <MCW_AmberonPositionShield.description>琥珀糖凝出的立盾，温暖的金色光芒沿着边缘流动。它稳稳立在同伴面前，像一句无需重复的承诺。</MCW_AmberonPositionShield.description>
   <!-- EN: Amberon position shield -->
   <MCW_AmberonPositionShield.label>琥珀立盾</MCW_AmberonPositionShield.label>
-  <!-- EN: A standing amber shield that intercepts projectiles aimed at those sheltering behind it. -->
-  <MCW_AmberonPositionShield.description>一面竖立的琥珀色盾牌，能拦截射向躲在它身后的人的抛射物。</MCW_AmberonPositionShield.description>
-  
+
 </LanguageData>

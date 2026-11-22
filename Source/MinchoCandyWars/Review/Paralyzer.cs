@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -11,7 +11,7 @@ public static class ParalyzerRules
     public static bool CanParalyzePawn(Thing target)
     {
         if (target is not Pawn pawn) return false;
-        if (pawn.def != MCW_DefOf.Mincho_ThingDef || pawn.Dead) return false;
+        if (pawn.def != MCW_ThingDefOf.Mincho_ThingDef || pawn.Dead) return false;
         // 已经拥有糖饰（糖果类型）的珉巧不会被麻痹。
         return pawn.GetComp<CompMinchoCore>()?.CurrentCandyType == null;
     }
@@ -38,9 +38,40 @@ public class ParalyzerEffect : CompTargetEffect
         if (!CanApplyOn(target)) return;
 
         var pawn = (Pawn)target;
-        HediffDef def = MCW_DefOf.MCW_Paralyzed047;
+        HediffDef def = MCW_HediffDefOf.MCW_Paralyzed047;
         Hediff existing = pawn.health.hediffSet.GetFirstHediffOfDef(def);
         if (existing != null) pawn.health.RemoveHediff(existing);
         pawn.health.AddHediff(def);
+    }
+}
+
+// 只在回收队员的战斗决策中使用瘫痪器，不改变玩家手动施放和糖饰免疫规则。
+[HarmonyLib.HarmonyPatch(typeof(JobGiver_AIFightEnemy), "TryGiveJob")]
+static class RecycleParalyzerAI
+{
+    static void Postfix(Pawn pawn, ref Job __result)
+    {
+        if (pawn.Faction?.def != MCW_DefOf.MCW_RecycleCorp_Faction || !pawn.Spawned || pawn.Downed || !pawn.RaceProps.Humanlike) return;
+        foreach (var item in pawn.apparel.WornApparel)
+        {
+            if (item.def != MCW_ThingDefOf.MCW_Paralyzer) continue;
+            var comp = item.TryGetComp<CompApparelReloadable>();
+            if (comp == null || !comp.CanBeUsed(out _)) continue;
+            var verb = comp.VerbTracker.PrimaryVerb;
+            Pawn? target = null;
+            float nearest = float.MaxValue;
+            foreach (var candidate in pawn.Map.mapPawns.AllPawnsSpawned)
+            {
+                if (candidate.Downed || !candidate.HostileTo(pawn) || !ParalyzerRules.CanParalyzePawn(candidate)
+                    || candidate.health.hediffSet.HasHediff(MCW_HediffDefOf.MCW_Paralyzed047)) continue;
+                float distance = candidate.Position.DistanceToSquared(pawn.Position);
+                if (distance >= nearest || !verb.CanHitTarget(candidate)) continue;
+                nearest = distance; target = candidate;
+            }
+            if (target == null) continue;
+            __result = JobMaker.MakeJob(JobDefOf.UseVerbOnThing, target);
+            __result.verbToUse = verb;
+            return;
+        }
     }
 }

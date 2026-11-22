@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+
+  <!-- EN: The Mincho Alliance founded by Qinxintang. They know how to create smart Mincho, and they take in and protect other Mincho. -->
+  <MCW_Alliance_Faction.description>由沁心糖组建的珉巧同盟，她们掌握了制作智慧珉巧的能力，以及收留和保护其他珉巧。</MCW_Alliance_Faction.description>
+  <!-- EN: Mincho Alliance -->
+  <MCW_Alliance_Faction.fixedName>珉巧同盟</MCW_Alliance_Faction.fixedName>
   <!-- EN: Mincho Alliance -->
   <MCW_Alliance_Faction.label>珉巧同盟</MCW_Alliance_Faction.label>
-  <!-- EN: 由沁心糖组建的珉巧同盟，她们掌握了制作智慧珉巧的能力，以及收留和保护其他珉巧。 -->
-  <MCW_Alliance_Faction.description>由沁心糖组建的珉巧同盟，她们掌握了制作智慧珉巧的能力，以及收留和保护其他珉巧。</MCW_Alliance_Faction.description>
-  <!-- EN: 珉巧同盟 -->
-  <MCW_Alliance_Faction.fixedName>珉巧同盟</MCW_Alliance_Faction.fixedName>
-  <!-- EN: （领袖称谓） -->
-  <MCW_Alliance_Faction.leaderTitle>领袖</MCW_Alliance_Faction.leaderTitle>
+  <!-- EN: (leader title) -->
+  <MCW_Alliance_Faction.leaderTitle>（领袖称谓）</MCW_Alliance_Faction.leaderTitle>
   <!-- EN: {0} from {1} are attacking your {2}. -->
   <MCW_Alliance_Faction.messageDefendersAttacking>来自 {1} 的 {0} 正在攻击你的 {2}。</MCW_Alliance_Faction.messageDefendersAttacking>
   <!-- EN: mincho -->
   <MCW_Alliance_Faction.pawnSingular>珉巧</MCW_Alliance_Faction.pawnSingular>
   <!-- EN: Minchoes -->
   <MCW_Alliance_Faction.pawnsPlural>珉巧</MCW_Alliance_Faction.pawnsPlural>
-  
+  <!-- EN: The asset reclamation division of the Glitterworld Dessert Company. Nominally a legitimate salvage firm, in practice it hunts down and dismantles escaped Mincho and smart Mincho. -->
+  <MCW_RecycleCorp_Faction.description>闪耀世界甜品公司下属的资产回收部门。名义上是一家合法的回收企业，实际上专门追捕、拆解逃逸的珉巧与智慧珉巧。</MCW_RecycleCorp_Faction.description>
+  <!-- EN: Reclamation Company -->
+  <MCW_RecycleCorp_Faction.fixedName>回收公司</MCW_RecycleCorp_Faction.fixedName>
   <!-- EN: Recycle Corporation -->
   <MCW_RecycleCorp_Faction.label>回收公司</MCW_RecycleCorp_Faction.label>
-  <!-- EN: 闪耀世界甜品公司下属的资产回收部门。 -->
-  <MCW_RecycleCorp_Faction.description>闪耀世界甜品公司下属的资产回收部门。名义上是一家合法的回收企业，实际上专门追捕、拆解逃逸的珉巧与智慧珉巧。</MCW_RecycleCorp_Faction.description>
-  <!-- EN: 回收公司 -->
-  <MCW_RecycleCorp_Faction.fixedName>回收公司</MCW_RecycleCorp_Faction.fixedName>
-  <!-- EN: 回收公司领队 -->
+  <!-- EN: reclamation company leader -->
   <MCW_RecycleCorp_Faction.leaderTitle>回收公司领队</MCW_RecycleCorp_Faction.leaderTitle>
-  <!-- EN: 回收队员 -->
+  <!-- EN: {0} from {1} are attacking your {2}. -->
+  <MCW_RecycleCorp_Faction.messageDefendersAttacking>{0} 来自 {1} 正在攻击你的 {2}。</MCW_RecycleCorp_Faction.messageDefendersAttacking>
+  <!-- EN: reclamation trooper -->
   <MCW_RecycleCorp_Faction.pawnSingular>回收队员</MCW_RecycleCorp_Faction.pawnSingular>
-  <!-- EN: 回收队员 -->
+  <!-- EN: reclamation troopers -->
   <MCW_RecycleCorp_Faction.pawnsPlural>回收队员</MCW_RecycleCorp_Faction.pawnsPlural>
-  
+
 </LanguageData>
