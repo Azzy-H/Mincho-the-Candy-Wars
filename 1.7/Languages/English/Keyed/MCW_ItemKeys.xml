@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <MCW_CocoaBathUse>Soak in a cocoa bath</MCW_CocoaBathUse>
+  <MCW_StellarisEventGizmo_Event>Events</MCW_StellarisEventGizmo_Event>
+  <MinchoCandyWars.UI.GuardianWall.Lifetime>Time left: {0}</MinchoCandyWars.UI.GuardianWall.Lifetime>
+  <MinchoCandyWars.UI.HealthTips.MannaShield>Shield energy: {0}</MinchoCandyWars.UI.HealthTips.MannaShield>
+  <MinchoCandyWars.UI.Subsidy.Cooldown>On cooldown: {0}</MinchoCandyWars.UI.Subsidy.Cooldown>
+  <MinchoCandyWars.UI.Message.Alliance.TechprintGoodwill>The alliance thanks you for the blueprint.</MinchoCandyWars.UI.Message.Alliance.TechprintGoodwill>
+  <MinchoCandyWars.UI.Bucket.MoreStudy>More study is needed.</MinchoCandyWars.UI.Bucket.MoreStudy>
+  <MinchoCandyWars.BucketDiscovery.Completed>Study complete.</MinchoCandyWars.BucketDiscovery.Completed>
+  <MinchoCandyWars.BucketDiscovery.Started>Study in progress.</MinchoCandyWars.BucketDiscovery.Started>
+  <MinchoCandyWars.Beacon.Create>Start conversion</MinchoCandyWars.Beacon.Create>
+  <MinchoCandyWars.Beacon.Description>Converts materials from the stockpile into the matching product.</MinchoCandyWars.Beacon.Description>
+  <MinchoCandyWars.Beacon.NoSpace>No free space nearby.</MinchoCandyWars.Beacon.NoSpace>
+  <MinchoCandyWars.Beacon.Stockpile>Stockpile</MinchoCandyWars.Beacon.Stockpile>
+  <MinchoCandyWars.IntelSummary.Ornament>Ornament: {0}</MinchoCandyWars.IntelSummary.Ornament>
+  <MinchoCandyWars.IntelSummary.Grades>Core {0} / Body {1}</MinchoCandyWars.IntelSummary.Grades>
+  <MinchoCandyWars.IntelSummary.Chill>Chill {0}</MinchoCandyWars.IntelSummary.Chill>
+  <MinchoCandyWars.IntelSummary.Abilities>Abilities: {0}</MinchoCandyWars.IntelSummary.Abilities>
+  <MinchoCandyWars.IntelSummary.NoOrnament>No ornament</MinchoCandyWars.IntelSummary.NoOrnament>
+  <MinchoCandyWars.IntelSummary.Suffix>({0}, core {1} / body {2})</MinchoCandyWars.IntelSummary.Suffix>
+  <MinchoCandyWars.Buff>Buffs</MinchoCandyWars.Buff>
+  <MinchoCandyWars.Buff.CoreOffset>Core offset</MinchoCandyWars.Buff.CoreOffset>
+  <MinchoCandyWars.Buff.CoreFactor>Core factor</MinchoCandyWars.Buff.CoreFactor>
+  <MinchoCandyWars.Buff.BodyOffset>Body offset</MinchoCandyWars.Buff.BodyOffset>
+  <MinchoCandyWars.Buff.BodyFactor>Body factor</MinchoCandyWars.Buff.BodyFactor>
+  <MinchoCandyWars.Abilities.IceCreamReshapeLetter>Ice cream reshape complete.</MinchoCandyWars.Abilities.IceCreamReshapeLetter>
+  <MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>Current acceleration: {0}</MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>
+  <MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation>Workbench acceleration shortens the time this work takes.</MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation>
+  <MinchoCandyWars.MechBoostExitLabel>Remove mecha boost</MinchoCandyWars.MechBoostExitLabel>
+  <MinchoCandyWars.MechBoostExitDesc>Lets the golem shed the mecha candy modification and return to its original state.</MinchoCandyWars.MechBoostExitDesc>
+  <MinchoCandyWars.Reason.GolemPilotRequired>A golem pilot is required.</MinchoCandyWars.Reason.GolemPilotRequired>
+  <MinchoCandyWars.Reason.AllianceCorpWar>The alliance and the reclamation company are at war.</MinchoCandyWars.Reason.AllianceCorpWar>
+  <MinchoCandyWars.Reason.FairyAlreadyProtected>That target is already protected by a fairy.</MinchoCandyWars.Reason.FairyAlreadyProtected>
+  <MinchoCandyWars.Reason.FairyNoLink>No fairy partner to link with.</MinchoCandyWars.Reason.FairyNoLink>
+  <MinchoCandyWars.Reason.FairyPartnerAbsent>The fairy partner is not present.</MinchoCandyWars.Reason.FairyPartnerAbsent>
+  <MinchoCandyWars.Reason.FairyUpgradeRequired>A fairy upgrade is required first.</MinchoCandyWars.Reason.FairyUpgradeRequired>
+</LanguageData>

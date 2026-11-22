@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- 开发者菜单：珉巧核心 -->
+  <!-- EN: DEV: Add chill -->
+  <MinchoCandyWars.Dev.Core.AddChill>开发：增加清凉值</MinchoCandyWars.Dev.Core.AddChill>
+  <!-- EN: DEV: Body grade -->
+  <MinchoCandyWars.Dev.Core.BodyLevel>开发：躯体等级</MinchoCandyWars.Dev.Core.BodyLevel>
+  <!-- EN: DEV: Change ornament -->
+  <MinchoCandyWars.Dev.Core.ChangeOrnament>开发：更换糖饰</MinchoCandyWars.Dev.Core.ChangeOrnament>
+  <!-- EN: DEV: Core grade -->
+  <MinchoCandyWars.Dev.Core.CoreLevel>开发：核心等级</MinchoCandyWars.Dev.Core.CoreLevel>
+  <!-- EN: DEV: Current data -->
+  <MinchoCandyWars.Dev.Core.Current>开发：当前数据</MinchoCandyWars.Dev.Core.Current>
+  <!-- EN: DEV: Max out -->
+  <MinchoCandyWars.Dev.Core.MaxOut>开发：全部拉满</MinchoCandyWars.Dev.Core.MaxOut>
+  <!-- EN: DEV: Reset -->
+  <MinchoCandyWars.Dev.Core.Reset>开发：重置</MinchoCandyWars.Dev.Core.Reset>
+  <!-- EN: DEV: Toggle active -->
+  <MinchoCandyWars.Dev.Core.ToggleActive>开发：切换激活</MinchoCandyWars.Dev.Core.ToggleActive>
+
+  <!-- 事件标记控制台 -->
+  <!-- EN: Event flag console -->
+  <MinchoCandyWars.Dev.Flags.Title>事件标记控制台</MinchoCandyWars.Dev.Flags.Title>
+  <!-- EN: Add -->
+  <MinchoCandyWars.Dev.Flags.Add>添加</MinchoCandyWars.Dev.Flags.Add>
+  <!-- EN: Cancel -->
+  <MinchoCandyWars.Dev.Flags.Cancel>取消</MinchoCandyWars.Dev.Flags.Cancel>
+  <!-- EN: Confirm -->
+  <MinchoCandyWars.Dev.Flags.Confirm>确认</MinchoCandyWars.Dev.Flags.Confirm>
+  <!-- EN: Clear -->
+  <MinchoCandyWars.Dev.Flags.Clear>清除</MinchoCandyWars.Dev.Flags.Clear>
+  <!-- EN: Clear all -->
+  <MinchoCandyWars.Dev.Flags.ClearAll>全部清除</MinchoCandyWars.Dev.Flags.ClearAll>
+  <!-- EN: Cleared -->
+  <MinchoCandyWars.Dev.Flags.Cleared>已清除所有标记</MinchoCandyWars.Dev.Flags.Cleared>
+  <!-- EN: Filter -->
+  <MinchoCandyWars.Dev.Flags.Filter>筛选</MinchoCandyWars.Dev.Flags.Filter>
+  <!-- EN: Name -->
+  <MinchoCandyWars.Dev.Flags.Name>名称</MinchoCandyWars.Dev.Flags.Name>
+  <!-- EN: Type -->
+  <MinchoCandyWars.Dev.Flags.Type>类型</MinchoCandyWars.Dev.Flags.Type>
+  <!-- EN: Value -->
+  <MinchoCandyWars.Dev.Flags.Value>数值</MinchoCandyWars.Dev.Flags.Value>
+  <!-- EN: Time left -->
+  <MinchoCandyWars.Dev.Flags.Ticks>剩余时长</MinchoCandyWars.Dev.Flags.Ticks>
+  <!-- EN: Permanent -->
+  <MinchoCandyWars.Dev.Flags.Permanent>永久</MinchoCandyWars.Dev.Flags.Permanent>
+  <!-- EN: Apply effect -->
+  <MinchoCandyWars.Dev.Flags.UseEffect>应用效果</MinchoCandyWars.Dev.Flags.UseEffect>
+  <!-- EN: Yes -->
+  <MinchoCandyWars.Dev.Flags.True>是</MinchoCandyWars.Dev.Flags.True>
+  <!-- EN: No -->
+  <MinchoCandyWars.Dev.Flags.False>否</MinchoCandyWars.Dev.Flags.False>
+  <!-- EN: Empty -->
+  <MinchoCandyWars.Dev.Flags.Null>空</MinchoCandyWars.Dev.Flags.Null>
+  <!-- EN: No flags -->
+  <MinchoCandyWars.Dev.Flags.NoFlags>暂无标记</MinchoCandyWars.Dev.Flags.NoFlags>
+  <!-- EN: Active flags: {0} -->
+  <MinchoCandyWars.Dev.Flags.TotalActive>活跃标记 {0}</MinchoCandyWars.Dev.Flags.TotalActive>
+  <!-- EN: Inactive flags: {0} -->
+  <MinchoCandyWars.Dev.Flags.TotalInactive>已失效标记 {0}</MinchoCandyWars.Dev.Flags.TotalInactive>
+  <!-- EN: Removed {0} -->
+  <MinchoCandyWars.Dev.Flags.Removed>已移除 {0}</MinchoCandyWars.Dev.Flags.Removed>
+  <!-- EN: Added {0} -->
+  <MinchoCandyWars.Dev.Flags.Updated>已添加 {0}</MinchoCandyWars.Dev.Flags.Updated>
+  <!-- EN: Name cannot be empty. -->
+  <MinchoCandyWars.Dev.Flags.EmptyName>名称不能为空</MinchoCandyWars.Dev.Flags.EmptyName>
+  <!-- EN: Permanent flags take no value. -->
+  <MinchoCandyWars.Dev.Flags.EmptyPermanent>永久标记无需填写数值</MinchoCandyWars.Dev.Flags.EmptyPermanent>
+  <!-- EN: Invalid number. -->
+  <MinchoCandyWars.Dev.Flags.InvalidFloat>数值格式无效</MinchoCandyWars.Dev.Flags.InvalidFloat>
+  <!-- EN: Invalid duration. -->
+  <MinchoCandyWars.Dev.Flags.InvalidTicks>时长格式无效</MinchoCandyWars.Dev.Flags.InvalidTicks>
+  <!-- EN: Flags bound to a thing are lost once that thing is gone. -->
+  <MinchoCandyWars.Dev.Flags.ThingWarning>绑定到物件的标记会在物件消失后失效</MinchoCandyWars.Dev.Flags.ThingWarning>
+
+  <!-- 标记类型名（按钮上显示） -->
+  <!-- EN: Bool -->
+  <MinchoCandyWars.Dev.Flags.Bool>布尔</MinchoCandyWars.Dev.Flags.Bool>
+  <!-- EN: Float -->
+  <MinchoCandyWars.Dev.Flags.Float>浮点</MinchoCandyWars.Dev.Flags.Float>
+  <!-- EN: String -->
+  <MinchoCandyWars.Dev.Flags.String>文本</MinchoCandyWars.Dev.Flags.String>
+  <!-- EN: Thing -->
+  <MinchoCandyWars.Dev.Flags.Thing>物件</MinchoCandyWars.Dev.Flags.Thing>
+</LanguageData>

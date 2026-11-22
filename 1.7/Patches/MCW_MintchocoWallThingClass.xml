@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    珉巧墙改用自定义 Building 子类，以便在检查面板显示守护墙的剩余时间。
+    此前这是 ThingWithComps.GetInspectString 上的 Harmony 补丁，改成 thingClass 后不再需要。
+  -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mincho_MintchocoWall"]/thingClass</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Mincho_MintchocoWall"]/thingClass</xpath>
+      <value>
+        <thingClass>MinchoCandyWars.Abilities.AmberonCandy.Building_MintchocoWall</thingClass>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Mincho_MintchocoWall"]</xpath>
+      <value>
+        <thingClass>MinchoCandyWars.Abilities.AmberonCandy.Building_MintchocoWall</thingClass>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>

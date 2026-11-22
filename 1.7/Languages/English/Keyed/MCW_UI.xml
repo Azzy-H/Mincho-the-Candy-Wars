@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <MinchoCandyWars.Abilities.AmoebaBoonHourlyCost>Costs {0} chill per in-game hour.</MinchoCandyWars.Abilities.AmoebaBoonHourlyCost>
+  <MinchoCandyWars.UI.Ability.ConditionNotMet>Ornament, grade or candy value does not meet the ability's requirements.</MinchoCandyWars.UI.Ability.ConditionNotMet>
+  <MinchoCandyWars.UI.Bucket.NeedShard>Requires 1 shard.</MinchoCandyWars.UI.Bucket.NeedShard>
+  <MinchoCandyWars.UI.Bucket.NotStudied>Study not yet complete.</MinchoCandyWars.UI.Bucket.NotStudied>
+  <MinchoCandyWars.UI.ColdStorage.Cooling>Refrigerated (-5°C)</MinchoCandyWars.UI.ColdStorage.Cooling>
+  <MinchoCandyWars.UI.ColdStorage.NotCooling>Not refrigerated</MinchoCandyWars.UI.ColdStorage.NotCooling>
+  <MinchoCandyWars.UI.HealthTips.Abilities>Unlocked abilities: {LIST}</MinchoCandyWars.UI.HealthTips.Abilities>
+  <MinchoCandyWars.UI.HealthTips.BodyStage>Current body upgrades:</MinchoCandyWars.UI.HealthTips.BodyStage>
+  <MinchoCandyWars.UI.HealthTips.CoreStage>Current core upgrades:</MinchoCandyWars.UI.HealthTips.CoreStage>
+  <MinchoCandyWars.UI.HealthTips.GradeLabel>{CANDY} core {CORE} · body {BODY}</MinchoCandyWars.UI.HealthTips.GradeLabel>
+  <MinchoCandyWars.UI.HealthTips.MaxCandyValue>Chill cap: {MAX} (+50 per core and body grade)</MinchoCandyWars.UI.HealthTips.MaxCandyValue>
+  <MinchoCandyWars.UI.HealthTips.NoExtraStats>  No extra stats</MinchoCandyWars.UI.HealthTips.NoExtraStats>
+  <MinchoCandyWars.UI.HealthTips.None>  None</MinchoCandyWars.UI.HealthTips.None>
+  <MinchoCandyWars.UI.HealthTips.Shield>Shield: {SHIELD} / {SHIELDMAX}\nActual damage capacity: {CAPACITY} / {CAPACITYMAX}. Blocks ranged and explosion damage; EMP does not break the amber shield.</MinchoCandyWars.UI.HealthTips.Shield>
+  <MinchoCandyWars.UI.HealthTips.Title>{CANDY}: core {CORE}/5 · body {BODY}/5</MinchoCandyWars.UI.HealthTips.Title>
+  <MinchoCandyWars.UI.Letter.QinxintangVisit.Label>Qinxintang visits</MinchoCandyWars.UI.Letter.QinxintangVisit.Label>
+  <MinchoCandyWars.UI.Letter.QinxintangVisit.Text>Qinxintang has finally arrived at your colony. She says she will stay for a while.</MinchoCandyWars.UI.Letter.QinxintangVisit.Text>
+  <MinchoCandyWars.UI.Letter.RecruitMincho.CommsLabel>How to reach the Mincho Alliance</MinchoCandyWars.UI.Letter.RecruitMincho.CommsLabel>
+  <MinchoCandyWars.UI.Letter.RecruitMincho.CommsText>Qinxintang says: if you want to contact the Mincho Alliance later, use our ice cream comms console.\n\n(Build an ice cream comms console, select it and press "Contact the Mincho Alliance" to reach me.)</MinchoCandyWars.UI.Letter.RecruitMincho.CommsText>
+  <MinchoCandyWars.UI.Letter.RecruitMincho.Label>Mincho arrived</MinchoCandyWars.UI.Letter.RecruitMincho.Label>
+  <MinchoCandyWars.UI.Letter.RecruitMincho.Text>The delicious ice creams are here, and they are ready for anything~</MinchoCandyWars.UI.Letter.RecruitMincho.Text>
+  <MinchoCandyWars.UI.Letter.RecruitMincho.TextSmart>The delicious ice creams are here, and they are ready for anything~\n\nOne of them even has a smart core!</MinchoCandyWars.UI.Letter.RecruitMincho.TextSmart>
+  <MinchoCandyWars.UI.Letter.Reinforcements.Label>Mincho reinforcements arrived</MinchoCandyWars.UI.Letter.Reinforcements.Label>
+  <MinchoCandyWars.UI.Letter.Reinforcements.Text>Reinforcements from the Mincho Alliance have reached the battlefield and decided to help you.</MinchoCandyWars.UI.Letter.Reinforcements.Text>
+  <MinchoCandyWars.UI.Letter.Subsidy.Label>Mincho Alliance subsidy</MinchoCandyWars.UI.Letter.Subsidy.Label>
+  <MinchoCandyWars.UI.Letter.Subsidy.Text>Qinxintang's subsidy has arrived. Supplies have been dropped near your colony.</MinchoCandyWars.UI.Letter.Subsidy.Text>
+  <MinchoCandyWars.UI.Message.Alliance.AlreadyResearched>Mincho Alliance: {RESEARCH} is already researched</MinchoCandyWars.UI.Message.Alliance.AlreadyResearched>
+  <MinchoCandyWars.UI.Message.Alliance.Bought>Mincho Alliance: bought {ITEM} ×{COUNT}</MinchoCandyWars.UI.Message.Alliance.Bought>
+  <MinchoCandyWars.UI.Message.Alliance.NotEnoughSilver>Mincho Alliance: not enough silver (need {SILVER})</MinchoCandyWars.UI.Message.Alliance.NotEnoughSilver>
+  <MinchoCandyWars.UI.Message.Alliance.NoteUnlocked>Mincho Alliance: blueprint received, unlocking {RESEARCH}</MinchoCandyWars.UI.Message.Alliance.NoteUnlocked>
+  <MinchoCandyWars.UI.Message.RecycleDefeated>The reclamation force has been routed for good. They can no longer contact or raid you.</MinchoCandyWars.UI.Message.RecycleDefeated>
+  <MinchoCandyWars.UI.Term.IceCream>Ice cream</MinchoCandyWars.UI.Term.IceCream>
+</LanguageData>

@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -116,7 +116,8 @@ namespace MinchoCandyWars.Abilities.AmberonCandy
                         continue;
                     }
 
-                    map.GetComponent<GuardianWalls>().Register(GenSpawn.Spawn(wall, cell, map, Rot4.North));
+                    if (GenSpawn.Spawn(wall, cell, map, Rot4.North) is Building_MintchocoWall guardian)
+                        guardian.RegisterGuardian();
                 }
             }
         }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <MinchoCandyWars.Dev.Core.AddChill>DEV: Add chill</MinchoCandyWars.Dev.Core.AddChill>
+  <MinchoCandyWars.Dev.Core.BodyLevel>DEV: Body grade</MinchoCandyWars.Dev.Core.BodyLevel>
+  <MinchoCandyWars.Dev.Core.ChangeOrnament>DEV: Change ornament</MinchoCandyWars.Dev.Core.ChangeOrnament>
+  <MinchoCandyWars.Dev.Core.CoreLevel>DEV: Core grade</MinchoCandyWars.Dev.Core.CoreLevel>
+  <MinchoCandyWars.Dev.Core.Current>DEV: Current data</MinchoCandyWars.Dev.Core.Current>
+  <MinchoCandyWars.Dev.Core.MaxOut>DEV: Max out</MinchoCandyWars.Dev.Core.MaxOut>
+  <MinchoCandyWars.Dev.Core.Reset>DEV: Reset</MinchoCandyWars.Dev.Core.Reset>
+  <MinchoCandyWars.Dev.Core.ToggleActive>DEV: Toggle active</MinchoCandyWars.Dev.Core.ToggleActive>
+  <MinchoCandyWars.Dev.Flags.Title>Event flag console</MinchoCandyWars.Dev.Flags.Title>
+  <MinchoCandyWars.Dev.Flags.Add>Add</MinchoCandyWars.Dev.Flags.Add>
+  <MinchoCandyWars.Dev.Flags.Cancel>Cancel</MinchoCandyWars.Dev.Flags.Cancel>
+  <MinchoCandyWars.Dev.Flags.Confirm>Confirm</MinchoCandyWars.Dev.Flags.Confirm>
+  <MinchoCandyWars.Dev.Flags.Clear>Clear</MinchoCandyWars.Dev.Flags.Clear>
+  <MinchoCandyWars.Dev.Flags.ClearAll>Clear all</MinchoCandyWars.Dev.Flags.ClearAll>
+  <MinchoCandyWars.Dev.Flags.Cleared>Cleared all flags.</MinchoCandyWars.Dev.Flags.Cleared>
+  <MinchoCandyWars.Dev.Flags.Filter>Filter</MinchoCandyWars.Dev.Flags.Filter>
+  <MinchoCandyWars.Dev.Flags.Name>Name</MinchoCandyWars.Dev.Flags.Name>
+  <MinchoCandyWars.Dev.Flags.Type>Type</MinchoCandyWars.Dev.Flags.Type>
+  <MinchoCandyWars.Dev.Flags.Value>Value</MinchoCandyWars.Dev.Flags.Value>
+  <MinchoCandyWars.Dev.Flags.Ticks>Time left</MinchoCandyWars.Dev.Flags.Ticks>
+  <MinchoCandyWars.Dev.Flags.Permanent>Permanent</MinchoCandyWars.Dev.Flags.Permanent>
+  <MinchoCandyWars.Dev.Flags.UseEffect>Apply effect</MinchoCandyWars.Dev.Flags.UseEffect>
+  <MinchoCandyWars.Dev.Flags.True>Yes</MinchoCandyWars.Dev.Flags.True>
+  <MinchoCandyWars.Dev.Flags.False>No</MinchoCandyWars.Dev.Flags.False>
+  <MinchoCandyWars.Dev.Flags.Null>Empty</MinchoCandyWars.Dev.Flags.Null>
+  <MinchoCandyWars.Dev.Flags.NoFlags>No flags.</MinchoCandyWars.Dev.Flags.NoFlags>
+  <MinchoCandyWars.Dev.Flags.TotalActive>Active flags: {0}</MinchoCandyWars.Dev.Flags.TotalActive>
+  <MinchoCandyWars.Dev.Flags.TotalInactive>Inactive flags: {0}</MinchoCandyWars.Dev.Flags.TotalInactive>
+  <MinchoCandyWars.Dev.Flags.Removed>Removed {0}</MinchoCandyWars.Dev.Flags.Removed>
+  <MinchoCandyWars.Dev.Flags.Updated>Added {0}</MinchoCandyWars.Dev.Flags.Updated>
+  <MinchoCandyWars.Dev.Flags.EmptyName>Name cannot be empty.</MinchoCandyWars.Dev.Flags.EmptyName>
+  <MinchoCandyWars.Dev.Flags.EmptyPermanent>Permanent flags take no value.</MinchoCandyWars.Dev.Flags.EmptyPermanent>
+  <MinchoCandyWars.Dev.Flags.InvalidFloat>Invalid number.</MinchoCandyWars.Dev.Flags.InvalidFloat>
+  <MinchoCandyWars.Dev.Flags.InvalidTicks>Invalid duration.</MinchoCandyWars.Dev.Flags.InvalidTicks>
+  <MinchoCandyWars.Dev.Flags.ThingWarning>Flags bound to a thing are lost once that thing is gone.</MinchoCandyWars.Dev.Flags.ThingWarning>
+  <MinchoCandyWars.Dev.Flags.Bool>Bool</MinchoCandyWars.Dev.Flags.Bool>
+  <MinchoCandyWars.Dev.Flags.Float>Float</MinchoCandyWars.Dev.Flags.Float>
+  <MinchoCandyWars.Dev.Flags.String>String</MinchoCandyWars.Dev.Flags.String>
+  <MinchoCandyWars.Dev.Flags.Thing>Thing</MinchoCandyWars.Dev.Flags.Thing>
+</LanguageData>

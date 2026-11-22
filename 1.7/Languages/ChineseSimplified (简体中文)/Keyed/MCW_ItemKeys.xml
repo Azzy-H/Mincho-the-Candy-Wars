@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- 交互与界面 -->
+  <!-- EN: Soak in a cocoa bath -->
+  <MCW_CocoaBathUse>泡可可浴</MCW_CocoaBathUse>
+  <!-- EN: Events -->
+  <MCW_StellarisEventGizmo_Event>事务</MCW_StellarisEventGizmo_Event>
+  <!-- EN: Time left: {0} -->
+  <MinchoCandyWars.UI.GuardianWall.Lifetime>剩余存在时间：{0}</MinchoCandyWars.UI.GuardianWall.Lifetime>
+  <!-- EN: Shield energy: {0} -->
+  <MinchoCandyWars.UI.HealthTips.MannaShield>护盾能量：{0}</MinchoCandyWars.UI.HealthTips.MannaShield>
+  <!-- EN: On cooldown: {0} -->
+  <MinchoCandyWars.UI.Subsidy.Cooldown>冷却中：{0}</MinchoCandyWars.UI.Subsidy.Cooldown>
+  <!-- EN: The alliance thanks you for the blueprint. -->
+  <MinchoCandyWars.UI.Message.Alliance.TechprintGoodwill>同盟对你提供的图纸表示感谢。</MinchoCandyWars.UI.Message.Alliance.TechprintGoodwill>
+  <!-- EN: More study is needed. -->
+  <MinchoCandyWars.UI.Bucket.MoreStudy>还需要继续研究。</MinchoCandyWars.UI.Bucket.MoreStudy>
+
+  <!-- 无尽冰淇淋桶 -->
+  <!-- EN: Study complete. -->
+  <MinchoCandyWars.BucketDiscovery.Completed>研究已完成。</MinchoCandyWars.BucketDiscovery.Completed>
+  <!-- EN: Study in progress. -->
+  <MinchoCandyWars.BucketDiscovery.Started>研究进行中。</MinchoCandyWars.BucketDiscovery.Started>
+
+  <!-- 转化信标 -->
+  <!-- EN: Start conversion -->
+  <MinchoCandyWars.Beacon.Create>开始转化</MinchoCandyWars.Beacon.Create>
+  <!-- EN: Converts materials from the stockpile into the matching product. -->
+  <MinchoCandyWars.Beacon.Description>把库存里的原料转化为对应产物。</MinchoCandyWars.Beacon.Description>
+  <!-- EN: No free space nearby. -->
+  <MinchoCandyWars.Beacon.NoSpace>周围没有可用空间。</MinchoCandyWars.Beacon.NoSpace>
+  <!-- EN: Stockpile -->
+  <MinchoCandyWars.Beacon.Stockpile>原料库存</MinchoCandyWars.Beacon.Stockpile>
+
+  <!-- 智慧核心汇总 -->
+  <!-- EN: Ornament: {0} -->
+  <MinchoCandyWars.IntelSummary.Ornament>糖饰：{0}</MinchoCandyWars.IntelSummary.Ornament>
+  <!-- EN: Core {0} / Body {1} -->
+  <MinchoCandyWars.IntelSummary.Grades>核心 {0} / 躯体 {1}</MinchoCandyWars.IntelSummary.Grades>
+  <!-- EN: Chill {0} -->
+  <MinchoCandyWars.IntelSummary.Chill>清凉值 {0}</MinchoCandyWars.IntelSummary.Chill>
+  <!-- EN: Abilities: {0} -->
+  <MinchoCandyWars.IntelSummary.Abilities>能力：{0}</MinchoCandyWars.IntelSummary.Abilities>
+  <!-- EN: No ornament -->
+  <MinchoCandyWars.IntelSummary.NoOrnament>无糖饰</MinchoCandyWars.IntelSummary.NoOrnament>
+  <!-- EN: ({0}, core {1} / body {2}) -->
+  <MinchoCandyWars.IntelSummary.Suffix>（{0}，核心 {1} / 躯体 {2}）</MinchoCandyWars.IntelSummary.Suffix>
+
+  <!-- 糖果加成 -->
+  <!-- EN: Buffs -->
+  <MinchoCandyWars.Buff>加成</MinchoCandyWars.Buff>
+  <!-- EN: Core offset -->
+  <MinchoCandyWars.Buff.CoreOffset>核心加成</MinchoCandyWars.Buff.CoreOffset>
+  <!-- EN: Core factor -->
+  <MinchoCandyWars.Buff.CoreFactor>核心系数</MinchoCandyWars.Buff.CoreFactor>
+  <!-- EN: Body offset -->
+  <MinchoCandyWars.Buff.BodyOffset>躯体加成</MinchoCandyWars.Buff.BodyOffset>
+  <!-- EN: Body factor -->
+  <MinchoCandyWars.Buff.BodyFactor>躯体系数</MinchoCandyWars.Buff.BodyFactor>
+
+  <!-- 能力与原因提示 -->
+  <!-- EN: Ice cream reshape complete. -->
+  <MinchoCandyWars.Abilities.IceCreamReshapeLetter>冰淇淋重塑已完成。</MinchoCandyWars.Abilities.IceCreamReshapeLetter>
+  <!-- EN: Current acceleration: {0} -->
+  <MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>当前加速：{0}</MinchoCandyWars.Abilities.WorkbenchAcceleration.Inspect>
+  <!-- EN: Workbench acceleration shortens the time this work takes. -->
+  <MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation>工作台加速会缩短这项工作的耗时。</MinchoCandyWars.Abilities.WorkbenchAcceleration.StatExplanation>
+  <!-- EN: Remove mecha boost -->
+  <MinchoCandyWars.MechBoostExitLabel>解除改造</MinchoCandyWars.MechBoostExitLabel>
+  <!-- EN: Lets the golem shed the mecha candy modification and return to its original state. -->
+  <MinchoCandyWars.MechBoostExitDesc>让魔像卸下千机糖改造，恢复原本状态。</MinchoCandyWars.MechBoostExitDesc>
+  <!-- EN: A golem pilot is required. -->
+  <MinchoCandyWars.Reason.GolemPilotRequired>需要千机糖驾驶员在场。</MinchoCandyWars.Reason.GolemPilotRequired>
+  <!-- EN: The alliance and the reclamation company are at war. -->
+  <MinchoCandyWars.Reason.AllianceCorpWar>同盟与回收公司正处于交战状态。</MinchoCandyWars.Reason.AllianceCorpWar>
+  <!-- EN: That target is already protected by a fairy. -->
+  <MinchoCandyWars.Reason.FairyAlreadyProtected>该目标已在妖精护盾的保护下。</MinchoCandyWars.Reason.FairyAlreadyProtected>
+  <!-- EN: No fairy partner to link with. -->
+  <MinchoCandyWars.Reason.FairyNoLink>没有可连接的妖精伙伴。</MinchoCandyWars.Reason.FairyNoLink>
+  <!-- EN: The fairy partner is not present. -->
+  <MinchoCandyWars.Reason.FairyPartnerAbsent>妖精伙伴不在场。</MinchoCandyWars.Reason.FairyPartnerAbsent>
+  <!-- EN: A fairy upgrade is required first. -->
+  <MinchoCandyWars.Reason.FairyUpgradeRequired>需要先完成妖精升级。</MinchoCandyWars.Reason.FairyUpgradeRequired>
+</LanguageData>

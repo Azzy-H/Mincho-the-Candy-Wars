@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <MinchoCandyWars.Alliance.Issuer>Word from {0}</MinchoCandyWars.Alliance.Issuer>
+  <MinchoCandyWars.Alliance.Reward>Relations +{0} ({1})</MinchoCandyWars.Alliance.Reward>
+  <MinchoCandyWars.AllianceContact.ConsoleTooltip>Contact the alliance, take on work, or give gifts.</MinchoCandyWars.AllianceContact.ConsoleTooltip>
+  <MinchoCandyWars.AllianceContact.GoodwillSummary>Current relations: {0}</MinchoCandyWars.AllianceContact.GoodwillSummary>
+  <MinchoCandyWars.AllianceContact.Greeting>{0}: What can I do for you?</MinchoCandyWars.AllianceContact.Greeting>
+  <MinchoCandyWars.AllianceContact.Label>Alliance contact</MinchoCandyWars.AllianceContact.Label>
+  <MinchoCandyWars.AllianceContact.OfferTitle>Work from {0}</MinchoCandyWars.AllianceContact.OfferTitle>
+  <MinchoCandyWars.AllianceContact.ShopGreeting>{0}: Care to look at some blueprints?</MinchoCandyWars.AllianceContact.ShopGreeting>
+  <MinchoCandyWars.AllianceContact.Unavailable>The alliance cannot be reached right now.</MinchoCandyWars.AllianceContact.Unavailable>
+  <MinchoCandyWars.Campaign.GenerationBody>Generating the finale map, please wait.</MinchoCandyWars.Campaign.GenerationBody>
+  <MinchoCandyWars.Campaign.GenerationTitle>Generating the finale</MinchoCandyWars.Campaign.GenerationTitle>
+  <MinchoCandyWars.Campaign.PrepareBody>The finale is not ready yet.</MinchoCandyWars.Campaign.PrepareBody>
+  <MinchoCandyWars.Campaign.PrepareTitle>Finale preparation</MinchoCandyWars.Campaign.PrepareTitle>
+  <MinchoCandyWars.Campaign.ReplyTitle>Reply from {0}</MinchoCandyWars.Campaign.ReplyTitle>
+  <MinchoCandyWars.Campaign.RetryBody>That attempt failed. You may try again.</MinchoCandyWars.Campaign.RetryBody>
+  <MinchoCandyWars.Campaign.RetryTitle>You may try again</MinchoCandyWars.Campaign.RetryTitle>
+  <MinchoCandyWars.Campaign.VictoryBody>The reclamation force headquarters has fallen.</MinchoCandyWars.Campaign.VictoryBody>
+  <MinchoCandyWars.Campaign.VictoryTitle>Finale victory</MinchoCandyWars.Campaign.VictoryTitle>
+  <MinchoCandyWars.Contact.Body>{0} wants to talk.</MinchoCandyWars.Contact.Body>
+  <MinchoCandyWars.Contact.Open>Open contact</MinchoCandyWars.Contact.Open>
+  <MinchoCandyWars.Contact.Title>Letter from {0}</MinchoCandyWars.Contact.Title>
+  <MinchoCandyWars.CorpContact.Demand>The reclamation company has made a demand.</MinchoCandyWars.CorpContact.Demand>
+  <MinchoCandyWars.CorpContact.Manifest>The reclamation company has published their manifest.</MinchoCandyWars.CorpContact.Manifest>
+  <MinchoCandyWars.Delivery.CannotDeliver>Cannot deliver right now.</MinchoCandyWars.Delivery.CannotDeliver>
+  <MinchoCandyWars.Delivery.Confirm>Deliver {0}?</MinchoCandyWars.Delivery.Confirm>
+  <MinchoCandyWars.Delivery.NoHome>There is no home map to deliver to.</MinchoCandyWars.Delivery.NoHome>
+  <MinchoCandyWars.Delivery.NoQuest>There is no quest to deliver for.</MinchoCandyWars.Delivery.NoQuest>
+  <MinchoCandyWars.Delivery.Shortage>Short of {0}: {1} missing, {2} on hand.</MinchoCandyWars.Delivery.Shortage>
+  <MinchoCandyWars.Delivery.ShortageTitle>Not enough materials</MinchoCandyWars.Delivery.ShortageTitle>
+  <MinchoCandyWars.Delivery.Summary>{0}: {1} left</MinchoCandyWars.Delivery.Summary>
+  <MinchoCandyWars.Delivery.Title>Delivery</MinchoCandyWars.Delivery.Title>
+  <MinchoCandyWars.DeliveryQuestLog.Instructions>Bring the requested materials to the marked spot to finish the quest.</MinchoCandyWars.DeliveryQuestLog.Instructions>
+  <MinchoCandyWars.Finale.CounterattackArrived>The reclamation force counterattack has arrived.</MinchoCandyWars.Finale.CounterattackArrived>
+  <MinchoCandyWars.Finale.CounterattackTitle>Reclamation force counterattack</MinchoCandyWars.Finale.CounterattackTitle>
+  <MinchoCandyWars.Finale.CounterattackWarning>The reclamation force is massing and may counterattack at any moment.</MinchoCandyWars.Finale.CounterattackWarning>
+  <MinchoCandyWars.Hospitality.Description>The visiting Mincho stays for another {0}.</MinchoCandyWars.Hospitality.Description>
+  <MinchoCandyWars.Hospitality.Issuer>{0} arrives with {1} Mincho.</MinchoCandyWars.Hospitality.Issuer>
+  <MinchoCandyWars.Hospitality.SeriesDescription>Mincho from the alliance drop by for a while.</MinchoCandyWars.Hospitality.SeriesDescription>
+  <MinchoCandyWars.Hospitality.SeriesTitle>Mincho lodging</MinchoCandyWars.Hospitality.SeriesTitle>
+  <MinchoCandyWars.Hospitality.Title>Lodging Mincho</MinchoCandyWars.Hospitality.Title>
+  <MinchoCandyWars.Mission.Title>Objective</MinchoCandyWars.Mission.Title>
+  <MinchoCandyWars.Mission.Rescue>Rescue</MinchoCandyWars.Mission.Rescue>
+  <MinchoCandyWars.Mission.Combat>Combat</MinchoCandyWars.Mission.Combat>
+  <MinchoCandyWars.Mission.Sample>Sample</MinchoCandyWars.Mission.Sample>
+  <MinchoCandyWars.Mission.Headquarters>Headquarters</MinchoCandyWars.Mission.Headquarters>
+  <MinchoCandyWars.Mission.BucketTitle>Ice cream bucket</MinchoCandyWars.Mission.BucketTitle>
+  <MinchoCandyWars.Mission.BucketBody>A reclamation force ice cream bucket has crashed nearby. Go and see what is inside.</MinchoCandyWars.Mission.BucketBody>
+  <MinchoCandyWars.Mission.ShuttleTitle>Shuttle</MinchoCandyWars.Mission.ShuttleTitle>
+  <MinchoCandyWars.Mission.ShuttleBody>The shuttle has landed. Board it to leave.</MinchoCandyWars.Mission.ShuttleBody>
+  <MinchoCandyWars.Quest.Routine>Routine work</MinchoCandyWars.Quest.Routine>
+  <MinchoCandyWars.Quest.Objective>Objective: {0}</MinchoCandyWars.Quest.Objective>
+  <MinchoCandyWars.Quest.Repeat>Another job from {0}</MinchoCandyWars.Quest.Repeat>
+  <MinchoCandyWars.StoryLetter.AllianceDeclinedTitle>The alliance declined</MinchoCandyWars.StoryLetter.AllianceDeclinedTitle>
+  <MinchoCandyWars.StoryLetter.AllianceDeclinedBody>The alliance cannot take you in for now.</MinchoCandyWars.StoryLetter.AllianceDeclinedBody>
+  <MinchoCandyWars.StoryLetter.CorpDeadlineTitle>Reclamation company deadline</MinchoCandyWars.StoryLetter.CorpDeadlineTitle>
+  <MinchoCandyWars.StoryLetter.CorpDeadlineBody>The deadline set by the reclamation company has passed.</MinchoCandyWars.StoryLetter.CorpDeadlineBody>
+  <MinchoCandyWars.StoryLetter.FirstJoinedTitle>The first Mincho</MinchoCandyWars.StoryLetter.FirstJoinedTitle>
+  <MinchoCandyWars.StoryLetter.FirstJoinedBody>{0} has joined your colony.</MinchoCandyWars.StoryLetter.FirstJoinedBody>
+  <MinchoCandyWars.StoryLetter.GuestsArrivedTitle>Mincho arrived</MinchoCandyWars.StoryLetter.GuestsArrivedTitle>
+  <MinchoCandyWars.StoryLetter.GuestsArrivedBody>The visiting Mincho have arrived.</MinchoCandyWars.StoryLetter.GuestsArrivedBody>
+  <MinchoCandyWars.StoryLetter.HuntedArrivalTitle>A hunted Mincho</MinchoCandyWars.StoryLetter.HuntedArrivalTitle>
+  <MinchoCandyWars.StoryLetter.HuntedArrivalBody>A hunted Mincho has fled to your colony.</MinchoCandyWars.StoryLetter.HuntedArrivalBody>
+  <MinchoCandyWars.StoryLetter.RewardPendingTitle>Reward pending</MinchoCandyWars.StoryLetter.RewardPendingTitle>
+  <MinchoCandyWars.StoryLetter.RewardPendingBody>The reward cannot be delivered right now; it will be sent once delivery is possible again.</MinchoCandyWars.StoryLetter.RewardPendingBody>
+</LanguageData>

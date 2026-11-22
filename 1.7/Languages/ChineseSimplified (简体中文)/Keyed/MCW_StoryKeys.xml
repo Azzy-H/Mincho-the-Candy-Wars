@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- 同盟与联络 -->
+  <!-- EN: Word from {0} -->
+  <MinchoCandyWars.Alliance.Issuer>{0} 发来消息</MinchoCandyWars.Alliance.Issuer>
+  <!-- EN: Relations +{0} from {1} -->
+  <MinchoCandyWars.Alliance.Reward>关系 +{0}（{1}）</MinchoCandyWars.Alliance.Reward>
+  <!-- EN: Contact the alliance, take on work, or give gifts. -->
+  <MinchoCandyWars.AllianceContact.ConsoleTooltip>与同盟联络、接受委托或赠送礼物。</MinchoCandyWars.AllianceContact.ConsoleTooltip>
+  <!-- EN: Current relations: {0} -->
+  <MinchoCandyWars.AllianceContact.GoodwillSummary>当前关系：{0}</MinchoCandyWars.AllianceContact.GoodwillSummary>
+  <!-- EN: {0}: What can I do for you? -->
+  <MinchoCandyWars.AllianceContact.Greeting>{0}：有什么事吗？</MinchoCandyWars.AllianceContact.Greeting>
+  <!-- EN: Alliance contact -->
+  <MinchoCandyWars.AllianceContact.Label>同盟联络</MinchoCandyWars.AllianceContact.Label>
+  <!-- EN: Work from {0} -->
+  <MinchoCandyWars.AllianceContact.OfferTitle>{0} 的委托</MinchoCandyWars.AllianceContact.OfferTitle>
+  <!-- EN: {0}: Care to look at some blueprints? -->
+  <MinchoCandyWars.AllianceContact.ShopGreeting>{0}：想看看图纸吗？</MinchoCandyWars.AllianceContact.ShopGreeting>
+  <!-- EN: The alliance cannot be reached right now. -->
+  <MinchoCandyWars.AllianceContact.Unavailable>现在无法联络同盟。</MinchoCandyWars.AllianceContact.Unavailable>
+
+  <!-- 终局流程 -->
+  <!-- EN: Generating the finale map, please wait. -->
+  <MinchoCandyWars.Campaign.GenerationBody>终局地图正在生成，请稍候。</MinchoCandyWars.Campaign.GenerationBody>
+  <!-- EN: Generating the finale -->
+  <MinchoCandyWars.Campaign.GenerationTitle>正在生成终局</MinchoCandyWars.Campaign.GenerationTitle>
+  <!-- EN: The finale is not ready yet. -->
+  <MinchoCandyWars.Campaign.PrepareBody>终局尚未就绪。</MinchoCandyWars.Campaign.PrepareBody>
+  <!-- EN: Finale preparation -->
+  <MinchoCandyWars.Campaign.PrepareTitle>终局准备</MinchoCandyWars.Campaign.PrepareTitle>
+  <!-- EN: Reply from {0} -->
+  <MinchoCandyWars.Campaign.ReplyTitle>{0} 的回复</MinchoCandyWars.Campaign.ReplyTitle>
+  <!-- EN: That attempt failed. You may try again. -->
+  <MinchoCandyWars.Campaign.RetryBody>这次尝试失败了，可以再试一次。</MinchoCandyWars.Campaign.RetryBody>
+  <!-- EN: You may try again -->
+  <MinchoCandyWars.Campaign.RetryTitle>可以重试</MinchoCandyWars.Campaign.RetryTitle>
+  <!-- EN: The reclamation force headquarters has fallen. -->
+  <MinchoCandyWars.Campaign.VictoryBody>回收部队总部已被击溃。</MinchoCandyWars.Campaign.VictoryBody>
+  <!-- EN: Finale victory -->
+  <MinchoCandyWars.Campaign.VictoryTitle>终局胜利</MinchoCandyWars.Campaign.VictoryTitle>
+  <!-- EN: {0} wants to talk. -->
+  <MinchoCandyWars.Contact.Body>{0} 想和你谈谈。</MinchoCandyWars.Contact.Body>
+  <!-- EN: Open contact -->
+  <MinchoCandyWars.Contact.Open>打开联络</MinchoCandyWars.Contact.Open>
+  <!-- EN: Letter from {0} -->
+  <MinchoCandyWars.Contact.Title>{0} 来信</MinchoCandyWars.Contact.Title>
+  <!-- EN: The reclamation company has made a demand. -->
+  <MinchoCandyWars.CorpContact.Demand>回收公司提出了要求。</MinchoCandyWars.CorpContact.Demand>
+  <!-- EN: The reclamation company has published their manifest. -->
+  <MinchoCandyWars.CorpContact.Manifest>回收公司公开了他们的清单。</MinchoCandyWars.CorpContact.Manifest>
+
+  <!-- 交付 -->
+  <!-- EN: Cannot deliver right now. -->
+  <MinchoCandyWars.Delivery.CannotDeliver>现在无法交付。</MinchoCandyWars.Delivery.CannotDeliver>
+  <!-- EN: Deliver {0}? -->
+  <MinchoCandyWars.Delivery.Confirm>确认交付 {0} 吗？</MinchoCandyWars.Delivery.Confirm>
+  <!-- EN: There is no home map to deliver to. -->
+  <MinchoCandyWars.Delivery.NoHome>没有可以交付的家园地图。</MinchoCandyWars.Delivery.NoHome>
+  <!-- EN: There is no quest to deliver for. -->
+  <MinchoCandyWars.Delivery.NoQuest>没有需要交付的任务。</MinchoCandyWars.Delivery.NoQuest>
+  <!-- EN: Short of {0}: {1} missing, {2} on hand. -->
+  <MinchoCandyWars.Delivery.Shortage>{0} 不足：还差 {1}，现有 {2}。</MinchoCandyWars.Delivery.Shortage>
+  <!-- EN: Not enough materials -->
+  <MinchoCandyWars.Delivery.ShortageTitle>物资不足</MinchoCandyWars.Delivery.ShortageTitle>
+  <!-- EN: {0}: {1} left -->
+  <MinchoCandyWars.Delivery.Summary>{0}：剩余 {1}</MinchoCandyWars.Delivery.Summary>
+  <!-- EN: Delivery -->
+  <MinchoCandyWars.Delivery.Title>交付</MinchoCandyWars.Delivery.Title>
+  <!-- EN: Bring the requested materials to the marked spot to finish the quest. -->
+  <MinchoCandyWars.DeliveryQuestLog.Instructions>把要求的物资送到标记地点即可完成任务。</MinchoCandyWars.DeliveryQuestLog.Instructions>
+
+  <!-- 终局战斗 -->
+  <!-- EN: The reclamation force counterattack has arrived. -->
+  <MinchoCandyWars.Finale.CounterattackArrived>回收部队的反击已经抵达。</MinchoCandyWars.Finale.CounterattackArrived>
+  <!-- EN: Reclamation force counterattack -->
+  <MinchoCandyWars.Finale.CounterattackTitle>回收部队反击</MinchoCandyWars.Finale.CounterattackTitle>
+  <!-- EN: The reclamation force is massing and may counterattack at any moment. -->
+  <MinchoCandyWars.Finale.CounterattackWarning>回收部队正在集结，随时可能发动反击。</MinchoCandyWars.Finale.CounterattackWarning>
+
+  <!-- 暂住 -->
+  <!-- EN: The visiting Mincho stays for another {0}. -->
+  <MinchoCandyWars.Hospitality.Description>暂住的珉巧还会停留 {0}。</MinchoCandyWars.Hospitality.Description>
+  <!-- EN: {0} arrives with {1} Mincho. -->
+  <MinchoCandyWars.Hospitality.Issuer>{0} 带着 {1} 位珉巧前来暂住。</MinchoCandyWars.Hospitality.Issuer>
+  <!-- EN: Mincho from the alliance drop by for a while. -->
+  <MinchoCandyWars.Hospitality.SeriesDescription>同盟的珉巧会陆续来家里暂住一段时间。</MinchoCandyWars.Hospitality.SeriesDescription>
+  <!-- EN: Mincho lodging -->
+  <MinchoCandyWars.Hospitality.SeriesTitle>珉巧暂住</MinchoCandyWars.Hospitality.SeriesTitle>
+  <!-- EN: Lodging Mincho -->
+  <MinchoCandyWars.Hospitality.Title>暂住的珉巧</MinchoCandyWars.Hospitality.Title>
+
+  <!-- 任务目标 -->
+  <!-- EN: Objective -->
+  <MinchoCandyWars.Mission.Title>任务目标</MinchoCandyWars.Mission.Title>
+  <!-- EN: Rescue -->
+  <MinchoCandyWars.Mission.Rescue>营救</MinchoCandyWars.Mission.Rescue>
+  <!-- EN: Combat -->
+  <MinchoCandyWars.Mission.Combat>战斗</MinchoCandyWars.Mission.Combat>
+  <!-- EN: Sample -->
+  <MinchoCandyWars.Mission.Sample>取样</MinchoCandyWars.Mission.Sample>
+  <!-- EN: Headquarters -->
+  <MinchoCandyWars.Mission.Headquarters>总部</MinchoCandyWars.Mission.Headquarters>
+  <!-- EN: Ice cream bucket -->
+  <MinchoCandyWars.Mission.BucketTitle>冰淇淋桶</MinchoCandyWars.Mission.BucketTitle>
+  <!-- EN: A reclamation force ice cream bucket has crashed nearby. Go and see what is inside. -->
+  <MinchoCandyWars.Mission.BucketBody>回收部队的冰淇淋桶坠落在附近，去看看里面有什么。</MinchoCandyWars.Mission.BucketBody>
+  <!-- EN: Shuttle -->
+  <MinchoCandyWars.Mission.ShuttleTitle>接应船</MinchoCandyWars.Mission.ShuttleTitle>
+  <!-- EN: The shuttle has landed. Board it to leave. -->
+  <MinchoCandyWars.Mission.ShuttleBody>接应船已经降落，登船即可撤离。</MinchoCandyWars.Mission.ShuttleBody>
+
+  <!-- 委托话术 -->
+  <!-- EN: Routine work -->
+  <MinchoCandyWars.Quest.Routine>例行委托</MinchoCandyWars.Quest.Routine>
+  <!-- EN: Objective: {0} -->
+  <MinchoCandyWars.Quest.Objective>目标：{0}</MinchoCandyWars.Quest.Objective>
+  <!-- EN: Another job from {0} -->
+  <MinchoCandyWars.Quest.Repeat>{0} 的又一次委托</MinchoCandyWars.Quest.Repeat>
+
+  <!-- 剧情信件 -->
+  <!-- EN: The alliance declined -->
+  <MinchoCandyWars.StoryLetter.AllianceDeclinedTitle>同盟婉拒</MinchoCandyWars.StoryLetter.AllianceDeclinedTitle>
+  <!-- EN: The alliance cannot take you in for now. -->
+  <MinchoCandyWars.StoryLetter.AllianceDeclinedBody>同盟暂时无法接纳你。</MinchoCandyWars.StoryLetter.AllianceDeclinedBody>
+  <!-- EN: Reclamation company deadline -->
+  <MinchoCandyWars.StoryLetter.CorpDeadlineTitle>回收公司期限</MinchoCandyWars.StoryLetter.CorpDeadlineTitle>
+  <!-- EN: The deadline set by the reclamation company has passed. -->
+  <MinchoCandyWars.StoryLetter.CorpDeadlineBody>回收公司给出的期限已经到了。</MinchoCandyWars.StoryLetter.CorpDeadlineBody>
+  <!-- EN: The first Mincho -->
+  <MinchoCandyWars.StoryLetter.FirstJoinedTitle>第一位珉巧</MinchoCandyWars.StoryLetter.FirstJoinedTitle>
+  <!-- EN: {0} has joined your colony. -->
+  <MinchoCandyWars.StoryLetter.FirstJoinedBody>{0} 加入了你的殖民地。</MinchoCandyWars.StoryLetter.FirstJoinedBody>
+  <!-- EN: Mincho arrived -->
+  <MinchoCandyWars.StoryLetter.GuestsArrivedTitle>珉巧抵达</MinchoCandyWars.StoryLetter.GuestsArrivedTitle>
+  <!-- EN: The visiting Mincho have arrived. -->
+  <MinchoCandyWars.StoryLetter.GuestsArrivedBody>暂住的珉巧已经抵达。</MinchoCandyWars.StoryLetter.GuestsArrivedBody>
+  <!-- EN: A hunted Mincho -->
+  <MinchoCandyWars.StoryLetter.HuntedArrivalTitle>被追捕的珉巧</MinchoCandyWars.StoryLetter.HuntedArrivalTitle>
+  <!-- EN: A hunted Mincho has fled to your colony. -->
+  <MinchoCandyWars.StoryLetter.HuntedArrivalBody>被追捕的珉巧逃到了你这里。</MinchoCandyWars.StoryLetter.HuntedArrivalBody>
+  <!-- EN: Reward pending -->
+  <MinchoCandyWars.StoryLetter.RewardPendingTitle>奖励待发</MinchoCandyWars.StoryLetter.RewardPendingTitle>
+  <!-- EN: The reward cannot be delivered right now; it will be sent once delivery is possible again. -->
+  <MinchoCandyWars.StoryLetter.RewardPendingBody>奖励暂时无法送达，恢复投递后会补发。</MinchoCandyWars.StoryLetter.RewardPendingBody>
+</LanguageData>

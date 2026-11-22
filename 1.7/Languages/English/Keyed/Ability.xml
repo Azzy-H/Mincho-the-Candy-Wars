@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <MinchoCandyWars.Abilities.AmberonHeartSelfOnly>Amber heart can only target self.</MinchoCandyWars.Abilities.AmberonHeartSelfOnly>
+  <MinchoCandyWars.Abilities.AmoebaMutationNoAvailable>Requires a psycast level that still has a learnable psychic ability.</MinchoCandyWars.Abilities.AmoebaMutationNoAvailable>
+  <MinchoCandyWars.Abilities.CandyValueConsume>Chill cost: {VALUE}</MinchoCandyWars.Abilities.CandyValueConsume>
+  <MinchoCandyWars.Abilities.CandyValueRecovery>{RATE}/day</MinchoCandyWars.Abilities.CandyValueRecovery>
+  <MinchoCandyWars.Abilities.CookieToggleTips>Click to show or hide the ability icon.</MinchoCandyWars.Abilities.CookieToggleTips>
+  <MinchoCandyWars.Abilities.CurrentCandyType>Current candy type: {CANDY}</MinchoCandyWars.Abilities.CurrentCandyType>
+  <MinchoCandyWars.Abilities.GuardianNameNotFriendly>Can only target friendly units.</MinchoCandyWars.Abilities.GuardianNameNotFriendly>
+  <MinchoCandyWars.Abilities.HardCandySelfOnly>Hard candy can only target self.</MinchoCandyWars.Abilities.HardCandySelfOnly>
+  <MinchoCandyWars.Abilities.MinchoBodyGradeTips>Body grade: {GRADE}</MinchoCandyWars.Abilities.MinchoBodyGradeTips>
+  <MinchoCandyWars.Abilities.MinchoCandyValueDontEnough>Not enough chill; {VALUE} required</MinchoCandyWars.Abilities.MinchoCandyValueDontEnough>
+  <MinchoCandyWars.Abilities.MinchoCandyValueTips>Current chill: {VALUE}/{MAXVALUE}</MinchoCandyWars.Abilities.MinchoCandyValueTips>
+  <MinchoCandyWars.Abilities.MinchoCoreGradeTips>Core grade: {GRADE}</MinchoCandyWars.Abilities.MinchoCoreGradeTips>
+  <MinchoCandyWars.Abilities.PrismGlowInvalidTarget>Prism glow can only target hostile units.</MinchoCandyWars.Abilities.PrismGlowInvalidTarget>
+  <MinchoCandyWars.Abilities.StandBehindMeBlocked>No shield can be placed at that position.</MinchoCandyWars.Abilities.StandBehindMeBlocked>
+  <MinchoCandyWars.Abilities.StandBehindMeInvalidCell>Invalid target position.</MinchoCandyWars.Abilities.StandBehindMeInvalidCell>
+  <MinchoCandyWars.Ability.Inteled>Smart Mincho growth guide</MinchoCandyWars.Ability.Inteled>
+  <MinchoCandyWars.Ability.InteledDesc>Once the smart modification is complete, a Mincho's core grade and body grade can each be raised further, up to grade 5. Core and body grades affect her stats and available abilities; candy ornaments are a separate system that switches ability schools rather than raising grades.\n1. Raise body grade: prepare a body booster pack (mint ice cream ×300, components ×4).\n2. Raise core grade: use a basic core booster pack for grades 1-3 (mint ice cream ×50, secondary core (basic)); use an advanced core booster pack for grades 3-5 (mint ice cream ×50, secondary core (standard)).\n3. Perform the implant: schedule the matching implant surgery on the target Mincho. Booster pack surgery is set to 100% success.\nSmart Mincho booster packs can be made at the Mincho workbench or obtained from related quests; faction quests also reward smart booster packs.</MinchoCandyWars.Ability.InteledDesc>
+</LanguageData>

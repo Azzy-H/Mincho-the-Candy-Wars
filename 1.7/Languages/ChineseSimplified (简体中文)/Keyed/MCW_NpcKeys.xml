@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- 通话界面 -->
+  <!-- EN: Another topic -->
+  <MinchoCandyWars.Chat.Another>换个话题</MinchoCandyWars.Chat.Another>
+  <!-- EN: Chats left today: {0} -->
+  <MinchoCandyWars.Chat.Available>今日还可交谈 {0} 次</MinchoCandyWars.Chat.Available>
+  <!-- EN: She is away. -->
+  <MinchoCandyWars.Chat.Away>她不在</MinchoCandyWars.Chat.Away>
+  <!-- EN: Back -->
+  <MinchoCandyWars.Chat.Back>返回</MinchoCandyWars.Chat.Back>
+  <!-- EN: Continue -->
+  <MinchoCandyWars.Chat.Continue>继续</MinchoCandyWars.Chat.Continue>
+  <!-- EN: That is enough chatting for today. -->
+  <MinchoCandyWars.Chat.DailyLimit>今天就聊到这里</MinchoCandyWars.Chat.DailyLimit>
+  <!-- EN: End call -->
+  <MinchoCandyWars.Chat.EndCall>结束通话</MinchoCandyWars.Chat.EndCall>
+  <!-- EN: Choose who to talk to -->
+  <MinchoCandyWars.Chat.Hub>选择交谈对象</MinchoCandyWars.Chat.Hub>
+  <!-- EN: Later -->
+  <MinchoCandyWars.Chat.Later>下次再聊</MinchoCandyWars.Chat.Later>
+  <!-- EN: Return to the alliance -->
+  <MinchoCandyWars.Chat.ReturnAlliance>返回同盟</MinchoCandyWars.Chat.ReturnAlliance>
+  <!-- EN: Topic -->
+  <MinchoCandyWars.Chat.Sketch.Topic>话题</MinchoCandyWars.Chat.Sketch.Topic>
+  <!-- EN: Switch person -->
+  <MinchoCandyWars.Chat.Switch>换一个人</MinchoCandyWars.Chat.Switch>
+  <!-- EN: Cannot talk right now. -->
+  <MinchoCandyWars.Chat.Unavailable>现在无法交谈。</MinchoCandyWars.Chat.Unavailable>
+
+  <!-- 首席指令 -->
+  <!-- EN: Chat -->
+  <MinchoCandyWars.ChiefCommand.Chat>交谈</MinchoCandyWars.ChiefCommand.Chat>
+  <!-- EN: Talk with {0}. -->
+  <MinchoCandyWars.ChiefCommand.ChatDesc>与 {0} 交谈。</MinchoCandyWars.ChiefCommand.ChatDesc>
+  <!-- EN: Gift -->
+  <MinchoCandyWars.ChiefCommand.Gift>赠送</MinchoCandyWars.ChiefCommand.Gift>
+  <!-- EN: Give a gift to improve relations. -->
+  <MinchoCandyWars.ChiefCommand.GiftDesc>送出一份礼物来提升关系。</MinchoCandyWars.ChiefCommand.GiftDesc>
+  <!-- EN: Switch to {0} -->
+  <MinchoCandyWars.ChiefCommand.Switch>切换为 {0}</MinchoCandyWars.ChiefCommand.Switch>
+  <!-- EN: Let Qinxintang change her current candy ornament. -->
+  <MinchoCandyWars.ChiefCommand.SwitchDesc>让沁心糖更换当前的糖饰。</MinchoCandyWars.ChiefCommand.SwitchDesc>
+
+  <!-- 赠送 -->
+  <!-- EN: Gift -->
+  <MinchoCandyWars.Gift.Title>赠送礼物</MinchoCandyWars.Gift.Title>
+  <!-- EN: Gifts are not unlocked yet. -->
+  <MinchoCandyWars.Gift.Locked>尚未解锁赠送。</MinchoCandyWars.Gift.Locked>
+  <!-- EN: Relations are already at maximum. -->
+  <MinchoCandyWars.Gift.Max>关系已达到上限。</MinchoCandyWars.Gift.Max>
+  <!-- EN: Gifting is unavailable right now. -->
+  <MinchoCandyWars.Gift.Unavailable>现在无法赠送。</MinchoCandyWars.Gift.Unavailable>
+  <!-- EN: {0} -->
+  <MinchoCandyWars.Gift.Option>{0}</MinchoCandyWars.Gift.Option>
+  <!-- EN: {0} will send {1}, raising relations by {2}. -->
+  <MinchoCandyWars.Gift.Preview>{0} 将送出 {1}，关系 +{2}。</MinchoCandyWars.Gift.Preview>
+  <!-- EN: {0} accepted your gift. -->
+  <MinchoCandyWars.Gift.Accepted>{0} 收下了你的礼物。</MinchoCandyWars.Gift.Accepted>
+  <!-- EN: Relations +{0} -->
+  <MinchoCandyWars.Gift.Goodwill>关系 +{0}</MinchoCandyWars.Gift.Goodwill>
+
+  <!-- 邀请 -->
+  <!-- EN: Invite -->
+  <MinchoCandyWars.Invite.Title>邀请</MinchoCandyWars.Invite.Title>
+  <!-- EN: Inviting is not unlocked yet. -->
+  <MinchoCandyWars.Invite.Locked>尚未解锁邀请。</MinchoCandyWars.Invite.Locked>
+  <!-- EN: Inviting is unavailable right now. -->
+  <MinchoCandyWars.Invite.Unavailable>现在无法邀请。</MinchoCandyWars.Invite.Unavailable>
+  <!-- EN: Joined. -->
+  <MinchoCandyWars.Invite.Joined>已加入。</MinchoCandyWars.Invite.Joined>
+  <!-- EN: , affinity {0} -->
+  <MinchoCandyWars.Invite.Affinity>，好感度 {0}</MinchoCandyWars.Invite.Affinity>
+  <!-- EN: Invite {0}? -->
+  <MinchoCandyWars.Invite.Confirm>要邀请 {0} 吗？</MinchoCandyWars.Invite.Confirm>
+  <!-- EN: {0} accepted the invitation. -->
+  <MinchoCandyWars.Invite.Accepted>{0} 接受了邀请。</MinchoCandyWars.Invite.Accepted>
+
+  <!-- 厨房话题 -->
+  <!-- EN: Kitchen topic -->
+  <MinchoCandyWars.Kitchen.Title>厨房话题</MinchoCandyWars.Kitchen.Title>
+  <!-- EN: Qinxintang is busy in the kitchen. -->
+  <MinchoCandyWars.Kitchen.Greeting>沁心糖正在厨房里忙着。</MinchoCandyWars.Kitchen.Greeting>
+  <!-- EN: She shows you the kitchen and explains what she is working on. -->
+  <MinchoCandyWars.Kitchen.First>她带你看了厨房，讲了讲手头正在做的事。</MinchoCandyWars.Kitchen.First>
+  <!-- EN: You have already talked about the kitchen. She brings it up again anyway. -->
+  <MinchoCandyWars.Kitchen.Again>厨房的事你们已经聊过了，她还是又提了一遍。</MinchoCandyWars.Kitchen.Again>
+  <!-- EN: Try it -->
+  <MinchoCandyWars.Kitchen.Try>试试看</MinchoCandyWars.Kitchen.Try>
+  <!-- EN: Maybe later -->
+  <MinchoCandyWars.Kitchen.Later>以后再说</MinchoCandyWars.Kitchen.Later>
+  <!-- EN: Reply -->
+  <MinchoCandyWars.Kitchen.Reply>回答</MinchoCandyWars.Kitchen.Reply>
+
+  <!-- 邀请时各角色的回应 -->
+  <!-- EN: "Then it is settled. I will be right over." -->
+  <MinchoCandyWars.Invite.Reply.0>「那就这么说定了，我这就过去。」</MinchoCandyWars.Invite.Reply.0>
+  <!-- EN: "Since you asked, I will come take a look." -->
+  <MinchoCandyWars.Invite.Reply.1>「既然你开口了，我就去看看。」</MinchoCandyWars.Invite.Reply.1>
+  <!-- EN: "Sure, I happen to be free." -->
+  <MinchoCandyWars.Invite.Reply.2>「好呀，我正好有空。」</MinchoCandyWars.Invite.Reply.2>
+  <!-- EN: "Let me finish what I am doing, then I will be there." -->
+  <MinchoCandyWars.Invite.Reply.3>「我先把手头的活收尾，马上就到。」</MinchoCandyWars.Invite.Reply.3>
+  <!-- EN: "Fine, I will come along." -->
+  <MinchoCandyWars.Invite.Reply.4>「行吧，就陪你走一趟。」</MinchoCandyWars.Invite.Reply.4>
+  <!-- EN: "Of course. I am looking forward to it." -->
+  <MinchoCandyWars.Invite.Reply.5>「可以哦，我很期待。」</MinchoCandyWars.Invite.Reply.5>
+
+  <!-- 赠送时各角色的回应 -->
+  <!-- EN: "I will take this. Thank you." -->
+  <MinchoCandyWars.Gift.Reply.0>「这个我收下了，谢谢你。」</MinchoCandyWars.Gift.Reply.0>
+  <!-- EN: "Hm. Practical." -->
+  <MinchoCandyWars.Gift.Reply.1>「嗯，很实用。」</MinchoCandyWars.Gift.Reply.1>
+  <!-- EN: "How did you know I wanted this?" -->
+  <MinchoCandyWars.Gift.Reply.2>「哇，你怎么知道我想要这个？」</MinchoCandyWars.Gift.Reply.2>
+  <!-- EN: "Just what I was short of. Thanks." -->
+  <MinchoCandyWars.Gift.Reply.3>「正好缺这个，谢了。」</MinchoCandyWars.Gift.Reply.3>
+  <!-- EN: "Not bad." -->
+  <MinchoCandyWars.Gift.Reply.4>「还不错。」</MinchoCandyWars.Gift.Reply.4>
+  <!-- EN: "Thank you. I like it." -->
+  <MinchoCandyWars.Gift.Reply.5>「谢谢你，我很喜欢。」</MinchoCandyWars.Gift.Reply.5>
+</LanguageData>

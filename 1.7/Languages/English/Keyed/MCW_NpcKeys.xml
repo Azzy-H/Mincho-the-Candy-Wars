@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <MinchoCandyWars.Chat.Another>Another topic</MinchoCandyWars.Chat.Another>
+  <MinchoCandyWars.Chat.Available>Chats left today: {0}</MinchoCandyWars.Chat.Available>
+  <MinchoCandyWars.Chat.Away>She is away.</MinchoCandyWars.Chat.Away>
+  <MinchoCandyWars.Chat.Back>Back</MinchoCandyWars.Chat.Back>
+  <MinchoCandyWars.Chat.Continue>Continue</MinchoCandyWars.Chat.Continue>
+  <MinchoCandyWars.Chat.DailyLimit>That is enough chatting for today.</MinchoCandyWars.Chat.DailyLimit>
+  <MinchoCandyWars.Chat.EndCall>End call</MinchoCandyWars.Chat.EndCall>
+  <MinchoCandyWars.Chat.Hub>Choose who to talk to</MinchoCandyWars.Chat.Hub>
+  <MinchoCandyWars.Chat.Later>Later</MinchoCandyWars.Chat.Later>
+  <MinchoCandyWars.Chat.ReturnAlliance>Return to the alliance</MinchoCandyWars.Chat.ReturnAlliance>
+  <MinchoCandyWars.Chat.Sketch.Topic>Topic</MinchoCandyWars.Chat.Sketch.Topic>
+  <MinchoCandyWars.Chat.Switch>Switch person</MinchoCandyWars.Chat.Switch>
+  <MinchoCandyWars.Chat.Unavailable>Cannot talk right now.</MinchoCandyWars.Chat.Unavailable>
+  <MinchoCandyWars.ChiefCommand.Chat>Chat</MinchoCandyWars.ChiefCommand.Chat>
+  <MinchoCandyWars.ChiefCommand.ChatDesc>Talk with {0}.</MinchoCandyWars.ChiefCommand.ChatDesc>
+  <MinchoCandyWars.ChiefCommand.Gift>Gift</MinchoCandyWars.ChiefCommand.Gift>
+  <MinchoCandyWars.ChiefCommand.GiftDesc>Give a gift to improve relations.</MinchoCandyWars.ChiefCommand.GiftDesc>
+  <MinchoCandyWars.ChiefCommand.Switch>Switch to {0}</MinchoCandyWars.ChiefCommand.Switch>
+  <MinchoCandyWars.ChiefCommand.SwitchDesc>Let Qinxintang change her current candy ornament.</MinchoCandyWars.ChiefCommand.SwitchDesc>
+  <MinchoCandyWars.Gift.Title>Give a gift</MinchoCandyWars.Gift.Title>
+  <MinchoCandyWars.Gift.Locked>Gifts are not unlocked yet.</MinchoCandyWars.Gift.Locked>
+  <MinchoCandyWars.Gift.Max>Relations are already at maximum.</MinchoCandyWars.Gift.Max>
+  <MinchoCandyWars.Gift.Unavailable>Gifting is unavailable right now.</MinchoCandyWars.Gift.Unavailable>
+  <MinchoCandyWars.Gift.Option>{0}</MinchoCandyWars.Gift.Option>
+  <MinchoCandyWars.Gift.Preview>{0} will send {1}, raising relations by {2}.</MinchoCandyWars.Gift.Preview>
+  <MinchoCandyWars.Gift.Accepted>{0} accepted your gift.</MinchoCandyWars.Gift.Accepted>
+  <MinchoCandyWars.Gift.Goodwill>Relations +{0}</MinchoCandyWars.Gift.Goodwill>
+  <MinchoCandyWars.Invite.Title>Invite</MinchoCandyWars.Invite.Title>
+  <MinchoCandyWars.Invite.Locked>Inviting is not unlocked yet.</MinchoCandyWars.Invite.Locked>
+  <MinchoCandyWars.Invite.Unavailable>Inviting is unavailable right now.</MinchoCandyWars.Invite.Unavailable>
+  <MinchoCandyWars.Invite.Joined>Joined.</MinchoCandyWars.Invite.Joined>
+  <MinchoCandyWars.Invite.Affinity>, affinity {0}</MinchoCandyWars.Invite.Affinity>
+  <MinchoCandyWars.Invite.Confirm>Invite {0}?</MinchoCandyWars.Invite.Confirm>
+  <MinchoCandyWars.Invite.Accepted>{0} accepted the invitation.</MinchoCandyWars.Invite.Accepted>
+  <MinchoCandyWars.Kitchen.Title>Kitchen topic</MinchoCandyWars.Kitchen.Title>
+  <MinchoCandyWars.Kitchen.Greeting>Qinxintang is busy in the kitchen.</MinchoCandyWars.Kitchen.Greeting>
+  <MinchoCandyWars.Kitchen.First>She shows you the kitchen and explains what she is working on.</MinchoCandyWars.Kitchen.First>
+  <MinchoCandyWars.Kitchen.Again>You have already talked about the kitchen. She brings it up again anyway.</MinchoCandyWars.Kitchen.Again>
+  <MinchoCandyWars.Kitchen.Try>Try it</MinchoCandyWars.Kitchen.Try>
+  <MinchoCandyWars.Kitchen.Later>Maybe later</MinchoCandyWars.Kitchen.Later>
+  <MinchoCandyWars.Kitchen.Reply>Reply</MinchoCandyWars.Kitchen.Reply>
+  <MinchoCandyWars.Invite.Reply.0>"Then it is settled. I will be right over."</MinchoCandyWars.Invite.Reply.0>
+  <MinchoCandyWars.Invite.Reply.1>"Since you asked, I will come take a look."</MinchoCandyWars.Invite.Reply.1>
+  <MinchoCandyWars.Invite.Reply.2>"Sure, I happen to be free."</MinchoCandyWars.Invite.Reply.2>
+  <MinchoCandyWars.Invite.Reply.3>"Let me finish what I am doing, then I will be there."</MinchoCandyWars.Invite.Reply.3>
+  <MinchoCandyWars.Invite.Reply.4>"Fine, I will come along."</MinchoCandyWars.Invite.Reply.4>
+  <MinchoCandyWars.Invite.Reply.5>"Of course. I am looking forward to it."</MinchoCandyWars.Invite.Reply.5>
+  <MinchoCandyWars.Gift.Reply.0>"I will take this. Thank you."</MinchoCandyWars.Gift.Reply.0>
+  <MinchoCandyWars.Gift.Reply.1>"Hm. Practical."</MinchoCandyWars.Gift.Reply.1>
+  <MinchoCandyWars.Gift.Reply.2>"How did you know I wanted this?"</MinchoCandyWars.Gift.Reply.2>
+  <MinchoCandyWars.Gift.Reply.3>"Just what I was short of. Thanks."</MinchoCandyWars.Gift.Reply.3>
+  <MinchoCandyWars.Gift.Reply.4>"Not bad."</MinchoCandyWars.Gift.Reply.4>
+  <MinchoCandyWars.Gift.Reply.5>"Thank you. I like it."</MinchoCandyWars.Gift.Reply.5>
+</LanguageData>

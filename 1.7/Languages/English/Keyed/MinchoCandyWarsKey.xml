@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <MCW_CandyChangeExhaustion>Cannot change ornament while exhausted.</MCW_CandyChangeExhaustion>
+  <MCW_GameStartDialog>Chatting about mint chocolate every day is nice, but there is a lot more missing from life than that...</MCW_GameStartDialog>
+  <MCW_LetterLabelMinchoSlimePasses>Wandering Mincho slimes</MCW_LetterLabelMinchoSlimePasses>
+  <MCW_LetterMinchoSlimePasses>A group of wandering Mincho slimes is passing by.\n\nMincho slimes are a product of the Shining World dessert company. Not very bright, but properly farmed they produce a lot of mint ice cream. On death they split into smaller individuals, which makes them hard to wipe out completely.\n\nThey will leave in a few days.</MCW_LetterMinchoSlimePasses>
+  <MCW_MinchoCoreNotActive>Mincho core is not active</MCW_MinchoCoreNotActive>
+  <MCW_NotMincho>Not a Mincho</MCW_NotMincho>
+  <MCW_Nuzzle_Cooldown>Nuzzle cooldown: {HOURS} hours left</MCW_Nuzzle_Cooldown>
+  <MCW_ScenPart_StartWithSmartMincho>One of the Mincho has a smart core</MCW_ScenPart_StartWithSmartMincho>
+  <MCW_StellarisEventGizmo_CannotTrigger>Conditions not met</MCW_StellarisEventGizmo_CannotTrigger>
+  <MCW_StellarisEventGizmo_CooldownPermanent>On cooldown (permanent)</MCW_StellarisEventGizmo_CooldownPermanent>
+  <MCW_StellarisEventGizmo_CooldownRemaining>Cooldown: {HOURS} hours left</MCW_StellarisEventGizmo_CooldownRemaining>
+  <MinchoCandyWarsName>Mincho, The Candy Wars</MinchoCandyWarsName>
+  <ResetSettings>Reset all settings</ResetSettings>
+  <MinchoCandyWars.Abilities.MannaConnectionFormed>Manna connection formed</MinchoCandyWars.Abilities.MannaConnectionFormed>
+</LanguageData>

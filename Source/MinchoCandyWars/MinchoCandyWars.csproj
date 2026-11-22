@@ -38,6 +38,7 @@
 
 	<ItemGroup>
 	  <Compile Remove="Buff\MinchoCandyBuffDef.cs" />
+	  <Compile Remove="Data\ShaderData.cs" />
 	  <Compile Remove="Review\ApparelIconFraming.cs" />
 	  <Compile Remove="Review\CandyCaneColor.cs" />
 	  <Compile Remove="Review\FeedbackFixes.cs" />
