@@ -360,7 +360,7 @@ namespace MinchoCandyWars.StellarisEvent
                 return string.Empty;
 
             string resolvedKey = ResolveRandomizedTextKey(textKey);
-            return InjectParams(resolvedKey.Translate().ToString());
+            return InjectParams(resolvedKey.TryTranslate(out var translation) ? translation.RawText : resolvedKey);
         }
 
         /// <summary>

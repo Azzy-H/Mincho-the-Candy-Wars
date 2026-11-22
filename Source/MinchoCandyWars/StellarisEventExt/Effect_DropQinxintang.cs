@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MinchoCandyWars.StellarisEvent;
 using RimWorld;
 using Verse;
@@ -58,7 +58,7 @@ namespace MinchoCandyWars
                 return;
             }
 
-            PawnKindDef kind = DefDatabase<PawnKindDef>.GetNamed(SmartKindDefName, errorOnFail: false);
+            PawnKindDef kind = MCW_DefOf.MCW_SmartMincho;
             if (kind == null)
             {
                 Log.Warning("[MCW] Effect_DropQinxintang: 找不到 PawnKindDef " + SmartKindDefName);
@@ -115,7 +115,7 @@ namespace MinchoCandyWars
             }
 
             // 超凡赐福 hediff
-            HediffDef blessing = DefDatabase<HediffDef>.GetNamed(BlessingHediffDefName, errorOnFail: false);
+            HediffDef blessing = MCW_HediffDefOf.MCW_QinxintangBlessing;
             if (blessing != null && pawn.health != null && !pawn.health.hediffSet.HasHediff(blessing))
             {
                 pawn.health.AddHediff(blessing);

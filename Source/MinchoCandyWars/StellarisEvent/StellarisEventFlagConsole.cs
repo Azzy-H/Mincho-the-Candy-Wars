@@ -36,7 +36,6 @@ namespace MinchoCandyWars.StellarisEvent
         private string newFlagFloatVal = "0";
         private bool newFlagBoolVal = false;
         private string newFlagTicks = "";
-        private string[] typeNames = { "Bool", "Float", "String", "Thing" };
 
         // 警告
         private string warningMessage = null;
@@ -98,20 +97,20 @@ namespace MinchoCandyWars.StellarisEvent
             Rect titleRect = new Rect(inRect.x, inRect.y, inRect.width, 30f);
             Text.Font = GameFont.Medium;
             Widgets.Label(new Rect(titleRect.x + Padding, titleRect.y, 260f, titleRect.height),
-                "Flag Console");
+                "MinchoCandyWars.Dev.Flags.Title".Translate().RawText);
             Text.Font = GameFont.Small;
             Widgets.Label(new Rect(titleRect.x + titleRect.width - 260f, titleRect.y + 8f, 260f, 20f),
                 StellarisEventFlagManager.Instance != null
-                    ? $"Total: {filteredFlags.Count} flags  (active)"
-                    : $"Total: {filteredFlags.Count} flags  [NOT IN GAME]");
+                    ? "MinchoCandyWars.Dev.Flags.TotalActive".Translate(filteredFlags.Count).RawText
+                    : "MinchoCandyWars.Dev.Flags.TotalInactive".Translate(filteredFlags.Count).RawText);
 
             // ── 过滤 & 操作按钮栏 ──
             float barY = titleRect.yMax + 4f;
             Rect filterRect = new Rect(inRect.x + Padding, barY, 160f, 24f);
             filterText = Widgets.TextField(filterRect, filterText);
-            if (Widgets.ButtonText(new Rect(filterRect.xMax + 6f, barY, 50f, 24f), "Filter"))
+            if (Widgets.ButtonText(new Rect(filterRect.xMax + 6f, barY, 50f, 24f), "MinchoCandyWars.Dev.Flags.Filter".Translate().RawText))
                 RefreshList();
-            if (Widgets.ButtonText(new Rect(filterRect.xMax + 60f, barY, 50f, 24f), "Clear"))
+            if (Widgets.ButtonText(new Rect(filterRect.xMax + 60f, barY, 50f, 24f), "MinchoCandyWars.Dev.Flags.Clear".Translate().RawText))
             {
                 filterText = "";
                 RefreshList();
@@ -119,7 +118,7 @@ namespace MinchoCandyWars.StellarisEvent
 
             // 添加按钮
             Rect addBtnRect = new Rect(filterRect.xMax + 120f, barY, 60f, 24f);
-            DrawColoredButton(addBtnRect, addingMode ? "Cancel" : "Add", addingMode ? DelBtnColor : AddBtnColor);
+            DrawColoredButton(addBtnRect, addingMode ? "MinchoCandyWars.Dev.Flags.Cancel".Translate().RawText : "MinchoCandyWars.Dev.Flags.Add".Translate().RawText, addingMode ? DelBtnColor : AddBtnColor);
             if (Widgets.ButtonInvisible(addBtnRect))
             {
                 addingMode = !addingMode;
@@ -128,12 +127,12 @@ namespace MinchoCandyWars.StellarisEvent
 
             // 清空全部按钮
             Rect clearAllRect = new Rect(inRect.xMax - Padding - 80f, barY, 80f, 24f);
-            DrawColoredButton(clearAllRect, "Clear All", DelBtnColor);
+            DrawColoredButton(clearAllRect, "MinchoCandyWars.Dev.Flags.ClearAll".Translate().RawText, DelBtnColor);
             if (Widgets.ButtonInvisible(clearAllRect))
             {
                 StellarisEventFlagManager.ClearAll();
                 RefreshList();
-                ShowWarning("All flags cleared.");
+                ShowWarning("MinchoCandyWars.Dev.Flags.Cleared".Translate().RawText);
             }
 
             // ── 添加表单 ──
@@ -171,14 +170,14 @@ namespace MinchoCandyWars.StellarisEvent
             float fx = inRect.x + Padding + 10f;
 
             // Name
-            Widgets.Label(new Rect(fx, fy + 4f, 40f, 22f), "Name:");
+            Widgets.Label(new Rect(fx, fy + 4f, 40f, 22f), "MinchoCandyWars.Dev.Flags.Name".Translate().RawText);
             Rect nameRect = new Rect(fx + 42f, fy + 2f, 140f, 22f);
             newFlagName = Widgets.TextField(nameRect, newFlagName);
 
             // Type
-            Widgets.Label(new Rect(fx + 190f, fy + 4f, 36f, 22f), "Type:");
+            Widgets.Label(new Rect(fx + 190f, fy + 4f, 36f, 22f), "MinchoCandyWars.Dev.Flags.Type".Translate().RawText);
             Rect typeRect = new Rect(fx + 228f, fy + 2f, 70f, 22f);
-            if (Widgets.ButtonText(typeRect, newFlagType.ToString()))
+            if (Widgets.ButtonText(typeRect, ($"MinchoCandyWars.Dev.Flags.{newFlagType}").Translate().RawText))
             {
                 // 循环切换类型
                 newFlagType = newFlagType switch
@@ -192,12 +191,12 @@ namespace MinchoCandyWars.StellarisEvent
             }
 
             // Value（根据类型切换）
-            Widgets.Label(new Rect(fx + 304f, fy + 4f, 36f, 22f), "Val:");
+            Widgets.Label(new Rect(fx + 304f, fy + 4f, 36f, 22f), "MinchoCandyWars.Dev.Flags.Value".Translate().RawText);
             Rect valRect = new Rect(fx + 340f, fy + 2f, 130f, 22f);
             switch (newFlagType)
             {
                 case FlagValueType.Bool:
-                    if (Widgets.ButtonText(valRect, newFlagBoolVal ? "true" : "false"))
+                    if (Widgets.ButtonText(valRect, newFlagBoolVal ? "MinchoCandyWars.Dev.Flags.True".Translate().RawText : "MinchoCandyWars.Dev.Flags.False".Translate().RawText))
                         newFlagBoolVal = !newFlagBoolVal;
                     break;
                 case FlagValueType.Float:
@@ -208,20 +207,20 @@ namespace MinchoCandyWars.StellarisEvent
                     break;
                 case FlagValueType.Thing:
                     GUI.color = Color.gray;
-                    Widgets.Label(valRect, "(use Effect)");
+                    Widgets.Label(valRect, "MinchoCandyWars.Dev.Flags.UseEffect".Translate().RawText);
                     GUI.color = Color.white;
                     break;
             }
 
             // Ticks (optional)
-            Widgets.Label(new Rect(fx, fy + 28f, 40f, 22f), "Ticks:");
+            Widgets.Label(new Rect(fx, fy + 28f, 40f, 22f), "MinchoCandyWars.Dev.Flags.Ticks".Translate().RawText);
             Rect ticksRect = new Rect(fx + 42f, fy + 26f, 80f, 22f);
             newFlagTicks = Widgets.TextField(ticksRect, newFlagTicks);
-            Widgets.Label(new Rect(fx + 128f, fy + 30f, 100f, 20f), "(empty = permanent)");
+            Widgets.Label(new Rect(fx + 128f, fy + 30f, 100f, 20f), "MinchoCandyWars.Dev.Flags.EmptyPermanent".Translate().RawText);
 
             // Confirm 按钮
             Rect confirmRect = new Rect(fx + 240f, fy + 26f, 70f, 22f);
-            DrawColoredButton(confirmRect, "Confirm", AddBtnColor);
+            DrawColoredButton(confirmRect, "MinchoCandyWars.Dev.Flags.Confirm".Translate().RawText, AddBtnColor);
             if (Widgets.ButtonInvisible(confirmRect))
             {
                 TryAddFlag();
@@ -232,7 +231,7 @@ namespace MinchoCandyWars.StellarisEvent
         {
             if (newFlagName.NullOrEmpty())
             {
-                ShowWarning("Flag name cannot be empty.");
+                ShowWarning("MinchoCandyWars.Dev.Flags.EmptyName".Translate().RawText);
                 return;
             }
 
@@ -243,7 +242,7 @@ namespace MinchoCandyWars.StellarisEvent
                     ticks = t;
                 else
                 {
-                    ShowWarning("Ticks must be a positive integer.");
+                    ShowWarning("MinchoCandyWars.Dev.Flags.InvalidTicks".Translate().RawText);
                     return;
                 }
             }
@@ -256,7 +255,7 @@ namespace MinchoCandyWars.StellarisEvent
                 case FlagValueType.Float:
                     if (!float.TryParse(newFlagFloatVal, out float fv))
                     {
-                        ShowWarning("Invalid float value.");
+                        ShowWarning("MinchoCandyWars.Dev.Flags.InvalidFloat".Translate().RawText);
                         return;
                     }
                     StellarisEventFlagManager.SetFlag(newFlagName, fv, ticks);
@@ -265,7 +264,7 @@ namespace MinchoCandyWars.StellarisEvent
                     StellarisEventFlagManager.SetFlag(newFlagName, newFlagStringVal, ticks);
                     break;
                 case FlagValueType.Thing:
-                    ShowWarning("Thing flags must be created via Effect_SpawnPawnFromFlag or SetFlag(Thing).");
+                    ShowWarning("MinchoCandyWars.Dev.Flags.ThingWarning".Translate().RawText);
                     return;
             }
 
@@ -280,7 +279,7 @@ namespace MinchoCandyWars.StellarisEvent
             newFlagTicks = "";
 
             RefreshList();
-            ShowWarning($"Flag '{addedName}' added/updated.");
+            ShowWarning("MinchoCandyWars.Dev.Flags.Updated".Translate(addedName).RawText);
         }
 
         // ──────────────────── 列标题 ────────────────────
@@ -289,10 +288,10 @@ namespace MinchoCandyWars.StellarisEvent
         {
             Text.Font = GameFont.Tiny;
             float x = rect.x;
-            Widgets.Label(new Rect(x, rect.y, ColName, rect.height), "Name"); x += ColName + 6f;
-            Widgets.Label(new Rect(x, rect.y, ColType, rect.height), "Type"); x += ColType + 6f;
-            Widgets.Label(new Rect(x, rect.y, ColValue, rect.height), "Value"); x += ColValue + 6f;
-            Widgets.Label(new Rect(x, rect.y, ColTicks, rect.height), "Ticks"); x += ColTicks + 6f;
+            Widgets.Label(new Rect(x, rect.y, ColName, rect.height), "MinchoCandyWars.Dev.Flags.Name".Translate().RawText); x += ColName + 6f;
+            Widgets.Label(new Rect(x, rect.y, ColType, rect.height), "MinchoCandyWars.Dev.Flags.Type".Translate().RawText); x += ColType + 6f;
+            Widgets.Label(new Rect(x, rect.y, ColValue, rect.height), "MinchoCandyWars.Dev.Flags.Value".Translate().RawText); x += ColValue + 6f;
+            Widgets.Label(new Rect(x, rect.y, ColTicks, rect.height), "MinchoCandyWars.Dev.Flags.Ticks".Translate().RawText); x += ColTicks + 6f;
             Widgets.Label(new Rect(x, rect.y, ColDel, rect.height), "Del");
             Text.Font = GameFont.Small;
         }
@@ -318,7 +317,7 @@ namespace MinchoCandyWars.StellarisEvent
             {
                 Text.Anchor = TextAnchor.MiddleCenter;
                 GUI.color = Color.gray;
-                Widgets.Label(listRect, "No flags. Use 'Add' to create one, or clear the filter.");
+                Widgets.Label(listRect, "MinchoCandyWars.Dev.Flags.NoFlags".Translate().RawText);
                 GUI.color = Color.white;
                 Text.Anchor = TextAnchor.UpperLeft;
             }
@@ -340,7 +339,7 @@ namespace MinchoCandyWars.StellarisEvent
 
             // Type
             GUI.color = GetTypeColor(flag.valueType);
-            Widgets.Label(new Rect(x, y, ColType, 20f), flag.valueType.ToString());
+            Widgets.Label(new Rect(x, y, ColType, 20f), ($"MinchoCandyWars.Dev.Flags.{flag.valueType}").Translate().RawText);
             GUI.color = Color.white;
             x += ColType + 6f;
 
@@ -363,7 +362,7 @@ namespace MinchoCandyWars.StellarisEvent
             else
             {
                 GUI.color = PermTicksColor;
-                Widgets.Label(new Rect(x, y, ColTicks, 20f), "∞ (permanent)");
+                Widgets.Label(new Rect(x, y, ColTicks, 20f), "MinchoCandyWars.Dev.Flags.Permanent".Translate().RawText);
                 GUI.color = Color.white;
             }
             x += ColTicks + 6f;
@@ -375,7 +374,7 @@ namespace MinchoCandyWars.StellarisEvent
             {
                 StellarisEventFlagManager.RemoveFlag(flag.name);
                 RefreshList();
-                ShowWarning($"Flag '{flag.name}' removed.");
+                ShowWarning("MinchoCandyWars.Dev.Flags.Removed".Translate(flag.name).RawText);
             }
         }
 
@@ -385,15 +384,15 @@ namespace MinchoCandyWars.StellarisEvent
         {
             switch (flag.valueType)
             {
-                case FlagValueType.Bool:   return flag.boolValue ? "true" : "false";
+                case FlagValueType.Bool:   return flag.boolValue ? "MinchoCandyWars.Dev.Flags.True".Translate().RawText : "MinchoCandyWars.Dev.Flags.False".Translate().RawText;
                 case FlagValueType.Float:  return flag.floatValue.ToString("F1");
-                case FlagValueType.String: return flag.stringValue ?? "(null)";
+                case FlagValueType.String: return flag.stringValue ?? "MinchoCandyWars.Dev.Flags.Null".Translate().RawText;
                 case FlagValueType.Thing:
                 {
                     var status = flag.GetThingStatus();
                     Thing t = flag.ResolveThing();
                     string label = t != null ? t.LabelShortCap : $"ID:{flag.thingID}";
-                    return $"[{status}] {label}";
+                    return $"[{($"MinchoCandyWars.Dev.Flags.{status}").Translate()}] {label}";
                 }
                 default: return "?";
             }

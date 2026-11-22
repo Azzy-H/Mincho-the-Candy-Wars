@@ -7,15 +7,15 @@ namespace MinchoCandyWars.StellarisEvent
 {
     /// <summary>
     /// Stellaris 风格事件对话窗口
-    /// 布局：左侧 320px 立绘 + 右侧标题/描述/选项
+    /// 布局：左侧 400px 立绘 + 右侧标题/描述/选项
     /// </summary>
     public class StellarisEventWindow : Window
     {
         // ──────────────────── 布局常量 ────────────────────
-        private const float WindowWidth = 900f;
-        private const float WindowHeight = 600f;
-        private const float PortraitWidth = 320f;
-        private const float PortraitHeight = 600f;
+        private const float WindowWidth = 980f;
+        private const float WindowHeight = 640f;
+        private const float PortraitWidth = 400f;
+        private const float PortraitHeight = 640f;
         private const float RightPanelWidth = WindowWidth - PortraitWidth; // 580
         private const float TopSectionHeight = 280f;
         private const float TitleHeight = 50f;
@@ -25,6 +25,9 @@ namespace MinchoCandyWars.StellarisEvent
 
         // ──────────────────── 数据 ────────────────────
         private StellarisEventDef eventDef;
+        private readonly StellarisEventDef rootEvent;
+        private int pageVersion;
+        private readonly Dictionary<StellarisEventOption, System.Action> pageActions = new();
         private List<OptionDrawInfo> optionDrawInfos = new List<OptionDrawInfo>();
         private Vector2 descScrollPos = Vector2.zero;
         private Vector2 optionScrollPos = Vector2.zero;
@@ -57,7 +60,7 @@ namespace MinchoCandyWars.StellarisEvent
 
         public StellarisEventWindow(StellarisEventDef def)
         {
-            eventDef = def;
+            rootEvent = eventDef = def;
             doCloseX = !def.forceChoose;
             closeOnCancel = !def.forceChoose;
             closeOnClickedOutside = false;
@@ -326,10 +329,57 @@ namespace MinchoCandyWars.StellarisEvent
 
         // ──────────────────── 选项处理 ────────────────────
 
+        // ──────────────────── 对话分页（联络/聊天复用同一立绘窗口） ────────────────────
+
+        /// <summary>从对话页返回原事件页；不触发原事件的 after，也不发信件。</summary>
+        public void ReturnToEvent()
+        {
+            pageVersion++;
+            pageActions.Clear();
+            eventDef = rootEvent;
+            resolvedTitleText = eventDef.InjectParams((eventDef.title ?? eventDef.label).Translate().ToString());
+            resolvedDescText = eventDef.ResolveLocalizedDescText(eventDef.desc);
+            descScrollPos = optionScrollPos = Vector2.zero;
+            BuildOptionList();
+        }
+
+        /// <summary>把窗口切换成一页临时对话，选项由回调驱动，不经过事件系统的 reward/after。</summary>
+        public void ShowConversation(string title, string text, string portrait, IEnumerable<(string label, System.Action action)> choices)
+        {
+            pageVersion++;
+            pageActions.Clear();
+            eventDef = new StellarisEventDef
+            {
+                defName = "MCW_ConversationPage",
+                title = title,
+                desc = text,
+                selectedPicture = ContentFinder<Texture2D>.Get(portrait),
+                options = new List<StellarisEventOption>()
+            };
+            foreach (var choice in choices)
+            {
+                var option = new StellarisEventOption { label = choice.label };
+                eventDef.options.Add(option);
+                pageActions.Add(option, choice.action);
+            }
+            resolvedTitleText = title;
+            resolvedDescText = text;
+            descScrollPos = optionScrollPos = Vector2.zero;
+            BuildOptionList();
+        }
+
         private void OnOptionSelected(StellarisEventOption option)
         {
+            // 对话页选项：只做页面跳转，不关闭窗口、不执行 after
+            if (pageActions.TryGetValue(option, out var navigate)) { navigate(); return; }
+
+            int previousPage = pageVersion;
+
             // 执行 option 的 action
             option.action?.Execute();
+
+            // 页面已被回调切换（例如选了下一层对话）则不关闭
+            if (pageVersion != previousPage) return;
 
             // 关闭窗口
             Close();

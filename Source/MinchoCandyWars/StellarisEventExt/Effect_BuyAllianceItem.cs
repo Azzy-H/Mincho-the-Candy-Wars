@@ -9,7 +9,7 @@ namespace MinchoCandyWars
     /// 珉巧同盟商店：用银购买指定物品（糖饰 / 糖饰研究图纸 / 珉巧改造包）。
     ///
     /// 执行时检查玩家主地图上的银是否足够：
-    ///   · 足够 → 扣除银，把物品放在地图上；
+    ///   · 足够 → 生成购买物品、扣除银并空投；
     ///   · 不足 → 只发提示，不扣不打。
     ///
     /// XML 用法：
@@ -32,9 +32,14 @@ namespace MinchoCandyWars
 
         public override void Execute()
         {
-            if (thingDef == null)
+            if (QuestStory.Relations.Number < 50)
             {
-                Log.Warning("[MCW] Effect_BuyAllianceItem: thingDef 为空，跳过");
+                Messages.Message("MinchoCandyWars.UI.Message.Alliance.TechprintGoodwill".Translate(), MessageTypeDefOf.RejectInput, false);
+                return;
+            }
+            if (thingDef == null || count <= 0 || thingDef.stackLimit <= 0)
+            {
+                Log.Warning("[MCW] Effect_BuyAllianceItem: 无效物品或购买数量，跳过且不扣银");
                 return;
             }
 
@@ -52,21 +57,21 @@ namespace MinchoCandyWars
                 return;
             }
 
-            if (silverCost > 0)
-            {
-                TakeSilver(map, silverCost);
-            }
-
-            int remaining = Mathf.Max(1, count);
-            IntVec3 dropCell = DropCellFinder.RandomDropSpot(map);
+            int remaining = count;
+            var cargo = new List<Thing>();
             while (remaining > 0)
             {
                 int stack = Mathf.Min(remaining, thingDef.stackLimit);
                 Thing thing = ThingMaker.MakeThing(thingDef);
                 thing.stackCount = stack;
-                GenPlace.TryPlaceThing(thing, dropCell, map, ThingPlaceMode.Near);
+                cargo.Add(thing);
                 remaining -= stack;
             }
+            if (silverCost > 0)
+            {
+                TakeSilver(map, silverCost);
+            }
+            DropPodUtility.DropThingsNear(DropCellFinder.TradeDropSpot(map), map, cargo, openDelay: 110, canInstaDropDuringInit: false, leaveSlag: false, canRoofPunch: false, forbid: false, allowFogged: false);
 
             Messages.Message(
                 "MinchoCandyWars.UI.Message.Alliance.Bought".Translate(thingDef.LabelCap.Named("ITEM"), count.Named("COUNT")),
@@ -78,6 +83,7 @@ namespace MinchoCandyWars
             int total = 0;
             foreach (Thing silver in map.listerThings.ThingsOfDef(ThingDefOf.Silver))
             {
+                if (silver.IsForbidden(Faction.OfPlayer)) continue;
                 total += silver.stackCount;
                 if (total >= amount)
                 {
@@ -92,6 +98,7 @@ namespace MinchoCandyWars
             int remaining = amount;
             foreach (Thing silver in map.listerThings.ThingsOfDef(ThingDefOf.Silver).ToList())
             {
+                if (silver.IsForbidden(Faction.OfPlayer)) continue;
                 if (remaining <= 0)
                 {
                     break;
@@ -109,3 +116,4 @@ namespace MinchoCandyWars
         }
     }
 }
+
