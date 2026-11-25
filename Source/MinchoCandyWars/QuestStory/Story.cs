@@ -91,6 +91,7 @@ public sealed partial class Story : GameComponent
     public override void ExposeData()
     {
         CampaignExpose();
+        ReadLegacySave();
         // 标量与引用状态由 flag 自行持久化，这里只处理集合与 StoryState。
         Scribe_Values.Look(ref State.ActiveQuest, "guestQuest", -1);
         Scribe_Values.Look(ref State.LastSettled, "lastSettled", -1);

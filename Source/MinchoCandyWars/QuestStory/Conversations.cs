@@ -11,7 +11,7 @@ public sealed partial class Story
     // 标量：flag 单源。
     public int Chatted
     {
-        get => StoryFlags.GetInt("MCW_Story_Chatted");
+        get => StoryFlags.GetInt("MCW_Story_Chatted", 0);
         set => StoryFlags.SetInt("MCW_Story_Chatted", value);
     }
 

@@ -23,19 +23,19 @@ public sealed partial class Story
 
     public int Rejected
     {
-        get => StoryFlags.GetInt("MCW_Story_Rejected");
+        get => StoryFlags.GetInt("MCW_Story_Rejected", 0);
         set => StoryFlags.SetInt("MCW_Story_Rejected", value);
     }
 
     public int Viewed
     {
-        get => StoryFlags.GetInt("MCW_Story_Viewed");
+        get => StoryFlags.GetInt("MCW_Story_Viewed", 0);
         set => StoryFlags.SetInt("MCW_Story_Viewed", value);
     }
 
     public int Succeeded
     {
-        get => StoryFlags.GetInt("MCW_Story_Succeeded");
+        get => StoryFlags.GetInt("MCW_Story_Succeeded", 0);
         set => StoryFlags.SetInt("MCW_Story_Succeeded", value);
     }
 
@@ -59,13 +59,13 @@ public sealed partial class Story
 
     public int ActiveIssuer
     {
-        get => StoryFlags.GetInt("MCW_Story_ActiveIssuer");
+        get => StoryFlags.GetInt("MCW_Story_ActiveIssuer", 0);
         set => StoryFlags.SetInt("MCW_Story_ActiveIssuer", value);
     }
 
     public int OfferNumber
     {
-        get => StoryFlags.GetInt("MCW_Story_OfferNumber");
+        get => StoryFlags.GetInt("MCW_Story_OfferNumber", 0);
         set => StoryFlags.SetInt("MCW_Story_OfferNumber", value);
     }
 
@@ -113,6 +113,7 @@ public sealed partial class Story
     public override void LoadedGame()
     {
         base.LoadedGame();
+        RestoreLegacyFlags();
         StoryCampaign.RefreshChiefDefaultNames();
         if (State.ActiveQuest < 0 || ActiveIssuer < 0 || ActiveIssuer >= CharacterData.Names.Length) return;
         var quest = Find.QuestManager.QuestsListForReading.FirstOrDefault(q => q.id == State.ActiveQuest);
