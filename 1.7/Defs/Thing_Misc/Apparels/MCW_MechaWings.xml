@@ -122,6 +122,12 @@
         </drawData>
       </li>
     </renderNodeProperties>
+    <stages>
+      <li>
+        <!-- 纯视觉 Hediff：不进入健康面板显示（DevMode 的"Show hidden Hediffs"仍可见） -->
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
   </HediffDef>
   <WearSetting.WearSettingDef>
     <defName>MCW_MechaWings_WearSetting</defName>

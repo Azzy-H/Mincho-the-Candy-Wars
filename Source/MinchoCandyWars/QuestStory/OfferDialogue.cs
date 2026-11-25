@@ -6,7 +6,7 @@ public static class OfferDialogue
 {
     public static string Request(int kind, int role, bool repeated, bool victory)
     {
-        string name = Story.DisplayName(role);
+        string name = CharacterData.DisplayName(role);
         string introduction = role == 0 ? kind switch
         {
             1 => "你好，我是沁心糖。先前的接应还没有结束，有几位同伴需要一个能放心歇脚的地方。你们愿意再腾出一些床位吗？她们也愿意帮忙工作。",
@@ -56,7 +56,7 @@ public static class OfferDialogue
     {
         string key = $"MinchoCandyWars.Quest.{category}.{role}";
         string line = key.TryTranslate(out var translated) ? translated.RawText : lines[role];
-        return $"{Story.DisplayName(role)}：{line}";
+        return $"{CharacterData.DisplayName(role)}：{line}";
     }
     public static string Rejected(int kind, int role) => Voice(role, "Rejected", [
         "行，那这次我再找找别人。你们先顾好家里，有空再聊。",

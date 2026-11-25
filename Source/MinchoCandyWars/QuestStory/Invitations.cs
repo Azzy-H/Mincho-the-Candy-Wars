@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using MinchoCandyWars;
 using RimWorld;
 using RimWorld.Planet;
@@ -26,39 +26,39 @@ public static class Invitations
     {
         var s = Story.Current;
         if (!s.Victory)
-        { Story.Letter("MinchoCandyWars.Invite.Title".Translate(), "MinchoCandyWars.Invite.Locked".Translate()); return; }
-        var options = Story.Names.Select((name, i) =>
+        { StoryUtility.Letter("MinchoCandyWars.Invite.Title".Translate(), "MinchoCandyWars.Invite.Locked".Translate()); return; }
+        var options = CharacterData.Names.Select((name, i) =>
         {
-            var pawn = s.Chief(i);
+            var pawn = StoryCampaign.Chief(i);
             bool available = CanInvite(i);
-            return new FloatMenuOption(Story.DisplayName(i) + "MinchoCandyWars.Invite.Affinity".Translate(s.Affinity(i)).RawText + (pawn?.Faction == Faction.OfPlayer ? "MinchoCandyWars.Invite.Joined".Translate().RawText : available ? "" : "MinchoCandyWars.Invite.Unavailable".Translate().RawText), available ? () => Confirm(i) : null);
+            return new FloatMenuOption(CharacterData.DisplayName(i) + "MinchoCandyWars.Invite.Affinity".Translate(StoryCampaign.Affinity(i)).RawText + (pawn?.Faction == Faction.OfPlayer ? "MinchoCandyWars.Invite.Joined".Translate().RawText : available ? "" : "MinchoCandyWars.Invite.Unavailable".Translate().RawText), available ? () => Confirm(i) : null);
         }).ToList(); Find.WindowStack.Add(new FloatMenu(options));
     }
     public static bool CanInvite(int role)
     {
         var story = Story.Current;
-        if (Find.AnyPlayerHomeMap == null || !story.CanInviteCharacter(role) || !story.CanTalk(role)) return false;
+        if (Find.AnyPlayerHomeMap == null || !StoryCampaign.CanInviteCharacter(role) || !StoryCampaign.CanTalk(role)) return false;
 
-        var pawn = story.Chief(role);
+        var pawn = StoryCampaign.Chief(role);
         return pawn == null || (!pawn.Dead && !pawn.Downed && pawn.Faction != Faction.OfPlayer &&
             !pawn.IsCaravanMember() && (pawn.Spawned ? pawn.Map.IsPlayerHome : Find.WorldPawns.Contains(pawn)));
     }
 
     static void Confirm(int role)
     {
-        Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("MinchoCandyWars.Invite.Confirm".Translate(Story.DisplayName(role)), () => Join(role)));
+        Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("MinchoCandyWars.Invite.Confirm".Translate(CharacterData.DisplayName(role)), () => Join(role)));
     }
     static void Join(int role)
     {
         var s = Story.Current; var map = Find.AnyPlayerHomeMap;
         if (!CanInvite(role)) return;
-        var pawn = s.Chief(role);
+        var pawn = StoryCampaign.Chief(role);
         if (pawn != null) UpgradeEquipment(pawn);
         if (pawn?.Spawned == true) { pawn.SetFaction(Faction.OfPlayer); NotifyAccepted(role); return; }
         if (pawn == null)
         {
             pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(MCW_DefOf.MCW_SmartMincho, Faction.OfPlayer, forceGenerateNewPawn: true, fixedGender: Gender.Female, fixedBiologicalAge: 30, canGeneratePawnRelations: false));
-            s.SetChiefDefaultName(pawn, role);
+            StoryCampaign.SetChiefDefaultName(pawn, role);
             Configure(pawn, role); s.Chiefs[role] = pawn; s.ChiefCreated[role] = true;
         }
         else { Find.WorldPawns.RemovePawn(pawn); pawn.SetFaction(Faction.OfPlayer); }
@@ -85,7 +85,7 @@ public static class Invitations
             foreach (var arm in role == 4 ? arms.TakeLast(1) : arms.Take(2)) pawn.health.AddHediff(MCW_HediffDefOf.ArchotechArm, arm);
             if (role is 0 or 4) foreach (var leg in pawn.health.hediffSet.GetNotMissingParts().Where(p => p.def == MCW_DefOf.Leg).Take(2).ToList()) pawn.health.AddHediff(MCW_HediffDefOf.ArchotechLeg, leg);
         }
-        if (role == 0) { pawn.health.AddHediff(MCW_HediffDefOf.MCW_QinxintangBlessing); Story.EnsureLeaderRegeneration(pawn); }
+        if (role == 0) { pawn.health.AddHediff(MCW_HediffDefOf.MCW_QinxintangBlessing); StoryUtility.EnsureLeaderRegeneration(pawn); }
         if (role == 3)
         {
             pawn.health.AddHediff(MCW_HediffDefOf.Mincho_Humanlike_Body_Hediff);
@@ -121,8 +121,8 @@ public static class Invitations
     }
     static void NotifyAccepted(int role)
     {
-        string name = Story.DisplayName(role);
+        string name = CharacterData.DisplayName(role);
         string reply = $"MinchoCandyWars.Invite.Reply.{role}".Translate();
-        Story.Letter("MinchoCandyWars.Invite.Accepted".Translate(name), $"{name}: {reply}");
+        StoryUtility.Letter("MinchoCandyWars.Invite.Accepted".Translate(name), $"{name}: {reply}");
     }
 }

@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using MinchoCandyWars.StellarisEvent;
 using RimWorld;
 using Verse;
@@ -35,7 +35,7 @@ public class ContactLetter : ChoiceLetter
     public static void Send(string eventName)
     {
         var def = MCW_DefOf.MCWQ097_ContactLetter;
-        string issuer = eventName == Story.Current.OfferEvent && Story.Current.AvailableContact() >= 0 ? Story.DisplayName(Story.Current.AvailableContact()) : Story.DisplayName(0);
+        string issuer = eventName == Story.Current.OfferEvent && StoryCampaign.AvailableContact() >= 0 ? CharacterData.DisplayName(StoryCampaign.AvailableContact()) : CharacterData.DisplayName(0);
         var letter = (ContactLetter)LetterMaker.MakeLetter("MinchoCandyWars.Contact.Title".Translate(issuer).RawText, "MinchoCandyWars.Contact.Body".Translate(issuer).RawText, def);
         letter.EventName = eventName;
         letter.OfferNumber = Story.Current.OfferNumber;

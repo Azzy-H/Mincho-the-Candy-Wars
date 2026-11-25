@@ -293,7 +293,8 @@
     <uiIconPath>Things/Apparel/Icons/MCW_Qipao</uiIconPath>
     <costStuffCount>20</costStuffCount>
     <stuffCategories Inherit="False">
-      <li>Metallic</li>
+      <li>Fabric</li>
+      <li>Leathery</li>
     </stuffCategories>
   </ThingDef>
   <ThingDef ParentName="Mincho_ApparelBase_Body">
@@ -400,8 +401,14 @@
       </li>
       <!-- 翅膀 -->
     </renderNodeProperties>
+    <!-- 脱下全息面罩时自动移除该视觉 Hediff（配合 MCW_CompProperties_CauseHediffAtPart） -->
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+    </comps>
     <stages>
       <li>
+        <!-- 纯视觉 Hediff：不进入健康面板显示（DevMode 的"Show hidden Hediffs"仍可见） -->
+        <becomeVisible>false</becomeVisible>
       </li>
     </stages>
   </HediffDef>

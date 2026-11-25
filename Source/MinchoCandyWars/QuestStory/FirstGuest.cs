@@ -1,11 +1,11 @@
-﻿#nullable disable
+#nullable disable
 using RimWorld;
 using Verse;
 namespace MinchoCandyWars.QuestStory;
 public sealed partial class Story
 {
-    public bool FirstTemporary;
-    void JoinFirst()
+    // FirstTemporary 已迁到 Story.cs（flag 单源）。
+    internal void JoinFirst()
     {
         if (!FirstTemporary || First == null || First.Dead || First.Faction != Faction.OfPlayer) return;
         foreach (var quest in Find.QuestManager.QuestsListForReading)
@@ -13,7 +13,7 @@ public sealed partial class Story
                 if (quest.root == MCW_DefOf.MCW_QS1_HuntedMincho && part.affectedPawns.Remove(First))
                     part.extraFaction.faction.Notify_MemberLeftExtraFaction(First);
         FirstTemporary = false;
-        Letter("MinchoCandyWars.StoryLetter.FirstJoinedTitle".Translate().RawText,
+        StoryUtility.Letter("MinchoCandyWars.StoryLetter.FirstJoinedTitle".Translate().RawText,
             "MinchoCandyWars.StoryLetter.FirstJoinedBody".Translate(First.LabelShortCap).RawText);
     }
 }

@@ -9,6 +9,14 @@
       <graphicClass>Graphic_Single</graphicClass>
       <ignoreThingDrawColor>true</ignoreThingDrawColor>
     </graphicData>
+      <colorGenerator Class="ColorGenerator_Options">
+        <options>
+          <li>
+            <weight>10</weight>
+            <only>(1,1,1,1)</only>
+          </li>
+        </options>
+      </colorGenerator>
     <costList Inherit="False">
       <MCW_Delicious_Cookies>20</MCW_Delicious_Cookies>
       <Uranium>10</Uranium>
@@ -145,6 +153,14 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawRotated>false</drawRotated>
     </graphicData>
+      <colorGenerator Class="ColorGenerator_Options">
+        <options>
+          <li>
+            <weight>10</weight>
+            <only>(1,1,1,1)</only>
+          </li>
+        </options>
+      </colorGenerator>
     <costList Inherit="False">
       <Mincho_ChocoStick>80</Mincho_ChocoStick>
       <Mincho_Mintchoco>200</Mincho_Mintchoco>

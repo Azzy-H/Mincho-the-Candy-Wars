@@ -1,6 +1,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -386,6 +387,24 @@ namespace MinchoCandyWars.StellarisEvent
         }
 
         /// <summary>
+        /// 设置 / 覆写一个 Quest 类型 flag，用于长期追踪一个 Quest 实例。
+        /// </summary>
+        public static void SetFlag(string name, Quest quest, int? ticks = null)
+        {
+            if (Instance == null || name.NullOrEmpty() || quest == null) return;
+            Instance.flags[name] = new StellarisEventFlag(name, quest, ticks);
+        }
+
+        /// <summary>
+        /// 设置 / 覆写一个 ThingList 类型 flag，用于长期追踪一组 Thing（如 Guests）。
+        /// </summary>
+        public static void SetFlag(string name, List<Thing> things, int? ticks = null)
+        {
+            if (Instance == null || name.NullOrEmpty()) return;
+            Instance.flags[name] = new StellarisEventFlag(name, things, ticks);
+        }
+
+        /// <summary>
         /// 获取指定名字的 flag，不存在则返回 null。
         /// </summary>
         public static StellarisEventFlag GetFlag(string name)
@@ -403,6 +422,26 @@ namespace MinchoCandyWars.StellarisEvent
             var flag = GetFlag(name);
             if (flag == null || flag.valueType != FlagValueType.Thing) return null;
             return flag.ResolveThing();
+        }
+
+        /// <summary>
+        /// 获取指定名字的 flag 所追踪的 Quest（需为 Quest 类型 flag）。
+        /// </summary>
+        public static Quest GetTrackedQuest(string name)
+        {
+            var flag = GetFlag(name);
+            if (flag == null || flag.valueType != FlagValueType.Quest) return null;
+            return flag.ResolveQuest();
+        }
+
+        /// <summary>
+        /// 获取指定名字的 flag 所追踪的 Thing 列表（需为 ThingList 类型 flag）。
+        /// </summary>
+        public static List<Thing> GetTrackedThings(string name)
+        {
+            var flag = GetFlag(name);
+            if (flag == null || flag.valueType != FlagValueType.ThingList) return new List<Thing>();
+            return flag.ResolveThings();
         }
 
         /// <summary>

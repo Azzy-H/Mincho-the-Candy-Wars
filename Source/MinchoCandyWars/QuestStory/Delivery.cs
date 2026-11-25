@@ -17,7 +17,7 @@ public class DeliveryRoot : QuestNode
         quest.AddPart(new DeliveryPart { Kind=kind,RequiredCount=kind==11 ? 24 : kind==7 ? 200 : 100,Deadline=Find.TickManager.TicksGame+5*60000 });
     }
 }
-public class DeliveryPart : QuestPart
+public class DeliveryPart : QuestPart, ITickableQuestPart
 {
     public int Kind,Deadline,RequiredCount;
     public string RequiredDef => Kind==11 ? "ComponentIndustrial" : Kind==7 ? "Mincho_ChocoStick" : "MCW_Delicious_Cookies";
@@ -26,17 +26,18 @@ public class DeliveryPart : QuestPart
     public override string DescriptionPart => "MinchoCandyWars.Delivery.Summary".Translate(RequiredLabel, Math.Max(0, (Deadline - Find.TickManager.TicksGame) / 2500f).ToString("0.#"));
     public override void ExposeData() { base.ExposeData();Scribe_Values.Look(ref Kind,"kind");Scribe_Values.Look(ref Deadline,"deadline");Scribe_Values.Look(ref RequiredCount,"requiredCount"); }
     public void Check() { if(quest.State==QuestState.Ongoing && Find.TickManager.TicksGame>=Deadline)quest.End(QuestEndOutcome.Fail); }
+    public void Tick() => Check();
     public static void Open()
     {
         var quest=Find.QuestManager.QuestsListForReading.FirstOrDefault(q=>q.id==Story.Current.State.ActiveQuest && q.State==QuestState.Ongoing);
         var part=quest?.PartsListForReading.OfType<DeliveryPart>().FirstOrDefault();
-        if(part==null) { Story.Letter("MinchoCandyWars.Delivery.Title".Translate(), "MinchoCandyWars.Delivery.NoQuest".Translate());return; }
+        if(part==null) { StoryUtility.Letter("MinchoCandyWars.Delivery.Title".Translate(), "MinchoCandyWars.Delivery.NoQuest".Translate());return; }
         var map = Find.CurrentMap is { IsPlayerHome: true } current ? current : Find.AnyPlayerHomeMap;
-        if (map == null) { Story.Letter("MinchoCandyWars.Delivery.CannotDeliver".Translate(), "MinchoCandyWars.Delivery.NoHome".Translate()); return; }
+        if (map == null) { StoryUtility.Letter("MinchoCandyWars.Delivery.CannotDeliver".Translate(), "MinchoCandyWars.Delivery.NoHome".Translate()); return; }
         int left=part.Count;var items=new List<(Thing thing,int count)>();
         foreach(var thing in map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed(part.RequiredDef)).Where(Gifts.Eligible))
         {int take=Math.Min(left,thing.stackCount);items.Add((thing,take));left-=take;if(left==0)break;}
-        if(left>0) { Story.Letter("MinchoCandyWars.Delivery.ShortageTitle".Translate(), "MinchoCandyWars.Delivery.Shortage".Translate(part.RequiredLabel, part.Count - left, left));return; }
+        if(left>0) { StoryUtility.Letter("MinchoCandyWars.Delivery.ShortageTitle".Translate(), "MinchoCandyWars.Delivery.Shortage".Translate(part.RequiredLabel, part.Count - left, left));return; }
         bool delivered=false;
         Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("MinchoCandyWars.Delivery.Confirm".Translate(part.RequiredLabel),()=>
         {

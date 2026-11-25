@@ -1,4 +1,6 @@
 #nullable disable
+using System.Collections.Generic;
+using RimWorld;
 using Verse;
 
 namespace MinchoCandyWars.StellarisEvent
@@ -11,7 +13,11 @@ namespace MinchoCandyWars.StellarisEvent
         Float,
         String,
         Bool,
-        Thing
+        Thing,
+        /// <summary>Quest 引用（存 Quest 唯一 ID）</summary>
+        Quest,
+        /// <summary>Thing 引用列表（存唯一 ID 列表，用于 Guests 等集合）</summary>
+        ThingList
     }
 
     /// <summary>
@@ -50,6 +56,12 @@ namespace MinchoCandyWars.StellarisEvent
 
         /// <summary>追踪的 Thing 唯一 ID（valueType == Thing 时有效）</summary>
         public int thingID = -1;
+
+        /// <summary>追踪的 Quest 唯一 ID（valueType == Quest 时有效）</summary>
+        public int questID = -1;
+
+        /// <summary>追踪的 Thing 唯一 ID 列表（valueType == ThingList 时有效）</summary>
+        public List<int> thingIDs;
 
         /// <summary>
         /// 剩余 tick 数。null 表示永久 flag，不会自动过期。
@@ -101,6 +113,32 @@ namespace MinchoCandyWars.StellarisEvent
             remainingTicks = ticks;
         }
 
+        public StellarisEventFlag(string name, Quest quest, int? ticks = null)
+        {
+            this.name = name;
+            valueType = FlagValueType.Quest;
+            questID = quest?.id ?? -1;
+            remainingTicks = ticks;
+        }
+
+        public StellarisEventFlag(string name, List<Thing> things, int? ticks = null)
+        {
+            this.name = name;
+            valueType = FlagValueType.ThingList;
+            thingIDs = new List<int>();
+            if (things != null)
+            {
+                foreach (Thing t in things)
+                {
+                    if (t != null)
+                    {
+                        thingIDs.Add(t.thingIDNumber);
+                    }
+                }
+            }
+            remainingTicks = ticks;
+        }
+
         // ──────────────────── 值获取 ────────────────────
 
         /// <summary>
@@ -114,6 +152,8 @@ namespace MinchoCandyWars.StellarisEvent
                 case FlagValueType.String: return stringValue;
                 case FlagValueType.Bool:   return boolValue;
                 case FlagValueType.Thing:  return ResolveThing();
+                case FlagValueType.Quest:  return ResolveQuest();
+                case FlagValueType.ThingList: return ResolveThings();
                 default:                   return null;
             }
         }
@@ -135,6 +175,39 @@ namespace MinchoCandyWars.StellarisEvent
                 }
             }
             return null;
+        }
+
+        /// <summary>
+        /// 通过 questID 在当前所有 Quest 中查找被追踪的 Quest。
+        /// </summary>
+        public Quest ResolveQuest()
+        {
+            if (questID < 0) return null;
+            foreach (Quest q in Find.QuestManager.QuestsListForReading)
+            {
+                if (q.id == questID)
+                    return q;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 解析 thingIDs 列表中当前仍存在的 Thing（一次遍历所有地图）。
+        /// </summary>
+        public List<Thing> ResolveThings()
+        {
+            var result = new List<Thing>();
+            if (thingIDs.NullOrEmpty()) return result;
+
+            foreach (Map map in Find.Maps)
+            {
+                foreach (Thing t in map.listerThings.AllThings)
+                {
+                    if (thingIDs.Contains(t.thingIDNumber))
+                        result.Add(t);
+                }
+            }
+            return result;
         }
 
         /// <summary>
@@ -185,6 +258,8 @@ namespace MinchoCandyWars.StellarisEvent
             Scribe_Values.Look(ref stringValue, "stringValue");
             Scribe_Values.Look(ref boolValue, "boolValue");
             Scribe_Values.Look(ref thingID, "thingID", -1);
+            Scribe_Values.Look(ref questID, "questID", -1);
+            Scribe_Collections.Look(ref thingIDs, "thingIDs", LookMode.Value);
 
             // nullable int 拆为 hasTicks + ticksValue 两个字段序列化
             bool hasTicks = remainingTicks.HasValue;

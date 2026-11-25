@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using System.Reflection;
 using HarmonyLib;
 using MinchoCandyWars;
@@ -76,7 +76,7 @@ static class GuestKind
     }
 }
 
-public class GuestSettlement : QuestPart
+public class GuestSettlement : QuestPart, ITickableQuestPart
 {
     public MinchoCandyWars.QuestParts.QuestPart_GiveAllianceReward Reward;
     public ThingDef Bonus;
@@ -123,10 +123,11 @@ public class GuestSettlement : QuestPart
         {
             var delay = quest.PartsListForReading.OfType<QuestPart_Delay>().FirstOrDefault(p => p.debugLabel == "QuestDelay");
             if (delay != null) { Story.Current.DepartAt = Find.TickManager.TicksGame + Math.Max(0, delay.TicksLeft); }
-            quest.parent = Story.Current.EnsureSeries();
-            quest.description = Story.GuestDescription(Plan);
+            quest.parent = StoryCampaign.EnsureSeries();
+            quest.description = StoryUtility.GuestDescription(Plan);
         }
     }
+    public void Tick() => Prepare(true);
     void EnsurePlan()
     {
         if (Plan != null) return;

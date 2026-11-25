@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
@@ -123,7 +123,7 @@ public class BucketCargoRoot : QuestNode
         BucketMissions.Rewards(quest, 13);
     }
 }
-public class BucketReceipt : QuestPart
+public class BucketReceipt : QuestPart, ITickableQuestPart
 {
     public Thing Bucket;
     public MapParent Destination;
@@ -180,4 +180,6 @@ public class BucketReceipt : QuestPart
         if (Received) quest.End(QuestEndOutcome.Success);
         else if (Find.TickManager.TicksGame >= RewardAt + 2500) quest.End(QuestEndOutcome.Fail);
     }
+
+    public void Tick() => Check();
 }

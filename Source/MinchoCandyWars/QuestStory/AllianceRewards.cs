@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using RimWorld;
 using RimWorld.QuestGen;
 using Verse;
@@ -77,7 +77,7 @@ public sealed class RewardPlan : IExposable
         else
         {
             Story.Current.PendingRewards.Add(this);
-            Story.Letter("MinchoCandyWars.StoryLetter.RewardPendingTitle".Translate().RawText, "MinchoCandyWars.StoryLetter.RewardPendingBody".Translate().RawText);
+            StoryUtility.Letter("MinchoCandyWars.StoryLetter.RewardPendingTitle".Translate().RawText, "MinchoCandyWars.StoryLetter.RewardPendingBody".Translate().RawText);
         }
     }
     public static RewardPlan Build(Quest quest, int goodwill, bool first, int pickCount = 4, bool bonus = true)
@@ -155,7 +155,7 @@ public class AllianceSettlement : QuestPart
         if (!Story.Current.State.Settle(quest.id)) return;
         bool success = quest.State == QuestState.EndedSuccess;
         if (success) Plan.Pay(Kind <= 5 || Kind >= 10);
-        Story.Current.FinishMission(Kind, success);
+        StoryCampaign.FinishMission(Kind, success);
     }
 }
 

@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using RimWorld;
 using Verse;
 
@@ -28,9 +28,9 @@ public static class Gifts
 
     public static void Open()
     {
-        if (!MinchoCandyWars.StellarisEvent.StellarisEventFlagManager.HasFlag("MCW_QS1_AllianceJoined")) { Story.Letter("MinchoCandyWars.Gift.Title".Translate(), "MinchoCandyWars.Gift.Locked".Translate()); return; }
-        if (Relations.Number >= 100) { Story.Letter("MinchoCandyWars.Gift.Title".Translate(), "MinchoCandyWars.Gift.Max".Translate()); return; }
-        Find.WindowStack.Add(new FloatMenu(Story.Names.Select((name,i) => new FloatMenuOption(Story.DisplayName(i), Story.Current.CanTalk(i) ? () => Select(i) : null)).ToList()));
+        if (!MinchoCandyWars.StellarisEvent.StellarisEventFlagManager.HasFlag("MCW_QS1_AllianceJoined")) { StoryUtility.Letter("MinchoCandyWars.Gift.Title".Translate(), "MinchoCandyWars.Gift.Locked".Translate()); return; }
+        if (Relations.Number >= 100) { StoryUtility.Letter("MinchoCandyWars.Gift.Title".Translate(), "MinchoCandyWars.Gift.Max".Translate()); return; }
+        Find.WindowStack.Add(new FloatMenu(CharacterData.Names.Select((name,i) => new FloatMenuOption(CharacterData.DisplayName(i), StoryCampaign.CanTalk(i) ? () => Select(i) : null)).ToList()));
     }
     static void Select(int role) => Find.WindowStack.Add(new FloatMenu(Menu.Select((row,i) => new FloatMenuOption("MinchoCandyWars.Gift.Option".Translate(GiftItems(row.defs, row.counts), row.points).RawText, () => Preview(role,i))).ToList()));
     static bool Quota(int points)
@@ -58,13 +58,13 @@ public static class Gifts
     static void Preview(int role,int selected)
     {
         var row=Menu[selected];var plan=Collect(selected);
-        if(plan==null || !Quota(row.points)) { Story.Letter("MinchoCandyWars.Delivery.CannotDeliver".Translate(), "MinchoCandyWars.Gift.Unavailable".Translate());return; }
+        if(plan==null || !Quota(row.points)) { StoryUtility.Letter("MinchoCandyWars.Delivery.CannotDeliver".Translate(), "MinchoCandyWars.Gift.Unavailable".Translate());return; }
         bool used=false;
         string items = string.Join("\n", plan.Select(p => $"{p.thing.LabelCap} ×{p.count}"));
-        string text = "MinchoCandyWars.Gift.Preview".Translate(Story.DisplayName(role), items, Math.Min(row.points, 100 - Relations.Number));
+        string text = "MinchoCandyWars.Gift.Preview".Translate(CharacterData.DisplayName(role), items, Math.Min(row.points, 100 - Relations.Number));
         Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(text,()=>
         {
-            if(used || !Quota(row.points) || Relations.Number>=100 || !Story.Current.CanTalk(role))return;
+            if(used || !Quota(row.points) || Relations.Number>=100 || !StoryCampaign.CanTalk(role))return;
             // Recheck the shown inventory; do not silently substitute a different stack.
             if(plan.Any(p=>!p.thing.Spawned || !Eligible(p.thing) || p.thing.stackCount<p.count))return;
             used=true;
@@ -72,9 +72,9 @@ public static class Gifts
             var faction=Find.FactionManager.FirstFactionOfDef(MCW_DefOf.MCW_Alliance_Faction);
             faction.TryAffectGoodwillWith(Faction.OfPlayer,row.points);
             Story.Current.GiftTicks.Add(Find.TickManager.TicksGame);Story.Current.GiftPoints.Add(row.points);
-            string name = Story.DisplayName(role);
+            string name = CharacterData.DisplayName(role);
             string reply = $"MinchoCandyWars.Gift.Reply.{role}".Translate();
-            Story.Letter("MinchoCandyWars.Gift.Accepted".Translate(name), $"{name}: {reply}\n" + "MinchoCandyWars.Gift.Goodwill".Translate(Relations.Value));
+            StoryUtility.Letter("MinchoCandyWars.Gift.Accepted".Translate(name), $"{name}: {reply}\n" + "MinchoCandyWars.Gift.Goodwill".Translate(Relations.Value));
         }));
     }
 }

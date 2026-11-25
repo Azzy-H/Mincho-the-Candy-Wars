@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using HarmonyLib;
 using MinchoCandyWars.StellarisEvent;
 using RimWorld;
@@ -52,7 +52,7 @@ static class RememberContact
 {
     static void Postfix(StellarisEventDef __instance, bool __result)
     {
-        if (__result && __instance == MCW_EventDefOf.MCW_Event_QS1_CorpContact) Story.Current.StartCompanyTimer();
+        if (__result && __instance == MCW_EventDefOf.MCW_Event_QS1_CorpContact) StoryCampaign.StartCompanyTimer();
         if (__result && __instance.defName == Story.Current.OfferEvent) Story.Current.Viewed |= 1 << Story.Current.Offer;
         if (__result && __instance.defName == Story.A1) Story.Current.A1Viewed = true;
         if (__result && __instance == MCW_EventDefOf.MCW_Event_QS1_AllianceContact && !StellarisEventFlagManager.HasFlag("MCWQ097_AllianceContactLetter"))

@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
@@ -29,7 +29,7 @@ public class MissionFactionNode : QuestNode
     protected override bool TestRunInt(Slate slate) => true;
     protected override void RunInt() => QuestGen.slate.Set("siteFaction", Find.FactionManager.FirstFactionOfDef(DefDatabase<FactionDef>.GetNamed(kind == 5 ? "MCW_Alliance_Faction" : "MCW_RecycleCorp_Faction")));
 }
-public class MissionObjective : QuestPart
+public class MissionObjective : QuestPart, ITickableQuestPart
 {
     public int Kind, EnteredAt = -1, Scale;
     public Site Site;
@@ -68,7 +68,7 @@ public class MissionObjective : QuestPart
     {
         if (quest.State != QuestState.Ongoing) return;
         var map = Site?.Map;
-        if (map != null && !Entered) { Entered = true; EnteredAt = Find.TickManager.TicksGame; Story.Letter("MinchoCandyWars.Mission.Title".Translate().RawText, DescriptionPart); }
+        if (map != null && !Entered) { Entered = true; EnteredAt = Find.TickManager.TicksGame; StoryUtility.Letter("MinchoCandyWars.Mission.Title".Translate().RawText, DescriptionPart); }
         if (map != null && Entered) Reinforce(map);
         bool success = Kind switch
         {
@@ -85,6 +85,7 @@ public class MissionObjective : QuestPart
         if (Kind == 2 && Prisoner?.Dead == true || Site == null || Site.Destroyed || Kind == 4 && Sample?.Destroyed == true)
             quest.End(QuestEndOutcome.Fail);
     }
+    public void Tick() => Check();
     bool HasLivingOutpostResident(Map map)
     {
         if (OutpostResidentsRecorded || OutpostResidents.Count > 0)

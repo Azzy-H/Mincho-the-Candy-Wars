@@ -11,6 +11,14 @@
       <drawSize>(0.5,1.4033333)</drawSize>
       <ignoreThingDrawColor>true</ignoreThingDrawColor>
     </graphicData>
+      <colorGenerator Class="ColorGenerator_Options">
+        <options>
+          <li>
+            <weight>10</weight>
+            <only>(1,1,1,1)</only>
+          </li>
+        </options>
+      </colorGenerator>
     <techLevel>Medieval</techLevel>
     <weaponTags>
       <li>MedievalMeleeAdvanced</li>

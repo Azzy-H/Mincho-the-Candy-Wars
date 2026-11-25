@@ -12,7 +12,7 @@ static class QuestDescriptionCleanup
         string description = __instance.description.ToString();
         if (Scribe.mode != LoadSaveMode.PostLoadInit || string.IsNullOrEmpty(description) ||
             !description.StartsWith("发布人：") ||
-            !Story.Names.Any(name => description.StartsWith("发布人：" + name)))
+            !CharacterData.Names.Any(name => description.StartsWith("发布人：" + name)))
             return;
         __instance.description = description
             .Replace("失败不发成功奖励。", "")

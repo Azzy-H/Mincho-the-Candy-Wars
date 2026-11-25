@@ -70,7 +70,7 @@ public static class StoryDebug
     {
         var s = Story.Current;
         if (s.State.ActiveQuest >= 0) { Reject("先处理当前同盟任务。"); return; }
-        Find.WindowStack.Add(new FloatMenu(Enumerable.Range(2, 12).Where(BucketMissions.Available).Select(kind => new FloatMenuOption($"{kind}：{Story.Speakers[kind - 1]}的请求", () =>
+        Find.WindowStack.Add(new FloatMenu(Enumerable.Range(2, 12).Where(BucketMissions.Available).Select(kind => new FloatMenuOption($"{kind}：{CharacterData.Speakers[kind - 1]}的请求", () =>
         { s.Offer = kind; s.OfferIssuer = OfferPolicy.Issuers(kind).Last(); s.AssignedOffer = true; s.ContactReady = true; s.State.NextContactTick = -1; Fire(s.OfferEvent); })).ToList()));
     }
     [DebugAction("珉巧剧情测试", "12 打开首席闲聊", allowedGameStates = AllowedGameStates.PlayingOnMap)]
@@ -88,8 +88,8 @@ public static class StoryDebug
     {
         var s = Story.Current;
         if (!s.CanAccept) { Reject("先生成一个待决定的请求。"); return; }
-        Find.WindowStack.Add(new FloatMenu(OfferPolicy.Issuers(s.Offer).Where(s.CanTalk).Select(role =>
-            new FloatMenuOption(Story.Names[role], () => { s.OfferIssuer = role; Fire(s.OfferEvent); })).ToList()));
+        Find.WindowStack.Add(new FloatMenu(OfferPolicy.Issuers(s.Offer).Where(StoryCampaign.CanTalk).Select(role =>
+            new FloatMenuOption(CharacterData.Names[role], () => { s.OfferIssuer = role; Fire(s.OfferEvent); })).ToList()));
     }
 
     static Quest GuestQuest()
